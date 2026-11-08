@@ -827,6 +827,11 @@
    "DBUnico.108011 | Teatro comunale di Gualtieri"
   ]
  },
+ "Correggio (RE)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
  "Parma (PR)": {
   "tot": 29,
   "coperti": 17,
@@ -878,6 +883,11 @@
   "mancanti": [
    "DBUnico.106210 | Castello e raccolta archeologica"
   ]
+ },
+ "Fidenza (PR)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
  },
  "Piacenza (PC)": {
   "tot": 13,
@@ -1832,6 +1842,26 @@
   "coperti": 6,
   "mancanti": []
  },
+ "Cerveteri (RM)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Frascati (RM)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Monte Porzio Catone (RM)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Subiaco (RM)": {
+  "tot": 3,
+  "coperti": 3,
+  "mancanti": []
+ },
  "Latina (LT)": {
   "tot": 8,
   "coperti": 8,
@@ -1845,6 +1875,11 @@
  "Sezze (LT)": {
   "tot": 5,
   "coperti": 5,
+  "mancanti": []
+ },
+ "Sabaudia (LT)": {
+  "tot": 4,
+  "coperti": 4,
   "mancanti": []
  },
  "Frosinone (FR)": {
@@ -1961,6 +1996,16 @@
    "DBUnico.106130 | Museo della ceramica “Casimiro Marcantoni”"
   ]
  },
+ "Orte (VT)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Vetralla (VT)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
  "Napoli (NA)": {
   "tot": 51,
   "coperti": 51,
@@ -2019,6 +2064,16 @@
  "Cava de' Tirreni (SA)": {
   "tot": 3,
   "coperti": 3,
+  "mancanti": []
+ },
+ "Felitto (SA)": {
+  "tot": 3,
+  "coperti": 3,
+  "mancanti": []
+ },
+ "Teggiano (SA)": {
+  "tot": 4,
+  "coperti": 4,
   "mancanti": []
  },
  "Avellino (AV)": {
@@ -2360,6 +2415,11 @@
   "coperti": 6,
   "mancanti": []
  },
+ "Valtorta (BG)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
  "Brescia (BS)": {
   "tot": 18,
   "coperti": 18,
@@ -2380,6 +2440,16 @@
   "coperti": 5,
   "mancanti": []
  },
+ "Capo di Ponte (BS)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Montichiari (BS)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
  "Como (CO)": {
   "tot": 8,
   "coperti": 8,
@@ -2398,6 +2468,11 @@
  "Lodi (LO)": {
   "tot": 6,
   "coperti": 6,
+  "mancanti": []
+ },
+ "Sant'Angelo Lodigiano (LO)": {
+  "tot": 4,
+  "coperti": 4,
   "mancanti": []
  },
  "Mantova (MN)": {
@@ -2425,6 +2500,11 @@
   "coperti": 2,
   "mancanti": []
  },
+ "Novate Mezzola (SO)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
  "Varese (VA)": {
   "tot": 7,
   "coperti": 7,
@@ -2433,6 +2513,11 @@
  "Saronno (VA)": {
   "tot": 5,
   "coperti": 5,
+  "mancanti": []
+ },
+ "Busto Arsizio (VA)": {
+  "tot": 4,
+  "coperti": 4,
   "mancanti": []
  },
  "Venezia (VE)": {
@@ -2686,6 +2771,11 @@
   "coperti": 7,
   "mancanti": []
  },
+ "Osimo (AN)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
  "Urbino (PU)": {
   "tot": 10,
   "coperti": 10,
@@ -2694,6 +2784,16 @@
  "Pesaro (PU)": {
   "tot": 10,
   "coperti": 10,
+  "mancanti": []
+ },
+ "Fano (PU)": {
+  "tot": 3,
+  "coperti": 3,
+  "mancanti": []
+ },
+ "Mombaroccio (PU)": {
+  "tot": 4,
+  "coperti": 4,
   "mancanti": []
  },
  "Macerata (MC)": {
@@ -2741,6 +2841,26 @@
   "coperti": 4,
   "mancanti": []
  },
+ "Apiro (MC)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Matelica (MC)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Montecassiano (MC)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Ripe San Ginesio (MC)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
  "Ascoli Piceno (AP)": {
   "tot": 8,
   "coperti": 8,
@@ -2751,9 +2871,19 @@
   "coperti": 8,
   "mancanti": []
  },
+ "Ripatransone (AP)": {
+  "tot": 3,
+  "coperti": 3,
+  "mancanti": []
+ },
  "Fermo (FM)": {
   "tot": 5,
   "coperti": 5,
+  "mancanti": []
+ },
+ "Sant'Elpidio a Mare (FM)": {
+  "tot": 3,
+  "coperti": 3,
   "mancanti": []
  },
  "L'Aquila (AQ)": {
@@ -3739,6 +3869,16 @@
   "coperti": 43,
   "mancanti": []
  },
+ "Duino Aurisina (TS)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Muggia (TS)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
  "Udine (UD)": {
   "tot": 6,
   "coperti": 6,
@@ -3757,6 +3897,16 @@
  "Codroipo (UD)": {
   "tot": 5,
   "coperti": 5,
+  "mancanti": []
+ },
+ "Gemona del Friuli (UD)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Palmanova (UD)": {
+  "tot": 4,
+  "coperti": 4,
   "mancanti": []
  },
  "Pordenone (PN)": {

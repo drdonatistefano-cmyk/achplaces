@@ -1201,7 +1201,7 @@ function salvaIst(nome){setTimeout(()=>{if(IST_TOCCO||location.hash.slice(1))ret
 (async()=>{const cnt=document.getElementById("count");if(cnt&&!IST_ORIG)cnt.textContent="Caricamento dei luoghi…";
   let nome=null;try{nome=localStorage.getItem("datiNome");}catch(e){}
   const ultimo=nome,pIdb=nome?MEMO.leggi(nome):null;
-  const ATTESO="dati.9b5bfa65d1.json",pPrimo=nome?null:fetch(ATTESO).then(r=>r.ok?r.text():null).catch(()=>null);  /* primo accesso: in parallelo al manifest */
+  const ATTESO="dati.0361e0291d.json",pPrimo=nome?null:fetch(ATTESO).then(r=>r.ok?r.text():null).catch(()=>null);  /* primo accesso: in parallelo al manifest */
   try{MAN=await (await fetch("manifest.json",{cache:"no-store"})).json();nome=MAN.dati;try{localStorage.setItem("man",JSON.stringify(MAN));}catch(e){}}catch(e){try{MAN=JSON.parse(localStorage.getItem("man")||"null");}catch(e2){}}
   if(!nome){if(cnt)cnt.textContent="Dati non disponibili: controlla la connessione.";return;}
   let t=nome===ultimo&&pIdb?await pIdb:(pPrimo&&nome===ATTESO?await pPrimo:null)||await MEMO.leggi(nome);
