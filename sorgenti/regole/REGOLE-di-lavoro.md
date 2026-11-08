@@ -91,5 +91,18 @@ Quando Stefano scrive «pubblica», si aggiornano **entrambi**, nello stesso tur
 - Il contatore si chiama **achplaces** e ha il cruscotto su https://achplaces.goatcounter.com. Non usa cookie e non cambia l'aspetto della pagina.
 - Conta solo le visite alle pagine, e solo quando la pagina è aperta su achplaces.com o www.achplaces.com. Sull'artefatto claude.ai non parte.
 - Il codice sta in fondo a `template.html` (costante `GC`, controllo del dominio `ON_WEB`) e quindi resta a ogni «pubblica».
-- Fino alla prossima «pubblica», l'index.html del repository differisce dall'artefatto solo per questo blocco. È un'eccezione voluta al controllo sha256 del §7.
+- Il blocco sta nell'intestazione (`<head>`), non in fondo: build.py chiude lo script principale prima dell'ultimo `</script>`.
 - Per la guida osterie il contatore è «achdinners», sul dominio achdinners.com (lo gestisce l'altra chat).
+
+## 9. Menu «Le guide di Ach», foto e pagina Luoghi (8/11/2026, ore 18:30)
+- **Menu comune:** in testata, subito sotto il titolo, ci sono due bottoni: Events (achevents.com) e Dinners (achdinners.com). Il codice è identico a `coordinamento/MENU-GUIDE.md` del repository ristoranti-archivio, tolto solo il bottone Places. Sta in `template.html`.
+- **Foto:** fanno parte della pubblicazione standard. Dopo `build.py` e `mkfiltri.sh` si esegue `python3 foto_build.py`, che:
+  - lancia `/home/claude/foto/controllo.py`;
+  - tiene solo le foto con autore e licenza;
+  - copia img/ e aggiunge `foto` al manifest.
+- **Ricerca foto:**
+  - `foto2.py` (Wikidata + upload.wikimedia.org) trova le foto, perché l'API di Commons risponde 429 da questo indirizzo;
+  - autore e licenza si aggiungono con l'API di Commons quando torna disponibile;
+  - il credito compare solo nella scheda del luogo.
+- **Pagina Luoghi:** mk17.py (incluso in mkfiltri.sh) allarga la pagina su PC come la Guida e mette UNESCO, Gratis, Coperti, Panorama, Borghi e Arancioni nella riga delle categorie.
+- **Elenco file da pubblicare:** index.html, manifest.json, filtri.html, i file con hash citati nel manifest (dati, meta, testi, luoghi, det.*, foto) e img/*.
