@@ -1,0 +1,22 @@
+# Provincia di Ferrara: 21 comuni. Codici verificati su Tuttitalia: 038008, 038028, 038029, 038030; gli altri da incrociare con ISTAT
+Argenta|038001|argenta
+Bondeno|038003|bondeno
+Cento|038004|cento
+Codigoro|038005|codigoro
+Comacchio|038006|comacchio
+Copparo|038007|copparo
+Ferrara|038008|ferrara
+Fiscaglia|038027|fiscaglia
+Goro|038025|goro
+Jolanda di Savoia|038010|jolanda-di-savoia
+Lagosanto|038011|lagosanto
+Masi Torello|038012|masi-torello
+Mesola|038014|mesola
+Ostellato|038017|ostellato
+Poggio Renatico|038018|poggio-renatico
+Portomaggiore|038019|portomaggiore
+Riva del Po|038029|riva-del-po
+Terre del Reno|038028|terre-del-reno
+Tresignana|038030|tresignana
+Vigarano Mainarda|038022|vigarano-mainarda
+Voghiera|038023|voghiera

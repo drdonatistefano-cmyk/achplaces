@@ -1,0 +1,1062 @@
+{
+"regione": "valle-d-aosta",
+"fonti": {
+"elenco": "ISTAT, elenco comuni al 21 febbraio 2026 (CC BY 4.0), copia Codewriter90x/Italian_Cities su GitHub",
+"siti": "Indice PA (AgID), copia opendatasicilia/comuni-italiani su GitHub, ottobre 2025",
+"mic": "Ministero della Cultura, banca dati Luoghi della cultura (DBUnico, dati.beniculturali.it), copia chimpactonit/proj_webp su GitHub"
+},
+"comuni": [
+{
+"istat": "007001",
+"nome": "Allein",
+"prov": "AO",
+"sito": "http://comune.allein.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo del Carnevale della Coumba Frèide",
+"DBUnico.110897"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Allein"
+},
+{
+"istat": "007002",
+"nome": "Antey-Saint-André",
+"prov": "AO",
+"sito": "http://comune.antey-st-andre.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Antey-Saint-André"
+},
+{
+"istat": "007003",
+"nome": "Aosta",
+"prov": "AO",
+"sito": "http://comune.aosta.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo del tesoro della Cattedrale di Aosta",
+"DBUnico.100808"
+],
+[
+"Teatro romano di Aosta",
+"DBUnico.100809"
+],
+[
+"Scavi chiesa paleocristiana di San Lorenzo",
+"DBUnico.100810"
+],
+[
+"Criptoportico forense di Aosta",
+"DBUnico.100811"
+],
+[
+"Villa romana della Consolata",
+"DBUnico.100812"
+],
+[
+"Area Funeraria fuori Porta Decumana",
+"DBUnico.100813"
+],
+[
+"MAR - Museo Archeologico Regionale",
+"DBUnico.103863"
+],
+[
+"Museo etnografico \"Un tempo la veillà nella stalla\"",
+"DBUnico.112008"
+],
+[
+"Ecomuseo della latteria Turnaria di Treby",
+"DBUnico.112036"
+],
+[
+"Parco Archeologico e Museo dell'Area Megalitica di Saint Martin de Corléans",
+"DBUnico.130754"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Aosta"
+},
+{
+"istat": "007004",
+"nome": "Arnad",
+"prov": "AO",
+"sito": "http://comune.arnad.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo parrocchiale di Arnad",
+"DBUnico.100814"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Arnad"
+},
+{
+"istat": "007005",
+"nome": "Arvier",
+"prov": "AO",
+"sito": "http://arvier.eu/it/",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo parrocchiale di Arvier",
+"DBUnico.100815"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Arvier"
+},
+{
+"istat": "007006",
+"nome": "Avise",
+"prov": "AO",
+"sito": "http://comune.avise.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo parrocchiale - Vetrinetta",
+"DBUnico.104892"
+],
+[
+"Maison de Mosse",
+"DBUnico.112010"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Avise"
+},
+{
+"istat": "007007",
+"nome": "Ayas",
+"prov": "AO",
+"sito": "http://comune.ayas.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo parrocchiale di Ayas",
+"DBUnico.100816"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Ayas"
+},
+{
+"istat": "007008",
+"nome": "Aymavilles",
+"prov": "AO",
+"sito": "http://comune.aymavilles.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Ponte-acquedotto di Pont d'Ael",
+"DBUnico.130756"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Aymavilles"
+},
+{
+"istat": "007009",
+"nome": "Bard",
+"prov": "AO",
+"sito": "http://comune.bard.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo delle alpi - Forte di Bard",
+"DBUnico.100817"
+],
+[
+"Ecomuseo della castagna  di Bard (Italia)",
+"DBUnico.112011"
+],
+[
+"Le Alpi dei ragazzi",
+"DBUnico.112012"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Bard"
+},
+{
+"istat": "007010",
+"nome": "Bionaz",
+"prov": "AO",
+"sito": "http://comune.bionaz.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Bionaz"
+},
+{
+"istat": "007011",
+"nome": "Brissogne",
+"prov": "AO",
+"sito": "http://comune.brissogne.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Brissogne"
+},
+{
+"istat": "007012",
+"nome": "Brusson",
+"prov": "AO",
+"sito": "http://comune.brusson.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Brusson"
+},
+{
+"istat": "007013",
+"nome": "Challand-Saint-Anselme",
+"prov": "AO",
+"sito": "http://comune.challand-st-anselme.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Challand-Saint-Anselme"
+},
+{
+"istat": "007014",
+"nome": "Challand-Saint-Victor",
+"prov": "AO",
+"sito": "http://comune.challand-st-victor.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo parrocchiale di Challand-Saint-Victor",
+"DBUnico.100819"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Challand-Saint-Victor"
+},
+{
+"istat": "007015",
+"nome": "Chambave",
+"prov": "AO",
+"sito": "http://chambave.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo parrocchiale di Chambave",
+"DBUnico.112013"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Chambave"
+},
+{
+"istat": "007016",
+"nome": "Chamois",
+"prov": "AO",
+"sito": "http://comune.chamois.ao.it/",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Chamois"
+},
+{
+"istat": "007017",
+"nome": "Champdepraz",
+"prov": "AO",
+"sito": "http://comune.champdepraz.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo parrocchiale di Champdepraz",
+"DBUnico.112015"
+],
+[
+"Parco regionale del Mont Avic - Centro visitatori",
+"DBUnico.112021"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Champdepraz"
+},
+{
+"istat": "007018",
+"nome": "Champorcher",
+"prov": "AO",
+"sito": "http://comune.champorcher.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Eco museo di Champorcher",
+"DBUnico.100821"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Champorcher"
+},
+{
+"istat": "007019",
+"nome": "Charvensod",
+"prov": "AO",
+"sito": "http://comune.charvensod.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Charvensod"
+},
+{
+"istat": "007020",
+"nome": "Châtillon",
+"prov": "AO",
+"sito": "http://comune.chatillon.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo parrocchiale di Chatillon",
+"DBUnico.100823"
+],
+[
+"Castello Gamba  di Chatillon",
+"DBUnico.112022"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Châtillon"
+},
+{
+"istat": "007021",
+"nome": "Cogne",
+"prov": "AO",
+"sito": "http://comune.cogne.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Maison de Cogne \"Gerard-Dayne\"",
+"DBUnico.100824"
+],
+[
+"Atelier d’art Et Métiers di Ouvrier Dorino",
+"DBUnico.112023"
+],
+[
+"Mostra permanente del Pizzo al Tombolo - I Merletti di Cogne",
+"DBUnico.112025"
+],
+[
+"Centro visitatori del PNGP - Bentornato Gipeto",
+"DBUnico.112034"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Cogne"
+},
+{
+"istat": "007022",
+"nome": "Courmayeur",
+"prov": "AO",
+"sito": "http://comune.courmayeur.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo alpino \"Duca degli Abruzzi\"",
+"DBUnico.100825"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Courmayeur"
+},
+{
+"istat": "007023",
+"nome": "Donnas",
+"prov": "AO",
+"sito": "http://comune.donnas.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo della vite e del vino di Donnas",
+"DBUnico.100826"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Donnas"
+},
+{
+"istat": "007024",
+"nome": "Doues",
+"prov": "AO",
+"sito": "http://comune.doues.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Doues"
+},
+{
+"istat": "007025",
+"nome": "Emarèse",
+"prov": "AO",
+"sito": "http://comune.emarese.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Emarèse"
+},
+{
+"istat": "007026",
+"nome": "Etroubles",
+"prov": "AO",
+"sito": "http://comune.etroubles.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo del tesoro della Parrocchia",
+"DBUnico.112039"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Etroubles"
+},
+{
+"istat": "007027",
+"nome": "Fénis",
+"prov": "AO",
+"sito": "http://comune.fenis.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Castello di Fenis",
+"DBUnico.100827"
+],
+[
+"MAV - Museo dell’Artigianato Valdostano di tradizione",
+"DBUnico.112040"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Fénis"
+},
+{
+"istat": "007028",
+"nome": "Fontainemore",
+"prov": "AO",
+"sito": "http://comune.fontainemore.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Fontainemore"
+},
+{
+"istat": "007029",
+"nome": "Gaby",
+"prov": "AO",
+"sito": "http://comune.gaby.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Gaby"
+},
+{
+"istat": "007030",
+"nome": "Gignod",
+"prov": "AO",
+"sito": "http://comune.gignod.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Gignod"
+},
+{
+"istat": "007031",
+"nome": "Gressan",
+"prov": "AO",
+"sito": "http://comune.gressan.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Gressan"
+},
+{
+"istat": "007032",
+"nome": "Gressoney-La-Trinité",
+"prov": "AO",
+"sito": "http://comune.gressoneylatrinite.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Gressoney-La-Trinité"
+},
+{
+"istat": "007033",
+"nome": "Gressoney-Saint-Jean",
+"prov": "AO",
+"sito": "http://comune.gressoneystjean.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Castel Savoia",
+"DBUnico.100829"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Gressoney-Saint-Jean"
+},
+{
+"istat": "007034",
+"nome": "Hône",
+"prov": "AO",
+"sito": "http://comune.hone.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Hône"
+},
+{
+"istat": "007035",
+"nome": "Introd",
+"prov": "AO",
+"sito": "http://comune.introd.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Maison Musee Jean-Paul II",
+"DBUnico.100831"
+],
+[
+"Museo parrocchiale di arte sacra di Introd",
+"DBUnico.100832"
+],
+[
+"Maison Bruil Maison de l'alimentation",
+"DBUnico.100833"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Introd"
+},
+{
+"istat": "007036",
+"nome": "Issime",
+"prov": "AO",
+"sito": "http://comune.issime.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo parrocchiale di Issime",
+"DBUnico.100834"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Issime"
+},
+{
+"istat": "007037",
+"nome": "Issogne",
+"prov": "AO",
+"sito": "http://comune.issogne.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Castello di Issogne",
+"DBUnico.100835"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Issogne"
+},
+{
+"istat": "007038",
+"nome": "Jovençan",
+"prov": "AO",
+"sito": "http://comune.jovencan.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"La maison des anciens remèdes - Centro sull'uso delle piante officinali",
+"DBUnico.112047"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Jovençan"
+},
+{
+"istat": "007039",
+"nome": "La Magdeleine",
+"prov": "AO",
+"sito": "http://comune.la-magdeleine.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/La_Magdeleine"
+},
+{
+"istat": "007040",
+"nome": "La Salle",
+"prov": "AO",
+"sito": "http://comune.lasalle.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo parrocchiale di La Salle",
+"DBUnico.100836"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/La_Salle"
+},
+{
+"istat": "007041",
+"nome": "La Thuile",
+"prov": "AO",
+"sito": "http://comune.la-thuile.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/La_Thuile"
+},
+{
+"istat": "007042",
+"nome": "Lillianes",
+"prov": "AO",
+"sito": "http://comune.lillianes.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo della castagna  di Lillianes",
+"DBUnico.112048"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Lillianes"
+},
+{
+"istat": "007043",
+"nome": "Montjovet",
+"prov": "AO",
+"sito": "http://comune.montjovet.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Montjovet"
+},
+{
+"istat": "007044",
+"nome": "Morgex",
+"prov": "AO",
+"sito": "http://comune.morgex.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo parrocchiale di Morgex",
+"DBUnico.100839"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Morgex"
+},
+{
+"istat": "007045",
+"nome": "Nus",
+"prov": "AO",
+"sito": "http://comune.nus.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo parrocchiale di Nus",
+"DBUnico.100840"
+],
+[
+"Osservatorio astronomico e planetario",
+"DBUnico.112049"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Nus"
+},
+{
+"istat": "007046",
+"nome": "Ollomont",
+"prov": "AO",
+"sito": "http://comune.ollomont.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Ollomont"
+},
+{
+"istat": "007047",
+"nome": "Oyace",
+"prov": "AO",
+"sito": "http://comune.oyace.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Oyace"
+},
+{
+"istat": "007048",
+"nome": "Perloz",
+"prov": "AO",
+"sito": "http://comune.perloz.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"L’ècole d’autrefois",
+"DBUnico.112050"
+],
+[
+"Museo della Resistenza Brigata Lys",
+"DBUnico.112051"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Perloz"
+},
+{
+"istat": "007049",
+"nome": "Pollein",
+"prov": "AO",
+"sito": "http://comune.pollein.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Pollein"
+},
+{
+"istat": "007050",
+"nome": "Pontboset",
+"prov": "AO",
+"sito": "http://comune.pontboset.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Pontboset"
+},
+{
+"istat": "007051",
+"nome": "Pontey",
+"prov": "AO",
+"sito": "http://comune.pontey.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Pontey"
+},
+{
+"istat": "007052",
+"nome": "Pont-Saint-Martin",
+"prov": "AO",
+"sito": "http://comune.pontsaintmartin.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo del Ponte romano",
+"DBUnico.112059"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Pont-Saint-Martin"
+},
+{
+"istat": "007053",
+"nome": "Pré-Saint-Didier",
+"prov": "AO",
+"sito": "http://comune.pre-saint-didier.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Pré-Saint-Didier"
+},
+{
+"istat": "007054",
+"nome": "Quart",
+"prov": "AO",
+"sito": "http://comune.quart.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Quart"
+},
+{
+"istat": "007055",
+"nome": "Rhêmes-Notre-Dame",
+"prov": "AO",
+"sito": "http://comune.rhemes-notre-dame.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Rhêmes-Notre-Dame"
+},
+{
+"istat": "007056",
+"nome": "Rhêmes-Saint-Georges",
+"prov": "AO",
+"sito": "http://comune.rhemes-st-georges.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Rhêmes-Saint-Georges"
+},
+{
+"istat": "007057",
+"nome": "Roisan",
+"prov": "AO",
+"sito": "http://comune.roisan.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Roisan"
+},
+{
+"istat": "007058",
+"nome": "Saint-Christophe",
+"prov": "AO",
+"sito": "http://comune.saint-christophe.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Saint-Christophe"
+},
+{
+"istat": "007059",
+"nome": "Saint-Denis",
+"prov": "AO",
+"sito": "http://comune.saintdenis.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Castello di Cly",
+"DBUnico.100844"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Saint-Denis"
+},
+{
+"istat": "007060",
+"nome": "Saint-Marcel",
+"prov": "AO",
+"sito": "http://comune.saintmarcel.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Saint-Marcel"
+},
+{
+"istat": "007061",
+"nome": "Saint-Nicolas",
+"prov": "AO",
+"sito": "http://comune.saint-nicolas.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo Jean-Baptiste Cerlogne c/o Centre d'éetudes franco provençale \"René Willien\"",
+"DBUnico.103862"
+],
+[
+"Museo Gerbone e Mostra \"L’epoca dei Pionieri\"",
+"DBUnico.112067"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Saint-Nicolas"
+},
+{
+"istat": "007062",
+"nome": "Saint-Oyen",
+"prov": "AO",
+"sito": "http://comune.saintoyen.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Saint-Oyen"
+},
+{
+"istat": "007063",
+"nome": "Saint-Pierre",
+"prov": "AO",
+"sito": "http://comune.saint-pierre.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Castello Sarriod de la Tour",
+"DBUnico.100845"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Saint-Pierre"
+},
+{
+"istat": "007064",
+"nome": "Saint-Rhémy-en-Bosses",
+"prov": "AO",
+"sito": "http://comune.saintrhemyenbosses.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Saint-Rhémy-en-Bosses"
+},
+{
+"istat": "007065",
+"nome": "Saint-Vincent",
+"prov": "AO",
+"sito": "http://comune.saint-vincent.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo parrocchiale di Saint-Vincent (Italia)",
+"DBUnico.100847"
+],
+[
+"Museo mineralogico e paleontologico del Cenacolo Italo Mus",
+"DBUnico.112070"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Saint-Vincent"
+},
+{
+"istat": "007066",
+"nome": "Sarre",
+"prov": "AO",
+"sito": "http://comune.sarre.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Castello reale di Sarre",
+"DBUnico.100848"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Sarre"
+},
+{
+"istat": "007067",
+"nome": "Torgnon",
+"prov": "AO",
+"sito": "http://comune.torgnon.ao.it/",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo parrocchiale di Torgnon",
+"DBUnico.100849"
+],
+[
+"Museo etnografico petit monde",
+"DBUnico.100850"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Torgnon"
+},
+{
+"istat": "007068",
+"nome": "Valgrisenche",
+"prov": "AO",
+"sito": "http://comune.valgrisenche.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"I tessuti della Valgrisenche - Lo Drap",
+"DBUnico.112072"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Valgrisenche"
+},
+{
+"istat": "007069",
+"nome": "Valpelline",
+"prov": "AO",
+"sito": "http://comune.valpelline.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo della Fontina e Centro visitatori",
+"DBUnico.112074"
+],
+[
+"Museo della Resistenza di Valpelline (comune)",
+"DBUnico.112075"
+],
+[
+"Salone dell’alpinismo",
+"DBUnico.112089"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Valpelline"
+},
+{
+"istat": "007070",
+"nome": "Valsavarenche",
+"prov": "AO",
+"sito": "http://comune.valsavarenche.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Centro visitatori PNGP - \"Spazio Lupo\" e \"Museo della Lince\"",
+"DBUnico.112090"
+],
+[
+"Museo della Resistenza di Valsavarenche",
+"DBUnico.112098"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Valsavarenche"
+},
+{
+"istat": "007071",
+"nome": "Valtournenche",
+"prov": "AO",
+"sito": "http://comune.valtournenche.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo del lavoro di Valtournenche (valle)",
+"DBUnico.100855"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Valtournenche"
+},
+{
+"istat": "007072",
+"nome": "Verrayes",
+"prov": "AO",
+"sito": "http://comune.verrayes.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Verrayes"
+},
+{
+"istat": "007073",
+"nome": "Verrès",
+"prov": "AO",
+"sito": "http://comune.verres.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Castello di Verres",
+"DBUnico.105469"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Verrès"
+},
+{
+"istat": "007074",
+"nome": "Villeneuve",
+"prov": "AO",
+"sito": "http://comune.villeneuve.ao.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Villeneuve"
+}
+]
+}

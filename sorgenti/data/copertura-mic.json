@@ -1,0 +1,3912 @@
+{
+ "Imola (BO)": {
+  "tot": 9,
+  "coperti": 3,
+  "mancanti": [
+   "DBUnico.101993 | Museo della cooperativa ceramica \"G. Bucci\"",
+   "DBUnico.101994 | Museo e pinacoteca diocesani",
+   "DBUnico.101995 | Museo Mostra della Resistenza e del Novecento",
+   "DBUnico.105545 | Museo del Risorgimento di Imola",
+   "DBUnico.107917 | Teatro comunale Ebe Stignani",
+   "DBUnico.111124 | Collezione Pier Fernando Mondini"
+  ]
+ },
+ "Dozza (BO)": {
+  "tot": 3,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.105330 | Museo parrocchiale d’arte sacra \"Don G. Polo\"",
+   "DBUnico.107998 | Biennale e Pinacoteca del Muro Dipinto - Comune di Dozza (BO)"
+  ]
+ },
+ "Castel del Rio (BO)": {
+  "tot": 2,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.101985 | Museo del castagno di Castel del Rio",
+   "DBUnico.101986 | Museo della guerra - Linea Gotica"
+  ]
+ },
+ "Borgo Tossignano (BO)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.106193 | Museo della cultura materiale"
+  ]
+ },
+ "Mordano (BO)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.107965 | Teatro comunale di Mordano"
+  ]
+ },
+ "Medicina (BO)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.102003 | Museo civico di Buda (Medicina)"
+  ]
+ },
+ "Budrio (BO)": {
+  "tot": 8,
+  "coperti": 2,
+  "mancanti": [
+   "DBUnico.101969 | Mostra Storica dell’Assistenza Infermieristica – MOSAI",
+   "DBUnico.101980 | Museo civico archeologico e paleoambientale \"E. Silvestri\"",
+   "DBUnico.101982 | Museo dei burattini",
+   "DBUnico.104570 | Torrione della Canapa",
+   "DBUnico.104572 | Torrione del Risorgimento",
+   "DBUnico.108016 | Teatro consorziale"
+  ]
+ },
+ "Bentivoglio (BO)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Pieve di Cento (BO)": {
+  "tot": 4,
+  "coperti": 2,
+  "mancanti": [
+   "DBUnico.102010 | Museo civico di Pieve di Cento",
+   "MiBAC.2315 | Pinacoteca \"Le Scuole\" di Pieve di Cento"
+  ]
+ },
+ "San Giovanni in Persiceto (BO)": {
+  "tot": 4,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.102014 | Museo archeologico ambientale",
+   "DBUnico.102016 | Museo d'arte sacra di San Giovanni in Persiceto",
+   "DBUnico.107886 | Teatro comunale Politeama"
+  ]
+ },
+ "Sant'Agata Bolognese (BO)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.107966 | Teatro comunale \"Ferdinando Bibiena\""
+  ]
+ },
+ "San Pietro in Casale (BO)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.102019 | Casa Frabboni"
+  ]
+ },
+ "Grizzana Morandi (BO)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.101992 | Centro di documentazione Giorgio Morandi"
+  ]
+ },
+ "Marzabotto (BO)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Lizzano in Belvedere (BO)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.102001 | Museo etnografico \"G. Carpani\""
+  ]
+ },
+ "Castel d'Aiano (BO)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.123006 | Torre Jussi"
+  ]
+ },
+ "Monghidoro (BO)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.102004 | Museo della civiltà contadina dell'Appennino"
+  ]
+ },
+ "San Lazzaro di Savena (BO)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.102018 | Museo della preistoria \"Luigi Donini\""
+  ]
+ },
+ "Ozzano dell'Emilia (BO)": {
+  "tot": 4,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.102007 | Collezione di Anatomia Patologica e Teratologia Veterinaria “Alessandrini-Ercolani”",
+   "DBUnico.102008 | Raccolta di antichi strumenti chirurgici veterinari",
+   "DBUnico.103915 | Collezione di  Anatomia degli Animali Domestici"
+  ]
+ },
+ "Pianoro (BO)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.104904 | Museo di arti e mestieri \"P. Lazzarini\""
+  ]
+ },
+ "Monterenzio (BO)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.102005 | Museo civico archeologico \"Luigi Fantini\""
+  ]
+ },
+ "Casalecchio di Reno (BO)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.107916 | Teatro Alfredo Testoni"
+  ]
+ },
+ "Zola Predosa (BO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Crevalcore (BO)": {
+  "tot": 3,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.101989 | Museo della pace \"G. Mattioli\"",
+   "DBUnico.107806 | Teatro comunale di Crevalcore"
+  ]
+ },
+ "Sala Bolognese (BO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Castello d'Argile (BO)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.107964 | Teatro comunale di Castello d'Argile"
+  ]
+ },
+ "Castenaso (BO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Ravenna (RA)": {
+  "tot": 21,
+  "coperti": 12,
+  "mancanti": [
+   "DBUnico.102227 | La casa delle marionette",
+   "DBUnico.102231 | Museo del Risorgimento di Ravenna",
+   "DBUnico.102232 | Museo nazionale delle attività subacquee",
+   "DBUnico.105560 | Centro dantesco dei Frati Minori Conventuali",
+   "DBUnico.107944 | Teatro Luigi Rasi",
+   "DBUnico.108022 | Piccolo museo di bambole e altri balocchi",
+   "DBUnico.108143 | Planetario di Ravenna",
+   "DBUnico.111226 | Museo etnografico \"Sguri\"",
+   "DBUnico.20377 | Antico porto di Classe"
+  ]
+ },
+ "Faenza (RA)": {
+  "tot": 12,
+  "coperti": 4,
+  "mancanti": [
+   "DBUnico.102208 | Casa museo Raffaele Bendandi",
+   "DBUnico.102209 | Museo diocesano di Faenza",
+   "DBUnico.102211 | Museo Torricelliano",
+   "DBUnico.102212 | Pinacoteca comunale di Faenza",
+   "DBUnico.107849 | Teatro Angelo Masini",
+   "DBUnico.107863 | Museo del Risorgimento e dell’età contemporanea",
+   "DBUnico.108140 | Museo civico di scienze naturali di Faenza",
+   "DBUnico.131412 | Museo Tramonti Guerrino"
+  ]
+ },
+ "Brisighella (RA)": {
+  "tot": 5,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.102198 | Museo civico \"G. Ugonia\"",
+   "DBUnico.102199 | Museo della Resistenza \"Cà Malanca\"",
+   "DBUnico.105558 | Museo del lavoro contadino nelle vallate del Lamone, Marzeno e Senio",
+   "DBUnico.107969 | Museo della Pieve del Tho'",
+   "DBUnico.107989 | Teatro Maria Pedrini"
+  ]
+ },
+ "Riolo Terme (RA)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Casola Valsenio (RA)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Castel Bolognese (RA)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.102202 | Museo civico di Castel Bolognese"
+  ]
+ },
+ "Solarolo (RA)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.108027 | Museo civico della SS. Annunziata"
+  ]
+ },
+ "Cervia (RA)": {
+  "tot": 3,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.102204 | Mostra permanente \"Maceo Casadei\"",
+   "DBUnico.107981 | Teatro comunale di Cervia"
+  ]
+ },
+ "Russi (RA)": {
+  "tot": 6,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.102234 | Museo civico di Russi",
+   "DBUnico.102235 | Museo della vita contadina in Romagna",
+   "DBUnico.102236 | Museo dell'arredo contemporaneo",
+   "DBUnico.105561 | Raccolta di campane",
+   "DBUnico.107918 | Teatro comunale di Russi"
+  ]
+ },
+ "Lugo (RA)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.107853 | Teatro Gioacchino Rossini"
+  ]
+ },
+ "Bagnacavallo (RA)": {
+  "tot": 4,
+  "coperti": 2,
+  "mancanti": [
+   "DBUnico.102194 | Ecomuseo della civiltà palustre",
+   "DBUnico.104591 | Chiesa del Pio Suffragio"
+  ]
+ },
+ "Cotignola (RA)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Fusignano (RA)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Alfonsine (RA)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Massa Lombarda (RA)": {
+  "tot": 2,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.102222 | Centro culturale \"Carlo Venturini\"",
+   "DBUnico.102223 | Museo della frutticoltura Adolfo Bonvicini"
+  ]
+ },
+ "Conselice (RA)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.107930 | Teatro comunale di Conselice"
+  ]
+ },
+ "Bagnara di Romagna (RA)": {
+  "tot": 4,
+  "coperti": 2,
+  "mancanti": [
+   "DBUnico.102196 | Museo Pietro Mascagni",
+   "DBUnico.102197 | Museo del castello di Bagnara di Romagna"
+  ]
+ },
+ "Ferrara (FE)": {
+  "tot": 26,
+  "coperti": 14,
+  "mancanti": [
+   "DBUnico.102071 | Centro di documentazione del mondo agricolo ferrarese",
+   "DBUnico.102073 | Museo anatomico \"G. Tumiati\"",
+   "DBUnico.102076 | Museo di paleontologia e preistoria \"Piero Leonardi\"",
+   "DBUnico.102077 | Museo Michelangelo Antonioni",
+   "DBUnico.102082 | Museo d'arte moderna e contemporanea \"Filippo de Pisis\"",
+   "DBUnico.107829 | Teatro comunale di Ferrara",
+   "DBUnico.107875 | Teatro nuovo di Ferrara",
+   "DBUnico.107963 | Teatro Giuseppe Verdi di Ferrara",
+   "DBUnico.107979 | Musei civici di arte antica - Lapidario civico",
+   "DBUnico.108030 | Orto botanico di Ferrara",
+   "DBUnico.121240 | Casa Minerbi",
+   "DBUnico.128096 | Museo archeologico nazionale di Ferrara"
+  ]
+ },
+ "Comacchio (FE)": {
+  "tot": 7,
+  "coperti": 4,
+  "mancanti": [
+   "DBUnico.105331 | Museo mariano d’arte sacra contemporanea",
+   "DBUnico.111142 | Galleria d’arte di Palazzo Bellini",
+   "DBUnico.20607 | Area archeologica di S. Maria in Padovetere"
+  ]
+ },
+ "Codigoro (FE)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Mesola (FE)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Argenta (FE)": {
+  "tot": 3,
+  "coperti": 3,
+  "mancanti": []
+ },
+ "Portomaggiore (FE)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.107887 | Teatro sociale della Concordia"
+  ]
+ },
+ "Voghiera (FE)": {
+  "tot": 4,
+  "coperti": 2,
+  "mancanti": [
+   "DBUnico.106201 | Museo del modellismo storico",
+   "DBUnico.107924 | Teatrino di Villa Massari Ricasoli"
+  ]
+ },
+ "Ostellato (FE)": {
+  "tot": 2,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.106199 | Museo civico del territorio di Ostellato",
+   "DBUnico.107949 | Museo civico di storia naturale del Delta del Po"
+  ]
+ },
+ "Cento (FE)": {
+  "tot": 4,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.102059 | Museo Sandro Parmeggiani",
+   "DBUnico.102060 | Galleria d'arte moderna \"Aroldo Bonzagni\"",
+   "DBUnico.102061 | Teatro Giuseppe Borgatti"
+  ]
+ },
+ "Bondeno (FE)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.106198 | Pinacoteca civica \"G. Cattabriga\""
+  ]
+ },
+ "Vigarano Mainarda (FE)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.105333 | Esposizione del progresso agricolo \"E. Cavallari\""
+  ]
+ },
+ "Copparo (FE)": {
+  "tot": 5,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.102067 | Galleria civica d'arte contemporanea ex carceri \"Alda Costa\"",
+   "DBUnico.102068 | Museo delle tradizioni e della cultura materiale del copparese \"La Tratta\"",
+   "DBUnico.107908 | Teatro De Micheli",
+   "DBUnico.111144 | Centro studi Dante Bighi",
+   "DBUnico.111145 | Galleria civica d’arte moderna O. Marchesi"
+  ]
+ },
+ "Cesena (FC)": {
+  "tot": 12,
+  "coperti": 7,
+  "mancanti": [
+   "DBUnico.102027 | Raccolta d'arte votiva",
+   "DBUnico.102028 | Museo archeologico di Cesena",
+   "DBUnico.107831 | Museo del teatro di Cesena",
+   "DBUnico.107986 | Teatro Verdi",
+   "DBUnico.111127 | Casa museo Renato Serra"
+  ]
+ },
+ "Forlì (FC)": {
+  "tot": 12,
+  "coperti": 5,
+  "mancanti": [
+   "DBUnico.102035 | Armeria Albicini",
+   "DBUnico.102037 | Museo ornitologico \"F. Foschi\"",
+   "DBUnico.102038 | Museo romagnolo del teatro",
+   "DBUnico.102039 | Museo storico \"Dante Foschi\"",
+   "DBUnico.102041 | Museo etnografico romagnolo \"Benedetto Pergoli\"",
+   "DBUnico.105547 | Museo archeologico \"Antonio Santarelli\"",
+   "DBUnico.106196 | Collezione d’arte della Cassa dei Risparmio di Forlì"
+  ]
+ },
+ "Cesenatico (FC)": {
+  "tot": 5,
+  "coperti": 2,
+  "mancanti": [
+   "DBUnico.102034 | Antiquarium comunale di Cesenatico",
+   "DBUnico.107972 | Teatro comunale di Cesenatico",
+   "DBUnico.20416 | Fornaci romane di Cà Turci"
+  ]
+ },
+ "Bertinoro (FC)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.102023 | Museo Brunori"
+  ]
+ },
+ "Castrocaro Terme e Terra del Sole (FC)": {
+  "tot": 3,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.102025 | Museo dell'uomo e dell'ambiente",
+   "DBUnico.102026 | Museo storico del castello",
+   "DBUnico.107856 | Terme di Castrocaro - Grand Hotel Terme"
+  ]
+ },
+ "Forlimpopoli (FC)": {
+  "tot": 2,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.102043 | MAF - Museo archeologico di Forlimpopoli",
+   "DBUnico.107810 | Teatro Giuseppe Verdi di Forlimpopoli"
+  ]
+ },
+ "Predappio (FC)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.107858 | Teatro comunale di Predappio"
+  ]
+ },
+ "San Mauro Pascoli (FC)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Gatteo (FC)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.107811 | Museo auto e moto d'epoca \"Amarcord\""
+  ]
+ },
+ "Longiano (FC)": {
+  "tot": 5,
+  "coperti": 2,
+  "mancanti": [
+   "DBUnico.102045 | Fondazione \"Tito Balestra\"",
+   "DBUnico.102046 | Museo italiano della ghisa",
+   "DBUnico.107883 | Museo di arte sacra di Longiano"
+  ]
+ },
+ "Sogliano al Rubicone (FC)": {
+  "tot": 5,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.102057 | Museo di arte povera",
+   "DBUnico.107996 | Museo del disco d'epoca",
+   "DBUnico.108005 | Museo \"Leonardo da Vinci e la Romagna\"",
+   "DBUnico.111131 | Museo Agostino Venanzio Reali",
+   "DBUnico.111132 | Museo della Linea Christa"
+  ]
+ },
+ "Bagno di Romagna (FC)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.107923 | Teatro Giuseppe Garibaldi"
+  ]
+ },
+ "Santa Sofia (FC)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Sarsina (FC)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Premilcuore (FC)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Galeata (FC)": {
+  "tot": 3,
+  "coperti": 2,
+  "mancanti": [
+   "DBUnico.107832 | Teatro comunale di Galeata"
+  ]
+ },
+ "Meldola (FC)": {
+  "tot": 3,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.102049 | Museo del baco da seta \"C. Ronchi\"",
+   "DBUnico.107938 | Museo di ecologia",
+   "DBUnico.107992 | Teatro Gian Andrea Dragoni"
+  ]
+ },
+ "Modigliana (FC)": {
+  "tot": 2,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.102050 | Pinacoteca comunale \"S. Lega\"",
+   "DBUnico.102051 | Museo civico Don Giovanni Verità "
+  ]
+ },
+ "Dovadola (FC)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.106195 | Museo di Benedetta"
+  ]
+ },
+ "Mercato Saraceno (FC)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.108006 | Teatro di Palazzo Dolcini"
+  ]
+ },
+ "Gambettola (FC)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.107995 | Teatro comunale di Gambettola"
+  ]
+ },
+ "Savignano sul Rubicone (FC)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.102056 | Museo archeologico del Compito \"Don Giorgio Franchini\""
+  ]
+ },
+ "Roncofreddo (FC)": {
+  "tot": 2,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.102053 | Museo d'arte sacra di Roncofreddo",
+   "DBUnico.102054 | Rubicone '44 Museo del fronte"
+  ]
+ },
+ "Civitella di Romagna (FC)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.107871 | Teatro Golfarelli"
+  ]
+ },
+ "Rimini (RN)": {
+  "tot": 10,
+  "coperti": 2,
+  "mancanti": [
+   "DBUnico.102285 | Museo della piccola pesca e delle conchiglie",
+   "DBUnico.102286 | Tesoro della Cattedrale di Rimini",
+   "DBUnico.102287 | Museo dell'aviazione",
+   "DBUnico.102288 | Museo degli sguardi. Raccolte etnografiche di Rimini",
+   "DBUnico.102290 | Museo nazionale del motociclo",
+   "DBUnico.104292 | Sulphur Museo storico minerario di Perticara",
+   "DBUnico.107973 | Teatro Amintore Galli (Ex Vittorio Emanuele II)",
+   "DBUnico.125599 | Museo della Città di Rimini \"Luigi Tonini\""
+  ]
+ },
+ "Santarcangelo di Romagna (RN)": {
+  "tot": 3,
+  "coperti": 2,
+  "mancanti": [
+   "DBUnico.104951 | Museo del bottone"
+  ]
+ },
+ "Verucchio (RN)": {
+  "tot": 3,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.102294 | Museo civico archeologico di Verucchio",
+   "DBUnico.111249 | Museo vivente delle Arti grafiche Pazzini 130 anni"
+  ]
+ },
+ "San Leo (RN)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.111254 | Fortezza di San Leo"
+  ]
+ },
+ "Pennabilli (RN)": {
+  "tot": 3,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.104294 | Mateureka Museo del calcolo",
+   "DBUnico.104295 | MUSS - Museo naturalistico Ente parco Sasso Simone e Simoncello",
+   "DBUnico.105719 | Museo diocesano \"A. Bergamaschi\""
+  ]
+ },
+ "Sant'Agata Feltria (RN)": {
+  "tot": 3,
+  "coperti": 2,
+  "mancanti": [
+   "DBUnico.105051 | Museo delle arti rurali"
+  ]
+ },
+ "Montefiore Conca (RN)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.107894 | Teatro comunale Malatesta"
+  ]
+ },
+ "Montegridolfo (RN)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.102279 | Museo della Linea dei Goti"
+  ]
+ },
+ "Gemmano (RN)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Mondaino (RN)": {
+  "tot": 2,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.102278 | Museo paleontologico comunale",
+   "DBUnico.104602 | Mostra permanente delle maioliche mondainesi"
+  ]
+ },
+ "Saludecio (RN)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "San Giovanni in Marignano (RN)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.105136 | Raccolta storica e archeologica"
+  ]
+ },
+ "Talamello (RN)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.104325 | Museo Gualtieri"
+  ]
+ },
+ "Riccione (RN)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.102283 | Museo del territorio di Riccione"
+  ]
+ },
+ "Cattolica (RN)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Bellaria-Igea Marina (RN)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.102273 | Museo delle conchiglie"
+  ]
+ },
+ "Casteldelci (RN)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.111250 | Casa museo archeologico"
+  ]
+ },
+ "Coriano (RN)": {
+  "tot": 2,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.102275 | Antiquarium Malatestiano",
+   "DBUnico.108019 | Museo Elisabettiano"
+  ]
+ },
+ "Morciano di Romagna (RN)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.107868 | Teatro Ronci"
+  ]
+ },
+ "Modena (MO)": {
+  "tot": 28,
+  "coperti": 28,
+  "mancanti": []
+ },
+ "Maranello (MO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Sassuolo (MO)": {
+  "tot": 6,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.102123 | Collezione ornitologica Andrea Fiori",
+   "DBUnico.102124 | Centro di documentazione dell'industria italiana delle piastrelle di ceramica",
+   "DBUnico.107859 | Teatro Carani",
+   "DBUnico.107977 | Galleria Marca Corona",
+   "DBUnico.108007 | Politeama sociale",
+   "DBUnico.20181 | Gallerie Estensi - Palazzo Ducale di Sassuolo"
+  ]
+ },
+ "Carpi (MO)": {
+  "tot": 4,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.105548 | Musei di Palazzo dei Pio: Museo monumento al deportato",
+   "DBUnico.107843 | Teatro comunale di Carpi",
+   "MiBAC.6892 | Musei di Palazzo dei Pio - Museo del Palazzo",
+   "MiBAC.6893 | Musei di Palazzo dei Pio - Museo della Città"
+  ]
+ },
+ "Nonantola (MO)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.115355 | Museo Benedettino e Diocesano d'Arte Sacra"
+  ]
+ },
+ "Castelvetro di Modena (MO)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.107936 | MUS.A - Museo dell’assurdo"
+  ]
+ },
+ "Fiumalbo (MO)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.102099 | Museo di arte sacra di Fiumalbo"
+  ]
+ },
+ "Sestola (MO)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Canossa (RE)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.102244 | Museo \"La casa del Tibet\""
+  ]
+ },
+ "Gualtieri (RE)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.108011 | Teatro comunale di Gualtieri"
+  ]
+ },
+ "Parma (PR)": {
+  "tot": 29,
+  "coperti": 17,
+  "mancanti": [
+   "DBUnico.102171 | Collezione di strumenti scientifici \"M. Melloni\"",
+   "DBUnico.102175 | Museo di mineralogia di Parma",
+   "DBUnico.102176 | Museo Fondazione Cariparma",
+   "DBUnico.102180 | Museo della sez. di anatomia degli animali di interesse medico veterinario",
+   "DBUnico.102182 | Museo di storia naturale di Parma",
+   "DBUnico.102183 | Museo paleontologico parmense",
+   "DBUnico.106212 | Collezione Borsari 1870 - Primo museo italiano della profumeria",
+   "DBUnico.107891 | Museo dell’ordine Costantiniano di San Giorgio",
+   "DBUnico.107907 | Teatrino di Villa Petitot",
+   "DBUnico.108014 | Teatro del Convitto nazionale Maria Luigia",
+   "DBUnico.20493 | Cella di Santa Caterina",
+   "MiBAC.2464 | APE Parma Museo"
+  ]
+ },
+ "Langhirano (PR)": {
+  "tot": 3,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.102165 | Museo del prosciutto di Parma",
+   "DBUnico.104950 | Museo del Risorgimento \"F. Tanara\""
+  ]
+ },
+ "Fontanellato (PR)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.107914 | Teatro comunale di Fontanellato"
+  ]
+ },
+ "Busseto (PR)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Compiano (PR)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.102160 | Musei del castello di Compiano"
+  ]
+ },
+ "Montechiarugolo (PR)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.106210 | Castello e raccolta archeologica"
+  ]
+ },
+ "Piacenza (PC)": {
+  "tot": 13,
+  "coperti": 7,
+  "mancanti": [
+   "DBUnico.107975 | Teatro comunale di Santa Franca (già dei Filodrammatici)",
+   "DBUnico.111187 | Museo della Resistenza Piacentina",
+   "DBUnico.111188 | Museo della civiltà contadina di Piacenza \"G. Raineri\"",
+   "DBUnico.111189 | Museo della stampa del quotidiano \"Libertà\"",
+   "DBUnico.111196 | Museo ornitologico di Piacenza",
+   "DBUnico.111198 | Museo delle cere di Piacenza"
+  ]
+ },
+ "Bobbio (PC)": {
+  "tot": 4,
+  "coperti": 2,
+  "mancanti": [
+   "DBUnico.102132 | Museo etnografico della Val Trebbia",
+   "DBUnico.102133 | Museo della città di Bobbio"
+  ]
+ },
+ "Castell'Arquato (PC)": {
+  "tot": 4,
+  "coperti": 3,
+  "mancanti": [
+   "DBUnico.102136 | Museo Luigi Illica"
+  ]
+ },
+ "Vernasca (PC)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.102159 | Museo gli Orsanti"
+  ]
+ },
+ "Firenze (FI)": {
+  "tot": 104,
+  "coperti": 104,
+  "mancanti": []
+ },
+ "Fiesole (FI)": {
+  "tot": 7,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.102907 | Museo civico archeologico - Scavi e teatro romano",
+   "DBUnico.102909 | Museo della Cappella di San Jacopo nel seminario",
+   "DBUnico.102910 | Museo della fondazione Primo Conti",
+   "DBUnico.102911 | Museo missionario francescano",
+   "DBUnico.110139 | Villa Peyron al Bosco di Fonte Lucente",
+   "DBUnico.20442 | Conventino della Maddalena"
+  ]
+ },
+ "Vinci (FI)": {
+  "tot": 4,
+  "coperti": 3,
+  "mancanti": [
+   "DBUnico.110774 | MIC - Museo Interattivo del Calcolo"
+  ]
+ },
+ "Certaldo (FI)": {
+  "tot": 3,
+  "coperti": 2,
+  "mancanti": [
+   "DBUnico.102902 | Convento degli agostiniani di Certaldo"
+  ]
+ },
+ "Greve in Chianti (FI)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.110431 | Museo del vino di Greve in Chianti"
+  ]
+ },
+ "San Casciano in Val di Pesa (FI)": {
+  "tot": 3,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.102976 | Museo della misericordia della chiesa di Santa Maria del Prato",
+   "DBUnico.110151 | Casa museo di Niccolo' Machiavelli",
+   "DBUnico.110615 | Museo di San Casciano"
+  ]
+ },
+ "Impruneta (FI)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Reggello (FI)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.102973 | Museo Masaccio d'arte sacra"
+  ]
+ },
+ "Cerreto Guidi (FI)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.110769 | MUMELOC - Museo della memoria locale di Cerreto Guidi"
+  ]
+ },
+ "Empoli (FI)": {
+  "tot": 5,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.102904 | Museo Casa di Ferruccio Busoni",
+   "DBUnico.102905 | Museo civico paleontologico di Empoli",
+   "DBUnico.102906 | Casa del Pontormo",
+   "DBUnico.110103 | MUVE - Museo del Vetro di Empoli"
+  ]
+ },
+ "Montelupo Fiorentino (FI)": {
+  "tot": 3,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.106268 | Museo archeologico e aree archeologiche di Montelupo Fiorentino",
+   "DBUnico.110636 | Museo contemporaneo di Montelupo Fiorentino"
+  ]
+ },
+ "Castelfiorentino (FI)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.102899 | Museo di Santa Verdiana"
+  ]
+ },
+ "Montaione (FI)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.102966 | Museo comunale. Sezione archeologica"
+  ]
+ },
+ "Gambassi Terme (FI)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.102961 | Mostra permanente sul vetro preindustriale"
+  ]
+ },
+ "Montespertoli (FI)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.102968 | Museo della vite e del vino del Centro per la cultura del vino \"I Lecci\""
+  ]
+ },
+ "Fucecchio (FI)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.111847 | Fondazione Montanelli Bassi"
+  ]
+ },
+ "Borgo San Lorenzo (FI)": {
+  "tot": 3,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.102895 | Museo della civiltà contadina di casa d'Erci",
+   "DBUnico.110335 | Molino Faini"
+  ]
+ },
+ "Vicchio (FI)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.102990 | Museo d'arte sacra e religiosità popolare beato angelico"
+  ]
+ },
+ "Firenzuola (FI)": {
+  "tot": 3,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.102958 | Museo del paesaggio storico dell'Appennino",
+   "DBUnico.103971 | Museo storico etnografico di Bruscoli"
+  ]
+ },
+ "Palazzuolo sul Senio (FI)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.102969 | Museo archeologico Alto Mugello"
+  ]
+ },
+ "Marradi (FI)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.110514 | Museo di arte contemporanea \"Artisti per Dino Campana\""
+  ]
+ },
+ "Rufina (FI)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Pelago (FI)": {
+  "tot": 2,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.102970 | Museo della civiltà contadina e dell'artigianato della montagna",
+   "DBUnico.102971 | Raccolta d'arte sacra di San Clemente a Pelago"
+  ]
+ },
+ "Lastra a Signa (FI)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.102964 | Museo vicariale di San Martino a Gangalandi"
+  ]
+ },
+ "Signa (FI)": {
+  "tot": 3,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.102986 | Museo della paglia e dell'intreccio \"Domenico Michelacci\"",
+   "DBUnico.110223 | Museo di oggettistica ferroviaria \"Galileo Nesti\" di Signa",
+   "DBUnico.110292 | Museo di arte sacra della Pieve dei Santi Giovanni Battista e Lorenzo di Signa"
+  ]
+ },
+ "Sesto Fiorentino (FI)": {
+  "tot": 3,
+  "coperti": 2,
+  "mancanti": [
+   "DBUnico.102985 | Collezione etnografica Bruno Carmagnini"
+  ]
+ },
+ "Bagno a Ripoli (FI)": {
+  "tot": 3,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.102892 | Fonte della fata morgana - Ninfeo di Villa Vecchietti",
+   "DBUnico.102893 | Oratorio di Santa Caterina delle ruote"
+  ]
+ },
+ "Scandicci (FI)": {
+  "tot": 2,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.102979 | Museo paleontologico scienza della terra del Gamps",
+   "DBUnico.110123 | Parco Museo di Poggio Valicaia"
+  ]
+ },
+ "Calenzano (FI)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Campi Bisenzio (FI)": {
+  "tot": 2,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.102898 | Museo di arte sacra di San Donnino",
+   "DBUnico.110080 | Museo Antonio Manzi"
+  ]
+ },
+ "Vaglia (FI)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Dicomano (FI)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.102903 | Scavi archeologici di Frascole"
+  ]
+ },
+ "Rignano sull'Arno (FI)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.110511 | Chiesa di Santa Maria a Castiglionchio"
+  ]
+ },
+ "Siena (SI)": {
+  "tot": 47,
+  "coperti": 47,
+  "mancanti": []
+ },
+ "San Gimignano (SI)": {
+  "tot": 5,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.103262 | Museo archeologico, Speziera di Santa Fina, Galleria d'arte moderna e contemporanea \"Raffaele De Garda\"",
+   "DBUnico.103264 | Museo ornitologico di San Gimigniano",
+   "DBUnico.103265 | Palazzo comunale, Pinacoteca, Torre Grossa",
+   "DBUnico.103980 | Museo d’arte sacra di San Gimignano",
+   "DBUnico.110013 | Museo della Vernaccia di San Gimignano"
+  ]
+ },
+ "Monteriggioni (SI)": {
+  "tot": 2,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.103253 | Monteriggioni in Arme",
+   "DBUnico.20431 | Eremo di San Leonardo al Lago"
+  ]
+ },
+ "Casole d'Elsa (SI)": {
+  "tot": 3,
+  "coperti": 2,
+  "mancanti": [
+   "DBUnico.103237 | Museo archeologico e di arte sacra di Casole d'Elsa"
+  ]
+ },
+ "Pienza (SI)": {
+  "tot": 4,
+  "coperti": 2,
+  "mancanti": [
+   "DBUnico.103256 | Tepotratos - Scene del teatro popolare tradizionale toscano",
+   "DBUnico.105029 | Museo archeologico e della città di Pienza"
+  ]
+ },
+ "Montalcino (SI)": {
+  "tot": 5,
+  "coperti": 2,
+  "mancanti": [
+   "DBUnico.103250 | Musei di Montalcino - Raccolta archeologica, medievale e moderna",
+   "DBUnico.103251 | Museo storico del vetro e della bottiglia \"J. F. Mariani\"",
+   "DBUnico.105993 | Musei Senesi (Museo archeologico)"
+  ]
+ },
+ "Montepulciano (SI)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Chiusi (SI)": {
+  "tot": 3,
+  "coperti": 2,
+  "mancanti": [
+   "DBUnico.20337 | Museo nazionale etrusco, Necropoli di Poggio Renzo e Tomba del Colle"
+  ]
+ },
+ "Sarteano (SI)": {
+  "tot": 2,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.103267 | Museo civico archeologico di Sarteano",
+   "DBUnico.104713 | Necropoli delle Pianacce"
+  ]
+ },
+ "Chianciano Terme (SI)": {
+  "tot": 2,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.103243 | Museo civico archeologico delle acque",
+   "DBUnico.106278 | Museo della Collegiata di S. Giovanni Battista"
+  ]
+ },
+ "Cetona (SI)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Sinalunga (SI)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Trequanda (SI)": {
+  "tot": 3,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.103288 | Museo d'arte sacra della Confraternita della Trinità e di S. Bernardino",
+   "DBUnico.110193 | Raccolta archeologica Collezione Pallavicini"
+  ]
+ },
+ "Radicofani (SI)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Castiglione d'Orcia (SI)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Buonconvento (SI)": {
+  "tot": 3,
+  "coperti": 2,
+  "mancanti": [
+   "DBUnico.103236 | La misericordia patrimonio e testimonianze"
+  ]
+ },
+ "Murlo (SI)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Castelnuovo Berardenga (SI)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Radda in Chianti (SI)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.110731 | Parco archeologico di Poggio La Croce"
+  ]
+ },
+ "Castellina in Chianti (SI)": {
+  "tot": 3,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.20077 | Tumulo di Montecalvario",
+   "DBUnico.20220 | Necropoli del Poggino"
+  ]
+ },
+ "Rapolano Terme (SI)": {
+  "tot": 2,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.103261 | Museo dell'antica grancia e dell'olio",
+   "DBUnico.110002 | Complesso archeologico Campo Muri"
+  ]
+ },
+ "Asciano (SI)": {
+  "tot": 5,
+  "coperti": 2,
+  "mancanti": [
+   "DBUnico.103232 | Museo Cassioli. Pittura senese dell'Ottocento",
+   "DBUnico.104711 | Tumulo del Molinello",
+   "DBUnico.105992 | Necropoli di Poggio Pinci e il Tumulo di Molinello"
+  ]
+ },
+ "Chiusdino (SI)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.110165 | Mostra documentaria permanente della Miniera delle Cetine"
+  ]
+ },
+ "Sovicille (SI)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.103287 | Museo etnografico del bosco e della mezzadria"
+  ]
+ },
+ "Colle di Val d'Elsa (SI)": {
+  "tot": 4,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.103246 | Museo archeologico \"R. Bianchi Bandinelli\"",
+   "DBUnico.103247 | Museo civico e diocesano di arte sacra di Colle Val d'Elsa",
+   "DBUnico.110389 | Parco archeologico di Dometaia"
+  ]
+ },
+ "Poggibonsi (SI)": {
+  "tot": 4,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.103258 | Museo di paleontologia di Poggibonsi",
+   "DBUnico.103978 | Raccolta d’arte sacra di Staggia",
+   "DBUnico.103979 | Collezione di ex-voto del Santuario di Santa Maria a Romituzzo"
+  ]
+ },
+ "Abbadia San Salvatore (SI)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.103231 | Parco museo minerario di Abbadia San Salvatore e Galleria livello VII"
+  ]
+ },
+ "Radicondoli (SI)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.103260 | Museo le energie del territorio"
+  ]
+ },
+ "Gaiole in Chianti (SI)": {
+  "tot": 2,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.110070 | Collezione Ricasoli",
+   "DBUnico.110530 | Castello di Ama per l’arte contemporanea"
+  ]
+ },
+ "Arezzo (AR)": {
+  "tot": 12,
+  "coperti": 8,
+  "mancanti": [
+   "DBUnico.102849 | Galleria comunale d'arte contemporanea di Arezzo",
+   "DBUnico.102850 | Museo aziendale della \"Gori & Zucchi\" (Uno A Erre)",
+   "DBUnico.104666 | Palazzo Chianini Vincenzi",
+   "DBUnico.20425 | Ex Chiesa di San Vito e Modesto"
+  ]
+ },
+ "Anghiari (AR)": {
+  "tot": 3,
+  "coperti": 2,
+  "mancanti": [
+   "DBUnico.104337 | Museo della Confraternita della Misericordia"
+  ]
+ },
+ "Lucignano (AR)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.102871 | Oratorio della misericordia e mostra religiosa della carità"
+  ]
+ },
+ "Loro Ciuffenna (AR)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.20464 | Chiesa di Sant'Andrea a Mama"
+  ]
+ },
+ "Ortignano Raggiolo (AR)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Poppi (AR)": {
+  "tot": 3,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.102879 | Bottega del bigonaio e mostra permanente sulla guerra e la resistenza",
+   "DBUnico.102978 | Museo forestale \"Carlo Siemoni\""
+  ]
+ },
+ "Castiglion Fiorentino (AR)": {
+  "tot": 4,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.102860 | Sistema Museale di Castiglion Fiorentino",
+   "DBUnico.110368 | Museo della Pieve di San Giuliano",
+   "DBUnico.20481 | Chiesa dei SS. Lazzaro e Stefano"
+  ]
+ },
+ "Cortona (AR)": {
+  "tot": 5,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.102867 | Museo diocesano del capitolo di Cortona",
+   "DBUnico.105377 | Antiquarium di Farneta",
+   "DBUnico.106261 | Fortezza Medicea del Girifalco",
+   "DBUnico.20574 | Area archeologica del Sodo e Tomba di Camucia"
+  ]
+ },
+ "Bibbiena (AR)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.102853 | Raccolta rurale casa Rossi"
+  ]
+ },
+ "Sansepolcro (AR)": {
+  "tot": 5,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.102882 | Aboca Museum erbe e salute nei secoli",
+   "DBUnico.106262 | Museo “Bernardini-Fatti” della vetrata antica",
+   "DBUnico.110722 | Centro studi sul Quaternario onlus",
+   "DBUnico.20536 | Casa di Piero della Francesca"
+  ]
+ },
+ "Monterchi (AR)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Caprese Michelangelo (AR)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Chiusi della Verna (AR)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.110257 | Ecomuseo della Vallesanta"
+  ]
+ },
+ "Lucca (LU)": {
+  "tot": 14,
+  "coperti": 7,
+  "mancanti": [
+   "DBUnico.103093 | Battistero e chiesa dei Ss. Giovanni e Reparata",
+   "DBUnico.103094 | Gabinetto di storia naturale del Liceo Machiavelli",
+   "DBUnico.103097 | Sacrestia del duomo e monumento di Ilaria del Carretto",
+   "DBUnico.105387 | Museo storico della Liberazione (1943-1945)",
+   "DBUnico.105614 | Museo del Risorgimento di Lucca",
+   "DBUnico.110218 | Domus romana Lucca \"Casa del Fanciullo Sul Delfino\"",
+   "DBUnico.110476 | Must - Museo della Città di Lucca - Memoria urbana storia territorio"
+  ]
+ },
+ "Barga (LU)": {
+  "tot": 3,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.103077 | Museo di Casa Cordati",
+   "DBUnico.103078 | Casa museo Pascoli",
+   "DBUnico.103079 | Museo civico del territorio \"Antonio Mordini\""
+  ]
+ },
+ "Castiglione di Garfagnana (LU)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.103089 | Museo etnografico \"Don Luigi Pellegrini\""
+  ]
+ },
+ "Coreglia Antelminelli (LU)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Montecarlo (LU)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Pietrasanta (LU)": {
+  "tot": 4,
+  "coperti": 2,
+  "mancanti": [
+   "DBUnico.103102 | Casa natale di Giosue' Carducci",
+   "DBUnico.131559 | MuSA - Museo virtuale della scultura e dell'architettura di Pietrasanta"
+  ]
+ },
+ "Seravezza (LU)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.103106 | Museo del lavoro e delle tradizioni popolari della Versilia storica"
+  ]
+ },
+ "Capannori (LU)": {
+  "tot": 6,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.103084 | Mostra permanente attrezzi di vita contadina",
+   "DBUnico.103085 | Museo contadino della Piana di Lucca",
+   "DBUnico.103086 | Villa di Camigliano già Torrigiani",
+   "DBUnico.103087 | Villa Mansi",
+   "DBUnico.110039 | Luoghi e Gente dell’Auser"
+  ]
+ },
+ "Borgo a Mozzano (LU)": {
+  "tot": 2,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.103080 | Antiquarium - Museo civico archeologico di Borgo a Mozzano",
+   "DBUnico.110582 | Museo della Memoria di Borgo a Mozzano"
+  ]
+ },
+ "Bagni di Lucca (LU)": {
+  "tot": 2,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.103976 | Museo parrocchiale d’arte sacra di Bagni di Lucca",
+   "DBUnico.104959 | Complesso monumentale della Chiesa di S. Cassiano di Controne"
+  ]
+ },
+ "Viareggio (LU)": {
+  "tot": 6,
+  "coperti": 6,
+  "mancanti": []
+ },
+ "Grosseto (GR)": {
+  "tot": 6,
+  "coperti": 4,
+  "mancanti": [
+   "DBUnico.104339 | Museo della storia locale \"Ildebrando Imberciadori\"",
+   "DBUnico.135035 | Forte di Torre Saline"
+  ]
+ },
+ "Pitigliano (GR)": {
+  "tot": 4,
+  "coperti": 3,
+  "mancanti": [
+   "DBUnico.103027 | Museo civico archeologico della civiltà etrusca"
+  ]
+ },
+ "Sorano (GR)": {
+  "tot": 6,
+  "coperti": 3,
+  "mancanti": [
+   "DBUnico.104689 | Insediamento rupestre di San Rocco",
+   "DBUnico.104690 | Insediamento rupestre di Vitozza",
+   "DBUnico.110156 | Museo di San Mamiliano"
+  ]
+ },
+ "Massa Marittima (GR)": {
+  "tot": 9,
+  "coperti": 3,
+  "mancanti": [
+   "DBUnico.103013 | Antica falegnameria",
+   "DBUnico.103014 | Antico frantoio",
+   "DBUnico.103015 | Museo Santa Cecilia di organi meccanici antichi",
+   "DBUnico.103016 | Museo archeologico di Massa Marittima",
+   "DBUnico.103017 | Museo d'arte sacra e centro per l'arte contemporanea Angiolino Martini - Complesso di San Pietro in Orto",
+   "DBUnico.103018 | Museo della miniera di Massa Marittima"
+  ]
+ },
+ "Manciano (GR)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Monte Argentario (GR)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.103022 | Forte stella"
+  ]
+ },
+ "Santa Fiora (GR)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Orbetello (GR)": {
+  "tot": 8,
+  "coperti": 8,
+  "mancanti": []
+ },
+ "Pisa (PI)": {
+  "tot": 20,
+  "coperti": 13,
+  "mancanti": [
+   "DBUnico.103145 | Collezioni Egittologiche Edda Bresciani",
+   "DBUnico.103147 | Domus mazziniana",
+   "DBUnico.103148 | Museo anatomico della Facoltà di veterinaria",
+   "DBUnico.103150 | Museo degli strumenti per il calcolo",
+   "DBUnico.103155 | Torre guelfa della cittadella vecchia",
+   "DBUnico.105062 | Museo della grafica",
+   "DBUnico.110488 | Blu Palazzo Museo d’arte e cultura"
+  ]
+ },
+ "Volterra (PI)": {
+  "tot": 8,
+  "coperti": 5,
+  "mancanti": [
+   "DBUnico.103171 | Aree archeologiche di Volterra",
+   "DBUnico.103176 | Palazzo Viti",
+   "DBUnico.20737 | Acropoli etrusca e Teatro romano"
+  ]
+ },
+ "San Miniato (PI)": {
+  "tot": 9,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.103159 | Collezione dell'arciconfraternita della misericordia",
+   "DBUnico.103160 | Museo accademia degli Euteleti",
+   "DBUnico.103161 | Museo archeologico di San Miniato",
+   "DBUnico.103162 | Museo di Santa Chiara",
+   "DBUnico.103163 | Museo della civiltà della scrittura",
+   "DBUnico.103164 | Museo diocesano d'arte sacra di San Miniato",
+   "DBUnico.103165 | Oratorio del Loretino",
+   "DBUnico.103167 | Via Angelica"
+  ]
+ },
+ "Castelnuovo di Val di Cecina (PI)": {
+  "tot": 3,
+  "coperti": 2,
+  "mancanti": [
+   "DBUnico.105109 | Aquae populoniae. Area archeologica delle Terme del bagno"
+  ]
+ },
+ "Pomarance (PI)": {
+  "tot": 3,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.103157 | Casa \"Bicocchi\"",
+   "DBUnico.110343 | Museo guerrieri e artigiani"
+  ]
+ },
+ "Vicopisano (PI)": {
+  "tot": 3,
+  "coperti": 3,
+  "mancanti": []
+ },
+ "Peccioli (PI)": {
+  "tot": 4,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.103138 | Museo archeologico di Peccioli",
+   "DBUnico.103139 | Museo di incisioni e litografie - Donazione Vito Merlini",
+   "DBUnico.110285 | Museo di arte sacra di Peccioli"
+  ]
+ },
+ "Calci (PI)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "MiBAC.7230 | Museo di Storia Naturale dell’Università di Pisa"
+  ]
+ },
+ "Montopoli in Val d'Arno (PI)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Livorno (LI)": {
+  "tot": 10,
+  "coperti": 6,
+  "mancanti": [
+   "DBUnico.103052 | Museo di arte sacra di Santa Giulia",
+   "DBUnico.103054 | Museo ebraico Yeshivà Marini di Livorno",
+   "DBUnico.110520 | Museo diocesano di Livorno",
+   "DBUnico.137314 | Chiesa Armena di Livorno"
+  ]
+ },
+ "Suvereto (LI)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Castagneto Carducci (LI)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.103046 | Museo di Arte Sacra di Castagneto Carducci"
+  ]
+ },
+ "Piombino (LI)": {
+  "tot": 6,
+  "coperti": 2,
+  "mancanti": [
+   "DBUnico.103059 | Museo del castello e della città di Piombino",
+   "DBUnico.103060 | Museo etrusco \"Gasparri\"",
+   "DBUnico.106271 | Museo di arte sacra “Andrea Guardi” - Città di Piombino",
+   "DBUnico.20631 | Area archeologica dell'Acropoli"
+  ]
+ },
+ "Portoferraio (LI)": {
+  "tot": 7,
+  "coperti": 7,
+  "mancanti": []
+ },
+ "Campiglia Marittima (LI)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Massa (MS)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Fosdinovo (MS)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.103117 | Museo audiovisivo della Resistenza delle province di Massa Carrara e La Spezia"
+  ]
+ },
+ "Pontremoli (MS)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.110558 | Museo diocesano di arte sacra di Pontremoli"
+  ]
+ },
+ "Carrara (MS)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Pistoia (PT)": {
+  "tot": 26,
+  "coperti": 10,
+  "mancanti": [
+   "DBUnico.103196 | Ecomuseo della Montagna Pistoiese – Museo della Gente dell'Appennino Pistoiese",
+   "DBUnico.103216 | Ecomuseo della Montagna Pistoiese – Polo Didattico del Ghiaccio",
+   "DBUnico.103218 | Musei di palazzo Rospigliosi - Museo Clemente Rospigliosi e Museo diocesano",
+   "DBUnico.103219 | Museo marino marini di Pistoia",
+   "DBUnico.103220 | Museo del carbonaio di Baggio",
+   "DBUnico.103221 | Fondazione pistoiese Jorio Vivarelli",
+   "DBUnico.103222 | Museo del ricamo a palazzo Rospigliosi",
+   "DBUnico.103223 | Ecomuseo della Montagna Pistoiese – Museo Diocesano d'Arte Sacra e Polo Didattico",
+   "DBUnico.103227 | Ecomuseo della Montagna Pistoiese – Museo Naturalistico Archeologico dell'Appennino Pistoiese (MuNAP)",
+   "DBUnico.105179 | Ecomuseo della Montagna Pistoiese – Palazzo Achilli",
+   "DBUnico.138297 | Palazzo Vivarelli Colonna",
+   "DBUnico.20199 | Oratorio di San Desiderio",
+   "DBUnico.20428 | Ex Chiesa del Tau",
+   "MiBAC.7151 | Ecomuseo della Montagna Pistoiese - Ghiacciaia della Madonnina",
+   "MiBAC.7152 | Ecomuseo della Montagna Pistoiese − Insediamento Medievale dell’Acquerino",
+   "MiBAC.7155 | Ecomuseo della Montagna Pistoiese − La Via della Castagna e la Via del Carbone"
+  ]
+ },
+ "Pescia (PT)": {
+  "tot": 9,
+  "coperti": 3,
+  "mancanti": [
+   "DBUnico.103203 | Gipsoteca \"Libero Andreotti\"",
+   "DBUnico.103204 | Museo civico di scienze naturali e archeologia della Valdinievole",
+   "DBUnico.103205 | Museo del bonsai",
+   "DBUnico.103209 | Museo storico etnografico del minatore e cavatore",
+   "DBUnico.105620 | Museo civico di Pescia",
+   "DBUnico.110518 | Pinacoteca nell'ex-Monastero Benedettino di San Michele"
+  ]
+ },
+ "Montecatini Terme (PT)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.105619 | Museo della propositura di S. Pietro Apostolo"
+  ]
+ },
+ "Quarrata (PT)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.103225 | Raccolta d'arte sacra della chiesa dei Santi Filippo e Giacomo"
+  ]
+ },
+ "Prato (PO)": {
+  "tot": 13,
+  "coperti": 8,
+  "mancanti": [
+   "DBUnico.103185 | Galleria di Palazzo Alberti",
+   "DBUnico.103187 | Museo della deportazione",
+   "DBUnico.103189 | Museo di pittura murale",
+   "DBUnico.103969 | Museo della pieve di San Pietro Apostolo",
+   "DBUnico.110137 | Casa Leonetto Tintori"
+  ]
+ },
+ "Poggio a Caiano (PO)": {
+  "tot": 3,
+  "coperti": 3,
+  "mancanti": []
+ },
+ "Carmignano (PO)": {
+  "tot": 4,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.103179 | Museo della vite e del vino di Carmignano",
+   "DBUnico.103180 | Parco museo Quinto Martini",
+   "DBUnico.20076 | Area archeologica di Comeana - Tumuli di Montefortini e Boschetti"
+  ]
+ },
+ "Roma (RM)": {
+  "tot": 206,
+  "coperti": 206,
+  "mancanti": []
+ },
+ "Fiumicino (RM)": {
+  "tot": 8,
+  "coperti": 8,
+  "mancanti": []
+ },
+ "Tivoli (RM)": {
+  "tot": 6,
+  "coperti": 6,
+  "mancanti": []
+ },
+ "Latina (LT)": {
+  "tot": 8,
+  "coperti": 8,
+  "mancanti": []
+ },
+ "Priverno (LT)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Sezze (LT)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Frosinone (FR)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Veroli (FR)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Anagni (FR)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Arpino (FR)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Cassino (FR)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Rieti (RI)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Viterbo (VT)": {
+  "tot": 15,
+  "coperti": 15,
+  "mancanti": []
+ },
+ "Tarquinia (VT)": {
+  "tot": 5,
+  "coperti": 3,
+  "mancanti": [
+   "DBUnico.105525 | Museo diocesano di Civitavecchia-Tarquinia",
+   "DBUnico.20458 | Ara della Regina. Civita"
+  ]
+ },
+ "Bagnoregio (VT)": {
+  "tot": 2,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.101617 | Associazione storico culturale \"Piero Taruffi\"",
+   "DBUnico.105279 | Museo geologico delle frane di Civita di Bagnoregio"
+  ]
+ },
+ "Caprarola (VT)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Calcata (VT)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.101621 | Opera bosco - Museo di arte nella natura"
+  ]
+ },
+ "Bolsena (VT)": {
+  "tot": 3,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.105796 | Basilica di Santa Cristina e Catacomba del Santuario Eucaristico",
+   "DBUnico.122745 | Area archeologica di Volsini"
+  ]
+ },
+ "Sutri (VT)": {
+  "tot": 4,
+  "coperti": 3,
+  "mancanti": [
+   "DBUnico.101640 | Museo del patrimonium"
+  ]
+ },
+ "Nepi (VT)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Tuscania (VT)": {
+  "tot": 6,
+  "coperti": 5,
+  "mancanti": [
+   "DBUnico.106132 | Raccolta di Montebello del Maestro Giuseppe Cesetti"
+  ]
+ },
+ "Montefiascone (VT)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Acquapendente (VT)": {
+  "tot": 3,
+  "coperti": 2,
+  "mancanti": [
+   "DBUnico.108177 | Museo della città Civico e Diocesano di Acquapendente"
+  ]
+ },
+ "Canino (VT)": {
+  "tot": 3,
+  "coperti": 3,
+  "mancanti": []
+ },
+ "Civita Castellana (VT)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.106130 | Museo della ceramica “Casimiro Marcantoni”"
+  ]
+ },
+ "Napoli (NA)": {
+  "tot": 51,
+  "coperti": 51,
+  "mancanti": []
+ },
+ "Bacoli (NA)": {
+  "tot": 12,
+  "coperti": 12,
+  "mancanti": []
+ },
+ "Pozzuoli (NA)": {
+  "tot": 10,
+  "coperti": 10,
+  "mancanti": []
+ },
+ "Castellammare di Stabia (NA)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Ercolano (NA)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Anacapri (NA)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Nola (NA)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Torre del Greco (NA)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Salerno (SA)": {
+  "tot": 13,
+  "coperti": 13,
+  "mancanti": []
+ },
+ "Amalfi (SA)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Capaccio Paestum (SA)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Cava de' Tirreni (SA)": {
+  "tot": 3,
+  "coperti": 3,
+  "mancanti": []
+ },
+ "Avellino (AV)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Ariano Irpino (AV)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Mercogliano (AV)": {
+  "tot": 3,
+  "coperti": 3,
+  "mancanti": []
+ },
+ "Benevento (BN)": {
+  "tot": 7,
+  "coperti": 7,
+  "mancanti": []
+ },
+ "Caserta (CE)": {
+  "tot": 7,
+  "coperti": 7,
+  "mancanti": []
+ },
+ "Santa Maria Capua Vetere (CE)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Sessa Aurunca (CE)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Teano (CE)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Bari (BA)": {
+  "tot": 21,
+  "coperti": 21,
+  "mancanti": []
+ },
+ "Altamura (BA)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Conversano (BA)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Barletta (BT)": {
+  "tot": 6,
+  "coperti": 6,
+  "mancanti": []
+ },
+ "Trani (BT)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Andria (BT)": {
+  "tot": 3,
+  "coperti": 3,
+  "mancanti": []
+ },
+ "Canosa di Puglia (BT)": {
+  "tot": 7,
+  "coperti": 7,
+  "mancanti": []
+ },
+ "Bisceglie (BT)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Brindisi (BR)": {
+  "tot": 7,
+  "coperti": 7,
+  "mancanti": []
+ },
+ "Latiano (BR)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Foggia (FG)": {
+  "tot": 9,
+  "coperti": 9,
+  "mancanti": []
+ },
+ "Monte Sant'Angelo (FG)": {
+  "tot": 6,
+  "coperti": 6,
+  "mancanti": []
+ },
+ "Lecce (LE)": {
+  "tot": 16,
+  "coperti": 16,
+  "mancanti": []
+ },
+ "Taranto (TA)": {
+  "tot": 6,
+  "coperti": 6,
+  "mancanti": []
+ },
+ "Palermo (PA)": {
+  "tot": 37,
+  "coperti": 37,
+  "mancanti": []
+ },
+ "Monreale (PA)": {
+  "tot": 3,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.101297 | Civica galleria d'arte \"G. Sciortino\"",
+   "DBUnico.104985 | Museo diocesano di Monreale"
+  ]
+ },
+ "Cefalù (PA)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.106107 | Museo Fra Gianmaria da Tusa"
+  ]
+ },
+ "Catania (CT)": {
+  "tot": 18,
+  "coperti": 9,
+  "mancanti": [
+   "DBUnico.101197 | Dipartimento di botanica e orto botanico di Catania",
+   "DBUnico.101200 | Museo del giocattolo di Catania",
+   "DBUnico.101202 | Museo di sculture in pietra lavica \"Valenziano Santangelo\"",
+   "DBUnico.101203 | Museo di zoologia e casa delle farfalle",
+   "DBUnico.101204 | Museo diocesano di Catania",
+   "DBUnico.137568 | Palazzo della Cultura",
+   "DBUnico.153409 | Polo Tattile Multimediale",
+   "MiBAC.7123 | Galleria d'arte  moderna - ex Convento di Santa Chiara Catania",
+   "MiBAC.7124 | Galleria d’Arte Moderna - Ex Convento di Santa Chiara, Catania"
+  ]
+ },
+ "Nicolosi (CT)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Caltagirone (CT)": {
+  "tot": 11,
+  "coperti": 11,
+  "mancanti": []
+ },
+ "Messina (ME)": {
+  "tot": 8,
+  "coperti": 8,
+  "mancanti": []
+ },
+ "Milazzo (ME)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Agrigento (AG)": {
+  "tot": 7,
+  "coperti": 7,
+  "mancanti": []
+ },
+ "Sciacca (AG)": {
+  "tot": 3,
+  "coperti": 3,
+  "mancanti": []
+ },
+ "Caltanissetta (CL)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Enna (EN)": {
+  "tot": 3,
+  "coperti": 3,
+  "mancanti": []
+ },
+ "Piazza Armerina (EN)": {
+  "tot": 6,
+  "coperti": 6,
+  "mancanti": []
+ },
+ "Ragusa (RG)": {
+  "tot": 3,
+  "coperti": 3,
+  "mancanti": []
+ },
+ "Chiaramonte Gulfi (RG)": {
+  "tot": 8,
+  "coperti": 8,
+  "mancanti": []
+ },
+ "Modica (RG)": {
+  "tot": 7,
+  "coperti": 7,
+  "mancanti": []
+ },
+ "Siracusa (SR)": {
+  "tot": 11,
+  "coperti": 11,
+  "mancanti": []
+ },
+ "Noto (SR)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Trapani (TP)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Erice (TP)": {
+  "tot": 7,
+  "coperti": 7,
+  "mancanti": []
+ },
+ "Marsala (TP)": {
+  "tot": 7,
+  "coperti": 7,
+  "mancanti": []
+ },
+ "Cagliari (CA)": {
+  "tot": 31,
+  "coperti": 31,
+  "mancanti": []
+ },
+ "Sassari (SS)": {
+  "tot": 10,
+  "coperti": 10,
+  "mancanti": []
+ },
+ "Torralba (SS)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Alghero (SS)": {
+  "tot": 3,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.103443 | Museo \"Sella e Mosca\"",
+   "DBUnico.103444 | Museo diocesano dell'arte sacra",
+   "DBUnico.111714 | Museo del corallo di Alghero"
+  ]
+ },
+ "Ozieri (SS)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Nuoro (NU)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Dorgali (NU)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Macomer (NU)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Osini (NU)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Oristano (OR)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Abbasanta (OR)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Bosa (OR)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Suni (OR)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Carbonia (SU)": {
+  "tot": 3,
+  "coperti": 3,
+  "mancanti": []
+ },
+ "Barumini (SU)": {
+  "tot": 3,
+  "coperti": 3,
+  "mancanti": []
+ },
+ "Iglesias (SU)": {
+  "tot": 8,
+  "coperti": 8,
+  "mancanti": []
+ },
+ "Sant'Antioco (SU)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Sardara (SU)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Milano (MI)": {
+  "tot": 64,
+  "coperti": 64,
+  "mancanti": []
+ },
+ "Bergamo (BG)": {
+  "tot": 13,
+  "coperti": 13,
+  "mancanti": []
+ },
+ "Schilpario (BG)": {
+  "tot": 6,
+  "coperti": 6,
+  "mancanti": []
+ },
+ "Brescia (BS)": {
+  "tot": 18,
+  "coperti": 18,
+  "mancanti": []
+ },
+ "Gottolengo (BS)": {
+  "tot": 13,
+  "coperti": 13,
+  "mancanti": []
+ },
+ "Bienno (BS)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Mazzano (BS)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Como (CO)": {
+  "tot": 8,
+  "coperti": 8,
+  "mancanti": []
+ },
+ "Cremona (CR)": {
+  "tot": 7,
+  "coperti": 7,
+  "mancanti": []
+ },
+ "Lecco (LC)": {
+  "tot": 7,
+  "coperti": 7,
+  "mancanti": []
+ },
+ "Lodi (LO)": {
+  "tot": 6,
+  "coperti": 6,
+  "mancanti": []
+ },
+ "Mantova (MN)": {
+  "tot": 14,
+  "coperti": 14,
+  "mancanti": []
+ },
+ "Monza (MB)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Pavia (PV)": {
+  "tot": 13,
+  "coperti": 13,
+  "mancanti": []
+ },
+ "Vigevano (PV)": {
+  "tot": 6,
+  "coperti": 6,
+  "mancanti": []
+ },
+ "Sondrio (SO)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Varese (VA)": {
+  "tot": 7,
+  "coperti": 7,
+  "mancanti": []
+ },
+ "Saronno (VA)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Venezia (VE)": {
+  "tot": 28,
+  "coperti": 28,
+  "mancanti": []
+ },
+ "Verona (VR)": {
+  "tot": 24,
+  "coperti": 24,
+  "mancanti": []
+ },
+ "Padova (PD)": {
+  "tot": 14,
+  "coperti": 5,
+  "mancanti": [
+   "DBUnico.100915 | Dipartimento Scienze Medico Diagnostiche e Terapie Speciali",
+   "DBUnico.100916 | Museo associazione nazionale Marinai d'italia di Padova",
+   "DBUnico.100918 | Musei civici di Padova",
+   "DBUnico.100930 | Museo diocesano di Padova",
+   "DBUnico.100933 | Museo veneto del giocattolo - onlus",
+   "DBUnico.100934 | Palazzo Zuckermann",
+   "DBUnico.100935 | Loggia e Odeo Cornaro",
+   "DBUnico.105475 | Museo Vincenzo Stefano Breda",
+   "DBUnico.143572 | Palazzo Cavalli"
+  ]
+ },
+ "Vicenza (VI)": {
+  "tot": 14,
+  "coperti": 7,
+  "mancanti": [
+   "DBUnico.101102 | Museo del Risorgimento e della Resistenza di Vicenza",
+   "DBUnico.101106 | Museo naturalistico archeologico di Vicenza",
+   "DBUnico.112116 | Museo della Tradizione Cimbra",
+   "DBUnico.20106 | Strada romana",
+   "DBUnico.20141 | Resti del Foro romano",
+   "DBUnico.20438 | Criptoportico romano di Vicenza",
+   "DBUnico.20740 | Acquedotto romano di Lobia"
+  ]
+ },
+ "Bassano del Grappa (VI)": {
+  "tot": 6,
+  "coperti": 6,
+  "mancanti": []
+ },
+ "Schio (VI)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Treviso (TV)": {
+  "tot": 4,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.100996 | Museo etnografico provinciale",
+   "DBUnico.105655 | Museo \"D. Grossa e Campagner\"",
+   "DBUnico.132053 | Museo nazionale Collezione Salce sede di San Gaetano",
+   "MiBAC.7120 | Museo nazionale Collezione Salce sede di Santa Margherita"
+  ]
+ },
+ "Oderzo (TV)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Vittorio Veneto (TV)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Belluno (BL)": {
+  "tot": 2,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.100858 | Museo civico di Belluno",
+   "DBUnico.100860 | Museo Valentino del Fabbro - Rassegna attrezzi e oggetti del passato"
+  ]
+ },
+ "Rovigo (RO)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Trento (TN)": {
+  "tot": 10,
+  "coperti": 5,
+  "mancanti": [
+   "DBUnico.100618 | Museo delle palafitte del Lago di Ledro",
+   "DBUnico.100661 | S.A.S.S. - Spazio archeologico sotterraneo SAS",
+   "DBUnico.111834 | Area archeologica Palazzo Lodron",
+   "DBUnico.122062 | Castel Thun",
+   "MiBAC.7158 | Regione Autonoma Trentino-Alto Adige/Südtirol"
+  ]
+ },
+ "Rovereto (TN)": {
+  "tot": 8,
+  "coperti": 8,
+  "mancanti": []
+ },
+ "Perugia (PG)": {
+  "tot": 30,
+  "coperti": 30,
+  "mancanti": []
+ },
+ "Spello (PG)": {
+  "tot": 6,
+  "coperti": 2,
+  "mancanti": [
+   "DBUnico.100745 | Pinacoteca civica di Spello",
+   "DBUnico.108067 | Collezione permanente Emilio Greco",
+   "DBUnico.108084 | Mosaici di Villa S. Anna",
+   "DBUnico.108120 | Teatro comunale Subasio"
+  ]
+ },
+ "Bevagna (PG)": {
+  "tot": 3,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.100683 | Mosaico delle terme romane",
+   "DBUnico.100684 | Museo civico di Bevagna"
+  ]
+ },
+ "Montefalco (PG)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Trevi (PG)": {
+  "tot": 4,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.108103 | Villa Fabri",
+   "DBUnico.108124 | Teatro Clitunno",
+   "DBUnico.111989 | Palazzo Lucarini"
+  ]
+ },
+ "Norcia (PG)": {
+  "tot": 5,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.100722 | Mostra archeologica permanente presso il Criptoportico romano di Porta Ascolana",
+   "DBUnico.100723 | Museo dei mulini e delle marcite",
+   "DBUnico.108078 | Mostra permanente degli antichi mestieri e della civiltà contadina di Norcia",
+   "DBUnico.108116 | Teatro civico di Norcia"
+  ]
+ },
+ "Castiglione del Lago (PG)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.100687 | Circuito museale aperto: Palazzo della Corgna e fortezza medievale"
+  ]
+ },
+ "Deruta (PG)": {
+  "tot": 6,
+  "coperti": 4,
+  "mancanti": [
+   "DBUnico.100705 | Museo di fabbrica \"Ubaldo Grazia Maioliche\"",
+   "DBUnico.108087 | Galleria di storia naturale dell’Università degli Studi di Perugia"
+  ]
+ },
+ "Torgiano (PG)": {
+  "tot": 4,
+  "coperti": 2,
+  "mancanti": [
+   "DBUnico.108058 | Parco di sculture di Brufa",
+   "DBUnico.108092 | Museo Arte Ceramica Contemporanea (Donazione Nino Caruso e Vaselle d'autore)"
+  ]
+ },
+ "Corciano (PG)": {
+  "tot": 6,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.100699 | Museo diocesano diffuso di Pieve del Vescovo",
+   "DBUnico.100700 | Museo della casa contadina di Corciano",
+   "DBUnico.100701 | Museo della Pievania \"Giuseppe Laudati\"",
+   "DBUnico.108082 | Antiquarium di Corciano",
+   "MiBAC.7082 | Necropoli di Fosso Rigo"
+  ]
+ },
+ "Panicale (PG)": {
+  "tot": 5,
+  "coperti": 3,
+  "mancanti": [
+   "DBUnico.100726 | Museo della Madonna della Sbarra",
+   "DBUnico.100727 | Pinacoteca Mariottini"
+  ]
+ },
+ "Assisi (PG)": {
+  "tot": 15,
+  "coperti": 15,
+  "mancanti": []
+ },
+ "Spoleto (PG)": {
+  "tot": 15,
+  "coperti": 15,
+  "mancanti": []
+ },
+ "Città di Castello (PG)": {
+  "tot": 13,
+  "coperti": 13,
+  "mancanti": []
+ },
+ "Foligno (PG)": {
+  "tot": 10,
+  "coperti": 10,
+  "mancanti": []
+ },
+ "Gubbio (PG)": {
+  "tot": 8,
+  "coperti": 8,
+  "mancanti": []
+ },
+ "Todi (PG)": {
+  "tot": 8,
+  "coperti": 8,
+  "mancanti": []
+ },
+ "Città della Pieve (PG)": {
+  "tot": 6,
+  "coperti": 6,
+  "mancanti": []
+ },
+ "Terni (TR)": {
+  "tot": 11,
+  "coperti": 11,
+  "mancanti": []
+ },
+ "Orvieto (TR)": {
+  "tot": 17,
+  "coperti": 17,
+  "mancanti": []
+ },
+ "Narni (TR)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Ancona (AN)": {
+  "tot": 7,
+  "coperti": 7,
+  "mancanti": []
+ },
+ "Fabriano (AN)": {
+  "tot": 6,
+  "coperti": 6,
+  "mancanti": []
+ },
+ "Senigallia (AN)": {
+  "tot": 7,
+  "coperti": 7,
+  "mancanti": []
+ },
+ "Urbino (PU)": {
+  "tot": 10,
+  "coperti": 10,
+  "mancanti": []
+ },
+ "Pesaro (PU)": {
+  "tot": 10,
+  "coperti": 10,
+  "mancanti": []
+ },
+ "Macerata (MC)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Serravalle di Chienti (MC)": {
+  "tot": 13,
+  "coperti": 13,
+  "mancanti": []
+ },
+ "Camerino (MC)": {
+  "tot": 8,
+  "coperti": 8,
+  "mancanti": []
+ },
+ "Tolentino (MC)": {
+  "tot": 8,
+  "coperti": 8,
+  "mancanti": []
+ },
+ "Civitanova Marche (MC)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Cingoli (MC)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Monte San Martino (MC)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Recanati (MC)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "San Severino Marche (MC)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Ascoli Piceno (AP)": {
+  "tot": 8,
+  "coperti": 8,
+  "mancanti": []
+ },
+ "San Benedetto del Tronto (AP)": {
+  "tot": 8,
+  "coperti": 8,
+  "mancanti": []
+ },
+ "Fermo (FM)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "L'Aquila (AQ)": {
+  "tot": 13,
+  "coperti": 13,
+  "mancanti": []
+ },
+ "Sulmona (AQ)": {
+  "tot": 14,
+  "coperti": 14,
+  "mancanti": []
+ },
+ "Scanno (AQ)": {
+  "tot": 6,
+  "coperti": 6,
+  "mancanti": []
+ },
+ "Teramo (TE)": {
+  "tot": 8,
+  "coperti": 8,
+  "mancanti": []
+ },
+ "Giulianova (TE)": {
+  "tot": 10,
+  "coperti": 10,
+  "mancanti": []
+ },
+ "Atri (TE)": {
+  "tot": 6,
+  "coperti": 6,
+  "mancanti": []
+ },
+ "Campli (TE)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Castelli (TE)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Isola del Gran Sasso d'Italia (TE)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Pescara (PE)": {
+  "tot": 7,
+  "coperti": 7,
+  "mancanti": []
+ },
+ "Penne (PE)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Chieti (CH)": {
+  "tot": 12,
+  "coperti": 12,
+  "mancanti": []
+ },
+ "Lanciano (CH)": {
+  "tot": 8,
+  "coperti": 8,
+  "mancanti": []
+ },
+ "Ortona (CH)": {
+  "tot": 9,
+  "coperti": 9,
+  "mancanti": []
+ },
+ "Guardiagrele (CH)": {
+  "tot": 6,
+  "coperti": 6,
+  "mancanti": []
+ },
+ "San Salvo (CH)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Vasto (CH)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Torino (TO)": {
+  "tot": 57,
+  "coperti": 36,
+  "mancanti": [
+   "DBUnico.102759 | Mostra permanente del giocattolo della tradizione popolare - Centro per la cultura Walter Ferrarotti",
+   "DBUnico.102760 | Museo Faa di Bruno",
+   "DBUnico.102763 | Museo della marionetta",
+   "DBUnico.102768 | Museo Don Bosco di storia naturale e apparecchiature scientifiche del Liceo Valsalice",
+   "DBUnico.102770 | Museo Franchetti - Colibri' del Collegio S. Giuseppe",
+   "DBUnico.102775 | Museo S. Leonardo Murialdo",
+   "DBUnico.102776 | Museo storico nazionale d'artiglieria",
+   "DBUnico.102779 | Raccolta dell'associazione piemontese di mineralogia e paleontologia",
+   "DBUnico.103890 | MIAAO - Museo Internazionale delle Arti Applicate Oggi",
+   "DBUnico.103892 | Museo A come Ambiente",
+   "DBUnico.106254 | Museo di devozione mariana",
+   "DBUnico.106589 | Museo civico di numismatica, etnografia e arti orientali",
+   "DBUnico.106599 | Cemed (Centro museo e documentazione storica del Politecnico di Torino)",
+   "DBUnico.106608 | Museo ebraico",
+   "DBUnico.106610 | Palazzo Bricherasio",
+   "DBUnico.106620 | Museo storico dei Vigili del Fuoco",
+   "DBUnico.106637 | Palazzo Cavour",
+   "DBUnico.106646 | Museo della scuola e del libro per l'infanzia",
+   "DBUnico.106754 | Museo del carcere Le Nuove",
+   "DBUnico.117275 | Palazzo Cisterna",
+   "MiBAC.7156 | Polo del '900"
+  ]
+ },
+ "Venaria Reale (TO)": {
+  "tot": 4,
+  "coperti": 2,
+  "mancanti": [
+   "DBUnico.102790 | Museo del mare - dell'ANMI (Associazione Nazionale Marinai d'Italia). Gruppo di Venaria Reale",
+   "DBUnico.106653 | Al.Bo."
+  ]
+ },
+ "Nichelino (TO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Moncalieri (TO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Rivoli (TO)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Agliè (TO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Valperga (TO)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Ivrea (TO)": {
+  "tot": 5,
+  "coperti": 4,
+  "mancanti": [
+   "DBUnico.105836 | Mostra permanente della Cnfraternita di San Nicola"
+  ]
+ },
+ "Susa (TO)": {
+  "tot": 3,
+  "coperti": 3,
+  "mancanti": []
+ },
+ "Avigliana (TO)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.105026 | Collezioni etnografiche della Scuola media \"Defendente Ferrari\""
+  ]
+ },
+ "Sant'Ambrogio di Torino (TO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Usseglio (TO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Fenestrelle (TO)": {
+  "tot": 3,
+  "coperti": 2,
+  "mancanti": [
+   "DBUnico.102695 | Museo naturalistico di Fenestrelle"
+  ]
+ },
+ "Novalesa (TO)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.102712 | Museo di vita montana in Val Cenischia"
+  ]
+ },
+ "Pinerolo (TO)": {
+  "tot": 11,
+  "coperti": 11,
+  "mancanti": []
+ },
+ "Carmagnola (TO)": {
+  "tot": 6,
+  "coperti": 6,
+  "mancanti": []
+ },
+ "Chieri (TO)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Angrogna (TO)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Salbertrand (TO)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Settimo Torinese (TO)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Alessandria (AL)": {
+  "tot": 9,
+  "coperti": 9,
+  "mancanti": []
+ },
+ "Serralunga di Crea (AL)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Casale Monferrato (AL)": {
+  "tot": 4,
+  "coperti": 2,
+  "mancanti": [
+   "DBUnico.102450 | Museo civico e gipsoteca Bistolfi",
+   "DBUnico.102452 | Museo ebraico di Casale Monferrato"
+  ]
+ },
+ "Cella Monte (AL)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Gavi (AL)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Volpedo (AL)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Acqui Terme (AL)": {
+  "tot": 6,
+  "coperti": 6,
+  "mancanti": []
+ },
+ "Asti (AT)": {
+  "tot": 10,
+  "coperti": 10,
+  "mancanti": []
+ },
+ "Canelli (AT)": {
+  "tot": 4,
+  "coperti": 3,
+  "mancanti": [
+   "DBUnico.105581 | Museo della \"Distilleria Bocchino\""
+  ]
+ },
+ "Nizza Monferrato (AT)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.102503 | Centro documentazione aziendale figli di Pinin Pero - Sugar Packets Museum"
+  ]
+ },
+ "Moncalvo (AT)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Biella (BI)": {
+  "tot": 6,
+  "coperti": 6,
+  "mancanti": []
+ },
+ "Candelo (BI)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Rosazza (BI)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Cuneo (CN)": {
+  "tot": 8,
+  "coperti": 8,
+  "mancanti": []
+ },
+ "Racconigi (CN)": {
+  "tot": 4,
+  "coperti": 2,
+  "mancanti": [
+   "DBUnico.105825 | Tenuta Berroni",
+   "MiBAC.7306 | Complesso monumentale del Castello e Parco di Racconigi - Uno scrigno per Margherita"
+  ]
+ },
+ "Bra (CN)": {
+  "tot": 3,
+  "coperti": 2,
+  "mancanti": [
+   "DBUnico.102553 | Museo del giocattolo di Bra"
+  ]
+ },
+ "Garessio (CN)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.102586 | Museo geo speleologico e pinacoteca civica \"Golia (Eugenio Colmo)\""
+  ]
+ },
+ "Alba (CN)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Barolo (CN)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "La Morra (CN)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.102591 | Museo Ratti dei vini di Alba"
+  ]
+ },
+ "Grinzane Cavour (CN)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Serralunga d'Alba (CN)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Cherasco (CN)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Saluzzo (CN)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Entracque (CN)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.106239 | Museo di arte sacra di Entracque"
+  ]
+ },
+ "Revello (CN)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.102616 | Museo Carlo Denina"
+  ]
+ },
+ "Chiusa di Pesio (CN)": {
+  "tot": 4,
+  "coperti": 2,
+  "mancanti": [
+   "DBUnico.102565 | Museo del parco di Chiusa di Pesio",
+   "DBUnico.106631 | Complesso museale e centro studi G. Avena"
+  ]
+ },
+ "Guarene (CN)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Bene Vagienna (CN)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Pontechianale (CN)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.106677 | Museo del mobile tradizionale dell’Alta Valle Varaita"
+  ]
+ },
+ "Ostana (CN)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Mondovì (CN)": {
+  "tot": 5,
+  "coperti": 2,
+  "mancanti": [
+   "DBUnico.102599 | Museo etnografico \"Giuseppe Rosso\"",
+   "DBUnico.102600 | Museo storico primo reggimento alpini",
+   "DBUnico.104625 | A.N.A. Mondovì"
+  ]
+ },
+ "Vicoforte (CN)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.105585 | Museo storico \"Michele Ghislieri\""
+  ]
+ },
+ "Manta (CN)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Costigliole Saluzzo (CN)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Novara (NO)": {
+  "tot": 7,
+  "coperti": 7,
+  "mancanti": []
+ },
+ "Orta San Giulio (NO)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Arona (NO)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Verbania (VB)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Ghiffa (VB)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Domodossola (VB)": {
+  "tot": 3,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.102799 | Musei del collegio Mellerio Rosmini",
+   "DBUnico.111556 | Civico Museo Sempioniano"
+  ]
+ },
+ "Macugnaga (VB)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Mergozzo (VB)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Cannero Riviera (VB)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.102795 | Museo civico di Cannero Riviera"
+  ]
+ },
+ "Santa Maria Maggiore (VB)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Malesco (VB)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Trarego Viggiona (VB)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Vercelli (VC)": {
+  "tot": 3,
+  "coperti": 3,
+  "mancanti": []
+ },
+ "Varallo (VC)": {
+  "tot": 5,
+  "coperti": 3,
+  "mancanti": [
+   "DBUnico.102842 | Museo Comola",
+   "DBUnico.106624 | Ecomuseo della Valsesia"
+  ]
+ },
+ "Fobello (VC)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Alagna Valsesia (VC)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Aosta (AO)": {
+  "tot": 10,
+  "coperti": 8,
+  "mancanti": [
+   "DBUnico.112008 | Museo etnografico \"Un tempo la veillà nella stalla\"",
+   "DBUnico.112036 | Ecomuseo della latteria Turnaria di Treby"
+  ]
+ },
+ "Fénis (AO)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Bard (AO)": {
+  "tot": 3,
+  "coperti": 2,
+  "mancanti": [
+   "DBUnico.112011 | Ecomuseo della castagna  di Bard (Italia)"
+  ]
+ },
+ "Issogne (AO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Verrès (AO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Gressoney-Saint-Jean (AO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Sarre (AO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Saint-Pierre (AO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Châtillon (AO)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.100823 | Museo parrocchiale di Chatillon"
+  ]
+ },
+ "Aymavilles (AO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Cogne (AO)": {
+  "tot": 4,
+  "coperti": 3,
+  "mancanti": [
+   "DBUnico.112023 | Atelier d’art Et Métiers di Ouvrier Dorino"
+  ]
+ },
+ "Courmayeur (AO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Valtournenche (AO)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.100855 | Museo del lavoro di Valtournenche (valle)"
+  ]
+ },
+ "Pont-Saint-Martin (AO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Valsavarenche (AO)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Introd (AO)": {
+  "tot": 3,
+  "coperti": 2,
+  "mancanti": [
+   "DBUnico.100832 | Museo parrocchiale di arte sacra di Introd"
+  ]
+ },
+ "Donnas (AO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Saint-Vincent (AO)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Etroubles (AO)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.112039 | Museo del tesoro della Parrocchia"
+  ]
+ },
+ "Arnad (AO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Nus (AO)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.100840 | Museo parrocchiale di Nus"
+  ]
+ },
+ "Saint-Denis (AO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Ayas (AO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Morgex (AO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Arvier (AO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Champorcher (AO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Challand-Saint-Victor (AO)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.100819 | Museo parrocchiale di Challand-Saint-Victor"
+  ]
+ },
+ "Valgrisenche (AO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "La Salle (AO)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.100836 | Museo parrocchiale di La Salle"
+  ]
+ },
+ "Chambave (AO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Valpelline (AO)": {
+  "tot": 3,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.112075 | Museo della Resistenza di Valpelline (comune)",
+   "DBUnico.112089 | Salone dell’alpinismo"
+  ]
+ },
+ "Perloz (AO)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Issime (AO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Lillianes (AO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Torgnon (AO)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Champdepraz (AO)": {
+  "tot": 2,
+  "coperti": 1,
+  "mancanti": [
+   "DBUnico.112015 | Museo parrocchiale di Champdepraz"
+  ]
+ },
+ "Saint-Nicolas (AO)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Avise (AO)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Allein (AO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Jovençan (AO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Genova (GE)": {
+  "tot": 65,
+  "coperti": 29,
+  "mancanti": [
+   "DBUnico.100353 | Storico permanente della filarmonica sestrese",
+   "DBUnico.100354 | Museo ebraico di Genova",
+   "DBUnico.100363 | Museo civico di storia naturale \"Giacomo Doria\"",
+   "DBUnico.100364 | Museo di etnomedicina Antonio Scarpa",
+   "DBUnico.100365 | Museo garibaldino di Genova",
+   "DBUnico.100367 | Museo di chimica di Genova",
+   "DBUnico.100368 | Museo navale di Pegli",
+   "DBUnico.100371 | Museo nazionale dell'Antartide \"Felice Ippolito\"",
+   "DBUnico.100372 | Museo dei beni culturali cappuccini",
+   "DBUnico.100373 | Palazzo dell'accademia linguistica",
+   "DBUnico.100375 | Museo di fisica \"G. Boato\"",
+   "DBUnico.100376 | Casa Mazzini",
+   "DBUnico.100377 | Villa Luxoro",
+   "DBUnico.100380 | Villa Croce",
+   "DBUnico.100385 | Museo di archeologia ligure",
+   "DBUnico.100386 | Museo di storia e cultura contadina di Genova",
+   "DBUnico.100388 | Porta Siberia (o del molo)",
+   "DBUnico.103934 | Museo gipsoteca Studio Venzano",
+   "DBUnico.103935 | Centro di documentazione per la Storia, l’arte e l’immagine di Genova",
+   "DBUnico.103936 | Museo del Dip.Te.Ris (Dip. Studio territorio e risorse) - Università di Genova",
+   "DBUnico.103938 | Lousiana Jazz Club Museum",
+   "DBUnico.103939 | Museo e orto botanico dell’Università di Genova",
+   "DBUnico.104394 | Grotta dell'archeologia",
+   "DBUnico.105132 | Raccolta ighiniana",
+   "DBUnico.105441 | Azienda ospedaliera universitaria San Martino",
+   "DBUnico.107176 | Villetta di Negro",
+   "DBUnico.107191 | Loggia della Mercanzia o Loggia di Banchi",
+   "DBUnico.107194 | Lavatoi pubblici dei Servi (o del Barabino)",
+   "DBUnico.107196 | Villa imperiale (o Dell’albero d’oro)",
+   "DBUnico.107197 | Edificio agricolo",
+   "DBUnico.107204 | Villetta Serra",
+   "DBUnico.107207 | Museo della storia del Genoa",
+   "DBUnico.107208 | Sinagoga di Genova",
+   "DBUnico.107209 | Museo dell’acqua e del gas",
+   "DBUnico.107238 | Chiesa SS. Annunziata di Portoria o S. Caterina da Genova",
+   "DBUnico.134446 | Abbazia di San Giuliano"
+  ]
+ },
+ "Campo Ligure (GE)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Chiavari (GE)": {
+  "tot": 8,
+  "coperti": 8,
+  "mancanti": []
+ },
+ "Camogli (GE)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Rapallo (GE)": {
+  "tot": 3,
+  "coperti": 3,
+  "mancanti": []
+ },
+ "Campomorone (GE)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Cogorno (GE)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Imperia (IM)": {
+  "tot": 8,
+  "coperti": 8,
+  "mancanti": []
+ },
+ "Dolceacqua (IM)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Perinaldo (IM)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Seborga (IM)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Triora (IM)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Apricale (IM)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Cervo (IM)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Pieve di Teco (IM)": {
+  "tot": 5,
+  "coperti": 3,
+  "mancanti": [
+   "DBUnico.105162 | Museo territorio \" I volti dell’Ubagu\"",
+   "DBUnico.107184 | Museo diocesano di arte sacra \"Alta Valle Arroscia\""
+  ]
+ },
+ "Taggia (IM)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Sanremo (IM)": {
+  "tot": 10,
+  "coperti": 10,
+  "mancanti": []
+ },
+ "Ventimiglia (IM)": {
+  "tot": 8,
+  "coperti": 8,
+  "mancanti": []
+ },
+ "Bordighera (IM)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Pompeiana (IM)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Ranzo (IM)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "La Spezia (SP)": {
+  "tot": 10,
+  "coperti": 10,
+  "mancanti": []
+ },
+ "Portovenere (SP)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Brugnato (SP)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Ameglia (SP)": {
+  "tot": 2,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.20051 | Villa romana di Bocca di Magra",
+   "DBUnico.20217 | Necropoli di Cafaggio"
+  ]
+ },
+ "Lerici (SP)": {
+  "tot": 1,
+  "coperti": 0,
+  "mancanti": [
+   "DBUnico.20510 | Castello di San Terenzo"
+  ]
+ },
+ "Calice al Cornoviglio (SP)": {
+  "tot": 3,
+  "coperti": 3,
+  "mancanti": []
+ },
+ "Savona (SV)": {
+  "tot": 10,
+  "coperti": 10,
+  "mancanti": []
+ },
+ "Sassello (SV)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Toirano (SV)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Noli (SV)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Finale Ligure (SV)": {
+  "tot": 6,
+  "coperti": 6,
+  "mancanti": []
+ },
+ "Millesimo (SV)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Albenga (SV)": {
+  "tot": 9,
+  "coperti": 9,
+  "mancanti": []
+ },
+ "Alassio (SV)": {
+  "tot": 3,
+  "coperti": 3,
+  "mancanti": []
+ },
+ "Albissola Marina (SV)": {
+  "tot": 3,
+  "coperti": 3,
+  "mancanti": []
+ },
+ "Albisola Superiore (SV)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Calice Ligure (SV)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Trieste (TS)": {
+  "tot": 43,
+  "coperti": 43,
+  "mancanti": []
+ },
+ "Udine (UD)": {
+  "tot": 6,
+  "coperti": 6,
+  "mancanti": []
+ },
+ "Aquileia (UD)": {
+  "tot": 8,
+  "coperti": 8,
+  "mancanti": []
+ },
+ "Cividale del Friuli (UD)": {
+  "tot": 9,
+  "coperti": 9,
+  "mancanti": []
+ },
+ "Codroipo (UD)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Pordenone (PN)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Gorizia (GO)": {
+  "tot": 7,
+  "coperti": 7,
+  "mancanti": []
+ },
+ "Campobasso (CB)": {
+  "tot": 7,
+  "coperti": 7,
+  "mancanti": []
+ },
+ "Casacalenda (CB)": {
+  "tot": 8,
+  "coperti": 8,
+  "mancanti": []
+ },
+ "Isernia (IS)": {
+  "tot": 3,
+  "coperti": 3,
+  "mancanti": []
+ },
+ "Potenza (PZ)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Venosa (PZ)": {
+  "tot": 7,
+  "coperti": 7,
+  "mancanti": []
+ },
+ "Melfi (PZ)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Acerenza (PZ)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Matera (MT)": {
+  "tot": 12,
+  "coperti": 12,
+  "mancanti": []
+ },
+ "Aliano (MT)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Bernalda (MT)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Catanzaro (CZ)": {
+  "tot": 12,
+  "coperti": 12,
+  "mancanti": []
+ },
+ "Lamezia Terme (CZ)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Cosenza (CS)": {
+  "tot": 10,
+  "coperti": 10,
+  "mancanti": []
+ },
+ "Rende (CS)": {
+  "tot": 6,
+  "coperti": 6,
+  "mancanti": []
+ },
+ "Cassano all'Ionio (CS)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Castrovillari (CS)": {
+  "tot": 3,
+  "coperti": 3,
+  "mancanti": []
+ },
+ "Frascineto (CS)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Lungro (CS)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Crotone (KR)": {
+  "tot": 6,
+  "coperti": 6,
+  "mancanti": []
+ },
+ "Santa Severina (KR)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Reggio di Calabria (RC)": {
+  "tot": 18,
+  "coperti": 18,
+  "mancanti": []
+ },
+ "Palmi (RC)": {
+  "tot": 8,
+  "coperti": 8,
+  "mancanti": []
+ },
+ "Bivongi (RC)": {
+  "tot": 5,
+  "coperti": 5,
+  "mancanti": []
+ },
+ "Locri (RC)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Gerace (RC)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Vibo Valentia (VV)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Nicotera (VV)": {
+  "tot": 4,
+  "coperti": 4,
+  "mancanti": []
+ },
+ "Tropea (VV)": {
+  "tot": 3,
+  "coperti": 3,
+  "mancanti": []
+ }
+}

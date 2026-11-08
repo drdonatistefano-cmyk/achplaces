@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="it"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f6efe4">
+<title>Ach's Places Guide · Filtri (prototipo)</title>
+<style>
+:root{--bg:#f6efe4;--paper:#fffdf9;--ink:#231d18;--mute:#7a6f63;--faint:#a99d8f;--line:#e8ddcc;--terra:#3d5f7d;--terra-soft:#e4ecf3;--on:#fff;
+--c-arch:#a0603a;--c-mon:#8a7356;--c-sacro:#4f5fb0;--c-musei:#7d4f9a;--c-nat:#3f7a4c;--c-trad:#2a7f7a;
+--shadow:0 1px 2px rgba(60,40,20,.06),0 4px 14px rgba(60,40,20,.06);--r:16px;
+--serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;--sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif}
+@media (prefers-color-scheme:dark){:root{--bg:#161311;--paper:#201c19;--ink:#f1e9df;--mute:#ab9f92;--faint:#7d7268;--line:#332d28;--terra:#8fb3d3;--terra-soft:#1f2a35;--on:#102131;
+--c-arch:#e09a6f;--c-mon:#c4ae90;--c-sacro:#93a0f0;--c-musei:#b48ad0;--c-nat:#6fb07d;--c-trad:#5fbdb6;--shadow:none;color-scheme:dark}}
+*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-text-size-adjust:100%}
+.wrap{max-width:760px;margin:0 auto;padding:max(14px,env(safe-area-inset-top)) 16px 120px}
+.top{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(1.7rem,6vw,2.3rem);margin:0;letter-spacing:-.01em;flex:1}
+h1 em{font-style:italic;color:var(--terra)}
+.proto{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);border:1px solid var(--line);border-radius:99px;padding:3px 8px}
+.lead{color:var(--mute);font-size:14px;margin:2px 0 14px}
+.btn{font:inherit;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:99px;padding:8px 14px;font-size:14px;cursor:pointer}
+.btn:active{transform:scale(.98)}
+.scope{display:flex;gap:8px;align-items:center;margin:0 0 14px}
+.scope select{font:inherit;font-size:14px;flex:1;min-width:0;padding:9px 12px;border-radius:12px;border:1px solid var(--line);background:var(--paper);color:var(--ink)}
+.search{width:100%;font:inherit;font-size:15px;padding:11px 14px;border-radius:14px;border:1px solid var(--line);background:var(--paper);color:var(--ink);margin-bottom:16px}
+.sec{font-family:var(--serif);font-size:1.15rem;font-weight:600;margin:20px 0 10px;display:flex;align-items:baseline;gap:8px}
+.sec small{font-family:var(--sans);font-size:12.5px;color:var(--mute);font-weight:400}
+.macros{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+@media(min-width:620px){.macros{grid-template-columns:repeat(6,1fr)}}
+.macro{border:1px solid var(--line);background:var(--paper);border-radius:var(--r);padding:12px 6px 10px;text-align:center;cursor:pointer;box-shadow:var(--shadow);position:relative;color:var(--ink);font:inherit}
+.macro .e{font-size:24px;display:block;line-height:1.1}
+.macro b{display:block;font-size:13.5px;margin-top:5px;font-weight:600}
+.macro span{display:block;font-size:11.5px;color:var(--mute);font-variant-numeric:tabular-nums}
+.macro.on{border-color:var(--mc);box-shadow:inset 0 0 0 1.5px var(--mc)}
+.macro .dot{position:absolute;top:7px;right:8px;min-width:18px;height:18px;border-radius:99px;background:var(--mc);color:#fff;font-size:11px;line-height:18px;padding:0 5px;display:none}
+.macro .dot.show{display:block}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:14px;margin-top:12px;box-shadow:var(--shadow)}
+.panel h3{margin:0 0 4px;font-family:var(--serif);font-size:1.1rem;font-weight:600;color:var(--mc)}
+.panel p{margin:0 0 12px;font-size:13px;color:var(--mute)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:inherit;font-size:14px;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:99px;padding:8px 12px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.chip i{font-style:normal;font-size:12px;color:var(--mute);font-variant-numeric:tabular-nums}
+.chip.on{background:var(--mc);border-color:var(--mc);color:#fff}.chip.on i{color:rgba(255,255,255,.85)}
+.chip.zero{opacity:.4}
+.chip .hint{font-size:11px}
+.tx{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media(min-width:620px){.tx{grid-template-columns:repeat(3,1fr)}}
+.tog{display:flex;align-items:center;gap:10px;border:1px solid var(--line);background:var(--paper);border-radius:14px;padding:11px 12px;cursor:pointer;font:inherit;color:var(--ink);text-align:left}
+.tog .e{font-size:20px}.tog b{font-size:14px;font-weight:600;display:block}.tog small{font-size:11.5px;color:var(--mute)}
+.tog.on{border-color:var(--terra);box-shadow:inset 0 0 0 1.5px var(--terra);background:var(--terra-soft)}
+.active{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 0;min-height:4px}
+.pill{font-size:12.5px;background:var(--terra-soft);color:var(--ink);border-radius:99px;padding:5px 10px;border:0;font-family:inherit;cursor:pointer}
+.bar{position:fixed;left:0;right:0;bottom:0;padding:12px 16px max(12px,env(safe-area-inset-bottom));background:linear-gradient(transparent,var(--bg) 30%);display:flex;justify-content:center;gap:10px}
+.cta{font:inherit;font-weight:600;font-size:16px;border:0;border-radius:99px;padding:14px 22px;background:var(--terra);color:var(--on);box-shadow:0 6px 20px rgba(40,60,90,.25);cursor:pointer;flex:1;max-width:520px}
+.res{margin-top:22px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin-bottom:8px}
+.card .k{font-size:11.5px;letter-spacing:.03em;color:var(--mc);font-weight:600;text-transform:uppercase}
+.card h4{margin:2px 0 3px;font-family:var(--serif);font-size:1.05rem;font-weight:600}
+.card .w{font-size:12.5px;color:var(--mute)}.card p{margin:6px 0 0;font-size:13.5px;line-height:1.4}
+.badges{display:inline-flex;gap:4px;margin-left:4px}
+.note{font-size:12px;color:var(--mute);margin-top:18px;line-height:1.45}
+.more{display:block;margin:10px auto 0}
+</style></head><body><div class="wrap">
+<div class="top"><h1>Cosa <em>cerchi</em>?</h1><span class="proto">prototipo</span></div>
+<p class="lead">Scegli una categoria, poi affina con le sottocategorie. I filtri in fondo si combinano con tutto.</p>
+<div class="scope"><select id="reg" aria-label="Regione"></select><button class="btn" id="reset">Azzera</button></div>
+<input class="search" id="q" type="search" placeholder="Cerca un luogo o un comune…" autocomplete="off">
+<div class="sec">Categorie <small id="tot"></small></div>
+<div class="macros" id="macros"></div>
+<div id="panel"></div>
+<div class="sec">Filtri trasversali <small>si sommano alle categorie</small></div>
+<div class="tx" id="tx"></div>
+<div class="active" id="active"></div>
+<div class="res" id="res"></div>
+<p class="note">Prototipo con i dati reali della guida (4002 luoghi). Civiltà e tipi sono assegnati in automatico leggendo le descrizioni già prese dalle fonti ufficiali: prima della versione definitiva vanno controllati uno per uno. Un luogo può comparire in più sottocategorie (es. un sito etrusco poi romano).</p>
+</div>
+<div class="bar"><button class="cta" id="cta">Mostra luoghi</button></div>
+<script>

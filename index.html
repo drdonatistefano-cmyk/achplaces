@@ -1,0 +1,1634 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#161311">
+<title>Ach's Places Guide</title>
+<style>
+/* Sistema visivo di Ach's Events: carta calda, titoli serif, accento blu portico. Layout: hero, barra filtri a gruppi sempre in alto, griglia di schede 1/2/3 colonne. */
+:root{
+  --bg:#f6efe4; --paper:#fffdf9; --ink:#231d18; --mute:#7a6f63; --faint:#a99d8f; --line:#e8ddcc;
+  --terra:#3d5f7d; --terra-soft:#e4ecf3; --terra-ink:#2f4d68; --on:#fff;
+  --warn:#9a6400; --warn-soft:#fbefd6; --bad:#a1261c; --bad-soft:#f8dfdc; --ok:#3f7a4c; --ok-soft:#e3efe5;
+  --c-storia:#8a7356; --c-sacro:#4f5fb0; --c-musei:#7d4f9a; --c-natura:#3f7a4c; --c-locale:#2a7f7a;
+  --shadow:0 1px 2px rgba(60,40,20,.06),0 4px 14px rgba(60,40,20,.06); --r:16px;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#161311; --paper:#201c19; --ink:#f1e9df; --mute:#ab9f92; --faint:#7d7268; --line:#332d28;
+  --terra:#8fb3d3; --terra-soft:#1f2a35; --terra-ink:#b9d0e4; --on:#102131;
+  --warn:#e3b35a; --warn-soft:#352a16; --bad:#f08a7e; --bad-soft:#3a201d; --ok:#6fb07d; --ok-soft:#1c2c20;
+  --c-storia:#c4ae90; --c-sacro:#93a0f0; --c-musei:#b48ad0; --c-natura:#6fb07d; --c-locale:#5fbdb6;
+  --shadow:none; color-scheme:dark;}}
+:root[data-theme="dark"]{
+  --bg:#161311; --paper:#201c19; --ink:#f1e9df; --mute:#ab9f92; --faint:#7d7268; --line:#332d28;
+  --terra:#8fb3d3; --terra-soft:#1f2a35; --terra-ink:#b9d0e4; --on:#102131;
+  --warn:#e3b35a; --warn-soft:#352a16; --bad:#f08a7e; --bad-soft:#3a201d; --ok:#6fb07d; --ok-soft:#1c2c20;
+  --c-storia:#c4ae90; --c-sacro:#93a0f0; --c-musei:#b48ad0; --c-natura:#6fb07d; --c-locale:#5fbdb6;
+  --shadow:none; color-scheme:dark;}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+.hero.onlykick>*:not(.kick){display:none!important}
+.hero.onlykick{padding-bottom:6px}
+html{text-size-adjust:100%;-webkit-text-size-adjust:100%}
+html,body{overflow-x:clip;max-width:100%}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{overscroll-behavior-x:none;margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+button,a,input{-webkit-tap-highlight-color:transparent}
+button{font:inherit;color:inherit}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--terra);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 max(16px,env(safe-area-inset-left)) 0 max(16px,env(safe-area-inset-right))}
+@media (min-width:760px){.wrap{padding:0 28px}}
+
+/* Hero */
+.hero{padding-top:max(22px,env(safe-area-inset-top));padding-bottom:14px}
+.kick{display:flex;align-items:center;gap:12px;margin-bottom:10px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--terra)}
+.italy{flex:0 0 auto;display:block;opacity:.9;stroke:none}
+.arches i{width:16px;height:20px;border:2px solid currentColor;border-bottom:0;border-radius:9px 9px 0 0;opacity:.85}
+.arches i:nth-child(2){opacity:.6}.arches i:nth-child(3){opacity:.35}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(1.9rem,5vw,3rem);line-height:1.05;margin:0;letter-spacing:-.01em;text-wrap:balance}
+h1 em{color:var(--terra);font-style:italic}
+.lede{color:var(--mute);margin:10px 0 0;font-size:15.5px;max-width:60ch}
+.pick{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px;max-width:620px}
+.pick label{display:grid;gap:3px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+.pick{position:relative}.pick label.reg{grid-column:1/-1}
+.pick select{height:42px;border:1px solid var(--line);border-radius:12px;background:var(--paper);color:var(--ink);font:600 16px var(--sans);padding:0 10px;box-shadow:var(--shadow);min-width:0;width:100%}
+@media (min-width:640px){.pick{grid-template-columns:1fr 1fr 1fr}.pick label.reg{grid-column:auto}}
+.msel{display:grid;gap:3px;min-width:0}
+.mlab{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+.mbtn{height:42px;border:1px solid var(--line);border-radius:12px;background:var(--paper);color:var(--ink);font:600 15px var(--sans);padding:0 10px;box-shadow:var(--shadow);display:flex;align-items:center;gap:6px;cursor:pointer;min-width:0;text-align:left}
+.mbtn .mv{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mbtn .cv{font-size:10px;opacity:.6}
+.mbtn[aria-expanded="true"]{border-color:var(--terra);box-shadow:0 0 0 3px color-mix(in srgb,var(--terra) 18%,transparent)}
+.mbtn .mc{display:inline-grid;place-items:center;min-width:20px;height:20px;padding:0 6px;border-radius:10px;background:var(--terra);color:var(--on);font-size:11.5px;font-weight:800}
+.mpop{position:absolute;left:0;right:0;top:calc(100% + 6px);z-index:40;background:var(--paper);border:1px solid var(--line);border-radius:18px;box-shadow:0 14px 40px rgba(40,25,10,.18);padding:12px;animation:fin .16s ease}
+.mpop[hidden]{display:none}
+.mphead{display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin:2px 4px 8px}
+.mphead b{font-family:var(--serif);font-size:1.15rem;font-weight:600}.mphead span{font-size:12.5px;color:var(--mute)}
+.mpq{width:100%;height:40px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);font:600 16px var(--sans);padding:0 12px;margin-bottom:8px}
+.mlist{max-height:min(52vh,420px);overflow-y:auto;display:grid;grid-template-columns:1fr;gap:4px;-webkit-overflow-scrolling:touch}
+@media (min-width:640px){#com-list{grid-template-columns:1fr 1fr 1fr}.mpop{right:auto;width:min(820px,calc(100vw - 40px))}#prov-pop{width:min(460px,calc(100vw - 40px))}}
+.mgrp{grid-column:1/-1;font:800 11px var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--terra);margin:8px 4px 2px}
+.mopt{display:flex;align-items:center;gap:9px;min-height:42px;padding:0 10px;border-radius:10px;border:1px solid transparent;background:none;color:var(--ink);font:600 14.5px var(--sans);cursor:pointer;text-align:left;width:100%}
+.mopt .t{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mopt small{color:var(--faint);font-size:12px}
+.mopt::before{content:"";width:18px;height:18px;flex:none;border-radius:6px;border:1.5px solid var(--line);display:grid;place-items:center;font-size:12px;font-weight:800;color:#fff}
+.mopt.on{background:var(--terra-soft);border-color:color-mix(in srgb,var(--terra) 30%,transparent)}
+.mopt.on::before{content:"✓";background:var(--terra);border-color:var(--terra)}
+@media (hover:hover){.mopt:not(.on):hover{background:var(--bg)}}
+.mpfoot{display:flex;gap:8px;justify-content:flex-end;margin-top:10px;padding-top:10px;border-top:1px solid var(--line)}
+.mpfoot button{height:38px;padding:0 16px;border-radius:999px;font-weight:800;cursor:pointer}
+.mpall{border:1.5px solid var(--terra);background:var(--paper);color:var(--terra-ink);margin-right:auto}
+.mpdone{border:0;background:var(--terra);color:var(--on)}
+/* numeri in evidenza */
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:16px}
+.stat{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding:10px 10px 9px;border-radius:16px;background:color-mix(in srgb,var(--sc) 9%,var(--paper));border:1px solid color-mix(in srgb,var(--sc) 24%,var(--line));color:var(--ink);font:inherit;text-align:left;min-width:0;overflow:hidden}
+button.stat{cursor:pointer}
+.stat .si{font-size:16px;line-height:1}
+.stat b{display:block;font-family:var(--serif);font-weight:600;font-size:clamp(1.55rem,6.5vw,2.1rem);line-height:1;color:var(--sc);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.stat span{font-size:12px;font-weight:650;color:var(--mute);line-height:1.2}
+.stat .of{align-self:flex-start;line-height:16px;font-size:11px;font-weight:800;color:var(--sc);background:var(--paper);border-radius:999px;padding:1px 7px;border:1px solid color-mix(in srgb,var(--sc) 30%,var(--line))}
+button.stat.on{box-shadow:inset 0 0 0 2px var(--sc)}
+@media (hover:hover){button.stat:hover{border-color:var(--sc)}}
+.stats.dummy{display:none}
+@media (min-width:900px){
+  .hero{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"kick kick" "h1 stats" "lede stats" "aw stats" "pick stats";column-gap:48px;align-items:end}
+  .hero .kick{grid-area:kick}.hero h1{grid-area:h1}.hero .lede{grid-area:lede}.hero .pick{grid-area:pick}.hero .awards{grid-area:aw}
+  .hero .stats{grid-area:stats;margin:0 0 4px;grid-template-columns:repeat(2,150px);gap:10px}
+  .hero .stat{padding:14px 14px 12px;gap:4px}
+  .hero .stat b{font-size:2.5rem}
+  .hero .stat span{font-size:13px}
+}
+
+/* Barra di ricerca + filtri, appiccicosa */
+.bar{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);padding:10px 0 10px}
+.row1{display:flex;gap:8px;align-items:center}
+@media (max-width:759px){.bar{position:relative;backdrop-filter:none;-webkit-backdrop-filter:none;background:transparent;padding-top:4px}}
+.search{flex:1;position:relative;min-width:0}
+.search svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--faint)}
+.search input{width:100%;height:44px;padding:0 38px;border:1px solid var(--line);border-radius:12px;background:var(--paper);color:var(--ink);font-size:16px;box-shadow:var(--shadow)}
+.search input::placeholder{color:var(--faint)}
+.search input::-webkit-search-cancel-button{display:none}
+.search .x{position:absolute;right:6px;top:50%;transform:translateY(-50%);border:0;background:none;width:32px;height:32px;border-radius:50%;cursor:pointer;color:var(--mute);display:none;font-size:18px}
+.search.has .x{display:block}
+.iconbtn{position:relative;height:44px;min-width:44px;padding:0 14px;border-radius:12px;border:1px solid var(--line);background:var(--paper);color:var(--ink);font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;box-shadow:var(--shadow);white-space:nowrap}
+.iconbtn.active{border-color:var(--terra);color:var(--terra-ink)}
+.badge{position:absolute;top:-6px;right:-6px;min-width:20px;height:20px;padding:0 5px;border-radius:10px;background:var(--terra);color:var(--on);font-size:11.5px;display:grid;place-items:center;font-weight:700}
+
+/* Cosa: cinque tessere grandi, sempre visibili */
+.cats{margin-top:10px}
+#g-cat{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(96px,1fr);gap:8px;overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;padding:2px 2px 6px;scrollbar-width:none;touch-action:pan-x pan-y}
+#g-cat::-webkit-scrollbar{display:none}
+#g-cat .qc{scroll-snap-align:start;height:82px;border-radius:16px;border:1px solid var(--line);background:var(--paper);box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;cursor:pointer;color:var(--ink);font-size:13.5px;font-weight:650;padding:6px;position:relative;transition:transform .15s,border-color .15s,background .15s}
+#g-cat .qc .em{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-size:18px;background:color-mix(in srgb,var(--g) 14%,var(--paper))}
+#g-cat .qc small{color:var(--faint);font-size:11.5px;font-weight:600}
+#g-cat .qc.on{border-color:var(--g);background:color-mix(in srgb,var(--g) 10%,var(--paper));box-shadow:inset 0 0 0 1.5px var(--g)}
+#g-cat .qc.on::after{content:"✓";position:absolute;top:6px;right:8px;width:18px;height:18px;border-radius:50%;background:var(--g);color:#fff;font-size:11px;display:grid;place-items:center;font-weight:800}
+#g-cat .qc:disabled{opacity:.4;cursor:default}
+.qc .lg{display:none}.qc .t{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+@media (min-width:760px){
+  #g-cat{grid-auto-flow:row;grid-template-columns:repeat(5,minmax(0,1fr));overflow:visible}
+  #g-cat .qc{min-width:0}#g-cat .qc .t{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+  #g-cat .qc{height:60px;flex-direction:row;justify-content:flex-start;gap:10px;padding:0 14px;font-size:14.5px}
+  #g-cat .qc small{margin-left:auto;font-size:12px}
+  #g-cat .qc.on::after{top:-7px;right:-7px;width:20px;height:20px}
+  .qc .lg{display:inline}.qc .sm{display:none}
+}
+@media (hover:hover){#g-cat .qc:not(:disabled):not(.on):hover{border-color:color-mix(in srgb,var(--g) 55%,var(--line));transform:translateY(-1px)}}
+
+/* Altri filtri: bottoni a tendina su tablet/computer, foglio dal basso su telefono */
+.facets{display:none}
+@media (min-width:760px){
+  .facets{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;align-items:center}
+  #morebtn{display:none}
+}
+.fbtn{height:38px;padding:0 12px 0 14px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--ink);font:650 14px var(--sans);display:inline-flex;align-items:center;gap:7px;cursor:pointer;box-shadow:var(--shadow)}
+.fbtn .n{min-width:20px;height:20px;padding:0 6px;border-radius:10px;background:var(--terra);color:var(--on);font-size:11.5px;display:none;place-items:center;font-weight:800}
+.fbtn.has{border-color:var(--terra);color:var(--terra-ink);background:var(--terra-soft)}
+.fbtn.has .n{display:grid}
+.fbtn .cv{font-size:11px;opacity:.6;transition:transform .2s}
+.fbtn[aria-expanded="true"]{border-color:var(--terra);box-shadow:0 0 0 3px color-mix(in srgb,var(--terra) 18%,transparent)}
+.fbtn[aria-expanded="true"] .cv{transform:rotate(180deg)}
+.fbtn:disabled{opacity:.45;cursor:default}
+
+/* Tipo: sottocategorie sempre in vista sotto le tessere */
+.subrow{margin-top:10px;padding:10px 12px;border-radius:16px;background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);animation:fin .18s ease}
+.subrow[hidden]{display:none}
+.subrow .qh{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px}
+.qlab2{font:800 11.5px var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+#g-sub{display:flex;flex-wrap:wrap;gap:6px}
+#g-sub::-webkit-scrollbar{display:none}
+#g-sub .qc{flex:none;height:36px;padding:0 12px;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--ink);display:inline-flex;align-items:center;gap:6px;font-size:13.5px;cursor:pointer;white-space:nowrap;transition:background .15s,border-color .15s}
+#g-sub .qc .em{font-size:15px}
+#g-sub .qc small{color:var(--faint);font-size:11.5px}
+#g-sub .qc.on{border-color:var(--g);background:color-mix(in srgb,var(--g) 13%,var(--paper));box-shadow:inset 0 0 0 1px var(--g);font-weight:650}
+#g-sub .qc.on small{color:var(--ink)}
+@media (min-width:760px){#g-sub{flex-wrap:wrap;overflow:visible}}
+@media (hover:hover){#g-sub .qc:not(.on):hover{border-color:color-mix(in srgb,var(--g) 55%,var(--line))}}
+.fpanel{display:none}
+.fsec{display:none}
+.fsec h4{margin:0 0 8px;display:flex;align-items:baseline;justify-content:space-between;font:800 11.5px var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+.fsec h4 small{font-weight:600;letter-spacing:0;text-transform:none;font-size:12px}
+.qclr{border:0;background:none;color:var(--terra);font-weight:700;font-size:12.5px;padding:0;cursor:pointer;letter-spacing:0;text-transform:none}
+.fhint{color:var(--mute);font-size:14px;margin:0}
+.qchips{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:6px}
+.fsec .qc{height:44px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink);display:flex;align-items:center;gap:9px;padding:0 12px;font-size:14px;cursor:pointer;text-align:left;min-width:0;transition:background .15s,border-color .15s}
+.fsec .qc .em{font-size:17px}
+.fsec .qc .t{flex:1}
+.fsec .qc small{color:var(--faint);font-size:12px;font-variant-numeric:tabular-nums}
+.fsec .qc::after{content:"";width:18px;height:18px;border-radius:6px;border:1.5px solid var(--line);flex:none;display:grid;place-items:center;font-size:12px;font-weight:800;color:#fff}
+.fsec .qc.on{border-color:var(--g,var(--terra));background:color-mix(in srgb,var(--g,var(--terra)) 10%,var(--paper));font-weight:650}
+.fsec .qc.on::after{content:"✓";background:var(--g,var(--terra));border-color:var(--g,var(--terra))}
+.fsec .qc:disabled{opacity:.4;cursor:default}
+@media (hover:hover){.fsec .qc:not(:disabled):not(.on):hover{border-color:color-mix(in srgb,var(--g,var(--terra)) 50%,var(--line))}}
+.fhead,.ffoot{display:none}
+
+/* tablet/computer: pannello sotto i bottoni, una sezione alla volta */
+@media (min-width:760px){
+  .fpanel.open{display:block;margin-top:10px;padding:16px;border-radius:18px;background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);animation:fin .18s ease}
+  .fpanel[data-open="sub"] .fsec[data-f="sub"],.fpanel[data-open="price"] .fsec[data-f="price"],.fpanel[data-open="ideal"] .fsec[data-f="ideal"],.fpanel[data-open="time"] .fsec[data-f="time"]{display:block}
+  .fdone{display:flex;justify-content:flex-end;margin-top:12px}
+}
+@keyframes fin{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+
+/* telefono: foglio dal basso con tutte le sezioni */
+.fscrim{position:fixed;inset:0;background:rgba(20,14,8,.42);opacity:0;pointer-events:none;transition:opacity .2s;z-index:60}
+.fscrim.open{opacity:1;pointer-events:auto}
+@media (max-width:759px){
+  .fpanel{display:flex;flex-direction:column;position:fixed;left:0;right:0;bottom:0;max-height:86vh;background:var(--paper);border-radius:22px 22px 0 0;z-index:61;transform:translateY(105%);transition:transform .25s ease;box-shadow:0 -10px 30px rgba(0,0,0,.18)}
+  .fpanel.open{transform:none}
+  .fhead{display:flex;align-items:center;justify-content:space-between;padding:14px 16px 8px;border-bottom:1px solid var(--line)}
+  .fhead b{font-family:var(--serif);font-size:1.25rem;font-weight:600}
+  .fbody{overflow-y:auto;padding:12px 16px 8px;-webkit-overflow-scrolling:touch}
+  .fsec{display:block;padding:10px 0 14px}
+  .fsec+.fsec{border-top:1px dashed var(--line)}
+  .qchips{grid-template-columns:1fr 1fr}
+  .fsec .qc{height:48px;padding:0 10px;gap:7px;font-size:13.5px}
+  .fsec .qc .lg{display:none}.fsec .qc .sm{display:inline}
+  .ffoot{display:flex;gap:8px;padding:10px 16px calc(12px + env(safe-area-inset-bottom));border-top:1px solid var(--line);background:var(--paper)}
+  .ffoot button{flex:1;height:48px;border-radius:14px;font:800 15px var(--sans);cursor:pointer}
+  .ffoot .fr{flex:0 0 auto;padding:0 18px;border:1.5px solid var(--terra);background:var(--paper);color:var(--terra-ink)}
+  .ffoot .fs{border:0;background:var(--terra);color:var(--on)}
+  .fdone{display:none}
+}
+.fx{border:0;background:var(--bg);width:36px;height:36px;border-radius:50%;font-size:20px;cursor:pointer;color:var(--ink)}
+.fdone button{height:36px;padding:0 16px;border-radius:999px;border:0;background:var(--terra);color:var(--on);font-weight:800;cursor:pointer}
+.active-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:8px;font-size:13px;color:var(--mute)}
+.apill{display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 6px 0 10px;border-radius:999px;background:var(--terra-soft);color:var(--terra-ink);border:0;font-weight:600;font-size:13px;cursor:pointer}
+.apill span{font-size:15px;line-height:1;opacity:.7}
+.iconbtn.reset{background:var(--terra);border-color:var(--terra);color:#fff;font-weight:800}
+.iconbtn.reset .badge{background:#fff;color:var(--terra)}
+.iconbtn.reset[hidden]{display:none}
+@media (max-width:759px){.iconbtn.reset .rl{display:none}.iconbtn.reset{font-size:20px;padding:0 12px}#morebtn span:not(.badge){display:inline}}
+.freset{height:28px;padding:0 12px;border-radius:999px;border:1.5px solid var(--terra);background:var(--paper);color:var(--terra-ink);font-weight:700;font-size:13px;cursor:pointer;margin-left:auto}
+
+/* Avviso e risultati */
+.cnote{display:flex;gap:10px;align-items:flex-start;margin:12px 0 4px;padding:12px 14px;border-radius:14px;background:var(--warn-soft);color:var(--ink);font-size:14px;line-height:1.4}
+.cnote .em{font-size:18px;line-height:1.1}
+.status{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin:16px 0 10px}
+.status h2{margin:0;font-family:var(--serif);font-weight:600;font-size:1.35rem}
+.status small{color:var(--mute);font-size:13px}
+.grid{display:grid;grid-template-columns:1fr;gap:12px;padding-bottom:28px}
+@media (min-width:640px){.grid{grid-template-columns:1fr 1fr}}
+@media (min-width:1024px){.grid{grid-template-columns:1fr 1fr 1fr;gap:14px}}
+.gmore{grid-column:1/-1;justify-self:center;margin:8px auto 4px}
+.card{content-visibility:auto;contain-intrinsic-size:auto 260px;background:var(--paper);border-radius:var(--r);box-shadow:var(--shadow);border:1px solid var(--line);position:relative;overflow:hidden;display:flex;flex-direction:column}
+.cmain{display:flex;flex-direction:column;gap:6px;flex:1;padding:14px 16px 10px 18px;border:0;background:none;cursor:pointer;text-align:left;font:inherit;color:inherit;width:100%}
+.cfoot{display:flex;gap:8px;padding:0 16px 12px 18px}
+.cbtn{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:11px;border:1px solid var(--line);background:var(--bg);font-weight:650;font-size:14px;text-decoration:none;color:var(--ink);cursor:pointer}
+.cbtn.pri{background:var(--terra-soft);border-color:color-mix(in srgb,var(--terra) 30%,transparent);color:var(--terra-ink)}
+@media (hover:hover){.cbtn:hover{border-color:var(--g)}}
+.card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--g)}
+.card{background:color-mix(in srgb,var(--g) 12%,var(--paper))}
+@media (hover:hover){.card:hover{border-color:color-mix(in srgb,var(--g) 35%,var(--line))}}
+.top{display:flex;gap:6px 8px;align-items:center;flex-wrap:wrap;font-size:12.5px;color:var(--mute)}
+.gtag{display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 10px 0 8px;border-radius:999px;background:var(--g);color:var(--paper);font-weight:700;font-size:12.5px}
+.title{font-size:1.3rem;font-weight:800;line-height:1.18;letter-spacing:-.018em;margin:0;color:var(--ink);text-wrap:balance}
+.desc{font-size:14.5px;color:var(--mute);margin:0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.meta{display:flex;flex-wrap:wrap;gap:5px;margin-top:auto;padding-top:6px}
+.sheet .meta{margin-top:0}
+.mst{display:inline-flex;align-items:center;gap:4px;height:24px;padding:0 9px;border-radius:999px;font-size:12.5px;font-weight:650;background:var(--bg);color:var(--mute);border:1px solid var(--line)}
+.mst.free{background:var(--ok-soft);color:var(--ok);border-color:transparent}
+.mst.paid{background:var(--terra-soft);color:var(--terra-ink);border-color:transparent}
+.mst.warn{background:var(--warn-soft);color:var(--warn);border-color:transparent}
+.mst.closed{background:var(--bad-soft);color:var(--bad);border-color:transparent}
+.empty{padding:34px 20px;text-align:center;color:var(--mute);background:var(--paper);border:1px dashed var(--line);border-radius:var(--r)}
+.empty button{margin-top:10px}
+
+/* Scheda di dettaglio: foglio dal basso su telefono, finestra al centro su tablet e desktop */
+.scrim{position:fixed;inset:0;background:rgba(20,15,10,.45);z-index:40;display:none}
+.scrim.open{display:block}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:41;max-height:92vh;max-height:92dvh;overflow:auto;overscroll-behavior:contain;background:var(--paper);border-radius:22px 22px 0 0;padding:8px 18px calc(18px + env(safe-area-inset-bottom));display:none;box-shadow:0 -10px 40px rgba(20,15,10,.25)}
+.sheet.open{display:block;animation:up .22s ease-out}
+@keyframes up{from{transform:translateY(40px);opacity:.4}}
+.grab{width:42px;height:5px;border-radius:3px;background:var(--line);margin:4px auto 10px}
+@media (min-width:760px){
+  .sheet{left:50%;right:auto;bottom:auto;top:50%;transform:translate(-50%,-50%);width:min(660px,92vw);max-height:88vh;border-radius:22px;padding:22px 24px 20px}
+  .sheet.open{animation:pop .18s ease-out}
+  @keyframes pop{from{opacity:0;transform:translate(-50%,-48%)}}
+  .grab{display:none}
+}
+@media (prefers-reduced-motion:reduce){.sheet.open{animation:none}}
+.sclose{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--bg);cursor:pointer;font-size:18px;line-height:1}
+.sheet .title{font-size:1.6rem;padding-right:42px;margin-top:6px}
+.sheet .lead{font-size:15.5px;margin:10px 0 0;max-width:62ch}
+.why{margin:10px 0 0;padding:10px 12px;border-radius:12px;background:color-mix(in srgb,var(--g) 9%,var(--paper));border:1px solid color-mix(in srgb,var(--g) 25%,transparent);font-size:14.5px}
+.facts{display:grid;gap:0;margin:14px 0 6px;border-top:1px solid var(--line)}
+.fact{display:grid;grid-template-columns:28px 1fr;gap:2px 10px;padding:10px 0;border-bottom:1px solid var(--line)}
+.fact .ic{font-size:18px;line-height:1.3;grid-row:span 2}
+.fact small{font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--mute)}
+.fact div{font-size:14.5px}
+.acts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:14px 0 6px}
+@media (min-width:760px){.acts{display:flex;flex-wrap:wrap}}
+.act{display:flex;align-items:center;justify-content:center;gap:7px;height:44px;padding:0 14px;border-radius:12px;border:1px solid var(--line);background:var(--paper);text-decoration:none;font-weight:650;font-size:14.5px;cursor:pointer;text-align:center}
+.act.pri{background:var(--terra);border-color:var(--terra);color:var(--on)}
+.act.copied{border-color:var(--ok);color:var(--ok)}
+.src{font-size:13px;color:var(--mute);margin-top:10px}
+.src ul{margin:6px 0 0;padding-left:18px}
+.src li{margin:3px 0}
+.rel{display:inline-block;font-size:11px;font-weight:700;padding:1px 6px;border-radius:6px;margin-left:4px}
+.rel.uff{background:var(--ok-soft);color:var(--ok)}
+.rel.sec{background:var(--warn-soft);color:var(--warn)}
+
+/* nav, riconoscimenti, viste Metodo e Fonti */
+.topnav{display:flex;gap:6px;padding-top:max(12px,env(safe-area-inset-top));flex-wrap:wrap}
+.topnav a{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--ink);font:700 13.5px var(--sans);text-decoration:none}
+.topnav a[aria-current="page"]{background:var(--terra);border-color:var(--terra);color:#fff}
+.hero{padding-top:max(18px,env(safe-area-inset-top))}
+.awards{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.awards:empty{display:none}
+.awq{cursor:pointer;font-family:inherit}
+.awq.on{background:var(--terra);border-color:var(--terra);color:var(--on)}
+.aw{display:inline-flex;align-items:center;gap:5px;font-size:12.5px;font-weight:700;padding:4px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink)}
+.ctag{font-weight:700;color:var(--terra)}
+.mst.unk{background:var(--warn-soft);color:var(--warn)}
+.view{padding-top:6px;padding-bottom:30px}
+.view h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.5rem,4vw,2.1rem);margin:8px 0 6px}
+.view h3{font-family:var(--serif);font-weight:600;font-size:1.2rem;margin:22px 0 6px}
+.view p,.view li{font-size:15px;line-height:1.55;max-width:72ch}
+.view ol,.view ul{padding-left:20px}
+.mcard{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:16px 18px;margin:12px 0}
+.srcf{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}
+.srcf button{height:36px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--ink);font:700 13px var(--sans);cursor:pointer}
+.srcf button.on{background:var(--terra);color:#fff;border-color:var(--terra)}
+.srcl{display:grid;gap:10px}
+@media (min-width:760px){.srcl{grid-template-columns:1fr 1fr}}
+.srci{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-size:14px}
+.srci a{font-weight:700;color:var(--ink)}
+.srci .lv{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--terra)}
+.srci small{display:block;color:var(--mute);margin-top:4px}
+.srcsearch{height:42px;width:100%;max-width:420px;border:1px solid var(--line);border-radius:12px;background:var(--paper);color:var(--ink);font:600 16px var(--sans);padding:0 12px}
+footer.mini{border-top:1px solid var(--line);margin-top:28px;padding:14px 0 calc(18px + env(safe-area-inset-bottom));color:var(--mute);font-size:12.5px;text-align:center}
+footer.mini a{color:var(--mute)}
+footer{border-top:1px solid var(--line);padding:22px 0 calc(32px + env(safe-area-inset-bottom));font-size:13.5px;color:var(--mute)}
+footer .cols{display:grid;gap:18px}
+@media (min-width:760px){footer .cols{grid-template-columns:repeat(3,1fr)}}
+footer h3{font-family:var(--serif);font-size:1.1rem;color:var(--ink);margin:0 0 6px;font-weight:600}
+footer ul{margin:0;padding-left:18px}
+footer li{margin:3px 0}
+
+/* box vicino a te */
+.eatbtn{gap:6px}
+@media (max-width:759px){.eatbtn .rl{display:none}.eatbtn{font-size:19px;padding:0 11px}}
+#eat{border:0;border-radius:20px;padding:0;width:min(440px,calc(100vw - 24px));max-height:calc(100dvh - 32px);background:var(--paper);color:var(--ink);box-shadow:0 20px 60px rgba(0,0,0,.3)}
+#eat::backdrop{background:rgba(20,14,8,.45)}
+.eathead{display:flex;justify-content:space-between;align-items:center;padding:16px 18px 6px;margin:0}
+.eathead h2{font:700 20px var(--serif);margin:0}
+.eathead .fx{border:0;background:var(--bg);color:var(--ink);width:36px;height:36px;border-radius:50%;font-size:22px;cursor:pointer}
+.eatbody{padding:4px 18px 4px}
+.eatsec{display:flex;flex-direction:column;gap:8px;padding:12px 0;border-bottom:1px solid var(--line);font:14px var(--sans)}
+.eatsec label{display:flex;justify-content:space-between;align-items:baseline}
+.eatv{font:800 15px var(--sans);color:var(--terra-ink)}
+.eatgeo{height:44px;border-radius:12px;border:1px solid var(--terra);background:var(--terra-soft);color:var(--terra-ink);font:700 15px var(--sans);cursor:pointer}
+#eat-txt{height:44px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:0 12px;font:16px var(--sans)}
+.eatst{color:var(--mute)} .eatst.ok{color:var(--ok)} .eatst.bad{color:var(--bad)}
+#eat input[type=range]{width:100%;accent-color:var(--terra);height:28px}
+.eatchips{display:flex;gap:6px;flex-wrap:wrap}
+.eatchips button{border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:6px 11px;font:600 13px var(--sans);cursor:pointer}
+.eatchips button.on{background:var(--terra);border-color:var(--terra);color:var(--on)}
+.eatres{font:14px var(--sans);margin:12px 0 4px;color:var(--ink)}
+.eatfoot{display:flex;flex-direction:column;gap:8px;padding:10px 18px 18px}
+.eatgo{display:flex;justify-content:center;align-items:center;height:46px;border-radius:12px;background:var(--terra);color:var(--on);font:700 15px var(--sans);text-decoration:none}
+.eatgo.alt{background:var(--paper);color:var(--terra-ink);border:1px solid var(--terra)}
+.eatgo[aria-disabled="true"]{opacity:.45;pointer-events:none}
+button.eatgo{border:0;cursor:pointer;font:700 15px var(--sans);width:100%}
+button.eatgo.alt{border:1px solid var(--terra)}
+.mst.near{background:var(--terra-soft);color:var(--terra-ink);font-weight:700}
+#nearn{background:var(--terra);color:var(--on)}
+.eatfoot small{color:var(--mute);font:12.5px var(--sans);line-height:1.4}
+.qcwrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.qct{border-collapse:collapse;width:100%;font:13px var(--sans);min-width:560px}
+.qct th,.qct td{padding:7px 8px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+.qct th{font-weight:800;color:var(--mute);font-size:11.5px;text-transform:uppercase;letter-spacing:.04em}
+.qcp{font-weight:800}.qcp.ok{color:var(--ok)}.qcp.mid{color:var(--warn)}.qcp.low{color:var(--bad)}
+
+/* ===== v18: leggibilità e spazi, prima l'iPhone ===== */
+body{font-size:16px;line-height:1.5}
+.gtag{background:color-mix(in srgb,var(--g) 15%,var(--paper));color:color-mix(in srgb,var(--g) 85%,var(--ink));height:24px;font-size:12px;padding:0 9px 0 7px}
+.top{font-size:12.5px}
+.ctag{font-weight:700;color:var(--terra-ink)}
+.card{border-radius:18px;contain-intrinsic-size:auto 210px}
+.card::before{width:3px}
+.cmain{gap:7px;padding:14px 16px 8px 17px}
+.title{font-size:1.14rem;line-height:1.25;font-weight:780;letter-spacing:-.012em}
+.desc{font-size:14.5px;line-height:1.5;color:color-mix(in srgb,var(--ink) 68%,var(--paper));-webkit-line-clamp:2}
+.meta{gap:5px;padding-top:4px}
+.mst{height:23px;font-size:12px;padding:0 8px}
+.cfoot{padding:2px 12px 12px 17px;gap:8px}
+.cbtn{height:36px;font-size:13.5px;border-radius:10px}
+.cbtn.ph{flex:0 0 auto;padding:0 12px;background:transparent}
+.cbtn.pri{flex:1}
+.status{margin:14px 0 10px;flex-wrap:wrap;row-gap:2px}
+.status h2{font-size:1.15rem}
+.status small{font-size:12px}
+.awards{display:flex;gap:6px;margin-top:12px;flex-wrap:wrap}
+.lang-lg{display:inline}
+@media (max-width:759px){
+  .topnav{gap:6px;flex-wrap:nowrap;padding-top:max(10px,env(safe-area-inset-top))}
+  .topnav a{height:34px;padding:0 12px;font-size:13px}
+  .topnav .lg{display:none}
+  .topnav .sm{display:inline}
+  .hero{padding-top:16px;padding-bottom:8px}
+  .kick{display:none}
+  h1{font-size:1.72rem;line-height:1.12}
+  .lede{font-size:15px;line-height:1.45;margin-top:8px}
+  .awards{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:12px -16px 0;padding:0 16px 2px;scroll-padding:16px}
+  .awards::-webkit-scrollbar{display:none}
+  .aw{flex:none;font-size:13px;height:34px;padding:0 12px}
+  .pick{margin-top:12px;gap:8px}
+  .pick select,.mbtn{height:44px}
+  .stats{margin-top:12px;gap:6px}
+  .stat{padding:9px 9px 8px;border-radius:14px}
+  .stat b{font-size:1.6rem}
+  .stat span{font-size:11.5px}
+  .stat .si{font-size:14px}
+  .grid{gap:10px}
+  #g-cat .qc{height:76px}
+  .cats{margin-top:8px}
+}
+@media (min-width:760px){.topnav .sm{display:none}}
+@media (min-width:760px){.title{font-size:1.18rem}}
+
+/* ===== v19: numeri e filtri compatti ===== */
+.stats{gap:6px}
+.stat{flex-direction:row;align-items:center;gap:7px;padding:8px 10px;border-radius:12px}
+.stat .si{font-size:14px}
+.stat b{font-size:1.25rem!important;font-family:var(--sans);font-weight:800}
+.stat span{font-size:12px}
+.stat .of{position:absolute;top:4px;right:6px;font-size:10px;line-height:14px;padding:0 5px}
+@media (max-width:759px){
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+  .stat{padding:7px 10px;min-height:42px}
+  .stat b{font-size:1.15rem!important}
+  #g-cat{grid-auto-columns:max-content;gap:6px}
+  #g-cat .qc{height:40px!important;flex-direction:row;gap:6px;padding:0 12px 0 6px;border-radius:999px;font-size:13.5px}
+  #g-cat .qc .em{width:28px;height:28px;font-size:15px}
+  #g-cat .qc small{font-size:11.5px;margin-left:2px}
+  #g-cat .qc.on::after{display:none}
+  .subrow{padding:8px 10px;margin-top:8px}
+  #g-sub{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:0 -10px;padding:0 10px}
+  #g-sub .qc{height:34px;padding:0 10px;font-size:13px}
+  .fsec .qc{height:42px}
+}
+@media (min-width:760px){
+  #g-cat .qc{height:46px!important;border-radius:14px;padding:0 12px}
+  #g-cat .qc .em{width:30px;height:30px;font-size:16px}
+  .hero .stats{grid-template-columns:repeat(2,168px)}
+  .hero .stat{flex-wrap:wrap;row-gap:2px}
+  .hero .stat .of{position:static;order:3;flex-basis:100%;width:max-content;max-width:max-content}
+  .hero .stat{padding:10px 12px!important}
+  .hero .stat b{font-size:1.5rem!important}
+}
+
+/* v21 numeri in alto in orizzontale, filtri compatti */
+.hero{display:block!important}
+.hero .stats,.stats{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:6px!important;margin:10px 0 12px!important}
+.hero .stat,.stat{flex-direction:column!important;align-items:flex-start!important;flex-wrap:nowrap!important;gap:1px!important;padding:6px 8px!important;min-height:0!important;border-radius:12px!important}
+.hero .stat b,.stat b{font-size:1.15rem!important;line-height:1.05}
+.stat .si{position:absolute;top:6px;right:7px;font-size:12px!important;opacity:.85}
+.stat span:not(.si):not(.of){font-size:11px!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.hero .stat .of,.stat .of{position:absolute!important;top:4px;right:5px;order:0!important;flex-basis:auto!important;font-size:9.5px!important;line-height:13px!important;padding:0 4px!important}
+@media (min-width:760px){.hero .stats,.stats{grid-template-columns:repeat(4,minmax(0,170px))!important}.hero .stat b,.stat b{font-size:1.35rem!important}.stat span:not(.si):not(.of){font-size:12px!important}}
+.hero .pick{margin-top:0}
+.hero .awards{margin:10px 0 0}
+.hero .lede{margin-top:10px}
+.active-row{gap:4px!important;margin-top:4px!important;font-size:12px!important}
+.apill{height:24px!important;padding:0 4px 0 8px!important;gap:3px!important;font-size:12px!important}
+.apill span{font-size:13px!important}
+.freset{height:24px!important;padding:0 9px!important;font-size:12px!important}
+.facets{gap:6px!important}
+.fbtn{padding:0 10px!important;height:32px!important}
+.qchips{gap:5px!important}
+.fsec{padding-top:8px!important;padding-bottom:8px!important}
+.fsec h4{margin-bottom:6px!important}
+.fsec .qc{padding:5px 10px!important;min-height:0!important;height:auto!important}
+.awq,.aw{padding:3px 9px!important}
+.awards{gap:5px!important}
+.stat .ofn{font-size:.62em;font-weight:700;color:var(--mute);margin-left:1px}
+@media (max-width:759px){.hero .kick{display:flex!important;gap:8px;margin:2px 0 6px;font-size:10.5px;letter-spacing:.12em}.hero .kick .italy{width:18px;height:21px}}
+
+/* v22 */
+.hero .kick{margin-bottom:16px!important}
+@media (max-width:759px){.hero .kick{margin-bottom:12px!important}}
+.awards{gap:6px!important}
+.awards .aw,.awards .awq{height:30px!important;padding:0 11px!important;font-size:12.5px!important;font-weight:650!important;border-radius:999px!important;gap:5px!important}
+.fbtn{height:30px!important;padding:0 10px 0 11px!important;font-size:12.5px!important;gap:5px!important}
+.fbtn .cv{font-size:10px}
+.lede[hidden]{display:none!important}
+@media (max-width:759px){.hero .awards{margin:10px -16px 0!important}}
+
+/* v24 */
+.hero .kick{margin-bottom:4px!important}
+.hero h1{margin-bottom:0}
+.hero .stats{margin-top:20px!important}
+@media (max-width:759px){.hero .kick{margin-bottom:2px!important}.hero .stats{margin-top:16px!important}}
+.awards .awq{height:40px!important;padding:0 14px!important;font-size:13.5px!important;font-weight:650!important;box-shadow:var(--shadow);border:1px solid var(--line)}
+.awards .awq.on{border-color:var(--terra)}
+@media (min-width:760px){.awards .awq{height:46px!important;padding:0 16px!important;font-size:14.5px!important;border-radius:16px!important}}
+
+/* v25 selettori compatti */
+.pick{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:6px!important;max-width:640px;margin-top:0!important}
+.pick .msel{gap:2px}
+.pick .mlab{font-size:10px;letter-spacing:.09em}
+.pick .mbtn{height:38px!important;border-radius:11px;font-size:14px;padding:0 9px;gap:4px}
+.pick .mbtn .mc{min-width:18px;height:18px;font-size:10.5px;padding:0 5px}
+.mpop{padding:10px!important;border-radius:16px!important}
+.mphead{margin-bottom:6px!important}
+.mlist{gap:4px!important}
+.mopt{padding:5px 10px!important;min-height:36px!important;border-radius:10px!important}
+.mpfoot{margin-top:8px!important;padding-top:8px!important}
+#reg-list{display:grid;grid-template-columns:1fr}
+@media (min-width:640px){#reg-pop{width:min(420px,calc(100vw - 40px));right:auto}}
+@media (max-width:759px){.pick .mbtn{height:40px!important;font-size:13.5px}}
+
+/* v26 filtri compatti e UNESCO/Borghi/Bandiere accanto a Ingresso/Tempo */
+.facets{display:flex!important;flex-wrap:wrap;gap:6px!important;margin-top:8px!important;align-items:center}
+#facets .awards{display:contents!important}
+#facets .awq,.fbtn{height:32px!important;padding:0 11px!important;border-radius:999px!important;font:650 13px var(--sans)!important;gap:5px!important;box-shadow:var(--shadow);border:1px solid var(--line);background:var(--paper);color:var(--ink)}
+#facets .awq.on{background:var(--terra)!important;border-color:var(--terra)!important;color:var(--on)!important}
+@media (max-width:759px){
+  #morebtn{display:none!important}
+  .facets{flex-wrap:nowrap!important;overflow-x:auto;scrollbar-width:none;margin:6px -16px 0!important;padding:2px 16px 4px}
+  .facets::-webkit-scrollbar{display:none}
+  #facets .awq,.fbtn{flex:none;height:34px!important}
+  .fhead{padding:10px 16px!important}
+  .fbody{padding:4px 16px 8px!important}
+  .fsec{padding:6px 0 8px!important}
+  .fsec h4{margin:0 0 5px!important;font-size:10.5px!important}
+  .qchips{gap:5px!important}
+  .fsec .qc{height:38px!important;font-size:13.5px!important;padding:0 10px!important;border-radius:10px!important;gap:7px!important}
+  .fsec .qc .em{font-size:15px}
+  .ffoot{padding:8px 16px calc(8px + env(safe-area-inset-bottom))!important}
+  .ffoot button{height:42px!important}
+}
+@media (min-width:760px){
+  .fpanel.open{display:inline-flex!important;align-items:center;gap:10px;max-width:100%;margin-top:6px!important;padding:6px!important;border-radius:14px!important}
+  .fpanel.open .fbody{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .fpanel .fsec{padding:0!important;border:0!important}
+  .fpanel .fsec h4{display:none!important}
+  .fpanel .qchips{display:flex!important;flex-wrap:wrap;gap:5px!important}
+  .fpanel .fsec .qc{height:32px!important;padding:0 10px!important;font-size:13px!important;border-radius:999px!important;gap:6px!important}
+  .fpanel .fsec .qc .t{flex:none;white-space:nowrap}
+  .fpanel .fsec .qc .em{font-size:14px}
+  .fpanel .fsec .qc::after{width:15px;height:15px;border-radius:5px}
+  .fdone{margin:0!important}
+  .fdone button{height:32px!important;padding:0 12px!important;font-size:13px}
+}
+@media (max-width:759px){
+  .fpanel .qchips{display:flex!important;flex-wrap:wrap;gap:6px!important}
+  .fpanel .fsec .qc{height:36px!important;border-radius:999px!important;padding:0 11px!important;font-size:14px!important}
+  .fpanel .fsec .qc .t{flex:none;white-space:nowrap}
+  .fpanel .fsec .qc::after{width:16px;height:16px;border-radius:5px}
+  .fsec+.fsec{border-top:1px solid var(--line)!important}
+}
+#g-ideal .qc[aria-label*="UNESCO"],#g-ideal .qc[aria-label*="Borghi"],#g-ideal .qc[aria-label*="rancion"]{display:none!important}
+@media (max-width:759px){.fpanel .fsec .qc{height:34px!important;font-size:13.5px!important}}
+/* v27 Ingresso come gli altri, una riga sola */
+.fpanel .fsec .qc .lg{display:none!important}.fpanel .fsec .qc .sm{display:inline!important}
+.facets{flex-wrap:nowrap!important;overflow-x:auto;scrollbar-width:none}
+.facets::-webkit-scrollbar{display:none}
+.facets>*, #facets .awq{flex:none}
+@media (min-width:760px){.fpanel .qchips{flex-wrap:nowrap!important}.fpanel.open{overflow-x:auto;scrollbar-width:none}}
+@media (max-width:759px){
+  .fpanel[data-open] .fsec{display:none!important}
+  .fpanel[data-open="price"] .fsec[data-f="price"],.fpanel[data-open="ideal"] .fsec[data-f="ideal"],.fpanel[data-open="time"] .fsec[data-f="time"],.fpanel[data-open="sub"] .fsec[data-f="sub"]{display:block!important;border-top:0!important}
+}
+  .flink.soft{font-weight:500;color:var(--ink-2,#555)}
+  .flink{color:var(--terra);font-weight:600;text-decoration:underline;text-underline-offset:2px}
+/* scheda in elenco (7/11 sera): classifica nella riga in alto, informazioni più leggibili, pulsanti compatti */
+.card .top{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;justify-content:flex-start;min-width:0}
+.card .top>span:nth-child(2){min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1 1 auto}
+.card .gtag{flex:0 0 auto}
+.rkw{margin-left:auto;display:inline-flex;gap:5px;flex:0 0 auto}
+.rk{font-size:12px;font-weight:750;letter-spacing:.2px;padding:3px 9px;border-radius:999px;background:color-mix(in srgb,var(--g) 14%,var(--paper));color:color-mix(in srgb,var(--g) 75%,var(--ink));border:1px solid color-mix(in srgb,var(--g) 30%,transparent)}
+.rks{font-size:12px;font-weight:700;padding:3px 8px;border-radius:999px;background:var(--ink);color:var(--paper)}
+.card .meta{gap:6px;padding-top:6px}
+.card .mst{height:27px;font-size:13px;padding:0 10px;gap:5px}
+.cfoot{justify-content:flex-end;gap:8px;padding:4px 12px 12px 17px}
+.cbtn,.cbtn.pri,.cbtn.ph{flex:0 0 auto;height:32px;font-size:13px;padding:0 13px;border-radius:999px}
+.cbtn.pri{padding:0 15px}
+[hidden]{display:none!important}
+.topnav{padding-top:2px!important;margin:0 0 12px}
+.hero[hidden]+.topnav{padding-top:max(12px,env(safe-area-inset-top))!important}
+.topnav a.luoghibtn{border-color:var(--terra);color:var(--terra)}
+@media(max-width:560px){.topnav a{flex:1 1 auto;justify-content:center;white-space:nowrap;padding:0 8px;gap:4px}}
+.xtra{display:grid;gap:10px;margin:2px 0 16px}
+.xtra[hidden]{display:none}
+.xbox{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:12px 14px;box-shadow:var(--shadow)}
+.xh{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:space-between;margin-bottom:8px}
+.xh b{font-family:var(--serif);font-size:1.08rem;font-weight:700}
+.xh span{display:flex;gap:6px;flex-wrap:wrap}
+.xt{height:32px;padding:0 12px;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:700 13px var(--sans);cursor:pointer}
+.xt.on{background:var(--terra);border-color:var(--terra);color:var(--on)}
+.xlist{margin:0;padding:0;list-style:none;counter-reset:x;display:grid;gap:6px}
+.xlist li{counter-increment:x}
+.xlist button{width:100%;display:flex;align-items:center;gap:10px;min-height:44px;padding:6px 10px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:650 14.5px var(--sans);text-align:left;cursor:pointer}
+.xlist button::before{content:counter(x);flex:none;width:22px;height:22px;border-radius:50%;background:var(--terra);color:var(--on);font-size:12px;font-weight:800;display:grid;place-items:center}
+.xlist .xn{flex:1;min-width:0}.xlist small{color:var(--faint);font-size:12px;white-space:nowrap}
+.xnote{margin:8px 2px 0;font-size:12px;color:var(--faint)}
+.xchips{display:flex;gap:6px;flex-wrap:wrap}
+.xc{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:4px 12px;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:700 13.5px var(--sans);text-decoration:none}
+.xc small{color:var(--faint);font-weight:600;font-size:12px}
+.xclr{background:none;border:0;color:var(--terra);font:700 12.5px var(--sans);cursor:pointer}
+.cbtn.fav{flex:0 0 44px;font-size:18px;color:var(--terra)}
+.cbtn.fav.on{background:var(--terra-soft);border-color:var(--terra)}
+@media(min-width:760px){.xtra{grid-template-columns:1.3fr 1fr}.xtra>.xbox:only-child{grid-column:1/-1}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero" id="hero">
+    <div class="kick"><svg class="italy" viewBox="0 0 40 47" width="22" height="26" aria-hidden="true"><path fill="currentColor" d="M4 6 10 3 17 2 22 4 26 3 27 7 23 9 22 12 23 16 26 19 30 23 33 26 32 28 36 30 39 33 38 35 34 32 32 34 33 37 31 41 29 42 29 38 28 34 25 31 21 28 17 25 14 21 12 16 10 14 6 15 3 13 2 9Z"/><path fill="currentColor" opacity=".75" d="M22 42 30 41 28 46 24 45Z M9 26 13 25 13 33 9 34Z"/></svg><span id="kicktxt">Ach's Places Guide</span></div>
+    <h1 id="h1"></h1>
+    <div class="stats" id="stats"></div>
+    <div class="pick" aria-label="Scegli il luogo">
+      <div class="msel"><span class="mlab">Regioni</span><button class="mbtn" id="reg-btn" type="button" aria-haspopup="true" aria-expanded="false"><span class="mv" id="reg-val"></span><span class="cv" aria-hidden="true">▼</span></button></div>
+      <div class="msel"><span class="mlab">Province</span><button class="mbtn" id="prov-btn" type="button" aria-haspopup="true" aria-expanded="false"><span class="mv" id="prov-val"></span><span class="cv" aria-hidden="true">▼</span></button></div>
+      <div class="msel"><span class="mlab">Comuni</span><button class="mbtn" id="com-btn" type="button" aria-haspopup="true" aria-expanded="false"><span class="mv" id="com-val"></span><span class="cv" aria-hidden="true">▼</span></button></div>
+      <div class="mpop" id="reg-pop" hidden role="dialog" aria-label="Scegli le regioni">
+        <div class="mphead"><b>Regioni</b><span>puoi sceglierne più di una</span></div>
+        <div class="mlist" id="reg-list"></div>
+        <div class="mpfoot"><button type="button" class="mpall" id="reg-all">Tutte le regioni</button><button type="button" class="mpdone" data-close="reg">Fatto</button></div>
+      </div>
+      <div class="mpop" id="prov-pop" hidden role="dialog" aria-label="Scegli le province">
+        <div class="mphead"><b>Province</b><span>puoi sceglierne più di una</span></div>
+        <div class="mlist" id="prov-list"></div>
+        <div class="mpfoot"><button type="button" class="mpdone" data-close="prov">Fatto</button></div>
+      </div>
+      <div class="mpop" id="com-pop" hidden role="dialog" aria-label="Scegli i comuni">
+        <div class="mphead"><b>Comuni</b><span>puoi sceglierne più di uno</span></div>
+        <input class="mpq" id="com-q" type="search" placeholder="Cerca un comune…" aria-label="Cerca un comune">
+        <div class="mlist" id="com-list"></div>
+        <div class="mpfoot"><button type="button" class="mpall" id="com-all">Tutti i comuni</button><button type="button" class="mpdone" data-close="com">Fatto</button></div>
+      </div>
+    </div>
+    <div class="awards" id="awards"></div>
+    <p class="lede" id="lede"></p>
+  </header>
+  <nav class="topnav" aria-label="Sezioni"><a href="#" id="nav-guida">🧭 Guida</a><a class="luoghibtn" href="filtri.html" id="nav-luoghi" aria-label="Luoghi: esplora per regione, categoria e comune">🔎 Luoghi</a><a href="#metodo" id="nav-metodo">📐 Metodo</a><a href="#fonti" id="nav-fonti">📚 <span class="lg">Archivio fonti</span><span class="sm">Fonti</span></a></nav>
+</div>
+
+<div class="bar" id="bar">
+  <div class="wrap">
+    <div class="row1">
+      <label class="search" id="searchwrap">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="q" type="search" placeholder="Cerca un luogo…" aria-label="Cerca un luogo" autocomplete="off">
+        <button class="x" id="qx" type="button" aria-label="Cancella ricerca">×</button>
+      </label>
+      <button class="iconbtn reset" id="resetbtn" type="button" hidden><span aria-hidden="true">↺</span><span class="rl">Azzera</span><span class="badge" id="resetn">0</span></button>
+      <button class="iconbtn eatbtn" id="eatbtn" type="button" aria-haspopup="dialog" aria-controls="eat"><span aria-hidden="true">📍</span><span class="rl">Vicino a te</span><span class="badge" id="nearn" hidden>●</span></button>
+      <button class="iconbtn" id="morebtn" type="button" aria-expanded="false" aria-controls="qbar">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
+        <span>Filtri</span><span class="badge" id="badge" hidden>0</span>
+      </button>
+    </div>
+    <div class="cats">
+      <div class="qh" style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px"><span class="qlab" style="font:800 11.5px var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--mute)">Cosa vuoi vedere</span><button class="qclr" id="clr-cat" type="button" hidden>Tutto</button></div>
+      <div id="g-cat" role="group" aria-label="Categoria"></div>
+    </div>
+    <div class="subrow" id="subwrap" hidden>
+      <div class="qh"><span class="qlab2">🏷️ Tipo</span><button class="qclr" id="clr-sub" type="button" hidden>Togli tutti</button></div>
+      <div id="g-sub" role="group" aria-label="Tipo"></div>
+    </div>
+    <div class="facets" id="facets">
+      <button class="fbtn" type="button" data-f="price" aria-expanded="false">🎟️ Ingresso <span class="n"></span><span class="cv" aria-hidden="true">▼</span></button>
+      <button class="fbtn" type="button" data-f="ideal" aria-expanded="false">✨ Ideale per <span class="n"></span><span class="cv" aria-hidden="true">▼</span></button>
+      <button class="fbtn" type="button" data-f="time" aria-expanded="false">⏱️ Tempo <span class="n"></span><span class="cv" aria-hidden="true">▼</span></button>
+    </div>
+    <div class="fscrim" id="fscrim"></div>
+    <div class="fpanel" id="qbar" role="dialog" aria-label="Filtri">
+      <div class="fhead"><b>Filtri</b><button class="fx" id="fclose" type="button" aria-label="Chiudi filtri">×</button></div>
+      <div class="fbody">
+        <section class="fsec" data-f="price"><h4>🎟️ Ingresso</h4><div class="qchips" id="g-price"></div></section>
+        <section class="fsec" data-f="ideal"><h4>✨ Ideale per</h4><div class="qchips" id="g-ideal"></div></section>
+        <section class="fsec" data-f="time"><h4>⏱️ Tempo</h4><div class="qchips" id="g-time"></div></section>
+        <div class="fdone"><button type="button" id="fdone">Fatto</button></div>
+      </div>
+      <div class="ffoot"><button class="fr" type="button" id="freset">Azzera</button><button class="fs" type="button" id="fshow">Mostra i luoghi</button></div>
+    </div>
+    <div class="active-row" id="active" hidden></div>
+  </div>
+</div>
+
+<main class="wrap" id="guide">
+  <section class="xtra" id="xtra" aria-label="Idee per la visita"></section>
+  <div class="status"><h2 id="count"></h2><small id="verified"></small></div>
+  <div class="grid" id="grid"></div>
+</main>
+
+<section class="wrap view" id="view-metodo" hidden aria-labelledby="m-title">
+  <h2 id="m-title">Metodo e regole</h2>
+  <p>Come Ach's Places Guide sceglie, verifica e pubblica i luoghi. Le stesse regole valgono per ogni comune d'Italia, così la guida può crescere provincia per provincia senza cambiare forma.</p>
+  <div class="mcard" id="coverage"></div>
+  <h3>1. Procedura, comune per comune</h3>
+  <ol>
+    <li>Si parte dall'elenco ufficiale dei comuni della provincia (codici ISTAT).</li>
+    <li>Per ogni comune si legge prima la fonte regionale (in Emilia-Romagna la scheda di Emilia Romagna Turismo, in Toscana Visit Tuscany), poi quella provinciale o di destinazione (Bologna Welcome, Turismo Imolese, Visit Romagna, Riviera di Rimini, Feel Florence) e infine quella locale (sito turistico del Comune, sito del museo o del parco).</li>
+    <li>Si incrociano i riconoscimenti nazionali: UNESCO, I Borghi più belli d'Italia, Bandiere Arancioni del Touring Club.</li>
+    <li>Prezzi, orari, chiusure e prenotazioni si prendono solo dal sito ufficiale del luogo o dell'ente che lo gestisce.</li>
+    <li>Wikipedia, stampa e blog servono a trovare luoghi e a segnalare problemi, mai come unica fonte di prezzi o orari: sono marcati 🟠.</li>
+    <li>I testi sono scritti da zero: nessun paragrafo è copiato dalle fonti.</li>
+    <li>Ogni dato che non si trova viene scritto "da verificare", senza inventarlo.</li>
+    <li>Ogni fonte usata entra nell'Archivio fonti con data di controllo.</li>
+  </ol>
+  <h3>2. Quali luoghi entrano</h3>
+  <ul>
+    <li><b>Prima passata:</b> da 1 a 6 luoghi per comune, i capoluoghi più completi (Bologna 27, Firenze 40, Ravenna 18, Ferrara 14, Rimini 9).</li>
+    <li>Entrano i luoghi che la fonte ufficiale indica tra quelli da non perdere, quelli con un riconoscimento e quelli unici nel loro genere.</li>
+    <li>Restano fuori luoghi privati non visitabili (salvo esterni notevoli, dichiarati), attività commerciali qualsiasi, eventi temporanei.</li>
+    <li>Un luogo chiuso resta in elenco con l'etichetta ⛔ se la chiusura è temporanea, così il turista sa che esiste e quando riapre.</li>
+  </ul>
+  <h3>3. Tassonomia</h3>
+  <p>Cinque famiglie, valide per tutta Italia: 🏛️ Storia e monumenti, ⛪ Luoghi sacri, 🖼️ Musei, 🌳 Natura, 🧀 Vita locale. Ogni famiglia ha sottocategorie (borghi, castelli, pievi, case museo, mare, grotte, terme, motori…). I filtri mostrano solo le sottocategorie presenti nel luogo scelto.</p>
+  <h3>4. La scheda di ogni luogo</h3>
+  <p>Nome, categoria e tipo, descrizione, perché andarci, ingresso gratuito o a pagamento con link ufficiale a biglietti e orari, tempo consigliato, accessibilità, indirizzo, link a Come arrivare (Google Maps) e al sito ufficiale, fonti con livello di affidabilità e data di verifica. Etichette: 🆓 gratis, 🎟️ a pagamento, ❔ ingresso da verificare, ☔ al coperto, 🌅 panorama, 🌍 UNESCO, ⚠️ avviso, ⛔ chiuso ora.</p>
+  <h3>5. Gerarchia delle fonti</h3>
+  <ol>
+    <li>🟢 Sito ufficiale del luogo o del suo gestore.</li>
+    <li>🟢 Ufficio turistico ufficiale (Comune, destinazione, Regione).</li>
+    <li>🟢 Enti pubblici nazionali: Ministero della Cultura, Italia.it, UNESCO, ISTAT.</li>
+    <li>🟢 Associazioni che rilasciano riconoscimenti (Borghi più belli d'Italia, Touring Club).</li>
+    <li>🟠 Fonti secondarie: Wikipedia, stampa locale, guide e blog. Da ricontrollare.</li>
+  </ol>
+  <h3>6. Regole legali</h3>
+  <ul>
+    <li>Nessuna mappa incorporata e nessun dato di Google copiato o salvato: "Come arrivare" apre Google Maps con un semplice link, "Foto" apre una ricerca su Google Immagini.</li>
+    <li>Nessuna foto ripubblicata: le immagini restano sui siti dei titolari.</li>
+    <li>Testi originali, citazioni brevi solo se indispensabili, sempre con la fonte.</li>
+    <li>Marchi e nomi di riconoscimenti usati solo per informare, con link all'ente che li rilascia.</li>
+  </ul>
+  <h3>7. Design e dispositivi</h3>
+  <ul>
+    <li>Prima il telefono: filtri a chip con icone, scheda dal basso, pulsanti grandi; su tablet e desktop griglia a più colonne.</li>
+    <li>Tutti i filtri sono a scelta multipla: Province, Comuni, Cosa, Tipo, Ingresso, Ideale per (pioggia, panorama, UNESCO, Borghi più belli, Bandiera Arancione), Tempo. Dentro un filtro le voci si sommano, tra filtri diversi si combinano.</li>
+    <li>Si possono scegliere più province e più comuni insieme; senza comuni scelti si vedono tutti i comuni delle province scelte, ogni luogo con il suo comune.</li>
+    <li><b>📍 Vicino a te</b>: dalla posizione del telefono (o da un comune scelto) si fissano raggio e tempo in auto, e la guida mostra solo i luoghi entro quella distanza, ordinati dal più vicino, con distanza e tempo stimato su ogni scheda.</li>
+    <li>I numeri in alto (luoghi, gratuiti, comuni o al coperto, con avvisi) sono anche scorciatoie: toccandoli si accende il filtro corrispondente.</li>
+  </ul>
+  <h3>8. Struttura dei dati</h3>
+  <p>Ogni comune è un oggetto con codice ISTAT, provincia, riconoscimenti, avvisi, fonti e luoghi. Ogni luogo ha un identificativo unico "comune--luogo". Le coordinate sono facoltative: senza coordinate, Come arrivare usa nome, indirizzo e comune. Aggiungere una provincia significa aggiungere i suoi comuni, senza toccare la pagina.</p>
+  <h3>9. Manutenzione</h3>
+  <ul>
+    <li>Ogni scheda riporta la data di verifica. Prezzi e orari non sono copiati nella guida: si leggono sempre sul sito del gestore, così non invecchiano.</li>
+    <li>Le fonti 🟠 sono le prime da sostituire con una fonte ufficiale.</li>
+    <li>A ogni aggiornamento si controllano le schede del Ministero della Cultura per i luoghi statali, i siti dei musei e la stampa locale per chiusure e riaperture. Nell'archivio ogni fonte è segnata come usata, consultata ma scartata (dati vecchi o non affidabili) o da consultare.</li>
+    <li>Le chiusure (es. Rocca di Imola, Asinelli) si ricontrollano a ogni aggiornamento.</li>
+  </ul>
+  <h3>10. Come leggere le schede</h3>
+  <ul>
+    <li>🟢 fonte ufficiale · 🟠 fonte secondaria, da ricontrollare.</li>
+    <li>⚠️ avviso (lavori, orari ridotti, riaperture annunciate) · ⛔ chiuso ora: l'avviso è sempre dentro la scheda del luogo, non in cima alla pagina.</li>
+    <li>💳 "Gratis con Card": la card turistica del comune (per esempio Bologna Welcome Card, MyFE Card a Ferrara, Comacchio Museum Pass), dove la fonte lo indica.</li>
+    <li>La prima domenica del mese molti musei statali e alcuni civici sono gratuiti.</li>
+    <li>Prezzi e orari cambiano: controlla il sito ufficiale prima di partire.</li>
+  </ul>
+  <h3>11. Protocollo di ricerca, uguale per ogni provincia</h3>
+  <p>Ogni provincia si ricerca nello stesso ordine, con le stesse domande e gli stessi controlli, così una scheda di Rimini vale quanto una di Firenze.</p>
+  <ol>
+    <li><b>Fase 0, elenco.</b> Si scarica l'elenco ufficiale dei comuni (codici ISTAT) e si segnano le fusioni recenti. Obiettivo: tutti i comuni con almeno una scheda; quelli ancora vuoti compaiono nella tabella di controllo qui sotto.</li>
+    <li><b>Fase 1, registri (in quest'ordine).</b> 1) Ministero della Cultura: tutti i luoghi statali della provincia; 2) UNESCO: siti e componenti nel territorio; 3) I Borghi più belli d'Italia e 4) Bandiere Arancioni del Touring, elenco della regione; 5) parchi nazionali e regionali; 6) portale turistico regionale; 7) portale turistico provinciale o di destinazione; 8) card e pass museali della provincia; 9) l'eventuale pieghevole ufficiale con orari e prezzi di tutti i musei (per Firenze: Feel Florence).</li>
+    <li><b>Fase 2, comune per comune.</b> Ricerche raggruppate di 3-6 comuni, sempre limitate ai siti ufficiali della Fase 1, con la stessa formula: "nomi dei comuni + cosa vedere / musei / castelli / natura". Per ogni luogo a pagamento, una ricerca sul sito del gestore: "nome del luogo + biglietto + orari + anno".</li>
+    <li><b>Fase 3, avvisi.</b> Una ricerca sulla stampa locale e sui siti dei musei: "chiuso / lavori / restauro / riapertura + provincia + anno". Ogni avviso va dentro la scheda (⚠️ o ⛔) con la spiegazione.</li>
+    <li><b>Minimi di copertura.</b> Capoluogo: almeno 15 luoghi. Comuni con riconoscimento (UNESCO, Borghi, Bandiera Arancione): almeno 2. Altri comuni: almeno 1, scelto tra quelli citati dalla fonte ufficiale.</li>
+    <li><b>Due livelli (dal 7 novembre 2026).</b> Livello 1, per ogni nuova provincia: capoluogo, tutti i comuni con riconoscimento, luoghi statali del Ministero della Cultura e grandi parchi. Livello 2, dopo: gli altri comuni, provincia per provincia. I comuni del livello 2 non ancora fatti restano visibili nella tabella di controllo qualità.</li>
+    <li><b>Regole contro le schede povere (controllo automatico).</b> Il sito non si pubblica se: un capoluogo ha meno di 25 luoghi; un comune UNESCO, dei Borghi più belli o Bandiera Arancione ne ha meno di 3; un capoluogo non ha un mercato storico (o un motivo scritto per l'assenza); un luogo dell'elenco ufficiale del comune manca senza motivo; i bollini Borghi e Bandiere non coincidono con l'elenco ufficiale delle due associazioni. Si cercano sempre anche borghi abbandonati, paesaggi e zone d'interesse.</li>
+    <li><b>Tre link distinti per ogni luogo.</b> "Orari ufficiali" porta alla pagina con gli orari, "Biglietti e tariffe ufficiali" alla pagina di acquisto o delle tariffe del gestore, "Sito ufficiale" alla home del gestore. Se una pagina precisa non è ancora stata trovata, il link lo dice ("Cerca sul sito" o "Info sul portale turistico") e il luogo resta nella lista di lavoro del controllo qualità.</li>
+    <li><b>Calendario degli aggiornamenti.</b> Un solo controllo l'anno, a settembre: elenchi UNESCO, Borghi più belli e Bandiere Arancioni; luoghi chiusi o con avviso (ognuno ha una data di ricontrollo e, scaduta quella, il sito non si pubblica); link ai siti ufficiali. Prezzi e orari non vanno aggiornati perché la guida rimanda ai siti dei gestori. Le mostre temporanee e le chiusure brevi non si inseriscono</li>
+    <li><b>Campi obbligatori.</b> Categoria e tipo previsti dalla tassonomia, descrizione originale (almeno 60 caratteri), perché andarci, indirizzo, ingresso (gratis, a pagamento o da verificare) con link al sito del gestore e almeno una fonte 🟢 ufficiale.</li>
+    <li><b>Prezzi e orari (dal 7 novembre 2026).</b> Non si scrivono più cifre né orari nelle schede, perché cambiano spesso. La guida indica solo se l'ingresso è gratuito o a pagamento e porta, con un link, alla pagina ufficiale di biglietti e orari del gestore. Così il turista vede sempre il dato aggiornato</li>
+    <li><b>Riconoscimenti.</b> Un comune riceve il bollino solo con link all'ente che lo rilascia. Il simbolo 🌍 UNESCO va sul luogo solo se il luogo fa parte del sito; un registro diverso (per esempio Memoria del Mondo) si scrive nella descrizione.</li>
+    <li><b>Tassonomia coerente.</b> Stesso tipo per luoghi uguali in tutte le province: cattedrale e duomo → Cattedrali e duomi; villa o palazzo storico → Palazzi e ville; rocca o fortezza → Castelli e fortezze; borgo intero → Borghi; parco nazionale o riserva → Parchi e riserve naturali.</li>
+    <li><b>Archivio.</b> Ogni fonte consultata entra nell'Archivio fonti con area, livello, affidabilità, esito (usata, consultata ma scartata, da consultare) e data.</li>
+    <li><b>Costo zero.</b> Solo ricerca web standard e pagine ufficiali; dati aperti per codici e coordinate dei comuni.</li>
+  </ol>
+  <h3>12. Note legali e crediti</h3>
+  <ul>
+    <li>Testi originali di Ach's Places Guide; le informazioni pratiche sono riassunte dalle fonti citate in ogni scheda.</li>
+    <li>Nessun contenuto di Google è copiato o mostrato: "Come arrivare" e "Foto" sono semplici link che aprono Google Maps e Google Immagini.</li>
+    <li>Coordinate dei luoghi di Bologna: © OpenStreetMap contributors (ODbL). Coordinate del centro dei comuni e codici ISTAT: dataset aperti su GitHub derivati da ISTAT, usati per il filtro "Vicino a te".</li>
+  </ul>
+  <h3>Archivio delle fonti per regione</h3>
+  <div id="arch"></div>
+  <h3>13. Controllo di qualità automatico</h3>
+  <p>Ogni volta che la guida viene rigenerata, un controllo legge tutte le schede di tutte le province con le stesse regole. Gli <b>errori</b> bloccano la pubblicazione: categoria o tipo non previsti, identificativo duplicato, nessuna fonte ufficiale, link non sicuro, avviso o chiusura senza spiegazione, codice ISTAT o coordinate del comune mancanti. Gli <b>avvisi</b> diventano la lista di lavoro della passata successiva: luoghi a pagamento senza link al sito del gestore, descrizioni troppo brevi, comuni ancora senza schede.</p>
+  <div class="mcard" id="qc"></div>
+  <h3>14. Ricerca a costo zero</h3>
+  <ul>
+    <li>Nessun servizio a crediti o a pagamento: la ricerca usa solo la ricerca web standard e la lettura diretta delle pagine ufficiali.</li>
+    <li>Una ricerca copre più comuni insieme, limitata al sito ufficiale giusto (es. Emilia Romagna Turismo, Ravenna Turismo), e i risultati si salvano subito nelle note: nessuna pagina si cerca due volte.</li>
+    <li>Fonti aperte e gratuite da preferire quando raggiungibili: Wikidata (licenza CC0), open data del Ministero della Cultura e della Regione, elenchi ISTAT, OpenStreetMap (licenza ODbL, con attribuzione e senza carichi pesanti sui loro server).</li>
+    <li>La guida pubblicata non chiama nessun servizio esterno: è una pagina statica, quindi non ha costi di funzionamento.</li>
+  </ul>
+</section>
+
+<section class="wrap view" id="view-fonti" hidden aria-labelledby="f-title">
+  <h2 id="f-title">Archivio delle fonti</h2>
+  <p>Tutte le fonti consultate o da consultare, dal livello nazionale a quello del singolo comune. L'archivio cresce con la ricerca: ogni nuova provincia aggiunge le sue fonti.</p>
+  <div class="srcf" id="srcf"></div>
+  <div class="srcf" id="srca" aria-label="Filtra per area"></div>
+  <input class="srcsearch" id="srcq" type="search" placeholder="Cerca una fonte…" aria-label="Cerca una fonte">
+  <p id="srccount" style="color:var(--mute);font-size:13.5px"></p>
+  <div class="srcl" id="srcl"></div>
+</section>
+
+<div class="wrap">
+  <footer class="mini">
+    <p>Testi originali · "Come arrivare" e "Foto" sono semplici link a Google · Coordinate © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a> · <a href="#metodo">Metodo</a> · <a href="#fonti">Archivio fonti</a></p>
+  </footer>
+</div>
+
+<div class="scrim" id="scrim"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="s-title"></div>
+
+<dialog id="eat" aria-labelledby="eat-h">
+  <form method="dialog" class="eathead"><h2 id="eat-h">📍 Luoghi vicino a te</h2><button class="fx" value="close" aria-label="Chiudi">×</button></form>
+  <div class="eatbody">
+    <div class="eatsec"><b>Da dove parti</b>
+      <button type="button" class="eatgeo" id="eat-geo">📍 Usa la mia posizione</button>
+      <input id="eat-txt" type="text" list="eat-coms" placeholder="o scegli un comune di partenza" autocomplete="off">
+      <datalist id="eat-coms"></datalist>
+      <small id="eat-st" class="eatst">Nessuna posizione scelta.</small>
+    </div>
+    <div class="eatsec"><label for="eat-km"><b>Raggio</b> <span class="eatv" id="eat-kmv">10 km</span></label>
+      <input id="eat-km" type="range" min="1" max="100" step="1" value="10">
+      <div class="eatchips" data-for="eat-km"><button type="button" data-v="5">5 km</button><button type="button" data-v="10">10 km</button><button type="button" data-v="25">25 km</button><button type="button" data-v="50">50 km</button></div>
+    </div>
+    <div class="eatsec"><label for="eat-min"><b>Tempo in auto</b> <span class="eatv" id="eat-minv">30 min</span></label>
+      <input id="eat-min" type="range" min="5" max="120" step="5" value="30">
+      <div class="eatchips" data-for="eat-min"><button type="button" data-v="15">15 min</button><button type="button" data-v="30">30 min</button><button type="button" data-v="45">45 min</button><button type="button" data-v="60">1 ora</button></div>
+    </div>
+    <p class="eatres" id="eat-res"></p>
+  </div>
+  <div class="eatfoot">
+    <button type="button" class="eatgo" id="eat-apply" aria-disabled="true">Mostra i luoghi</button>
+    <button type="button" class="eatgo alt" id="eat-off" hidden>Togli il filtro distanza</button>
+    <small>Distanze in linea d'aria dal punto del luogo, o dal centro del suo comune se il punto esatto non è noto (≈). Il tempo in auto è una stima (circa 40 km/h su strada); quello reale lo vedi con «Come arrivare». La posizione resta sul tuo dispositivo e non viene salvata.</small>
+  </div>
+</dialog>
+<script>
+/* Tassonomia unica per tutta Italia: le sottocategorie senza luoghi nel comune scelto non compaiono. */
+const CATS={
+  storia:{label:"Monumenti",long:"Storia e monumenti",em:"🏛️",subs:{"Piazze e centro storico":"🏙️","Borghi":"🏘️","Torri":"🗼","Castelli e fortezze":"🏯","Palazzi e ville":"🏰","Portici UNESCO":"🌍","Archeologia":"🏺","Monumenti e memoriali":"🗿","Teatri storici":"🎭","Borghi abbandonati":"🏚️"}},
+  sacro:{label:"Sacro",long:"Luoghi sacri",em:"⛪",subs:{"Basiliche":"⛪","Cattedrali e duomi":"⛪","Complessi monumentali":"🔔","Abbazie e monasteri":"📿","Santuari":"🙏","Cimiteri monumentali":"🕯️","Chiese e pievi":"⛪"}},
+  musei:{label:"Musei",long:"Musei",em:"🖼️",subs:{"Arte antica":"🖼️","Arte moderna":"🎨","Storia della città":"📜","Scienza e università":"🔬","Archeologici":"🏺","Tematici":"🎻","Case museo":"🏠"}},
+  natura:{label:"Natura",long:"Natura",em:"🌳",subs:{"Parchi urbani":"🌳","Colline e sentieri":"🥾","Montagna":"🏔️","Mare e spiagge":"🏖️","Laghi e fiumi":"🏞️","Parchi e riserve naturali":"🦌","Grotte e geositi":"🪨","Giardini botanici":"🌿","Paesaggi e zone d'interesse":"🗺️"}},
+  locale:{label:"Tradizioni",long:"Vita locale e curiosità",em:"🧀",subs:{"Mercati storici":"🧀","Enogastronomia":"🍷","Terme":"♨️","Artigianato":"🧵","Angoli nascosti":"🔍","Motori":"🏍️"}}
+};
+const PRICE=[["free","🆓","Gratis","Gratuito"],["paid","🎟️","A pagamento","A pagamento"],["unk","❔","Da verificare sul sito","Da verificare"],["card","💳","Gratis con Card","Card"]];
+const IDEAL=[["rain","☔","Se piove","Al coperto"],["view","🌅","Panorama","Panorama"],["unesco","🌍","UNESCO","UNESCO"],["borghi","🏘️","Borghi più belli","Borghi"],["arancione","🟠","Bandiera Arancione","Arancione"]];
+const AWARDS={unesco:["🌍","Patrimonio UNESCO nel comune","https://www.unesco.it/it/"],borghi:["🏘️","I Borghi più belli d'Italia","https://borghipiubelliditalia.it/"],arancione:["🟠","Bandiera Arancione TCI","https://www.bandierearancioni.it/"],creative:["🎨","Città creativa UNESCO","https://www.unesco.it/it/"]};
+const idealOk=(p,x)=>x==="rain"?p.indoor:x==="view"?p.view:x==="unesco"?p.unesco:(p.aw||[]).includes(x);
+const TIME=[["short","⚡","Fino a 45 min","Breve"],["mid","⏱️","1-1,5 ore","Medio"],["long","🥾","2 ore e oltre","Lungo"]];
+
+const PLACES = [
+{id:"piazza-maggiore",name:"Piazza Maggiore e Fontana del Nettuno",cat:"storia",sub:"Piazze e centro storico",lat:44.49381,lng:11.34265,
+ desc:"Il cuore civico di Bologna dal Duecento: San Petronio, Palazzo d'Accursio, Palazzo del Podestà e, a fianco, il Nettuno del Giambologna.",
+ why:"Punto di partenza naturale: da qui tutto il centro si gira a piedi sotto i portici.",
+ address:"Piazza Maggiore / Piazza del Nettuno, 40124 Bologna",price:"Gratuito, sempre accessibile",free:true,card:false,unesco:true,view:false,indoor:false,status:"ok",
+ hours:"Sempre aperta",booking:"No",duration:"30 min",access:"Area pedonale in piano",
+ official:"https://www.bolognawelcome.com/it/blog/tre-ore-nel-cuore-della-citta",
+ sources:[["Bologna Welcome, Cosa vedere in 3 ore (agg. luglio 2026)","https://www.bolognawelcome.com/it/blog/tre-ore-nel-cuore-della-citta","uff"]]},
+
+{id:"due-torri",name:"Le Due Torri: Asinelli e Garisenda",cat:"storia",sub:"Torri",lat:44.49412,lng:11.34662,
+ desc:"Simbolo della città turrita. L'Asinelli (1109-1119) è alta 97,20 m; la Garisenda, più bassa e inclinata, non si visita all'interno.",
+ why:"Da vedere da Piazza di Porta Ravegnana anche senza salire.",
+ address:"Piazza di Porta Ravegnana, 40126 Bologna",price:"Salita normalmente a pagamento (indicati €5 intero / €3 ridotto da fonte secondaria). Ora sospesa.",free:false,card:false,unesco:false,view:true,indoor:false,status:"closed",
+ statusNote:"Asinelli chiusa da fine 2023 per i lavori di messa in sicurezza della Garisenda. La riapertura non ha una data certa: la stampa locale indica come ipotesi il 2028. Alternativa: Torre dell'Orologio.",
+ hours:"Salita sospesa",booking:"Obbligatoria, quando riaprirà",duration:"45 min (salita)",access:"498 gradini, non accessibile a disabili motori",
+ official:"https://www.bolognawelcome.com/it/esperienze/112542/Le-due-Torri---Prenotazione-salita-alla-Torre-degli-Asinelli",
+ sources:[["Bologna Welcome, pagina prenotazione Torre Asinelli (avviso di chiusura)","https://www.bolognawelcome.com/it/esperienze/112542/Le-due-Torri---Prenotazione-salita-alla-Torre-degli-Asinelli","uff"],
+          ["Guida turistica con prezzi (fonte secondaria, giugno 2026)","https://bolognastationsuites-com.pages.dev/en/blog/due-torri-bologna-come-visitarle/","sec"],["il Resto del Carlino, conti di Bologna Welcome e ipotesi di riapertura (2026)","https://www.ilrestodelcarlino.it/bologna/cronaca/bologna-welcome-in-rosso-buco-c6811727","sec"],["Finestre sull'Arte, piazza delle Due Torri chiusa per anni","https://finestresullarte.info/en/news/bologna-the-two-towers-square-will-be-closed-for-a-few-years","sec"]]},
+
+{id:"torre-orologio",name:"Torre dell'Orologio e Collezioni Comunali d'Arte",cat:"storia",sub:"Torri",lat:44.49405,lng:11.34233,
+ desc:"Dentro Palazzo d'Accursio: si sale tra il meccanismo dell'orologio fino a due terrazze con vista a 360° su Piazza Maggiore e i tetti. Il biglietto include le Collezioni Comunali d'Arte.",
+ why:"Oggi è il panorama più bello del centro, con la Torre Asinelli chiusa.",
+ address:"Palazzo d'Accursio, Piazza Maggiore 6 (ingresso da Sala Farnese, 2° piano)",price:"€10 intero · €7 ridotto · gratis con Bologna Welcome Card (prenotando)",free:false,card:true,unesco:false,view:true,indoor:false,status:"ok",
+ hours:"Torre: tutti i giorni, ingressi alle :00, :20, :40. Dal 7/9 al 31/12/2026 primo ingresso 10:00, ultimo 18:20; 24 e 31/12 ultimo 16:20; chiusa il 25/12. Collezioni: mar e gio 14-19, mer e ven 10-19, sab-dom-festivi 10-18:30.",
+ booking:"Sì, a fasce orarie (online o all'Infopoint di Piazza Maggiore)",duration:"40 min torre + 1 h collezioni",access:"Torre non accessibile a disabili motori (scale ripide)",
+ official:"https://www.bolognawelcome.com/it/esperienze/300685/Visita-alla-Torre-dell-Orologio-e-alle-Collezioni-Comunali-d-Arte",
+ sources:[["Bologna Welcome, prenotazione Torre dell'Orologio (orari 2026)","https://www.bolognawelcome.com/it/esperienze/300685/Visita-alla-Torre-dell-Orologio-e-alle-Collezioni-Comunali-d-Arte","uff"],
+          ["Bologna Welcome, prezzi intero/ridotto (agg. luglio 2026)","https://www.bolognawelcome.com/it/blog/tre-ore-nel-cuore-della-citta","uff"]]},
+
+{id:"archiginnasio",name:"Archiginnasio e Teatro Anatomico",cat:"storia",sub:"Palazzi e ville",lat:44.49231,lng:11.34354,
+ desc:"Antica sede dell'Università, con cortile e logge coperti di stemmi. Al primo piano il Teatro Anatomico in legno intagliato (1637) e la Sala dello Stabat Mater.",
+ why:"Uno degli interni più sorprendenti d'Italia, in pochi minuti di visita.",
+ address:"Piazza Luigi Galvani 1, 40124 Bologna",price:"Cortile gratuito. Teatro Anatomico: visita guidata €12 / €10 ridotto, oppure audioguida €10 / €8 ridotto",free:false,card:false,unesco:true,view:false,indoor:true,status:"ok",
+ hours:"Palazzo lun-sab 9-19, domenica chiuso. Fasce del Teatro Anatomico sulla pagina di prenotazione.",
+ booking:"Obbligatoria per Teatro Anatomico e Stabat Mater",duration:"45 min",access:"Primo piano accessibile senza barriere",
+ official:"https://www.bolognawelcome.com/it/luoghi/torri-edifici-storici/archiginnasio",
+ sources:[["Bologna Welcome, scheda Archiginnasio","https://www.bolognawelcome.com/it/luoghi/torri-edifici-storici/archiginnasio","uff"],
+          ["Biblioteca dell'Archiginnasio","https://archiginnasio.it/","uff"]]},
+
+{id:"portici",name:"Portici di Bologna (UNESCO): il Pavaglione",cat:"storia",sub:"Portici UNESCO",lat:44.49245,lng:11.34380,
+ desc:"Dal 28 luglio 2021 i portici sono Patrimonio Mondiale: 12 tratti scelti tra i 62 km della città. Il Pavaglione, accanto a San Petronio, è il tratto più centrale.",
+ why:"Percorrerli è il modo migliore di vivere Bologna, con il sole e con la pioggia.",
+ address:"Portico del Pavaglione, via dell'Archiginnasio, 40124 Bologna",price:"Gratuito",free:true,card:false,unesco:true,view:false,indoor:false,status:"ok",
+ hours:"Sempre accessibili",booking:"No",duration:"Libera",access:"In gran parte in piano",
+ official:"https://portici.comune.bologna.it/",
+ sources:[["Comune di Bologna, Portici patrimonio mondiale","https://comune.bologna.it/portici-patrimonio-mondiale/en","uff"],
+          ["Bologna Welcome, comunicato UNESCO (luglio 2021)","https://www.bolognawelcome.com/it/area-stampa/porticoes-of-bologna-in-the-unesco-world-heritage-list","uff"]]},
+
+{id:"salaborsa",name:"Biblioteca Salaborsa e scavi archeologici",cat:"storia",sub:"Archeologia",lat:44.49440,lng:11.34200,
+ desc:"Sotto il pavimento di cristallo della Piazza coperta si vedono i resti dall'età villanoviana alla Bononia romana, fino all'orto botanico di Aldrovandi.",
+ why:"Archeologia gratuita in pieno centro, perfetta in una giornata di pioggia.",
+ address:"Piazza del Nettuno 3, 40124 Bologna",price:"Ingresso libero (scavi con offerta libera; visite guidate su prenotazione)",free:true,card:false,unesco:false,view:false,indoor:true,status:"ok",
+ hours:"Lun 14:30-20 · mar-ven 10-20 · sab 10-19 · domenica chiuso",booking:"No (sì per le visite guidate)",duration:"30 min",access:"Accessibile; discese all'ingresso un po' ripide",
+ official:"https://www.bolognawelcome.com/it/luoghi/biblioteche/salaborsa-",
+ sources:[["Bologna Welcome, scheda Salaborsa","https://www.bolognawelcome.com/it/luoghi/biblioteche/salaborsa-","uff"],
+          ["Italia.it, Biblioteca Salaborsa","https://www.italia.it/it/emilia-romagna/bologna/sala-borsa","uff"]]},
+
+{id:"san-petronio",name:"Basilica di San Petronio",cat:"sacro",sub:"Basiliche",lat:44.49305,lng:11.34343,
+ desc:"Gotica, iniziata nel 1390 e mai finita in facciata. Dentro la meridiana di Cassini, 67,27 m, la più lunga al mondo, e la Cappella dei Re Magi.",
+ why:"La chiesa simbolo della città, gratuita, su Piazza Maggiore.",
+ address:"Piazza Galvani 5, 40124 Bologna",price:"Basilica gratuita. Percorso delle tre cappelle (Re Magi, San Sebastiano, San Vincenzo Ferrer) a pagamento: €5 intero / €3 ridotto secondo fonti 2026. Gratis con BW Card",free:true,card:true,unesco:false,view:false,indoor:true,status:"warn",
+ statusNote:"La terrazza panoramica è chiusa definitivamente dopo i restauri.",
+ hours:"Vedi sito della basilica (varia con le funzioni)",booking:"Solo per gruppi da 15 persone",duration:"45 min",access:"Ingresso con rampa da via de' Pignattari",
+ official:"https://www.basilicadisanpetronio.org/en/info-and-opening-hours/",
+ sources:[["Basilica di San Petronio, info e orari (chiusura terrazza)","https://www.basilicadisanpetronio.org/en/info-and-opening-hours/","uff"],
+          ["Bologna Welcome, scheda San Petronio","https://www.bolognawelcome.com/home/scopri/luoghi/architettura-e-monumenti/edifici-religiosi/basilica-di-san-petronio/","uff"],
+          ["Idealista News, prezzi 2026 delle cappelle","https://www.idealista.it/news/node/446245","sec"]]},
+
+{id:"santo-stefano",name:"Complesso di Santo Stefano (Sette Chiese)",cat:"sacro",sub:"Complessi monumentali",lat:44.49178,lng:11.34865,
+ desc:"Un insieme di chiese, chiostri e cortili sorti in epoche diverse, il più antico nucleo religioso della città, con il Cortile di Pilato e il chiostro benedettino.",
+ why:"La piazza triangolare davanti è uno dei luoghi più belli di Bologna.",
+ address:"Via Santo Stefano 24, 40125 Bologna",price:"Accesso libero con offerta",free:true,card:false,unesco:true,view:false,indoor:true,status:"ok",
+ hours:"Lun 18-19:30 (solo basilica). Mar-dom 9:30-12:30 e 14:30-19 (verificare in sito, variazioni nei festivi)",booking:"Solo gruppi",duration:"45 min",access:"Parziale, pavimentazioni antiche",
+ official:"https://www.santostefanobologna.it/",
+ sources:[["Bologna Welcome, scheda Complesso di Santo Stefano","https://www.bolognawelcome.com/it/luoghi/edifici-religiosi/complesso-di-santo-stefano","uff"]]},
+
+{id:"santa-maria-vita",name:"Santa Maria della Vita: il Compianto di Niccolò dell'Arca",cat:"sacro",sub:"Complessi monumentali",lat:44.49331,lng:11.34437,
+ desc:"Nel Quadrilatero, la chiesa barocca custodisce il Compianto sul Cristo morto in terracotta (seconda metà del Quattrocento), sette figure a grandezza naturale.",
+ why:"Un'opera di forza drammatica unica, a due passi dalla piazza.",
+ address:"Via Clavature 10, 40124 Bologna",price:"Compianto €8 intero / €5 ridotto. Gratis con BW Card e Card Cultura",free:false,card:true,unesco:false,view:false,indoor:true,status:"ok",
+ hours:"Mar-dom 10-18:30, lunedì chiuso",booking:"No, biglietto all'ingresso o online",duration:"40 min",access:"Complesso accessibile tranne la cappella del Compianto",
+ official:"https://genusbononiae.it/palazzi/santa-maria-della-vita/",
+ sources:[["Bologna Welcome, scheda Santa Maria della Vita","https://www.bolognawelcome.com/it/luoghi/edifici-religiosi/chiesa-di-santa-maria-della-vita","uff"]]},
+
+{id:"san-domenico",name:"Basilica di San Domenico",cat:"sacro",sub:"Basiliche",lat:44.48955,lng:11.34385,
+ desc:"Custodisce l'Arca di San Domenico, iniziata da Nicola Pisano e completata da Niccolò dell'Arca, con tre statue scolpite da un giovane Michelangelo.",
+ why:"L'unico luogo di Bologna dove vedere sculture di Michelangelo.",
+ address:"Piazza San Domenico 13, 40124 Bologna",price:"Gratuito",free:true,card:false,unesco:false,view:false,indoor:true,status:"warn",
+ statusNote:"Bologna Welcome segnala lavori di restauro con fine prevista a luglio 2026: controllare se il cantiere è concluso.",
+ hours:"Indicativamente mattina e pomeriggio, con pausa; visita limitata durante le funzioni",booking:"No",duration:"30 min",access:"Ingresso in piano",
+ official:"https://sandomenicobologna.it/",
+ sources:[["Bologna Welcome, scheda San Domenico (avviso lavori)","https://www.bolognawelcome.com/it/luoghi/edifici-religiosi/basilica-di-san-domenico","uff"]]},
+
+{id:"san-luca",name:"Santuario di San Luca e il suo portico",cat:"sacro",sub:"Santuari",lat:44.47870,lng:11.29790,
+ desc:"Sul Colle della Guardia, raggiungibile da Porta Saragozza con il portico più lungo del mondo: 3.796 m e 666 arcate, tratto dei Portici UNESCO.",
+ why:"La passeggiata classica dei bolognesi, con vista su città e colli all'arrivo.",
+ address:"Via di San Luca 36, 40135 Bologna (partenza a piedi da Porta Saragozza)",price:"Gratuito, sia il portico sia il santuario",free:true,card:false,unesco:true,view:true,indoor:false,status:"ok",
+ hours:"Portico sempre percorribile. Chiesa indicativamente 7-19 (verificare sul sito del santuario)",booking:"No",duration:"3-4 h a piedi andata e ritorno",access:"Tratto collinare con gradini; si arriva anche in auto o con il trenino San Luca Express",
+ official:"https://portici.comune.bologna.it/en/node/165",
+ sources:[["Comune di Bologna, Portico di San Luca","https://portici.comune.bologna.it/en/node/165","uff"],
+          ["FAI, Santuario della Beata Vergine di San Luca (misure del portico)","https://fondoambiente.it/luoghi/santuario-della-beata-vergine-di-san-luca","uff"],
+          ["Bologna Welcome, il tratto UNESCO di San Luca","https://www.bolognawelcome.com/it/blog/allombra-dei-portici-san-luca","uff"]]},
+
+{id:"certosa",name:"Certosa di Bologna, cimitero monumentale",cat:"sacro",sub:"Cimiteri monumentali",lat:44.49608,lng:11.31105,
+ desc:"Necropoli etrusca, poi monastero certosino, cimitero dal 1801: chiostri, sculture e monumenti dell'Ottocento. Collegata a San Luca da un portico.",
+ why:"Un museo all'aperto poco conosciuto dai turisti, con visite guidate a tema.",
+ address:"Via della Certosa 18, 40133 Bologna",price:"Gratuito (visite guidate a pagamento in calendario)",free:true,card:false,unesco:true,view:false,indoor:false,status:"ok",
+ hours:"Dal 3 novembre al 28 febbraio tutti i giorni 8-17. In estate orario più lungo.",booking:"Solo per le visite guidate",duration:"1-2 h",access:"Ingresso consigliato per carrozzine: via della Certosa 18",
+ official:"https://www.storiaememoriadibologna.it/certosa",
+ sources:[["Ministero della Cultura, Certosa monumentale","https://cultura.gov.it/luogo/certosa-monumentale","uff"],
+          ["Bologna Welcome, visite guidate in Certosa 2026","https://www.bolognawelcome.com/it/esperienze/330751/La-Certosa-di-Bologna---Visite-guidate","uff"]]},
+
+{id:"pinacoteca",name:"Pinacoteca Nazionale di Bologna",cat:"musei",sub:"Arte antica",lat:44.49745,lng:11.35425,
+ desc:"La grande scuola pittorica bolognese dal Trecento al Settecento: Vitale da Bologna, Raffaello (Estasi di Santa Cecilia), i Carracci, Guido Reni, Guercino.",
+ why:"Il museo d'arte più importante della città.",
+ address:"Via delle Belle Arti 56, 40126 Bologna",price:"€10 intero · €6 convenzionati · €2 dai 18 ai 25 anni · gratis under 18, prima domenica del mese e con Bologna Welcome Card o Card Cultura. Durante le mostre il prezzo può cambiare. Il biglietto vale anche per Palazzo Pepoli Campogrande entro tre mesi",free:false,card:true,unesco:false,view:false,indoor:true,status:"ok",
+ hours:"Mar-dom e festivi 9-19, lunedì chiuso. Ultimo ingresso 30 min prima",booking:"Obbligatoria solo per gruppi (app PinBoBooking)",duration:"1,5-2 h",access:"Accessibile",
+ official:"https://pinacotecabologna.cultura.gov.it/en/visita-e-orari-en",
+ sources:[["Pinacoteca Nazionale, orari e biglietti","https://pinacotecabologna.cultura.gov.it/en/visita-e-orari-en","uff"],["Ministero della Cultura, scheda Pinacoteca","https://cultura.gov.it/luogo/musei-nazionali-di-bologna-gia-pinacoteca-nazionale-di-bologna-1","uff"]]},
+
+{id:"archeologico",name:"Museo Civico Archeologico",cat:"musei",sub:"Storia della città",lat:44.49290,lng:11.34400,
+ desc:"Nel quattrocentesco Palazzo Galvani: dalla preistoria alla Bologna etrusca e romana, con una collezione egizia di oltre 3.500 oggetti tra le più importanti d'Europa.",
+ why:"La sezione egizia sorprende anche chi non ama l'archeologia.",
+ address:"Via dell'Archiginnasio 2, 40124 Bologna",price:"Circa €6 intero (dato 2026 del Ministero); gratis con BW Card e prima domenica del mese",free:false,card:true,unesco:false,view:false,indoor:true,status:"ok",
+ hours:"Verificare su museibologna.it (chiusura settimanale da controllare)",booking:"No",duration:"1,5 h",access:"Accessibile",
+ official:"https://www.museibologna.it/archeologico/",
+ sources:[["Ministero della Cultura, evento GEP 2026 (tariffa €6)","https://cultura.gov.it/evento/ritorno-al-passato-missione-museo","uff"],
+          ["MuseiOnline, scheda (2023, dato da ricontrollare)","https://www.museionline.info/bologna-musei-e-monumenti/museo-civico-archeologico-di-bologna","sec"]]},
+
+{id:"medievale",name:"Museo Civico Medievale",cat:"musei",sub:"Arte antica",lat:44.49669,lng:11.34204,
+ desc:"In Palazzo Ghisilardi, età dei Bentivoglio: tombe dei dottori dello Studio, armi, avori e la grande statua in rame dorato di Bonifacio VIII (1301).",
+ why:"Racconta la Bologna universitaria del Medioevo meglio di qualsiasi libro.",
+ address:"Via Manzoni 4, 40121 Bologna",price:"€6 intero · €3/€2 ridotto · gratis con BW Card e Card Cultura",free:false,card:true,unesco:false,view:false,indoor:true,status:"ok",
+ hours:"Lunedì chiuso; orari giornalieri sul sito dei Musei Civici",booking:"No",duration:"1 h",access:"Accessibile",
+ official:"https://www.museibologna.it/medievale/",
+ sources:[["Bologna Welcome, scheda Museo Civico Medievale","https://www.bolognawelcome.com/it/luoghi/musei-e-collezioni-private/museo-civico-medievale","uff"]]},
+
+{id:"mambo",name:"MAMbo e Museo Morandi",cat:"musei",sub:"Arte moderna",lat:44.50230,lng:11.34390,
+ desc:"Nell'ex Forno del Pane: arte italiana dal dopoguerra a oggi e la più ampia collezione pubblica al mondo dedicata a Giorgio Morandi.",
+ why:"Morandi è il pittore di Bologna: qui si capisce perché.",
+ address:"Via Don Minzoni 14, 40121 Bologna",price:"€6 intero / €4 ridotto, Museo Morandi incluso. Gratis con BW Card e Card Cultura",free:false,card:true,unesco:false,view:false,indoor:true,status:"ok",
+ hours:"Lun chiuso · mar-mer 14-19 · gio 14-20 · ven-dom: vedi sito",booking:"No",duration:"1,5 h",access:"Sostanzialmente accessibile",
+ official:"https://www.museibologna.it/mambo/",
+ sources:[["Bologna Welcome, scheda MAMbo","https://www.bolognawelcome.com/it/luoghi/musei-e-gallerie-darte/mambo---museo-darte-moderna-di-bologna","uff"]]},
+
+{id:"casa-morandi",name:"Casa Morandi",cat:"musei",sub:"Arte moderna",lat:44.48930,lng:11.35350,
+ desc:"La casa di via Fondazza dove Giorgio Morandi visse e lavorò dal 1933 al 1964, con lo studio ricostruito, la biblioteca e i documenti dell'artista.",
+ why:"Complemento intimo alla visita del Museo Morandi.",
+ address:"Via Fondazza 36, 40125 Bologna",price:"Gratuito (consigliato prenotare il biglietto gratuito online)",free:true,card:false,unesco:false,view:false,indoor:true,status:"ok",
+ hours:"Solo weekend. Inverno: sab 14-17, dom 10-13 e 14-17",booking:"Consigliata",duration:"30 min",access:"Verificare con il museo",
+ official:"http://www.mambo-bologna.org/museomorandi/",
+ sources:[["Bologna Welcome, scheda Casa Morandi","https://www.bolognawelcome.com/it/luoghi/casa-museo/casa-morandi","uff"]]},
+
+{id:"pepoli",name:"Museo della Storia di Bologna (Palazzo Pepoli)",cat:"musei",sub:"Storia della città",lat:44.49243,lng:11.34649,
+ desc:"Nel trecentesco Palazzo Pepoli, un percorso multimediale dalla Felsina etrusca ai giorni nostri, pensato anche per famiglie.",
+ why:"Ideale il primo giorno, per avere il quadro della città.",
+ address:"Via Castiglione 10, 40124 Bologna",price:"€10 intero (con audioguida se prenotato online); riduzioni per over 65, studenti e residenti",free:false,card:false,unesco:false,view:false,indoor:true,status:"ok",
+ hours:"Lunedì chiuso; orari sul sito del museo",booking:"Consigliata per gruppi",duration:"1,5 h",access:"Accessibile",
+ official:"https://palazzopepoli.it",
+ sources:[["Bologna Welcome, biglietto Museo della Storia di Bologna","https://www.bolognawelcome.com/it/esperienze/332932/Palazzo-Pepoli---Visita-al-Museo-della-Storia-di-Bologna","uff"],
+          ["Ministero della Cultura, tariffe ridotte (2025)","https://cultura.gov.it/evento/alla-scoperta-del-museo-della-storia-di-bologna","uff"]]},
+
+{id:"poggi",name:"Museo di Palazzo Poggi",cat:"musei",sub:"Scienza e università",lat:44.49652,lng:11.35113,
+ desc:"Le collezioni settecentesche dell'Istituto delle Scienze: cere anatomiche e ostetriche, carte nautiche, fisica e il museo di Ulisse Aldrovandi, tra affreschi di Pellegrino Tibaldi.",
+ why:"La 'camera delle meraviglie' dell'università più antica del mondo occidentale.",
+ address:"Via Zamboni 33, 40126 Bologna",price:"€10 intero / €6 ridotto. Al piano terra Sala Alma Mater gratuita",free:false,card:false,unesco:false,view:false,indoor:true,status:"ok",
+ hours:"Lun chiuso · mar-ven 10-16 · sab-dom-festivi 10-18",booking:"No",duration:"1,5 h",access:"Accessibile",
+ official:"https://sma.unibo.it/it/il-sistema-museale/museo-di-palazzo-poggi",
+ sources:[["Bologna Welcome, scheda Palazzo Poggi","https://www.bolognawelcome.com/it/luoghi/musei-e-gallerie-darte/musei-di-palazzo-poggi","uff"],
+          ["Italia.it, orari","https://www.italia.it/it/emilia-romagna/bologna/musei/museo-di-palazzo-poggi","uff"]]},
+
+{id:"musica",name:"Museo internazionale e biblioteca della musica",cat:"musei",sub:"Tematici",lat:44.49260,lng:11.35060,
+ desc:"In Palazzo Sanguinetti, sei secoli di musica: strumenti antichi, partiture autografe, il ritratto di Bach di Gainsborough, la bottega del liutaio Otello Bignami.",
+ why:"Bologna è Città creativa UNESCO della musica: qui si tocca con mano.",
+ address:"Strada Maggiore 34, 40125 Bologna",price:"Circa €5 intero / €3 ridotto (dato da ricontrollare). Gratis con BW Card",free:false,card:true,unesco:false,view:false,indoor:true,status:"ok",
+ hours:"Lun chiuso · mar-gio 11-13:30 e 14:30-18:30 · ven 10-13:30 e 14:30-19 · sab-dom 10-19",booking:"No",duration:"1 h",access:"Verificare sul sito",
+ official:"https://www.museibologna.it/musica/",
+ sources:[["Italia.it, orari","https://www.italia.it/it/emilia-romagna/bologna/museo-della-musica","uff"],
+          ["Bologna Welcome, scheda (circuito BW Card)","https://www.bolognawelcome.com/it/luoghi/musei-e-gallerie-darte/museo-internazionale-e-biblioteca-della-musica","uff"]]},
+
+{id:"ebraico",name:"Museo Ebraico e antico ghetto",cat:"musei",sub:"Storia della città",lat:44.49580,lng:11.34720,
+ desc:"Racconta la presenza ebraica a Bologna; da qui si esplorano i vicoli dell'antico ghetto, a pochi passi dalle Due Torri.",
+ why:"Un quartiere medievale raccolto e silenzioso, spesso trascurato.",
+ address:"Via Valdonica 1/5, 40126 Bologna",price:"€7 intero / €5 ridotto",free:false,card:false,unesco:false,view:false,indoor:true,status:"ok",
+ hours:"Lun-gio 10-19:30 · ven 10-16 · dom 10-18 · chiuso sabato e festività ebraiche",booking:"No",duration:"1 h",access:"Verificare con il museo",
+ official:"https://www.museoebraicobo.it/",
+ sources:[["Bologna Welcome, biglietto Museo Ebraico","https://www.bolognawelcome.com/it/esperienze/297242/Visita-al-Museo-Ebraico","uff"]]},
+
+{id:"orto",name:"Orto Botanico ed Erbario dell'Università",cat:"natura",sub:"Giardini botanici",lat:44.49911,lng:11.35277,
+ desc:"Fondato nel 1568 da Ulisse Aldrovandi, tra i più antichi d'Italia: circa 2 ettari nella zona universitaria fino alle antiche mura, con serre e alberi monumentali.",
+ why:"Un'oasi verde gratuita dentro il centro storico.",
+ address:"Via Irnerio 42, 40126 Bologna",price:"Gratuito",free:true,card:false,unesco:false,view:false,indoor:false,status:"ok",
+ hours:"Orari estivi e invernali diversi: verificare sul sito del Sistema Museale di Ateneo",booking:"No",duration:"45 min",access:"Cancello d'ingresso stretto (65 cm) con gradino di 8 cm",
+ official:"https://sma.unibo.it/it/il-sistema-museale/orto-botanico-ed-erbario",
+ sources:[["Bologna Welcome, scheda Orto Botanico","https://bolognawelcome.com/it/luoghi/parchi-e-giardini/orto-botanico","uff"]]},
+
+{id:"margherita",name:"Giardini Margherita",cat:"natura",sub:"Parchi urbani",lat:44.48350,lng:11.35330,
+ desc:"Il parco più grande e frequentato della città: 26 ettari all'inglese inaugurati nel 1879, con laghetto e una tomba etrusca ritrovata durante i lavori.",
+ why:"Pausa verde a dieci minuti a piedi da Santo Stefano.",
+ address:"Viale Giovanni Gozzadini, 40136 Bologna (ingressi da Porta Santo Stefano e Porta Castiglione)",price:"Gratuito",free:true,card:false,unesco:false,view:false,indoor:false,status:"ok",
+ hours:"Parco pubblico",booking:"No",duration:"1 h",access:"Viali in piano",
+ official:"https://www.bolognawelcome.com/it/luoghi/parchi-e-giardini/giardini-margherita",
+ sources:[["Bologna Welcome, scheda Giardini Margherita","https://www.bolognawelcome.com/it/luoghi/parchi-e-giardini/giardini-margherita","uff"]]},
+
+{id:"villa-ghigi",name:"Parco di Villa Ghigi",cat:"natura",sub:"Colline e sentieri",lat:44.47550,lng:11.33400,
+ desc:"Quasi 28 ettari sulle prime colline fuori Porta San Mamolo: prati, boschi, frutteti e uno dei belvedere più belli sulla città. Da qui parte il sentiero CAI 904 verso Ronzano e Gaibola.",
+ why:"La collina bolognese a mezz'ora a piedi dal centro.",
+ address:"Ingressi in via San Mamolo, via Martucci e via Gaibola (parcheggio), 40136 Bologna",price:"Gratuito",free:true,card:false,unesco:false,view:true,indoor:false,status:"ok",
+ hours:"Parco pubblico",booking:"No (passeggiate guidate della Fondazione in calendario)",duration:"1,5-3 h",access:"Collinare, sentieri sterrati in salita",
+ official:"http://www.fondazionevillaghigi.it",
+ sources:[["Bologna Welcome, scheda Parco di Villa Ghigi","https://www.bolognawelcome.com/it/luoghi/parchi-e-giardini/parco-di-villa-ghigi","uff"],
+          ["Bologna Welcome, Camminando per i colli bolognesi","https://www.bolognawelcome.com/it/blog/camminando-per-i-colli-bolognesi","uff"]]},
+
+{id:"quadrilatero",name:"Quadrilatero e Mercato di Mezzo",cat:"locale",sub:"Mercati storici",lat:44.49360,lng:11.34480,
+ desc:"Le vie del mercato medievale dietro Piazza Maggiore portano ancora i nomi delle corporazioni: Pescherie Vecchie, Drapperie, Orefici, Clavature. Botteghe di salumi, formaggi, pasta fresca.",
+ why:"Il posto per assaggiare Bologna, a pranzo o all'aperitivo.",
+ address:"Via Pescherie Vecchie, via Drapperie, via Clavature, 40124 Bologna",price:"Accesso libero",free:true,card:false,unesco:false,view:false,indoor:false,status:"ok",
+ hours:"Botteghe in orario diurno; locali fino a sera",booking:"No",duration:"1 h",access:"Vie strette e affollate nelle ore di punta",
+ official:"https://www.italia.it/it/emilia-romagna/bologna/cosa-fare/quadrilatero-del-gusto-di-bologna",
+ sources:[["Italia.it, Quadrilatero del Gusto","https://www.italia.it/it/emilia-romagna/bologna/cosa-fare/quadrilatero-del-gusto-di-bologna","uff"],
+          ["Emilia-Romagna Turismo, itinerario Tasty quarter","https://emiliaromagnaturismo.it/en/itineraries/tasty-quarter","uff"]]},
+
+{id:"finestrella",name:"Finestrella di via Piella",cat:"locale",sub:"Angoli nascosti",lat:44.49770,lng:11.34470,
+ desc:"Una piccola finestra nel muro si apre sul Canale delle Moline, uno dei pochi tratti d'acqua rimasti scoperti: la 'piccola Venezia' bolognese.",
+ why:"Il segreto più fotografato della città. Vicino ci sono anche gli affacci di via Oberdan e via Malcontenti.",
+ address:"Via Piella 16/a-18/a, 40126 Bologna",price:"Gratuito",free:true,card:false,unesco:false,view:false,indoor:false,status:"ok",
+ hours:"Sempre accessibile dalla strada",booking:"No",duration:"15 min",access:"Su strada",
+ official:"https://www.bolognawelcome.com/it/luoghi/vie-e-cammini/finestrella-di-via-piella",
+ sources:[["Bologna Welcome, scheda Finestrella di via Piella","https://www.bolognawelcome.com/it/luoghi/vie-e-cammini/finestrella-di-via-piella","uff"]]},
+
+{id:"ducati",name:"Museo Ducati (Borgo Panigale)",cat:"locale",sub:"Motori",lat:44.51080,lng:11.26960,
+ desc:"Dentro lo stabilimento storico del 1936: la storia Ducati e le moto delle vittorie. Su prenotazione si può aggiungere il tour della fabbrica.",
+ why:"Tappa della Motor Valley emiliana, dentro i confini comunali.",
+ address:"Via Antonio Cavalieri Ducati 3, 40132 Bologna",price:"€18 intero. Tour fabbrica a parte, su prenotazione",free:false,card:false,unesco:false,view:false,indoor:true,status:"ok",
+ hours:"Tutti i giorni 9-18, chiuso il mercoledì e in alcune date (vedi sito)",booking:"Obbligatoria online",duration:"1-2 h",access:"Scarpe chiuse obbligatorie per la fabbrica",
+ official:"https://www.ducati.com/it/it/borgo-panigale-experience",
+ sources:[["Ducati, Borgo Panigale Experience: tariffe e orari","https://www.ducati.com/it/it/borgo-panigale-experience","uff"]]}
+];
+
+/* ---- caricamento come la guida osterie (7/11/2026): manifest.json (sempre riletto) -> dati.<hash>.json
+   conservato nel telefono (IndexedDB) e riscaricato solo quando cambia ---- */
+const MEMO={db:null,apri(){if(this.db)return this.db;this.db=new Promise(ok=>{try{const r=indexedDB.open("luoghi",1);
+  r.onupgradeneeded=()=>r.result.createObjectStore("file");r.onsuccess=()=>ok(r.result);r.onerror=()=>ok(null);setTimeout(()=>ok(null),1500);}catch(e){ok(null);}});return this.db;},
+  async leggi(k){const db=await this.apri();if(!db)return null;return new Promise(ok=>{try{const q=db.transaction("file").objectStore("file").get(k);q.onsuccess=()=>ok(q.result||null);q.onerror=()=>ok(null);}catch(e){ok(null);}});},
+  async scrivi(k,v){const db=await this.apri();if(!db)return;try{const s=db.transaction("file","readwrite").objectStore("file");s.put(v,k);const tieni=MAN?[MAN.dati,MAN.meta,...Object.values(MAN.det||{})]:[k];const c=s.getAllKeys();c.onsuccess=()=>c.result.forEach(x=>{if(!tieni.includes(x))s.delete(x);});}catch(e){}}};
+let MAN=null;
+(async()=>{const cnt=document.getElementById("count");if(cnt)cnt.textContent="Caricamento dei luoghi…";
+  let nome=null;try{nome=localStorage.getItem("datiNome");}catch(e){}
+  try{MAN=await (await fetch("manifest.json",{cache:"no-store"})).json();nome=MAN.dati;try{localStorage.setItem("man",JSON.stringify(MAN));}catch(e){}}catch(e){try{MAN=JSON.parse(localStorage.getItem("man")||"null");}catch(e2){}}
+  if(!nome){if(cnt)cnt.textContent="Dati non disponibili: controlla la connessione.";return;}
+  let t=await MEMO.leggi(nome);
+  if(!t){const r=await fetch(nome);if(!r.ok){if(cnt)cnt.textContent="Dati non disponibili ("+r.status+")";return;}t=await r.text();MEMO.scrivi(nome,t);}
+  try{localStorage.setItem("datiNome",nome);}catch(e){}
+  AVVIO(JSON.parse(t));})();
+function AVVIO(D){
+{const CK=["storia","musei","sacro","natura","locale"];for(const c of D.c)c.places=c.places.map(a=>{const f=a[5],o={id:c.slug+"--"+a[0],name:a[1],cat:CK[a[2]],sub:a[3],desc:a[4],free:f.includes("F")?true:f.includes("P")?false:null,card:f.includes("c"),unesco:f.includes("u"),view:f.includes("v"),indoor:f.includes("i"),status:a[6]||"ok",t:a[7],r:a[8],address:"",price:"",duration:""};if(a[9])Object.assign(o,a[9]);return o;});}
+const BO_GEO=D.g,COMUNI_EXTRA=D.c,LINKS_BO=D.l;let QC,SOURCES,ARCH;
+const caricaMeta=(()=>{let pr=null;return()=>pr||(pr=(async()=>{const n=MAN&&MAN.meta;if(!n)return;let t=await MEMO.leggi(n);if(!t){const r=await fetch(n);if(!r.ok)return;t=await r.text();MEMO.scrivi(n,t);}const m=JSON.parse(t);QC=m.q;SOURCES=m.s;ARCH=m.a;const h=location.hash.slice(1);if(h==="metodo"||h==="fonti")route(true);})());})();
+("requestIdleCallback" in window)?requestIdleCallback(()=>caricaMeta(),{timeout:4000}):setTimeout(()=>caricaMeta(),1500);
+for(const p of PLACES){const l=LINKS_BO[p.id];if(l){p.hoursUrl=l.orari||"";p.ticketUrl=l.biglietti||"";if(l.off)p.official=l.off;}}
+/* dettagli della scheda (perché andarci, fonti, link) per provincia: scaricati in sottofondo o al tocco */
+const DETOK={},DETP={},IDPROV={};
+for(const c of COMUNI_EXTRA)for(const p of c.places)(IDPROV[p.id]||(IDPROV[p.id]=new Set())).add(c.prov);
+function caricaDet(pr){if(!pr||DETOK[pr])return Promise.resolve();if(DETP[pr])return DETP[pr];
+  const n=MAN&&MAN.det&&MAN.det[pr];if(!n){DETOK[pr]=1;return Promise.resolve();}
+  return DETP[pr]=(async()=>{let t=await MEMO.leggi(n);if(!t){const r=await fetch(n);if(!r.ok)return;t=await r.text();MEMO.scrivi(n,t);}
+    const d=JSON.parse(t);for(const c of COMUNI_EXTRA){const dc=c.prov===pr&&d[c.slug];if(dc)for(const p of c.places)if(dc[p.id])Object.assign(p,dc[p.id]);}DETOK[pr]=1;})();}
+const precarica=prs=>{const f=()=>prs.forEach(pr=>caricaDet(pr));("requestIdleCallback" in window)?requestIdleCallback(f,{timeout:2500}):setTimeout(f,400);};
+/* classifica: punteggio di rilevanza (calcolato in costruzione; per Bologna con le stesse regole) e posizione */
+{const sc=p=>{let s=0;const u=(p.sources||[]).map(x=>x[1]||"").join(" ");if(p.unesco)s+=12;if(u.includes("touringclub.it"))s+=6;if(u.includes("italia.it"))s+=8;
+  s+=Math.min(2,Math.max(0,(p.sources||[]).length-1))*2;if(p.status==="closed")s-=10;return Math.max(0,s+((D.pb||{})[p.id]||0));};
+ const tutti=[...PLACES.map(p=>(p.r==null&&(p.r=sc(p)),p))];for(const c of COMUNI_EXTRA)for(const p of c.places)tutti.push(p);
+ tutti.sort((a,b)=>b.r-a.r||a.name.localeCompare(b.name,"it"));tutti.forEach((p,i)=>p.rk=i+1);}
+{const _os=openSheet;openSheet=function(id,from){const ps=[...(IDPROV[id]||[])].filter(pr=>!DETOK[pr]);
+  if(!ps.length)return _os(id,from);Promise.all(ps.map(caricaDet)).then(()=>_os(id,from));};}
+{const _up=update;update=function(){const r=_up.apply(this,arguments);try{const ps=[...new Set((CUR||[]).slice(0,60).map(p=>{const c=COMUNI.find(x=>x.slug===p.comSlug);return c&&c.prov;}).filter(Boolean))].slice(0,4);
+  if(ps.length){precarica(ps);try{localStorage.setItem("ultProv",ps[0]);}catch(e){}}}catch(e){}return r;};}
+try{const u=localStorage.getItem("ultProv");if(u)precarica([u]);}catch(e){}
+
+/* Ogni luogo vive dentro il suo comune. Aggiungere un comune = aggiungere un oggetto a COMUNI. */
+const REGIONI=[["abruzzo","Abruzzo"],["basilicata","Basilicata"],["calabria","Calabria"],["campania","Campania"],["emilia-romagna","Emilia-Romagna"],["friuli-venezia-giulia","Friuli-Venezia Giulia"],["lazio","Lazio"],["liguria","Liguria"],["lombardia","Lombardia"],["marche","Marche"],["molise","Molise"],["piemonte","Piemonte"],["puglia","Puglia"],["sardegna","Sardegna"],["sicilia","Sicilia"],["toscana","Toscana"],["trentino-alto-adige","Trentino-Alto Adige"],["umbria","Umbria"],["valle-d-aosta","Valle d'Aosta"],["veneto","Veneto"]];
+const COMUNI=[
+ {slug:"bologna-bo",name:"Bologna",aw:["unesco"],istat:"037006",regione:"emilia-romagna",prov:"BO",provName:"Bologna",provKind:"Città metropolitana",
+  verified:"6 novembre 2026",cardName:"Bologna Welcome Card o Card Cultura",
+  lede:"Monumenti, chiese, musei, parchi e angoli nascosti del comune di Bologna, con biglietti, orari e come arrivare. Ogni scheda cita le sue fonti ufficiali.",
+  notice:"la salita alla Torre degli Asinelli è sospesa da fine 2023 e non ha ancora una data di riapertura (la stampa locale ipotizza il 2028): l'alternativa ufficiale è la Torre dell'Orologio. La terrazza di San Petronio è chiusa in modo definitivo.",
+  sources:[["Bologna Welcome, ufficio turistico ufficiale","https://www.bolognawelcome.com/"],["Musei Civici di Bologna","https://www.museibologna.it/"],["Musei dell'Università di Bologna","https://sma.unibo.it/"],["Pinacoteca Nazionale","https://pinacotecabologna.beniculturali.it/it/orari-e-biglietti"],["Ministero della Cultura","https://cultura.gov.it/"],["Comune di Bologna, Portici UNESCO","https://portici.comune.bologna.it/"],["Wikipedia, Bologna (fonte secondaria)","https://it.wikipedia.org/wiki/Bologna"]],
+  places:PLACES}
+];
+
+/* fascia di tempo per il filtro "Tempo" */
+const TBAND={ "piazza-maggiore":"short","due-torri":"short","torre-orologio":"long","archiginnasio":"short","portici":"short","salaborsa":"short",
+ "san-petronio":"short","santo-stefano":"short","santa-maria-vita":"short","san-domenico":"short","san-luca":"long","certosa":"mid",
+ "pinacoteca":"long","archeologico":"mid","medievale":"mid","mambo":"mid","casa-morandi":"short","pepoli":"mid","poggi":"mid",
+ "musica":"mid","ebraico":"mid","orto":"short","margherita":"mid","villa-ghigi":"long","quadrilatero":"mid","finestrella":"short","ducati":"mid"};
+COMUNI.push(...COMUNI_EXTRA);
+if(COMUNI[0].lat==null&&typeof BO_GEO!=="undefined"){COMUNI[0].lat=BO_GEO[0];COMUNI[0].lng=BO_GEO[1];}
+COMUNI.forEach(c=>c.places.forEach(p=>{if(p.lat==null&&c.lat!=null){p.clat=c.lat;p.clng=c.lng;}if(!p.t)p.t=TBAND[p.id]||"mid";p.com=c.name;p.comSlug=c.slug;p.aw=c.aw||[];}));
+const provKey=c=>"provincia-"+c.prov.toLowerCase();
+const provLong=f=>(f.provKind==="Città metropolitana"?"Città metropolitana di ":"Provincia di ")+f.provName;
+const listIt=a=>a.length<2?a.join(""):a.slice(0,-1).join(", ")+" e "+a[a.length-1];
+/* vista multipla: una o più province, eventualmente ristrette ad alcuni comuni */
+const ALLP=()=>[...new Set(COMUNI.map(c=>c.prov))];
+const REGN=r=>(REGIONI.find(x=>x[0]===r)||[r,r])[1];
+const regProvs=r=>[...new Set(COMUNI.filter(c=>c.regione===r).map(c=>c.prov))];
+const sameSet=(a,b)=>a.length===b.length&&a.every(x=>b.includes(x));
+function multiView(provs,coms){
+  const cs=coms.length?COMUNI.filter(c=>coms.includes(c.slug)):COMUNI.filter(c=>provs.includes(c.prov));
+  const regs=[...new Set(cs.map(c=>c.regione))];
+  const all=!coms.length&&sameSet(provs,ALLP());
+  const wholeReg=!coms.length&&regs.length===1&&provs.length>1&&sameSet(provs,regProvs(regs[0]));
+  const f=COMUNI.find(c=>c.prov===provs[0]);
+  const pn=provs.map(p=>COMUNI.find(c=>c.prov===p).provName);
+  const name=all?"Tutta la guida":wholeReg?REGN(regs[0]):coms.length?(cs.length<=3?listIt(cs.map(c=>c.name)):`${cs.length} comuni scelti`):(provs.length===1?provLong(f):"Province di "+listIt(pn));
+  const slug=all?"tutti":[...provs.map(p=>"provincia-"+p.toLowerCase()),...coms].join("+");
+  const nPl=cs.reduce((a,c)=>a+c.places.length,0);
+  return {slug,isProv:true,all,provs,coms,name,regione:regs.length===1?regs[0]:"tutte",prov:provs[0],provName:f.provName,provKind:f.provKind,verified:f.verified,cardName:"",aw:[],
+    lede:all?`${nPl} luoghi in ${cs.length} comuni di ${provs.length} province, in ${listIt(regs.map(REGN))}. Scegli cosa vedere o dove, oppure tocca 📍 per i luoghi vicino a te.`:coms.length?`I luoghi di ${listIt(cs.map(c=>c.name))}, insieme. Ogni scheda indica il suo comune.`:`Tutti i luoghi dei ${cs.length} comuni${provs.length>1?" delle province scelte":""}, insieme. Ogni scheda indica il suo comune; usa i filtri o scegli uno o più comuni per restringere.`,notice:"",
+    sources:[...new Map(cs.flatMap(c=>c.sources).filter(s=>!/^Wikipedia/.test(s[0])&&!/scheda di/.test(s[0])).map(s=>[s[1],s])).values()],places:cs.flatMap(c=>c.places),n:cs.length};}
+function parseView(slug){
+  const toks=(slug||"").split("+").filter(Boolean);
+  if(!toks.length||toks.includes("tutti"))return multiView(ALLP(),[]);
+  const provs=[],coms=[];
+  for(const k of toks){const m=/^provincia-([a-z]{2})$/.exec(k);
+    if(m&&COMUNI.some(c=>c.prov===m[1].toUpperCase())){if(!provs.includes(m[1].toUpperCase()))provs.push(m[1].toUpperCase());}
+    else{const c=COMUNI.find(x=>x.slug===k);if(c&&!coms.includes(c.slug))coms.push(c.slug);}}
+  for(const s of coms){const p=COMUNI.find(c=>c.slug===s).prov;if(!provs.includes(p))provs.push(p);}
+  if(!provs.length)return multiView(ALLP(),[]);
+  if(coms.length===1&&toks.length===1)return COMUNI.find(c=>c.slug===coms[0]);
+  if(coms.length===1&&provs.length===1)return COMUNI.find(c=>c.slug===coms[0]);
+  return multiView(provs,coms);
+}
+const viewProvs=()=>C.provs||[C.prov];
+const viewComs=()=>C.provs?C.coms:[C.slug];
+function goView(provs,coms){
+  provs=provs.filter(p=>COMUNI.some(c=>c.prov===p));
+  if(!provs.length)return;
+  coms=coms.filter(s=>provs.includes(COMUNI.find(c=>c.slug===s).prov));
+  const slug=(coms.length===1&&provs.length===1)?coms[0]:(!coms.length&&sameSet(provs,ALLP()))?"tutti":[...provs.map(p=>"provincia-"+p.toLowerCase()),...coms].join("+");
+  keepFilters=true;setComune(slug);keepFilters=false;
+}
+let C=COMUNI[0]; let CUR=C.places;
+
+const S={cat:new Set(),sub:new Set(),price:new Set(),ideal:new Set(),time:new Set(),q:"",near:null};
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const priceOk=(p,k)=>k==="free"?p.free===true:k==="paid"?p.free===false:k==="unk"?p.free===null:p.card;
+/* Dentro un gruppo i filtri si sommano (O), tra gruppi diversi si combinano (E). "Ideale per" richiede tutte le voci scelte. */
+function pass(p,skip){
+  if(skip!=="cat"&&S.cat.size&&!S.cat.has(p.cat))return false;
+  if(skip!=="sub"&&S.sub.size&&[...S.sub].some(x=>x.startsWith(p.cat+"|"))&&!S.sub.has(p.cat+"|"+p.sub))return false;
+  if(skip!=="price"&&S.price.size&&![...S.price].some(k=>priceOk(p,k)))return false;
+  if(skip!=="ideal"&&S.ideal.size&&![...S.ideal].some(k=>idealOk(p,k)))return false;
+  if(skip!=="time"&&S.time.size&&!S.time.has(p.t))return false;
+  if(S.alerts&&p.status==="ok")return false;
+  if(skip!=="near"&&S.near&&distOf(p,S.near)>S.near.km)return false;
+  if(S.q){if(!p._t)p._t=fold(p.name+" "+p.desc+" "+p.sub+" "+p.address+" "+p.com+" "+CATS[p.cat].long);
+    if(!fold(S.q).split(/\s+/).every(w=>p._t.includes(w)))return false;}
+  return true;
+}
+const fold=s=>s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
+const tog=(set,k)=>{set.has(k)?set.delete(k):set.add(k);};
+const NM={"Piazze e centro storico":"Piazze","Castelli e fortezze":"Castelli","Palazzi e ville":"Palazzi","Portici UNESCO":"Portici","Monumenti e memoriali":"Monumenti","Teatri storici":"Teatri","Borghi abbandonati":"Abbandonati","Cattedrali e duomi":"Duomi","Complessi monumentali":"Complessi","Abbazie e monasteri":"Abbazie","Cimiteri monumentali":"Cimiteri","Chiese e pievi":"Chiese","Arte antica":"Pittura","Arte moderna":"Moderna","Storia della città":"Storia","Scienza e università":"Scienza","Case museo":"Dimore","Parchi urbani":"Giardini","Colline e sentieri":"Sentieri","Mare e spiagge":"Spiagge","Laghi e fiumi":"Laghi","Parchi e riserve naturali":"Parchi","Grotte e geositi":"Grotte","Giardini botanici":"Orti","Paesaggi e zone d'interesse":"Panorami","Mercati storici":"Mercati","Enogastronomia":"Sapori","Artigianato":"Botteghe","Angoli nascosti":"Curiosità"};
+const nm=s=>NM[s]||s;
+const SHORT={"Palazzi e ville":"Palazzi","Castelli e fortezze":"Castelli","Monumenti e memoriali":"Monumenti","Cattedrali e duomi":"Duomi","Abbazie e monasteri":"Abbazie","Parchi e riserve naturali":"Riserve","Grotte e geositi":"Grotte","Mare e spiagge":"Mare","Laghi e fiumi":"Laghi","Piazze e centro storico":"Piazze","Palazzi storici":"Palazzi","Portici UNESCO":"Portici","Complessi monumentali":"Complessi","Cimiteri monumentali":"Cimiteri","Storia della città":"Storia città","Scienza e università":"Scienza","Parchi urbani":"Parchi","Colline e sentieri":"Colline","Giardini botanici":"Orti botanici","Mercati storici":"Mercati","Angoli nascosti":"Segreti","Gratis con Card":"Con Card","Prezzo da verificare":"Da verificare","Borghi più belli":"Borghi","Bandiera Arancione":"Arancione","A pagamento":"Pagamento","Fino a 45 min":"≤ 45 min","1-1,5 ore":"1-1,5 h","2 ore e oltre":"2 h e più","Luoghi sacri":"Sacri","Vita locale":"Locale"};
+function chip(em,t,n,on,g,onclick,lab){
+  const b=document.createElement("button");b.type="button";b.className="qc"+(on?" on":"");
+  if(g)b.style.setProperty("--g",g);
+  b.setAttribute("aria-pressed",on?"true":"false");
+  b.innerHTML=`<span class="em" aria-hidden="true">${em}</span><span class="t lg">${esc(nm(t))}</span><span class="t sm">${esc(SHORT[nm(t)]||nm(t))}</span><small>${n}</small>`;
+  if(lab)b.setAttribute("aria-label",`${lab}: ${t}, ${n} luoghi`);
+  b.disabled=!on&&n===0;b.onclick=onclick;return b;
+}
+const gcol=c=>`var(--c-${c})`;
+
+function renderFilters(){
+  const gc=$("g-cat");gc.innerHTML="";
+  for(const [k,c] of Object.entries(CATS)){
+    const n=CUR.filter(p=>p.cat===k&&pass(p,"cat")).length;
+    gc.appendChild(chip(c.em,c.label,n,S.cat.has(k),gcol(k),()=>{tog(S.cat,k);if(!S.cat.has(k))for(const x of [...S.sub])if(x.startsWith(k+"|"))S.sub.delete(x);update();},"Categoria"));
+  }
+  $("clr-cat").hidden=!S.cat.size;
+  const gs=$("g-sub");gs.innerHTML="";$("subwrap").hidden=!S.cat.size;
+  if(S.cat.size){
+    for(const k of Object.keys(CATS)){ if(!S.cat.has(k))continue;
+      for(const [s,em] of Object.entries(CATS[k].subs)){
+        const key=k+"|"+s;
+        const n=CUR.filter(p=>p.cat===k&&p.sub===s&&pass(p,"sub")).length;
+        if(!n&&!S.sub.has(key))continue;
+        gs.appendChild(chip(em,s,n,S.sub.has(key),gcol(k),()=>{tog(S.sub,key);update();},"Tipo"));
+      }
+    }
+  }
+  $("clr-sub").hidden=!S.sub.size;
+  renderFacets();
+  const gp=$("g-price");gp.innerHTML="";
+  for(const [k,em,t] of PRICE){
+    const n=CUR.filter(p=>pass(p,"price")&&priceOk(p,k)).length;
+    if(!n&&!S.price.has(k)&&k!=="free"&&k!=="paid")continue;
+    gp.appendChild(chip(em,t,n,S.price.has(k),null,()=>{tog(S.price,k);update();},"Ingresso"));
+  }
+  const gi=$("g-ideal");gi.innerHTML="";
+  for(const [k,em,t] of IDEAL){
+    if((k==="borghi"||k==="arancione")&&!CUR.some(p=>p.aw.includes(k)))continue;
+    const n=CUR.filter(p=>pass(p,"ideal")&&idealOk(p,k)).length;
+    gi.appendChild(chip(em,t,n,S.ideal.has(k),null,()=>{tog(S.ideal,k);update();},"Ideale per"));
+  }
+  const gt=$("g-time");gt.innerHTML="";
+  for(const [k,em,t] of TIME){
+    const n=CUR.filter(p=>pass(p,"time")&&p.t===k).length;
+    gt.appendChild(chip(em,t,n,S.time.has(k),null,()=>{tog(S.time,k);update();},"Tempo"));
+  }
+}
+function activeList(){
+  const a=[];
+  for(const k of S.cat)a.push([CATS[k].em+" "+CATS[k].label,()=>{S.cat.delete(k);for(const x of [...S.sub])if(x.startsWith(k+"|"))S.sub.delete(x);}]);
+  for(const key of S.sub){const [k,s]=key.split("|");a.push([CATS[k].subs[s]+" "+nm(s),()=>{S.sub.delete(key);}]);}
+  for(const k of S.price){const p=PRICE.find(x=>x[0]===k);a.push([p[1]+" "+p[2],()=>{S.price.delete(k);}]);}
+  for(const k of S.ideal){const p=IDEAL.find(x=>x[0]===k);a.push([p[1]+" "+p[2],()=>{S.ideal.delete(k);}]);}
+  for(const k of S.time){const p=TIME.find(x=>x[0]===k);a.push([p[1]+" "+p[2],()=>{S.time.delete(k);}]);}
+  if(S.alerts)a.push(["⚠️ Solo con avvisi",()=>{S.alerts=false;}]);
+  if(C&&!C.all)a.push([`📍 ${regAllView()?REGN((COMUNI.find(c=>c.prov===viewProvs()[0])||{}).regione):C.name}`,()=>{setTimeout(()=>setComune("tutti",false),0);}]);
+  if(S.near)a.push([`📍 Entro ${fmtKm(S.near.km)} km da ${S.near.label}`,()=>{S.near=null;}]);
+  return a;
+}
+function nActive(){return (C&&!C.all?1:0)+S.cat.size+S.sub.size+S.price.size+S.ideal.size+S.time.size+(S.alerts?1:0)+(S.q?1:0)+(S.near?1:0);}
+function renderActive(){
+  const a=activeList(), el=$("active");
+  const secondary=S.price.size+S.ideal.size+S.time.size;
+  $("badge").hidden=!secondary;$("badge").textContent=secondary;
+  $("morebtn").classList.toggle("active",secondary>0);
+  const n=nActive(); const rb=$("resetbtn");
+  rb.hidden=!n; $("resetn").textContent=n;
+  rb.setAttribute("aria-label",`Azzera tutti i filtri (${n} attivi)`);
+  if(!a.length){el.hidden=true;return;}
+  el.hidden=false;el.innerHTML="";
+  for(const [t,fn] of a){const b=document.createElement("button");b.type="button";b.className="apill";b.innerHTML=`${esc(t)} <span aria-hidden="true">×</span>`;b.setAttribute("aria-label","Togli filtro "+t);b.onclick=()=>{fn();update();};el.appendChild(b);}
+  if(a.length>1){const r=document.createElement("button");r.type="button";r.className="freset";r.textContent="↺ Azzera tutto";r.onclick=resetAll;el.appendChild(r);}
+}
+function clearFilters(){for(const k of ["cat","sub","price","ideal","time"])S[k].clear();S.alerts=false;S.near=null;S.q="";$("q").value="";$("searchwrap").classList.remove("has");}
+function resetAll(){clearFilters();if(!C.all){setComune("tutti");}else update();}
+
+function priceTag(p){return p.free===null?`<span class="mst unk">🎟️ Ingresso: vedi sito</span>`:p.free?`<span class="mst free">🆓 Gratis</span>`:`<span class="mst paid">🎟️ A pagamento</span>`;}
+function statusTag(p){return p.status==="closed"?`<span class="mst closed">⛔ Chiuso ora</span>`:p.status==="warn"?`<span class="mst warn">⚠️ Avviso</span>`:"";}
+function nearTag(p){if(!S.near)return "";const d=distOf(p,S.near);if(!isFinite(d))return "";const q=ptOf(p);return `<span class="mst near">📍 ${q[2]?"":"≈ "}${fmtKm(d)} km · ~${fmtMin(Math.max(5,Math.round(d/KM_PER_MIN/5)*5))}</span>`;}
+function ctags(p){const tm=TIME.find(x=>x[0]===p.t);return nearTag(p)+statusTag(p)+priceTag(p)+(p.unesco?`<span class="mst">🌍 UNESCO</span>`:"")+(tm?`<span class="mst">${tm[1]} ${esc(p.duration||tm[3])}</span>`:"")+(p.indoor?`<span class="mst">☔ Al coperto</span>`:"")+(p.view?`<span class="mst">🌅 Panorama</span>`:"");}
+function tags(p){return nearTag(p)+statusTag(p)+priceTag(p)+(p.card?`<span class="mst">💳 Card</span>`:"")+(p.indoor?`<span class="mst">☔ Al coperto</span>`:"")+(p.view?`<span class="mst">🌅 Panorama</span>`:"")+(p.unesco?`<span class="mst">🌍 UNESCO</span>`:"")+`<span class="mst">⏱️ ${esc(p.duration)}</span>`;}
+
+function renderGrid(list){
+  const g=$("grid");g.innerHTML="";
+  $("count").textContent=list.length===CUR.length?`Tutti i ${list.length} luoghi`:`${list.length} ${list.length===1?"luogo":"luoghi"} su ${CUR.length}`;
+  if(!list.length){g.innerHTML=`<div class="empty">Nessun luogo con questi filtri.<br><button class="freset" type="button" id="er">Azzera i filtri</button></div>`;$("er").onclick=resetAll;return;}
+  const CH=36;let shown=0;const selN=list.length!==CUR.length||!!S.near;list.forEach((p,i)=>p._sel=selN?i+1:0);
+  const more=()=>{const frag=document.createDocumentFragment();for(const p of list.slice(shown,shown+CH))frag.appendChild(cardEl(p));shown+=CH;
+    const old=g.querySelector(".gmore");if(old)old.remove();g.appendChild(frag);
+    if(shown<list.length){const m=document.createElement("button");m.type="button";m.className="gmore freset";m.textContent=`Mostra altri ${Math.min(CH,list.length-shown)} di ${list.length-shown}`;m.onclick=more;g.appendChild(m);if(gIO)gIO.observe(m);}};
+  if(gIO)gIO.disconnect();
+  more();
+}
+const gIO="IntersectionObserver" in window?new IntersectionObserver(es=>{for(const e of es)if(e.isIntersecting){gIO.unobserve(e.target);e.target.click();}},{rootMargin:"600px"}):null;
+function cardEl(p){
+    const c=document.createElement("article");c.className="card";c.style.setProperty("--g",gcol(p.cat));
+    c.innerHTML=`<button class="cmain" type="button"><div class="top"><span class="gtag">${CATS[p.cat].em} ${esc(CATS[p.cat].label)}</span><span>${C.isProv?`<span class="ctag">📍 ${esc(p.com)}</span>`:`${CATS[p.cat].subs[p.sub]||""} ${esc(p.sub)}`}</span><span class="rkw">${p._sel?`<span class="rks" title="Posizione nella selezione attuale">${p._sel}°</span>`:""}${p.rk?`<span class="rk" title="Posizione nella classifica di tutta la guida (punteggio ${p.r})">n.&nbsp;${p.rk}</span>`:""}</span></div>
+      <h3 class="title">${esc(p.name)}</h3><p class="desc">${esc(p.desc)}</p><div class="meta">${ctags(p)}</div></button>
+      <div class="cfoot"><a class="cbtn ph" href="${photoUrl(p)}" target="_blank" rel="noopener" aria-label="Foto di ${esc(p.name)} su Google Immagini">📷 Foto</a><button class="cbtn fav${FAV.has(p.id)?" on":""}" type="button" aria-pressed="${FAV.has(p.id)}" aria-label="Salva tra i miei luoghi">${FAV.has(p.id)?"♥":"♡"}</button><button class="cbtn pri" type="button">Apri <span aria-hidden="true">›</span></button></div>`;
+    const open=()=>openSheet(p.id,c.querySelector(".cmain"));
+    c.querySelector(".cmain").onclick=open; c.querySelector(".cbtn.pri").onclick=open;
+    c.querySelector(".cbtn.fav").onclick=e=>{favToggle(p.id);const b=e.currentTarget,on=FAV.has(p.id);b.classList.toggle("on",on);b.textContent=on?"♥":"♡";b.setAttribute("aria-pressed",on);renderXtra();};
+    return c;
+}
+/* riconoscimenti: nei comuni il bollino con link all'ente; in ogni vista i pulsanti rapidi UNESCO, Borghi, Bandiere Arancioni */
+function renderAwards(){
+  const c=C, cnt=k=>CUR.filter(p=>idealOk(p,k)).length;
+  const links=(c.aw||[]).map(k=>AWARDS[k]?`<a class="aw" href="${AWARDS[k][2]}" target="_blank" rel="noopener">${AWARDS[k][0]} ${esc(AWARDS[k][1])}</a>`:"").join("");
+  const quick=[["unesco","🌍","UNESCO"],["borghi","🏘️","Borghi più belli"],["arancione","🟠","Bandiere Arancioni"]].map(([k,em,l])=>{const n=cnt(k);return n?`<button type="button" class="aw awq${S.ideal.has(k)?" on":""}" data-k="${k}" aria-pressed="${S.ideal.has(k)}">${em} ${l}</button>`:"";}).join("");
+  $("awards").innerHTML=quick;
+}
+$("awards").addEventListener("click",e=>{const b=e.target.closest(".awq");if(!b)return;tog(S.ideal,b.dataset.k);update();});
+function renderStats(){
+  const vis=CUR.filter(p=>pass(p)).length, filt=nActive()>0;
+  const free=CUR.filter(p=>p.free===true).length, card=CUR.filter(p=>p.card).length, alerts=CUR.filter(p=>p.status!=="ok").length, indoor=CUR.filter(p=>p.indoor).length;
+  const tile=(sc,ic,n,l,act,on,of)=>`<${act?"button type=\"button\" data-act=\""+act+"\"":"div"} class="stat${on?" on":""}" style="--sc:${sc}"${act?` aria-pressed="${!!on}"`:""}>${of?`<span class="of">${of}</span>`:`<span class="si" aria-hidden="true">${ic}</span>`}<b>${n}</b><span>${l}</span></${act?"button":"div"}>`;
+  const third=C.isProv?tile("var(--c-sacro)","📍",C.n,"comuni","comuni"):card?tile("var(--c-sacro)","💳",card,"con Card","card",S.price.has("card")):tile("var(--c-sacro)","☔",indoor,"al coperto","rain",S.ideal.has("rain"));
+  $("stats").innerHTML=tile("var(--terra)","🏛️",vis<CUR.length?`${vis}<small class="ofn">/${CUR.length}</small>`:CUR.length,vis<CUR.length?"visibili":"luoghi",filt?"reset":null,false,"")+tile("var(--ok)","🆓",free,"gratuiti","free",S.price.has("free"))+third+tile("var(--warn)","⚠️",alerts,"con avvisi","alerts",S.alerts);
+}
+$("stats").onclick=e=>{const b=e.target.closest("button.stat");if(!b)return;const a=b.dataset.act;
+  if(a==="free"){tog(S.price,"free");update();}
+  else if(a==="card"){tog(S.price,"card");update();}
+  else if(a==="rain"){tog(S.ideal,"rain");update();}
+  else if(a==="alerts"){S.alerts=!S.alerts;update();}
+  else if(a==="reset"){resetAll();}
+  else if(a==="comuni"){popToggle("com",true);$("com-btn").scrollIntoView({block:"center",behavior:"smooth"});}
+};
+
+const photoUrl=p=>`https://www.google.com/search?tbm=isch&q=${encodeURIComponent(p.name.split(/[:(,]/)[0].trim()+" "+p.com)}`;
+let lastFocus=null;
+function openSheet(id,from){
+  const p=CUR.find(x=>x.id===id);if(!p)return;lastFocus=from||null;
+  const gm=`https://www.google.com/maps/dir/?api=1&destination=${(p.lat!=null&&p.lng!=null)?p.lat+"%2C"+p.lng:encodeURIComponent(p.name.split(/[:(]/)[0].trim()+", "+(p.address.includes(p.com)?p.address:p.address+", "+p.com))}`;
+  const ver=(COMUNI.find(c=>c.slug===p.comSlug)||C).verified;
+  const sh=$("sheet");sh.style.setProperty("--g",gcol(p.cat));
+  sh.innerHTML=`<div class="grab" aria-hidden="true"></div>
+    <button class="sclose" id="sclose" type="button" aria-label="Chiudi">×</button>
+    <div class="top"><span class="gtag">${CATS[p.cat].em} ${esc(CATS[p.cat].long)}</span><span>${CATS[p.cat].subs[p.sub]} ${esc(nm(p.sub))}</span></div>
+    <h2 class="title" id="s-title">${esc(p.name)}</h2>
+    <div class="ctag" style="margin-top:4px">📍 ${esc(p.com)} (${esc(p.comSlug.split("-").pop().toUpperCase())})</div>
+    <div class="meta" style="padding-top:8px">${tags(p)}</div>
+    ${p.statusNote?`<div class="cnote" style="margin-top:12px"><span class="em" aria-hidden="true">⚠️</span><div>${esc(p.statusNote)}</div></div>`:""}
+    <p class="lead">${esc(p.desc)}</p>
+    ${p.why?`<div class="why"><b>Perché andarci.</b> ${esc(p.why)}</div>`:""}${p.tip?`<div class="cnote"><span class="em" aria-hidden="true">💡</span><div>${esc(p.tip)}</div></div>`:""}
+    <div class="facts">
+      <div class="fact"><span class="ic" aria-hidden="true">🎟️</span><small>Biglietto</small><div>${p.free===true?"Gratis":p.ticketUrl?`<a class="flink" href="${esc(p.ticketUrl)}" target="_blank" rel="noopener">Biglietti e tariffe ufficiali ↗</a>`:`<a class="flink soft" href="${esc(p.official)}" target="_blank" rel="noopener">${p.ownSite===false?"Info sul portale turistico ↗":"Cerca le tariffe sul sito ↗"}</a>`}</div></div>
+      <div class="fact"><span class="ic" aria-hidden="true">🕘</span><small>Orari</small><div>${p.hoursUrl?`<a class="flink" href="${esc(p.hoursUrl)}" target="_blank" rel="noopener">Orari ufficiali ↗</a>`:p.free===true&&!p.indoor?"Spazio aperto: verifica eventuali limitazioni":`<a class="flink soft" href="${esc(p.official)}" target="_blank" rel="noopener">${p.ownSite===false?"Info sul portale turistico ↗":"Cerca gli orari sul sito ↗"}</a>`}</div></div>
+      <div class="fact"><span class="ic" aria-hidden="true">⏱️</span><small>Tempo consigliato</small><div>${esc(p.duration)}</div></div>
+      <div class="fact"><span class="ic" aria-hidden="true">♿</span><small>Accessibilità</small><div>${esc(p.access)}</div></div>
+      <div class="fact"><span class="ic" aria-hidden="true">📍</span><small>Indirizzo</small><div>${esc(p.address)}</div></div>
+    </div>
+    <div class="acts">
+      <a class="act pri" href="${gm}" target="_blank" rel="noopener">🧭 Come arrivare</a>
+      <a class="act" href="${esc(p.official)}" target="_blank" rel="noopener">${p.ownSite===false?"🔗 Scheda sul portale turistico":"🔗 Sito ufficiale"}</a>
+      <button class="act" type="button" id="copyaddr">📋 Copia indirizzo</button>
+      <button class="act" type="button" id="favsheet">${FAV.has(p.id)?"♥ Salvato nei miei luoghi":"♡ Salva nei miei luoghi"}</button>
+    </div>
+    <div class="src"><b>Fonti verificate il ${esc(ver)}</b><ul>${p.sources.map(s=>`<li><a href="${esc(s[1])}" target="_blank" rel="noopener">${esc(s[0])}</a><span class="rel ${s[2]}">${s[2]==="uff"?"🟢 ufficiale":"🟠 da ricontrollare"}</span></li>`).join("")}</ul></div>`;
+  $("scrim").classList.add("open");sh.classList.add("open");document.body.style.overflow="hidden";
+  $("sclose").onclick=closeSheet;$("sclose").focus();
+  $("favsheet").onclick=e=>{favToggle(p.id);e.currentTarget.textContent=FAV.has(p.id)?"♥ Salvato nei miei luoghi":"♡ Salva nei miei luoghi";renderXtra();const f=document.querySelector(`.card .cbtn.fav[data-id="${CSS.escape(p.id)}"]`);};
+  $("copyaddr").onclick=async e=>{const b=e.currentTarget;try{await navigator.clipboard.writeText(p.address);b.textContent="✅ Copiato";b.classList.add("copied");}catch(err){b.textContent="Copia non riuscita";}};
+}
+function closeSheet(){$("scrim").classList.remove("open");$("sheet").classList.remove("open");document.body.style.overflow="";if(lastFocus)lastFocus.focus();}
+$("scrim").onclick=closeSheet;
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&$("sheet").classList.contains("open"))closeSheet();});
+/* chiudi trascinando giù il foglio su telefono */
+(function(){let y0=null;const sh=$("sheet");
+  sh.addEventListener("touchstart",e=>{y0=sh.scrollTop<=0?e.touches[0].clientY:null;},{passive:true});
+  sh.addEventListener("touchend",e=>{if(y0!==null&&e.changedTouches[0].clientY-y0>90)closeSheet();y0=null;});})();
+
+let qT=0;$("q").addEventListener("input",e=>{$("searchwrap").classList.toggle("has",!!e.target.value);clearTimeout(qT);qT=setTimeout(()=>{S.q=e.target.value.trim();update();},140);});
+$("qx").onclick=()=>{$("q").value="";S.q="";$("searchwrap").classList.remove("has");update();$("q").focus();};
+$("clr-cat").onclick=()=>{S.cat.clear();S.sub.clear();update();};
+$("clr-sub").onclick=()=>{S.sub.clear();update();};
+$("resetbtn").onclick=()=>{resetAll();$("q").focus({preventScroll:true});};
+/* pannello filtri: tendina su tablet/computer, foglio dal basso su telefono */
+const isPhone=()=>matchMedia("(max-width:759px)").matches;
+function renderFacets(){
+  const n={price:S.price.size,ideal:S.ideal.size,time:S.time.size};
+  document.querySelectorAll(".fbtn").forEach(b=>{const f=b.dataset.f;b.classList.toggle("has",n[f]>0);b.querySelector(".n").textContent=n[f]||"";
+});
+}
+function openFacet(f){
+  const p=$("qbar");
+  if(!f||p.dataset.open===f){p.classList.remove("open");delete p.dataset.open;}
+  else{p.dataset.open=f;p.classList.add("open");}
+  document.querySelectorAll(".fbtn").forEach(b=>b.setAttribute("aria-expanded",String(p.dataset.open===b.dataset.f)));
+}
+document.querySelectorAll(".fbtn").forEach(b=>b.onclick=()=>{if(isPhone()){openSheetF(true);$("qbar").dataset.open=b.dataset.f;}else openFacet(b.dataset.f);});
+$("facets").appendChild($("awards"));
+$("fdone").onclick=()=>openFacet(null);
+function openSheetF(on){const p=$("qbar");p.classList.toggle("open",on);if(on)delete p.dataset.open;$("fscrim").classList.toggle("open",on);document.body.style.overflow=on?"hidden":"";$("morebtn").setAttribute("aria-expanded",String(on));if(on)$("fclose").focus();}
+$("morebtn").onclick=()=>openSheetF(true);
+$("fclose").onclick=()=>openSheetF(false);
+$("fscrim").onclick=()=>openSheetF(false);
+$("fshow").onclick=()=>{openSheetF(false);$("count").scrollIntoView({behavior:"smooth",block:"start"});};
+$("freset").onclick=()=>resetAll();
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&$("qbar").classList.contains("open")){isPhone()?openSheetF(false):openFacet(null);}});
+matchMedia("(max-width:759px)").addEventListener("change",()=>{const p=$("qbar");p.classList.remove("open");delete p.dataset.open;$("fscrim").classList.remove("open");document.body.style.overflow="";});
+
+const CAPI=new Set(["Agrigento","Alessandria","Ancona","Aosta","Arezzo","Ascoli Piceno","Asti","Avellino","Bari","Barletta","Belluno","Benevento","Bergamo","Biella","Bologna","Bolzano","Brescia","Brindisi","Cagliari","Caltanissetta","Campobasso","Carbonia","Caserta","Catania","Catanzaro","Cesena","Chieti","Como","Cosenza","Cremona","Crotone","Cuneo","Enna","Fermo","Ferrara","Firenze","Foggia","Forlì","Frosinone","Genova","Gorizia","Grosseto","Imperia","Isernia","L'Aquila","La Spezia","Latina","Lecce","Lecco","Livorno","Lodi","Lucca","Macerata","Mantova","Massa","Matera","Messina","Milano","Modena","Monza","Napoli","Novara","Nuoro","Oristano","Padova","Palermo","Parma","Pavia","Perugia","Pesaro","Pescara","Piacenza","Pisa","Pistoia","Pordenone","Potenza","Prato","Ragusa","Ravenna","Reggio Calabria","Reggio Emilia","Rieti","Rimini","Roma","Rovigo","Salerno","Sassari","Savona","Siena","Siracusa","Sondrio","Taranto","Teramo","Terni","Torino","Trapani","Trento","Treviso","Trieste","Udine","Urbino","Varese","Venezia","Verbania","Vercelli","Verona","Vibo Valentia","Vicenza","Viterbo"]);
+const rank=p=>(p.unesco?0:2)+(CAPI.has(p.com)?0:1)+(p.status==="closed"?4:0);
+function update(){
+  const order={storia:0,sacro:1,musei:2,natura:3,locale:4};
+  const list=CUR.filter(p=>pass(p)).sort(S.near?(a,b)=>distOf(a,S.near)-distOf(b,S.near):(a,b)=>(a.rk||1e9)-(b.rk||1e9)||rank(a)-rank(b)||order[a.cat]-order[b.cat]||(C.isProv?a.com.localeCompare(b.com,"it"):0));
+  $("nearn").hidden=!S.near;
+  renderFilters();renderActive();renderGrid(list);renderStats();renderAwards();renderXtra();
+  $("fshow").textContent=list.length===1?"Mostra 1 luogo":`Mostra ${list.length} luoghi`;
+}
+function fillSelect(sel,opts,val){sel.innerHTML=opts.map(([v,l,dis])=>`<option value="${esc(v)}"${dis?" disabled":""}${v===val?" selected":""}>${esc(l)}</option>`).join("");}
+function provReg(p){return (COMUNI.find(c=>c.prov===p)||{}).regione;}
+function viewRegs(){if(C.all)return [];return [...new Set(viewProvs().map(provReg))];}
+function regAllView(){if(C.all||viewComs().length)return false;const vp=viewProvs();if(!vp.length)return false;const rs=viewRegs();return sameSet(vp,rs.flatMap(r=>regProvs(r)));}
+function renderPicker(){
+  const has=r=>COMUNI.some(c=>c.regione===r);
+  const vr=viewRegs(), full=r=>!C.all&&!viewComs().length&&regProvs(r).every(p=>viewProvs().includes(p));
+  $("reg-val").innerHTML=C.all?"Tutte":vr.length===1?esc(REGN(vr[0])):`<span class="mc">${vr.length}</span> ${esc(vr.map(REGN).join(", "))}`;
+  const av=REGIONI.filter(([s])=>has(s)), soon=REGIONI.filter(([s])=>!has(s)).length;
+  $("reg-list").innerHTML=av.map(([r,n])=>{const k=COMUNI.filter(c=>c.regione===r);const on=full(r);return `<button type="button" class="mopt${on?" on":""}" data-r="${r}" aria-pressed="${on}"><span class="t">${esc(n)}</span><small>${regProvs(r).length} provinc${regProvs(r).length===1?"ia":"e"} · ${k.reduce((a,c)=>a+c.places.length,0)} luoghi</small></button>`;}).join("")+(soon?`<p class="fhint" style="padding:6px 4px 0;grid-column:1/-1">Altre ${soon} regioni in arrivo.</p>`:"");
+  $("reg-all").hidden=C.all;
+  const provs=[...new Map(COMUNI.map(c=>[c.prov,c.provName])).entries()];
+  const manyReg=new Set(COMUNI.map(c=>c.regione)).size>1;
+  const vp=viewProvs(),vc=viewComs();
+  const ra=regAllView();
+  $("prov-val").innerHTML=C.all||ra?"Tutte":vp.length===1?esc(provs.find(p=>p[0]===vp[0])[1]+" ("+vp[0]+")"):`<span class="mc">${vp.length}</span> ${esc(listIt(vp))}`;
+  let lastReg="";
+  $("prov-list").innerHTML=provs.map(([s,n])=>{const k=COMUNI.filter(c=>c.prov===s);const r=k[0].regione;const head=manyReg&&r!==lastReg?`<div class="mgrp">${esc(REGN(r))}</div>`:"";lastReg=r;const on=!C.all&&!ra&&vp.includes(s);return head+`<button type="button" class="mopt${on?" on":""}" data-p="${s}" aria-pressed="${on}"><span class="t">${esc(n)} (${s})</span><small>${k.length} comuni · ${k.reduce((a,c)=>a+c.places.length,0)} luoghi</small></button>`;}).join("");
+  $("com-val").innerHTML=!vc.length?"Tutti":vc.length===1?esc(COMUNI.find(c=>c.slug===vc[0]).name):`<span class="mc">${vc.length}</span> comuni`;
+  renderComList();
+}
+function renderComList(){
+  const vp=viewProvs(),vc=viewComs(),q=($("com-q").value||"").toLowerCase().trim();
+  let h="";
+  const sel=COMUNI.filter(c=>vc.includes(c.slug)&&C.provs&&(!q||c.name.toLowerCase().includes(q)));
+  if(sel.length){h+=`<div class="mgrp">✓ Scelti (${sel.length})</div>`+sel.map(c=>`<button type="button" class="mopt on" data-c="${c.slug}" aria-pressed="true"><span class="t">${esc(c.name)}</span><small>${c.places.length}</small></button>`).join("");}
+  for(const p of vp){
+    const cs=COMUNI.filter(c=>c.prov===p&&!(C.provs&&vc.includes(c.slug))&&(!q||c.name.toLowerCase().includes(q))).sort((a,b)=>a.name.localeCompare(b.name,"it"));
+    if(!cs.length)continue;
+    if(vp.length>1||q||sel.length)h+=`<div class="mgrp">${esc(provLong(cs[0]))}</div>`;
+    h+=cs.map(c=>`<button type="button" class="mopt${vc.includes(c.slug)?" on":""}" data-c="${c.slug}" aria-pressed="${vc.includes(c.slug)}"><span class="t">${esc(c.name)}</span><small>${c.places.length}</small></button>`).join("");
+  }
+  $("com-list").innerHTML=h||`<p class="fhint" style="padding:8px">Nessun comune trovato.</p>`;
+  $("com-all").hidden=!vc.length;
+}
+function popToggle(which,open){
+  for(const w of ["reg","prov","com"]){const on=w===which&&(open===undefined?$(w+"-pop").hidden:open);$(w+"-pop").hidden=!on;$(w+"-btn").setAttribute("aria-expanded",String(on));}
+  if(which==="com"&&!$("com-pop").hidden&&!isPhone())$("com-q").focus();
+}
+$("reg-btn").onclick=()=>popToggle("reg");
+$("reg-all").onclick=()=>{popToggle(null);setComune("tutti");};
+$("reg-list").onclick=e=>{const b=e.target.closest(".mopt");if(!b)return;const r=b.dataset.r,rp=regProvs(r);
+  let vp=C.all?[]:(viewComs().length?viewRegs().flatMap(x=>regProvs(x)):viewProvs().slice());
+  const isFull=!C.all&&!viewComs().length&&rp.every(p=>vp.includes(p));
+  vp=isFull?vp.filter(p=>!rp.includes(p)):[...new Set([...vp,...rp])];
+  if(!vp.length||sameSet(vp,ALLP())){setComune("tutti");}else goView(vp,[]);popToggle("reg",true);};
+$("prov-btn").onclick=()=>popToggle("prov");
+$("com-btn").onclick=()=>popToggle("com");
+document.querySelectorAll(".mpdone").forEach(b=>b.onclick=()=>popToggle(null));
+$("prov-list").onclick=e=>{const b=e.target.closest(".mopt");if(!b)return;const p=b.dataset.p;let vp=(C.all||regAllView())?[]:viewProvs().slice();
+  if(vp.includes(p)){vp=vp.filter(x=>x!==p);if(!vp.length)vp=ALLP();}else vp.push(p);
+  goView(vp,viewComs().length&&C.provs?viewComs():[]);popToggle("prov",true);};
+$("com-list").onclick=e=>{const b=e.target.closest(".mopt");if(!b)return;const s=b.dataset.c;let vc=C.provs?C.coms.slice():[C.slug];
+  vc=vc.includes(s)?vc.filter(x=>x!==s):[...vc,s];goView(viewProvs(),vc);popToggle("com",true);};
+$("com-all").onclick=()=>{goView(viewProvs(),[]);popToggle("com",true);};
+$("com-q").addEventListener("input",renderComList);
+document.addEventListener("click",e=>{if(!e.composedPath().some(n=>n.classList&&n.classList.contains("pick")))popToggle(null);});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")popToggle(null);});
+let keepFilters=false;
+function setComune(slug,fromHash){
+  showView("guida");
+  const c=parseView(slug); C=c; CUR=c.places;
+  if(!keepFilters)clearFilters();
+  document.title=`${c.name} · Ach's Places Guide`;
+  $("kicktxt").textContent=`Ach's Places Guide · ${c.name}`;
+  $("h1").innerHTML=`Tutti i luoghi, <em>da vedere</em> e da scoprire.`;
+  renderAwards();
+  $("lede").textContent=c.lede||`Monumenti, chiese, musei, natura e angoli nascosti del comune di ${c.name} (${c.provKind==="Città metropolitana"?"Città metropolitana di ":"provincia di "}${c.provName}), con biglietti, orari e come arrivare. Ogni scheda cita le sue fonti.`;
+  $("lede").hidden=!!(c.all||c.isProv);
+
+  $("verified").textContent=`Dati verificati il ${c.verified}`;
+  $("nav-guida").href="#"+c.slug;
+  if(!fromHash&&location.hash.slice(1)!==c.slug){try{history.replaceState(null,"","#"+c.slug);}catch(e){location.hash=c.slug;}}
+  renderPicker();renderStats();update();
+  if(PENDING){const id=PENDING;PENDING=null;setTimeout(()=>openSheet(id),50);}
+}
+
+
+/* idee per la visita (solo Guida): proposte di giro, luoghi salvati, comuni vicini */
+let FAV=new Set();try{FAV=new Set(JSON.parse(localStorage.getItem("fav")||"[]"));}catch(e){}
+function favToggle(id){FAV.has(id)?FAV.delete(id):FAV.add(id);try{localStorage.setItem("fav",JSON.stringify([...FAV]));}catch(e){}}
+let XT=null;
+const ORE={short:.5,mid:1.25,long:2.5};
+function giro(ps,budget){const out=[];let h=0;for(const p of ps){const d=ORE[p.t]||1;if(h+d<=budget+.01){out.push(p);h+=d;}if(h>=budget-.2)break;}return [out,h];}
+const fmtH=h=>h<1?Math.round(h*60)+" min":(Math.round(h*2)/2).toLocaleString("it-IT")+(h<1.75?" ora":" ore");
+function renderXtra(){
+  const el=$("xtra");if(!el)return;let h="";
+  const single=!C.all&&!C.isProv;
+  if(single){
+    const ps=C.places.filter(p=>p.status!=="closed").sort((a,b)=>(a.rk||1e9)-(b.rk||1e9));
+    const G=[["2h","⚡ 2 ore",2],["mezza","🌤️ Mezza giornata",4],["giorno","☀️ Una giornata",7]].filter(g=>ps.length>2||g[0]==="2h");
+    if(!XT||!G.some(g=>g[0]===XT))XT=G[0][0];
+    const g=G.find(x=>x[0]===XT),[sel,ore]=giro(ps,g[2]);
+    if(sel.length>1){
+      h+=`<div class="xbox"><div class="xh"><b>⏳ Se hai poco tempo</b><span>${G.map(x=>`<button type="button" class="xt${x[0]===XT?" on":""}" data-xt="${x[0]}">${x[1]}</button>`).join("")}</span></div>
+      <ol class="xlist">${sel.map(p=>`<li><button type="button" data-xp="${esc(p.id)}"><span class="xe">${CATS[p.cat].em}</span><span class="xn">${esc(p.name)}</span><small>${(TIME.find(x=>x[0]===p.t)||["","","",""])[2]}</small></button></li>`).join("")}</ol>
+      <p class="xnote">Proposta automatica: i luoghi più rilevanti di ${esc(C.name)} che stanno in circa ${fmtH(ore)} di visita, spostamenti esclusi.</p></div>`;
+    }
+    if(C.lat!=null){
+      const vic=COMUNI.filter(c=>c.slug!==C.slug&&c.lat!=null&&c.places.length).map(c=>[hav(C.lat,C.lng,c.lat,c.lng),c]).sort((a,b)=>a[0]-b[0]).slice(0,6);
+      if(vic.length)h+=`<div class="xbox"><div class="xh"><b>📍 Comuni vicini nella guida</b></div><div class="xchips">${vic.map(([d,c])=>`<a class="xc" href="#${esc(c.slug)}">${esc(c.name)} <small>${fmtKm(d)} km · ${c.places.length} luoghi</small></a>`).join("")}</div></div>`;
+    }
+  }
+  if(FAV.size){
+    const all=[];for(const c of COMUNI)for(const p of c.places)if(FAV.has(p.id))all.push([c,p]);
+    h+=`<div class="xbox"><div class="xh"><b>♥ I miei luoghi · ${all.length}</b><button type="button" class="xclr" data-xclr="1">Svuota</button></div><div class="xchips">${all.map(([c,p])=>`<a class="xc fav" href="#${esc(c.slug)}" data-xfav="${esc(p.id)}">${CATS[p.cat].em} ${esc(p.name)} <small>${esc(c.name)}</small></a>`).join("")}</div><p class="xnote">Salvati solo su questo dispositivo.</p></div>`;
+  }
+  el.innerHTML=h;el.hidden=!h;
+  el.querySelectorAll("[data-xt]").forEach(b=>b.onclick=()=>{XT=b.dataset.xt;renderXtra();});
+  el.querySelectorAll("[data-xp]").forEach(b=>b.onclick=()=>openSheet(b.dataset.xp,b));
+  el.querySelectorAll("[data-xclr]").forEach(b=>b.onclick=()=>{if(!confirmClr(b))return;FAV.clear();try{localStorage.setItem("fav","[]");}catch(e){}renderXtra();update();});
+  el.querySelectorAll("[data-xfav]").forEach(a=>a.onclick=e=>{const id=a.dataset.xfav,slug=a.getAttribute("href").slice(1);if(C.slug===slug){e.preventDefault();openSheet(id,a);}else{PENDING=id;}});
+}
+let PENDING=null;
+function confirmClr(b){if(b.dataset.sure){return true;}b.dataset.sure="1";b.textContent="Tocca di nuovo per svuotare";setTimeout(()=>{if(b.isConnected){delete b.dataset.sure;b.textContent="Svuota";}},3000);return false;}
+/* viste: Guida, Metodo, Archivio fonti */
+function showView(v){
+  for(const k of ["guida","metodo","fonti"])$("nav-"+k).toggleAttribute("aria-current",k===v),$("nav-"+k).setAttribute("aria-current",k===v?"page":"false");
+  const g=v==="guida";$("hero").classList.toggle("onlykick",!g);$("bar").hidden=!g;$("guide").hidden=!g;
+  $("view-metodo").hidden=v!=="metodo";$("view-fonti").hidden=v!=="fonti";
+  if(!g){document.title=(v==="metodo"?"Metodo":"Archivio fonti")+" · Ach's Places Guide";window.scrollTo(0,0);}
+}
+const LV=[["tutte","Tutte"],["nazionale","🇮🇹 Nazionali"],["regionale","🗺️ Regionali"],["provinciale","🏙️ Provinciali"],["locale","📍 Locali"]];
+let SL="tutte", SA="tutte";
+const AREAS=()=>{const provs=[...new Set(COMUNI.map(c=>c.prov))];return [["tutte","Tutte le aree"],["IT","🇮🇹 Italia"],["ER","🗺️ Emilia-Romagna"],["TOS","🗺️ Toscana"],...provs.map(p=>[p,"📍 "+COMUNI.find(c=>c.prov===p).provName])];};
+function renderFonti(){
+  if(!SOURCES){$("srccount").textContent="Caricamento delle fonti…";caricaMeta();return;}
+  const q=($("srcq").value||"").toLowerCase().trim();
+  $("srcf").innerHTML="";
+  for(const [k,l] of LV){const b=document.createElement("button");b.type="button";b.className=SL===k?"on":"";const n=k==="tutte"?SOURCES.length:SOURCES.filter(s=>s.level===k).length;b.textContent=`${l} · ${n}`;b.onclick=()=>{SL=k;renderFonti();};$("srcf").appendChild(b);}
+  $("srca").innerHTML="";
+  for(const [k,l] of AREAS()){const b=document.createElement("button");b.type="button";b.className=SA===k?"on":"";const n=k==="tutte"?SOURCES.length:SOURCES.filter(s=>s.area===k).length;b.textContent=`${l} · ${n}`;b.onclick=()=>{SA=k;renderFonti();};$("srca").appendChild(b);}
+  const order={nazionale:0,regionale:1,provinciale:2,locale:3};
+  const L=SOURCES.filter(s=>(SL==="tutte"||s.level===SL)&&(SA==="tutte"||s.area===SA)&&(!q||(s.name+" "+s.scope+" "+s.note+" "+s.type).toLowerCase().includes(q))).sort((a,b)=>order[a.level]-order[b.level]||a.name.localeCompare(b.name,"it"));
+  $("srccount").textContent=`${L.length} fonti · ${SOURCES.filter(s=>s.uso==="usata").length} già usate, ${SOURCES.filter(s=>s.uso==="consultata"||s.uso==="consultata ma scartata").length} consultate ma scartate, ${SOURCES.filter(s=>s.uso==="da consultare").length} da consultare nelle prossime passate`;
+  $("srcl").innerHTML=L.map(s=>`<div class="srci"><span class="lv">${esc(s.level)} · ${esc(s.type)} · ${esc(s.area==="IT"?"Italia":s.area==="ER"?"Emilia-Romagna":s.area==="TOS"?"Toscana":(COMUNI.find(c=>c.prov===s.area)||{provName:s.area}).provName)}</span><br><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a> <span class="rel ${s.rel}">${s.rel==="uff"?"🟢 ufficiale":"🟠 secondaria"}</span><small>${esc(s.scope)}</small><small>${s.uso==="usata"?"✅ usata":(s.uso==="consultata"||s.uso==="consultata ma scartata")?"👁️ consultata, non usata":"🔜 da consultare"} · controllata il ${esc(s.checked)}${s.note?" · "+esc(s.note):""}</small>${s.verifica?`<small>🔎 ${esc(s.verifica)}</small>`:""}</div>`).join("");
+}
+$("srcq").addEventListener("input",renderFonti);
+function renderCoverage(){
+  const provs=[...new Set(COMUNI.map(c=>c.prov))];
+  $("coverage").innerHTML="<b>Copertura attuale.</b> "+provs.map(p=>{const cs=COMUNI.filter(c=>c.prov===p);return `${cs[0].provKind} di ${esc(cs[0].provName)}: ${cs.length} comuni, ${cs.reduce((a,c)=>a+c.places.length,0)} luoghi`;}).join(" · ")+`. Fonti in archivio: ${SOURCES.length}. Ultima verifica: ${esc(COMUNI[0].verified)}.`;
+}
+function renderArch(){
+  const el=$("arch");if(!el||typeof ARCH==="undefined")return;
+  const RN={"emilia-romagna":"Emilia-Romagna","toscana":"Toscana","lombardia":"Lombardia","veneto":"Veneto","lazio":"Lazio","campania":"Campania","sardegna":"Sardegna","trentino-alto-adige":"Trentino-Alto Adige","umbria":"Umbria","marche":"Marche","abruzzo":"Abruzzo","puglia":"Puglia","sicilia":"Sicilia"};
+  const t=ARCH.reduce((a,r)=>({n:a.n+r.n,sito:a.sito+r.sito,micl:a.micl+r.micl}),{n:0,sito:0,micl:0});
+  el.innerHTML=`<p><b>${t.n.toLocaleString("it")} comuni</b> in ${ARCH.length} regioni, ognuno con il sito istituzionale (${t.sito.toLocaleString("it")} trovati) e l'elenco dei luoghi della cultura censiti dal Ministero (${t.micl.toLocaleString("it")} luoghi). È la lista di partenza per cercare i luoghi comune per comune.</p><div class="qcwrap"><table class="qct"><thead><tr><th>Regione</th><th>Comuni</th><th>Sito ufficiale</th><th>Comuni con luoghi MiC</th><th>Luoghi MiC</th><th>Comuni già in guida</th></tr></thead><tbody>${ARCH.map(r=>`<tr><td>${RN[r.r]||r.r}</td><td>${r.n}</td><td>${r.sito}</td><td>${r.mic}</td><td>${r.micl}</td><td>${r.guida}</td></tr>`).join("")}</tbody></table></div><p class="hint">Fonti dell'archivio: ISTAT (elenco comuni al 21 febbraio 2026), Indice PA di AgID (siti istituzionali), banca dati Luoghi della cultura del Ministero della Cultura. Per ogni regione sono registrati anche portale turistico, elenchi Borghi e Bandiere e portali provinciali, da riconfermare all'avvio della regione.</p>`;
+}
+function renderQC(){
+  if(!QC){caricaMeta();return;}
+  const pct=v=>`<span class="qcp${v>=90?" ok":v>=60?" mid":" low"}">${v}%</span>`;
+  $("qc").innerHTML=`<div class="qcwrap"><table class="qct"><thead><tr><th>Provincia</th><th>Comuni</th><th>Luoghi</th><th>Fonte 🟢</th><th>Link precisi biglietti e orari*</th><th>❔ ingresso da verificare</th><th>Avvisi</th></tr></thead><tbody>${QC.map(r=>`<tr><td>${esc(r.name)} (${r.prov})</td><td>${r.comuni}/${r.comuniTot}</td><td>${r.places}</td><td>${pct(r.official)}</td><td>${pct(r.paidOk)}</td><td>${r.unk}</td><td>${r.avvisi}</td></tr>`).join("")}</tbody></table></div>
+  <small>* sui luoghi a pagamento. I luoghi della città di Bologna sono contati nel totale ma non nelle percentuali. ${QC.filter(r=>r.missing.length).map(r=>`Senza schede (${r.prov}): ${esc(r.missing.join(", "))}.`).join(" ")}</small>`;
+}
+function route(fromHash){
+  const s=location.hash.slice(1);
+  if(s==="metodo"){showView("metodo");renderCoverage();renderQC();renderArch();return;}
+  if(s==="fonti"){showView("fonti");renderFonti();return;}
+  setComune(s||"tutti",true);
+}
+
+/* box "Vicino a te": filtra i luoghi della guida per distanza e tempo in auto dalla posizione scelta */
+const EAT={lat:null,lng:null,label:""};
+const KM_PER_MIN=0.5; /* stima prudente: circa 40 km/h su strada, tortuosità 1,3 rispetto alla linea d'aria */
+const fmtKm=x=>x<10?x.toLocaleString("it-IT",{maximumFractionDigits:1}):Math.round(x).toLocaleString("it-IT");
+function hav(a,b,c,d){const R=6371,r=Math.PI/180,x=Math.sin((c-a)*r/2)**2+Math.cos(a*r)*Math.cos(c*r)*Math.sin((d-b)*r/2)**2;return 2*R*Math.asin(Math.sqrt(x));}
+const ptOf=p=>p.lat!=null?[p.lat,p.lng,true]:p.clat!=null?[p.clat,p.clng,false]:null;
+function distOf(p,o){const q=ptOf(p);return q?hav(o.lat,o.lng,q[0],q[1]):Infinity;}
+const effKm=()=>Math.min(+$("eat-km").value,+$("eat-min").value*KM_PER_MIN);
+const fmtMin=mn=>mn>=60?(mn%60?Math.floor(mn/60)+" h "+(mn%60)+" min":(mn/60)+(mn===60?" ora":" ore")):mn+" min";
+function eatUpdate(){
+  const km=+$("eat-km").value,mn=+$("eat-min").value;
+  $("eat-kmv").textContent=km+" km";$("eat-minv").textContent=fmtMin(mn);
+  document.querySelectorAll(".eatchips").forEach(g=>g.querySelectorAll("button").forEach(b=>b.classList.toggle("on",+b.dataset.v===+$(g.dataset.for).value)));
+  const eff=effKm(), lim=km<=mn*KM_PER_MIN?"dal raggio":"dal tempo in auto";
+  const has=EAT.lat!==null;
+  const n=has?COMUNI.flatMap(c=>c.places).filter(p=>distOf(p,EAT)<=eff).length:0;
+  $("eat-res").innerHTML=has?`Entro circa <b>${fmtKm(eff)} km</b> da ${esc(EAT.label)} (il limite viene ${lim}): <b>${n} ${n===1?"luogo":"luoghi"}</b> in tutta la guida.`:"Scegli da dove parti.";
+  const a=$("eat-apply");a.textContent=has?`Mostra ${n} ${n===1?"luogo":"luoghi"}`:"Mostra i luoghi";
+  if(has&&n)a.removeAttribute("aria-disabled");else a.setAttribute("aria-disabled","true");
+  $("eat-off").hidden=!S.near;
+}
+function setOrigin(lat,lng,label){EAT.lat=lat;EAT.lng=lng;EAT.label=label;eatUpdate();}
+$("eat-coms").innerHTML=COMUNI.filter(c=>c.lat!=null).map(c=>`<option value="${esc(c.name)} (${c.prov})"></option>`).join("");
+$("eatbtn").onclick=()=>{eatUpdate();try{$("eat").showModal();}catch(e){$("eat").setAttribute("open","");}};
+$("eat").addEventListener("click",e=>{if(e.target===$("eat"))$("eat").close();});
+$("eat-km").oninput=eatUpdate;$("eat-min").oninput=eatUpdate;
+$("eat-txt").addEventListener("input",()=>{const v=$("eat-txt").value.trim().toLowerCase();const st=$("eat-st");
+  const c=COMUNI.find(x=>x.lat!=null&&(`${x.name} (${x.prov})`.toLowerCase()===v||x.name.toLowerCase()===v));
+  if(c){st.className="eatst ok";st.textContent=`Partenza dal centro di ${c.name}.`;setOrigin(c.lat,c.lng,"il centro di "+c.name);}
+  else if(v){st.className="eatst";st.textContent="Scegli un comune dall'elenco.";}});
+document.querySelectorAll(".eatchips").forEach(g=>g.onclick=e=>{const b=e.target.closest("button");if(!b)return;$(g.dataset.for).value=b.dataset.v;eatUpdate();});
+$("eat-geo").onclick=()=>{
+  const st=$("eat-st");
+  if(!navigator.geolocation){st.className="eatst bad";st.textContent="Il browser non fornisce la posizione: scegli un comune di partenza.";return;}
+  st.className="eatst";st.textContent="Cerco la tua posizione…";
+  navigator.geolocation.getCurrentPosition(p=>{$("eat-txt").value="";
+    st.className="eatst ok";st.textContent=`Posizione trovata (precisione circa ${Math.round(p.coords.accuracy)} m).`;setOrigin(p.coords.latitude,p.coords.longitude,"te");},
+    ()=>{st.className="eatst bad";st.textContent="Posizione non disponibile o non autorizzata: scegli un comune di partenza.";},{enableHighAccuracy:false,timeout:10000,maximumAge:300000});
+};
+$("eat-apply").onclick=()=>{if(EAT.lat===null)return;S.near={lat:EAT.lat,lng:EAT.lng,km:effKm(),label:EAT.label};$("eat").close();
+  if(!C.all){goView(ALLP(),[]);}else update();
+  $("grid").scrollIntoView({behavior:"smooth",block:"start"});};
+$("eat-off").onclick=()=>{S.near=null;$("eat").close();update();};
+window.addEventListener("hashchange",()=>route(true));
+route(true);
+
+}
+</script>
+</body>
+</html>

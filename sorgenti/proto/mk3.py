@@ -1,0 +1,20 @@
+import json,shutil,os
+src='/home/claude/achs-places-guide';dst='/home/claude/proto3'
+os.makedirs(dst,exist_ok=True)
+for f in os.listdir(dst): os.remove(os.path.join(dst,f))
+man=json.load(open(f'{src}/manifest.json'))
+for f in [man['dati'],*man['det'].values(),'manifest.json']: shutil.copy(f'{src}/{f}',dst)
+h=open(f'{src}/index.html').read()
+css=open('/home/claude/proto/fv.css').read(); js=open('/home/claude/proto/fv.js').read()
+def rep(a,b):
+    global h; assert a in h,a[:60]; h=h.replace(a,b,1)
+rep('</style>',css+'</style>')
+rep('<a href="#" id="nav-guida">🧭 Guida</a>','<a href="#" id="nav-guida">🧭 Guida</a><a href="#filtri" id="nav-filtri">🔎 Filtri</a>')
+rep('<section class="wrap view" id="view-metodo"','<section class="wrap view" id="view-filtri" hidden aria-label="Filtri"></section>\n<section class="wrap view" id="view-metodo"')
+rep('for(const k of ["guida","metodo","fonti"])','for(const k of ["guida","filtri","metodo","fonti"])')
+rep('$("view-metodo").hidden=v!=="metodo";','$("view-metodo").hidden=v!=="metodo";$("view-filtri").hidden=v!=="filtri";document.body.classList.toggle("fv-on",v==="filtri");')
+rep('if(!g){document.title=(v==="metodo"?"Metodo":"Archivio fonti")','if(!g){document.title=(v==="filtri"?"Filtri":v==="metodo"?"Metodo":"Archivio fonti")')
+rep('  if(s==="metodo"){showView("metodo");','  if(s==="filtri"){showView("filtri");fvRender();return;}\n  if(s==="metodo"){showView("metodo");')
+rep('window.addEventListener("hashchange",()=>route(true));\nroute(true);',js+'\nwindow.addEventListener("hashchange",()=>route(true));\nroute(true);')
+open(f'{dst}/index.html','w').write(h)
+print('ok',len(os.listdir(dst)))

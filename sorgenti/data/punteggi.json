@@ -1,0 +1,766 @@
+{
+ "_nota": "Segnali raccolti capillarmente per la classifica. Chiave: slug-comune|id-luogo. Campi: tci (1 o 2 asterischi Touring), dnp (1 = da non perdere sul portale regionale), unesco_nome (1 = bene citato per nome nel sito UNESCO), autonomo (1 = istituto MiC ad autonomia speciale), visitatori (numero annuo, dati aperti MiC), fai (posizione nazionale Luoghi del Cuore), natura (punti 5-12: parco nazionale, area marina, Bandiera Blu, geosito)",
+ "milano-mi|milano-mi--pinacoteca-di-brera": {
+  "autonomo": 1,
+  "visitatori": 546517
+ },
+ "venezia-ve|venezia-ve--gallerie-dell-accademia": {
+  "autonomo": 1,
+  "visitatori": 309202
+ },
+ "firenze-fi|firenze-fi--galleria-degli-uffizi": {
+  "autonomo": 1,
+  "visitatori": 5294968,
+  "unesco_nome": 1
+ },
+ "firenze-fi|firenze-fi--galleria-dell-accademia": {
+  "autonomo": 1,
+  "visitatori": 2189103
+ },
+ "firenze-fi|firenze-fi--museo-nazionale-del-bargello": {
+  "autonomo": 1,
+  "visitatori": 720470
+ },
+ "roma-rm|roma-rm--colosseo-anfiteatro-flavio": {
+  "autonomo": 1,
+  "visitatori": 14733395,
+  "unesco_nome": 1
+ },
+ "roma-rm|roma-rm--foro-romano-e-palatino": {
+  "autonomo": 1,
+  "visitatori": 14733395,
+  "unesco_nome": 1
+ },
+ "roma-rm|roma-rm--museo-nazionale-romano-palazzo-massimo": {
+  "autonomo": 1,
+  "visitatori": 284937
+ },
+ "roma-rm|roma-rm--terme-di-diocleziano": {
+  "autonomo": 1
+ },
+ "roma-rm|roma-rm--museo-nazionale-romano-palazzo-altemps": {
+  "autonomo": 1
+ },
+ "roma-rm|roma-rm--museo-nazionale-romano-crypta-balbi": {
+  "autonomo": 1
+ },
+ "roma-rm|roma-rm--galleria-borghese": {
+  "autonomo": 1,
+  "visitatori": 599104
+ },
+ "roma-rm|roma-rm--piazza-venezia-e-vittoriano": {
+  "autonomo": 1,
+  "visitatori": 672230
+ },
+ "roma-rm|roma-rm--museo-nazionale-di-palazzo-venezia": {
+  "autonomo": 1,
+  "visitatori": 672230
+ },
+ "roma-rm|roma-rm--galleria-nazionale-d-arte-moderna-e-cont": {
+  "autonomo": 1
+ },
+ "roma-rm|roma-rm--pantheon": {
+  "autonomo": 1,
+  "visitatori": 4086947,
+  "unesco_nome": 1
+ },
+ "roma-rm|roma-rm--castel-sant-angelo": {
+  "autonomo": 1,
+  "visitatori": 1315063,
+  "unesco_nome": 1
+ },
+ "roma-rm|roma-rm--gallerie-nazionali-di-arte-antica-palazz": {
+  "autonomo": 1,
+  "visitatori": 322173
+ },
+ "roma-rm|roma-rm--museo-nazionale-etrusco-di-villa-giulia": {
+  "autonomo": 1
+ },
+ "roma-rm|roma-rm--museo-delle-civilta": {
+  "autonomo": 1
+ },
+ "roma-rm|roma-rm--via-appia-antica-e-catacombe-di-san-seba": {
+  "autonomo": 1
+ },
+ "roma-rm|roma-rm--parco-archeologico-di-ostia-antica": {
+  "autonomo": 1,
+  "visitatori": 320028
+ },
+ "napoli-na|napoli-na--museo-archeologico-nazionale-mann": {
+  "autonomo": 1,
+  "visitatori": 532985
+ },
+ "napoli-na|napoli-na--museo-e-real-bosco-di-capodimonte": {
+  "autonomo": 1
+ },
+ "napoli-na|napoli-na--palazzo-reale": {
+  "autonomo": 1,
+  "visitatori": 427630
+ },
+ "napoli-na|napoli-na--certosa-e-museo-di-san-martino": {
+  "autonomo": 1
+ },
+ "napoli-na|napoli-na--castel-sant-elmo-e-museo-del-novecento": {
+  "autonomo": 1,
+  "visitatori": 510135
+ },
+ "caserta-ce|caserta-ce--reggia-di-caserta-palazzo-reale": {
+  "autonomo": 1,
+  "unesco_nome": 1,
+  "visitatori": 902410
+ },
+ "mantova-mn|mantova-mn--palazzo-ducale": {
+  "autonomo": 1,
+  "visitatori": 269698
+ },
+ "parma-pr|parma-pr--complesso-monumentale-della-pilotta": {
+  "autonomo": 1
+ },
+ "modena-mo|modena-mo--galleria-estense": {
+  "autonomo": 1
+ },
+ "ferrara-fe|ferrara-fe--pinacoteca-nazionale-di-ferrara": {
+  "autonomo": 1
+ },
+ "ferrara-fe|ferrara-fe--casa-romei": {
+  "autonomo": 1
+ },
+ "ravenna-ra|ravenna-ra--basilica-di-sant-apollinare-in-classe": {
+  "autonomo": 1,
+  "unesco_nome": 1
+ },
+ "ravenna-ra|ravenna-ra--mausoleo-di-teodorico": {
+  "autonomo": 1,
+  "unesco_nome": 1
+ },
+ "ravenna-ra|ravenna-ra--museo-nazionale-di-ravenna": {
+  "autonomo": 1
+ },
+ "firenze-fi|firenze-fi--museo-archeologico-nazionale-di-firenze": {
+  "autonomo": 1
+ },
+ "firenze-fi|firenze-fi--villa-medicea-della-petraia": {
+  "autonomo": 1,
+  "unesco_nome": 1
+ },
+ "firenze-fi|firenze-fi--giardino-della-villa-medicea-di-castello": {
+  "autonomo": 1,
+  "unesco_nome": 1
+ },
+ "siena-si|siena-si--pinacoteca-nazionale-di-siena": {
+  "autonomo": 1
+ },
+ "pisa-pi|pisa-pi--museo-nazionale-di-san-matteo": {
+  "autonomo": 1
+ },
+ "lucca-lu|lucca-lu--museo-nazionale-di-palazzo-mansi": {
+  "autonomo": 1
+ },
+ "lucca-lu|lucca-lu--museo-nazionale-di-villa-guinigi": {
+  "autonomo": 1
+ },
+ "perugia-pg|perugia-pg--galleria-nazionale-dell-umbria": {
+  "autonomo": 1
+ },
+ "urbino-pu|urbino-pu--palazzo-ducale-e-galleria-nazionale-dell": {
+  "autonomo": 1,
+  "unesco_nome": 1
+ },
+ "l-aquila-aq|l-aquila-aq--munda-museo-nazionale-d-abruzzo": {
+  "autonomo": 1
+ },
+ "chieti-ch|chieti-ch--museo-archeologico-nazionale-d-abruzzo-v": {
+  "autonomo": 1
+ },
+ "chieti-ch|chieti-ch--museo-archeologico-nazionale-la-civitell": {
+  "autonomo": 1
+ },
+ "taranto-ta|taranto-ta--marta-museo-archeologico-nazionale": {
+  "autonomo": 1
+ },
+ "cagliari-ca|cagliari-ca--museo-archeologico-nazionale": {
+  "autonomo": 1
+ },
+ "cagliari-ca|cagliari-ca--pinacoteca-nazionale": {
+  "autonomo": 1
+ },
+ "venezia-ve|venezia-ve--museo-correr-e-museo-archeologico-nazion": {
+  "autonomo": 1,
+  "visitatori": 378873
+ },
+ "venezia-ve|venezia-ve--museo-di-palazzo-grimani": {
+  "autonomo": 1
+ },
+ "venezia-ve|venezia-ve--ca-d-oro-e-galleria-franchetti": {
+  "autonomo": 1
+ },
+ "tarquinia-vt|tarquinia-vt--necropoli-dei-monterozzi": {
+  "autonomo": 1,
+  "unesco_nome": 1
+ },
+ "tarquinia-vt|tarquinia-vt--museo-archeologico-nazionale-palazzo-vit": {
+  "autonomo": 1
+ },
+ "viterbo-vt|viterbo-vt--villa-lante": {
+  "autonomo": 1
+ },
+ "caprarola-vt|caprarola-vt--palazzo-farnese": {
+  "autonomo": 1
+ },
+ "_fonti_autonomo": "Ministero della Cultura, DPCM 57/2024: 67 musei, parchi archeologici e luoghi della cultura dotati di autonomia speciale (musei.beniculturali.it); DM 25/9/2024 rep. 299, Allegato 2 (luoghi assegnati)",
+ "bologna-bo|pinacoteca": {
+  "autonomo": 1
+ },
+ "ravenna-ra|ravenna-ra--basilica-di-san-vitale": {
+  "unesco_nome": 1
+ },
+ "ravenna-ra|ravenna-ra--mausoleo-di-galla-placidia": {
+  "unesco_nome": 1
+ },
+ "ravenna-ra|ravenna-ra--basilica-di-sant-apollinare-nuovo": {
+  "unesco_nome": 1
+ },
+ "ravenna-ra|ravenna-ra--battistero-neoniano": {
+  "unesco_nome": 1
+ },
+ "ravenna-ra|ravenna-ra--museo-arcivescovile-e-cappella-di-sant-a": {
+  "unesco_nome": 1
+ },
+ "ravenna-ra|ravenna-ra--battistero-degli-ariani": {
+  "unesco_nome": 1
+ },
+ "codigoro-fe|codigoro-fe--abbazia-di-pomposa-e-museo-pomposiano": {
+  "unesco_nome": 1
+ },
+ "codigoro-fe|codigoro-fe--campanile-di-pomposa": {
+  "unesco_nome": 1
+ },
+ "mesola-fe|mesola-fe--castello-estense-di-mesola": {
+  "unesco_nome": 1
+ },
+ "argenta-fe|argenta-fe--delizia-di-benvignante": {
+  "unesco_nome": 1
+ },
+ "portomaggiore-fe|portomaggiore-fe--delizia-estense-del-verginese": {
+  "unesco_nome": 1
+ },
+ "voghiera-fe|voghiera-fe--delizia-di-belriguardo-e-museo-civico": {
+  "unesco_nome": 1
+ },
+ "vigarano-mainarda-fe|vigarano-mainarda-fe--delizia-della-diamantina": {
+  "unesco_nome": 1
+ },
+ "bagno-di-romagna-fc|bagno-di-romagna-fc--parco-nazionale-delle-foreste-casentines": {
+  "unesco_nome": 1,
+  "natura": 10
+ },
+ "modena-mo|modena-mo--duomo-di-modena": {
+  "unesco_nome": 1
+ },
+ "modena-mo|modena-mo--torre-ghirlandina": {
+  "unesco_nome": 1
+ },
+ "modena-mo|modena-mo--piazza-grande-e-palazzo-comunale": {
+  "unesco_nome": 1
+ },
+ "firenze-fi|firenze-fi--giardino-di-boboli": {
+  "unesco_nome": 1
+ },
+ "cerreto-guidi-fi|cerreto-guidi-fi--villa-medicea-di-cerreto-guidi-e-museo-s": {
+  "unesco_nome": 1
+ },
+ "scarperia-e-san-piero-fi|scarperia-e-san-piero-fi--villa-medicea-del-trebbio": {
+  "unesco_nome": 1
+ },
+ "barberino-di-mugello-fi|barberino-di-mugello-fi--villa-medicea-di-cafaggiolo": {
+  "unesco_nome": 1
+ },
+ "vaglia-fi|vaglia-fi--parco-mediceo-di-pratolino-villa-demidof": {
+  "unesco_nome": 1
+ },
+ "pienza-si|pienza-si--piazza-pio-ii": {
+  "unesco_nome": 1
+ },
+ "seravezza-lu|seravezza-lu--palazzo-mediceo-di-seravezza": {
+  "unesco_nome": 1
+ },
+ "pisa-pi|pisa-pi--torre-pendente": {
+  "unesco_nome": 1
+ },
+ "pisa-pi|pisa-pi--cattedrale-di-santa-maria-assunta": {
+  "unesco_nome": 1
+ },
+ "pisa-pi|pisa-pi--battistero-di-san-giovanni": {
+  "unesco_nome": 1
+ },
+ "pisa-pi|pisa-pi--camposanto-monumentale": {
+  "unesco_nome": 1
+ },
+ "montecatini-terme-pt|montecatini-terme-pt--terme-tettuccio": {
+  "unesco_nome": 1
+ },
+ "montecatini-terme-pt|montecatini-terme-pt--terme-tamerici-e-parco-delle-terme": {
+  "unesco_nome": 1
+ },
+ "quarrata-pt|quarrata-pt--villa-medicea-la-magia": {
+  "unesco_nome": 1
+ },
+ "poggio-a-caiano-po|poggio-a-caiano-po--villa-medicea-di-poggio-a-caiano": {
+  "unesco_nome": 1
+ },
+ "carmignano-po|carmignano-po--villa-medicea-la-ferdinanda": {
+  "unesco_nome": 1
+ },
+ "benevento-bn|benevento-bn--chiesa-di-santa-sofia": {
+  "unesco_nome": 1
+ },
+ "caserta-ce|caserta-ce--parco-reale": {
+  "unesco_nome": 1
+ },
+ "caserta-ce|caserta-ce--giardino-inglese": {
+  "unesco_nome": 1
+ },
+ "caserta-ce|caserta-ce--complesso-monumentale-belvedere-di-san-l": {
+  "unesco_nome": 1
+ },
+ "palermo-pa|palermo-pa--palazzo-dei-normanni": {
+  "unesco_nome": 1
+ },
+ "palermo-pa|palermo-pa--cappella-palatina": {
+  "unesco_nome": 1
+ },
+ "palermo-pa|palermo-pa--cattedrale-di-palermo": {
+  "unesco_nome": 1
+ },
+ "palermo-pa|palermo-pa--san-giovanni-degli-eremiti": {
+  "unesco_nome": 1
+ },
+ "palermo-pa|palermo-pa--santa-maria-dell-ammiraglio-martorana": {
+  "unesco_nome": 1
+ },
+ "palermo-pa|palermo-pa--chiesa-di-san-cataldo": {
+  "unesco_nome": 1
+ },
+ "palermo-pa|palermo-pa--castello-della-zisa": {
+  "unesco_nome": 1
+ },
+ "palermo-pa|palermo-pa--ponte-dell-ammiraglio": {
+  "unesco_nome": 1
+ },
+ "monreale-pa|monreale-pa--cattedrale-di-monreale": {
+  "unesco_nome": 1
+ },
+ "monreale-pa|monreale-pa--chiostro-della-cattedrale": {
+  "unesco_nome": 1
+ },
+ "cefalu-pa|cefalu-pa--cattedrale-di-cefalu": {
+  "unesco_nome": 1
+ },
+ "nicolosi-ct|nicolosi-ct--parco-dell-etna": {
+  "unesco_nome": 1,
+  "natura": 10
+ },
+ "agrigento-ag|agrigento-ag--valle-dei-templi": {
+  "unesco_nome": 1
+ },
+ "agrigento-ag|agrigento-ag--tempio-della-concordia": {
+  "unesco_nome": 1
+ },
+ "agrigento-ag|agrigento-ag--tempio-di-giunone": {
+  "unesco_nome": 1
+ },
+ "agrigento-ag|agrigento-ag--tempio-di-eracle": {
+  "unesco_nome": 1
+ },
+ "alghero-ss|alghero-ss--necropoli-di-anghelu-ruju": {
+  "unesco_nome": 1
+ },
+ "barumini-su|barumini-su--su-nuraxi": {
+  "unesco_nome": 1
+ },
+ "bergamo-bg|bergamo-bg--mura-veneziane": {
+  "unesco_nome": 1
+ },
+ "brescia-bs|brescia-bs--brixia-parco-archeologico-di-brescia-rom": {
+  "unesco_nome": 1
+ },
+ "varese-va|varese-va--sacro-monte-di-varese": {
+  "unesco_nome": 1
+ },
+ "padova-pd|padova-pd--cappella-degli-scrovegni": {
+  "unesco_nome": 1
+ },
+ "padova-pd|padova-pd--basilica-di-sant-antonio": {
+  "unesco_nome": 1
+ },
+ "padova-pd|padova-pd--oratorio-di-san-giorgio": {
+  "unesco_nome": 1
+ },
+ "padova-pd|padova-pd--orto-botanico": {
+  "unesco_nome": 1
+ },
+ "padova-pd|padova-pd--palazzo-della-ragione": {
+  "unesco_nome": 1
+ },
+ "padova-pd|padova-pd--battistero-di-san-giovanni-battista": {
+  "unesco_nome": 1
+ },
+ "padova-pd|padova-pd--chiesa-degli-eremitani-e-cappella-ovetar": {
+  "unesco_nome": 1
+ },
+ "vicenza-vi|vicenza-vi--teatro-olimpico": {
+  "unesco_nome": 1
+ },
+ "vicenza-vi|vicenza-vi--basilica-palladiana": {
+  "unesco_nome": 1
+ },
+ "vicenza-vi|vicenza-vi--loggia-del-capitaniato": {
+  "unesco_nome": 1
+ },
+ "vicenza-vi|vicenza-vi--museo-civico-di-palazzo-chiericati": {
+  "unesco_nome": 1
+ },
+ "vicenza-vi|vicenza-vi--villa-la-rotonda": {
+  "unesco_nome": 1
+ },
+ "vicenza-vi|vicenza-vi--palazzo-thiene": {
+  "unesco_nome": 1
+ },
+ "_fonti_unesco_nome": "UNESCO World Heritage Centre, liste dei beni componenti dei siti italiani (whc.unesco.org): Ravenna 788, Palermo arabo-normanna 1487, Agrigento 831, Su Nuraxi 833, Cerveteri e Tarquinia 1158, Domus de janas 2025, Caserta 549, Modena 827, Pisa 395, Padova Urbs Picta 1623 e Orto botanico 824, Vicenza e ville palladiane 712, Longobardi 1318, Sacri Monti 1068, Opere di difesa veneziane 1533, Ville e giardini medicei 175, Ferrara e Delta del Po 733, Great Spa Towns 1613, Pienza 789, Etna 1427, Faggete 1133; Portici di Bologna 1650; monumenti citati espressamente nelle sintesi del valore universale (Roma 91, Firenze 174, Venezia 394, Siena 717, Napoli 726, Verona 797, San Gimignano 550, Urbino 828, Mantova 1287, Ferrara 733, Pienza 789)",
+ "bologna-bo|piazza-maggiore": {
+  "unesco_nome": 1
+ },
+ "bologna-bo|archiginnasio": {
+  "unesco_nome": 1
+ },
+ "bologna-bo|portici": {
+  "unesco_nome": 1
+ },
+ "bologna-bo|santo-stefano": {
+  "unesco_nome": 1
+ },
+ "bologna-bo|san-luca": {
+  "unesco_nome": 1
+ },
+ "bologna-bo|certosa": {
+  "unesco_nome": 1
+ },
+ "roma-rm|roma-rm--terme-di-caracalla": {
+  "visitatori": 258687,
+  "unesco_nome": 1
+ },
+ "milano-mi|milano-mi--cenacolo-vinciano": {
+  "visitatori": 529422
+ },
+ "firenze-fi|firenze-fi--palazzo-pitti": {
+  "visitatori": 5294968,
+  "unesco_nome": 1
+ },
+ "_visitatori_da_assegnare": "Quando entrano in guida: Parco archeologico di Pompei 4.267.233; Museo Egizio Torino 1.036.689; Villa Adriana e Villa d'Este (Tivoli) 729.907; Musei Reali Torino 660.934; Cenacolo Vinciano Milano 529.422; Ercolano 521.514; Venaria Reale 501.787; Paestum e Velia 450.677; Miramare Trieste 404.785; Castello Scaligero Sirmione 262.095",
+ "_fonti_visitatori": "Ministero della Cultura, Ufficio di Statistica, Rilevazione 2024, Tavola 8 Top 30 istituti a pagamento (statistica.cultura.gov.it, MUSEI_TAVOLA8_2024)",
+ "valsamoggia-bo|valsamoggia-bo--parco-regionale-dell-abbazia-di-monteveg": {
+  "natura": 5
+ },
+ "brisighella-ra|brisighella-ra--parco-regionale-della-vena-del-gesso-rom": {
+  "natura": 5
+ },
+ "alfonsine-ra|alfonsine-ra--riserva-naturale-di-alfonsine": {
+  "natura": 5
+ },
+ "mesola-fe|mesola-fe--riserva-naturale-gran-bosco-della-mesola": {
+  "natura": 5
+ },
+ "gemmano-rn|gemmano-rn--grotte-e-riserva-naturale-di-onferno": {
+  "natura": 5
+ },
+ "gemmano-rn|gemmano-rn--riserva-naturale-orientata-di-onferno": {
+  "natura": 5
+ },
+ "siena-si|siena-si--riserva-naturale-di-montecellesi": {
+  "natura": 5
+ },
+ "montepulciano-si|montepulciano-si--riserva-naturale-del-lago-di-montepulcia": {
+  "natura": 5
+ },
+ "murlo-si|murlo-si--riserva-naturale-del-basso-merse": {
+  "natura": 5
+ },
+ "radicondoli-si|radicondoli-si--riserva-naturale-cornate-e-fosini": {
+  "natura": 5
+ },
+ "grosseto-gr|grosseto-gr--parco-regionale-della-maremma": {
+  "natura": 5
+ },
+ "monteverdi-marittimo-pi|monteverdi-marittimo-pi--riserva-di-monterufoli-caselli-e-cascata": {
+  "natura": 5
+ },
+ "prato-po|prato-po--riserva-naturale-del-monteferrato": {
+  "natura": 5
+ },
+ "roma-rm|roma-rm--riserva-naturale-valle-dei-casali": {
+  "natura": 5
+ },
+ "roma-rm|roma-rm--riserva-naturale-del-litorale-romano-e-p": {
+  "natura": 5
+ },
+ "rieti-ri|rieti-ri--riserva-naturale-dei-laghi-lungo-e-ripas": {
+  "natura": 5
+ },
+ "tarquinia-vt|tarquinia-vt--riserva-naturale-delle-saline-di-tarquin": {
+  "natura": 5
+ },
+ "acquapendente-vt|acquapendente-vt--riserva-di-monte-rufeno-e-museo-del-fior": {
+  "natura": 5
+ },
+ "ronciglione-vt|ronciglione-vt--riserva-naturale-del-lago-di-vico": {
+  "natura": 5
+ },
+ "foggia-fg|foggia-fg--parco-naturale-regionale-bosco-dell-inco": {
+  "natura": 5
+ },
+ "enna-en|enna-en--riserva-naturale-del-lago-di-pergusa": {
+  "natura": 5
+ },
+ "trapani-tp|trapani-tp--riserva-naturale-orientata-saline-di-tra": {
+  "natura": 5
+ },
+ "cagliari-ca|cagliari-ca--parco-naturale-molentargius-saline": {
+  "natura": 5
+ },
+ "belluno-bl|belluno-bl--centro-visite-del-parco-nazionale-dolomi": {
+  "natura": 10
+ },
+ "pesaro-pu|pesaro-pu--parco-naturale-del-monte-san-bartolo": {
+  "natura": 5
+ },
+ "l-aquila-aq|l-aquila-aq--parco-nazionale-del-gran-sasso-e-monti-d": {
+  "natura": 10
+ },
+ "_fonti_natura": "Elenco ufficiale aree protette (EUAP, Ministero dell'Ambiente): parchi nazionali e aree marine 10 punti, riserve e parchi regionali 5",
+ "ferrara-fe|ferrara-fe--castello-estense": {
+  "unesco_nome": 1
+ },
+ "ferrara-fe|ferrara-fe--cattedrale-di-san-giorgio-e-piazza-trent": {
+  "unesco_nome": 1
+ },
+ "ferrara-fe|ferrara-fe--palazzo-dei-diamanti": {
+  "unesco_nome": 1
+ },
+ "firenze-fi|firenze-fi--cattedrale-di-santa-maria-del-fiore": {
+  "unesco_nome": 1
+ },
+ "firenze-fi|firenze-fi--cupola-del-brunelleschi": {
+  "unesco_nome": 1
+ },
+ "firenze-fi|firenze-fi--campanile-di-giotto-battistero-e-museo-d": {
+  "unesco_nome": 1
+ },
+ "firenze-fi|firenze-fi--piazza-della-signoria-e-loggia-dei-lanzi": {
+  "unesco_nome": 1
+ },
+ "firenze-fi|firenze-fi--museo-di-palazzo-vecchio": {
+  "unesco_nome": 1
+ },
+ "siena-si|siena-si--piazza-del-campo": {
+  "unesco_nome": 1
+ },
+ "siena-si|siena-si--duomo-di-siena-e-pavimento": {
+  "unesco_nome": 1
+ },
+ "siena-si|siena-si--palazzo-pubblico-e-museo-civico": {
+  "unesco_nome": 1
+ },
+ "san-gimignano-si|san-gimignano-si--collegiata-di-santa-maria-assunta": {
+  "unesco_nome": 1
+ },
+ "san-gimignano-si|san-gimignano-si--musei-civici-e-torre-grossa": {
+  "unesco_nome": 1
+ },
+ "pienza-si|pienza-si--cattedrale-dell-assunta": {
+  "unesco_nome": 1
+ },
+ "roma-rm|roma-rm--fori-imperiali-e-mercati-di-traiano": {
+  "unesco_nome": 1
+ },
+ "roma-rm|roma-rm--piazza-del-campidoglio": {
+  "unesco_nome": 1
+ },
+ "napoli-na|napoli-na--duomo-e-museo-del-tesoro-di-san-gennaro": {
+  "unesco_nome": 1
+ },
+ "napoli-na|napoli-na--complesso-monumentale-di-santa-chiara": {
+  "unesco_nome": 1
+ },
+ "napoli-na|napoli-na--castel-nuovo-maschio-angioino": {
+  "unesco_nome": 1
+ },
+ "mantova-mn|mantova-mn--basilica-di-sant-andrea": {
+  "unesco_nome": 1
+ },
+ "venezia-ve|venezia-ve--basilica-di-san-marco": {
+  "unesco_nome": 1
+ },
+ "venezia-ve|venezia-ve--palazzo-ducale-e-ponte-dei-sospiri": {
+  "unesco_nome": 1
+ },
+ "venezia-ve|venezia-ve--piazza-san-marco": {
+  "unesco_nome": 1
+ },
+ "verona-vr|verona-vr--arena-di-verona": {
+  "unesco_nome": 1
+ },
+ "verona-vr|verona-vr--basilica-di-san-zeno-maggiore": {
+  "unesco_nome": 1
+ },
+ "torino-to|torino-to--museo-egizio": {
+  "visitatori": 1036689
+ },
+ "torino-to|torino-to--musei-reali-palazzo-reale": {
+  "autonomo": 1,
+  "visitatori": 660934,
+  "unesco_nome": 1
+ },
+ "torino-to|torino-to--palazzo-madama-museo-civico-d-arte-antic": {
+  "unesco_nome": 1
+ },
+ "torino-to|torino-to--museo-nazionale-del-risorgimento-palazzo": {
+  "unesco_nome": 1,
+  "autonomo": 1
+ },
+ "torino-to|torino-to--villa-della-regina": {
+  "unesco_nome": 1,
+  "autonomo": 1
+ },
+ "torino-to|torino-to--castello-del-valentino": {
+  "unesco_nome": 1
+ },
+ "biella-bi|biella-bi--santuario-di-oropa-e-sacro-monte": {
+  "unesco_nome": 1
+ },
+ "venaria-reale-to|venaria-reale-to--reggia-di-venaria": {
+  "unesco_nome": 1
+ },
+ "venaria-reale-to|venaria-reale-to--giardini-della-reggia": {
+  "unesco_nome": 1
+ },
+ "venaria-reale-to|venaria-reale-to--castello-della-mandria": {
+  "unesco_nome": 1
+ },
+ "nichelino-to|nichelino-to--palazzina-di-caccia-di-stupinigi": {
+  "unesco_nome": 1
+ },
+ "moncalieri-to|moncalieri-to--castello-reale-di-moncalieri": {
+  "unesco_nome": 1
+ },
+ "racconigi-cn|racconigi-cn--castello-e-parco-di-racconigi": {
+  "unesco_nome": 1
+ },
+ "rivoli-to|rivoli-to--castello-di-rivoli-museo-d-arte-contempo": {
+  "unesco_nome": 1
+ },
+ "aglie-to|aglie-to--castello-ducale-di-aglie": {
+  "unesco_nome": 1
+ },
+ "bra-cn|bra-cn--agenzia-e-borgo-di-pollenzo": {
+  "unesco_nome": 1
+ },
+ "govone-cn|govone-cn--castello-reale-di-govone": {
+  "unesco_nome": 1
+ },
+ "valperga-to|valperga-to--sacro-monte-di-belmonte": {
+  "unesco_nome": 1
+ },
+ "serralunga-di-crea-al|serralunga-di-crea-al--sacro-monte-di-crea": {
+  "unesco_nome": 1
+ },
+ "garessio-cn|garessio-cn--castello-reale-di-casotto-valcasotto": {
+  "unesco_nome": 1
+ },
+ "orta-san-giulio-no|orta-san-giulio-no--sacro-monte-di-orta": {
+  "unesco_nome": 1
+ },
+ "ghiffa-vb|ghiffa-vb--sacro-monte-della-santissima-trinita": {
+  "unesco_nome": 1
+ },
+ "domodossola-vb|domodossola-vb--sacro-monte-calvario": {
+  "unesco_nome": 1
+ },
+ "varallo-vc|varallo-vc--sacro-monte-di-varallo": {
+  "unesco_nome": 1
+ },
+ "grinzane-cavour-cn|grinzane-cavour-cn--castello-di-grinzane-cavour-e-museo-dell": {
+  "unesco_nome": 1
+ },
+ "canelli-at|canelli-at--cattedrali-sotterranee-cantine-bosca": {
+  "unesco_nome": 1
+ },
+ "canelli-at|canelli-at--cattedrali-sotterranee-cantine-contratto": {
+  "unesco_nome": 1
+ },
+ "canelli-at|canelli-at--cattedrali-sotterranee-cantine-coppo": {
+  "unesco_nome": 1
+ },
+ "canelli-at|canelli-at--cattedrali-sotterranee-cantine-gancia": {
+  "unesco_nome": 1
+ },
+ "ivrea-to|ivrea-to--citta-industriale-del-xx-secolo-maam": {
+  "unesco_nome": 1
+ },
+ "cella-monte-al|cella-monte-al--ecomuseo-della-pietra-da-cantoni-e-infer": {
+  "unesco_nome": 1
+ },
+ "rosignano-monferrato-al|rosignano-monferrato-al--sette-infernot-pubblici": {
+  "unesco_nome": 1
+ },
+ "arona-no|arona-no--parco-naturale-dei-lagoni-di-mercurago": {
+  "unesco_nome": 1
+ },
+ "viverone-bi|viverone-bi--palafitte-del-lago-di-viverone": {
+  "unesco_nome": 1
+ },
+ "genova-ge|genova-ge--musei-di-strada-nuova-palazzo-rosso-pala": {
+  "unesco_nome": 1
+ },
+ "genova-ge|genova-ge--strada-nuova-e-i-palazzi-dei-rolli": {
+  "unesco_nome": 1
+ },
+ "genova-ge|genova-ge--palazzo-reale": {
+  "unesco_nome": 1
+ },
+ "genova-ge|genova-ge--galleria-nazionale-di-palazzo-spinola": {
+  "unesco_nome": 1
+ },
+ "portovenere-sp|portovenere-sp--chiesa-di-san-pietro": {
+  "unesco_nome": 1
+ },
+ "portovenere-sp|portovenere-sp--castello-doria": {
+  "unesco_nome": 1
+ },
+ "portovenere-sp|portovenere-sp--borgo-di-portovenere": {
+  "unesco_nome": 1
+ },
+ "portovenere-sp|portovenere-sp--isola-palmaria": {
+  "unesco_nome": 1
+ },
+ "portovenere-sp|portovenere-sp--isola-del-tino-e-san-venerio": {
+  "unesco_nome": 1
+ },
+ "portovenere-sp|portovenere-sp--isola-del-tinetto": {
+  "unesco_nome": 1
+ },
+ "monterosso-al-mare-sp|monterosso-al-mare-sp--borgo-di-monterosso-e-piazza-garibaldi": {
+  "unesco_nome": 1
+ },
+ "vernazza-sp|vernazza-sp--via-roma-e-piazza-del-porticciolo": {
+  "unesco_nome": 1
+ },
+ "vernazza-sp|vernazza-sp--corniglia": {
+  "unesco_nome": 1
+ },
+ "riomaggiore-sp|riomaggiore-sp--borgo-di-riomaggiore-e-via-colombo": {
+  "unesco_nome": 1
+ },
+ "riomaggiore-sp|riomaggiore-sp--manarola": {
+  "unesco_nome": 1
+ }
+}

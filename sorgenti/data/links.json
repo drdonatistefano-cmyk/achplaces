@@ -1,0 +1,467 @@
+{
+ "_nota": "Link precisi verificati il 7 novembre 2026 tramite ricerca web: orari = pagina con gli orari; biglietti = pagina di acquisto o tariffe del gestore; off = home del sito ufficiale.",
+ "spec": {
+  "Ravenna|Basilica di San Vitale": {
+   "orari": "https://www.ravennamosaici.it/en/entrance-time-and-prices/",
+   "biglietti": "https://www.ravennamosaici.it/en/ticketoffice/",
+   "off": "https://www.ravennamosaici.it/"
+  },
+  "Ravenna|Mausoleo di Galla Placidia": {
+   "orari": "https://www.ravennamosaici.it/en/entrance-time-and-prices/",
+   "biglietti": "https://www.ravennamosaici.it/en/ticketoffice/",
+   "off": "https://www.ravennamosaici.it/"
+  },
+  "Ravenna|Basilica di Sant'Apollinare Nuovo": {
+   "orari": "https://www.ravennamosaici.it/en/entrance-time-and-prices/",
+   "biglietti": "https://www.ravennamosaici.it/en/ticketoffice/",
+   "off": "https://www.ravennamosaici.it/"
+  },
+  "Ravenna|Battistero Neoniano": {
+   "orari": "https://www.ravennamosaici.it/en/entrance-time-and-prices/",
+   "biglietti": "https://www.ravennamosaici.it/en/ticketoffice/",
+   "off": "https://www.ravennamosaici.it/"
+  },
+  "Ravenna|Museo Arcivescovile e Cappella di Sant'Andrea": {
+   "orari": "https://www.ravennamosaici.it/en/entrance-time-and-prices/",
+   "biglietti": "https://www.ravennamosaici.it/en/ticketoffice/",
+   "off": "https://www.ravennamosaici.it/"
+  },
+  "Ravenna|MAR, Museo d'Arte della città": {
+   "orari": "https://mar.ra.it/biglietteria/",
+   "biglietti": "https://mar.ra.it/biglietteria/",
+   "off": "https://www.mar.ra.it/"
+  },
+  "Ravenna|Museo Nazionale di Ravenna": {
+   "orari": "https://info.ravennantica.it/selection/timeslotpass?lang=it&productId=10228514520095",
+   "biglietti": "https://info.ravennantica.it/selection/timeslotpass?lang=it&productId=10228514520095"
+  },
+  "Imola|Museo di San Domenico": {
+   "orari": "https://imolamusei.it/visita/",
+   "biglietti": "https://imolamusei.it/visita/",
+   "off": "https://imolamusei.it/"
+  },
+  "Imola|Palazzo Tozzoni": {
+   "orari": "https://imolamusei.it/palazzo-tozzoni/",
+   "biglietti": "https://imolamusei.it/visita/",
+   "off": "https://imolamusei.it/"
+  },
+  "Faenza|Museo Internazionale delle Ceramiche (MIC)": {
+   "orari": "https://www.micfaenza.org/organizza-la-tua-visita/",
+   "biglietti": "https://www.micfaenza.org/organizza-la-tua-visita/",
+   "off": "https://www.micfaenza.org/"
+  },
+  "Faenza|Palazzo Milzetti, Museo nazionale dell'età neoclassica": {
+   "orari": "https://palazzomilzetti.cultura.gov.it/pianifica-la-tua-visita/",
+   "biglietti": "https://palazzomilzetti.cultura.gov.it/pianifica-la-tua-visita/",
+   "off": "https://palazzomilzetti.cultura.gov.it/"
+  },
+  "Cervia|MUSA, Museo del Sale": {
+   "orari": "https://www.turismo.comunecervia.it/en/discover-the-area/art-and-culture/museums-galleries/musa-salt-museum",
+   "biglietti": "https://www.turismo.comunecervia.it/en/discover-the-area/art-and-culture/museums-galleries/musa-salt-museum"
+  },
+  "Ferrara|Palazzo dei Diamanti": {
+   "orari": "https://www.palazzodiamanti.it/en/contenuti-mostre/plan-your-visit/",
+   "biglietti": "https://www.palazzodiamanti.it/en/contenuti-mostre/plan-your-visit/",
+   "off": "https://www.palazzodiamanti.it/"
+  },
+  "Ferrara|Castello Estense": {
+   "orari": "https://www.ferrarainfo.com/it/pianifica-il-viaggio/orari-tariffe-musei-monumenti-ferrara/orari-musei-it.pdf/@@download/file/orari%20musei%20IT.pdf",
+   "off": "https://www.castelloestense.it/"
+  },
+  "Comacchio|Museo Delta Antico": {
+   "orari": "https://www.podeltatourism.it/en/experiences-1/comacchio-museum-pass",
+   "biglietti": "https://www.podeltatourism.it/en/experiences-1/comacchio-museum-pass",
+   "off": "https://www.podeltatourism.it/"
+  },
+  "Comacchio|Manifattura dei Marinati": {
+   "orari": "https://www.podeltatourism.it/en/experiences-1/comacchio-museum-pass",
+   "biglietti": "https://www.podeltatourism.it/en/experiences-1/comacchio-museum-pass",
+   "off": "https://www.parcodeltapo.it/it/centri-visita.php"
+  },
+  "Comacchio|Casa Museo Remo Brindisi": {
+   "orari": "https://www.podeltatourism.it/en/experiences-1/comacchio-museum-pass",
+   "biglietti": "https://www.podeltatourism.it/en/experiences-1/comacchio-museum-pass"
+  },
+  "Comacchio|Valli di Comacchio in barca da Stazione Foce": {
+   "orari": "https://www.podeltatourism.it/it/esperienze/in-barca-nelle-valli-di-comacchio",
+   "biglietti": "https://www.podeltatourism.it/it/esperienze/in-barca-nelle-valli-di-comacchio"
+  },
+  "Firenze|Cupola del Brunelleschi": {
+   "orari": "https://duomo.firenze.it/it/visita/organizza-la-tua-visita",
+   "biglietti": "https://duomo.firenze.it/it/visita/organizza-la-tua-visita",
+   "off": "https://duomo.firenze.it/"
+  },
+  "Firenze|Campanile di Giotto, Battistero e Museo dell'Opera del Duomo": {
+   "orari": "https://duomo.firenze.it/it/visita/organizza-la-tua-visita",
+   "biglietti": "https://duomo.firenze.it/it/visita/organizza-la-tua-visita",
+   "off": "https://duomo.firenze.it/"
+  },
+  "Firenze|Galleria degli Uffizi": {
+   "biglietti": "https://www.uffizi.it/en/tickets",
+   "off": "https://www.uffizi.it/",
+   "orari": "https://www.uffizi.it/en/the-uffizi"
+  },
+  "Firenze|Palazzo Pitti": {
+   "biglietti": "https://www.uffizi.it/en/tickets",
+   "off": "https://www.uffizi.it/",
+   "orari": "https://www.uffizi.it/en/pitti-palace"
+  },
+  "Firenze|Giardino di Boboli": {
+   "biglietti": "https://www.uffizi.it/en/tickets",
+   "off": "https://www.uffizi.it/",
+   "orari": "https://www.uffizi.it/en/boboli-garden"
+  },
+  "Firenze|Corridoio Vasariano": {
+   "orari": "https://www.uffizi.it/en/events/vasari-corridor-friday-evening-opening",
+   "biglietti": "https://www.uffizi.it/en/tickets",
+   "off": "https://www.uffizi.it/"
+  },
+  "Firenze|Galleria dell'Accademia": {
+   "biglietti": "https://bargellomusei.it/biglietti/",
+   "off": "https://bargellomusei.it/",
+   "orari": "https://bargellomusei.it/"
+  },
+  "Firenze|Museo Nazionale del Bargello": {
+   "biglietti": "https://bargellomusei.it/biglietti/",
+   "off": "https://bargellomusei.it/",
+   "orari": "https://bargellomusei.it/"
+  },
+  "Firenze|Cappelle Medicee": {
+   "biglietti": "https://bargellomusei.it/biglietti/",
+   "off": "https://bargellomusei.it/",
+   "orari": "https://bargellomusei.it/musei/cappelle-medicee/"
+  },
+  "Firenze|Museo di Palazzo Davanzati": {
+   "biglietti": "https://bargellomusei.it/biglietti/",
+   "off": "https://bargellomusei.it/",
+   "orari": "https://bargellomusei.it/"
+  },
+  "Firenze|Complesso di Orsanmichele": {
+   "biglietti": "https://bargellomusei.it/biglietti/",
+   "off": "https://bargellomusei.it/",
+   "orari": "https://bargellomusei.it/musei/orsanmichele/"
+  },
+  "Firenze|Museo di Palazzo Vecchio": {
+   "orari": "https://cultura.comune.fi.it/pagina/musei-civici-fiorentini-museo-di-palazzo-vecchio/orari-e-biglietti",
+   "biglietti": "https://bigliettimusei.comune.fi.it/",
+   "off": "https://musefirenze.it/en/museum/museo-di-palazzo-vecchio/"
+  },
+  "Firenze|Museo Novecento": {
+   "orari": "https://cultura.comune.fi.it/pagina/musei-civici-fiorentini/museo-novecento",
+   "biglietti": "https://bigliettimusei.comune.fi.it/"
+  },
+  "Firenze|Museo Galileo": {
+   "orari": "https://www.museogalileo.it/it/organizza-la-visita/orari-e-prezzi.html",
+   "biglietti": "https://www.museogalileo.it/it/organizza-la-visita/orari-e-prezzi.html",
+   "off": "https://www.museogalileo.it/"
+  },
+  "Firenze|Museo Stibbert": {
+   "orari": "https://www.museostibbert.it/frontend/index.php?sez=page&isOrari=1",
+   "biglietti": "https://www.museostibbert.it/frontend/index.php?sez=page&isOrari=1",
+   "off": "https://www.museostibbert.it/"
+  },
+  "Firenze|Palazzo Strozzi": {
+   "orari": "https://www.palazzostrozzi.org/biglietti-orari/",
+   "biglietti": "https://www.palazzostrozzi.org/biglietti-orari/",
+   "off": "https://www.palazzostrozzi.org/"
+  },
+  "Firenze|Orto botanico, Giardino dei Semplici": {
+   "orari": "https://www.sma.unifi.it/vp-244-orto-botanico.html",
+   "biglietti": "https://www.sma.unifi.it/vp-244-orto-botanico.html",
+   "off": "https://www.sma.unifi.it/"
+  },
+  "Firenze|Museo La Specola": {
+   "orari": "https://www.sma.unifi.it/vp-245-la-specola.html",
+   "biglietti": "https://www.sma.unifi.it/vp-245-la-specola.html",
+   "off": "https://www.sma.unifi.it/"
+  },
+  "Fiesole|Area archeologica e Museo archeologico di Fiesole": {
+   "orari": "https://www.museidifiesole.it/allcategories-it-it/visita",
+   "biglietti": "https://www.museidifiesole.it/allcategories-it-it/visita",
+   "off": "https://www.museidifiesole.it/"
+  },
+  "Fiesole|Museo Bandini": {
+   "orari": "https://www.museidifiesole.it/allcategories-it-it/visita",
+   "biglietti": "https://www.museidifiesole.it/allcategories-it-it/visita",
+   "off": "https://www.museidifiesole.it/"
+  },
+  "Vinci|Museo Leonardiano": {
+   "orari": "https://museoleonardiano.it/en/plan-your-visit/opening-hours-and-tickets/",
+   "biglietti": "https://museoleonardiano.it/en/plan-your-visit/opening-hours-and-tickets/",
+   "off": "https://museoleonardiano.it/"
+  },
+  "Vinci|Casa natale di Leonardo ad Anchiano": {
+   "orari": "https://museoleonardiano.it/en/plan-your-visit/opening-hours-and-tickets/",
+   "biglietti": "https://museoleonardiano.it/en/plan-your-visit/opening-hours-and-tickets/",
+   "off": "https://museoleonardiano.it/"
+  },
+  "Certaldo|Certaldo Alto e Palazzo Pretorio": {
+   "orari": "https://www.comune.certaldo.fi.it/it/vivere/casa-boccaccio",
+   "biglietti": "https://www.comune.certaldo.fi.it/it/vivere/casa-boccaccio"
+  },
+  "Certaldo|Casa di Giovanni Boccaccio": {
+   "orari": "https://www.comune.certaldo.fi.it/it/vivere/casa-boccaccio",
+   "biglietti": "https://www.comune.certaldo.fi.it/it/vivere/casa-boccaccio"
+  },
+  "Montelupo Fiorentino|Museo della Ceramica": {
+   "orari": "https://museomontelupo.it/orari-tariffe-e-servizi/",
+   "biglietti": "https://museomontelupo.it/orari-tariffe-e-servizi/",
+   "off": "https://museomontelupo.it/"
+  },
+  "Montelupo Fiorentino|Fornace del Museo": {
+   "orari": "https://feelflorence.it/it/node/47214",
+   "biglietti": "https://museomontelupo.it/orari-tariffe-e-servizi/",
+   "off": "https://museomontelupo.it/"
+  },
+  "Rimini|Museo della Città": {
+   "orari": "https://www.museicomunalirimini.it/pagina/orari",
+   "biglietti": "https://www.museicomunalirimini.it/pagina/biglietto-individuale",
+   "off": "https://www.museicomunalirimini.it/"
+  },
+  "Rimini|Domus del Chirurgo": {
+   "orari": "https://www.museicomunalirimini.it/pagina/orari",
+   "biglietti": "https://www.museicomunalirimini.it/pagina/biglietto-individuale",
+   "off": "https://www.museicomunalirimini.it/"
+  },
+  "Rimini|Fellini Museum: Castel Sismondo e Palazzo del Fulgor": {
+   "orari": "https://fellinimuseum.it/en/info-biglietti/",
+   "biglietti": "https://fellinimuseum.it/en/info-biglietti/",
+   "off": "https://fellinimuseum.it/"
+  },
+  "San Leo|Forte di San Leo": {
+   "orari": "https://www.san-leo.it/info-orari-tariffe/",
+   "biglietti": "https://www.san-leo.it/info-orari-tariffe/",
+   "off": "https://www.san-leo.it/"
+  },
+  "Parma|Complesso monumentale della Pilotta": {
+   "orari": "https://complessopilotta.it/en/opening-times/",
+   "biglietti": "https://complessopilotta.it/en/tickets-fares/",
+   "off": "https://complessopilotta.it/"
+  },
+  "Parma|Teatro Farnese": {
+   "orari": "https://complessopilotta.it/en/opening-times/",
+   "biglietti": "https://complessopilotta.it/en/tickets-fares/",
+   "off": "https://complessopilotta.it/"
+  },
+  "Parma|Museo Bodoni": {
+   "orari": "https://complessopilotta.it/en/opening-times/",
+   "biglietti": "https://complessopilotta.it/en/tickets-fares/",
+   "off": "https://complessopilotta.it/"
+  },
+  "Parma|Antica Spezieria di San Giovanni": {
+   "orari": "https://complessopilotta.it/en/opening-times/",
+   "biglietti": "https://complessopilotta.it/en/tickets-fares/",
+   "off": "https://complessopilotta.it/"
+  },
+  "Langhirano|Castello di Torrechiara": {
+   "orari": "https://complessopilotta.it/en/opening-times/",
+   "biglietti": "https://complessopilotta.it/en/tickets-fares/",
+   "off": "https://complessopilotta.it/"
+  },
+  "Piacenza|Musei Civici di Palazzo Farnese": {
+   "orari": "https://www.palazzofarnese.piacenza.it/en/page/84133",
+   "biglietti": "https://www.palazzofarnese.piacenza.it/en/page/84133",
+   "off": "https://www.palazzofarnese.piacenza.it/it/page/la-tua-visita"
+  },
+  "Reggio Emilia|Museo di Storia della Psichiatria": {
+   "orari": "https://www.musei.re.it/chi-siamo/orari-di-apertura/",
+   "off": "https://www.musei.re.it/"
+  },
+  "Reggio Emilia|Chiostri di San Pietro": {
+   "orari": "https://www.musei.re.it/chi-siamo/orari-di-apertura/",
+   "off": "https://www.musei.re.it/"
+  },
+  "Ferrara|Palazzo Schifanoia e Salone dei Mesi": {
+   "orari": "https://www.museiferrara.it/museo-schifanoia-e-museo-lapidario/visita/",
+   "biglietti": "https://www.museiferrara.it/museo-schifanoia-e-museo-lapidario/visita/",
+   "off": "https://www.museiferrara.it/"
+  },
+  "Ferrara|Palazzina Marfisa d'Este": {
+   "orari": "https://www.museiferrara.it/palazzina-marfisa-deste/visita-palazzina-marfisa-deste/",
+   "biglietti": "https://www.museiferrara.it/palazzina-marfisa-deste/visita-palazzina-marfisa-deste/",
+   "off": "https://www.museiferrara.it/"
+  },
+  "Ferrara|Pinacoteca Nazionale di Ferrara": {
+   "orari": "https://www.ferrarainfo.com/it/pianifica-il-viaggio/orari-tariffe-musei-monumenti-ferrara/orari-musei-it.pdf/@@download/file/orari%20musei%20IT.pdf"
+  },
+  "Ferrara|Museo Archeologico Nazionale, Palazzo Costabili": {
+   "orari": "https://www.ferrarainfo.com/it/pianifica-il-viaggio/orari-tariffe-musei-monumenti-ferrara/orari-musei-it.pdf/@@download/file/orari%20musei%20IT.pdf"
+  },
+  "Ferrara|Museo della Cattedrale": {
+   "orari": "https://www.ferrarainfo.com/it/pianifica-il-viaggio/orari-tariffe-musei-monumenti-ferrara/orari-musei-it.pdf/@@download/file/orari%20musei%20IT.pdf"
+  },
+  "Ferrara|Casa Romei": {
+   "orari": "https://www.ferrarainfo.com/it/pianifica-il-viaggio/orari-tariffe-musei-monumenti-ferrara/orari-musei-it.pdf/@@download/file/orari%20musei%20IT.pdf"
+  },
+  "Ferrara|Museo Boldini, Palazzo Massari": {
+   "orari": "https://www.ferrarainfo.com/it/pianifica-il-viaggio/orari-tariffe-musei-monumenti-ferrara/orari-musei-it.pdf/@@download/file/orari%20musei%20IT.pdf"
+  },
+  "Ferrara|Casa di Ludovico Ariosto": {
+   "orari": "https://www.ferrarainfo.com/it/pianifica-il-viaggio/orari-tariffe-musei-monumenti-ferrara/orari-musei-it.pdf/@@download/file/orari%20musei%20IT.pdf"
+  },
+  "Ferrara|Museo del Risorgimento e della Resistenza": {
+   "orari": "https://www.ferrarainfo.com/it/pianifica-il-viaggio/orari-tariffe-musei-monumenti-ferrara/orari-musei-it.pdf/@@download/file/orari%20musei%20IT.pdf"
+  },
+  "Ferrara|Museo di Storia Naturale": {
+   "orari": "https://www.ferrarainfo.com/it/pianifica-il-viaggio/orari-tariffe-musei-monumenti-ferrara/orari-musei-it.pdf/@@download/file/orari%20musei%20IT.pdf"
+  },
+  "Ferrara|MEIS, Museo Nazionale dell'Ebraismo Italiano e della Shoah": {
+   "orari": "https://www.ferrarainfo.com/it/pianifica-il-viaggio/orari-tariffe-musei-monumenti-ferrara/orari-musei-it.pdf/@@download/file/orari%20musei%20IT.pdf"
+  },
+  "Ravenna|Domus dei Tappeti di Pietra": {
+   "orari": "https://info.ravennantica.it/selection/timeslotpass?lang=it&productId=10228214241234",
+   "biglietti": "https://www.vivaticket.com/it/ticket/domus-dei-tappeti-di-pietra/271924",
+   "off": "https://www.domusdeitappetidipietra.it/"
+  },
+  "Ravenna|Classis Ravenna, Museo della Città e del Territorio": {
+   "orari": "https://info.ravennantica.it/selection/timeslotpass?lang=it&productId=10228515119731",
+   "biglietti": "https://info.ravennantica.it/selection/timeslotpass?lang=it&productId=10228515119731",
+   "off": "https://ravennantica.it/"
+  },
+  "Ravenna|Battistero degli Ariani": {
+   "orari": "https://cultura.gov.it/luogo/battistero-degli-ariani",
+   "biglietti": "https://www.vivaticket.com/it/ticket/battistero-degli-ariani/272151"
+  },
+  "Modena|Museo Enzo Ferrari": {
+   "orari": "https://www.visitmodena.it/it/scopri-modena/terra-di-motori/i-luoghi-dei-motori/motori-museo-enzo-ferrari-modena",
+   "biglietti": "https://www.visitmodena.it/it/scopri-modena/terra-di-motori/i-luoghi-dei-motori/motori-museo-enzo-ferrari-modena"
+  },
+  "Modena|Torre Ghirlandina": {
+   "orari": "https://www.visitmodena.it/it/scopri-modena/arte-e-cultura/il-sito-unesco/torre-ghirlandina",
+   "biglietti": "https://www.visitmodena.it/it/scopri-modena/arte-e-cultura/il-sito-unesco/torre-ghirlandina"
+  },
+  "Modena|Galleria Estense": {
+   "off": "https://gallerie-estensi.beniculturali.it/galleria-estense-modena"
+  },
+  "Firenze|Palazzo Medici Riccardi": {
+   "orari": "https://www.palazzomediciriccardi.it/en/timetable-and-tickets/",
+   "biglietti": "https://www.palazzomediciriccardi.it/en/timetable-and-tickets/",
+   "off": "https://www.palazzomediciriccardi.it/"
+  },
+  "Firenze|Cappella Brancacci": {
+   "orari": "https://musefirenze.it/en/museum/cappella-brancacci/",
+   "biglietti": "https://bigliettimusei.comune.fi.it/4_cappella-brancacci/",
+   "off": "https://musefirenze.it/en/museum/cappella-brancacci/"
+  },
+  "Firenze|Complesso di Santa Maria Novella": {
+   "orari": "https://musefirenze.it/en/museum/complesso-di-santa-maria-novella/",
+   "biglietti": "https://bigliettimusei.comune.fi.it/",
+   "off": "https://musefirenze.it/en/museum/complesso-di-santa-maria-novella/"
+  },
+  "Firenze|Museo di San Marco": {
+   "orari": "https://museitoscana.cultura.gov.it/luoghi_della_cultura/museo_di_san_marco/",
+   "biglietti": "https://museitoscana.cultura.gov.it/luoghi_della_cultura/museo_di_san_marco/",
+   "off": "https://museitoscana.cultura.gov.it/luoghi_della_cultura/museo_di_san_marco/"
+  },
+  "Parma|Battistero e Museo Diocesano": {
+   "orari": "https://www.piazzaduomoparma.com/orari-e-permessi-di-visita/",
+   "biglietti": "https://www.piazzaduomoparma.com/orari-e-permessi-di-visita/",
+   "off": "https://www.piazzaduomoparma.com/"
+  },
+  "Parma|Camera di San Paolo": {
+   "orari": "https://cultura.comune.parma.it/luogo/it-IT/Camera-di-San-Paolo-1.aspx",
+   "biglietti": "https://www.ticketlandia.com/m/event/camera-di-san-paolo"
+  },
+  "Parma|Casa natale e Museo Arturo Toscanini": {
+   "orari": "https://parmawelcome.it/scheda/casa-natale-e-museo-di-arturo-toscanini/",
+   "biglietti": "https://www.ticketlandia.com/m/all"
+  },
+  "Parma|Museo Glauco Lombardi": {
+   "orari": "https://parmawelcome.it/scheda/museo-glauco-lombardi/",
+   "biglietti": "https://parmawelcome.it/scheda/museo-glauco-lombardi/"
+  },
+  "Parma|Pinacoteca Stuard": {
+   "orari": "https://parmawelcome.it/wp-content/uploads/2026/02/Orari-ENG-Musei-Civici.pdf",
+   "biglietti": "https://www.ticketlandia.com/m/all"
+  },
+  "Parma|Castello dei Burattini, Museo Giordano Ferrari": {
+   "orari": "https://parmawelcome.it/wp-content/uploads/2026/02/Orari-ENG-Musei-Civici.pdf",
+   "biglietti": "https://www.ticketlandia.com/m/all"
+  },
+  "Parma|Casa del Suono": {
+   "orari": "https://parmawelcome.it/wp-content/uploads/2026/02/Orari-ENG-Musei-Civici.pdf",
+   "biglietti": "https://www.ticketlandia.com/m/all"
+  },
+  "Parma|Casa della Musica e Museo dell'Opera": {
+   "orari": "https://parmawelcome.it/wp-content/uploads/2026/02/Orari-ENG-Musei-Civici.pdf",
+   "biglietti": "https://www.ticketlandia.com/m/all"
+  },
+  "Parma|Teatro Regio": {
+   "orari": "https://parmawelcome.it/wp-content/uploads/2025/11/Orari-IT.pdf"
+  },
+  "Cesena|Biblioteca Malatestiana": {
+   "orari": "https://sititematici.comune.cesena.fc.it/malatestiana/prenota-la-visita",
+   "biglietti": "https://ticketing.coopculture.it/event/19425015-7EE0-CBBE-648C-0198329C505E",
+   "off": "https://sititematici.comune.cesena.fc.it/malatestiana"
+  },
+  "Firenze|Basilica di Santa Croce": {
+   "orari": "https://www.santacroceopera.it/en/organise-your-visit/",
+   "biglietti": "https://ticket.santacroceopera.it/en/",
+   "off": "https://www.santacroceopera.it/"
+  },
+  "Firenze|Basilica di San Lorenzo": {
+   "orari": "https://www.operamedicealaurenziana.org/it/orari-e-biglietti",
+   "biglietti": "https://www.operamedicealaurenziana.org/it/orari-e-biglietti",
+   "off": "https://www.operamedicealaurenziana.org/"
+  },
+  "Firenze|Biblioteca Medicea Laurenziana": {
+   "orari": "https://www.bmlonline.it/en/settore-monumentale/",
+   "biglietti": "https://www.bmlonline.it/en/settore-monumentale/",
+   "off": "https://www.bmlonline.it/"
+  },
+  "Firenze|Casa Buonarroti": {
+   "orari": "https://www.casabuonarroti.it/en/visiting/opening-hours-and-tickets/",
+   "biglietti": "https://www.casabuonarroti.it/en/visiting/opening-hours-and-tickets/",
+   "off": "https://www.casabuonarroti.it/"
+  },
+  "Firenze|Museo Stefano Bardini": {
+   "orari": "https://musefirenze.it/en/museum/museo-stefano-bardini/",
+   "biglietti": "https://bigliettimusei.comune.fi.it/",
+   "off": "https://musefirenze.it/en/museum/museo-stefano-bardini/"
+  },
+  "Firenze|Museo dell'Opificio delle Pietre Dure": {
+   "orari": "https://opificiodellepietredure.cultura.gov.it/sezioni-tematiche/il-laboratorio-delle-pietre-dure/",
+   "off": "https://opificiodellepietredure.cultura.gov.it/"
+  },
+  "Piacenza|Galleria d'arte moderna Ricci Oddi": {
+   "orari": "https://riccioddi.it/visita.php",
+   "biglietti": "https://riccioddi.it/visita.php",
+   "off": "https://riccioddi.it/"
+  },
+  "Piacenza|Galleria del Collegio Alberoni": {
+   "orari": "https://www.collegioalberoni.it/come-visitare-il-collegio-e-la-galleria/",
+   "biglietti": "https://www.collegioalberoni.it/come-visitare-il-collegio-e-la-galleria/",
+   "off": "https://www.collegioalberoni.it/"
+  },
+  "Piacenza|Kronos, Museo della Cattedrale e salita alla cupola": {
+   "orari": "https://www.comune.piacenza.it/it/eventi/salita-alla-cupola-del-pordenone",
+   "off": "https://cattedralepiacenza.it/"
+  },
+  "Modena|Musei del Duomo": {
+   "orari": "https://www.visitmodena.it/it/scopri-modena/arte-e-cultura/musei-archivi-e-biblioteche/modena/i-musei-del-duomo",
+   "biglietti": "https://www.visitmodena.it/it/scopri-modena/arte-e-cultura/musei-archivi-e-biblioteche/modena/i-musei-del-duomo"
+  },
+  "Forlì|Musei San Domenico": {
+   "orari": "https://www.comune.forli.fc.it/it/vivere/museo-civico-di-san-domenico",
+   "biglietti": "https://mostremuseisandomenico.it/info-e-orari/",
+   "off": "https://www.comune.forli.fc.it/it/vivere/museo-civico-di-san-domenico"
+  }
+ },
+ "bologna": {
+  "pinacoteca": {
+   "orari": "https://pinacotecabologna.cultura.gov.it/en/visita-e-orari",
+   "biglietti": "https://pinacotecabologna.cultura.gov.it/en/visita-e-orari",
+   "off": "https://pinacotecabologna.cultura.gov.it/"
+  },
+  "archeologico": {
+   "orari": "https://www.museibologna.it/archeologico/documenti/47653",
+   "off": "https://www.museibologna.it/archeologico/"
+  },
+  "medievale": {
+   "orari": "https://www.bolognawelcome.com/it/luoghi/musei-e-gallerie-darte/museo-civico-medievale"
+  },
+  "torre-orologio": {
+   "orari": "https://www.bolognawelcome.com/it/luoghi/musei-e-gallerie-darte/collezioni-comunali-darte"
+  }
+ }
+}
