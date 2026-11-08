@@ -25,3 +25,10 @@ cd sorgenti && python3 build.py && proto/mkfiltri.sh
 Gli script di `proto/` usano percorsi assoluti dell'ambiente di lavoro (/home/claude/...): vanno adattati se si lavora altrove.
 
 Nessun dato di Google: Google compare solo come link (Maps, Immagini).
+
+## Statistiche
+
+GoatCounter (senza cookie, nessun cambio di aspetto): contatore **achplaces**, cruscotto https://achplaces.goatcounter.com.
+Conta solo le visite alle pagine e solo quando la pagina è aperta su achplaces.com (o www.achplaces.com): sull'artefatto claude.ai non parte.
+Il codice è in fondo a `sorgenti/template.html` (costante `GC`, controllo del dominio `ON_WEB`), quindi resta a ogni «pubblica».
+Per sospendere il conteggio basta mettere `GC=""`.

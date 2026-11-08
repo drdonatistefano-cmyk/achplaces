@@ -644,6 +644,13 @@ body{font-size:16px;line-height:1.5}
 .card .cfoot .cbtn.pri{margin-left:auto}
 .card .cbtn.tk{background:var(--terra-soft);border-color:color-mix(in srgb,var(--terra) 35%,transparent);color:var(--terra-ink);font-weight:750}
 .card .cbtn.tk.fr{background:var(--ok-soft,#e3f1e6);border-color:color-mix(in srgb,var(--ok,#2f7d4a) 40%,transparent);color:var(--ok,#2f7d4a)}
+
+/* foto nelle schede (prova 8/11) */
+.crow.hasph{grid-template-columns:44px minmax(0,1fr) 88px}
+.cphw{position:relative;width:84px;height:84px;justify-self:end}
+.cph{width:84px;height:84px;border-radius:14px;object-fit:cover;display:block}
+.cphw .cdot{position:absolute;top:-7px;right:-7px;margin:0;border:3px solid var(--paper);box-shadow:none}
+.fcred{display:block;margin:6px 0 10px;font-size:12px;color:var(--mute);text-decoration:none}
 </style>
 </head>
 <body>
@@ -1083,11 +1090,14 @@ function renderGrid(list){
   more();
 }
 const gIO="IntersectionObserver" in window?new IntersectionObserver(es=>{for(const e of es)if(e.isIntersecting){gIO.unobserve(e.target);e.target.click();}},{rootMargin:"600px"}):null;
+let FOTO={};
+function caricaFoto(){fetch("manifest.json",{cache:"no-store"}).then(r=>r.json()).then(m=>m&&m.foto?fetch(m.foto):null).then(r=>r?r.json():null).then(j=>{if(j){FOTO=j;try{update();}catch(e){}}}).catch(()=>{});}
+setTimeout(caricaFoto,300);
 function cardEl(p){
     const c=document.createElement("article");c.className="card";c.style.setProperty("--g",gcol(p.cat));
     const n=p._sel||p.rk,sub=C.isProv?`${esc(CATS[p.cat].label)} · ${esc(p.com)}`:`${esc(CATS[p.cat].label)} · ${esc(p.sub)}`;
-    c.innerHTML=`<button class="cmain" type="button"><div class="crow">${n?`<div class="cnum" title="${p._sel?"Posizione nella selezione attuale":"Posizione nella classifica di tutta la guida"}"><small>N°</small><b>${n}</b></div>`:`<div class="cnum"></div>`}<div class="cbody">
-      <h3 class="title">${esc(p.name)}</h3><div class="csub">${sub}${p._sel&&p.rk?` <span class="cgl">· n. ${p.rk} in Italia</span>`:""}</div><p class="desc">${esc(p.desc)}</p><div class="meta">${ctags(p)}</div></div><span class="cdot" title="${esc(CATS[p.cat].label)}" role="img" aria-label="${esc(CATS[p.cat].label)}"></span></div></button>
+    c.innerHTML=`<button class="cmain" type="button"><div class="crow${FOTO[p.id]?" hasph":""}">${n?`<div class="cnum" title="${p._sel?"Posizione nella selezione attuale":"Posizione nella classifica di tutta la guida"}"><small>N°</small><b>${n}</b></div>`:`<div class="cnum"></div>`}<div class="cbody">
+      <h3 class="title">${esc(p.name)}</h3><div class="csub">${sub}${p._sel&&p.rk?` <span class="cgl">· n. ${p.rk} in Italia</span>`:""}</div><p class="desc">${esc(p.desc)}</p><div class="meta">${ctags(p)}</div></div>${FOTO[p.id]?`<span class="cphw"><img class="cph" src="img/${FOTO[p.id][0]}" width="84" height="84" loading="lazy" decoding="async" alt="" style="background:${FOTO[p.id][4]||"var(--line)"}"><span class="cdot" title="${esc(CATS[p.cat].label)}" role="img" aria-label="${esc(CATS[p.cat].label)}"></span></span>`:`<span class="cdot" title="${esc(CATS[p.cat].label)}" role="img" aria-label="${esc(CATS[p.cat].label)}"></span>`}</div></button>
       <div class="cfoot">${p.free===true?`<button class="cbtn tk fr" type="button" aria-label="Ingresso gratuito: vedi la scheda di ${esc(p.name)}">${ic("check")}Gratis</button>`:p.ticketUrl?`<a class="cbtn tk" href="${esc(p.ticketUrl)}" target="_blank" rel="noopener" aria-label="Biglietti ufficiali: ${esc(p.name)}">${ic("ticket")}Biglietti</a>`:`<button class="cbtn tk" type="button" aria-label="Biglietto: vedi la scheda di ${esc(p.name)}">${ic("ticket")}Biglietti</button>`}<a class="cbtn ph" href="${photoUrl(p)}" target="_blank" rel="noopener" aria-label="Foto di ${esc(p.name)} su Google Immagini">${ic("cam")}Foto</a><button class="cbtn fav${FAV.has(p.id)?" on":""}" type="button" aria-pressed="${FAV.has(p.id)}" aria-label="Salva tra i miei luoghi">${ic("heart",FAV.has(p.id))}</button><button class="cbtn pri" type="button">Apri${ic("chev")}</button></div>`;
     const open=()=>openSheet(p.id,c.querySelector(".cmain"));
     c.querySelector(".cmain").onclick=open; c.querySelector(".cbtn.pri").onclick=open;
@@ -1133,7 +1143,7 @@ function openSheet(id,from){
     <div class="ctag" style="margin-top:4px">📍 ${esc(p.com)} (${esc(p.comSlug.split("-").pop().toUpperCase())})</div>
     <div class="meta" style="padding-top:8px">${tags(p)}</div>
     ${p.statusNote?`<div class="cnote" style="margin-top:12px"><span class="em" aria-hidden="true">⚠️</span><div>${esc(p.statusNote)}</div></div>`:""}
-    <p class="lead">${esc(p.desc)}</p>
+    <p class="lead">${esc(p.desc)}</p>${FOTO[p.id]?`<a class="fcred" href="${esc(FOTO[p.id][3])}" target="_blank" rel="noopener">📷 Foto: ${esc(FOTO[p.id][1]||"vedi pagina del file")} · ${esc(FOTO[p.id][2])} · Wikimedia Commons ↗</a>`:""}
     ${p.why?`<div class="why"><b>Perché andarci.</b> ${esc(p.why)}</div>`:""}${p.tip?`<div class="cnote"><span class="em" aria-hidden="true">💡</span><div>${esc(p.tip)}</div></div>`:""}
     <div class="facts">
       <div class="fact"><span class="ic" aria-hidden="true">🎟️</span><small>Biglietto</small><div>${p.free===true?"Gratis":p.ticketUrl?`<a class="flink" href="${esc(p.ticketUrl)}" target="_blank" rel="noopener">Biglietti e tariffe ufficiali ↗</a>`:`<a class="flink soft" href="${esc(p.official)}" target="_blank" rel="noopener">${p.ownSite===false?"Info sul portale turistico ↗":"Cerca le tariffe sul sito ↗"}</a>`}</div></div>
@@ -1407,6 +1417,11 @@ $("eat-apply").onclick=()=>{if(EAT.lat===null)return;S.near={lat:EAT.lat,lng:EAT
 $("eat-off").onclick=()=>{S.near=null;$("eat").close();update();};
 window.addEventListener("hashchange",()=>route(true));
 route(true);
+</script>
+<script>/* statistiche (GoatCounter: senza cookie, solo visite alle pagine, solo sul dominio pubblico) */
+(function(){const GC="achplaces";/* nome del contatore goatcounter.com */
+const ON_WEB=/(^|\.)achplaces\.com$/.test(location.hostname);
+if(GC&&ON_WEB){try{const s=document.createElement("script");s.async=true;s.dataset.goatcounter=`https://${GC}.goatcounter.com/count`;s.src="https://gc.zgo.at/count.js";document.body.appendChild(s)}catch(_){}}})();
 </script>
 </body>
 </html>
