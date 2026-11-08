@@ -381,6 +381,7 @@ body{font-size:16px;line-height:1.5}
 .cfoot{padding:2px 12px 12px 17px;gap:8px}
 .cbtn{height:36px;font-size:13.5px;border-radius:10px}
 .cbtn.ph{flex:0 0 auto;padding:0 12px;background:transparent}
+.cbtn.tk{flex:0 0 auto;padding:0 12px}
 .cbtn.pri{flex:1}
 .status{margin:14px 0 10px;flex-wrap:wrap;row-gap:2px}
 .status h2{font-size:1.15rem}
@@ -564,12 +565,12 @@ body{font-size:16px;line-height:1.5}
 .card .top>span:nth-child(2){min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1 1 auto}
 .card .gtag{flex:0 0 auto}
 .rkw{margin-left:auto;display:inline-flex;gap:5px;flex:0 0 auto}
-.rk{font-size:12px;font-weight:750;letter-spacing:.2px;padding:3px 9px;border-radius:999px;background:color-mix(in srgb,var(--g) 14%,var(--paper));color:color-mix(in srgb,var(--g) 75%,var(--ink));border:1px solid color-mix(in srgb,var(--g) 30%,transparent)}
-.rks{font-size:12px;font-weight:700;padding:3px 8px;border-radius:999px;background:var(--ink);color:var(--paper)}
+.rk{font-size:13px;font-weight:800;letter-spacing:.2px;padding:3px 10px;border-radius:999px;background:var(--terra);color:var(--on);border:0;font-variant-numeric:tabular-nums}
+.rks{font-size:13px;font-weight:800;padding:3px 9px;border-radius:999px;background:var(--terra-soft);color:var(--terra-ink);border:1.5px solid var(--terra);font-variant-numeric:tabular-nums}
 .card .meta{gap:6px;padding-top:6px}
 .card .mst{height:27px;font-size:13px;padding:0 10px;gap:5px}
 .cfoot{justify-content:flex-end;gap:8px;padding:4px 12px 12px 17px}
-.cbtn,.cbtn.pri,.cbtn.ph{flex:0 0 auto;height:32px;font-size:13px;padding:0 13px;border-radius:999px}
+.cbtn,.cbtn.pri,.cbtn.ph,.cbtn.tk{flex:0 0 auto;height:32px;font-size:13px;padding:0 13px;border-radius:999px}
 .cbtn.pri{padding:0 15px}
 [hidden]{display:none!important}
 .topnav{padding-top:2px!important;margin:0 0 12px}
@@ -597,13 +598,91 @@ body{font-size:16px;line-height:1.5}
 .cbtn.fav{flex:0 0 44px;font-size:18px;color:var(--terra)}
 .cbtn.fav.on{background:var(--terra-soft);border-color:var(--terra)}
 @media(min-width:760px){.xtra{grid-template-columns:1.3fr 1fr}.xtra>.xbox:only-child{grid-column:1/-1}}
+
+/* pulsanti uniformi con icone a linea (8/11/2026) */
+.ic{width:17px;height:17px;flex:0 0 auto;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ic.f{fill:currentColor}
+.cbtn{background:var(--paper);border:1px solid var(--line);color:var(--ink);box-shadow:0 1px 2px rgba(35,29,24,.05);transition:background .15s,border-color .15s,transform .1s;gap:6px}
+.cbtn.ph{background:var(--paper)}
+.cbtn .ic{color:var(--terra)}
+.cbtn:hover{background:var(--terra-soft);border-color:color-mix(in srgb,var(--terra) 30%,var(--line))}
+.cbtn:active,.act:active{transform:scale(.97)}
+.cbtn.pri{background:var(--terra);border-color:var(--terra);color:var(--on);gap:2px;padding-right:9px}
+.cbtn.pri .ic{color:var(--on);width:16px;height:16px}
+.cbtn.pri:hover{background:var(--terra-ink);border-color:var(--terra-ink)}
+.cbtn.fav{color:var(--terra)}
+.cbtn.fav.on{background:var(--terra-soft);border-color:color-mix(in srgb,var(--terra) 40%,var(--line))}
+.cbtn.fav .ic{width:18px;height:18px}
+.act{background:var(--paper);color:var(--ink);gap:8px;box-shadow:0 1px 2px rgba(35,29,24,.05);transition:background .15s,border-color .15s,transform .1s}
+.act .ic{color:var(--terra)}
+.act:hover{background:var(--terra-soft);border-color:color-mix(in srgb,var(--terra) 30%,var(--line))}
+.act.pri{background:var(--terra);border-color:var(--terra);color:var(--on)}
+.act.pri .ic{color:var(--on)}
+.act.pri:hover{background:var(--terra-ink);border-color:var(--terra-ink)}
+.act.copied .ic{color:var(--ok)}
+
+/* look pulito (8/11): numero a sinistra, niente fascia colorata */
+.card{background:var(--paper)!important;border:1.5px solid color-mix(in srgb,var(--g) 60%,transparent);border-radius:20px}
+.card::before{display:none}
+.cmain{padding:16px 16px 6px 12px}
+.crow{display:grid;grid-template-columns:44px 1fr 28px;gap:4px;align-items:start}
+.cdot{width:22px;height:22px;border-radius:50%;background:var(--g);box-shadow:0 0 0 4px color-mix(in srgb,var(--g) 22%,transparent);justify-self:end;margin-top:4px;font-size:0}
+.cnum{display:flex;flex-direction:column;align-items:center;padding-top:2px;color:var(--terra)}
+.cnum small{font-size:10.5px;font-weight:800;letter-spacing:.08em;color:var(--mute)}
+.cnum b{font-family:var(--serif);font-weight:700;font-size:1.7rem;line-height:1.05;font-variant-numeric:lining-nums tabular-nums}
+.cbody{display:flex;flex-direction:column;gap:6px;min-width:0}
+.card .title{font-size:1.2rem;font-weight:800;letter-spacing:-.015em}
+.csub{font-size:14px;color:var(--mute);font-weight:550;margin-top:-2px}
+.cgl{color:var(--terra-ink);font-weight:650}
+.card .desc{font-size:14.5px;-webkit-line-clamp:2}
+.card .meta{display:flex;flex-wrap:wrap;gap:6px;padding-top:4px}
+.card .mst,.card .mst.free,.card .mst.paid,.card .mst.unk,.card .mst.near{height:26px;font-size:12.5px;padding:0 10px;background:var(--bg);color:var(--ink2,var(--ink));border:0;font-weight:600}
+.card .cfoot{padding:4px 14px 14px 14px}
+
+/* tasto Biglietti/Gratis per primo (8/11) */
+.card .cfoot{justify-content:flex-start}
+.card .cfoot .cbtn.pri{margin-left:auto}
+.card .cbtn.tk{background:var(--terra-soft);border-color:color-mix(in srgb,var(--terra) 35%,transparent);color:var(--terra-ink);font-weight:750}
+.card .cbtn.tk.fr{background:var(--ok-soft,#e3f1e6);border-color:color-mix(in srgb,var(--ok,#2f7d4a) 40%,transparent);color:var(--ok,#2f7d4a)}
+
+/* foto nelle schede (prova 8/11) */
+.crow.hasph{grid-template-columns:44px minmax(0,1fr) 88px}
+.cphw{position:relative;width:84px;height:84px;justify-self:end}
+.cph{width:84px;height:84px;border-radius:14px;object-fit:cover;display:block}
+.cphw .cdot{position:absolute;top:-7px;right:-7px;margin:0;border:3px solid var(--paper);box-shadow:none}
+.fcred{display:block;margin:6px 0 10px;font-size:12px;color:var(--mute);text-decoration:none}
 </style>
+<script>/* statistiche (GoatCounter: senza cookie, solo visite alle pagine, solo sul dominio pubblico) */
+(function(){const GC="achplaces";/* nome del contatore goatcounter.com */
+const ON_WEB=/(^|\.)achplaces\.com$/.test(location.hostname);
+if(GC&&ON_WEB){try{const s=document.createElement("script");s.async=true;s.dataset.goatcounter=`https://${GC}.goatcounter.com/count`;s.src="https://gc.zgo.at/count.js";document.head.appendChild(s)}catch(_){}}})();
+</script>
 </head>
 <body>
 <div class="wrap">
   <header class="hero" id="hero">
     <div class="kick"><svg class="italy" viewBox="0 0 40 47" width="22" height="26" aria-hidden="true"><path fill="currentColor" d="M4 6 10 3 17 2 22 4 26 3 27 7 23 9 22 12 23 16 26 19 30 23 33 26 32 28 36 30 39 33 38 35 34 32 32 34 33 37 31 41 29 42 29 38 28 34 25 31 21 28 17 25 14 21 12 16 10 14 6 15 3 13 2 9Z"/><path fill="currentColor" opacity=".75" d="M22 42 30 41 28 46 24 45Z M9 26 13 25 13 33 9 34Z"/></svg><span id="kicktxt">Ach's Places Guide</span></div>
     <h1 id="h1"></h1>
+    <!-- menu comune «Le guide di Ach» (coordinamento/MENU-GUIDE.md) -->
+<nav class="ach-guide" aria-label="Le guide di Ach">
+  <a class="ach-guide__btn" href="https://achevents.com/" data-goatcounter-click="guide/vai-events" data-goatcounter-title="Vai a Ach's Events Guide"><span class="ach-guide__ico" aria-hidden="true">🎭</span><span class="ach-guide__txt"><b>Events</b><small>spettacoli, mostre, cinema</small></span><span class="ach-guide__arr" aria-hidden="true">→</span></a>
+  <a class="ach-guide__btn" href="https://achdinners.com/" data-goatcounter-click="guide/vai-dinners" data-goatcounter-title="Vai a Ach's Dinners Guide"><span class="ach-guide__ico" aria-hidden="true">🍝</span><span class="ach-guide__txt"><b>Dinners</b><small>dove mangiare</small></span><span class="ach-guide__arr" aria-hidden="true">→</span></a>
+</nav>
+<style>
+.ach-guide{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 4px}
+.ach-guide__btn{display:inline-flex;align-items:center;gap:10px;padding:8px 14px 8px 10px;border-radius:999px;border:1px solid color-mix(in srgb,currentColor 18%,transparent);background:color-mix(in srgb,currentColor 4%,transparent);color:inherit;text-decoration:none;line-height:1.15;transition:border-color .2s,background-color .2s,transform .2s}
+.ach-guide__btn:hover{border-color:color-mix(in srgb,currentColor 45%,transparent);background:color-mix(in srgb,currentColor 8%,transparent)}
+.ach-guide__btn:active{transform:scale(.98)}
+.ach-guide__btn:focus-visible{outline:2px solid currentColor;outline-offset:2px}
+.ach-guide__ico{font-size:20px;line-height:1}
+.ach-guide__txt{display:flex;flex-direction:column}
+.ach-guide__txt b{font:600 14px/1.15 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.01em}
+.ach-guide__txt small{font:400 12px/1.2 system-ui,-apple-system,"Segoe UI",sans-serif;opacity:.7}
+.ach-guide__arr{opacity:.45;font-size:14px;transition:transform .2s,opacity .2s}
+.ach-guide__btn:hover .ach-guide__arr{opacity:.8;transform:translateX(2px)}
+@media (max-width:420px){.ach-guide{gap:8px}.ach-guide__btn{flex:1 1 0;min-width:0;padding:8px 10px 8px 8px}.ach-guide__arr{display:none}}
+@media (prefers-reduced-motion:reduce){.ach-guide__btn,.ach-guide__arr{transition:none}}
+</style>
     <div class="stats" id="stats"></div>
     <div class="pick" aria-label="Scegli il luogo">
       <div class="msel"><span class="mlab">Regioni</span><button class="mbtn" id="reg-btn" type="button" aria-haspopup="true" aria-expanded="false"><span class="mv" id="reg-val"></span><span class="cv" aria-hidden="true">▼</span></button></div>
@@ -845,6 +924,15 @@ const AWARDS={unesco:["🌍","Patrimonio UNESCO nel comune","https://www.unesco.
 const idealOk=(p,x)=>x==="rain"?p.indoor:x==="view"?p.view:x==="unesco"?p.unesco:(p.aw||[]).includes(x);
 const TIME=[["short","⚡","Fino a 45 min","Breve"],["mid","⏱️","1-1,5 ore","Medio"],["long","🥾","2 ore e oltre","Lungo"]];
 
+const IC={cam:'<path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3z"/><circle cx="12" cy="13" r="3.5"/>',
+heart:'<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/>',
+ticket:'<path d="M2 9V7a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v2a3 3 0 0 0 0 6v2a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-2a3 3 0 0 0 0-6z"/><path d="M14 5v2M14 11v2M14 17v2"/>',
+chev:'<path d="m9 18 6-6-6-6"/>',back:'<path d="m15 18-6-6 6-6"/>',nav:'<path d="M3 11 22 2l-9 19-2-8-8-2z"/>',
+ext:'<path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>',
+copy:'<rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>',
+check:'<path d="M20 6 9 17l-5-5"/>',pin:'<path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/>',
+book:'<path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/>'};
+const ic=(n,f)=>'<svg class="ic'+(f?' f':'')+'" viewBox="0 0 24 24" aria-hidden="true">'+IC[n]+'</svg>';
 const PLACES = [
 {id:"piazza-maggiore",name:"Piazza Maggiore e Fontana del Nettuno",cat:"storia",sub:"Piazze e centro storico",lat:44.49381,lng:11.34265,
  desc:"Il cuore civico di Bologna dal Duecento: San Petronio, Palazzo d'Accursio, Palazzo del Podestà e, a fianco, il Nettuno del Giambologna.",
@@ -1089,16 +1177,32 @@ const PLACES = [
 const MEMO={db:null,apri(){if(this.db)return this.db;this.db=new Promise(ok=>{try{const r=indexedDB.open("luoghi",1);
   r.onupgradeneeded=()=>r.result.createObjectStore("file");r.onsuccess=()=>ok(r.result);r.onerror=()=>ok(null);setTimeout(()=>ok(null),1500);}catch(e){ok(null);}});return this.db;},
   async leggi(k){const db=await this.apri();if(!db)return null;return new Promise(ok=>{try{const q=db.transaction("file").objectStore("file").get(k);q.onsuccess=()=>ok(q.result||null);q.onerror=()=>ok(null);}catch(e){ok(null);}});},
-  async scrivi(k,v){const db=await this.apri();if(!db)return;try{const s=db.transaction("file","readwrite").objectStore("file");s.put(v,k);const tieni=MAN?[MAN.dati,MAN.meta,...Object.values(MAN.det||{})]:[k];const c=s.getAllKeys();c.onsuccess=()=>c.result.forEach(x=>{if(!tieni.includes(x))s.delete(x);});}catch(e){}}};
+  async scrivi(k,v){const db=await this.apri();if(!db)return;try{const s=db.transaction("file","readwrite").objectStore("file");s.put(v,k);const tieni=MAN?[MAN.dati,MAN.meta,MAN.luoghi,MAN.testi,...Object.values(MAN.det||{})]:[k];const c=s.getAllKeys();c.onsuccess=()=>c.result.forEach(x=>{if(!tieni.includes(x))s.delete(x);});}catch(e){}}};
 let MAN=null;
-(async()=>{const cnt=document.getElementById("count");if(cnt)cnt.textContent="Caricamento dei luoghi…";
+/* istantanea della prima schermata (8/11/2026): alla riapertura compare subito l'ultima prima schermata salvata;
+   un attimo prima che la pagina vera disegni, si rimette il contenuto originale, così il risultato è identico */
+const IST_ID=["stats","count","verified","xtra","grid","active"];let IST_ORIG=null,IST_TOCCO=0;
+["pointerdown","keydown","input"].forEach(ev=>document.addEventListener(ev,()=>{IST_TOCCO=1;},{capture:true,passive:true}));
+try{const n=localStorage.getItem("datiNome"),o=!location.hash.slice(1)&&n&&JSON.parse(localStorage.getItem("istG:"+n)||"null");
+  if(o){IST_ORIG=IST_ID.map(id=>{const e=document.getElementById(id);return [e.innerHTML,e.hidden];});IST_ID.forEach((id,i)=>{const e=document.getElementById(id);e.innerHTML=o[i][0];e.hidden=o[i][1];});}}catch(e){IST_ORIG=null;}
+function salvaIst(nome){setTimeout(()=>{if(IST_TOCCO||location.hash.slice(1))return;try{
+  localStorage.setItem("istG:"+nome,JSON.stringify(IST_ID.map(id=>{const e=document.getElementById(id);return [e.innerHTML,e.hidden];})));
+  for(let i=localStorage.length-1;i>=0;i--){const k=localStorage.key(i);if(k&&k.startsWith("istG:")&&k!=="istG:"+nome)localStorage.removeItem(k);}}catch(e){}},1500);}
+(async()=>{const cnt=document.getElementById("count");if(cnt&&!IST_ORIG)cnt.textContent="Caricamento dei luoghi…";
   let nome=null;try{nome=localStorage.getItem("datiNome");}catch(e){}
+  const ultimo=nome,pIdb=nome?MEMO.leggi(nome):null;
+  const ATTESO="dati.9b5bfa65d1.json",pPrimo=nome?null:fetch(ATTESO).then(r=>r.ok?r.text():null).catch(()=>null);  /* primo accesso: in parallelo al manifest */
   try{MAN=await (await fetch("manifest.json",{cache:"no-store"})).json();nome=MAN.dati;try{localStorage.setItem("man",JSON.stringify(MAN));}catch(e){}}catch(e){try{MAN=JSON.parse(localStorage.getItem("man")||"null");}catch(e2){}}
   if(!nome){if(cnt)cnt.textContent="Dati non disponibili: controlla la connessione.";return;}
-  let t=await MEMO.leggi(nome);
+  let t=nome===ultimo&&pIdb?await pIdb:(pPrimo&&nome===ATTESO?await pPrimo:null)||await MEMO.leggi(nome);
+  if(t&&pPrimo&&nome===ATTESO)MEMO.scrivi(nome,t);
   if(!t){const r=await fetch(nome);if(!r.ok){if(cnt)cnt.textContent="Dati non disponibili ("+r.status+")";return;}t=await r.text();MEMO.scrivi(nome,t);}
   try{localStorage.setItem("datiNome",nome);}catch(e){}
-  AVVIO(JSON.parse(t));})();
+  const D=DECODIFICA(JSON.parse(t));
+  if(IST_ORIG)IST_ID.forEach((id,i)=>{const e=document.getElementById(id);e.innerHTML=IST_ORIG[i][0];e.hidden=IST_ORIG[i][1];});
+  AVVIO(D);salvaIst(nome);})();
+function DECODIFICA(D){const Z=D.dz,sl=s=>s.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"").slice(0,40).replace(/-+$/,"");
+  for(const c of D.c){for(const k of ["regione","provName","provKind","verified"])c[k]=Z[k][c[k]];for(const a of c.places){if(a[0]===0)a[0]=sl(a[1]);a[3]=Z.sub[a[3]];a[7]=Z.t[a[7]];}}return D;}
 function AVVIO(D){
 {const CK=["storia","musei","sacro","natura","locale"];for(const c of D.c)c.places=c.places.map(a=>{const f=a[5],o={id:c.slug+"--"+a[0],name:a[1],cat:CK[a[2]],sub:a[3],desc:a[4],free:f.includes("F")?true:f.includes("P")?false:null,card:f.includes("c"),unesco:f.includes("u"),view:f.includes("v"),indoor:f.includes("i"),status:a[6]||"ok",t:a[7],r:a[8],address:"",price:"",duration:""};if(a[9])Object.assign(o,a[9]);return o;});}
 const BO_GEO=D.g,COMUNI_EXTRA=D.c,LINKS_BO=D.l;let QC,SOURCES,ARCH;
@@ -1290,7 +1394,7 @@ function resetAll(){clearFilters();if(!C.all){setComune("tutti");}else update();
 function priceTag(p){return p.free===null?`<span class="mst unk">🎟️ Ingresso: vedi sito</span>`:p.free?`<span class="mst free">🆓 Gratis</span>`:`<span class="mst paid">🎟️ A pagamento</span>`;}
 function statusTag(p){return p.status==="closed"?`<span class="mst closed">⛔ Chiuso ora</span>`:p.status==="warn"?`<span class="mst warn">⚠️ Avviso</span>`:"";}
 function nearTag(p){if(!S.near)return "";const d=distOf(p,S.near);if(!isFinite(d))return "";const q=ptOf(p);return `<span class="mst near">📍 ${q[2]?"":"≈ "}${fmtKm(d)} km · ~${fmtMin(Math.max(5,Math.round(d/KM_PER_MIN/5)*5))}</span>`;}
-function ctags(p){const tm=TIME.find(x=>x[0]===p.t);return nearTag(p)+statusTag(p)+priceTag(p)+(p.unesco?`<span class="mst">🌍 UNESCO</span>`:"")+(tm?`<span class="mst">${tm[1]} ${esc(p.duration||tm[3])}</span>`:"")+(p.indoor?`<span class="mst">☔ Al coperto</span>`:"")+(p.view?`<span class="mst">🌅 Panorama</span>`:"");}
+function ctags(p){const tm=TIME.find(x=>x[0]===p.t);return nearTag(p)+statusTag(p)+(p.unesco?`<span class="mst">🌍 UNESCO</span>`:"")+(tm?`<span class="mst">${tm[1]} ${esc(p.duration||tm[3])}</span>`:"")+(p.indoor?`<span class="mst">☔ Al coperto</span>`:"")+(p.view?`<span class="mst">🌅 Panorama</span>`:"");}
 function tags(p){return nearTag(p)+statusTag(p)+priceTag(p)+(p.card?`<span class="mst">💳 Card</span>`:"")+(p.indoor?`<span class="mst">☔ Al coperto</span>`:"")+(p.view?`<span class="mst">🌅 Panorama</span>`:"")+(p.unesco?`<span class="mst">🌍 UNESCO</span>`:"")+`<span class="mst">⏱️ ${esc(p.duration)}</span>`;}
 
 function renderGrid(list){
@@ -1305,14 +1409,19 @@ function renderGrid(list){
   more();
 }
 const gIO="IntersectionObserver" in window?new IntersectionObserver(es=>{for(const e of es)if(e.isIntersecting){gIO.unobserve(e.target);e.target.click();}},{rootMargin:"600px"}):null;
+let FOTO={};
+function caricaFoto(){fetch("manifest.json",{cache:"no-store"}).then(r=>r.json()).then(m=>m&&m.foto?fetch(m.foto):null).then(r=>r?r.json():null).then(j=>{if(j){FOTO=j;try{update();}catch(e){}}}).catch(()=>{});}
+setTimeout(caricaFoto,300);
 function cardEl(p){
     const c=document.createElement("article");c.className="card";c.style.setProperty("--g",gcol(p.cat));
-    c.innerHTML=`<button class="cmain" type="button"><div class="top"><span class="gtag">${CATS[p.cat].em} ${esc(CATS[p.cat].label)}</span><span>${C.isProv?`<span class="ctag">📍 ${esc(p.com)}</span>`:`${CATS[p.cat].subs[p.sub]||""} ${esc(p.sub)}`}</span><span class="rkw">${p._sel?`<span class="rks" title="Posizione nella selezione attuale">${p._sel}°</span>`:""}${p.rk?`<span class="rk" title="Posizione nella classifica di tutta la guida (punteggio ${p.r})">n.&nbsp;${p.rk}</span>`:""}</span></div>
-      <h3 class="title">${esc(p.name)}</h3><p class="desc">${esc(p.desc)}</p><div class="meta">${ctags(p)}</div></button>
-      <div class="cfoot"><a class="cbtn ph" href="${photoUrl(p)}" target="_blank" rel="noopener" aria-label="Foto di ${esc(p.name)} su Google Immagini">📷 Foto</a><button class="cbtn fav${FAV.has(p.id)?" on":""}" type="button" aria-pressed="${FAV.has(p.id)}" aria-label="Salva tra i miei luoghi">${FAV.has(p.id)?"♥":"♡"}</button><button class="cbtn pri" type="button">Apri <span aria-hidden="true">›</span></button></div>`;
+    const n=p._sel||p.rk,sub=C.isProv?`${esc(CATS[p.cat].label)} · ${esc(p.com)}`:`${esc(CATS[p.cat].label)} · ${esc(p.sub)}`;
+    c.innerHTML=`<button class="cmain" type="button"><div class="crow${FOTO[p.id]?" hasph":""}">${n?`<div class="cnum" title="${p._sel?"Posizione nella selezione attuale":"Posizione nella classifica di tutta la guida"}"><small>N°</small><b>${n}</b></div>`:`<div class="cnum"></div>`}<div class="cbody">
+      <h3 class="title">${esc(p.name)}</h3><div class="csub">${sub}${p._sel&&p.rk?` <span class="cgl">· n. ${p.rk} in Italia</span>`:""}</div><p class="desc">${esc(p.desc)}</p><div class="meta">${ctags(p)}</div></div>${FOTO[p.id]?`<span class="cphw"><img class="cph" src="img/${FOTO[p.id][0]}" width="84" height="84" loading="lazy" decoding="async" alt="" style="background:${FOTO[p.id][4]||"var(--line)"}"><span class="cdot" title="${esc(CATS[p.cat].label)}" role="img" aria-label="${esc(CATS[p.cat].label)}"></span></span>`:`<span class="cdot" title="${esc(CATS[p.cat].label)}" role="img" aria-label="${esc(CATS[p.cat].label)}"></span>`}</div></button>
+      <div class="cfoot">${p.free===true?`<button class="cbtn tk fr" type="button" aria-label="Ingresso gratuito: vedi la scheda di ${esc(p.name)}">${ic("check")}Gratis</button>`:p.ticketUrl?`<a class="cbtn tk" href="${esc(p.ticketUrl)}" target="_blank" rel="noopener" aria-label="Biglietti ufficiali: ${esc(p.name)}">${ic("ticket")}Biglietti</a>`:`<button class="cbtn tk" type="button" aria-label="Biglietto: vedi la scheda di ${esc(p.name)}">${ic("ticket")}Biglietti</button>`}<a class="cbtn ph" href="${photoUrl(p)}" target="_blank" rel="noopener" aria-label="Foto di ${esc(p.name)} su Google Immagini">${ic("cam")}Foto</a><button class="cbtn fav${FAV.has(p.id)?" on":""}" type="button" aria-pressed="${FAV.has(p.id)}" aria-label="Salva tra i miei luoghi">${ic("heart",FAV.has(p.id))}</button><button class="cbtn pri" type="button">Apri${ic("chev")}</button></div>`;
     const open=()=>openSheet(p.id,c.querySelector(".cmain"));
     c.querySelector(".cmain").onclick=open; c.querySelector(".cbtn.pri").onclick=open;
-    c.querySelector(".cbtn.fav").onclick=e=>{favToggle(p.id);const b=e.currentTarget,on=FAV.has(p.id);b.classList.toggle("on",on);b.textContent=on?"♥":"♡";b.setAttribute("aria-pressed",on);renderXtra();};
+    {const tb=c.querySelector("button.cbtn.tk");if(tb)tb.onclick=open;}
+    c.querySelector(".cbtn.fav").onclick=e=>{favToggle(p.id);const b=e.currentTarget,on=FAV.has(p.id);b.classList.toggle("on",on);b.innerHTML=ic("heart",on);b.setAttribute("aria-pressed",on);renderXtra();};
     return c;
 }
 /* riconoscimenti: nei comuni il bollino con link all'ente; in ogni vista i pulsanti rapidi UNESCO, Borghi, Bandiere Arancioni */
@@ -1353,7 +1462,7 @@ function openSheet(id,from){
     <div class="ctag" style="margin-top:4px">📍 ${esc(p.com)} (${esc(p.comSlug.split("-").pop().toUpperCase())})</div>
     <div class="meta" style="padding-top:8px">${tags(p)}</div>
     ${p.statusNote?`<div class="cnote" style="margin-top:12px"><span class="em" aria-hidden="true">⚠️</span><div>${esc(p.statusNote)}</div></div>`:""}
-    <p class="lead">${esc(p.desc)}</p>
+    <p class="lead">${esc(p.desc)}</p>${FOTO[p.id]?`<a class="fcred" href="${esc(FOTO[p.id][3])}" target="_blank" rel="noopener">📷 Foto: ${esc(FOTO[p.id][1]||"vedi pagina del file")} · ${esc(FOTO[p.id][2])} · Wikimedia Commons ↗</a>`:""}
     ${p.why?`<div class="why"><b>Perché andarci.</b> ${esc(p.why)}</div>`:""}${p.tip?`<div class="cnote"><span class="em" aria-hidden="true">💡</span><div>${esc(p.tip)}</div></div>`:""}
     <div class="facts">
       <div class="fact"><span class="ic" aria-hidden="true">🎟️</span><small>Biglietto</small><div>${p.free===true?"Gratis":p.ticketUrl?`<a class="flink" href="${esc(p.ticketUrl)}" target="_blank" rel="noopener">Biglietti e tariffe ufficiali ↗</a>`:`<a class="flink soft" href="${esc(p.official)}" target="_blank" rel="noopener">${p.ownSite===false?"Info sul portale turistico ↗":"Cerca le tariffe sul sito ↗"}</a>`}</div></div>
@@ -1363,16 +1472,16 @@ function openSheet(id,from){
       <div class="fact"><span class="ic" aria-hidden="true">📍</span><small>Indirizzo</small><div>${esc(p.address)}</div></div>
     </div>
     <div class="acts">
-      <a class="act pri" href="${gm}" target="_blank" rel="noopener">🧭 Come arrivare</a>
-      <a class="act" href="${esc(p.official)}" target="_blank" rel="noopener">${p.ownSite===false?"🔗 Scheda sul portale turistico":"🔗 Sito ufficiale"}</a>
-      <button class="act" type="button" id="copyaddr">📋 Copia indirizzo</button>
-      <button class="act" type="button" id="favsheet">${FAV.has(p.id)?"♥ Salvato nei miei luoghi":"♡ Salva nei miei luoghi"}</button>
+      <a class="act pri" href="${gm}" target="_blank" rel="noopener">${ic("nav")}Come arrivare</a>
+      <a class="act" href="${esc(p.official)}" target="_blank" rel="noopener">${ic("ext")}${p.ownSite===false?"Scheda sul portale turistico":"Sito ufficiale"}</a>
+      <button class="act" type="button" id="copyaddr">${ic("copy")}Copia indirizzo</button>
+      <button class="act" type="button" id="favsheet">${ic("heart",FAV.has(p.id))}${FAV.has(p.id)?"Salvato nei miei luoghi":"Salva nei miei luoghi"}</button>
     </div>
     <div class="src"><b>Fonti verificate il ${esc(ver)}</b><ul>${p.sources.map(s=>`<li><a href="${esc(s[1])}" target="_blank" rel="noopener">${esc(s[0])}</a><span class="rel ${s[2]}">${s[2]==="uff"?"🟢 ufficiale":"🟠 da ricontrollare"}</span></li>`).join("")}</ul></div>`;
   $("scrim").classList.add("open");sh.classList.add("open");document.body.style.overflow="hidden";
   $("sclose").onclick=closeSheet;$("sclose").focus();
-  $("favsheet").onclick=e=>{favToggle(p.id);e.currentTarget.textContent=FAV.has(p.id)?"♥ Salvato nei miei luoghi":"♡ Salva nei miei luoghi";renderXtra();const f=document.querySelector(`.card .cbtn.fav[data-id="${CSS.escape(p.id)}"]`);};
-  $("copyaddr").onclick=async e=>{const b=e.currentTarget;try{await navigator.clipboard.writeText(p.address);b.textContent="✅ Copiato";b.classList.add("copied");}catch(err){b.textContent="Copia non riuscita";}};
+  $("favsheet").onclick=e=>{favToggle(p.id);e.currentTarget.innerHTML=ic("heart",FAV.has(p.id))+(FAV.has(p.id)?"Salvato nei miei luoghi":"Salva nei miei luoghi");renderXtra();const f=document.querySelector(`.card .cbtn.fav[data-id="${CSS.escape(p.id)}"]`);};
+  $("copyaddr").onclick=async e=>{const b=e.currentTarget;try{await navigator.clipboard.writeText(p.address);b.innerHTML=ic("check")+"Copiato";b.classList.add("copied");}catch(err){b.textContent="Copia non riuscita";}};
 }
 function closeSheet(){$("scrim").classList.remove("open");$("sheet").classList.remove("open");document.body.style.overflow="";if(lastFocus)lastFocus.focus();}
 $("scrim").onclick=closeSheet;
@@ -1629,11 +1738,6 @@ window.addEventListener("hashchange",()=>route(true));
 route(true);
 
 }
-</script>
-<script>/* statistiche (GoatCounter: senza cookie, solo visite alle pagine, solo sul dominio pubblico) */
-(function(){const GC="achplaces";/* nome del contatore goatcounter.com */
-const ON_WEB=/(^|\.)achplaces\.com$/.test(location.hostname);
-if(GC&&ON_WEB){try{const s=document.createElement("script");s.async=true;s.dataset.goatcounter=`https://${GC}.goatcounter.com/count`;s.src="https://gc.zgo.at/count.js";document.body.appendChild(s)}catch(_){}}})();
 </script>
 </body>
 </html>

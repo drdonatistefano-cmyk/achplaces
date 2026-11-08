@@ -32,3 +32,9 @@ GoatCounter (senza cookie, nessun cambio di aspetto): contatore **achplaces**, c
 Conta solo le visite alle pagine e solo quando la pagina è aperta su achplaces.com (o www.achplaces.com): sull'artefatto claude.ai non parte.
 Il codice è in fondo a `sorgenti/template.html` (costante `GC`, controllo del dominio `ON_WEB`), quindi resta a ogni «pubblica».
 Per sospendere il conteggio basta mettere `GC=""`.
+
+## Menu «Le guide di Ach»
+In testata, sotto il titolo: bottoni verso Events (achevents.com) e Dinners (achdinners.com). Codice comune in `ristoranti-archivio/coordinamento/MENU-GUIDE.md`; sta in `sorgenti/template.html`.
+
+## Foto
+Foto libere da Wikimedia Commons (autore e licenza nella scheda del luogo). Script in `sorgenti/foto/`; `sorgenti/foto_build.py` le aggiunge dopo la costruzione.
