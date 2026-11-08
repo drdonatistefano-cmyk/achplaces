@@ -44,6 +44,14 @@ for k, v in con.items():
                 scarti[k] = 'nome generico, tipo non verificabile'; continue
     elif v.get('via') == 'wikidata':
         if v.get('s', 1) < 0.8:
+            ct = set(norm(v['com']))
+            nt = [w for w in norm(v['n']) if w not in ct]; lt = [w for w in norm(v.get('lab', '')) if w not in ct]
+            nd = [w for w in nt if w not in GEN and len(w) > 2]; ld = [w for w in lt if w not in GEN and len(w) > 2]
+            simile = lambda w, ws: any(w == x or (len(w) > 5 and len(x) > 5 and w[:6] == x[:6]) for x in ws)
+            if not all(simile(w, nt) for w in ld):
+                scarti[k] = 'etichetta Wikidata con parole estranee («%s»)' % v.get('lab', ''); continue
+            if nd and not any(simile(w, lt) for w in nd):
+                scarti[k] = 'nessuna parola distintiva in comune con «%s»' % v.get('lab', ''); continue
             dubbi.append((k, 'somiglianza bassa con «%s»' % v.get('lab', '')))
 
 # stessa foto usata per luoghi diversi dello stesso comune: tiene il migliore

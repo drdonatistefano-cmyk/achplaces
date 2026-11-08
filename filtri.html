@@ -331,6 +331,35 @@ body.tL #fp,body.ffold #fp{display:none}
  .gcat{align-items:center}
  .gsep{display:none}
 }
+
+/* mk18: colori come nella Guida, telefono più compatto, bottone Filtri che segue */
+.com h4{font-weight:650!important}
+.com .sub{font-weight:600!important;color:var(--mute)!important}
+.com .tot b{color:var(--terra)}
+.reg>h2,.fh{color:var(--terra)}
+.pvs,.pv{color:var(--terra)!important}
+.flab,.fnb{display:none}
+@media (max-width:759px){
+ .tabs{position:static}
+ #fbar.on{position:fixed;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));z-index:30;box-shadow:0 8px 28px rgba(30,20,10,.22);padding:6px 6px 6px 6px;border-color:var(--line2)}
+ .wrap{padding-bottom:110px}
+ .fold{width:auto;height:38px;padding:0 14px 0 11px;display:inline-flex;align-items:center;gap:6px;border:0;background:var(--terra);color:var(--on);font-weight:750;font-size:14px}
+ .flab{display:inline}
+ .fnb{display:inline-grid;place-items:center;min-width:20px;height:20px;padding:0 5px;border-radius:999px;background:var(--on);color:var(--terra);font-size:11.5px;font-weight:800}
+ .com{padding:7px 10px;gap:8px;margin-bottom:5px;border-radius:12px}
+ .reg>h2{top:0}
+ .com .bd{display:flex;flex-wrap:wrap;align-items:center;column-gap:8px;row-gap:3px}
+ .com h4{font-size:1rem;margin:0}
+ .com .sub{flex-basis:100%}
+ .com .sub{margin:0;font-size:11.5px}
+ .com .cats{gap:3px}
+ .cat{height:19px;padding:0 6px 0 4px;font-size:11px;gap:2px}
+ .com .tot{min-width:34px}
+ .com .tot b{font-size:1.15rem}
+ .com .tot small{display:none}
+ .com{min-height:0}
+ .com .chev{font-size:16px}
+}
 </style></head><body>
 <div class="wrap">
 <div class="tabs"><div class="seg"><a class="tab gl" href="index.html" aria-label="Torna alla Guida">🧭 <span class="t">Guida</span></a><button class="tab on" id="tabF" data-tab="F">🔎 <span class="t">Luoghi</span></button><button class="tab" id="tabL" data-tab="L" disabled>📍 <span class="t" id="tabLt">Elenco</span></button><a class="tab gl sm" href="index.html#metodo" aria-label="Metodo">📐 <span class="t">Metodo</span></a><a class="tab gl sm" href="index.html#fonti" aria-label="Fonti">📚 <span class="t">Fonti</span></a></div><div id="fp"></div><div class="fbar" id="fbar"></div></div>
@@ -511,7 +540,7 @@ function renderBar(){const n=nFil(),b=$('fbar'),L=$('vL').classList.contains('on
  const bits=[];if(st.regs.size)bits.push(areaOf()?AL[areaOf()]:[...st.regs].map(RG).join(', '));if(st.prov)bits.push(st.prov.split('|')[1]);for(const k in st.sel)for(const s of st.sel[k])bits.push(s);for(const k of st.tx)bits.push(TX.find(x=>x[0]===k)[2]);if(st.provs.size)bits.push([...st.provs].map(k=>k.split('|')[1]).join(', '));if(st.coms.size)bits.push([...st.coms].map(c=>C[c][0]).join(', '));if(st.q)bits.push('«'+st.q+'»');if(st.near)bits.push('📍 entro '+Math.round(st.near.km)+' km da '+st.near.label);
  if(L&&!n){b.classList.remove('on');b.innerHTML='';return}
  const c=st.cnt||[0,0];
- b.innerHTML=`${L?'':`<button class="fold" data-a="fold" aria-label="Mostra o nascondi i filtri">${st.fold?'▾':'▴'}</button>`}<span class="ft"><b>${L?n+(n===1?' filtro':' filtri'):c[0]+' luoghi · '+c[1]+' comuni'}</b>${n?esc(bits.join(' · ')):'Nessun filtro'}</span>${n?`<button class="rst" data-a="${L?'resetL':'reset'}">↺ Azzera</button>`:''}`;b.classList.add('on')}
+ b.innerHTML=`${L?'':`<button class="fold" data-a="fold" aria-expanded="${!st.fold}" aria-label="Mostra o nascondi i filtri"><span class="fic">${st.fold?'▾':'▴'}</span><span class="flab">${st.fold?'Filtri':'Chiudi'}</span>${nFil()?`<span class="fnb">${nFil()}</span>`:''}</button>`}<span class="ft"><b>${L?n+(n===1?' filtro':' filtri'):c[0]+' luoghi · '+c[1]+' comuni'}</b>${n?esc(bits.join(' · ')):'Nessun filtro'}</span>${n?`<button class="rst" data-a="${L?'resetL':'reset'}">↺ Azzera</button>`:''}`;b.classList.add('on')}
 function tab(t){document.body.classList.toggle('tL',t==='L');$('vF').classList.toggle('on',t==='F');$('vL').classList.toggle('on',t==='L');$('tabF').classList.toggle('on',t==='F');$('tabL').classList.toggle('on',t==='L');
  if(t==='L')window.scrollTo(0,0);else window.scrollTo(0,st.y||0);renderBar()}
 function goList(){if(history.state&&history.state.v==='L')history.back();else tab('F')}
@@ -531,7 +560,7 @@ document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)r
  if(d.ar){drill(()=>{st.regs=new Set(AREE[d.ar]);st.prov=null;st.grp='r'});return}
  if(d.a==='near'){openEat();return}
  if(d.a==='undrill'){history.back();return}
- if(d.a==='fold'){st.fold=!st.fold;document.body.classList.toggle('ffold',st.fold);renderBar();return}
+ if(d.a==='fold'){st.fold=!st.fold;document.body.classList.toggle('ffold',st.fold);renderBar();if(!st.fold)window.scrollTo({top:0,behavior:'smooth'});return}
  if(d.a==='tolist'){goList();return}
  if(d.a==='resetL'){st.provs.clear();st.coms.clear();st.regs.clear();st.prov=null;st.sel={};st.tx.clear();st.q='';st.hist=[];st.all=true;renderF();renderL();renderBar();return}
  if(d.reg){st.regs.has(d.reg)?st.regs.delete(d.reg):st.regs.add(d.reg);st.prov=null;for(const k of [...st.provs])if(st.regs.size&&!st.regs.has(k.split('|')[0]))st.provs.delete(k);for(const c of [...st.coms])if(st.regs.size&&!st.regs.has(C[c][2]))st.coms.delete(c);st.hist=[];st.lim=40}
@@ -549,6 +578,7 @@ document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)r
 const _rF=renderF;renderF=function(n){_rF(n);renderBar()};
 window.addEventListener('popstate',()=>{if($('sheet').classList.contains('open')){closeSheet();return}
  if($('vL').classList.contains('on')){tab('F');return}if(st.hist.length)undrill()});
+if(window.matchMedia&&matchMedia('(max-width:759px)').matches){st.fold=true;document.body.classList.add('ffold')}
 renderF();
 setTimeout(()=>{prendiT(TESTI).then(a=>{const T=a[0],L=a[1];for(let i=0;i<P.length;i++){P[i][5]=T[i][0];P[i][6]=T[i][1]}for(let i=0;i<C.length;i++)C[i][4]=L[i];window.__testi=1;renderF(true);if(st.com!=null)renderL();if(window.__sheetP!=null)openSheet(window.__sheetP)}).catch(()=>{})},0);
 
