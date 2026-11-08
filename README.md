@@ -1,2 +1,4 @@
-# achplaces
-Ach's Places Guide – luoghi da visitare in Italia
+# Ach's Places Guide
+
+Luoghi da visitare in Italia, comune per comune, con fonti ufficiali.
+Sito: https://achplaces.com
