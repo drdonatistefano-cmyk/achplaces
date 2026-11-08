@@ -10,6 +10,8 @@ UA = {'User-Agent': "AchsPlacesGuide/0.2 (https://achplaces.com; guida turistica
 OUT = 'out/'; os.makedirs(OUT + 'img', exist_ok=True)
 meta = json.load(open(OUT + 'meta.json')) if os.path.exists(OUT + 'meta.json') else {}
 coda = [x for x in json.load(open('sorgenti/foto/coda.json')) if x['p'] not in meta]
+PROVATI = OUT + 'provati.json'
+provati = set(json.load(open(PROVATI))) if os.path.exists(PROVATI) else set()
 LIM = time.time() + 60 * float(os.environ.get('MINUTI', '300'))
 S = requests.Session(); S.headers.update(UA)
 def get(url, **kw):
@@ -24,6 +26,35 @@ def pulisci(s):
 def slug40(s):
     s = unicodedata.normalize('NFD', s.lower()); s = ''.join(c for c in s if not unicodedata.combining(c))
     return re.sub(r'[^a-z0-9]+', '-', s).strip('-')[:40]
+def norm(t):
+    t = unicodedata.normalize('NFD', t.lower()); t = ''.join(c for c in t if not unicodedata.combining(c))
+    return re.sub(r'[^a-z0-9]+', ' ', t).strip()
+API = 'https://commons.wikimedia.org/w/api.php'
+def risolvi(x):
+    if x.get('cat'):
+        r = get(API, params={'action': 'query', 'format': 'json', 'list': 'categorymembers', 'cmtype': 'file', 'cmlimit': 10, 'cmtitle': 'Category:' + x['cat']})
+        for m in (r.json().get('query', {}).get('categorymembers', []) if r else []):
+            if re.search(r'\.(jpe?g|png|webp)$', m['title'], re.I): x['file'] = m['title'][5:]; x['via'] = 'categoria'; return
+    if x.get('q'):
+        r = get(API, params={'action': 'query', 'format': 'json', 'generator': 'search', 'gsrnamespace': 6, 'gsrlimit': 5,
+                             'gsrsearch': x['q'] + ' filetype:bitmap', 'prop': 'categories', 'cllimit': 50})
+        pages = sorted((r.json().get('query', {}).get('pages', {}) if r else {}).values(), key=lambda p: p.get('index', 99))
+        com = norm(x.get('com', ''))
+        for pg in pages:
+            cats = ' '.join(norm(c['title']) for c in pg.get('categories', []))
+            if com and com in cats or com in norm(pg['title']):
+                x['file'] = pg['title'][5:]; x['via'] = 'ricerca'; return
+da_risolvere = [x for x in coda if not x.get('file') and x['p'] not in provati]
+print('da risolvere', len(da_risolvere), flush=True)
+for i, x in enumerate(da_risolvere):
+    if time.time() > LIM: break
+    try: risolvi(x)
+    except Exception: pass
+    provati.add(x['p'])
+    if i % 200 == 0: print('risolti', i, flush=True); json.dump(sorted(provati), open(PROVATI, 'w'))
+    time.sleep(0.1)
+json.dump(sorted(provati), open(PROVATI, 'w'))
+coda = [x for x in coda if x.get('file')]
 print('in coda', len(coda), flush=True)
 fatti = 0
 for i in range(0, len(coda), 50):
@@ -57,7 +88,7 @@ for i in range(0, len(coda), 50):
             col = '#%02x%02x%02x' % im.resize((1, 1)).getpixel((0, 0))
         except Exception:
             continue
-        meta[x['p']] = [fn, aut, lic, ii.get('descriptionurl', ''), col]; fatti += 1
+        meta[x['p']] = [fn, aut, lic, ii.get('descriptionurl', ''), col, x['file'], x.get('via', 'wikidata')]; fatti += 1
         time.sleep(0.2)
     json.dump(meta, open(OUT + 'meta.json', 'w'), ensure_ascii=False, separators=(',', ':'))
     print('lotto', i // 50 + 1, 'foto', fatti, flush=True)
