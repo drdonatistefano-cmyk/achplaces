@@ -1,0 +1,32 @@
+name: Foto da Wikimedia Commons
+on:
+  push:
+    branches: [main]
+    paths: ['sorgenti/foto/coda.json']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: { group: foto, cancel-in-progress: false }
+jobs:
+  foto:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ramo foto esistente
+        run: |
+          git fetch origin foto || true
+          if git rev-parse --verify origin/foto >/dev/null 2>&1; then git worktree add -B foto out origin/foto; else git worktree add --orphan -b foto out; fi
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install requests pillow
+      - name: Scarica foto e licenze
+        env: { MINUTI: '300' }
+        run: python sorgenti/foto/actions_foto.py
+      - name: Salva nel ramo foto
+        run: |
+          cd out
+          git config user.name "achplaces-bot"; git config user.email "actions@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Foto: $(python -c "import json;print(len(json.load(open('meta.json'))))") luoghi" || exit 0
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" foto
