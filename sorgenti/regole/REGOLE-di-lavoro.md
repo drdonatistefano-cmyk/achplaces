@@ -86,3 +86,10 @@ Quando Stefano scrive «pubblica», si aggiornano **entrambi**, nello stesso tur
    - commit su `main` con messaggio «Pubblicazione AAAA-MM-GG: …» e push.
 - L'anteprima (dee4094c-…, UXN4…) **non** va nel repository.
 - Copia locale del repository: /home/claude/achplaces (se manca: add_repo con accesso push, poi clone).
+
+## 8. Statistiche GoatCounter (dall'8/11/2026, ore 18)
+- Il contatore si chiama **achplaces** e ha il cruscotto su https://achplaces.goatcounter.com. Non usa cookie e non cambia l'aspetto della pagina.
+- Conta solo le visite alle pagine, e solo quando la pagina è aperta su achplaces.com o www.achplaces.com. Sull'artefatto claude.ai non parte.
+- Il codice sta in fondo a `template.html` (costante `GC`, controllo del dominio `ON_WEB`) e quindi resta a ogni «pubblica».
+- Fino alla prossima «pubblica», l'index.html del repository differisce dall'artefatto solo per questo blocco. È un'eccezione voluta al controllo sha256 del §7.
+- Per la guida osterie il contatore è «achdinners», sul dominio achdinners.com (lo gestisce l'altra chat).
