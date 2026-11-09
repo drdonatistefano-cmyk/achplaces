@@ -9,7 +9,7 @@ from io import BytesIO
 UA = {'User-Agent': "AchsPlacesGuide/0.2 (https://achplaces.com; guida turistica non commerciale) python-requests"}
 OUT = 'out/'; os.makedirs(OUT + 'img', exist_ok=True)
 meta = json.load(open(OUT + 'meta.json')) if os.path.exists(OUT + 'meta.json') else {}
-coda = [x for x in json.load(open('sorgenti/foto/coda.json')) if x['p'] not in meta or x.get('r3')]   # r3: rifà anche i luoghi con foto scartata dal controllo
+coda = [x for x in json.load(open('sorgenti/foto/coda.json')) if x['p'] not in meta or x.get('r3') or x.get('r2b')]   # r3: rifà anche i luoghi con foto scartata dal controllo
 PROVATI = OUT + 'provati.json'
 provati = set(json.load(open(PROVATI))) if os.path.exists(PROVATI) else set()
 LIM = time.time() + 60 * float(os.environ.get('MINUTI', '300'))
@@ -58,10 +58,12 @@ def ha(ws, testo):
 def varianti(n):
     v = [re.sub(r'\s*\([^)]*\)', '', n).strip()] + re.findall(r'\(([^)]+)\)', n)
     v += [re.split(r'\s+e\s+|,|\s+[–-]\s+|:', v[0])[0].strip()]
+    v += [x.strip() for x in re.split(r'\s+[–-]\s+|:', v[0])[1:]]   # 9/11: anche la parte dopo il trattino, di solito la più specifica
+    v = [v[0]] + sorted(v[1:], key=lambda x: -len(distinte(x, '')))
     out = []
     for x in v:
         if len(x) > 3 and x not in out: out.append(x)
-    return out[:3]
+    return out[:4]
 def risolvi2(x):
     com = x.get('com', ''); cn = norm(com)
     for v in varianti(x['n']):
@@ -77,13 +79,13 @@ def risolvi2(x):
                 if cn not in pc: continue
             rm = get(API, params={'action': 'query', 'format': 'json', 'list': 'categorymembers', 'cmtype': 'file', 'cmlimit': 20, 'cmtitle': h['title']})
             for m in (rm.json().get('query', {}).get('categorymembers', []) if rm else []):
-                if re.search(r'\.(jpe?g|png|webp)$', m['title'], re.I) and not BRUTTI.search(m['title']):
+                if re.search(r'\.(jpe?g|png|webp)$', m['title'], re.I) and not BRUTTI.search(m['title']) and m['title'][5:].replace('_', ' ') != (x.get('no') or '').replace('_', ' '):
                     x['file'] = m['title'][5:]; x['via'] = 'categoria'; x['catf'] = h['title'][9:]; return
         r = get(API, params={'action': 'query', 'format': 'json', 'generator': 'search', 'gsrnamespace': 6, 'gsrlimit': 10,
                              'gsrsearch': v + ' ' + com + ' filetype:bitmap', 'prop': 'categories', 'cllimit': 50})
         pages = sorted((r.json().get('query', {}).get('pages', {}) if r else {}).values(), key=lambda p: p.get('index', 99))
         for pg in pages:
-            if BRUTTI.search(pg['title']): continue
+            if BRUTTI.search(pg['title']) or pg['title'][5:].replace('_', ' ') == (x.get('no') or '').replace('_', ' '): continue
             cl = [c['title'][9:] for c in pg.get('categories', [])]; cats = ' '.join(norm(c) for c in cl); tit = norm(pg['title'][5:])
             if cn not in cats and cn not in tit: continue
             if ha(dv, tit): x['file'] = pg['title'][5:]; x['via'] = 'ricerca'; return
@@ -139,13 +141,13 @@ for i, x in enumerate(da_risolvere):
     if i % 200 == 0: print('risolti', i, flush=True); json.dump(sorted(provati), open(PROVATI, 'w'))
     time.sleep(0.1)
 json.dump(sorted(provati), open(PROVATI, 'w'))
-seconda = [x for x in coda if x.get('r2') and not x.get('file') and x['p'] not in provati2]
+seconda = [x for x in coda if (x.get('r2') and x['p'] not in provati2 or x.get('r2b') and x['p'] + '|b' not in provati2) and not x.get('file')]
 print('seconda ricerca', len(seconda), flush=True)
 for i, x in enumerate(seconda):
     if time.time() > LIM - 1800: break
     try: risolvi2(x)
     except Exception: pass
-    provati2.add(x['p'])
+    provati2.add(x['p'] + ('|b' if x.get('r2b') else ''))
     if i % 200 == 0: print('seconda', i, sum(1 for y in seconda if y.get('file')), flush=True); json.dump(sorted(provati2), open(PROVATI2, 'w'))
     time.sleep(0.05)
 json.dump(sorted(provati2), open(PROVATI2, 'w'))

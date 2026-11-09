@@ -18,6 +18,8 @@ for cc in D['c']:
     for a in cc['places']:
         p = pid_of(cc, a)
         r = c.get(p, {})
+        if p not in FIN and str(SC.get(p, '')).startswith('stessa foto') and p + '|b' not in prov2:
+            coda.append({'p': p, 'com': cc['name'], 'n': a[1], 'r2b': 1, 'no': r.get('file', '')}); continue   # 9/11: doppione (stessa foto di un altro luogo): cerca la foto del luogo specifico
         if p not in FIN and p not in prov3 and (p in SC or (p in prov and p in prov2)):
             coda.append({'p': p, 'com': cc['name'], 'n': a[1], 'istat': cc.get('istat', ''), 'r3': 1, 'no': r.get('file', '')}); continue
         if p in meta and r.get('img'): continue
