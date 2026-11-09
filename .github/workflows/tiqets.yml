@@ -1,0 +1,24 @@
+name: Prodotti Tiqets
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['sorgenti/tiqets/avvia.txt', 'sorgenti/tiqets/sitemap_tiqets.py']
+permissions:
+  contents: write
+jobs:
+  tiqets:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install requests
+      - run: python sorgenti/tiqets/sitemap_tiqets.py
+      - name: Salva
+        run: |
+          git config user.name "achplaces-bot"; git config user.email "actions@users.noreply.github.com"
+          git add sorgenti/tiqets/prodotti.json
+          git commit -q -m "Tiqets: elenco prodotti" || exit 0
+          git pull -q --rebase origin main && git push -q origin HEAD:main
