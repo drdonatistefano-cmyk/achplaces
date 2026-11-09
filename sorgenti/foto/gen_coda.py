@@ -7,6 +7,7 @@ import sys as _s9; _s9.path.insert(0,'/home/claude/achs-places-guide'); from leg
 R = '/home/claude/foto-ramo/'
 meta = json.load(open(R + 'meta.json')); prov = set(json.load(open(R + 'provati.json')) if os.path.exists(R+'provati.json') else [])
 c = json.load(open(F + 'foto2.json'))
+prov2 = set(json.load(open(R + 'provati2.json'))) if os.path.exists(R + 'provati2.json') else set()
 pid_of = lambda cc, a: (cc['slug'] + '--' + (a[0] if a[0] else slug40(a[1]))) if cc['slug'] else a[0]
 coda = []
 for cc in D['c']:
@@ -14,7 +15,9 @@ for cc in D['c']:
         p = pid_of(cc, a)
         r = c.get(p, {})
         if p in meta and r.get('img'): continue
-        if p in prov and not (r.get('file') and r.get('file') != (meta.get(p) or [None]*6)[5]): continue   # già provato, salvo foto nuova da Wikidata
+        if p in prov and not (r.get('file') and r.get('file') != (meta.get(p) or [None]*6)[5]):
+            if p in prov2: continue
+            coda.append({'p': p, 'com': cc['name'], 'n': a[1], 'r2': 1}); continue   # 9/11: seconda ricerca (categorie e varianti del nome)
         if r.get('img') and r.get('l'): continue
         e = {'p': p, 'com': cc['name']}
         if r.get('file'): e['file'] = r['file']

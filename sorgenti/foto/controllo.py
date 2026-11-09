@@ -32,7 +32,10 @@ for k, v in con.items():
     if v.get('via') in ('ricerca', 'categoria'):
         d = distintivi(v['n'], v['com'])
         fw = set(fl)
-        if d:
+        cw = norm(v.get('catf', '')); cn = ' '.join(cw)
+        if d and v.get('catf') and all(w in cw or (len(w) > 5 and w[:6] in cn) for w in d):
+            pass   # 9/11: foto presa dalla categoria Commons del luogo (tutte le parole distintive nel nome della categoria)
+        elif d:
             if not any(w in fw or (len(w) > 5 and w[:6] in fn) for w in d):
                 scarti[k] = 'nome del file senza parole distintive del luogo'; continue
         else:

@@ -44,7 +44,54 @@ def risolvi(x):
             cats = ' '.join(norm(c['title']) for c in pg.get('categories', []))
             if com and com in cats or com in norm(pg['title']):
                 x['file'] = pg['title'][5:]; x['via'] = 'ricerca'; return
-da_risolvere = [x for x in coda if not x.get('file') and x['p'] not in provati]
+
+# 9/11/2026 seconda ricerca per i luoghi rimasti senza foto (voce "r2" nella coda): varianti del nome, categorie Commons del luogo,
+# file con tutte le parole distintive nel titolo o nelle categorie e il comune nelle categorie.
+STOP = set('di del della dei delle degli e la il lo le i gli d l a al alla in con sul sulla da dal dalla san santa santo s'.split())
+GENW = set('chiesa museo palazzo castello torre piazza parrocchiale santuario basilica cattedrale duomo civico civica borgo centro storico lago parco rocca teatro fontana abbazia convento monastero villa ponte porta mura eremo oratorio pieve collegiata pinacoteca galleria cappella grotta grotte resti area archeologica archeologico sito antiquarium complesso monumentale riserva naturale oasi giardino orto botanico cascata cascate monte valle via corso nazionale comunale diocesano diocesana arte storia'.split())
+BRUTTI = re.compile(r'stemma|coat[ _]of[ _]arms|wappen|blason|logo|mappa|map[ _.]|locator|flag|bandiera|cartina|pianta[ _]|planimetria|schema|diagram|signpost|cartello|targa|lapide|banner|painting|dipinto|olio su tela|oil on canvas|acquerello|watercolou?r|engraving|incisione|postcard|cartolina', re.I)
+def distinte(t, com):
+    ct = set(norm(com).split())
+    return [w for w in norm(t).split() if w not in STOP and w not in GENW and w not in ct and len(w) > 2]
+def ha(ws, testo):
+    tt = ' ' + testo + ' '; return all((' ' + w + ' ') in tt or (len(w) > 5 and w[:6] in testo) for w in ws)
+def varianti(n):
+    v = [re.sub(r'\s*\([^)]*\)', '', n).strip()] + re.findall(r'\(([^)]+)\)', n)
+    v += [re.split(r'\s+e\s+|,|\s+[–-]\s+|:', v[0])[0].strip()]
+    out = []
+    for x in v:
+        if len(x) > 3 and x not in out: out.append(x)
+    return out[:3]
+def risolvi2(x):
+    com = x.get('com', ''); cn = norm(com)
+    for v in varianti(x['n']):
+        dv = distinte(v, com)
+        if not dv: continue
+        r = get(API, params={'action': 'query', 'format': 'json', 'list': 'search', 'srnamespace': 14, 'srlimit': 8, 'srsearch': v + ' ' + com})
+        for h in (r.json().get('query', {}).get('search', []) if r else []):
+            t = norm(h['title'][9:])
+            if not ha(dv, t): continue
+            if cn not in t:
+                rc = get(API, params={'action': 'query', 'format': 'json', 'prop': 'categories', 'cllimit': 50, 'titles': h['title']})
+                pc = ' '.join(norm(c['title']) for pg in (rc.json().get('query', {}).get('pages', {}).values() if rc else []) for c in pg.get('categories', []))
+                if cn not in pc: continue
+            rm = get(API, params={'action': 'query', 'format': 'json', 'list': 'categorymembers', 'cmtype': 'file', 'cmlimit': 20, 'cmtitle': h['title']})
+            for m in (rm.json().get('query', {}).get('categorymembers', []) if rm else []):
+                if re.search(r'\.(jpe?g|png|webp)$', m['title'], re.I) and not BRUTTI.search(m['title']):
+                    x['file'] = m['title'][5:]; x['via'] = 'categoria'; x['catf'] = h['title'][9:]; return
+        r = get(API, params={'action': 'query', 'format': 'json', 'generator': 'search', 'gsrnamespace': 6, 'gsrlimit': 10,
+                             'gsrsearch': v + ' ' + com + ' filetype:bitmap', 'prop': 'categories', 'cllimit': 50})
+        pages = sorted((r.json().get('query', {}).get('pages', {}) if r else {}).values(), key=lambda p: p.get('index', 99))
+        for pg in pages:
+            if BRUTTI.search(pg['title']): continue
+            cl = [c['title'][9:] for c in pg.get('categories', [])]; cats = ' '.join(norm(c) for c in cl); tit = norm(pg['title'][5:])
+            if cn not in cats and cn not in tit: continue
+            if ha(dv, tit): x['file'] = pg['title'][5:]; x['via'] = 'ricerca'; return
+            cm = [c for c in cl if ha(dv, norm(c))]
+            if cm: x['file'] = pg['title'][5:]; x['via'] = 'categoria'; x['catf'] = cm[0]; return
+PROVATI2 = OUT + 'provati2.json'
+provati2 = set(json.load(open(PROVATI2))) if os.path.exists(PROVATI2) else set()
+da_risolvere = [x for x in coda if not x.get('file') and x['p'] not in provati and not x.get('r2')]
 print('da risolvere', len(da_risolvere), flush=True)
 for i, x in enumerate(da_risolvere):
     if time.time() > LIM: break
@@ -54,6 +101,16 @@ for i, x in enumerate(da_risolvere):
     if i % 200 == 0: print('risolti', i, flush=True); json.dump(sorted(provati), open(PROVATI, 'w'))
     time.sleep(0.1)
 json.dump(sorted(provati), open(PROVATI, 'w'))
+seconda = [x for x in coda if x.get('r2') and not x.get('file') and x['p'] not in provati2]
+print('seconda ricerca', len(seconda), flush=True)
+for i, x in enumerate(seconda):
+    if time.time() > LIM - 1800: break
+    try: risolvi2(x)
+    except Exception: pass
+    provati2.add(x['p'])
+    if i % 200 == 0: print('seconda', i, sum(1 for y in seconda if y.get('file')), flush=True); json.dump(sorted(provati2), open(PROVATI2, 'w'))
+    time.sleep(0.05)
+json.dump(sorted(provati2), open(PROVATI2, 'w'))
 coda = [x for x in coda if x.get('file')]
 print('in coda', len(coda), flush=True)
 fatti = 0
@@ -88,7 +145,8 @@ for i in range(0, len(coda), 50):
             col = '#%02x%02x%02x' % im.resize((1, 1)).getpixel((0, 0))
         except Exception:
             continue
-        meta[x['p']] = [fn, aut, lic, ii.get('descriptionurl', ''), col, x['file'], x.get('via', 'wikidata')]; fatti += 1
+        meta[x['p']] = [fn, aut, lic, ii.get('descriptionurl', ''), col, x['file'], x.get('via', 'wikidata')]
+        if x.get('catf'): meta[x['p']].append(x['catf']); fatti += 1
         time.sleep(0.2)
     json.dump(meta, open(OUT + 'meta.json', 'w'), ensure_ascii=False, separators=(',', ':'))
     print('lotto', i // 50 + 1, 'foto', fatti, flush=True)
