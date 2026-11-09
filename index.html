@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
 <meta charset="utf-8">
-<script>try{if(localStorage.getItem("datiNome")!=="dati.a3b965a182.json"){var l=document.createElement("link");l.rel="preload";l.as="fetch";l.crossOrigin="anonymous";l.href="dati.a3b965a182.json";document.head.appendChild(l);}}catch(e){}</script>
+<script>try{if(localStorage.getItem("datiNome")!=="dati.752d051e22.json"){var l=document.createElement("link");l.rel="preload";l.as="fetch";l.crossOrigin="anonymous";l.href="dati.752d051e22.json";document.head.appendChild(l);}}catch(e){}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#161311">
 <title>Ach's Places Guide</title>
@@ -1228,7 +1228,7 @@ function salvaIst(nome){setTimeout(()=>{if(IST_TOCCO||location.hash.slice(1))ret
 (async()=>{const cnt=document.getElementById("count");if(cnt&&!IST_ORIG)cnt.textContent="Caricamento dei luoghi…";
   let nome=null;try{nome=localStorage.getItem("datiNome");}catch(e){}
   const ultimo=nome,pIdb=nome?MEMO.leggi(nome):null;
-  const ATTESO="dati.a3b965a182.json",pPrimo=nome?null:fetch(ATTESO).then(r=>r.ok?r.text():null).catch(()=>null);  /* primo accesso: in parallelo al manifest */
+  const ATTESO="dati.752d051e22.json",pPrimo=nome?null:fetch(ATTESO).then(r=>r.ok?r.text():null).catch(()=>null);  /* primo accesso: in parallelo al manifest */
   try{MAN=await (await fetch("manifest.json",{cache:"no-store"})).json();nome=MAN.dati;try{localStorage.setItem("man",JSON.stringify(MAN));}catch(e){}}catch(e){try{MAN=JSON.parse(localStorage.getItem("man")||"null");}catch(e2){}}
   if(!nome){if(cnt)cnt.textContent="Dati non disponibili: controlla la connessione.";return;}
   let t=nome===ultimo&&pIdb?await pIdb:(pPrimo&&nome===ATTESO?await pPrimo:null)||await MEMO.leggi(nome);
@@ -1635,25 +1635,30 @@ function renderPicker(){
   const rsel=C.all?null:new Set(vr);
   $("prov-list").innerHTML=provs.filter(([s])=>!rsel||rsel.has(provReg(s))).map(([s,n])=>{const k=COMUNI.filter(c=>c.prov===s);const r=k[0].regione;const head=manyReg&&(!rsel||rsel.size>1)&&r!==lastReg?`<div class="mgrp">${esc(REGN(r))}</div>`:"";lastReg=r;const on=!C.all&&!ra&&vp.includes(s);return head+`<button type="button" class="mopt${on?" on":""}" data-p="${s}" aria-pressed="${on}"><span class="t">${esc(n)} (${s})</span><small>${k.length} comuni · ${k.reduce((a,c)=>a+c.places.length,0)} luoghi</small></button>`;}).join("");
   $("com-val").innerHTML=!vc.length?"Tutti":vc.length===1?esc(COMUNI.find(c=>c.slug===vc[0]).name):`<span class="mc">${vc.length}</span> comuni`;
-  renderComList();
+  /* 9/11: l'elenco dei comuni si costruisce solo quando il menu è aperto (prima erano ~6.800 elementi sempre presenti) */
+  if(!$("com-pop").hidden)renderComList();else{$("com-list").innerHTML="";$("com-all").hidden=!vc.length;}
 }
 function renderComList(){
   const vp=viewProvs(),vc=viewComs(),q=($("com-q").value||"").toLowerCase().trim();
   let h="";
   const sel=COMUNI.filter(c=>vc.includes(c.slug)&&C.provs&&(!q||c.name.toLowerCase().includes(q)));
   if(sel.length){h+=`<div class="mgrp">✓ Scelti (${sel.length})</div>`+sel.map(c=>`<button type="button" class="mopt on" data-c="${c.slug}" aria-pressed="true"><span class="t">${esc(c.name)}</span><small>${c.places.length}</small></button>`).join("");}
+  const MAXC=q?150:350;let nC=0,tot=0;
   for(const p of vp){
     const cs=COMUNI.filter(c=>c.prov===p&&!(C.provs&&vc.includes(c.slug))&&(!q||c.name.toLowerCase().includes(q))).sort((a,b)=>a.name.localeCompare(b.name,"it"));
-    if(!cs.length)continue;
+    tot+=cs.length;
+    if(!cs.length||nC>=MAXC)continue;
+    cs.length=Math.min(cs.length,MAXC-nC);nC+=cs.length;
     if(vp.length>1||q||sel.length)h+=`<div class="mgrp">${esc(provLong(cs[0]))}</div>`;
     h+=cs.map(c=>`<button type="button" class="mopt${vc.includes(c.slug)?" on":""}" data-c="${c.slug}" aria-pressed="${vc.includes(c.slug)}"><span class="t">${esc(c.name)}</span><small>${c.places.length}</small></button>`).join("");
   }
+  if(tot>nC)h+=`<p class="fhint" style="padding:8px;grid-column:1/-1">Altri ${tot-nC} comuni: scrivi il nome qui sopra per trovarli.</p>`;
   $("com-list").innerHTML=h||`<p class="fhint" style="padding:8px">Nessun comune trovato.</p>`;
   $("com-all").hidden=!vc.length;
 }
 function popToggle(which,open){
   for(const w of ["reg","prov","com"]){const on=w===which&&(open===undefined?$(w+"-pop").hidden:open);$(w+"-pop").hidden=!on;$(w+"-btn").setAttribute("aria-expanded",String(on));}
-  if(which==="com"&&!$("com-pop").hidden&&!isPhone())$("com-q").focus();
+  if(which==="com"&&!$("com-pop").hidden){renderComList();if(!isPhone())$("com-q").focus();}
 }
 $("reg-btn").onclick=()=>popToggle("reg");
 $("reg-all").onclick=()=>{popToggle(null);setComune("tutti");};
@@ -1800,8 +1805,10 @@ function eatUpdate(){
   $("eat-off").hidden=!S.near;
 }
 function setOrigin(lat,lng,label){EAT.lat=lat;EAT.lng=lng;EAT.label=label;eatUpdate();}
-$("eat-coms").innerHTML=COMUNI.filter(c=>c.lat!=null).map(c=>`<option value="${esc(c.name)} (${c.prov})"></option>`).join("");
-$("eatbtn").onclick=()=>{eatUpdate();try{$("eat").showModal();}catch(e){$("eat").setAttribute("open","");}};
+/* 9/11: i ~2.200 comuni di partenza si caricano solo quando si apre «Vicino a te» */
+let eatComsOk=false;function eatComs(){if(eatComsOk)return;eatComsOk=true;$("eat-coms").innerHTML=COMUNI.filter(c=>c.lat!=null).map(c=>`<option value="${esc(c.name)} (${c.prov})"></option>`).join("");}
+$("eat-txt").addEventListener("focus",eatComs);
+$("eatbtn").onclick=()=>{eatComs();eatUpdate();try{$("eat").showModal();}catch(e){$("eat").setAttribute("open","");}};
 $("eat").addEventListener("click",e=>{if(e.target===$("eat"))$("eat").close();});
 $("eat-km").oninput=eatUpdate;$("eat-min").oninput=eatUpdate;
 $("eat-txt").addEventListener("input",()=>{const v=$("eat-txt").value.trim().toLowerCase();const st=$("eat-st");

@@ -6609,7 +6609,97 @@
   "coperti": 1,
   "mancanti": []
  },
+ "Camerano (AN)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Castelbellino (AN)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Castelleone di Suasa (AN)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Castelplanio (AN)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Cerreto d'Esi (AN)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Cupramontana (AN)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Montecarotto (AN)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Montemarciano (AN)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Numana (AN)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "San Marcello (AN)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Serra de' Conti (AN)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Sirolo (AN)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
  "Arquata del Tronto (AP)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Carassai (AP)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Comunanza (AP)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Cossignano (AP)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Force (AP)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Montegallo (AP)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Rotella (AP)": {
   "tot": 1,
   "coperti": 1,
   "mancanti": []
@@ -7249,6 +7339,66 @@
   "coperti": 1,
   "mancanti": []
  },
+ "Baranello (CB)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Bojano (CB)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Busso (CB)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Casalciprano (CB)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Civitacampomarano (CB)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Duronia (CB)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Gambatesa (CB)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Guardialfiera (CB)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Morrone del Sannio (CB)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Riccia (CB)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Roccavivara (CB)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "San Giovanni in Galdo (CB)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
  "Aversa (CE)": {
   "tot": 1,
   "coperti": 1,
@@ -7729,6 +7879,51 @@
   "coperti": 2,
   "mancanti": []
  },
+ "Falerone (FM)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Montappone (FM)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Monte Rinaldo (FM)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Monte Vidon Corrado (FM)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Montefalcone Appennino (FM)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Montefortino (FM)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Montelparo (FM)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Montottone (FM)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Servigliano (FM)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
  "Aquino (FR)": {
   "tot": 1,
   "coperti": 1,
@@ -7949,6 +8144,46 @@
   "coperti": 1,
   "mancanti": []
  },
+ "Castel San Vincenzo (IS)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Frosolone (IS)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Macchia d'Isernia (IS)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Monteroduni (IS)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Pescolanciano (IS)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Pescopennataro (IS)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Pietrabbondante (IS)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Poggio Sannita (IS)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
  "Cirò Marina (KR)": {
   "tot": 1,
   "coperti": 1,
@@ -8105,6 +8340,71 @@
   "mancanti": []
  },
  "Bolognola (MC)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Castelraimondo (MC)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Castelsantangelo sul Nera (MC)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Cessapalombo (MC)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Colmurano (MC)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Fiastra (MC)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Gagliole (MC)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Monte San Giusto (MC)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Muccia (MC)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Petriolo (MC)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Pieve Torina (MC)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Pollenza (MC)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Sefro (MC)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Ussita (MC)": {
   "tot": 1,
   "coperti": 1,
   "mancanti": []
@@ -8725,6 +9025,46 @@
   "mancanti": []
  },
  "Cagli (PU)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Fermignano (PU)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Fratte Rosa (PU)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Isola del Piano (PU)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Montefelcino (PU)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Pergola (PU)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Piobbico (PU)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Sant'Ippolito (PU)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Serra Sant'Abbondio (PU)": {
   "tot": 1,
   "coperti": 1,
   "mancanti": []
