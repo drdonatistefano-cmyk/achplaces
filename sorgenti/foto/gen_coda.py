@@ -37,5 +37,16 @@ for cc in D['c']:
             if r.get('cat'): e['cat'] = r['cat']
             e['q'] = a[1] + ' ' + cc['name']
         coda.append(e)
+# 9/11: quinta ricerca (locale, quinta.py) e foto scelte a mano (manuali.json): file già scelto, Actions scarica licenza e foto
+_gia = {x['p'] for x in coda}
+_Q5 = json.load(open(F + 'quinta-trovate.json')) if os.path.exists(F + 'quinta-trovate.json') else []
+_MAN = json.load(open(F + 'manuali.json')) if os.path.exists(F + 'manuali.json') else {}
+coda = [x for x in coda if x['p'] not in _MAN and x['p'] not in {y['p'] for y in _Q5}]
+for x in _Q5:
+    if x['p'] not in FIN: coda.append(x)
+for k, v in _MAN.items():
+    if ((meta.get(k) or [])+[None]*7)[5] != v['file']:
+        cc_ = next((cc for cc in D['c'] if k.startswith(cc['slug'] + '--')), None)
+        coda.append({'p': k, 'com': cc_['name'] if cc_ else '', 'file': v['file'], 'via': 'manuale', 'lab': v.get('nota', ''), 'r5': 1})
 json.dump(coda, open('/home/claude/achplaces/sorgenti/foto/coda.json', 'w'), ensure_ascii=False, indent=0)
 print('coda', len(coda))

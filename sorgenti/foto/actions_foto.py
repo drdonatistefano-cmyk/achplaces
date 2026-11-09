@@ -9,7 +9,7 @@ from io import BytesIO
 UA = {'User-Agent': "AchsPlacesGuide/0.2 (https://achplaces.com; guida turistica non commerciale) python-requests"}
 OUT = 'out/'; os.makedirs(OUT + 'img', exist_ok=True)
 meta = json.load(open(OUT + 'meta.json')) if os.path.exists(OUT + 'meta.json') else {}
-coda = [x for x in json.load(open('sorgenti/foto/coda.json')) if x['p'] not in meta or x.get('r3') or x.get('r2b') or x.get('r4')]   # r3: rifà anche i luoghi con foto scartata dal controllo
+coda = [x for x in json.load(open('sorgenti/foto/coda.json')) if x['p'] not in meta or x.get('r3') or x.get('r2b') or x.get('r4') or x.get('r5')]   # r3: rifà anche i luoghi con foto scartata dal controllo
 PROVATI = OUT + 'provati.json'
 provati = set(json.load(open(PROVATI))) if os.path.exists(PROVATI) else set()
 LIM = time.time() + 60 * float(os.environ.get('MINUTI', '300'))

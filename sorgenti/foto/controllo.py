@@ -24,6 +24,9 @@ GENC = set('ponte ponti prato valle montagna monte bianco laghi lago aosta trini
 scarti, dubbi = {}, []
 # esclusioni manuali dopo verifica a vista
 ESCLUSI = {'spoleto-pg--basilica-di-san-salvatore': 'foto dubbia (verifica a vista)'}
+# 9/11: foto scelte a mano dopo verifica (esenti dal controllo «gemelli»): luoghi senza foto specifica su Commons,
+# a cui si dà una foto diversa del complesso a cui appartengono (es. le Cattedrali sotterranee UNESCO di Canelli)
+MANUALI = json.load(open(F + 'manuali.json')) if os.path.exists(F + 'manuali.json') else {}
 for k, r in ESCLUSI.items():
     if k in cache and 'img' in cache[k]: scarti[k] = r
 con = {k: v for k, v in cache.items() if 'img' in v}
@@ -80,7 +83,7 @@ for (com, base), ks in pergen.items():
     tutti = [k2 for k2 in cache if cache[k2].get('com') == com and re.split(r'\s+[–-]\s+|:', re.sub(r'\s*\([^)]*\)', '', cache[k2].get('n', '')))[0].strip().lower() == base]
     if len(tutti) < 2: continue
     for k in ks:
-        if k in scarti: continue
+        if k in scarti or (k in MANUALI and con[k].get('file','').replace('_',' ') == MANUALI[k]['file']): continue
         v = con[k]; mie = set(distintivi(v['n'], v['com']))
         altre = set().union(*[set(distintivi(cache[x]['n'], cache[x]['com'])) for x in tutti if x != k])
         proprie = [w for w in mie - altre]
