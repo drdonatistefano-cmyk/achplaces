@@ -70,6 +70,25 @@ for k, v in con.items():
                 scarti[k] = 'nessuna parola distintiva in comune con «%s»' % v.get('lab', ''); continue
             dubbi.append((k, 'somiglianza bassa con «%s»' % v.get('lab', '')))
 
+# 9/11: luoghi «gemelli» (stesso nome generico, es. «Cattedrali sotterranee – Cantine Gancia/Contratto/Coppo»): la foto
+# deve citare nel nome del file o nella categoria la parte che distingue il luogo dai suoi gemelli, altrimenti è di un altro.
+pergen = {}
+for k, v in con.items():
+    base = re.split(r'\s+[–-]\s+|:', re.sub(r'\s*\([^)]*\)', '', v['n']))[0].strip().lower()
+    pergen.setdefault((v['com'], base), []).append(k)
+for (com, base), ks in pergen.items():
+    tutti = [k2 for k2 in cache if cache[k2].get('com') == com and re.split(r'\s+[–-]\s+|:', re.sub(r'\s*\([^)]*\)', '', cache[k2].get('n', '')))[0].strip().lower() == base]
+    if len(tutti) < 2: continue
+    for k in ks:
+        if k in scarti: continue
+        v = con[k]; mie = set(distintivi(v['n'], v['com']))
+        altre = set().union(*[set(distintivi(cache[x]['n'], cache[x]['com'])) for x in tutti if x != k])
+        proprie = [w for w in mie - altre]
+        if not proprie: continue
+        testo = ' '.join(norm(os.path.splitext(v.get('file', ''))[0])) + ' ' + ' '.join(norm(v.get('catf', '')))
+        if not any(w in testo.split() or (len(w) > 5 and w[:6] in testo) for w in proprie):
+            scarti[k] = 'foto generica, non del luogo specifico (manca «%s»)' % ', '.join(proprie)
+
 # stessa foto usata per luoghi diversi dello stesso comune: tiene il migliore
 per = {}
 for k, v in con.items():
