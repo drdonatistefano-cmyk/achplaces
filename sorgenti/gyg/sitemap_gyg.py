@@ -17,7 +17,12 @@ def get(u):
         except Exception as e: print('err', u, e)
         time.sleep(3 * (k + 1))
     return ''
-RX = re.compile(r'https://www\.getyourguide\.it/([^/]+)-l(\d+)/([^/]+)-t(\d+)/?$')
+RX = re.compile(r'https://www\.getyourguide\.(?:com|it)/([^/]+)-l(\d+)/([^/]+)-t(\d+)/?$')
+# solo le città italiane: nomi dei comuni ISTAT (come slug) più i nomi inglesi usati da GetYourGuide
+import csv, unicodedata
+def sl(x): return re.sub(r'[^a-z0-9]+', '-', ''.join(c for c in unicodedata.normalize('NFD', x.lower()) if not unicodedata.combining(c))).strip('-')
+CITTA = {sl(r['comune']) for r in csv.DictReader(open('sorgenti/data/geo/comuni_istat.csv', encoding='utf-8'))}
+CITTA |= set('rome florence venice naples milan turin genoa padua syracuse mantua pompeii vatican-city herculaneum amalfi-coast cinque-terre lake-como lake-garda capri sicily sardinia tuscany dolomites puglia apulia sorrento positano'.split())
 coda = []
 for base in ('https://www.getyourguide.it', 'https://www.getyourguide.com'):
     rob = get(base + '/robots.txt'); print(base, rob[:1200])
@@ -34,11 +39,10 @@ while coda:
     if '<sitemapindex' in t:
         coda += [l for l in locs if l not in viste]
         continue
-    if len(viste) <= 6 or len(viste) % 40 == 0: print('ESEMPIO', u, len(locs), locs[:3], alt[:3], t[:300].replace('\n',' '), flush=True)
     for l in locs + alt:
         m = RX.match(l)
-        if m: prod[m.group(4)] = [l, m.group(1), m.group(2), m.group(3), m.group(4)]
-    if len(viste) % 50 == 0: print('sitemap', len(viste), 'attività it', len(prod), flush=True)
+        if m and m.group(1) in CITTA: prod[m.group(4)] = [l, m.group(1), m.group(2), m.group(3), m.group(4)]
+    if len(viste) % 50 == 0: print('sitemap', len(viste), 'attività Italia', len(prod), flush=True)
     time.sleep(0.2)
-print('sitemap lette', len(viste), 'attività it', len(prod))
+print('sitemap lette', len(viste), 'attività Italia', len(prod))
 json.dump(sorted(prod.values(), key=lambda x: (x[1], x[4])), open('sorgenti/gyg/prodotti.json', 'w'), ensure_ascii=False, separators=(',', ':'))
