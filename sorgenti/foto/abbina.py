@@ -23,12 +23,23 @@ for c in D['c']:
     for a in c['places']:
         pid = pid_of(c, a)
         old = cache.get(pid)
-        if old and ('img' in old or old.get('arch')): continue
+        if old and ('img' in old or old.get('file') or old.get('arch') == 3): continue
         best, bs = None, 0
+        ct = set(norm(c['name'])); nt = [w for w in norm(a[1]) if w not in ct]
+        simile = lambda w, ws: any(w == x or (len(w) > 5 and len(x) > 5 and w[:6] == x[:6]) for x in ws)
         for b in items:
-            s = punteggio(a[1], b['lab'], c['name'])
-            if s > bs: bs, best = s, b
-        rec = dict(old or {}); rec.update({'n': a[1], 'com': c['name'], 's': round(bs, 2), 'arch': 1})
+            import re as _re
+            var = [a[1]] + [v.strip() for v in _re.split(r'[()]', a[1]) if len(v.strip()) > 3 and v.strip() != a[1]]   # «Colosseo (Anfiteatro Flavio)» → anche «Colosseo» e «Anfiteatro Flavio»
+            s = max(punteggio(v, b['lab'], c['name']) for v in var)
+            if s <= 0: continue
+            ld = [w for w in norm(b['lab']) if w not in ct and w not in GEN and len(w) > 2]
+            if not all(simile(w, nt) for w in ld): s *= 0.85   # etichetta con parole estranee al nome del luogo
+            if b['file']: s += 0.02                             # a parità, preferisci chi ha la foto
+            tx = ((b['cat'] or '') + ' ' + (b['file'] or '')).lower()
+            if _re.search(r'\b(station|stazione|metro|metropolitana|fermata|railway|ferrovia|tram|bus|airport|aeroporto)\b', tx) and not _re.search(r'stazion|ferrovi|metro', a[1].lower()):
+                s *= 0.8                                        # omonimi: stazioni e fermate (es. «Colosseo» metro C)
+            if s > bs or (s == bs and best and int(b['wd'][1:]) < int(best['wd'][1:])): bs, best = s, b   # a parità, l'elemento più noto (Q più basso)
+        rec = dict(old or {}); rec.update({'n': a[1], 'com': c['name'], 's': round(bs, 2), 'arch': 3})
         if best and bs >= 0.76:
             rec['wd'] = best['wd']; rec['lab'] = best['lab']
             if best['file']: rec['file'] = best['file']; rec['via'] = 'wikidata'; conf += 1
