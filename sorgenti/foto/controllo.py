@@ -12,12 +12,15 @@ for f in sorted(glob.glob(F + 'foto-[0-9]*.json')) + [F + 'foto-umbria-test.json
             if k not in cache or ('img' in v and 'img' not in cache[k]):
                 cache[k] = v
 
-BRUTTI = re.compile(r'stemma|coat[ _]of[ _]arms|wappen|blason|logo|mappa|map[ _.]|locator|locat|flag|bandiera|cartina|pianta[ _]|planimetria|schema|diagram|signpost|cartello|targa|lapide|banner|painting|dipinto|olio su tela|oil on canvas|acquerello|watercolou?r|engraving|incisione|stampa antica|claude monet|postcard|cartolina', re.I)
+BRUTTI = re.compile(r'stemma|coat[ _]of[ _]arms|wappen|blason|logo|mappa|map[ _.]|locator|locat|flag|bandiera|cartina|pianta[ _]|planimetria|schema|diagram|signpost|cartello|targa|lapide|banner|painting|dipinto|olio su tela|oil on canvas|acquerello|watercolou?r|engraving|incisione|stampa antica|claude monet|postcard|cartolina|\\b1[0-9]{3} circa\\b|\\bcirca 1[0-9]{3}\\b|pelike|\\bvaso\\b|\\bvase\\b', re.I)
 
 def distintivi(nome, com):
     ct = set(norm(com))
     return [w for w in norm(nome) if w not in STOP and w not in GEN and w not in ct and len(w) > 2]
 
+import csv as _csv
+ALTRI = {' '.join(norm(r['comune'])) for r in _csv.DictReader(open('/home/claude/achs-places-guide/data/geo/comuni_istat.csv', encoding='utf-8'))}
+GENC = set('ponte ponti prato valle montagna monte bianco laghi lago aosta trinita santa sant onofrio barbara corbara chiesa piana marina porto torre castello rocca villa palazzo fontana'.split())
 scarti, dubbi = {}, []
 # esclusioni manuali dopo verifica a vista
 ESCLUSI = {'spoleto-pg--basilica-di-san-salvatore': 'foto dubbia (verifica a vista)'}
@@ -30,11 +33,21 @@ for k, v in con.items():
     if BRUTTI.search(v.get('file', '')):
         scarti[k] = 'immagine non fotografica (stemma/mappa/cartello)'; continue
     if v.get('via') in ('ricerca', 'categoria'):
+        # 9/11: il nome del file cita un altro comune (e non il proprio): foto di un altro luogo
+        cm = ' '.join(norm(v['com']))
+        nn = ' ' + ' '.join(norm(v['n'])) + ' '
+        if cm not in fn and any((' ' + x + ' ') in (' ' + fn + ' ') for x in ALTRI if x != cm and x not in cm and len(x) > 4 and (' ' + x + ' ') not in nn and x not in GENC):
+            scarti[k] = 'il nome del file cita un altro comune'; continue
         d = distintivi(v['n'], v['com'])
         fw = set(fl)
         cw = norm(v.get('catf', '')); cn = ' '.join(cw)
+        comw = norm(v['com']); paren = re.findall(r'\(([^)]+)\)', v.get('catf', ''))
+        if v.get('catf') and paren and not any(set(comw) <= set(norm(x)) for x in paren):
+            scarti[k] = 'categoria di un altro luogo («%s»)' % v['catf']; continue
         if d and v.get('catf') and all(w in cw or (len(w) > 5 and w[:6] in cn) for w in d):
-            pass   # 9/11: foto presa dalla categoria Commons del luogo (tutte le parole distintive nel nome della categoria)
+            # 9/11: foto presa dalla categoria Commons del luogo: il nome del file deve citare il luogo o il comune
+            if not (any(w in fw or (len(w) > 5 and w[:6] in fn) for w in d) or ' '.join(comw) in fn):
+                scarti[k] = 'foto della categoria senza riferimento al luogo nel nome del file'; continue
         elif d:
             if not any(w in fw or (len(w) > 5 and w[:6] in fn) for w in d):
                 scarti[k] = 'nome del file senza parole distintive del luogo'; continue
