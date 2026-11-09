@@ -375,7 +375,7 @@ const MEMO={db:null,apri(){if(this.db)return this.db;this.db=new Promise(ok=>{tr
   r.onupgradeneeded=()=>r.result.createObjectStore("file");r.onsuccess=()=>ok(r.result);r.onerror=()=>ok(null);setTimeout(()=>ok(null),1500);}catch(e){ok(null);}});return this.db;},
   async leggi(k){if(!k)return null;const db=await this.apri();if(!db)return null;return new Promise(ok=>{try{const q=db.transaction("file").objectStore("file").get(k);q.onsuccess=()=>ok(q.result||null);q.onerror=()=>ok(null);}catch(e){ok(null);}});},
   async scrivi(k,v,man){const db=await this.apri();if(!db)return;try{const s=db.transaction("file","readwrite").objectStore("file");s.put(v,k);
-    if(!man)return;const tieni=[man.dati,man.meta,man.luoghi,man.testi,...Object.values(man.det||{})];const c=s.getAllKeys();c.onsuccess=()=>c.result.forEach(x=>{if(!tieni.includes(x))s.delete(x);});}catch(e){}}};
+    if(!man)return;const tieni=[man.dati,man.meta,man.luoghi,man.testi,man.cerca,...Object.values(man.det||{})];const c=s.getAllKeys();c.onsuccess=()=>c.result.forEach(x=>{if(!tieni.includes(x))s.delete(x);});}catch(e){}}};
 const LS={get(k){try{return localStorage.getItem(k);}catch(e){return null;}},set(k,v){try{localStorage.setItem(k,v);}catch(e){}}};
 let MAN=null;
 async function testo(nome){let t=await MEMO.leggi(nome);if(t)return t;const r=await fetch(nome);if(!r.ok)throw Error(nome+": "+r.status);t=await r.text();MEMO.scrivi(nome,t,MAN);return t;}
@@ -390,7 +390,7 @@ window.__salvaIst=function(){if(window.__ist)return;window.__ist=1;const n=MAN&&
     for(let i=localStorage.length-1;i>=0;i--){const k=localStorage.key(i);if(k&&k.startsWith('ist:')&&k!=='ist:'+n)localStorage.removeItem(k);}};
   setTimeout(salva,800);};
 /* dati: IndexedDB (ultimo nome) in parallelo al manifest */
-const ATTESO='luoghi.66c93a36e2.js';const pIdb=MEMO.leggi(ultimo);
+const ATTESO='luoghi.ad9410b47d.js';const pIdb=MEMO.leggi(ultimo);
 const pPrimo=ultimo?null:fetch(ATTESO).then(r=>r.ok?r.text():null).catch(()=>null);
 const pMan=fetch("manifest.json",{cache:"no-store"}).then(r=>r.json()).catch(()=>{try{return JSON.parse(LS.get('man')||'null');}catch(e){return null;}});
 (async()=>{MAN=await pMan;const nome=(MAN&&MAN.luoghi)||ultimo;if(!nome){vF.textContent='Dati non disponibili: controlla la connessione.';return;}

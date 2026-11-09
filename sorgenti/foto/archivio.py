@@ -4,6 +4,7 @@ src = open('/home/claude/foto/foto.py').read()
 exec(src.split("m=json.load(open(G+'manifest.json'))")[0])
 A = F + 'archivio/'
 m = json.load(open(G + 'manifest.json')); D = json.load(open(G + m['dati']))
+import sys as _s9; _s9.path.insert(0,'/home/claude/achs-places-guide'); from leggi_dati import righe as _righe9; D = _righe9(D)   # 9/11: dati per colonne
 pref = sorted({c['istat'][:3] for c in D['c'] if c.get('istat')} | {'037'})
 if len(sys.argv) > 1: pref = sys.argv[1:]
 for p in pref:

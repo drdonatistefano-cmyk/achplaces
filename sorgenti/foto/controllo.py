@@ -12,7 +12,7 @@ for f in sorted(glob.glob(F + 'foto-[0-9]*.json')) + [F + 'foto-umbria-test.json
             if k not in cache or ('img' in v and 'img' not in cache[k]):
                 cache[k] = v
 
-BRUTTI = re.compile(r'stemma|coat[ _]of[ _]arms|wappen|blason|logo|mappa|map[ _.]|locator|locat|flag|bandiera|cartina|pianta[ _]|planimetria|schema|diagram|signpost|cartello|targa|lapide', re.I)
+BRUTTI = re.compile(r'stemma|coat[ _]of[ _]arms|wappen|blason|logo|mappa|map[ _.]|locator|locat|flag|bandiera|cartina|pianta[ _]|planimetria|schema|diagram|signpost|cartello|targa|lapide|banner|painting|dipinto|olio su tela|oil on canvas|acquerello|watercolou?r|engraving|incisione|stampa antica|claude monet|postcard|cartolina', re.I)
 
 def distintivi(nome, com):
     ct = set(norm(com))

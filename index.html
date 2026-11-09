@@ -2,6 +2,7 @@
 <html lang="it">
 <head>
 <meta charset="utf-8">
+<script>try{if(localStorage.getItem("datiNome")!=="dati.7430935eef.json"){var l=document.createElement("link");l.rel="preload";l.as="fetch";l.crossOrigin="anonymous";l.href="dati.7430935eef.json";document.head.appendChild(l);}}catch(e){}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#161311">
 <title>Ach's Places Guide</title>
@@ -651,6 +652,10 @@ body{font-size:16px;line-height:1.5}
 .cph{width:84px;height:84px;border-radius:14px;object-fit:cover;display:block}
 .cphw .cdot{position:absolute;top:-7px;right:-7px;margin:0;border:3px solid var(--paper);box-shadow:none}
 .fcred{display:block;margin:6px 0 10px;font-size:12px;color:var(--mute);text-decoration:none}
+/* 9/11/2026 dettagli in arrivo: la scheda si apre subito, il resto compare quando arriva il file della provincia */
+#sheet.sload .facts,#sheet.sload .acts,#sheet.sload .src,#sheet.sload .why{display:none}
+#sheet.sload::after{content:"Caricamento dei dettagli…";display:block;padding:14px 0 6px;color:var(--mute);font-size:14px}
+.card .desc:empty{min-height:2.8em}
 </style>
 <script>/* statistiche (GoatCounter: senza cookie, solo visite alle pagine, solo sul dominio pubblico) */
 (function(){const GC="achplaces";/* nome del contatore goatcounter.com */
@@ -692,6 +697,11 @@ if(GC&&ON_WEB){try{const s=document.createElement("script");s.async=true;s.datas
  .card .cfoot{padding:2px 12px 10px 12px}
  .card .cbtn{height:32px;font-size:13px}
 }
+
+/* 9/11: numeri di classifica a 4 cifre più piccoli, per non sovrapporsi a testo e foto */
+.cnum b{font-size:1.42rem!important}
+.cnum.c4 b{font-family:var(--sans)!important;font-size:1.02rem!important;font-weight:850!important;letter-spacing:-.03em}
+.cnum.c4 small{font-size:9px}
 </style>
     <div class="stats" id="stats"></div>
     <div class="pick" aria-label="Scegli il luogo">
@@ -1187,7 +1197,7 @@ const PLACES = [
 const MEMO={db:null,apri(){if(this.db)return this.db;this.db=new Promise(ok=>{try{const r=indexedDB.open("luoghi",1);
   r.onupgradeneeded=()=>r.result.createObjectStore("file");r.onsuccess=()=>ok(r.result);r.onerror=()=>ok(null);setTimeout(()=>ok(null),1500);}catch(e){ok(null);}});return this.db;},
   async leggi(k){const db=await this.apri();if(!db)return null;return new Promise(ok=>{try{const q=db.transaction("file").objectStore("file").get(k);q.onsuccess=()=>ok(q.result||null);q.onerror=()=>ok(null);}catch(e){ok(null);}});},
-  async scrivi(k,v){const db=await this.apri();if(!db)return;try{const s=db.transaction("file","readwrite").objectStore("file");s.put(v,k);const tieni=MAN?[MAN.dati,MAN.meta,MAN.luoghi,MAN.testi,...Object.values(MAN.det||{})]:[k];const c=s.getAllKeys();c.onsuccess=()=>c.result.forEach(x=>{if(!tieni.includes(x))s.delete(x);});}catch(e){}}};
+  async scrivi(k,v){const db=await this.apri();if(!db)return;try{const s=db.transaction("file","readwrite").objectStore("file");s.put(v,k);const tieni=MAN?[MAN.dati,MAN.meta,MAN.luoghi,MAN.testi,MAN.cerca,...Object.values(MAN.det||{})]:[k];const c=s.getAllKeys();c.onsuccess=()=>c.result.forEach(x=>{if(!tieni.includes(x))s.delete(x);});}catch(e){}}};
 let MAN=null;
 /* istantanea della prima schermata (8/11/2026): alla riapertura compare subito l'ultima prima schermata salvata;
    un attimo prima che la pagina vera disegni, si rimette il contenuto originale, così il risultato è identico */
@@ -1201,20 +1211,25 @@ function salvaIst(nome){setTimeout(()=>{if(IST_TOCCO||location.hash.slice(1))ret
 (async()=>{const cnt=document.getElementById("count");if(cnt&&!IST_ORIG)cnt.textContent="Caricamento dei luoghi…";
   let nome=null;try{nome=localStorage.getItem("datiNome");}catch(e){}
   const ultimo=nome,pIdb=nome?MEMO.leggi(nome):null;
-  const ATTESO="dati.0361e0291d.json",pPrimo=nome?null:fetch(ATTESO).then(r=>r.ok?r.text():null).catch(()=>null);  /* primo accesso: in parallelo al manifest */
+  const ATTESO="dati.7430935eef.json",pPrimo=nome?null:fetch(ATTESO).then(r=>r.ok?r.text():null).catch(()=>null);  /* primo accesso: in parallelo al manifest */
   try{MAN=await (await fetch("manifest.json",{cache:"no-store"})).json();nome=MAN.dati;try{localStorage.setItem("man",JSON.stringify(MAN));}catch(e){}}catch(e){try{MAN=JSON.parse(localStorage.getItem("man")||"null");}catch(e2){}}
   if(!nome){if(cnt)cnt.textContent="Dati non disponibili: controlla la connessione.";return;}
   let t=nome===ultimo&&pIdb?await pIdb:(pPrimo&&nome===ATTESO?await pPrimo:null)||await MEMO.leggi(nome);
   if(t&&pPrimo&&nome===ATTESO)MEMO.scrivi(nome,t);
   if(!t){const r=await fetch(nome);if(!r.ok){if(cnt)cnt.textContent="Dati non disponibili ("+r.status+")";return;}t=await r.text();MEMO.scrivi(nome,t);}
   try{localStorage.setItem("datiNome",nome);}catch(e){}
-  const D=DECODIFICA(JSON.parse(t));
+  const D=DECODIFICA(COLONNE(JSON.parse(t)));
   if(IST_ORIG)IST_ID.forEach((id,i)=>{const e=document.getElementById(id);e.innerHTML=IST_ORIG[i][0];e.hidden=IST_ORIG[i][1];});
   AVVIO(D);salvaIst(nome);})();
-function DECODIFICA(D){const Z=D.dz,sl=s=>s.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"").slice(0,40).replace(/-+$/,"");
+function DECODIFICA(D){const Z=D.dz,sl=s=>(/[^\x00-\x7f]/.test(s)?s.normalize("NFD").replace(/[\u0300-\u036f]/g,""):s).toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"").slice(0,40).replace(/-+$/,"");
   for(const c of D.c){for(const k of ["regione","provName","provKind","verified"])c[k]=Z[k][c[k]];for(const a of c.places){if(a[0]===0)a[0]=sl(a[1]);a[3]=Z.sub[a[3]];a[7]=Z.t[a[7]];}}return D;}
+function COLONNE(D){if(!D.k)return D;const K=D.k,C=[],ks=Object.keys(K.ck);let g=0;
+  for(let i=0;i<K.n.length;i++){const c={};for(const k of ks){const m=K.cm[k];if(m&&m.includes(i))continue;c[k]=K.ck[k][i];}
+    const pl=new Array(K.n[i]);for(let j=0;j<K.n[i];j++,g++){const a=[K.p[0][g],K.p[1][g],K.p[2][g],K.p[3][g],K.p[4][g],K.p[5][g],K.p[6][g],K.p[7][g],K.p[8][g]];const x=K.x[g];if(x)a.push(x);pl[j]=a;}
+    c.places=pl;C.push(c);}D.c=C;D.k=undefined;return D;}
 function AVVIO(D){
-{const CK=["storia","musei","sacro","natura","locale"];for(const c of D.c)c.places=c.places.map(a=>{const f=a[5],o={id:c.slug+"--"+a[0],name:a[1],cat:CK[a[2]],sub:a[3],desc:a[4],free:f.includes("F")?true:f.includes("P")?false:null,card:f.includes("c"),unesco:f.includes("u"),view:f.includes("v"),indoor:f.includes("i"),status:a[6]||"ok",t:a[7],r:a[8],address:"",price:"",duration:""};if(a[9])Object.assign(o,a[9]);return o;});}
+{const CK=["storia","musei","sacro","natura","locale"];for(const c of D.c)c.places=c.places.map(a=>{const f=a[5],o={id:c.slug+"--"+a[0],name:a[1],cat:CK[a[2]],sub:a[3],desc:a[4],free:f.includes("F")?true:f.includes("P")?false:null,card:f.includes("c"),unesco:f.includes("u"),view:f.includes("v"),indoor:f.includes("i"),status:a[6]||"ok",t:a[7],r:a[8],address:"",price:"",duration:"",sources:[]};if(a[9])Object.assign(o,a[9]);return o;});
+ for(const c of D.c){if(c.lede==null)c.lede="";if(c.notice==null)c.notice="";if(!c.sources)c.sources=[];}}
 const BO_GEO=D.g,COMUNI_EXTRA=D.c,LINKS_BO=D.l;let QC,SOURCES,ARCH;
 const caricaMeta=(()=>{let pr=null;return()=>pr||(pr=(async()=>{const n=MAN&&MAN.meta;if(!n)return;let t=await MEMO.leggi(n);if(!t){const r=await fetch(n);if(!r.ok)return;t=await r.text();MEMO.scrivi(n,t);}const m=JSON.parse(t);QC=m.q;SOURCES=m.s;ARCH=m.a;const h=location.hash.slice(1);if(h==="metodo"||h==="fonti")route(true);})());})();
 ("requestIdleCallback" in window)?requestIdleCallback(()=>caricaMeta(),{timeout:4000}):setTimeout(()=>caricaMeta(),1500);
@@ -1225,15 +1240,48 @@ for(const c of COMUNI_EXTRA)for(const p of c.places)(IDPROV[p.id]||(IDPROV[p.id]
 function caricaDet(pr){if(!pr||DETOK[pr])return Promise.resolve();if(DETP[pr])return DETP[pr];
   const n=MAN&&MAN.det&&MAN.det[pr];if(!n){DETOK[pr]=1;return Promise.resolve();}
   return DETP[pr]=(async()=>{let t=await MEMO.leggi(n);if(!t){const r=await fetch(n);if(!r.ok)return;t=await r.text();MEMO.scrivi(n,t);}
-    const d=JSON.parse(t);for(const c of COMUNI_EXTRA){const dc=c.prov===pr&&d[c.slug];if(dc)for(const p of c.places)if(dc[p.id])Object.assign(p,dc[p.id]);}DETOK[pr]=1;})();}
+    const d=JSON.parse(t);for(const c of COMUNI_EXTRA){const dc=c.prov===pr&&d[c.slug];if(dc){if(dc._c)Object.assign(c,dc._c);for(const p of c.places)if(dc[p.id])Object.assign(p,dc[p.id]);}}DETOK[pr]=1;riempiDesc();})();}
+/* 9/11/2026: le card già disegnate ricevono la descrizione appena arriva il file della provincia */
+let PMAP=null;function riempiDesc(){if(!PMAP){PMAP=new Map();for(const c of COMUNI_EXTRA)for(const p of c.places)if(!PMAP.has(p.id))PMAP.set(p.id,p);}
+  document.querySelectorAll("#grid .card[data-pid]").forEach(el=>{const d=el.querySelector(".desc");if(d&&!d.textContent){const p=PMAP.get(el.dataset.pid);if(p&&p.desc)d.textContent=p.desc;}});}
+/* 9/11/2026 ricerca con indice delle parole (cerca.<impronta>.json), scaricato in sottofondo; stesso risultato della ricerca sul testo */
+const CERCA={ok:false,fail:false,pr:null,V:null,P:null,ids:null,dec:new Map(),memo:new Map()};
+function caricaCerca(){if(CERCA.pr)return CERCA.pr;return CERCA.pr=(async()=>{try{const n=MAN&&MAN.cerca;if(!n)throw 0;let t=await MEMO.leggi(n);
+  if(!t){const r=await fetch(n);if(!r.ok)throw 0;t=await r.text();MEMO.scrivi(n,t);}const j=JSON.parse(t);
+  const ids=PLACES.map(p=>p.id);for(const c of COMUNI_EXTRA)for(const p of c.places)ids.push(p.id);
+  if(j.n!==ids.length||(ids.length&&(j.ids[0]!==ids[0]||j.ids[1]!==ids[ids.length-1])))throw 0;
+  CERCA.V=j.v;CERCA.P=j.p;CERCA.ids=ids;CERCA.ok=true;}catch(e){CERCA.fail=true;}})();}
+function cercaPost(i){let a=CERCA.dec.get(i);if(a)return a;a=[];const s=CERCA.P[i];let n=0,pr=-1;
+  for(let k=0;k<s.length;k++){const c=s.charCodeAt(k);let v;if(c>=65&&c<=90){v=c-65;}else{const T="!#$%&*".indexOf(s[k]);if(T>=0)v=26+T;else{n=n*32+(c<=57?c-48:c-87);continue;}}
+    n=n*32+v;pr=pr+n+1;a.push(pr);n=0;}CERCA.dec.set(i,a);return a;}
+function cercaParola(w){let r=CERCA.memo.get(w);if(r)return r;const ids=new Set(),V=CERCA.V;
+  for(let i=0;i<V.length;i++)if(V[i].includes(w))for(const x of cercaPost(i))ids.add(CERCA.ids[x]);
+  r={ids,f:new Map()};CERCA.memo.set(w,r);return r;}
+const CERCAF=new Map();const cf=s=>{let r=CERCAF.get(s);if(r===undefined){r=fold(s);CERCAF.set(s,r);}return r;};
+let QOK_Q=null,QOK_W=null;
+function QOK(p){if(!CERCA.ok){if(!p._t)p._t=fold(p.name+" "+p.desc+" "+p.sub+" "+p.address+" "+p.com+" "+CATS[p.cat].long);return fold(S.q).split(/\s+/).every(w=>p._t.includes(w));}
+  if(QOK_Q!==S.q){QOK_Q=S.q;QOK_W=fold(S.q).split(/\s+/).map(w=>[w,cercaParola(w)]);}
+  return QOK_W.every(([w,r])=>r.ids.has(p.id)||cf(p.sub).includes(w)||cf(p.com).includes(w)||cf(CATS[p.cat].long).includes(w));}
 const precarica=prs=>{const f=()=>prs.forEach(pr=>caricaDet(pr));("requestIdleCallback" in window)?requestIdleCallback(f,{timeout:2500}):setTimeout(f,400);};
 /* classifica: punteggio di rilevanza (calcolato in costruzione; per Bologna con le stesse regole) e posizione */
 {const sc=p=>{let s=0;const u=(p.sources||[]).map(x=>x[1]||"").join(" ");if(p.unesco)s+=12;if(u.includes("touringclub.it"))s+=6;if(u.includes("italia.it"))s+=8;
   s+=Math.min(2,Math.max(0,(p.sources||[]).length-1))*2;if(p.status==="closed")s-=10;return Math.max(0,s+((D.pb||{})[p.id]||0));};
  const tutti=[...PLACES.map(p=>(p.r==null&&(p.r=sc(p)),p))];for(const c of COMUNI_EXTRA)for(const p of c.places)tutti.push(p);
- tutti.sort((a,b)=>b.r-a.r||a.name.localeCompare(b.name,"it"));tutti.forEach((p,i)=>p.rk=i+1);}
-{const _os=openSheet;openSheet=function(id,from){const ps=[...(IDPROV[id]||[])].filter(pr=>!DETOK[pr]);
-  if(!ps.length)return _os(id,from);Promise.all(ps.map(caricaDet)).then(()=>_os(id,from));};}
+ {const CO=new Intl.Collator("it");tutti.sort((a,b)=>b.r-a.r||CO.compare(a.name,b.name));}tutti.forEach((p,i)=>p.rk=i+1);}
+{const _os=openSheet;openSheet=function(id,from){const ps=[...(IDPROV[id]||[])].filter(pr=>!DETOK[pr]),sh=$("sheet");
+  sh.dataset.pid=id;sh.classList.toggle("sload",ps.length>0);_os(id,from);if(!ps.length)return;
+  Promise.all(ps.map(caricaDet)).then(()=>{if(sh.dataset.pid!==id||!sh.classList.contains("open"))return;const y=sh.scrollTop,f=lastFocus;sh.classList.remove("sload");_os(id,f);sh.scrollTop=y;});};}
+/* anticipo al tocco: la provincia della card o del comune toccato si scarica già alla pressione del dito */
+document.addEventListener("pointerdown",e=>{try{const t=e.target.closest(".card[data-pid],[data-c],a[href^='#']");if(!t)return;
+  if(t.dataset.pid){(IDPROV[t.dataset.pid]||[]).forEach(pr=>caricaDet(pr));return;}
+  const sl=t.dataset.c||t.getAttribute("href").slice(1);const c=COMUNI.find(x=>x.slug===sl);if(c)caricaDet(c.prov);}catch(err){}},{capture:true,passive:true});
+/* apertura di un comune: la presentazione arriva con il file della provincia */
+{const _sc=setComune;setComune=function(){const r=_sc.apply(this,arguments);try{if(!C.all&&!C.isProv&&!C.provs&&C.prov&&!DETOK[C.prov]){const el=$("lede"),cc=C;el.style.visibility="hidden";
+  caricaDet(C.prov).then(()=>{if(C===cc)el.textContent=ledeTxt(cc);el.style.visibility="";});}}catch(e){}return r;};}
+/* ricerca: se l'indice non è ancora arrivato, lo si aspetta (di solito è già in memoria) */
+{const _u2=update;update=function(){if(S.q&&!CERCA.ok&&!CERCA.fail){const n=$("count");if(n)n.textContent="Ricerca in corso…";caricaCerca().then(()=>update());return;}return _u2.apply(this,arguments);};}
+document.getElementById("q").addEventListener("focus",()=>caricaCerca(),{once:true});
+setTimeout(()=>{("requestIdleCallback" in window)?requestIdleCallback(()=>caricaCerca(),{timeout:8000}):caricaCerca();},2500);
 {const _up=update;update=function(){const r=_up.apply(this,arguments);try{const ps=[...new Set((CUR||[]).slice(0,60).map(p=>{const c=COMUNI.find(x=>x.slug===p.comSlug);return c&&c.prov;}).filter(Boolean))].slice(0,4);
   if(ps.length){precarica(ps);try{localStorage.setItem("ultProv",ps[0]);}catch(e){}}}catch(e){}return r;};}
 try{const u=localStorage.getItem("ultProv");if(u)precarica([u]);}catch(e){}
@@ -1315,8 +1363,7 @@ function pass(p,skip){
   if(skip!=="time"&&S.time.size&&!S.time.has(p.t))return false;
   if(S.alerts&&p.status==="ok")return false;
   if(skip!=="near"&&S.near&&distOf(p,S.near)>S.near.km)return false;
-  if(S.q){if(!p._t)p._t=fold(p.name+" "+p.desc+" "+p.sub+" "+p.address+" "+p.com+" "+CATS[p.cat].long);
-    if(!fold(S.q).split(/\s+/).every(w=>p._t.includes(w)))return false;}
+  if(S.q&&!QOK(p))return false;
   return true;
 }
 const fold=s=>s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
@@ -1408,6 +1455,7 @@ function ctags(p){const tm=TIME.find(x=>x[0]===p.t);return nearTag(p)+statusTag(
 function tags(p){return nearTag(p)+statusTag(p)+priceTag(p)+(p.card?`<span class="mst">💳 Card</span>`:"")+(p.indoor?`<span class="mst">☔ Al coperto</span>`:"")+(p.view?`<span class="mst">🌅 Panorama</span>`:"")+(p.unesco?`<span class="mst">🌍 UNESCO</span>`:"")+`<span class="mst">⏱️ ${esc(p.duration)}</span>`;}
 
 function renderGrid(list){
+  window.__lista=list.map(p=>p.id);window.__n=(window.__n||0)+1;
   const g=$("grid");g.innerHTML="";
   $("count").textContent=list.length===CUR.length?`Tutti i ${list.length} luoghi`:`${list.length} ${list.length===1?"luogo":"luoghi"} su ${CUR.length}`;
   if(!list.length){g.innerHTML=`<div class="empty">Nessun luogo con questi filtri.<br><button class="freset" type="button" id="er">Azzera i filtri</button></div>`;$("er").onclick=resetAll;return;}
@@ -1429,9 +1477,9 @@ function riempiFoto(){if(!FAM)return;document.querySelectorAll("img.cph[data-fid
 {let rq=0;new MutationObserver(()=>{if(!rq){rq=1;requestAnimationFrame(()=>{rq=0;riempiFoto();});}}).observe(document.documentElement,{childList:true,subtree:true});}
 setTimeout(caricaFoto,300);
 function cardEl(p){
-    const c=document.createElement("article");c.className="card";c.style.setProperty("--g",gcol(p.cat));
+    const c=document.createElement("article");c.className="card";c.dataset.pid=p.id;c.style.setProperty("--g",gcol(p.cat));
     const n=p._sel||p.rk,sub=C.isProv?`${esc(CATS[p.cat].label)} · ${esc(p.com)}`:`${esc(CATS[p.cat].label)} · ${esc(p.sub)}`;
-    c.innerHTML=`<button class="cmain" type="button"><div class="crow${FOTO[p.id]?" hasph":""}">${n?`<div class="cnum" title="${p._sel?"Posizione nella selezione attuale":"Posizione nella classifica di tutta la guida"}"><small>N°</small><b>${n}</b></div>`:`<div class="cnum"></div>`}<div class="cbody">
+    c.innerHTML=`<button class="cmain" type="button"><div class="crow${FOTO[p.id]?" hasph":""}">${n?`<div class="cnum${String(n).length>=4?" c4":""}" title="${p._sel?"Posizione nella selezione attuale":"Posizione nella classifica di tutta la guida"}"><small>N°</small><b>${n}</b></div>`:`<div class="cnum"></div>`}<div class="cbody">
       <h3 class="title">${esc(p.name)}</h3><div class="csub">${sub}${p._sel&&p.rk?` <span class="cgl">· n. ${p.rk} in Italia</span>`:""}</div><p class="desc">${esc(p.desc)}</p><div class="meta">${ctags(p)}</div></div>${FOTO[p.id]?`<span class="cphw"><img class="cph" data-fid="${esc(p.id)}" width="84" height="84" loading="lazy" decoding="async" alt="" style="background:${FOTO[p.id][4]||"var(--line)"}"><span class="cdot" title="${esc(CATS[p.cat].label)}" role="img" aria-label="${esc(CATS[p.cat].label)}"></span></span>`:`<span class="cdot" title="${esc(CATS[p.cat].label)}" role="img" aria-label="${esc(CATS[p.cat].label)}"></span>`}</div></button>
       <div class="cfoot">${p.free===true?`<button class="cbtn tk fr" type="button" aria-label="Ingresso gratuito: vedi la scheda di ${esc(p.name)}">${ic("check")}Gratis</button>`:p.ticketUrl?`<a class="cbtn tk" href="${esc(p.ticketUrl)}" target="_blank" rel="noopener" aria-label="Biglietti ufficiali: ${esc(p.name)}">${ic("ticket")}Biglietti</a>`:`<button class="cbtn tk" type="button" aria-label="Biglietto: vedi la scheda di ${esc(p.name)}">${ic("ticket")}Biglietti</button>`}<a class="cbtn ph" href="${photoUrl(p)}" target="_blank" rel="noopener" aria-label="Foto di ${esc(p.name)} su Google Immagini">${ic("cam")}Foto</a><button class="cbtn fav${FAV.has(p.id)?" on":""}" type="button" aria-pressed="${FAV.has(p.id)}" aria-label="Salva tra i miei luoghi">${ic("heart",FAV.has(p.id))}</button><button class="cbtn pri" type="button">Apri${ic("chev")}</button></div>`;
     const open=()=>openSheet(p.id,c.querySelector(".cmain"));
@@ -1605,6 +1653,7 @@ $("com-q").addEventListener("input",renderComList);
 document.addEventListener("click",e=>{if(!e.composedPath().some(n=>n.classList&&n.classList.contains("pick")))popToggle(null);});
 document.addEventListener("keydown",e=>{if(e.key==="Escape")popToggle(null);});
 let keepFilters=false;
+function ledeTxt(c){return c.lede||`Monumenti, chiese, musei, natura e angoli nascosti del comune di ${c.name} (${c.provKind==="Città metropolitana"?"Città metropolitana di ":"provincia di "}${c.provName}), con biglietti, orari e come arrivare. Ogni scheda cita le sue fonti.`;}
 function setComune(slug,fromHash){
   showView("guida");
   const c=parseView(slug); C=c; CUR=c.places;
@@ -1613,7 +1662,7 @@ function setComune(slug,fromHash){
   $("kicktxt").textContent=`Ach's Places Guide · ${c.name}`;
   $("h1").innerHTML=`Tutti i luoghi, <em>da vedere</em> e da scoprire.`;
   renderAwards();
-  $("lede").textContent=c.lede||`Monumenti, chiese, musei, natura e angoli nascosti del comune di ${c.name} (${c.provKind==="Città metropolitana"?"Città metropolitana di ":"provincia di "}${c.provName}), con biglietti, orari e come arrivare. Ogni scheda cita le sue fonti.`;
+  $("lede").textContent=ledeTxt(c);
   $("lede").hidden=!!(c.all||c.isProv);
 
   $("verified").textContent=`Dati verificati il ${c.verified}`;
@@ -1750,6 +1799,8 @@ $("eat-apply").onclick=()=>{if(EAT.lat===null)return;S.near={lat:EAT.lat,lng:EAT
   if(!C.all){goView(ALLP(),[]);}else update();
   $("grid").scrollIntoView({behavior:"smooth",block:"start"});};
 $("eat-off").onclick=()=>{S.near=null;$("eat").close();update();};
+/* aggancio per le prove automatiche (nessun effetto sulla pagina) */
+window.__T={S,update:()=>update(),setComune:x=>setComune(x),det:pr=>caricaDet(pr),provs:()=>Object.keys((MAN&&MAN.det)||{})};
 window.addEventListener("hashchange",()=>route(true));
 route(true);
 

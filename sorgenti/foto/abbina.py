@@ -4,6 +4,7 @@ import json, os, glob, subprocess
 src = open('/home/claude/foto/foto.py').read()
 exec(src.split("m=json.load(open(G+'manifest.json'))")[0])
 m = json.load(open(G + 'manifest.json')); D = json.load(open(G + m['dati']))
+import sys as _s9; _s9.path.insert(0,'/home/claude/achs-places-guide'); from leggi_dati import righe as _righe9; D = _righe9(D)   # 9/11: dati per colonne
 try:
     BO = json.loads(subprocess.check_output(['node', '-e', "const fs=require('fs');eval(fs.readFileSync('" + G + "data/places-bologna.js','utf8').replace('const PLACES','globalThis.PLACES'));console.log(JSON.stringify(PLACES.map(p=>[p.id,p.name])))"]))
     D['c'].append({'name': 'Bologna', 'istat': '037006', 'slug': '', 'places': [[i, n] for i, n in BO]})

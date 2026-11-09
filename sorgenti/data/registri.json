@@ -28,6 +28,7 @@
    "src": "https://borghipiubelliditalia.it/en/toscana/",
    "comuni": [
     "Anghiari",
+    "Barberino Tavarnelle",
     "Barga",
     "Buonconvento",
     "Capalbio",
@@ -36,25 +37,25 @@
     "Castiglione di Garfagnana",
     "Cetona",
     "Coreglia Antelminelli",
+    "Greve in Chianti",
     "Isola del Giglio",
     "Loro Ciuffenna",
     "Lucignano",
-    "Montaione",
-    "Greve in Chianti",
     "Manciano",
+    "Montaione",
+    "Monte Argentario",
     "Montescudaio",
+    "Mulazzo",
+    "Ortignano Raggiolo",
+    "Palazzuolo sul Senio",
+    "Piombino",
     "Pitigliano",
     "Poppi",
-    "Piombino",
-    "Monte Argentario",
-    "Ortignano Raggiolo",
     "San Casciano dei Bagni",
-    "Barberino Tavarnelle",
     "Santa Fiora",
     "Scarperia e San Piero",
     "Sorano",
-    "Suvereto",
-    "Palazzuolo sul Senio"
+    "Suvereto"
    ],
    "note": "Borghi indicati con il comune di appartenenza: Giglio Castello (Isola del Giglio), Montefioralle (Greve in Chianti), Montemerano (Manciano), Populonia (Piombino), Porto Ercole (Monte Argentario), Raggiolo (Ortignano Raggiolo), San Donato in Poggio (Barberino Tavarnelle), Sovana (Sorano), Castelfranco di Sopra (Castelfranco Piandiscò). Palazzuolo sul Senio: socio dal 2018 (Mugello Toscana, Tuttitalia). Elenco da riconfermare a settembre."
   },
@@ -105,8 +106,7 @@
     "Montagnana",
     "Portobuffolè",
     "Sant'Ambrogio di Valpolicella",
-    "Rocca Pietore",
-    "Battaglia Terme"
+    "Rocca Pietore"
    ],
    "nota": "Elenco dal sito dell'associazione e dalle pagine eventi 2025-2026; frazioni ricondotte al comune ISTAT; da completare"
   },
@@ -161,8 +161,7 @@
     "Bassano in Teverina",
     "Magliano Sabina",
     "Percile",
-    "Castro dei Volsci",
-    "Ventotene"
+    "Castro dei Volsci"
    ],
    "nota": "Elenco dal sito dell'associazione e dalle pagine eventi 2025-2026; frazioni ricondotte al comune ISTAT; da completare"
   },
@@ -183,8 +182,7 @@
     "Savignano Irpino",
     "Summonte",
     "Frigento",
-    "Zungoli",
-    "Massa Lubrense"
+    "Zungoli"
    ],
    "nota": "Elenco dal sito dell'associazione e dalle pagine eventi 2025-2026; frazioni ricondotte al comune ISTAT; da completare"
   },
@@ -194,7 +192,6 @@
     "Alberona",
     "Bovino",
     "Cisternino",
-    "Gravina in Puglia",
     "Locorotondo",
     "Maruggio",
     "Monte Sant'Angelo",
@@ -245,9 +242,9 @@
     "Bosa",
     "Carloforte",
     "Castelsardo",
-    "Tempio Pausania",
+    "La Maddalena",
     "Sadali",
-    "Cabras"
+    "Tempio Pausania"
    ],
    "nota": "Elenco dal sito dell'associazione e dalle pagine eventi 2025-2026; frazioni ricondotte al comune ISTAT; da completare"
   },
@@ -255,6 +252,7 @@
    "src": "https://borghipiubelliditalia.it/en/borghi/",
    "comuni": [
     "Acquasparta",
+    "Allerona",
     "Arrone",
     "Bettona",
     "Bevagna",
@@ -288,8 +286,10 @@
     "Gradara",
     "Grottammare",
     "Macerata Feltria",
+    "Mercatello sul Metauro",
     "Mondavio",
     "Mondolfo",
+    "Monte Grimano Terme",
     "Montecassiano",
     "Montecosaro",
     "Montefiore dell'Aso",
@@ -301,6 +301,7 @@
     "Ripatransone",
     "San Ginesio",
     "Sarnano",
+    "Sassoferrato",
     "Treia",
     "Vallefoglia",
     "Visso"
@@ -323,6 +324,7 @@
     "Navelli",
     "Opi",
     "Pacentro",
+    "Palena",
     "Penne",
     "Pescocostanzo",
     "Pettorano sul Gizio",
@@ -486,12 +488,13 @@
     "Campodimele",
     "Caprarola",
     "Casperia",
+    "Castro dei Volsci",
     "Collepardo",
-    "Priverno",
     "Labro",
     "Leonessa",
     "Nemi",
     "Picinisco",
+    "Priverno",
     "San Donato Val di Comino",
     "Sermoneta",
     "Subiaco",
@@ -500,7 +503,8 @@
     "Tuscania",
     "Vitorchiano"
    ],
-   "nota": "Guida Touring 2023, da riconfermare con l'elenco aggiornato"
+   "nota": "Guida Touring 2023, da riconfermare con l'elenco aggiornato",
+   "note": ""
   },
   "campania": {
    "src": "https://admin-istituzionale.touringclub.it/uploads/Guida-BA_2023_digital_compressed.pdf",

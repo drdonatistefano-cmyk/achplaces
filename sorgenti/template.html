@@ -651,6 +651,10 @@ body{font-size:16px;line-height:1.5}
 .cph{width:84px;height:84px;border-radius:14px;object-fit:cover;display:block}
 .cphw .cdot{position:absolute;top:-7px;right:-7px;margin:0;border:3px solid var(--paper);box-shadow:none}
 .fcred{display:block;margin:6px 0 10px;font-size:12px;color:var(--mute);text-decoration:none}
+/* 9/11/2026 dettagli in arrivo: la scheda si apre subito, il resto compare quando arriva il file della provincia */
+#sheet.sload .facts,#sheet.sload .acts,#sheet.sload .src,#sheet.sload .why{display:none}
+#sheet.sload::after{content:"Caricamento dei dettagli…";display:block;padding:14px 0 6px;color:var(--mute);font-size:14px}
+.card .desc:empty{min-height:2.8em}
 </style>
 <script>/* statistiche (GoatCounter: senza cookie, solo visite alle pagine, solo sul dominio pubblico) */
 (function(){const GC="achplaces";/* nome del contatore goatcounter.com */
@@ -692,6 +696,11 @@ if(GC&&ON_WEB){try{const s=document.createElement("script");s.async=true;s.datas
  .card .cfoot{padding:2px 12px 10px 12px}
  .card .cbtn{height:32px;font-size:13px}
 }
+
+/* 9/11: numeri di classifica a 4 cifre più piccoli, per non sovrapporsi a testo e foto */
+.cnum b{font-size:1.42rem!important}
+.cnum.c4 b{font-family:var(--sans)!important;font-size:1.02rem!important;font-weight:850!important;letter-spacing:-.03em}
+.cnum.c4 small{font-size:9px}
 </style>
     <div class="stats" id="stats"></div>
     <div class="pick" aria-label="Scegli il luogo">
@@ -1021,8 +1030,7 @@ function pass(p,skip){
   if(skip!=="time"&&S.time.size&&!S.time.has(p.t))return false;
   if(S.alerts&&p.status==="ok")return false;
   if(skip!=="near"&&S.near&&distOf(p,S.near)>S.near.km)return false;
-  if(S.q){if(!p._t)p._t=fold(p.name+" "+p.desc+" "+p.sub+" "+p.address+" "+p.com+" "+CATS[p.cat].long);
-    if(!fold(S.q).split(/\s+/).every(w=>p._t.includes(w)))return false;}
+  if(S.q&&!QOK(p))return false;
   return true;
 }
 const fold=s=>s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
@@ -1114,6 +1122,7 @@ function ctags(p){const tm=TIME.find(x=>x[0]===p.t);return nearTag(p)+statusTag(
 function tags(p){return nearTag(p)+statusTag(p)+priceTag(p)+(p.card?`<span class="mst">💳 Card</span>`:"")+(p.indoor?`<span class="mst">☔ Al coperto</span>`:"")+(p.view?`<span class="mst">🌅 Panorama</span>`:"")+(p.unesco?`<span class="mst">🌍 UNESCO</span>`:"")+`<span class="mst">⏱️ ${esc(p.duration)}</span>`;}
 
 function renderGrid(list){
+  window.__lista=list.map(p=>p.id);window.__n=(window.__n||0)+1;
   const g=$("grid");g.innerHTML="";
   $("count").textContent=list.length===CUR.length?`Tutti i ${list.length} luoghi`:`${list.length} ${list.length===1?"luogo":"luoghi"} su ${CUR.length}`;
   if(!list.length){g.innerHTML=`<div class="empty">Nessun luogo con questi filtri.<br><button class="freset" type="button" id="er">Azzera i filtri</button></div>`;$("er").onclick=resetAll;return;}
@@ -1135,9 +1144,9 @@ function riempiFoto(){if(!FAM)return;document.querySelectorAll("img.cph[data-fid
 {let rq=0;new MutationObserver(()=>{if(!rq){rq=1;requestAnimationFrame(()=>{rq=0;riempiFoto();});}}).observe(document.documentElement,{childList:true,subtree:true});}
 setTimeout(caricaFoto,300);
 function cardEl(p){
-    const c=document.createElement("article");c.className="card";c.style.setProperty("--g",gcol(p.cat));
+    const c=document.createElement("article");c.className="card";c.dataset.pid=p.id;c.style.setProperty("--g",gcol(p.cat));
     const n=p._sel||p.rk,sub=C.isProv?`${esc(CATS[p.cat].label)} · ${esc(p.com)}`:`${esc(CATS[p.cat].label)} · ${esc(p.sub)}`;
-    c.innerHTML=`<button class="cmain" type="button"><div class="crow${FOTO[p.id]?" hasph":""}">${n?`<div class="cnum" title="${p._sel?"Posizione nella selezione attuale":"Posizione nella classifica di tutta la guida"}"><small>N°</small><b>${n}</b></div>`:`<div class="cnum"></div>`}<div class="cbody">
+    c.innerHTML=`<button class="cmain" type="button"><div class="crow${FOTO[p.id]?" hasph":""}">${n?`<div class="cnum${String(n).length>=4?" c4":""}" title="${p._sel?"Posizione nella selezione attuale":"Posizione nella classifica di tutta la guida"}"><small>N°</small><b>${n}</b></div>`:`<div class="cnum"></div>`}<div class="cbody">
       <h3 class="title">${esc(p.name)}</h3><div class="csub">${sub}${p._sel&&p.rk?` <span class="cgl">· n. ${p.rk} in Italia</span>`:""}</div><p class="desc">${esc(p.desc)}</p><div class="meta">${ctags(p)}</div></div>${FOTO[p.id]?`<span class="cphw"><img class="cph" data-fid="${esc(p.id)}" width="84" height="84" loading="lazy" decoding="async" alt="" style="background:${FOTO[p.id][4]||"var(--line)"}"><span class="cdot" title="${esc(CATS[p.cat].label)}" role="img" aria-label="${esc(CATS[p.cat].label)}"></span></span>`:`<span class="cdot" title="${esc(CATS[p.cat].label)}" role="img" aria-label="${esc(CATS[p.cat].label)}"></span>`}</div></button>
       <div class="cfoot">${p.free===true?`<button class="cbtn tk fr" type="button" aria-label="Ingresso gratuito: vedi la scheda di ${esc(p.name)}">${ic("check")}Gratis</button>`:p.ticketUrl?`<a class="cbtn tk" href="${esc(p.ticketUrl)}" target="_blank" rel="noopener" aria-label="Biglietti ufficiali: ${esc(p.name)}">${ic("ticket")}Biglietti</a>`:`<button class="cbtn tk" type="button" aria-label="Biglietto: vedi la scheda di ${esc(p.name)}">${ic("ticket")}Biglietti</button>`}<a class="cbtn ph" href="${photoUrl(p)}" target="_blank" rel="noopener" aria-label="Foto di ${esc(p.name)} su Google Immagini">${ic("cam")}Foto</a><button class="cbtn fav${FAV.has(p.id)?" on":""}" type="button" aria-pressed="${FAV.has(p.id)}" aria-label="Salva tra i miei luoghi">${ic("heart",FAV.has(p.id))}</button><button class="cbtn pri" type="button">Apri${ic("chev")}</button></div>`;
     const open=()=>openSheet(p.id,c.querySelector(".cmain"));
@@ -1311,6 +1320,7 @@ $("com-q").addEventListener("input",renderComList);
 document.addEventListener("click",e=>{if(!e.composedPath().some(n=>n.classList&&n.classList.contains("pick")))popToggle(null);});
 document.addEventListener("keydown",e=>{if(e.key==="Escape")popToggle(null);});
 let keepFilters=false;
+function ledeTxt(c){return c.lede||`Monumenti, chiese, musei, natura e angoli nascosti del comune di ${c.name} (${c.provKind==="Città metropolitana"?"Città metropolitana di ":"provincia di "}${c.provName}), con biglietti, orari e come arrivare. Ogni scheda cita le sue fonti.`;}
 function setComune(slug,fromHash){
   showView("guida");
   const c=parseView(slug); C=c; CUR=c.places;
@@ -1319,7 +1329,7 @@ function setComune(slug,fromHash){
   $("kicktxt").textContent=`Ach's Places Guide · ${c.name}`;
   $("h1").innerHTML=`Tutti i luoghi, <em>da vedere</em> e da scoprire.`;
   renderAwards();
-  $("lede").textContent=c.lede||`Monumenti, chiese, musei, natura e angoli nascosti del comune di ${c.name} (${c.provKind==="Città metropolitana"?"Città metropolitana di ":"provincia di "}${c.provName}), con biglietti, orari e come arrivare. Ogni scheda cita le sue fonti.`;
+  $("lede").textContent=ledeTxt(c);
   $("lede").hidden=!!(c.all||c.isProv);
 
   $("verified").textContent=`Dati verificati il ${c.verified}`;
@@ -1456,6 +1466,8 @@ $("eat-apply").onclick=()=>{if(EAT.lat===null)return;S.near={lat:EAT.lat,lng:EAT
   if(!C.all){goView(ALLP(),[]);}else update();
   $("grid").scrollIntoView({behavior:"smooth",block:"start"});};
 $("eat-off").onclick=()=>{S.near=null;$("eat").close();update();};
+/* aggancio per le prove automatiche (nessun effetto sulla pagina) */
+window.__T={S,update:()=>update(),setComune:x=>setComune(x),det:pr=>caricaDet(pr),provs:()=>Object.keys((MAN&&MAN.det)||{})};
 window.addEventListener("hashchange",()=>route(true));
 route(true);
 </script>

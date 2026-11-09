@@ -37,7 +37,7 @@ const MEMO={db:null,apri(){if(this.db)return this.db;this.db=new Promise(ok=>{tr
   r.onupgradeneeded=()=>r.result.createObjectStore("file");r.onsuccess=()=>ok(r.result);r.onerror=()=>ok(null);setTimeout(()=>ok(null),1500);}catch(e){ok(null);}});return this.db;},
   async leggi(k){if(!k)return null;const db=await this.apri();if(!db)return null;return new Promise(ok=>{try{const q=db.transaction("file").objectStore("file").get(k);q.onsuccess=()=>ok(q.result||null);q.onerror=()=>ok(null);}catch(e){ok(null);}});},
   async scrivi(k,v,man){const db=await this.apri();if(!db)return;try{const s=db.transaction("file","readwrite").objectStore("file");s.put(v,k);
-    if(!man)return;const tieni=[man.dati,man.meta,man.luoghi,man.testi,...Object.values(man.det||{})];const c=s.getAllKeys();c.onsuccess=()=>c.result.forEach(x=>{if(!tieni.includes(x))s.delete(x);});}catch(e){}}};
+    if(!man)return;const tieni=[man.dati,man.meta,man.luoghi,man.testi,man.cerca,...Object.values(man.det||{})];const c=s.getAllKeys();c.onsuccess=()=>c.result.forEach(x=>{if(!tieni.includes(x))s.delete(x);});}catch(e){}}};
 const LS={get(k){try{return localStorage.getItem(k);}catch(e){return null;}},set(k,v){try{localStorage.setItem(k,v);}catch(e){}}};
 let MAN=null;
 async function testo(nome){let t=await MEMO.leggi(nome);if(t)return t;const r=await fetch(nome);if(!r.ok)throw Error(nome+": "+r.status);t=await r.text();MEMO.scrivi(nome,t,MAN);return t;}

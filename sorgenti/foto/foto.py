@@ -6,7 +6,7 @@ G='/home/claude/achs-places-guide/';F='/home/claude/foto/'
 UA='AchsPlacesGuide/0.1 (guida turistica non commerciale; https://claude.ai/artifact/UXN4Ykm771EoLEvJAifppr) curl'
 STOP={'di','del','della','dei','delle','degli','e','la','il','lo','le','i','gli','d','l','a','al','alla','in'}
 GEN={'chiesa','museo','palazzo','castello','torre','piazza','parrocchiale','santuario','basilica','cattedrale','duomo','civico','borgo','centro','storico','lago','forra','parco','rocca','teatro','fontana','abbazia','convento','monastero','villa','ponte','porta','mura','acquedotto','anfiteatro','speco','eremo','oratorio','pieve','collegiata','pinacoteca','galleria','biblioteca','cappella','grotta','grotte','riserva','bosco','monte','valle','cascata','necropoli','area','archeologico','archeologica','casa','loggia','arco'}
-TIPO={'chiesa':'sacro','basilica':'sacro','cattedrale':'cattedrale','duomo':'cattedrale','santuario':'sacro','pieve':'sacro','collegiata':'sacro','oratorio':'sacro','cappella':'sacro','abbazia':'sacro','convento':'sacro','monastero':'sacro','eremo':'sacro','speco':'sacro','museo':'museo','pinacoteca':'museo','galleria':'museo','lago':'lago','forra':'forra','parco':'parco','riserva':'parco','rocca':'forte','castello':'forte','fortezza':'forte','teatro':'teatro','anfiteatro':'anfiteatro','palazzo':'palazzo','piazza':'piazza','torre':'torre','fontana':'fontana','ponte':'ponte','acquedotto':'acquedotto','villa':'villa','mura':'mura','grotta':'grotta','grotte':'grotta','necropoli':'necropoli','casa':'casa','cisterna':'cisterna'}
+TIPO={'chiesa':'sacro','basilica':'sacro','cattedrale':'cattedrale','duomo':'cattedrale','santuario':'sacro','pieve':'sacro','collegiata':'sacro','oratorio':'sacro','cappella':'sacro','abbazia':'sacro','convento':'sacro','monastero':'sacro','eremo':'sacro','speco':'sacro','museo':'museo','pinacoteca':'museo','galleria':'museo','lago':'lago','forra':'forra','parco':'parco','riserva':'parco','rocca':'forte','castello':'forte','fortezza':'forte','teatro':'teatro','anfiteatro':'anfiteatro','palazzo':'palazzo','reggia':'palazzo','residenza':'palazzo','castello':'forte','piazza':'piazza','torre':'torre','fontana':'fontana','ponte':'ponte','acquedotto':'acquedotto','villa':'villa','mura':'mura','grotta':'grotta','grotte':'grotta','necropoli':'necropoli','casa':'casa','cisterna':'cisterna'}
 def norm(s):
   s=unicodedata.normalize('NFD',s.lower());s=''.join(c for c in s if not unicodedata.combining(c))
   return [w for w in re.sub(r"[^a-z0-9 ]"," ",s).split() if w not in STOP]
@@ -46,6 +46,7 @@ def punteggio(a,b,com=''):
   if sa and sa<=set(B) and len(sa)>=2: r=max(r,0.8)
   return r
 m=json.load(open(G+'manifest.json'));D=json.load(open(G+m['dati']))
+import sys as _s9; _s9.path.insert(0,'/home/claude/achs-places-guide'); from leggi_dati import righe as _righe9; D = _righe9(D)   # 9/11: dati per colonne
 PARTE=None
 if len(sys.argv)>2 and sys.argv[1]=='--parte':PARTE=(int(sys.argv[2]),int(sys.argv[3]))
 CF=F+('foto-%d.json'%PARTE[0] if PARTE else 'foto.json')

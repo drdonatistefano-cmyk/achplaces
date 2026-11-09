@@ -188,14 +188,21 @@ for _c in comuni:
 PESANTI = ("why", "access", "official", "ownSite", "sources", "tip", "statusNote", "hoursUrl")   # ticketUrl resta nell'indice: tasto Ticket nelle card (8/11)
 VIA = ("hours", "booking", "rev", "mic")          # non usati dalla pagina
 _leggeri = copy.deepcopy(comuni); _det = {}
+# 9/11/2026 velocità: nella prima schermata solo nome, categoria, comune, etichette e filtri.
+# Le descrizioni vanno nei file per provincia, tranne quelle dei luoghi più in alto in classifica (prime card della vista «tutti»);
+# lede, avvisi e fonti dei comuni vanno nei file per provincia (chiave "_c").
+_TOP = {p["id"] for p in sorted((p for c in comuni for p in c["places"]), key=lambda p: (-p.get("r", 0), p["name"]))[:100]}
 for _c in _leggeri:
+    _cc = {k: _c.pop(k) for k in ("lede", "notice", "sources") if k in _c}
+    if _cc: _det.setdefault(_c["prov"], {}).setdefault(_c["slug"], {})["_c"] = _cc
     for _p in _c["places"]:
+        if _p["id"] not in _TOP and _p.get("desc"): _det.setdefault(_c["prov"], {}).setdefault(_c["slug"], {}).setdefault(_p["id"], {})["desc"] = _p.pop("desc")
         _d = {k: _p.pop(k) for k in PESANTI if k in _p}
         for k in VIA: _p.pop(k, None)
         if not _p.get("ticketUrl"): _p.pop("ticketUrl", None)
         for k in ("address", "price", "duration"):
             if k in _p: _d[k] = _p.pop(k)
-        if _d: _det.setdefault(_c["prov"], {}).setdefault(_c["slug"], {})[_p["id"]] = _d
+        if _d: _det.setdefault(_c["prov"], {}).setdefault(_c["slug"], {}).setdefault(_p["id"], {}).update(_d)
 CK = ["storia", "musei", "sacro", "natura", "locale"]
 for _c in _leggeri:
     for k in ("scarti", "copertura", "minimo", "inv"): _c.pop(k, None)
@@ -223,7 +230,7 @@ for _c in _leggeri:
     for a in _c["places"]:
         if a[0] == _slug40(a[1]): a[0] = 0
         a[3] = _dz("sub", a[3]); a[7] = _dz("t", a[7])
-DECODE = r"""function DECODIFICA(D){const Z=D.dz,sl=s=>s.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"").slice(0,40).replace(/-+$/,"");
+DECODE = r"""function DECODIFICA(D){const Z=D.dz,sl=s=>(/[^\x00-\x7f]/.test(s)?s.normalize("NFD").replace(/[\u0300-\u036f]/g,""):s).toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"").slice(0,40).replace(/-+$/,"");
   for(const c of D.c){for(const k of ["regione","provName","provKind","verified"])c[k]=Z[k][c[k]];for(const a of c.places){if(a[0]===0)a[0]=sl(a[1]);a[3]=Z.sub[a[3]];a[7]=Z.t[a[7]];}}return D;}"""
 import subprocess as _sp, tempfile as _tf
 with _tf.NamedTemporaryFile("w", suffix=".js", delete=False) as _f:
@@ -241,17 +248,56 @@ def _bonus(x):
     if x.get("fai"): b += max(1, 6 - x["fai"] // 20)
     return b
 PB = {k.split("|", 1)[1]: _bonus(v) for k, v in PUNTI.items() if k.startswith("bologna-bo|")}
-NOME_DATI = _scrivi("dati", dict(pb=PB, g=list(geo_of("Bologna")), c=_leggeri, l=LINKS["bologna"], dz=_DZ))
+# 9/11/2026 indice per colonne (tecnica A3 della guida osterie): una lista per campo, comuni e luoghi; compresso ~14% più piccolo.
+_ck = {}
+for _c in _leggeri:
+    for k in _c:
+        if k != "places" and k not in _ck: _ck[k] = None
+_K = dict(n=[len(c["places"]) for c in _leggeri], ck={k: [c.get(k) for c in _leggeri] for k in _ck},
+          cm={k: [i for i, c in enumerate(_leggeri) if k not in c] for k in _ck}, p=[[a[q] for c in _leggeri for a in c["places"]] for q in range(9)], x={})
+_K["cm"] = {k: v for k, v in _K["cm"].items() if v}
+_g = 0
+for _c in _leggeri:
+    for a in _c["places"]:
+        if len(a) > 9: _K["x"][str(_g)] = a[9]
+        _g += 1
+import sys as _sys; _sys.path.insert(0, HERE); from leggi_dati import righe as _righe
+assert _righe(json.loads(json.dumps(dict(k=_K))))["c"] == json.loads(json.dumps(_leggeri)), "colonne: la decodifica Python non restituisce i dati"
+COLONNE = r"""function COLONNE(D){if(!D.k)return D;const K=D.k,C=[],ks=Object.keys(K.ck);let g=0;
+  for(let i=0;i<K.n.length;i++){const c={};for(const k of ks){const m=K.cm[k];if(m&&m.includes(i))continue;c[k]=K.ck[k][i];}
+    const pl=new Array(K.n[i]);for(let j=0;j<K.n[i];j++,g++){const a=[K.p[0][g],K.p[1][g],K.p[2][g],K.p[3][g],K.p[4][g],K.p[5][g],K.p[6][g],K.p[7][g],K.p[8][g]];const x=K.x[g];if(x)a.push(x);pl[j]=a;}
+    c.places=pl;C.push(c);}D.c=C;D.k=undefined;return D;}"""
+with _tf.NamedTemporaryFile("w", suffix=".js", delete=False) as _f:
+    _f.write(COLONNE + "\nconst fs=require('fs');process.stdout.write(JSON.stringify(COLONNE(JSON.parse(fs.readFileSync(0,'utf8'))).c));")
+assert json.loads(_sp.run(["node", _f.name], input=json.dumps(dict(k=_K), ensure_ascii=False), capture_output=True, text=True, check=True).stdout) == json.loads(json.dumps(_leggeri)), "colonne: la decodifica JS non restituisce i dati"
+NOME_DATI = _scrivi("dati", dict(pb=PB, g=list(geo_of("Bologna")), k=_K, l=LINKS["bologna"], dz=_DZ))
 NOME_META = _scrivi("meta", dict(q=qc, s=sources, a=ARCH))
 DET = {pr: _scrivi("det." + pr.lower(), d) for pr, d in sorted(_det.items())}
-json.dump(dict(v=2, dati=NOME_DATI, meta=NOME_META, det=DET), open(os.path.join(HERE, "manifest.json"), "w"))
+# 9/11/2026 indice delle parole per la ricerca (stesso risultato di «ogni parola cercata è contenuta nel testo del luogo»):
+# vocabolario delle parole (separate da spazi) di nome, descrizione e indirizzo, già ripiegate come nella pagina; per ogni parola
+# l'elenco dei luoghi (posizione in [luoghi di Bologna..., luoghi degli altri comuni...]) a differenze, numeri a lunghezza variabile.
+# Tipo, comune e categoria si confrontano nella pagina (pochi valori).
+CERCA_JS = r"""const fs=require('fs');const inp=JSON.parse(fs.readFileSync(0,'utf8'));
+const src=fs.readFileSync(inp.bo,'utf8').replace('const PLACES','globalThis.PLACES');eval(src);
+const fold=s=>s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
+const L=PLACES.map(p=>[p.id,p.name,p.desc||"",p.address||""]).concat(inp.extra);const post=new Map();
+L.forEach((r,i)=>{for(const w of new Set(fold(r[1]+" "+r[2]+" "+r[3]).split(/\s+/))){if(!w)continue;let a=post.get(w);if(!a)post.set(w,a=[]);a.push(i);}});
+const A="0123456789abcdefghijklmnopqrstuv",T="ABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%&*";
+const enc=n=>{const d=[];do{d.unshift(n%32);n=Math.floor(n/32);}while(n);return d.slice(0,-1).map(x=>A[x]).join("")+T[d[d.length-1]];};
+const v=[...post.keys()].sort(),p=v.map(w=>{let pr=-1,o="";for(const x of post.get(w)){o+=enc(x-pr-1);pr=x;}return o;});
+process.stdout.write(JSON.stringify({n:L.length,ids:L.length?[L[0][0],L[L.length-1][0]]:[],v,p}));"""
+with _tf.NamedTemporaryFile("w", suffix=".js", delete=False) as _f: _f.write(CERCA_JS)
+_cerca = _sp.run(["node", _f.name], input=json.dumps(dict(bo=os.path.join(D, "places-bologna.js"), extra=[[p["id"], p["name"], p.get("desc", ""), p.get("address", "")] for c in comuni for p in c["places"]]), ensure_ascii=False), capture_output=True, text=True, check=True).stdout
+for _old in glob.glob(os.path.join(HERE, "cerca.*.json")): os.remove(_old)
+NOME_CERCA = _scrivi("cerca", json.loads(_cerca))
+json.dump(dict(v=2, dati=NOME_DATI, meta=NOME_META, det=DET, cerca=NOME_CERCA), open(os.path.join(HERE, "manifest.json"), "w"))
 LOADER = r"""
 /* ---- caricamento come la guida osterie (7/11/2026): manifest.json (sempre riletto) -> dati.<hash>.json
    conservato nel telefono (IndexedDB) e riscaricato solo quando cambia ---- */
 const MEMO={db:null,apri(){if(this.db)return this.db;this.db=new Promise(ok=>{try{const r=indexedDB.open("luoghi",1);
   r.onupgradeneeded=()=>r.result.createObjectStore("file");r.onsuccess=()=>ok(r.result);r.onerror=()=>ok(null);setTimeout(()=>ok(null),1500);}catch(e){ok(null);}});return this.db;},
   async leggi(k){const db=await this.apri();if(!db)return null;return new Promise(ok=>{try{const q=db.transaction("file").objectStore("file").get(k);q.onsuccess=()=>ok(q.result||null);q.onerror=()=>ok(null);}catch(e){ok(null);}});},
-  async scrivi(k,v){const db=await this.apri();if(!db)return;try{const s=db.transaction("file","readwrite").objectStore("file");s.put(v,k);const tieni=MAN?[MAN.dati,MAN.meta,MAN.luoghi,MAN.testi,...Object.values(MAN.det||{})]:[k];const c=s.getAllKeys();c.onsuccess=()=>c.result.forEach(x=>{if(!tieni.includes(x))s.delete(x);});}catch(e){}}};
+  async scrivi(k,v){const db=await this.apri();if(!db)return;try{const s=db.transaction("file","readwrite").objectStore("file");s.put(v,k);const tieni=MAN?[MAN.dati,MAN.meta,MAN.luoghi,MAN.testi,MAN.cerca,...Object.values(MAN.det||{})]:[k];const c=s.getAllKeys();c.onsuccess=()=>c.result.forEach(x=>{if(!tieni.includes(x))s.delete(x);});}catch(e){}}};
 let MAN=null;
 /* istantanea della prima schermata (8/11/2026): alla riapertura compare subito l'ultima prima schermata salvata;
    un attimo prima che la pagina vera disegni, si rimette il contenuto originale, così il risultato è identico */
@@ -272,12 +318,13 @@ function salvaIst(nome){setTimeout(()=>{if(IST_TOCCO||location.hash.slice(1))ret
   if(t&&pPrimo&&nome===ATTESO)MEMO.scrivi(nome,t);
   if(!t){const r=await fetch(nome);if(!r.ok){if(cnt)cnt.textContent="Dati non disponibili ("+r.status+")";return;}t=await r.text();MEMO.scrivi(nome,t);}
   try{localStorage.setItem("datiNome",nome);}catch(e){}
-  const D=DECODIFICA(JSON.parse(t));
+  const D=DECODIFICA(COLONNE(JSON.parse(t)));
   if(IST_ORIG)IST_ID.forEach((id,i)=>{const e=document.getElementById(id);e.innerHTML=IST_ORIG[i][0];e.hidden=IST_ORIG[i][1];});
   AVVIO(D);salvaIst(nome);})();
-"""+DECODE+r"""
+"""+DECODE+"\n"+COLONNE+r"""
 function AVVIO(D){
-{const CK=["storia","musei","sacro","natura","locale"];for(const c of D.c)c.places=c.places.map(a=>{const f=a[5],o={id:c.slug+"--"+a[0],name:a[1],cat:CK[a[2]],sub:a[3],desc:a[4],free:f.includes("F")?true:f.includes("P")?false:null,card:f.includes("c"),unesco:f.includes("u"),view:f.includes("v"),indoor:f.includes("i"),status:a[6]||"ok",t:a[7],r:a[8],address:"",price:"",duration:""};if(a[9])Object.assign(o,a[9]);return o;});}
+{const CK=["storia","musei","sacro","natura","locale"];for(const c of D.c)c.places=c.places.map(a=>{const f=a[5],o={id:c.slug+"--"+a[0],name:a[1],cat:CK[a[2]],sub:a[3],desc:a[4],free:f.includes("F")?true:f.includes("P")?false:null,card:f.includes("c"),unesco:f.includes("u"),view:f.includes("v"),indoor:f.includes("i"),status:a[6]||"ok",t:a[7],r:a[8],address:"",price:"",duration:"",sources:[]};if(a[9])Object.assign(o,a[9]);return o;});
+ for(const c of D.c){if(c.lede==null)c.lede="";if(c.notice==null)c.notice="";if(!c.sources)c.sources=[];}}
 const BO_GEO=D.g,COMUNI_EXTRA=D.c,LINKS_BO=D.l;let QC,SOURCES,ARCH;
 const caricaMeta=(()=>{let pr=null;return()=>pr||(pr=(async()=>{const n=MAN&&MAN.meta;if(!n)return;let t=await MEMO.leggi(n);if(!t){const r=await fetch(n);if(!r.ok)return;t=await r.text();MEMO.scrivi(n,t);}const m=JSON.parse(t);QC=m.q;SOURCES=m.s;ARCH=m.a;const h=location.hash.slice(1);if(h==="metodo"||h==="fonti")route(true);})());})();
 ("requestIdleCallback" in window)?requestIdleCallback(()=>caricaMeta(),{timeout:4000}):setTimeout(()=>caricaMeta(),1500);
@@ -288,15 +335,48 @@ for(const c of COMUNI_EXTRA)for(const p of c.places)(IDPROV[p.id]||(IDPROV[p.id]
 function caricaDet(pr){if(!pr||DETOK[pr])return Promise.resolve();if(DETP[pr])return DETP[pr];
   const n=MAN&&MAN.det&&MAN.det[pr];if(!n){DETOK[pr]=1;return Promise.resolve();}
   return DETP[pr]=(async()=>{let t=await MEMO.leggi(n);if(!t){const r=await fetch(n);if(!r.ok)return;t=await r.text();MEMO.scrivi(n,t);}
-    const d=JSON.parse(t);for(const c of COMUNI_EXTRA){const dc=c.prov===pr&&d[c.slug];if(dc)for(const p of c.places)if(dc[p.id])Object.assign(p,dc[p.id]);}DETOK[pr]=1;})();}
+    const d=JSON.parse(t);for(const c of COMUNI_EXTRA){const dc=c.prov===pr&&d[c.slug];if(dc){if(dc._c)Object.assign(c,dc._c);for(const p of c.places)if(dc[p.id])Object.assign(p,dc[p.id]);}}DETOK[pr]=1;riempiDesc();})();}
+/* 9/11/2026: le card già disegnate ricevono la descrizione appena arriva il file della provincia */
+let PMAP=null;function riempiDesc(){if(!PMAP){PMAP=new Map();for(const c of COMUNI_EXTRA)for(const p of c.places)if(!PMAP.has(p.id))PMAP.set(p.id,p);}
+  document.querySelectorAll("#grid .card[data-pid]").forEach(el=>{const d=el.querySelector(".desc");if(d&&!d.textContent){const p=PMAP.get(el.dataset.pid);if(p&&p.desc)d.textContent=p.desc;}});}
+/* 9/11/2026 ricerca con indice delle parole (cerca.<impronta>.json), scaricato in sottofondo; stesso risultato della ricerca sul testo */
+const CERCA={ok:false,fail:false,pr:null,V:null,P:null,ids:null,dec:new Map(),memo:new Map()};
+function caricaCerca(){if(CERCA.pr)return CERCA.pr;return CERCA.pr=(async()=>{try{const n=MAN&&MAN.cerca;if(!n)throw 0;let t=await MEMO.leggi(n);
+  if(!t){const r=await fetch(n);if(!r.ok)throw 0;t=await r.text();MEMO.scrivi(n,t);}const j=JSON.parse(t);
+  const ids=PLACES.map(p=>p.id);for(const c of COMUNI_EXTRA)for(const p of c.places)ids.push(p.id);
+  if(j.n!==ids.length||(ids.length&&(j.ids[0]!==ids[0]||j.ids[1]!==ids[ids.length-1])))throw 0;
+  CERCA.V=j.v;CERCA.P=j.p;CERCA.ids=ids;CERCA.ok=true;}catch(e){CERCA.fail=true;}})();}
+function cercaPost(i){let a=CERCA.dec.get(i);if(a)return a;a=[];const s=CERCA.P[i];let n=0,pr=-1;
+  for(let k=0;k<s.length;k++){const c=s.charCodeAt(k);let v;if(c>=65&&c<=90){v=c-65;}else{const T="!#$%&*".indexOf(s[k]);if(T>=0)v=26+T;else{n=n*32+(c<=57?c-48:c-87);continue;}}
+    n=n*32+v;pr=pr+n+1;a.push(pr);n=0;}CERCA.dec.set(i,a);return a;}
+function cercaParola(w){let r=CERCA.memo.get(w);if(r)return r;const ids=new Set(),V=CERCA.V;
+  for(let i=0;i<V.length;i++)if(V[i].includes(w))for(const x of cercaPost(i))ids.add(CERCA.ids[x]);
+  r={ids,f:new Map()};CERCA.memo.set(w,r);return r;}
+const CERCAF=new Map();const cf=s=>{let r=CERCAF.get(s);if(r===undefined){r=fold(s);CERCAF.set(s,r);}return r;};
+let QOK_Q=null,QOK_W=null;
+function QOK(p){if(!CERCA.ok){if(!p._t)p._t=fold(p.name+" "+p.desc+" "+p.sub+" "+p.address+" "+p.com+" "+CATS[p.cat].long);return fold(S.q).split(/\s+/).every(w=>p._t.includes(w));}
+  if(QOK_Q!==S.q){QOK_Q=S.q;QOK_W=fold(S.q).split(/\s+/).map(w=>[w,cercaParola(w)]);}
+  return QOK_W.every(([w,r])=>r.ids.has(p.id)||cf(p.sub).includes(w)||cf(p.com).includes(w)||cf(CATS[p.cat].long).includes(w));}
 const precarica=prs=>{const f=()=>prs.forEach(pr=>caricaDet(pr));("requestIdleCallback" in window)?requestIdleCallback(f,{timeout:2500}):setTimeout(f,400);};
 /* classifica: punteggio di rilevanza (calcolato in costruzione; per Bologna con le stesse regole) e posizione */
 {const sc=p=>{let s=0;const u=(p.sources||[]).map(x=>x[1]||"").join(" ");if(p.unesco)s+=12;if(u.includes("touringclub.it"))s+=6;if(u.includes("italia.it"))s+=8;
   s+=Math.min(2,Math.max(0,(p.sources||[]).length-1))*2;if(p.status==="closed")s-=10;return Math.max(0,s+((D.pb||{})[p.id]||0));};
  const tutti=[...PLACES.map(p=>(p.r==null&&(p.r=sc(p)),p))];for(const c of COMUNI_EXTRA)for(const p of c.places)tutti.push(p);
- tutti.sort((a,b)=>b.r-a.r||a.name.localeCompare(b.name,"it"));tutti.forEach((p,i)=>p.rk=i+1);}
-{const _os=openSheet;openSheet=function(id,from){const ps=[...(IDPROV[id]||[])].filter(pr=>!DETOK[pr]);
-  if(!ps.length)return _os(id,from);Promise.all(ps.map(caricaDet)).then(()=>_os(id,from));};}
+ {const CO=new Intl.Collator("it");tutti.sort((a,b)=>b.r-a.r||CO.compare(a.name,b.name));}tutti.forEach((p,i)=>p.rk=i+1);}
+{const _os=openSheet;openSheet=function(id,from){const ps=[...(IDPROV[id]||[])].filter(pr=>!DETOK[pr]),sh=$("sheet");
+  sh.dataset.pid=id;sh.classList.toggle("sload",ps.length>0);_os(id,from);if(!ps.length)return;
+  Promise.all(ps.map(caricaDet)).then(()=>{if(sh.dataset.pid!==id||!sh.classList.contains("open"))return;const y=sh.scrollTop,f=lastFocus;sh.classList.remove("sload");_os(id,f);sh.scrollTop=y;});};}
+/* anticipo al tocco: la provincia della card o del comune toccato si scarica già alla pressione del dito */
+document.addEventListener("pointerdown",e=>{try{const t=e.target.closest(".card[data-pid],[data-c],a[href^='#']");if(!t)return;
+  if(t.dataset.pid){(IDPROV[t.dataset.pid]||[]).forEach(pr=>caricaDet(pr));return;}
+  const sl=t.dataset.c||t.getAttribute("href").slice(1);const c=COMUNI.find(x=>x.slug===sl);if(c)caricaDet(c.prov);}catch(err){}},{capture:true,passive:true});
+/* apertura di un comune: la presentazione arriva con il file della provincia */
+{const _sc=setComune;setComune=function(){const r=_sc.apply(this,arguments);try{if(!C.all&&!C.isProv&&!C.provs&&C.prov&&!DETOK[C.prov]){const el=$("lede"),cc=C;el.style.visibility="hidden";
+  caricaDet(C.prov).then(()=>{if(C===cc)el.textContent=ledeTxt(cc);el.style.visibility="";});}}catch(e){}return r;};}
+/* ricerca: se l'indice non è ancora arrivato, lo si aspetta (di solito è già in memoria) */
+{const _u2=update;update=function(){if(S.q&&!CERCA.ok&&!CERCA.fail){const n=$("count");if(n)n.textContent="Ricerca in corso…";caricaCerca().then(()=>update());return;}return _u2.apply(this,arguments);};}
+document.getElementById("q").addEventListener("focus",()=>caricaCerca(),{once:true});
+setTimeout(()=>{("requestIdleCallback" in window)?requestIdleCallback(()=>caricaCerca(),{timeout:8000}):caricaCerca();},2500);
 {const _up=update;update=function(){const r=_up.apply(this,arguments);try{const ps=[...new Set((CUR||[]).slice(0,60).map(p=>{const c=COMUNI.find(x=>x.slug===p.comSlug);return c&&c.prov;}).filter(Boolean))].slice(0,4);
   if(ps.length){precarica(ps);try{localStorage.setItem("ultProv",ps[0]);}catch(e){}}}catch(e){}return r;};}
 try{const u=localStorage.getItem("ultProv");if(u)precarica([u]);}catch(e){}
@@ -305,5 +385,8 @@ t = open(os.path.join(HERE, "template.html"), encoding="utf-8").read()
 t = t.replace("/*CAPI*/", ",".join(json.dumps(x, ensure_ascii=False) for x in sorted(set(sum(check.CAPOLUOGHI.values(), [])))))
 _i = t.index("/*PLACES*/"); _j = t.rindex("</script>")
 t = t[:_i] + bologna_places + "\n" + LOADER + t[_i + len("/*PLACES*/"):_j] + "\n}\n" + t[_j:]
+# 9/11/2026 il file dei dati parte subito, in testa alla pagina, mentre il resto della pagina arriva (fetch lo riprende dalla memoria)
+# (solo se nel telefono non c'è già: alla seconda visita i dati si leggono da IndexedDB)
+t = t.replace('<meta charset="utf-8">', '<meta charset="utf-8">\n<script>try{if(localStorage.getItem("datiNome")!==' + json.dumps(NOME_DATI) + '){var l=document.createElement("link");l.rel="preload";l.as="fetch";l.crossOrigin="anonymous";l.href=' + json.dumps(NOME_DATI) + ';document.head.appendChild(l);}}catch(e){}</script>', 1)
 open(os.path.join(HERE, "index.html"), "w", encoding="utf-8").write(t)
 print(len(comuni), "comuni extra,", sum(len(c["places"]) for c in comuni), "luoghi extra,", len(sources), "fonti; index", os.path.getsize(os.path.join(HERE, "index.html")), "byte; dati", os.path.getsize(os.path.join(HERE, NOME_DATI)), "byte")

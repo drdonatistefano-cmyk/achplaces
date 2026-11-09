@@ -2,6 +2,7 @@ import os
 import json,glob,re,collections
 _M=json.load(open('/home/claude/achs-places-guide/manifest.json'))
 d=json.load(open('/home/claude/achs-places-guide/'+_M['dati']))
+import sys as _s9; _s9.path.insert(0,'/home/claude/achs-places-guide'); from leggi_dati import righe as _righe9; d = _righe9(d)   # 9/11: dati per colonne
 if 'dz' in d:  # 8/11: dati con dizionari (stessa decodifica di DECODIFICA nella Guida)
     import unicodedata as _ud
     def _slug40(s):
@@ -13,17 +14,21 @@ if 'dz' in d:  # 8/11: dati con dizionari (stessa decodifica di DECODIFICA nella
         for a in _c['places']:
             if a[0]==0: a[0]=_slug40(a[1])
             a[3]=_Z['sub'][a[3]];a[7]=_Z['t'][a[7]]
-_DET={}
+_DET={};_CDET={}
 for _n in _M.get('det',{}).values():
     for _sl,_ps in json.load(open('/home/claude/achs-places-guide/'+_n)).items():
-        for _id,_x in _ps.items(): _DET[_id]=_x
+        for _id,_x in _ps.items():
+            if _id=='_c': _CDET[_sl]=_x   # 9/11: lede, avvisi e fonti del comune nei file per provincia
+            else: _DET[_id]=_x
+for _c in d['c']:
+    for _k,_v in _CDET.get(_c['slug'],{}).items(): _c.setdefault(_k,_v)
 _CK=["storia","musei","sacro","natura","locale"]
 for _c in d['c']:
     _np=[]
     for a in _c['places']:
         if isinstance(a,dict): _np.append(a);continue
         _id=_c['slug']+'--'+a[0];f=a[5];x=_DET.get(_id,{})
-        o=dict(id=_id,name=a[1],cat=_CK[a[2]],sub=a[3],desc=a[4],free=True if 'F' in f else False if 'P' in f else None,card='c' in f,unesco='u' in f,view='v' in f,indoor='i' in f,status=a[6] or 'ok',t=a[7],r=a[8],address=x.get('address',''),price=x.get('price',''),duration=x.get('duration',''))
+        o=dict(id=_id,name=a[1],cat=_CK[a[2]],sub=a[3],desc=a[4] or x.get('desc',''),free=True if 'F' in f else False if 'P' in f else None,card='c' in f,unesco='u' in f,view='v' in f,indoor='i' in f,status=a[6] or 'ok',t=a[7],r=a[8],address=x.get('address',''),price=x.get('price',''),duration=x.get('duration',''))
         if len(a)>9: o.update(a[9])
         _np.append(o)
     _c['places']=_np
