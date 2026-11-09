@@ -390,7 +390,7 @@ window.__salvaIst=function(){if(window.__ist)return;window.__ist=1;const n=MAN&&
     for(let i=localStorage.length-1;i>=0;i--){const k=localStorage.key(i);if(k&&k.startsWith('ist:')&&k!=='ist:'+n)localStorage.removeItem(k);}};
   setTimeout(salva,800);};
 /* dati: IndexedDB (ultimo nome) in parallelo al manifest */
-const ATTESO='luoghi.758f7670f8.js';const pIdb=MEMO.leggi(ultimo);
+const ATTESO='luoghi.a3826d8ac4.js';const pIdb=MEMO.leggi(ultimo);
 const pPrimo=ultimo?null:fetch(ATTESO).then(r=>r.ok?r.text():null).catch(()=>null);
 const pMan=fetch("manifest.json",{cache:"no-store"}).then(r=>r.json()).catch(()=>{try{return JSON.parse(LS.get('man')||'null');}catch(e){return null;}});
 (async()=>{MAN=await pMan;const nome=(MAN&&MAN.luoghi)||ultimo;if(!nome){vF.textContent='Dati non disponibili: controlla la connessione.';return;}

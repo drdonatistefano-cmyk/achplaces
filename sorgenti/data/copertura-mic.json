@@ -833,6 +833,26 @@
   "coperti": 3,
   "mancanti": []
  },
+ "Castelfranco Emilia (MO)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Mirandola (MO)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Pavullo nel Frignano (MO)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "San Felice sul Panaro (MO)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
  "Canossa (RE)": {
   "tot": 2,
   "coperti": 1,
@@ -870,6 +890,46 @@
  "San Martino in Rio (RE)": {
   "tot": 3,
   "coperti": 3,
+  "mancanti": []
+ },
+ "Castelnovo di Sotto (RE)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Luzzara (RE)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Bagnolo in Piano (RE)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Brescello (RE)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Montecchio Emilia (RE)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Reggiolo (RE)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Rubiera (RE)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Villa Minozzo (RE)": {
+  "tot": 2,
+  "coperti": 2,
   "mancanti": []
  },
  "Parma (PR)": {
@@ -949,6 +1009,26 @@
   "coperti": 3,
   "mancanti": []
  },
+ "Collecchio (PR)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Bardi (PR)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Noceto (PR)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Traversetolo (PR)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
  "Piacenza (PC)": {
   "tot": 13,
   "coperti": 7,
@@ -984,6 +1064,11 @@
   ]
  },
  "Castel San Giovanni (PC)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Monticelli d'Ongina (PC)": {
   "tot": 2,
   "coperti": 2,
   "mancanti": []
@@ -1706,6 +1791,11 @@
   "coperti": 3,
   "mancanti": []
  },
+ "Arcidosso (GR)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
  "Pisa (PI)": {
   "tot": 20,
   "coperti": 13,
@@ -1783,6 +1873,11 @@
   "coperti": 1,
   "mancanti": []
  },
+ "Bientina (PI)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
  "Livorno (LI)": {
   "tot": 10,
   "coperti": 6,
@@ -1840,6 +1935,11 @@
   "coperti": 3,
   "mancanti": []
  },
+ "Bibbona (LI)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
  "Massa (MS)": {
   "tot": 4,
   "coperti": 4,
@@ -1870,6 +1970,11 @@
   "mancanti": []
  },
  "Mulazzo (MS)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Aulla (MS)": {
   "tot": 2,
   "coperti": 2,
   "mancanti": []
@@ -2047,6 +2152,56 @@
   "coperti": 1,
   "mancanti": []
  },
+ "Anguillara Sabazia (RM)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Anzio (RM)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Arcinazzo Romano (RM)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Ardea (RM)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Artena (RM)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Carpineto Romano (RM)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Civitavecchia (RM)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Genazzano (RM)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Gerano (RM)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Licenza (RM)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
  "Latina (LT)": {
   "tot": 8,
   "coperti": 8,
@@ -2092,6 +2247,41 @@
   "coperti": 1,
   "mancanti": []
  },
+ "Cori (LT)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Gaeta (LT)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Itri (LT)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Minturno (LT)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Norma (LT)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "San Felice Circeo (LT)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Terracina (LT)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
  "Frosinone (FR)": {
   "tot": 1,
   "coperti": 1,
@@ -2135,6 +2325,21 @@
  "Castro dei Volsci (FR)": {
   "tot": 1,
   "coperti": 1,
+  "mancanti": []
+ },
+ "Alatri (FR)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Casalvieri (FR)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Fumone (FR)": {
+  "tot": 2,
+  "coperti": 2,
   "mancanti": []
  },
  "Rieti (RI)": {
@@ -2266,6 +2471,21 @@
   "coperti": 3,
   "mancanti": []
  },
+ "Barbarano Romano (VT)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Blera (VT)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Gradoli (VT)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
  "Napoli (NA)": {
   "tot": 51,
   "coperti": 51,
@@ -2314,6 +2534,31 @@
  "Capri (NA)": {
   "tot": 3,
   "coperti": 3,
+  "mancanti": []
+ },
+ "Boscoreale (NA)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Lacco Ameno (NA)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Pompei (NA)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Sorrento (NA)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Vico Equense (NA)": {
+  "tot": 2,
+  "coperti": 2,
   "mancanti": []
  },
  "Salerno (SA)": {
@@ -2386,6 +2631,31 @@
   "coperti": 1,
   "mancanti": []
  },
+ "Buccino (SA)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Eboli (SA)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Pontecagnano Faiano (SA)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Ravello (SA)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Sala Consilina (SA)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
  "Avellino (AV)": {
   "tot": 5,
   "coperti": 5,
@@ -2421,6 +2691,16 @@
   "coperti": 1,
   "mancanti": []
  },
+ "Atripalda (AV)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Lauro (AV)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
  "Benevento (BN)": {
   "tot": 7,
   "coperti": 7,
@@ -2439,6 +2719,11 @@
  "Cusano Mutri (BN)": {
   "tot": 1,
   "coperti": 1,
+  "mancanti": []
+ },
+ "Pontelandolfo (BN)": {
+  "tot": 2,
+  "coperti": 2,
   "mancanti": []
  },
  "Caserta (CE)": {
@@ -2474,6 +2759,11 @@
  "Letino (CE)": {
   "tot": 1,
   "coperti": 1,
+  "mancanti": []
+ },
+ "Prata Sannita (CE)": {
+  "tot": 2,
+  "coperti": 2,
   "mancanti": []
  },
  "Bari (BA)": {
@@ -2531,6 +2821,21 @@
   "coperti": 3,
   "mancanti": []
  },
+ "Acquaviva delle Fonti (BA)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Castellana Grotte (BA)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Gioia del Colle (BA)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
  "Barletta (BT)": {
   "tot": 6,
   "coperti": 6,
@@ -2556,6 +2861,16 @@
   "coperti": 5,
   "mancanti": []
  },
+ "Margherita di Savoia (BT)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Spinazzola (BT)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
  "Brindisi (BR)": {
   "tot": 7,
   "coperti": 7,
@@ -2574,6 +2889,11 @@
  "Oria (BR)": {
   "tot": 3,
   "coperti": 3,
+  "mancanti": []
+ },
+ "Fasano (BR)": {
+  "tot": 2,
+  "coperti": 2,
   "mancanti": []
  },
  "Foggia (FG)": {
@@ -2636,6 +2956,26 @@
   "coperti": 1,
   "mancanti": []
  },
+ "Cerignola (FG)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Lesina (FG)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Mattinata (FG)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "San Giovanni Rotondo (FG)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
  "Lecce (LE)": {
   "tot": 16,
   "coperti": 16,
@@ -2666,6 +3006,26 @@
   "coperti": 1,
   "mancanti": []
  },
+ "Cutrofiano (LE)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Maglie (LE)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Parabita (LE)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Poggiardo (LE)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
  "Taranto (TA)": {
   "tot": 6,
   "coperti": 6,
@@ -2677,6 +3037,16 @@
   "mancanti": []
  },
  "Laterza (TA)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Grottaglie (TA)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Martina Franca (TA)": {
   "tot": 2,
   "coperti": 2,
   "mancanti": []
@@ -2709,6 +3079,21 @@
  "Petralia Sottana (PA)": {
   "tot": 1,
   "coperti": 1,
+  "mancanti": []
+ },
+ "Bisacquino (PA)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Corleone (PA)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Termini Imerese (PA)": {
+  "tot": 2,
+  "coperti": 2,
   "mancanti": []
  },
  "Catania (CT)": {
@@ -2751,6 +3136,26 @@
   "coperti": 2,
   "mancanti": []
  },
+ "Aci Castello (CT)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Bronte (CT)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Giarre (CT)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Randazzo (CT)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
  "Messina (ME)": {
   "tot": 8,
   "coperti": 8,
@@ -2786,6 +3191,36 @@
   "coperti": 1,
   "mancanti": []
  },
+ "Barcellona Pozzo di Gotto (ME)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Capo d'Orlando (ME)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Giardini-Naxos (ME)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Malfa (ME)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Taormina (ME)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Tusa (ME)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
  "Agrigento (AG)": {
   "tot": 7,
   "coperti": 7,
@@ -2801,9 +3236,24 @@
   "coperti": 3,
   "mancanti": []
  },
+ "Licata (AG)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Santa Margherita di Belice (AG)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
  "Caltanissetta (CL)": {
   "tot": 5,
   "coperti": 5,
+  "mancanti": []
+ },
+ "Niscemi (CL)": {
+  "tot": 2,
+  "coperti": 2,
   "mancanti": []
  },
  "Enna (EN)": {
@@ -2819,6 +3269,11 @@
  "Sperlinga (EN)": {
   "tot": 1,
   "coperti": 1,
+  "mancanti": []
+ },
+ "Aidone (EN)": {
+  "tot": 2,
+  "coperti": 2,
   "mancanti": []
  },
  "Ragusa (RG)": {
@@ -2856,6 +3311,21 @@
   "coperti": 1,
   "mancanti": []
  },
+ "Buscemi (SR)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Floridia (SR)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Sortino (SR)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
  "Trapani (TP)": {
   "tot": 1,
   "coperti": 1,
@@ -2877,6 +3347,26 @@
   "mancanti": []
  },
  "Salemi (TP)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Campobello di Mazara (TP)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Castelvetrano (TP)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Gibellina (TP)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Paceco (TP)": {
   "tot": 2,
   "coperti": 2,
   "mancanti": []
@@ -2935,6 +3425,46 @@
   "coperti": 1,
   "mancanti": []
  },
+ "Bonorva (SS)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Burgos (SS)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Luras (SS)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Perfugas (SS)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Porto Torres (SS)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Pozzomaggiore (SS)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Thiesi (SS)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Villanova Monteleone (SS)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
  "Nuoro (NU)": {
   "tot": 5,
   "coperti": 5,
@@ -2980,6 +3510,36 @@
   "coperti": 1,
   "mancanti": []
  },
+ "Aritzo (NU)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Irgoli (NU)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Lanusei (NU)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Loceri (NU)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Mamoiada (NU)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Orani (NU)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
  "Oristano (OR)": {
   "tot": 1,
   "coperti": 1,
@@ -3006,6 +3566,16 @@
   "mancanti": []
  },
  "Cabras (OR)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Ales (OR)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Fordongianus (OR)": {
   "tot": 2,
   "coperti": 2,
   "mancanti": []
@@ -3053,6 +3623,56 @@
  "Sadali (SU)": {
   "tot": 1,
   "coperti": 1,
+  "mancanti": []
+ },
+ "Arbus (SU)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Fluminimaggiore (SU)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Genoni (SU)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Isili (SU)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Mandas (SU)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Santadi (SU)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Siliqua (SU)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Villacidro (SU)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Villanovaforru (SU)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Villasimius (SU)": {
+  "tot": 2,
+  "coperti": 2,
   "mancanti": []
  },
  "Milano (MI)": {
@@ -3113,6 +3733,16 @@
  "Sarnico (BG)": {
   "tot": 1,
   "coperti": 1,
+  "mancanti": []
+ },
+ "San Giovanni Bianco (BG)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Zogno (BG)": {
+  "tot": 2,
+  "coperti": 2,
   "mancanti": []
  },
  "Brescia (BS)": {
@@ -3185,6 +3815,21 @@
   "coperti": 1,
   "mancanti": []
  },
+ "Gardone Val Trompia (BS)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Gargnano (BS)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Sirmione (BS)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
  "Como (CO)": {
   "tot": 8,
   "coperti": 8,
@@ -3220,6 +3865,21 @@
   "coperti": 7,
   "mancanti": []
  },
+ "Galbiate (LC)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Premana (LC)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Varenna (LC)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
  "Lodi (LO)": {
   "tot": 6,
   "coperti": 6,
@@ -3228,6 +3888,11 @@
  "Sant'Angelo Lodigiano (LO)": {
   "tot": 4,
   "coperti": 4,
+  "mancanti": []
+ },
+ "Codogno (LO)": {
+  "tot": 2,
+  "coperti": 2,
   "mancanti": []
  },
  "Mantova (MN)": {
@@ -3265,6 +3930,16 @@
   "coperti": 1,
   "mancanti": []
  },
+ "Asola (MN)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Ostiglia (MN)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
  "Monza (MB)": {
   "tot": 4,
   "coperti": 4,
@@ -3281,6 +3956,26 @@
   "mancanti": []
  },
  "Zavattarello (PV)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Mede (PV)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Montalto Pavese (PV)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Stradella (PV)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Voghera (PV)": {
   "tot": 2,
   "coperti": 2,
   "mancanti": []
@@ -3308,6 +4003,21 @@
  "Grosio (SO)": {
   "tot": 3,
   "coperti": 3,
+  "mancanti": []
+ },
+ "Morbegno (SO)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Piuro (SO)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Teglio (SO)": {
+  "tot": 2,
+  "coperti": 2,
   "mancanti": []
  },
  "Varese (VA)": {
@@ -3338,6 +4048,21 @@
  "Gallarate (VA)": {
   "tot": 3,
   "coperti": 3,
+  "mancanti": []
+ },
+ "Angera (VA)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Luino (VA)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Tradate (VA)": {
+  "tot": 2,
+  "coperti": 2,
   "mancanti": []
  },
  "Venezia (VE)": {
@@ -3836,6 +4561,31 @@
   "coperti": 1,
   "mancanti": []
  },
+ "Castelfidardo (AN)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Falconara Marittima (AN)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Loreto (AN)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Maiolati Spontini (AN)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Morro d'Alba (AN)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
  "Urbino (PU)": {
   "tot": 10,
   "coperti": 10,
@@ -3909,6 +4659,31 @@
  "Mondolfo (PU)": {
   "tot": 1,
   "coperti": 1,
+  "mancanti": []
+ },
+ "Acqualagna (PU)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Fossombrone (PU)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Piandimeleto (PU)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "San Lorenzo in Campo (PU)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Urbania (PU)": {
+  "tot": 2,
+  "coperti": 2,
   "mancanti": []
  },
  "Macerata (MC)": {
@@ -4041,6 +4816,21 @@
   "coperti": 1,
   "mancanti": []
  },
+ "Mogliano (MC)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Porto Recanati (MC)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Potenza Picena (MC)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
  "Ascoli Piceno (AP)": {
   "tot": 8,
   "coperti": 8,
@@ -4091,6 +4881,31 @@
   "coperti": 1,
   "mancanti": []
  },
+ "Castel di Lama (AP)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Castignano (AP)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Montemonaco (AP)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Monteprandone (AP)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Spinetoli (AP)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
  "Fermo (FM)": {
   "tot": 5,
   "coperti": 5,
@@ -4124,6 +4939,11 @@
  "Moresco (FM)": {
   "tot": 1,
   "coperti": 1,
+  "mancanti": []
+ },
+ "Lapedona (FM)": {
+  "tot": 2,
+  "coperti": 2,
   "mancanti": []
  },
  "L'Aquila (AQ)": {
@@ -4529,6 +5349,61 @@
   "coperti": 3,
   "mancanti": []
  },
+ "Balme (TO)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Castellamonte (TO)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Chiomonte (TO)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Grugliasco (TO)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Lanzo Torinese (TO)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Locana (TO)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Pino Torinese (TO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Piverone (TO)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Pont Canavese (TO)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Ronco Canavese (TO)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Vigone (TO)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
  "Alessandria (AL)": {
   "tot": 9,
   "coperti": 9,
@@ -4587,6 +5462,21 @@
   "coperti": 3,
   "mancanti": []
  },
+ "Borghetto di Borbera (AL)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Rocca Grimalda (AL)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Voltaggio (AL)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
  "Asti (AT)": {
   "tot": 10,
   "coperti": 10,
@@ -4616,6 +5506,21 @@
   "coperti": 4,
   "mancanti": []
  },
+ "Costigliole d'Asti (AT)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Moncucco Torinese (AT)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Montiglio Monferrato (AT)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
  "Biella (BI)": {
   "tot": 6,
   "coperti": 6,
@@ -4629,6 +5534,11 @@
  "Rosazza (BI)": {
   "tot": 1,
   "coperti": 1,
+  "mancanti": []
+ },
+ "Sordevolo (BI)": {
+  "tot": 2,
+  "coperti": 2,
   "mancanti": []
  },
  "Cuneo (CN)": {
@@ -4780,6 +5690,56 @@
   "coperti": 3,
   "mancanti": []
  },
+ "Acceglio (CN)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Busca (CN)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Caraglio (CN)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Casteldelfino (CN)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Castelmagno (CN)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Dronero (CN)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Fossano (CN)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Mango (CN)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Santo Stefano Belbo (CN)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Vernante (CN)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
  "Novara (NO)": {
   "tot": 7,
   "coperti": 7,
@@ -4791,6 +5751,16 @@
   "mancanti": []
  },
  "Arona (NO)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Oleggio (NO)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Pettenasco (NO)": {
   "tot": 2,
   "coperti": 2,
   "mancanti": []
@@ -4860,6 +5830,16 @@
   "coperti": 3,
   "mancanti": []
  },
+ "Omegna (VB)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Valstrona (VB)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
  "Vercelli (VC)": {
   "tot": 3,
   "coperti": 3,
@@ -4881,6 +5861,26 @@
  "Alagna Valsesia (VC)": {
   "tot": 1,
   "coperti": 1,
+  "mancanti": []
+ },
+ "Albano Vercellese (VC)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Borgosesia (VC)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Guardabosone (VC)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Santhià (VC)": {
+  "tot": 2,
+  "coperti": 2,
   "mancanti": []
  },
  "Aosta (AO)": {
@@ -5181,6 +6181,41 @@
   "coperti": 2,
   "mancanti": []
  },
+ "Cogoleto (GE)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Lavagna (GE)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Masone (GE)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Mele (GE)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Ne (GE)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Ronco Scrivia (GE)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Sestri Levante (GE)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
  "Imperia (IM)": {
   "tot": 8,
   "coperti": 8,
@@ -5287,6 +6322,16 @@
  "Calice al Cornoviglio (SP)": {
   "tot": 3,
   "coperti": 3,
+  "mancanti": []
+ },
+ "Levanto (SP)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Sarzana (SP)": {
+  "tot": 2,
+  "coperti": 2,
   "mancanti": []
  },
  "Savona (SV)": {
@@ -5409,6 +6454,51 @@
   "coperti": 2,
   "mancanti": []
  },
+ "Ampezzo (UD)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Forgaria nel Friuli (UD)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Malborghetto Valbruna (UD)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Paluzza (UD)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Paularo (UD)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Sauris (UD)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Tarvisio (UD)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Venzone (UD)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Zuglio (UD)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
  "Pordenone (PN)": {
   "tot": 5,
   "coperti": 5,
@@ -5424,6 +6514,26 @@
   "coperti": 3,
   "mancanti": []
  },
+ "Andreis (PN)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Caneva (PN)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Maniago (PN)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Sequals (PN)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
  "Gorizia (GO)": {
   "tot": 7,
   "coperti": 7,
@@ -5432,6 +6542,26 @@
  "Monfalcone (GO)": {
   "tot": 3,
   "coperti": 3,
+  "mancanti": []
+ },
+ "Cormons (GO)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Gradisca d'Isonzo (GO)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Grado (GO)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Ronchi dei Legionari (GO)": {
+  "tot": 1,
+  "coperti": 1,
   "mancanti": []
  },
  "Campobasso (CB)": {
@@ -5444,6 +6574,576 @@
   "coperti": 8,
   "mancanti": []
  },
+ "Jelsi (CB)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Larino (CB)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Sepino (CB)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Alfedena (AQ)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Bisegna (AQ)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Cansano (AQ)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Castelvecchio Subequo (AQ)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Cerchio (AQ)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Civitella Roveto (AQ)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Cocullo (AQ)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Collelongo (AQ)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Fontecchio (AQ)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Magliano de' Marsi (AQ)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Pescasseroli (AQ)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Rivisondoli (AQ)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Rocca Pia (AQ)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "San Demetrio ne' Vestini (AQ)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Trasacco (AQ)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Villavallelonga (AQ)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Bucine (AR)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Castel San Niccolò (AR)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Cavriglia (AR)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Civitella in Val di Chiana (AR)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "San Giovanni Valdarno (AR)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Subbiano (AR)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Cesiomaggiore (BL)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Bomba (CH)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Bucchianico (CH)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Canosa Sannita (CH)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Castiglione Messer Marino (CH)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Fossacesia (CH)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Montenerodomo (CH)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Palmoli (CH)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Rapino (CH)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Alessandria del Carretto (CS)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Amendolara (CS)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Bocchigliero (CS)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Celico (CS)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Cetraro (CS)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Diamante (CS)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Fagnano Castello (CS)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Amato (CZ)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Borgia (CZ)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Gavorrano (GR)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Roccalbegna (GR)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Seggiano (GR)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Cirò Marina (KR)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Crucoli (KR)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Camaiore (LU)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Forte dei Marmi (LU)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Stazzema (LU)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Montignoso (MS)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Accettura (MT)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Irsina (MT)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Montescaglioso (MT)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Pisticci (MT)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Stigliano (MT)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Valsinni (MT)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Montegrotto Terme (PD)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Teolo (PD)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Bussi sul Tirino (PE)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Moscufo (PE)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Serramonacesca (PE)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Torre de' Passeri (PE)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Cannara (PG)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Cascia (PG)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Costacciaro (PG)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Gualdo Tadino (PG)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Magione (PG)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Piegaro (PG)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Preci (PG)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Castelfranco di Sotto (PI)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Palaia (PI)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Larciano (PT)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "San Marcello Piteglio (PT)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Albano di Lucania (PZ)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Avigliano (PZ)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Genzano di Lucania (PZ)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Laurenzana (PZ)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Maratea (PZ)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Montemurro (PZ)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Pescopagano (PZ)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "San Paolo Albanese (PZ)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Terranova di Pollino (PZ)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Bova (RC)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Cittanova (RC)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Delianuova (RC)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Fratta Polesine (RO)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Controguerra (TE)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Montorio al Vomano (TE)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Mosciano Sant'Angelo (TE)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Nereto (TE)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Pineto (TE)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Sant'Omero (TE)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Torricella Sicura (TE)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Tortoreto (TE)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Arco (TN)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Canazei (TN)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Cavalese (TN)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Lavarone (TN)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Malé (TN)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Moena (TN)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Riva del Garda (TN)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Alviano (TR)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Castel Viscardo (TR)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Ferentillo (TR)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Monteleone d'Orvieto (TR)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Castelfranco Veneto (TV)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Dolo (VE)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Quarto d'Altino (VE)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Legnago (VR)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Selva di Progno (VR)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Briatico (VV)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Filadelfia (VV)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
  "Isernia (IS)": {
   "tot": 3,
   "coperti": 3,
@@ -5452,6 +7152,26 @@
  "Venafro (IS)": {
   "tot": 4,
   "coperti": 4,
+  "mancanti": []
+ },
+ "Agnone (IS)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Rocchetta a Volturno (IS)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "San Pietro Avellana (IS)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Scapoli (IS)": {
+  "tot": 2,
+  "coperti": 2,
   "mancanti": []
  },
  "Potenza (PZ)": {
@@ -5494,6 +7214,31 @@
   "coperti": 2,
   "mancanti": []
  },
+ "Lavello (PZ)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Muro Lucano (PZ)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Palazzo San Gervasio (PZ)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "San Severino Lucano (PZ)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Satriano di Lucania (PZ)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
  "Matera (MT)": {
   "tot": 12,
   "coperti": 12,
@@ -5514,6 +7259,11 @@
   "coperti": 3,
   "mancanti": []
  },
+ "Tricarico (MT)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
  "Catanzaro (CZ)": {
   "tot": 12,
   "coperti": 12,
@@ -5522,6 +7272,11 @@
  "Lamezia Terme (CZ)": {
   "tot": 4,
   "coperti": 4,
+  "mancanti": []
+ },
+ "Cropani (CZ)": {
+  "tot": 2,
+  "coperti": 2,
   "mancanti": []
  },
  "Cosenza (CS)": {
@@ -5569,6 +7324,66 @@
   "coperti": 3,
   "mancanti": []
  },
+ "Altomonte (CS)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Bisignano (CS)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Cerchiara di Calabria (CS)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Civita (CS)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Laino Borgo (CS)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Longobucco (CS)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Morano Calabro (CS)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Papasidero (CS)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "San Marco Argentano (CS)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Saracena (CS)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Spezzano della Sila (CS)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Tarsia (CS)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
  "Crotone (KR)": {
   "tot": 6,
   "coperti": 6,
@@ -5614,6 +7429,31 @@
   "coperti": 3,
   "mancanti": []
  },
+ "Bagnara Calabra (RC)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Bova Marina (RC)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Oppido Mamertina (RC)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Scido (RC)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Stilo (RC)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
  "Vibo Valentia (VV)": {
   "tot": 2,
   "coperti": 2,
@@ -5627,6 +7467,26 @@
  "Tropea (VV)": {
   "tot": 3,
   "coperti": 3,
+  "mancanti": []
+ },
+ "Mileto (VV)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Monterosso Calabro (VV)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Pizzo (VV)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Serra San Bruno (VV)": {
+  "tot": 2,
+  "coperti": 2,
   "mancanti": []
  }
 }

@@ -185,6 +185,13 @@ def punteggio(p, slug):
     return max(0, min(100, s))
 for _c in comuni:
     for _p in _c["places"]: _p["r"] = punteggio(_p, _c["slug"])
+# 9/11/2026 Tiqets: pagina prodotto esatta per i luoghi che vende (data/tiqets.json da tiqets_abbina.py)
+TQ = json.load(open(os.path.join(D, "tiqets.json"))) if os.path.exists(os.path.join(D, "tiqets.json")) else {}
+for _c in comuni:
+    for _p in _c["places"]:
+        if _p["id"] in TQ: _p["tq"] = TQ[_p["id"]]
+_tqp=[_p for _c in comuni for _p in _c["places"] if _p.get("tq")]
+print("Tiqets: luoghi abbinati", len(_tqp), "| bottone in card", sum(1 for _p in _tqp if _p.get("free") is not True and not _p.get("ticketUrl")), "| link in scheda", sum(1 for _p in _tqp if _p.get("free") is not True), "| gratuiti esclusi", sum(1 for _p in _tqp if _p.get("free") is True))
 PESANTI = ("why", "access", "official", "ownSite", "sources", "tip", "statusNote", "hoursUrl")   # ticketUrl resta nell'indice: tasto Ticket nelle card (8/11)
 VIA = ("hours", "booking", "rev", "mic")          # non usati dalla pagina
 _leggeri = copy.deepcopy(comuni); _det = {}
@@ -270,7 +277,7 @@ COLONNE = r"""function COLONNE(D){if(!D.k)return D;const K=D.k,C=[],ks=Object.ke
 with _tf.NamedTemporaryFile("w", suffix=".js", delete=False) as _f:
     _f.write(COLONNE + "\nconst fs=require('fs');process.stdout.write(JSON.stringify(COLONNE(JSON.parse(fs.readFileSync(0,'utf8'))).c));")
 assert json.loads(_sp.run(["node", _f.name], input=json.dumps(dict(k=_K), ensure_ascii=False), capture_output=True, text=True, check=True).stdout) == json.loads(json.dumps(_leggeri)), "colonne: la decodifica JS non restituisce i dati"
-NOME_DATI = _scrivi("dati", dict(pb=PB, g=list(geo_of("Bologna")), k=_K, l=LINKS["bologna"], dz=_DZ))
+NOME_DATI = _scrivi("dati", dict(pb=PB, g=list(geo_of("Bologna")), k=_K, l=LINKS["bologna"], dz=_DZ, tb={k: v for k, v in TQ.items() if "--" not in k}))
 NOME_META = _scrivi("meta", dict(q=qc, s=sources, a=ARCH))
 DET = {pr: _scrivi("det." + pr.lower(), d) for pr, d in sorted(_det.items())}
 # 9/11/2026 indice delle parole per la ricerca (stesso risultato di «ogni parola cercata è contenuta nel testo del luogo»):
@@ -292,6 +299,10 @@ for _old in glob.glob(os.path.join(HERE, "cerca.*.json")): os.remove(_old)
 NOME_CERCA = _scrivi("cerca", json.loads(_cerca))
 json.dump(dict(v=2, dati=NOME_DATI, meta=NOME_META, det=DET, cerca=NOME_CERCA), open(os.path.join(HERE, "manifest.json"), "w"))
 LOADER = r"""
+/* 9/11/2026 Tiqets (Awin, publisher 3146807 come Events): mid a 0 = link diretto alla pagina del prodotto; con l'ID inserzionista il clic passa da Awin */
+var AFF={awin:"3146807",mid:{"tiqets.com":12427}};
+function affUrl(u){try{const h=new URL(u).hostname.replace(/^www\./,"");for(const d in AFF.mid){if(AFF.awin&&AFF.mid[d]&&(h===d||h.endsWith("."+d)))return "https://www.awin1.com/cread.php?awinmid="+AFF.mid[d]+"&awinaffid="+AFF.awin+"&ued="+encodeURIComponent(u)}}catch(_){}return u}
+document.addEventListener("click",e=>{const a=e.target.closest&&e.target.closest("a[href^='https://']");if(a&&!a.dataset.aff){const v=affUrl(a.href);if(v!==a.href){a.dataset.aff=a.href;a.href=v}}},true);
 /* ---- caricamento come la guida osterie (7/11/2026): manifest.json (sempre riletto) -> dati.<hash>.json
    conservato nel telefono (IndexedDB) e riscaricato solo quando cambia ---- */
 const MEMO={db:null,apri(){if(this.db)return this.db;this.db=new Promise(ok=>{try{const r=indexedDB.open("luoghi",1);
@@ -329,6 +340,8 @@ const BO_GEO=D.g,COMUNI_EXTRA=D.c,LINKS_BO=D.l;let QC,SOURCES,ARCH;
 const caricaMeta=(()=>{let pr=null;return()=>pr||(pr=(async()=>{const n=MAN&&MAN.meta;if(!n)return;let t=await MEMO.leggi(n);if(!t){const r=await fetch(n);if(!r.ok)return;t=await r.text();MEMO.scrivi(n,t);}const m=JSON.parse(t);QC=m.q;SOURCES=m.s;ARCH=m.a;const h=location.hash.slice(1);if(h==="metodo"||h==="fonti")route(true);})());})();
 ("requestIdleCallback" in window)?requestIdleCallback(()=>caricaMeta(),{timeout:4000}):setTimeout(()=>caricaMeta(),1500);
 for(const p of PLACES){const l=LINKS_BO[p.id];if(l){p.hoursUrl=l.orari||"";p.ticketUrl=l.biglietti||"";if(l.off)p.official=l.off;}}
+if(D.tb)for(const p of PLACES)if(D.tb[p.id])p.tq=D.tb[p.id];
+{const n=document.getElementById("aff-nota");if(n&&AFF.awin&&Object.values(AFF.mid).some(Boolean))n.hidden=false;}
 /* dettagli della scheda (perché andarci, fonti, link) per provincia: scaricati in sottofondo o al tocco */
 const DETOK={},DETP={},IDPROV={};
 for(const c of COMUNI_EXTRA)for(const p of c.places)(IDPROV[p.id]||(IDPROV[p.id]=new Set())).add(c.prov);

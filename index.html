@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
 <meta charset="utf-8">
-<script>try{if(localStorage.getItem("datiNome")!=="dati.5a605c1151.json"){var l=document.createElement("link");l.rel="preload";l.as="fetch";l.crossOrigin="anonymous";l.href="dati.5a605c1151.json";document.head.appendChild(l);}}catch(e){}</script>
+<script>try{if(localStorage.getItem("datiNome")!=="dati.73ff17c40b.json"){var l=document.createElement("link");l.rel="preload";l.as="fetch";l.crossOrigin="anonymous";l.href="dati.73ff17c40b.json";document.head.appendChild(l);}}catch(e){}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#161311">
 <title>Ach's Places Guide</title>
@@ -898,6 +898,7 @@ if(GC&&ON_WEB){try{const s=document.createElement("script");s.async=true;s.datas
 <div class="wrap">
   <footer class="mini">
     <p>Testi originali · "Come arrivare" e "Foto" sono semplici link a Google · Coordinate © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a> · <a href="#metodo">Metodo</a> · <a href="#fonti">Archivio fonti</a></p>
+    <p id="aff-nota" hidden>Alcuni link sono affiliati: se compri un biglietto la guida riceve una piccola commissione, senza costi per te.</p>
   </footer>
 </div>
 
@@ -1192,6 +1193,10 @@ const PLACES = [
  sources:[["Ducati, Borgo Panigale Experience: tariffe e orari","https://www.ducati.com/it/it/borgo-panigale-experience","uff"]]}
 ];
 
+/* 9/11/2026 Tiqets (Awin, publisher 3146807 come Events): mid a 0 = link diretto alla pagina del prodotto; con l'ID inserzionista il clic passa da Awin */
+var AFF={awin:"3146807",mid:{"tiqets.com":12427}};
+function affUrl(u){try{const h=new URL(u).hostname.replace(/^www\./,"");for(const d in AFF.mid){if(AFF.awin&&AFF.mid[d]&&(h===d||h.endsWith("."+d)))return "https://www.awin1.com/cread.php?awinmid="+AFF.mid[d]+"&awinaffid="+AFF.awin+"&ued="+encodeURIComponent(u)}}catch(_){}return u}
+document.addEventListener("click",e=>{const a=e.target.closest&&e.target.closest("a[href^='https://']");if(a&&!a.dataset.aff){const v=affUrl(a.href);if(v!==a.href){a.dataset.aff=a.href;a.href=v}}},true);
 /* ---- caricamento come la guida osterie (7/11/2026): manifest.json (sempre riletto) -> dati.<hash>.json
    conservato nel telefono (IndexedDB) e riscaricato solo quando cambia ---- */
 const MEMO={db:null,apri(){if(this.db)return this.db;this.db=new Promise(ok=>{try{const r=indexedDB.open("luoghi",1);
@@ -1211,7 +1216,7 @@ function salvaIst(nome){setTimeout(()=>{if(IST_TOCCO||location.hash.slice(1))ret
 (async()=>{const cnt=document.getElementById("count");if(cnt&&!IST_ORIG)cnt.textContent="Caricamento dei luoghi…";
   let nome=null;try{nome=localStorage.getItem("datiNome");}catch(e){}
   const ultimo=nome,pIdb=nome?MEMO.leggi(nome):null;
-  const ATTESO="dati.5a605c1151.json",pPrimo=nome?null:fetch(ATTESO).then(r=>r.ok?r.text():null).catch(()=>null);  /* primo accesso: in parallelo al manifest */
+  const ATTESO="dati.73ff17c40b.json",pPrimo=nome?null:fetch(ATTESO).then(r=>r.ok?r.text():null).catch(()=>null);  /* primo accesso: in parallelo al manifest */
   try{MAN=await (await fetch("manifest.json",{cache:"no-store"})).json();nome=MAN.dati;try{localStorage.setItem("man",JSON.stringify(MAN));}catch(e){}}catch(e){try{MAN=JSON.parse(localStorage.getItem("man")||"null");}catch(e2){}}
   if(!nome){if(cnt)cnt.textContent="Dati non disponibili: controlla la connessione.";return;}
   let t=nome===ultimo&&pIdb?await pIdb:(pPrimo&&nome===ATTESO?await pPrimo:null)||await MEMO.leggi(nome);
@@ -1234,6 +1239,8 @@ const BO_GEO=D.g,COMUNI_EXTRA=D.c,LINKS_BO=D.l;let QC,SOURCES,ARCH;
 const caricaMeta=(()=>{let pr=null;return()=>pr||(pr=(async()=>{const n=MAN&&MAN.meta;if(!n)return;let t=await MEMO.leggi(n);if(!t){const r=await fetch(n);if(!r.ok)return;t=await r.text();MEMO.scrivi(n,t);}const m=JSON.parse(t);QC=m.q;SOURCES=m.s;ARCH=m.a;const h=location.hash.slice(1);if(h==="metodo"||h==="fonti")route(true);})());})();
 ("requestIdleCallback" in window)?requestIdleCallback(()=>caricaMeta(),{timeout:4000}):setTimeout(()=>caricaMeta(),1500);
 for(const p of PLACES){const l=LINKS_BO[p.id];if(l){p.hoursUrl=l.orari||"";p.ticketUrl=l.biglietti||"";if(l.off)p.official=l.off;}}
+if(D.tb)for(const p of PLACES)if(D.tb[p.id])p.tq=D.tb[p.id];
+{const n=document.getElementById("aff-nota");if(n&&AFF.awin&&Object.values(AFF.mid).some(Boolean))n.hidden=false;}
 /* dettagli della scheda (perché andarci, fonti, link) per provincia: scaricati in sottofondo o al tocco */
 const DETOK={},DETP={},IDPROV={};
 for(const c of COMUNI_EXTRA)for(const p of c.places)(IDPROV[p.id]||(IDPROV[p.id]=new Set())).add(c.prov);
@@ -1481,7 +1488,7 @@ function cardEl(p){
     const n=p._sel||p.rk,sub=C.isProv?`${esc(CATS[p.cat].label)} · ${esc(p.com)}`:`${esc(CATS[p.cat].label)} · ${esc(p.sub)}`;
     c.innerHTML=`<button class="cmain" type="button"><div class="crow${FOTO[p.id]?" hasph":""}">${n?`<div class="cnum${String(n).length>=4?" c4":""}" title="${p._sel?"Posizione nella selezione attuale":"Posizione nella classifica di tutta la guida"}"><small>N°</small><b>${n}</b></div>`:`<div class="cnum"></div>`}<div class="cbody">
       <h3 class="title">${esc(p.name)}</h3><div class="csub">${sub}${p._sel&&p.rk?` <span class="cgl">· n. ${p.rk} in Italia</span>`:""}</div><p class="desc">${esc(p.desc)}</p><div class="meta">${ctags(p)}</div></div>${FOTO[p.id]?`<span class="cphw"><img class="cph" data-fid="${esc(p.id)}" width="84" height="84" loading="lazy" decoding="async" alt="" style="background:${FOTO[p.id][4]||"var(--line)"}"><span class="cdot" title="${esc(CATS[p.cat].label)}" role="img" aria-label="${esc(CATS[p.cat].label)}"></span></span>`:`<span class="cdot" title="${esc(CATS[p.cat].label)}" role="img" aria-label="${esc(CATS[p.cat].label)}"></span>`}</div></button>
-      <div class="cfoot">${p.free===true?`<button class="cbtn tk fr" type="button" aria-label="Ingresso gratuito: vedi la scheda di ${esc(p.name)}">${ic("check")}Gratis</button>`:p.ticketUrl?`<a class="cbtn tk" href="${esc(p.ticketUrl)}" target="_blank" rel="noopener" aria-label="Biglietti ufficiali: ${esc(p.name)}">${ic("ticket")}Biglietti</a>`:`<button class="cbtn tk" type="button" aria-label="Biglietto: vedi la scheda di ${esc(p.name)}">${ic("ticket")}Biglietti</button>`}<a class="cbtn ph" href="${photoUrl(p)}" target="_blank" rel="noopener" aria-label="Foto di ${esc(p.name)} su Google Immagini">${ic("cam")}Foto</a><button class="cbtn fav${FAV.has(p.id)?" on":""}" type="button" aria-pressed="${FAV.has(p.id)}" aria-label="Salva tra i miei luoghi">${ic("heart",FAV.has(p.id))}</button><button class="cbtn pri" type="button">Apri${ic("chev")}</button></div>`;
+      <div class="cfoot">${p.free===true?`<button class="cbtn tk fr" type="button" aria-label="Ingresso gratuito: vedi la scheda di ${esc(p.name)}">${ic("check")}Gratis</button>`:(p.ticketUrl||p.tq)?`<a class="cbtn tk" href="${esc(p.ticketUrl||p.tq)}" target="_blank" rel="noopener${p.ticketUrl?"":" sponsored"}" aria-label="Biglietti${p.ticketUrl?" ufficiali":" su Tiqets"}: ${esc(p.name)}">${ic("ticket")}Biglietti</a>`:`<button class="cbtn tk" type="button" aria-label="Biglietto: vedi la scheda di ${esc(p.name)}">${ic("ticket")}Biglietti</button>`}<a class="cbtn ph" href="${photoUrl(p)}" target="_blank" rel="noopener" aria-label="Foto di ${esc(p.name)} su Google Immagini">${ic("cam")}Foto</a><button class="cbtn fav${FAV.has(p.id)?" on":""}" type="button" aria-pressed="${FAV.has(p.id)}" aria-label="Salva tra i miei luoghi">${ic("heart",FAV.has(p.id))}</button><button class="cbtn pri" type="button">Apri${ic("chev")}</button></div>`;
     const open=()=>openSheet(p.id,c.querySelector(".cmain"));
     c.querySelector(".cmain").onclick=open; c.querySelector(".cbtn.pri").onclick=open;
     {const tb=c.querySelector("button.cbtn.tk");if(tb)tb.onclick=open;}
@@ -1529,7 +1536,7 @@ function openSheet(id,from){
     <p class="lead">${esc(p.desc)}</p>${FOTO[p.id]?`<a class="fcred" href="${esc(FOTO[p.id][3])}" target="_blank" rel="noopener">📷 Foto: ${esc(FOTO[p.id][1]||"vedi pagina del file")} · ${esc(FOTO[p.id][2])} · Wikimedia Commons ↗</a>`:""}
     ${p.why?`<div class="why"><b>Perché andarci.</b> ${esc(p.why)}</div>`:""}${p.tip?`<div class="cnote"><span class="em" aria-hidden="true">💡</span><div>${esc(p.tip)}</div></div>`:""}
     <div class="facts">
-      <div class="fact"><span class="ic" aria-hidden="true">🎟️</span><small>Biglietto</small><div>${p.free===true?"Gratis":p.ticketUrl?`<a class="flink" href="${esc(p.ticketUrl)}" target="_blank" rel="noopener">Biglietti e tariffe ufficiali ↗</a>`:`<a class="flink soft" href="${esc(p.official)}" target="_blank" rel="noopener">${p.ownSite===false?"Info sul portale turistico ↗":"Cerca le tariffe sul sito ↗"}</a>`}</div></div>
+      <div class="fact"><span class="ic" aria-hidden="true">🎟️</span><small>Biglietto</small><div>${p.free===true?"Gratis":p.ticketUrl?`<a class="flink" href="${esc(p.ticketUrl)}" target="_blank" rel="noopener">Biglietti e tariffe ufficiali ↗</a>`:`<a class="flink soft" href="${esc(p.official)}" target="_blank" rel="noopener">${p.ownSite===false?"Info sul portale turistico ↗":"Cerca le tariffe sul sito ↗"}</a>`}${p.tq&&p.free!==true?`<br><a class="flink" href="${esc(p.tq)}" target="_blank" rel="noopener sponsored">Biglietti su Tiqets ↗</a>`:""}</div></div>
       <div class="fact"><span class="ic" aria-hidden="true">🕘</span><small>Orari</small><div>${p.hoursUrl?`<a class="flink" href="${esc(p.hoursUrl)}" target="_blank" rel="noopener">Orari ufficiali ↗</a>`:p.free===true&&!p.indoor?"Spazio aperto: verifica eventuali limitazioni":`<a class="flink soft" href="${esc(p.official)}" target="_blank" rel="noopener">${p.ownSite===false?"Info sul portale turistico ↗":"Cerca gli orari sul sito ↗"}</a>`}</div></div>
       <div class="fact"><span class="ic" aria-hidden="true">⏱️</span><small>Tempo consigliato</small><div>${esc(p.duration)}</div></div>
       <div class="fact"><span class="ic" aria-hidden="true">♿</span><small>Accessibilità</small><div>${esc(p.access)}</div></div>
