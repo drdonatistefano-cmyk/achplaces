@@ -34,6 +34,7 @@ while coda:
     if '<sitemapindex' in t:
         coda += [l for l in locs if l not in viste]
         continue
+    if len(viste) <= 6 or len(viste) % 40 == 0: print('ESEMPIO', u, len(locs), locs[:3], alt[:3], t[:300].replace('\n',' '), flush=True)
     for l in locs + alt:
         m = RX.match(l)
         if m: prod[m.group(4)] = [l, m.group(1), m.group(2), m.group(3), m.group(4)]
