@@ -45,7 +45,10 @@ for pid, nome, com in LU:
         archeo = False
         if not d and re.search(r'\b(area archeologica|scavi|parco archeologico|sito archeologico)\b', n(v)) and cw & set(n(v).split()):
             d = sorted(cw); archeo = True   # «Area archeologica di Pompei» = biglietto d'ingresso a Pompei
-        if not d or all(w in WEAK for w in d): continue
+        if d and all(w in WEAK for w in d):
+            if tipo: d = d + [w for w in n(re.sub(r'\s*\([^)]*\)', '', nome)).split() if w in TIPI] + sorted(cw)   # «Teatro antico» di Taormina: tipo, parole e comune tutti nel prodotto
+            else: continue
+        if not d: continue
         for ps, u in prods:
             t = n(ps.replace('biglietti-per-', '', 1)); toks = set(t.split())
             if not all(ha(w, toks, t) for w in d): continue
