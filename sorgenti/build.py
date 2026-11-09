@@ -200,6 +200,35 @@ print("GetYourGuide: luoghi abbinati", sum(1 for _c in comuni for _p in _c["plac
 print("Tiqets: luoghi abbinati", len(_tqp), "| bottone in card", sum(1 for _p in _tqp if _p.get("free") is not True and not _p.get("ticketUrl")), "| link in scheda", sum(1 for _p in _tqp if _p.get("free") is not True), "| gratuiti esclusi", sum(1 for _p in _tqp if _p.get("free") is True))
 PESANTI = ("why", "access", "official", "ownSite", "sources", "tip", "statusNote", "hoursUrl")   # ticketUrl resta nell'indice: tasto Ticket nelle card (8/11)
 VIA = ("hours", "booking", "rev", "mic")          # non usati dalla pagina
+# 9/11/2026 prezzo stimato (richiesta di Stefano) per i luoghi con ingresso «da verificare»: dai luoghi verificati dello stesso
+# tipo (nella stessa regione se ce ne sono almeno 8, altrimenti in tutta la guida). Se almeno 3 su 4 sono gratuiti → «probabilmente
+# gratis»; altrimenti la mediana dei prezzi interi. È sempre mostrato come stima, con il rimando al sito ufficiale.
+import statistics as _st
+def _eur(t):
+    m = re.search(r'(\d+(?:[.,]\d+)?)\s*€|€\s*(\d+(?:[.,]\d+)?)', t or '')
+    if not m: return None
+    v = float((m.group(1) or m.group(2)).replace(',', '.'))
+    return v if 0 < v < 60 else None
+_campioni = {}
+for _c in comuni:
+    for _p in _c["places"]:
+        if _p.get("free") is True: v = 0.0
+        elif _p.get("free") is False: v = _eur(_p.get("price"))
+        else: continue
+        if v is None: continue
+        _campioni.setdefault((_p["sub"], _c.get("regione")), []).append(v); _campioni.setdefault((_p["sub"], None), []).append(v)
+_nst = [0, 0]
+for _c in comuni:
+    for _p in _c["places"]:
+        if _p.get("free") is not None: continue
+        cs = _campioni.get((_p["sub"], _c.get("regione")), [])
+        if len(cs) < 8: cs = _campioni.get((_p["sub"], None), [])
+        if len(cs) < 5: continue
+        if sum(1 for v in cs if v == 0) / len(cs) >= 0.75: _p["ps"] = 0; _nst[0] += 1
+        else:
+            pag = [v for v in cs if v > 0]
+            if pag: _p["ps"] = int(round(_st.median(pag))); _nst[1] += 1
+print("prezzo stimato: probabilmente gratis", _nst[0], "| stima in euro", _nst[1])
 _leggeri = copy.deepcopy(comuni); _det = {}
 # 9/11/2026 velocità: nella prima schermata solo nome, categoria, comune, etichette e filtri.
 # Le descrizioni vanno nei file per provincia, tranne quelle dei luoghi più in alto in classifica (prime card della vista «tutti»);

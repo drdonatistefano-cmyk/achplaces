@@ -94,3 +94,19 @@ scarto: Rocca di Landasio | da rivalutare: solo due righe nella guida del Comune
 scarto: Chiesa dei Santi Gervaso e Protaso a Mariano | da rivalutare: scheda Parma Welcome non leggibile
 copertura: completa
 minimo: 4 | MiC (1 luogo, inserito), portale regionale, Parma Welcome e guida sul sito del Comune eseguite; italia.it non letta
+
+@ San Secondo Parmense | 034033 | PR | https://emiliaromagnaturismo.it/en/towns/san-secondo-parmense |
+lede: Centro agricolo della Bassa parmense sulla Strada del Culatello, feudo e residenza dei Rossi fino al 1817: la Rocca dei Rossi conserva sale affrescate come quella dell'Asino d'Oro, e tra i campi sorge la pieve romanica di San Genesio; il paese è noto per la spalla cotta e il vino Fortana.
+src: Emilia-Romagna Turismo, San Secondo Parmense^https://emiliaromagnaturismo.it/en/towns/san-secondo-parmense
+src: Parma Welcome, Rocca dei Rossi^https://parmawelcome.it/scheda/rocca-dei-rossi/
+src: Parma Welcome, Pieve di San Genesio^https://parmawelcome.it/scheda/pieve-di-san-genesio-san-secondo-parmense/
+src: Parma Welcome, San Secondo Parmense^https://parmawelcome.it/en/place/san-secondo-parmense/
+- Rocca dei Rossi | storia/Castelli e fortezze | mid | i | €8, ridotto €6 (gruppi, FAI, Card del Ducato), 11-18 anni €5, 6-10 anni €3, gratis 0-5 anni | Voluta da Pier Maria Rossi II detto il Magnifico nel Quattrocento, danneggiata a fine secolo e ricostruita in forme rinascimentali all'inizio del Cinquecento. Le sale affrescate si ispirano alle favole di Esopo e alla mitologia classica: nella Sala dell'Asino d'Oro un ciclo tratto dal romanzo di Apuleio, nella Sala delle Gesta tredici grandi quadri-arazzo con le imprese del casato dal 1199 al 1542. Dal 1° marzo all'8 dicembre 2026 aperta venerdì e sabato 10-12 e 15-18, domenica 10-18, con visite guidate ogni ora. | Gli affreschi dell'Asino d'Oro di Apuleio. | Piazza Mazzini 12, San Secondo Parmense | src=Parma Welcome, Rocca dei Rossi^https://parmawelcome.it/scheda/rocca-dei-rossi/^uff ; src=Emilia-Romagna Turismo, San Secondo Parmense^https://emiliaromagnaturismo.it/en/towns/san-secondo-parmense^uff ; src=Parma Welcome, San Secondo Parmense^https://parmawelcome.it/en/place/san-secondo-parmense/^uff
+- Pieve di San Genesio | sacro/Chiese e pievi | short | v | Da verificare | Documentata nel 1084 e pieve dal 1195, nel Duecento era tra le più importanti del Parmense; decadde dopo il 1470 e nel 1787 perse facciata e prime tre campate. Ricostruita nel XIII secolo sopra una chiesa dell'XI, ha tre navate di sette campate e tre absidi, la cui fascia inferiore è in mattoni romani di recupero; i restauri del 1967-72 hanno riportato in luce le strutture duecentesche. Sorge isolata tra campi e canali. | La pieve romanica più antica della Bassa parmense. | Strada di San Genesio, San Secondo Parmense | src=Parma Welcome, Pieve di San Genesio^https://parmawelcome.it/scheda/pieve-di-san-genesio-san-secondo-parmense/^uff ; src=Emilia-Romagna Turismo, San Secondo Parmense^https://emiliaromagnaturismo.it/en/towns/san-secondo-parmense^uff
+scarto: DBUnico.107877 Teatro comunale di San Secondo Parmense | da rivalutare: nessuna descrizione nelle fonti ufficiali lette (sito del Comune non leggibile)
+scarto: Chiesa dell'Annunciazione | da rivalutare: solo citata dal portale regionale
+scarto: Oratorio del Serraglio | da rivalutare: solo citato dal portale regionale
+scarto: Oratorio di San Luigi o del Riscatto | da rivalutare: pagina del Comune non leggibile (errore del sito)
+scarto: Museo dell'olio Orsi Coppini | da rivalutare: solo citato dal portale regionale
+copertura: completa
+minimo: 2 | MiC (1 luogo, scartato con motivo), portale regionale Emilia-Romagna Turismo e Parma Welcome eseguiti; italia.it non trovato; sito del Comune e Castelli del Ducato non leggibili (errore del sito)

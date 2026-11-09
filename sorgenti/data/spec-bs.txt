@@ -280,7 +280,7 @@ scarto: mercati | mercatini medievali settimanali giugno-agosto citati da In Lom
 copertura: completa
 minimo: 3 | MiC (1 luogo, inserito), italia.it, Bandiere Arancioni, In Lombardia, Visit Garda eseguite; sito del Comune non letto
 
-@ Limone sul Garda | 017089 | BS | https://www.italia.it/en/italy/lago-di-garda/limone-sul-garda | borghi
+@ Limone sul Garda | 017089 | BS | https://www.italia.it/en/italy/lago-di-garda/limone-sul-garda | borghi arancione
 lede: Borgo di vicoli, scalinate e case in pietra sulla sponda bresciana del Garda, un tempo la zona di agrumicoltura commerciale più settentrionale del mondo; da vedere la settecentesca Limonaia del Castèl, il porticciolo, il Museo dei Pescatori nel parco di Villa Boghi e la ciclopedonale sospesa sul lago.
 src: Italia.it, Limone sul Garda^https://www.italia.it/en/italy/lago-di-garda/limone-sul-garda
 src: Italia.it, Limonaia del Castèl^https://www.italia.it/it/lombardia/brescia/limonaia-del-castel

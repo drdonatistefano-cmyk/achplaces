@@ -108,7 +108,7 @@ scarto: DBUnico.104104 Laboratorio didattico di ecologia del Quaternario | da ri
 copertura: completa
 minimo: 9 | MiC (3 luoghi: 2 inseriti, 1 scartato), italia.it, portale regionale, Comune eseguite; pagine cultura.gov.it ed eventi.turismo.marche.it di Cupra non leggibili; portale visitcupramarittima.it non letto
 
-@ Montalto delle Marche | 044032 | AP | https://www.italia.it/it/marche/ascoli-piceno/montalto-delle-marche |
+@ Montalto delle Marche | 044032 | AP | https://www.italia.it/it/marche/ascoli-piceno/montalto-delle-marche | arancione
 lede: Città d'origine della famiglia di Felice Peretti, papa Sisto V dal 1585, a 512 metri tra le valli dell'Aso e del Tesino: piazza Sisto V con la cattedrale di Santa Maria Assunta, Palazzo Paradisi con il Reliquiario donato dal papa nel 1587, i musei civici nel Municipio e, in Valdaso, il mulino fortificato del 1320. Centro storico, monumenti e musei sono parzialmente fruibili.
 src: Italia.it, Montalto delle Marche^https://www.italia.it/it/marche/ascoli-piceno/montalto-delle-marche
 src: Regione Marche, Montalto delle Marche^https://letsmarche.it/en/-/montalto-delle-marche-2

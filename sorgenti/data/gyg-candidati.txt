@@ -74,6 +74,7 @@ Lecce | Abbazia di Santa Maria di Cerrate | Abbazia di Santa Maria di Cerrate =>
 Livorno | Acquario di Livorno | Acquario di Livorno => livorno-aquarium-entrance-ticket
 Lucca | Museo Nazionale di Villa Guinigi | Museo Nazionale di Villa Guinigi => visit-the-museum-of-villa-guinigi-in-lucca
 Lucca | Torre Guinigi | Torre Guinigi => lucca-guinigi-tower-admission-ticket-with-panoramic-view
+Manerba del Garda | Isola di San Biagio | Isola di San Biagio => private-sup-excursion-to-isola-di-san-biagio-exclusive-tour
 Massa Lubrense | Punta Campanella | Punta Campanella => massa-lubrense-punta-campanella-guided-walking-tour
 Matera | Casa Noha | Casa Noha => matera-casa-noha-entry-ticket
 Matera | Casa Ortega | Casa Ortega => matera-casa-ortega-entry-ticket

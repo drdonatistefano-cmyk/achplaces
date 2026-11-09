@@ -64,3 +64,13 @@ src: Catalogo generale dei beni culturali (ICCD), Madonna con Bambino e santi^ht
 scarto: Santuario di San Michele Arcangelo, Chiesa di San Domenico | da rivalutare: solo citati, nessuna descrizione nelle fonti ufficiali lette
 copertura: completa
 minimo: 4 | MiC (1 luogo, inserito), catalogo ICCD eseguite; italia.it e Calabria Straordinaria senza schede sul comune (solo citazioni nelle guide PDF); sito del Comune: elenco luoghi con il solo Municipio, pagina storia non raggiungibile (errore server, 2 tentativi)
+
+@ Castelsilano | 101005 | KR | https://fondoambiente.it/luoghi/castelsilano-museo-itinerante-arcalabria |
+lede: Piccolo borgo di circa 700 abitanti nel cuore della Sila diventato «paese dell'arte e dei colori»: il centro storico è un museo all'aperto, con i murales di Francesco Candido sulla vita contadina e le opere di ArCalabria su porte, finestre e pareti.
+src: FAI, Castelsilano Museo itinerante ArCalabria^https://fondoambiente.it/luoghi/castelsilano-museo-itinerante-arcalabria
+src: MiC, Museo della cultura contadina di Castelsilano^https://cultura.gov.it/luogo/museo-della-cultura-contadina-di-castelsilano
+- Museo della cultura contadina (murales) | musei/Tematici | short | | free | Museo all'aperto per le vie del centro storico, nato dal progetto «Old Calabria» ispirato al libro di Norman Douglas e promosso dalla Fondazione Napoli 99: dieci murales raccontano lavoro, usi, tradizioni ed economia della gente di Castelsilano, dipinti dall'artista Francesco Candido, nato in paese e vissuto a lungo a Parigi. | La vita contadina dipinta sui muri. | Centro storico, Castelsilano | src=MiC, Museo della cultura contadina di Castelsilano^https://cultura.gov.it/luogo/museo-della-cultura-contadina-di-castelsilano^uff ; mic=DBUnico.111009
+- Museo itinerante ArCalabria | storia/Borghi | short | | free | Circuito museale diffuso nel centro storico: opere di artisti locali, nazionali e internazionali decorano porte, finestre e pareti del borgo, con segnaletica in braille per i visitatori non vedenti. | Un borgo silano trasformato in galleria. | Strada Provinciale 27, 62, Castelsilano | src=FAI, Castelsilano Museo itinerante ArCalabria^https://fondoambiente.it/luoghi/castelsilano-museo-itinerante-arcalabria^uff
+scarto: DBUnico.111021 Museo iconografico della Storia postale regionale | da rivalutare: scheda MiC non apribile, nessuna descrizione nelle fonti ufficiali lette
+copertura: completa
+minimo: 2 | MiC (2 luoghi: 1 inserito, 1 scartato con motivo), FAI eseguite; italia.it senza pagina sul comune, Calabria Straordinaria (pagina senza testo), sito del Comune non raggiungibile
