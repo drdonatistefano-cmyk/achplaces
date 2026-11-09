@@ -1,8 +1,7 @@
 name: Foto da Wikimedia Commons
 on:
-  push:
-    branches: [main]
-    paths: ['sorgenti/foto/coda.json']
+  schedule:
+    - cron: '23 2 * * 1'   # 9/11: foto una volta a settimana (lunedì notte), decisione di Stefano
   workflow_dispatch:
 permissions:
   contents: write

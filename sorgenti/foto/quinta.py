@@ -22,7 +22,8 @@ def elementi(ist):
     if ist in cache: return cache[ist]
     q = '''SELECT DISTINCT ?it ?l ?img WHERE { ?com wdt:P635 "%s" . { ?it wdt:P131 ?com } UNION { ?it wdt:P131 ?x . ?x wdt:P131 ?com }
  ?it wdt:P18 ?img . ?it rdfs:label ?l . FILTER(lang(?l)="it") } LIMIT 3000''' % ist
-    b = sparql(q)
+    _b = curl(['-G','https://query.wikidata.org/sparql','--data-urlencode','query='+q,'-H','Accept: application/sparql-results+json'], tries=2)
+    b = json.loads(_b)['results']['bindings'] if _b else []
     out = [[x['l']['value'], urllib.parse.unquote(x['img']['value'].split('Special:FilePath/')[-1])] for x in b]
     cache[ist] = out
     return out
@@ -72,7 +73,7 @@ for i, (ist, ls) in enumerate(per.items()):
         r = scegli(n, com, els, (c.get(p) or {}).get('file'))
         if r: nuove.append({'p': p, 'com': com, 'n': n, 'file': r[2], 'via': 'wikidata-comune', 'lab': r[1], 'r5': 1})
     if i % 50 == 0:
-        json.dump(cache, open(CACHE, 'w')); print(i, 'trovate', len(nuove), flush=True)
+        json.dump(cache, open(CACHE, 'w')); json.dump(nuove, open(F + 'quinta-trovate.json', 'w'), ensure_ascii=False, indent=0); print(i, 'trovate', len(nuove), flush=True)
     time.sleep(0.3)
 json.dump(cache, open(CACHE, 'w'))
 json.dump(nuove, open(F + 'quinta-trovate.json', 'w'), ensure_ascii=False, indent=0)
