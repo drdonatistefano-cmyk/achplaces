@@ -1,0 +1,26 @@
+name: Prodotti GetYourGuide
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '37 3 1 * *'   # il primo di ogni mese: nuove attività GetYourGuide
+  push:
+    branches: [main]
+    paths: ['sorgenti/gyg/avvia.txt', 'sorgenti/gyg/sitemap_gyg.py']
+permissions:
+  contents: write
+jobs:
+  gyg:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install requests
+      - run: python sorgenti/gyg/sitemap_gyg.py
+      - name: Salva
+        run: |
+          git config user.name "achplaces-bot"; git config user.email "actions@users.noreply.github.com"
+          git add sorgenti/gyg/prodotti.json
+          git commit -q -m "GetYourGuide: elenco attività" || exit 0
+          git pull -q --rebase origin main && git push -q origin HEAD:main
