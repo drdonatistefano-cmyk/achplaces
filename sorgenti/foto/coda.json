@@ -1,1573 +1,1055 @@
 [
 {
-"p": "alfedena-aq--museo-civico-aufidenate-antonio-de-nino",
-"com": "Alfedena",
-"file": "Alfedena - Museo Antonio De Nino 02.jpg"
-},
-{
 "p": "alfedena-aq--ruderi-del-castello",
 "com": "Alfedena",
-"q": "Ruderi del castello Alfedena"
+"n": "Ruderi del castello",
+"r2": 1
 },
 {
 "p": "alfedena-aq--centro-storico-e-monumento-allo-scalpell",
 "com": "Alfedena",
-"q": "Centro storico e monumento allo scalpellino Alfedena"
-},
-{
-"p": "bucine-ar--museo-della-memoria-e-sacrario-di-san-pa",
-"com": "Bucine",
-"n": "Museo della memoria e Sacrario di San Pancrazio",
+"n": "Centro storico e monumento allo scalpellino",
 "r2": 1
 },
 {
-"p": "bucine-ar--ponte-di-pogi-e-pogi-alta",
-"com": "Bucine",
-"n": "Ponte di Pogi e Pogi Alta",
-"r2": 1
+"p": "bisegna-aq--centro-medievale-torre-pentagonale-e-tor",
+"com": "Bisegna",
+"file": "Bisegna borgo antico.jpg"
 },
 {
-"p": "bucine-ar--castello-e-centro-di-bucine",
-"com": "Bucine",
-"n": "Castello e centro di Bucine",
-"r2": 1
+"p": "bisegna-aq--palazzetto-gentilizio-barocco",
+"com": "Bisegna",
+"q": "Palazzetto gentilizio barocco Bisegna"
 },
 {
-"p": "castel-san-niccolo-ar--piazza-matteotti-e-logge-del-grano",
-"com": "Castel San Niccolò",
-"n": "Piazza Matteotti e Logge del Grano",
-"r2": 1
+"p": "bisegna-aq--chiesa-di-santa-maria-assunta",
+"com": "Bisegna",
+"file": "Chiesa di Santa Maria Assunta (Bisegna)01.png"
 },
 {
-"p": "castel-san-niccolo-ar--castello-dei-conti-guidi",
-"com": "Castel San Niccolò",
-"n": "Castello dei conti Guidi",
-"r2": 1
+"p": "bisegna-aq--monumento-e-fonte-di-san-giovanni-battis",
+"com": "Bisegna",
+"q": "Monumento e fonte di San Giovanni Battista Bisegna"
 },
 {
-"p": "castel-san-niccolo-ar--museo-della-pietra-lavorata",
-"com": "Castel San Niccolò",
-"n": "Museo della Pietra Lavorata",
-"r2": 1
+"p": "bisegna-aq--san-sebastiano-dei-marsi",
+"com": "Bisegna",
+"file": "San Sebastiano dei Marsi.jpg"
 },
 {
-"p": "castel-san-niccolo-ar--ecomuseo-del-carbonaio",
-"com": "Castel San Niccolò",
-"n": "Ecomuseo del Carbonaio",
-"r2": 1
+"p": "bisegna-aq--centro-visita-del-parco-uomini-e-alberi-",
+"com": "Bisegna",
+"q": "Centro visita del Parco «Uomini e alberi raccontano» Bisegna"
 },
 {
-"p": "cavriglia-ar--castello-di-montaio",
-"com": "Cavriglia",
-"n": "Castello di Montaio",
-"r2": 1
+"p": "bisegna-aq--sentieri-della-valle-del-giovenco",
+"com": "Bisegna",
+"q": "Sentieri della Valle del Giovenco Bisegna"
 },
 {
-"p": "civitella-in-val-di-chiana-ar--borgo-murato-porta-aretina-e-palazzo-pre",
-"com": "Civitella in Val di Chiana",
-"n": "Borgo murato, Porta Aretina e Palazzo Pretorio",
-"r2": 1
+"p": "cansano-aq--parco-archeologico-di-ocriticum",
+"com": "Cansano",
+"q": "Parco archeologico di Ocriticum Cansano"
 },
 {
-"p": "civitella-in-val-di-chiana-ar--tabernacolo-di-porta-sinese",
-"com": "Civitella in Val di Chiana",
-"n": "Tabernacolo di Porta Sinese",
-"r2": 1
+"p": "cansano-aq--centro-di-documentazione-ocriticum",
+"com": "Cansano",
+"file": "Centrodidocumentazione01.JPG"
 },
 {
-"p": "civitella-in-val-di-chiana-ar--galleria-comunale-d-arte-contemporanea-p",
-"com": "Civitella in Val di Chiana",
-"n": "Galleria comunale d'arte contemporanea (Pinacoteca)",
-"r2": 1
+"p": "cansano-aq--centro-storico-e-fontane",
+"com": "Cansano",
+"q": "Centro storico e fontane Cansano"
 },
 {
-"p": "civitella-in-val-di-chiana-ar--museo-del-sarapino",
-"com": "Civitella in Val di Chiana",
-"n": "Museo del Sarapino",
-"r2": 1
+"p": "cansano-aq--chiesa-madre-di-san-salvatore",
+"com": "Cansano",
+"q": "Chiesa Madre di San Salvatore Cansano"
 },
 {
-"p": "civitella-in-val-di-chiana-ar--riserva-naturale-di-ponte-a-buriano-e-pe",
-"com": "Civitella in Val di Chiana",
-"n": "Riserva naturale di Ponte a Buriano e Penna",
-"r2": 1
+"p": "castelvecchio-subequo-aq--chiesa-e-convento-di-san-francesco",
+"com": "Castelvecchio Subequo",
+"file": "Castelvecchio Subequo - Chiesa di San Francesco 01.jpg"
 },
 {
-"p": "san-giovanni-valdarno-ar--stufato-alla-sangiovannese",
-"com": "San Giovanni Valdarno",
-"n": "Stufato alla sangiovannese",
-"r2": 1
+"p": "castelvecchio-subequo-aq--catacomba-di-superaequum",
+"com": "Castelvecchio Subequo",
+"q": "Catacomba di Superaequum Castelvecchio Subequo"
 },
 {
-"p": "subbiano-ar--castello-e-centro-storico-di-subbiano",
-"com": "Subbiano",
-"n": "Castello e centro storico di Subbiano",
-"r2": 1
+"p": "castelvecchio-subequo-aq--chiesa-di-sant-agata",
+"com": "Castelvecchio Subequo",
+"q": "Chiesa di Sant'Agata Castelvecchio Subequo"
 },
 {
-"p": "subbiano-ar--centro-di-documentazione-della-cultura-a",
-"com": "Subbiano",
-"n": "Centro di documentazione della cultura archeologica",
-"r2": 1
+"p": "castelvecchio-subequo-aq--fontana-medievale-e-acquedotti-romani",
+"com": "Castelvecchio Subequo",
+"q": "Fontana medievale e acquedotti romani Castelvecchio Subequo"
 },
 {
-"p": "subbiano-ar--castello-della-fioraia-castelnuovo",
-"com": "Subbiano",
-"n": "Castello della Fioraia, Castelnuovo",
-"r2": 1
+"p": "castelvecchio-subequo-aq--palazzo-castellano-dei-conti-di-celano",
+"com": "Castelvecchio Subequo",
+"q": "Palazzo castellano dei Conti di Celano Castelvecchio Subequo"
 },
 {
-"p": "subbiano-ar--alpe-di-catenaia-e-mulini-di-falciano",
-"com": "Subbiano",
-"n": "Alpe di Catenaia e mulini di Falciano",
-"r2": 1
+"p": "castelvecchio-subequo-aq--centro-storico-case-medievali-e-palazzi",
+"com": "Castelvecchio Subequo",
+"q": "Centro storico, case medievali e palazzi Castelvecchio Subequo"
+},
+{
+"p": "castelvecchio-subequo-aq--resti-di-superaequum",
+"com": "Castelvecchio Subequo",
+"q": "Resti di Superaequum Castelvecchio Subequo"
+},
+{
+"p": "cerchio-aq--museo-civico-di-cerchio",
+"com": "Cerchio",
+"file": "Santa Maria delle Grazie di Cerchio.jpg"
+},
+{
+"p": "cerchio-aq--chiesa-di-san-bartolomeo",
+"com": "Cerchio",
+"file": "Cerchio San Bartolomeo.jpg"
+},
+{
+"p": "cerchio-aq--chiesa-della-madonna-delle-grazie",
+"com": "Cerchio",
+"file": "Chiesa Madonna delle Grazie a Cerchio.jpg"
+},
+{
+"p": "civitella-roveto-aq--borgo-antico-mura-e-rue",
+"com": "Civitella Roveto",
+"q": "Borgo antico, mura e rue Civitella Roveto"
+},
+{
+"p": "civitella-roveto-aq--chiesa-di-san-giovanni-battista",
+"com": "Civitella Roveto",
+"file": "Civitella Roveto SGB1.jpg"
+},
+{
+"p": "civitella-roveto-aq--pinacoteca-enrico-mattei",
+"com": "Civitella Roveto",
+"q": "Pinacoteca Enrico Mattei Civitella Roveto"
+},
+{
+"p": "civitella-roveto-aq--fonte-d-auta",
+"com": "Civitella Roveto",
+"q": "Fonte d'Auta Civitella Roveto"
+},
+{
+"p": "cocullo-aq--centro-storico-e-rione-san-nicola",
+"com": "Cocullo",
+"q": "Centro storico e rione San Nicola Cocullo"
+},
+{
+"p": "cocullo-aq--santuario-di-san-domenico",
+"com": "Cocullo",
+"q": "Santuario di San Domenico Cocullo"
+},
+{
+"p": "cocullo-aq--chiesa-di-santa-maria-delle-grazie",
+"com": "Cocullo",
+"file": "Santa Maria delle Grazie, Cocullo 4.JPG"
+},
+{
+"p": "cocullo-aq--museo-civico-etnografico-delle-tradizion",
+"com": "Cocullo",
+"q": "Museo civico etnografico delle tradizioni popolari «Alfonso Maria di Nola» Cocullo"
+},
+{
+"p": "collelongo-aq--centro-storico",
+"com": "Collelongo",
+"q": "Centro storico Collelongo"
+},
+{
+"p": "collelongo-aq--museo-civico-archeologico-palazzo-bottic",
+"com": "Collelongo",
+"file": "Collelongo palazzo Botticelli.jpg"
+},
+{
+"p": "collelongo-aq--museo-della-civilta-contadina-e-del-lavo",
+"com": "Collelongo",
+"q": "Museo della civiltà contadina e del lavoro Collelongo"
+},
+{
+"p": "collelongo-aq--vallelonga",
+"com": "Collelongo",
+"q": "Vallelonga Collelongo"
+},
+{
+"p": "fontecchio-aq--piazza-del-popolo-e-fontana-con-maschere",
+"com": "Fontecchio",
+"q": "Piazza del Popolo e Fontana con Maschere Fontecchio"
+},
+{
+"p": "fontecchio-aq--torre-dell-orologio-e-museo-della-cultur",
+"com": "Fontecchio",
+"file": "Fontecchio - Torre dell'orologio 11.jpg"
+},
+{
+"p": "fontecchio-aq--chiesa-di-santa-maria-della-pace",
+"com": "Fontecchio",
+"file": "Fontecchio - Chiesa di Santa Maria della Pace 03.jpg"
+},
+{
+"p": "fontecchio-aq--laboratorio-delle-pupazze-abruzzesi",
+"com": "Fontecchio",
+"q": "Laboratorio delle pupazze abruzzesi Fontecchio"
+},
+{
+"p": "magliano-de-marsi-aq--santa-maria-in-valle-porclaneta",
+"com": "Magliano de' Marsi",
+"file": "Chiesa Santa Maria in Valle Porclaneta 5 ottobre 2015.jpg"
+},
+{
+"p": "magliano-de-marsi-aq--borgo-di-rosciolo",
+"com": "Magliano de' Marsi",
+"file": "Rosciolo dei Marsi L'Aquila.jpg"
+},
+{
+"p": "magliano-de-marsi-aq--centro-storico-di-magliano",
+"com": "Magliano de' Marsi",
+"q": "Centro storico di Magliano Magliano de' Marsi"
+},
+{
+"p": "magliano-de-marsi-aq--borgo-di-marano",
+"com": "Magliano de' Marsi",
+"file": "Marano de' Marsi.jpg"
 },
 {
 "p": "cesiomaggiore-bl--museo-etnografico-dolomiti-villa-avogadr",
 "com": "Cesiomaggiore",
-"q": "Museo Etnografico Dolomiti (Villa Avogadro degli Azzoni, Seravella) Cesiomaggiore"
+"n": "Museo Etnografico Dolomiti (Villa Avogadro degli Azzoni, Seravella)",
+"r2": 1
 },
 {
 "p": "cesiomaggiore-bl--museo-storico-della-bicicletta-toni-bevi",
 "com": "Cesiomaggiore",
-"q": "Museo storico della bicicletta «Toni Bevilacqua» Cesiomaggiore"
-},
-{
-"p": "cesiomaggiore-bl--val-canzoi-gole-di-ponte-umin-e-lago-del",
-"com": "Cesiomaggiore",
-"file": "LagoDellaStua ValCanzoi.JPG"
+"n": "Museo storico della bicicletta «Toni Bevilacqua»",
+"r2": 1
 },
 {
 "p": "cesiomaggiore-bl--calchere-della-val-canzoi",
 "com": "Cesiomaggiore",
-"q": "Calchere della Val Canzoi Cesiomaggiore"
+"n": "Calchere della Val Canzoi",
+"r2": 1
 },
 {
 "p": "cesiomaggiore-bl--pendana-e-casera-brendol",
 "com": "Cesiomaggiore",
-"q": "Pendana e Casera Brendòl Cesiomaggiore"
-},
-{
-"p": "aldino-bz--gola-del-bletterbach-geoparc",
-"com": "Aldino",
-"n": "Gola del Bletterbach (GEOPARC)",
+"n": "Pendana e Casera Brendòl",
 "r2": 1
-},
-{
-"p": "aldino-bz--corno-bianco",
-"com": "Aldino",
-"n": "Corno Bianco",
-"r2": 1
-},
-{
-"p": "aldino-bz--mulini-di-aldino",
-"com": "Aldino",
-"n": "Mulini di Aldino",
-"r2": 1
-},
-{
-"p": "aldino-bz--museo-locale-di-aldino",
-"com": "Aldino",
-"n": "Museo locale di Aldino",
-"r2": 1
-},
-{
-"p": "brunico-bz--centro-storico-via-centrale-e-porte-citt",
-"com": "Brunico",
-"n": "Centro storico, Via Centrale e porte cittadine",
-"r2": 1
-},
-{
-"p": "brunico-bz--chiesa-delle-orsoline-chiesa-del-salvato",
-"com": "Brunico",
-"n": "Chiesa delle Orsoline (Chiesa del Salvatore)",
-"r2": 1
-},
-{
-"p": "brunico-bz--lanificio-moessmer-e-ulbrich-textil-manu",
-"com": "Brunico",
-"n": "Lanificio Moessmer e Ulbrich Textil Manufaktur",
-"r2": 1
-},
-{
-"p": "malles-venosta-bz--centro-storico-di-malles",
-"com": "Malles Venosta",
-"n": "Centro storico di Malles",
-"r2": 1
-},
-{
-"p": "malles-venosta-bz--museo-locale-di-laudes",
-"com": "Malles Venosta",
-"n": "Museo locale di Laudes",
-"r2": 1
-},
-{
-"p": "moso-in-passiria-bz--bunker-mooseum",
-"com": "Moso in Passiria",
-"n": "Bunker Mooseum",
-"r2": 1
-},
-{
-"p": "moso-in-passiria-bz--miniera-di-monteneve-museo-provinciale-m",
-"com": "Moso in Passiria",
-"n": "Miniera di Monteneve (Museo provinciale Miniere)",
-"r2": 1
-},
-{
-"p": "moso-in-passiria-bz--belvedere-i-granati",
-"com": "Moso in Passiria",
-"n": "Belvedere «I Granati»",
-"r2": 1
-},
-{
-"p": "moso-in-passiria-bz--sentiero-del-lago-di-kummer",
-"com": "Moso in Passiria",
-"n": "Sentiero del lago di Kummer",
-"r2": 1
-},
-{
-"p": "racines-bz--castel-wolfsthurn-e-museo-provinciale-de",
-"com": "Racines",
-"n": "Castel Wolfsthurn e Museo provinciale della caccia e della pesca",
-"r2": 1
-},
-{
-"p": "racines-bz--museo-provinciale-miniere-sede-di-ridann",
-"com": "Racines",
-"n": "Museo provinciale miniere - sede di Ridanna",
-"r2": 1
-},
-{
-"p": "racines-bz--gola-di-stanghe-gilfenklamm",
-"com": "Racines",
-"n": "Gola di Stanghe (Gilfenklamm)",
-"r2": 1
-},
-{
-"p": "racines-bz--cascate-burkhard",
-"com": "Racines",
-"n": "Cascate Burkhard",
-"r2": 1
-},
-{
-"p": "san-candido-bz--collegiata-dei-santi-candido-e-corbinian",
-"com": "San Candido",
-"q": "Collegiata dei Santi Candido e Corbiniano San Candido"
 },
 {
 "p": "san-candido-bz--mik-museo-della-collegiata",
 "com": "San Candido",
-"q": "MIK - Museo della Collegiata San Candido"
-},
-{
-"p": "san-candido-bz--santo-sepolcro-au-erkirchl",
-"com": "San Candido",
-"file": "Heilig-Grab-Kirche und Altöttinger Kapelle Innichen.JPG"
-},
-{
-"p": "san-candido-bz--chiesa-parrocchiale-di-san-michele",
-"com": "San Candido",
-"file": "San Candido (BZ) La chiesa.JPG"
+"n": "MIK - Museo della Collegiata",
+"r2": 1
 },
 {
 "p": "san-candido-bz--chiesa-e-chiostro-dei-francescani",
 "com": "San Candido",
-"q": "Chiesa e chiostro dei Francescani San Candido"
-},
-{
-"p": "san-candido-bz--dolomythos-a-villa-wachtler",
-"com": "San Candido",
-"file": "Bild-CC-by-Michael-Wachtler-sa-3.0-de-Villa Wachtler.jpg"
-},
-{
-"p": "san-candido-bz--bagni-di-san-candido-e-cappella-di-san-s",
-"com": "San Candido",
-"file": "San Candido - cappella di San Salvatore - 2026-09-09 22-01-50 001.jpeg"
-},
-{
-"p": "san-candido-bz--rocca-dei-baranci-haunold",
-"com": "San Candido",
-"q": "Rocca dei Baranci (Haunold) San Candido"
-},
-{
-"p": "san-candido-bz--chiesa-parrocchiale-di-san-nicolo-a-prat",
-"com": "San Candido",
-"file": "Chiesapratodrava.JPG"
-},
-{
-"p": "sesto-bz--museo-rudolf-stolz",
-"com": "Sesto",
-"file": "Stolzmuseum Sexten.jpg"
-},
-{
-"p": "sesto-bz--chiesa-parrocchiale-dei-santi-pietro-e-p",
-"com": "Sesto",
-"file": "Pfarrkirche Petrus und Paulus Sexten.JPG"
-},
-{
-"p": "sesto-bz--val-fiscalina",
-"com": "Sesto",
-"q": "Val Fiscalina Sesto"
+"n": "Chiesa e chiostro dei Francescani",
+"r2": 1
 },
 {
 "p": "sesto-bz--tre-cime-dal-rifugio-locatelli",
 "com": "Sesto",
-"q": "Tre Cime dal Rifugio Locatelli Sesto"
-},
-{
-"p": "sesto-bz--meridiana-di-sesto",
-"com": "Sesto",
-"q": "Meridiana di Sesto Sesto"
-},
-{
-"p": "sesto-bz--reinhold-messner-haus-sul-monte-elmo",
-"com": "Sesto",
-"file": "Monte elmo3.JPG"
+"n": "Tre Cime dal Rifugio Locatelli",
+"r2": 1
 },
 {
 "p": "sesto-bz--museo-all-aperto-anderter-alpe-croda-ros",
 "com": "Sesto",
-"q": "Museo all'aperto Anderter Alpe (Croda Rossa) Sesto"
+"n": "Museo all'aperto Anderter Alpe (Croda Rossa)",
+"r2": 1
 },
 {
 "p": "sesto-bz--centro-visite-haus-der-berge",
 "com": "Sesto",
-"q": "Centro visite Haus der Berge Sesto"
-},
-{
-"p": "sluderno-bz--castel-coira-churburg",
-"com": "Sluderno",
-"file": "Churburg Schluderns 01.jpg"
-},
-{
-"p": "sluderno-bz--vuseum-museo-della-val-venosta",
-"com": "Sluderno",
-"file": "Vintschger Museum.jpg"
+"n": "Centro visite Haus der Berge",
+"r2": 1
 },
 {
 "p": "sluderno-bz--sentiero-delle-rogge-leitenwaal-e-berkwa",
 "com": "Sluderno",
-"q": "Sentiero delle rogge Leitenwaal e Berkwaal e sito del Ganglegg Sluderno"
+"n": "Sentiero delle rogge Leitenwaal e Berkwaal e sito del Ganglegg",
+"r2": 1
 },
 {
 "p": "stelvio-bz--passo-dello-stelvio-e-la-strada-dei-48-t",
 "com": "Stelvio",
-"q": "Passo dello Stelvio e la strada dei 48 tornanti Stelvio"
-},
-{
-"p": "stelvio-bz--messner-mountain-museum-ortles",
-"com": "Stelvio",
-"file": "MMM Ortles Sulden.jpg"
+"n": "Passo dello Stelvio e la strada dei 48 tornanti",
+"r2": 1
 },
 {
 "p": "stelvio-bz--museo-per-la-regione-dell-ortles",
 "com": "Stelvio",
-"q": "Museo per la regione dell'Ortles Stelvio"
+"n": "Museo per la regione dell'Ortles",
+"r2": 1
 },
 {
 "p": "stelvio-bz--santuario-delle-tre-fontane-sante",
 "com": "Stelvio",
-"q": "Santuario delle Tre Fontane Sante Stelvio"
-},
-{
-"p": "stelvio-bz--cascate-di-trafoi",
-"com": "Stelvio",
-"file": "Chiesadi Trafoi.JPG"
+"n": "Santuario delle Tre Fontane Sante",
+"r2": 1
 },
 {
 "p": "tirolo-bz--castel-tirolo-museo-storico-culturale-de",
 "com": "Tirolo",
-"q": "Castel Tirolo - Museo storico-culturale della Provincia Tirolo"
-},
-{
-"p": "tirolo-bz--castel-fontana-brunnenburg-e-museo-agric",
-"com": "Tirolo",
-"file": "Brunnenburg (Tirol) 08.jpg"
-},
-{
-"p": "tirolo-bz--centro-di-cura-per-l-avifauna-di-castel-",
-"com": "Tirolo",
-"file": "Tirol Schloss 01.jpg"
+"n": "Castel Tirolo - Museo storico-culturale della Provincia",
+"r2": 1
 },
 {
 "p": "tirolo-bz--piramidi-di-terra-della-gola-del-mutbach",
 "com": "Tirolo",
-"q": "Piramidi di terra della gola del Mutbach Tirolo"
+"n": "Piramidi di terra della gola del Mutbach",
+"r2": 1
 },
 {
 "p": "tirolo-bz--piattaforma-panoramica-gerla-dell-hochmu",
 "com": "Tirolo",
-"q": "Piattaforma panoramica «Gerla» dell'Hochmuth Tirolo"
-},
-{
-"p": "tirolo-bz--chiesa-di-san-pietro",
-"com": "Tirolo",
-"file": "St. Peter.jpg"
+"n": "Piattaforma panoramica «Gerla» dell'Hochmuth",
+"r2": 1
 },
 {
 "p": "tirolo-bz--chiesa-parrocchiale-di-san-giovanni-batt",
 "com": "Tirolo",
-"q": "Chiesa parrocchiale di San Giovanni Battista Tirolo"
-},
-{
-"p": "velturno-bz--castel-velturno",
-"com": "Velturno",
-"file": "Castel Velturno 01.JPG"
+"n": "Chiesa parrocchiale di San Giovanni Battista",
+"r2": 1
 },
 {
 "p": "velturno-bz--archeoparc-velturno-tanzgasse",
 "com": "Velturno",
-"q": "Archeoparc Velturno - Tanzgasse Velturno"
-},
-{
-"p": "velturno-bz--chiesa-di-san-lorenzo",
-"com": "Velturno",
-"file": "Saint Lawrence church Feldthurns.jpg"
+"n": "Archeoparc Velturno - Tanzgasse",
+"r2": 1
 },
 {
 "p": "velturno-bz--parrocchiale-di-maria-assunta",
 "com": "Velturno",
-"q": "Parrocchiale di Maria Assunta Velturno"
-},
-{
-"p": "velturno-bz--chiesa-di-san-pietro-a-schrambach",
-"com": "Velturno",
-"file": "Feldthurns, St. Peter in Schrambach.jpg"
-},
-{
-"p": "velturno-bz--chiesa-di-san-giorgio-a-snodres",
-"com": "Velturno",
-"file": "Sankt George in Schnauders Feldthurns.jpg"
+"n": "Parrocchiale di Maria Assunta",
+"r2": 1
 },
 {
 "p": "velturno-bz--malga-di-velturno-e-lago-radlsee",
 "com": "Velturno",
-"q": "Malga di Velturno e lago Radlsee Velturno"
-},
-{
-"p": "villandro-bz--miniera-di-villandro",
-"com": "Villandro",
-"file": "Miniera di Villandro.jpg"
+"n": "Malga di Velturno e lago Radlsee",
+"r2": 1
 },
 {
 "p": "villandro-bz--archeoparc-villandro",
 "com": "Villandro",
-"q": "Archeoparc Villandro Villandro"
+"n": "Archeoparc Villandro",
+"r2": 1
 },
 {
 "p": "villandro-bz--parrocchiale-dei-santi-stefano-e-lorenzo",
 "com": "Villandro",
-"q": "Parrocchiale dei Santi Stefano e Lorenzo Villandro"
-},
-{
-"p": "villandro-bz--cimitero-e-chiesa-cimiteriale-di-san-mic",
-"com": "Villandro",
-"file": "Villandro, chiesa di San Michele 01.jpg"
-},
-{
-"p": "villandro-bz--chiesa-di-san-valentino",
-"com": "Villandro",
-"file": "Sankt Valentin Villanders 06.JPG"
-},
-{
-"p": "villandro-bz--chiesa-di-san-maurizio-a-sauders",
-"com": "Villandro",
-"file": "San Maurizio, Villandro, chiesa di San Maurizio 02.jpg"
+"n": "Parrocchiale dei Santi Stefano e Lorenzo",
+"r2": 1
 },
 {
 "p": "villandro-bz--villanderer-alm",
 "com": "Villandro",
-"q": "Villanderer Alm Villandro"
+"n": "Villanderer Alm",
+"r2": 1
 },
 {
 "p": "villandro-bz--totenkirchl-e-lago-totensee",
 "com": "Villandro",
-"q": "Totenkirchl e lago Totensee Villandro"
+"n": "Totenkirchl e lago Totensee",
+"r2": 1
 },
 {
 "p": "villandro-bz--monte-villandro",
 "com": "Villandro",
-"q": "Monte Villandro Villandro"
-},
-{
-"p": "gavorrano-gr--museo-minerario-in-galleria-e-parco-dell",
-"com": "Gavorrano",
-"n": "Museo minerario in galleria e Parco delle Rocce",
+"n": "Monte Villandro",
 "r2": 1
 },
 {
-"p": "gavorrano-gr--teatro-delle-rocce",
-"com": "Gavorrano",
-"n": "Teatro delle Rocce",
-"r2": 1
+"p": "bomba-ch--lago-di-bomba",
+"com": "Bomba",
+"file": "Lago di Bomba da Pennadomo (1).jpg"
 },
 {
-"p": "gavorrano-gr--pozzo-valsecchi",
-"com": "Gavorrano",
-"n": "Pozzo Valsecchi",
-"r2": 1
+"p": "bomba-ch--monte-pallano",
+"com": "Bomba",
+"q": "Monte Pallano Bomba"
 },
 {
-"p": "gavorrano-gr--centro-storico-di-gavorrano",
-"com": "Gavorrano",
-"n": "Centro storico di Gavorrano",
-"r2": 1
+"p": "bomba-ch--santuario-di-san-mauro-abate",
+"com": "Bomba",
+"file": "San Mauro Bomba.jpg"
 },
 {
-"p": "gavorrano-gr--necropoli-di-san-germano-e-centro-di-doc",
-"com": "Gavorrano",
-"n": "Necropoli di San Germano e Centro di documentazione Rocca di Frassinello",
-"r2": 1
+"p": "bomba-ch--monumento-a-silvio-spaventa",
+"com": "Bomba",
+"q": "Monumento a Silvio Spaventa Bomba"
 },
 {
-"p": "roccalbegna-gr--borgo-di-roccalbegna-e-torre-civica",
-"com": "Roccalbegna",
-"n": "Borgo di Roccalbegna e Torre civica",
-"r2": 1
+"p": "bomba-ch--museo-etnografico-amuset",
+"com": "Bomba",
+"file": "Museo Etnografico di Bomba.jpg"
 },
 {
-"p": "roccalbegna-gr--la-pietra-e-il-cassero",
-"com": "Roccalbegna",
-"n": "La Pietra e il Cassero",
-"r2": 1
+"p": "bomba-ch--antiquarium-comunale",
+"com": "Bomba",
+"q": "Antiquarium comunale Bomba"
 },
 {
-"p": "roccalbegna-gr--oasi-wwf-bosco-rocconi",
-"com": "Roccalbegna",
-"n": "Oasi WWF Bosco Rocconi",
-"r2": 1
+"p": "bucchianico-ch--casa-natale-di-san-camillo-de-lellis",
+"com": "Bucchianico",
+"q": "Casa natale di San Camillo de Lellis Bucchianico"
 },
 {
-"p": "roccalbegna-gr--lungo-il-fiume-albegna",
-"com": "Roccalbegna",
-"n": "Lungo il fiume Albegna",
-"r2": 1
+"p": "bucchianico-ch--santuario-e-convento-di-san-camillo-de-l",
+"com": "Bucchianico",
+"file": "Bucchianico - panoramio.jpg"
 },
 {
-"p": "seggiano-gr--borgo-di-seggiano",
-"com": "Seggiano",
-"n": "Borgo di Seggiano",
-"r2": 1
+"p": "bucchianico-ch--chiesa-di-sant-urbano",
+"com": "Bucchianico",
+"q": "Chiesa di Sant'Urbano Bucchianico"
 },
 {
-"p": "seggiano-gr--museo-dell-olio-e-olivo-nel-cisternone",
-"com": "Seggiano",
-"n": "Museo dell'Olio e Olivo nel Cisternone",
-"r2": 1
+"p": "bucchianico-ch--centro-storico-palazzo-marchesale-e-port",
+"com": "Bucchianico",
+"q": "Centro storico, palazzo marchesale e porta della Castellara Bucchianico"
 },
 {
-"p": "camaiore-lu--grotta-all-onda",
-"com": "Camaiore",
-"n": "Grotta all'Onda",
-"r2": 1
+"p": "bucchianico-ch--calanchi-delle-ripe-dello-spagnolo",
+"com": "Bucchianico",
+"q": "Calanchi delle Ripe dello Spagnolo Bucchianico"
 },
 {
-"p": "camaiore-lu--castello-di-montemagno",
-"com": "Camaiore",
-"n": "Castello di Montemagno",
-"r2": 1
+"p": "bucchianico-ch--cantinarte-museo-dell-olio",
+"com": "Bucchianico",
+"q": "Cantinarte Museo dell'Olio Bucchianico"
 },
 {
-"p": "forte-dei-marmi-lu--spiaggia-e-passeggiata-a-mare",
-"com": "Forte dei Marmi",
-"n": "Spiaggia e passeggiata a mare",
-"r2": 1
+"p": "canosa-sannita-ch--museo-della-guerra-per-la-pace",
+"com": "Canosa Sannita",
+"q": "Museo della guerra per la pace Canosa Sannita"
 },
 {
-"p": "forte-dei-marmi-lu--mercato-settimanale",
-"com": "Forte dei Marmi",
-"n": "Mercato settimanale",
-"r2": 1
+"p": "canosa-sannita-ch--palazzo-martucci",
+"com": "Canosa Sannita",
+"q": "Palazzo Martucci Canosa Sannita"
 },
 {
-"p": "stazzema-lu--museo-storico-della-resistenza",
-"com": "Stazzema",
-"n": "Museo storico della Resistenza",
-"r2": 1
+"p": "canosa-sannita-ch--chiesa-parrocchiale-dei-santi-filippo-e-",
+"com": "Canosa Sannita",
+"q": "Chiesa parrocchiale dei Santi Filippo e Giacomo Canosa Sannita"
 },
 {
-"p": "stazzema-lu--monumento-ossario-via-crucis-e-parco-naz",
-"com": "Stazzema",
-"n": "Monumento Ossario, Via Crucis e Parco Nazionale della Pace",
-"r2": 1
+"p": "canosa-sannita-ch--sentieri-del-vino",
+"com": "Canosa Sannita",
+"q": "Sentieri del vino Canosa Sannita"
 },
 {
-"p": "stazzema-lu--antro-del-corchia",
-"com": "Stazzema",
-"n": "Antro del Corchia",
-"r2": 1
+"p": "canosa-sannita-ch--tratturo-magno",
+"com": "Canosa Sannita",
+"q": "Tratturo Magno Canosa Sannita"
 },
 {
-"p": "stazzema-lu--miniere-dell-argento-vivo-di-levigliani",
-"com": "Stazzema",
-"n": "Miniere dell'Argento Vivo di Levigliani",
-"r2": 1
+"p": "canosa-sannita-ch--grotte-dei-briganti-chicurummelle",
+"com": "Canosa Sannita",
+"q": "Grotte dei briganti («chicurummelle») Canosa Sannita"
 },
 {
-"p": "stazzema-lu--museo-della-pietra-piegata-e-museo-lavor",
-"com": "Stazzema",
-"n": "Museo della Pietra Piegata e Museo «Lavorare liberi»",
-"r2": 1
+"p": "castiglione-messer-marino-ch--centro-storico",
+"com": "Castiglione Messer Marino",
+"q": "Centro storico Castiglione Messer Marino"
 },
 {
-"p": "stazzema-lu--alpe-di-puntato",
-"com": "Stazzema",
-"n": "Alpe di Puntato",
-"r2": 1
+"p": "castiglione-messer-marino-ch--chiesa-madre-di-san-michele",
+"com": "Castiglione Messer Marino",
+"q": "Chiesa Madre di San Michele Castiglione Messer Marino"
 },
 {
-"p": "montignoso-ms--chiesa-di-san-vito-e-san-modesto",
-"com": "Montignoso",
-"n": "Chiesa di San Vito e San Modesto",
-"r2": 1
+"p": "castiglione-messer-marino-ch--complesso-religioso-della-madonna-del-mo",
+"com": "Castiglione Messer Marino",
+"q": "Complesso religioso della Madonna del Monte Castiglione Messer Marino"
 },
 {
-"p": "montignoso-ms--terme-della-versilia",
-"com": "Montignoso",
-"n": "Terme della Versilia",
-"r2": 1
+"p": "castiglione-messer-marino-ch--abetina-di-selva-grande",
+"com": "Castiglione Messer Marino",
+"q": "Abetina di Selva Grande Castiglione Messer Marino"
 },
 {
-"p": "montegrotto-terme-pd--area-archeologica-di-viale-stazione-via-",
-"com": "Montegrotto Terme",
-"cat": "Teatro e complesso termale romani di viale Stazione e via Scavi (Montegrotto Terme)",
-"q": "Area archeologica di viale Stazione / via degli Scavi Montegrotto Terme"
+"p": "fossacesia-ch--abbazia-di-san-giovanni-in-venere",
+"com": "Fossacesia",
+"file": "Abbazia di San Giovanni in Venere - panoramio.jpg"
+},
+{
+"p": "fossacesia-ch--chiesa-di-santa-maria-delle-grotte",
+"com": "Fossacesia",
+"q": "Chiesa di Santa Maria delle Grotte Fossacesia"
+},
+{
+"p": "fossacesia-ch--piazza-del-popolo-e-centro-storico",
+"com": "Fossacesia",
+"q": "Piazza del Popolo e centro storico Fossacesia"
+},
+{
+"p": "fossacesia-ch--palazzo-mayer-e-museo-della-guerra",
+"com": "Fossacesia",
+"q": "Palazzo Mayer e Museo della guerra Fossacesia"
+},
+{
+"p": "fossacesia-ch--spiaggia-e-trabocco-di-punta-cavalluccio",
+"com": "Fossacesia",
+"q": "Spiaggia e trabocco di Punta Cavalluccio Fossacesia"
+},
+{
+"p": "fossacesia-ch--spiagge-di-fossacesia-marina-e-golfo-di-",
+"com": "Fossacesia",
+"q": "Spiagge di Fossacesia Marina e Golfo di Venere Fossacesia"
+},
+{
+"p": "montenerodomo-ch--parco-archeologico-di-iuvanum",
+"com": "Montenerodomo",
+"q": "Parco archeologico di Iuvanum Montenerodomo"
+},
+{
+"p": "montenerodomo-ch--museo-archeologico-di-iuvanum",
+"com": "Montenerodomo",
+"q": "Museo archeologico di Iuvanum Montenerodomo"
+},
+{
+"p": "montenerodomo-ch--resti-dell-abbazia-di-santa-maria-in-pal",
+"com": "Montenerodomo",
+"file": "Juvanum-Vista dalla collina dell'acropoli - panoramio.jpg"
+},
+{
+"p": "montenerodomo-ch--centro-storico-chiesa-di-san-martino-e-p",
+"com": "Montenerodomo",
+"q": "Centro storico, chiesa di San Martino e Palazzo Croce Montenerodomo"
+},
+{
+"p": "montenerodomo-ch--sentiero-di-colle-della-guardia-e-monte-",
+"com": "Montenerodomo",
+"q": "Sentiero di Colle della Guardia e Monte di Maio Montenerodomo"
 },
 {
 "p": "montegrotto-terme-pd--museo-internazionale-del-vetro-d-arte-e-",
 "com": "Montegrotto Terme",
-"q": "Museo internazionale del vetro d'arte e delle terme Montegrotto Terme"
+"n": "Museo internazionale del vetro d'arte e delle terme",
+"r2": 1
 },
 {
 "p": "montegrotto-terme-pd--terme-e-fangoterapia",
 "com": "Montegrotto Terme",
-"q": "Terme e fangoterapia Montegrotto Terme"
-},
-{
-"p": "montegrotto-terme-pd--villa-draghi-e-il-suo-parco",
-"com": "Montegrotto Terme",
-"file": "Villa Draghi142.jpg"
-},
-{
-"p": "montegrotto-terme-pd--duomo-dei-santi-pietro-ed-eliseo",
-"com": "Montegrotto Terme",
-"q": "Duomo dei Santi Pietro ed Eliseo Montegrotto Terme"
-},
-{
-"p": "montegrotto-terme-pd--oratorio-della-madonna-nera",
-"com": "Montegrotto Terme",
-"cat": "Oratorio della Madonna (Montegrotto Terme)",
-"q": "Oratorio della Madonna Nera Montegrotto Terme"
+"n": "Terme e fangoterapia",
+"r2": 1
 },
 {
 "p": "montegrotto-terme-pd--arco-delle-farfalle-e-bosco-delle-fate",
 "com": "Montegrotto Terme",
-"q": "Arco delle Farfalle e Bosco delle Fate Montegrotto Terme"
+"n": "Arco delle Farfalle e Bosco delle Fate",
+"r2": 1
 },
 {
 "p": "montegrotto-terme-pd--villa-meneghini-villa-callas",
 "com": "Montegrotto Terme",
-"q": "Villa Meneghini (Villa Callas) Montegrotto Terme"
+"n": "Villa Meneghini (Villa Callas)",
+"r2": 1
 },
 {
 "p": "montegrotto-terme-pd--torre-al-lago",
 "com": "Montegrotto Terme",
-"q": "Torre al Lago Montegrotto Terme"
+"n": "Torre al Lago",
+"r2": 1
 },
 {
 "p": "montegrotto-terme-pd--esposizione-permanente-p-g-omesti",
 "com": "Montegrotto Terme",
-"q": "Esposizione permanente P.G. Omesti Montegrotto Terme"
-},
-{
-"p": "teolo-pd--abbazia-di-praglia",
-"com": "Teolo",
-"file": "Praglia Abbazia Facade.JPG"
+"n": "Esposizione permanente P.G. Omesti",
+"r2": 1
 },
 {
 "p": "teolo-pd--biblioteca-monumentale-di-praglia",
 "com": "Teolo",
-"q": "Biblioteca monumentale di Praglia Teolo"
+"n": "Biblioteca monumentale di Praglia",
+"r2": 1
 },
 {
 "p": "teolo-pd--museo-d-arte-contemporanea-dino-formaggi",
 "com": "Teolo",
-"q": "Museo d'arte contemporanea «Dino Formaggio» - Palazzetto dei Vicari Teolo"
+"n": "Museo d'arte contemporanea «Dino Formaggio» - Palazzetto dei Vicari",
+"r2": 1
 },
 {
 "p": "teolo-pd--santuario-della-madonna-del-monte",
 "com": "Teolo",
-"q": "Santuario della Madonna del Monte Teolo"
+"n": "Santuario della Madonna del Monte",
+"r2": 1
 },
 {
-"p": "teolo-pd--parco-regionale-dei-colli-euganei",
-"com": "Teolo",
-"q": "Parco Regionale dei Colli Euganei Teolo"
+"p": "bussi-sul-tirino-pe--chiesa-di-santa-maria-di-cartignano",
+"com": "Bussi sul Tirino",
+"file": "Bussi sul Tirino (PE)- Chiesa di Santa Maria di Cartiganano.jpg"
 },
 {
-"p": "cannara-pg--museo-citta-di-cannara",
-"com": "Cannara",
-"q": "Museo Città di Cannara Cannara"
+"p": "bussi-sul-tirino-pe--fiume-tirino-e-approdo-di-san-martino",
+"com": "Bussi sul Tirino",
+"q": "Fiume Tirino e approdo di San Martino Bussi sul Tirino"
+},
+{
+"p": "bussi-sul-tirino-pe--castello-di-bussi",
+"com": "Bussi sul Tirino",
+"q": "Castello di Bussi Bussi sul Tirino"
+},
+{
+"p": "bussi-sul-tirino-pe--chiese-di-san-biagio-san-lorenzo-e-santa",
+"com": "Bussi sul Tirino",
+"q": "Chiese di San Biagio, San Lorenzo e Santa Maria di Ponte Marmoreo Bussi sul Tirino"
+},
+{
+"p": "moscufo-pe--abbazia-di-santa-maria-del-lago",
+"com": "Moscufo",
+"file": "Moscufo -Santa Maria del Lago - 2013 by-RaBoe 003.jpg"
+},
+{
+"p": "moscufo-pe--chiesa-di-san-cristoforo",
+"com": "Moscufo",
+"file": "Chiesa di San Cristoforo, interno (Moscufo).jpg"
+},
+{
+"p": "moscufo-pe--palazzo-dei-ferri",
+"com": "Moscufo",
+"q": "Palazzo dei Ferri Moscufo"
 },
 {
 "p": "cannara-pg--area-archeologica-di-urvinum-hortense",
 "com": "Cannara",
-"q": "Area archeologica di Urvinum Hortense Cannara"
+"n": "Area archeologica di Urvinum Hortense",
+"r2": 1
 },
 {
 "p": "cannara-pg--antiquarium-comunale-urvinum-hortense",
 "com": "Cannara",
-"q": "Antiquarium comunale Urvinum Hortense Cannara"
-},
-{
-"p": "cannara-pg--collemancio",
-"com": "Cannara",
-"file": "CannaraCollemancio2.jpg"
+"n": "Antiquarium comunale Urvinum Hortense",
+"r2": 1
 },
 {
 "p": "cannara-pg--palazzo-comunale-e-torre-civica",
 "com": "Cannara",
-"q": "Palazzo comunale e torre civica Cannara"
-},
-{
-"p": "cannara-pg--chiesa-di-san-biagio",
-"com": "Cannara",
-"file": "CannaraSanBiagio14.jpg"
-},
-{
-"p": "cannara-pg--chiesa-di-san-matteo",
-"com": "Cannara",
-"q": "Chiesa di San Matteo Cannara"
-},
-{
-"p": "cannara-pg--chiesa-di-san-giovanni-battista",
-"com": "Cannara",
-"file": "CannaraSanGiovanniBattista9.jpg"
-},
-{
-"p": "cannara-pg--chiesa-di-san-francesco",
-"com": "Cannara",
-"file": "CannaraSanFrancesco3.jpg"
+"n": "Palazzo comunale e torre civica",
+"r2": 1
 },
 {
 "p": "cannara-pg--sacro-tugurio",
 "com": "Cannara",
-"q": "Sacro Tugurio Cannara"
-},
-{
-"p": "cannara-pg--chiesa-della-buona-morte-stimmate-di-san",
-"com": "Cannara",
-"file": "CannaraSanFrancesco3.jpg"
+"n": "Sacro Tugurio",
+"r2": 1
 },
 {
 "p": "cannara-pg--santuario-di-piandarca",
 "com": "Cannara",
-"q": "Santuario di Piandarca Cannara"
-},
-{
-"p": "cascia-pg--basilica-di-santa-rita",
-"com": "Cascia",
-"file": "CasciaBasilicaSantaRita3.jpg"
-},
-{
-"p": "cascia-pg--museo-comunale-di-palazzo-santi",
-"com": "Cascia",
-"q": "Museo comunale di Palazzo Santi Cascia"
-},
-{
-"p": "cascia-pg--chiesa-museo-di-sant-antonio-abate",
-"com": "Cascia",
-"file": "CasciaSantAntonioAbate1.jpg"
-},
-{
-"p": "cascia-pg--chiesa-di-san-francesco",
-"com": "Cascia",
-"file": "CasciaSanFrancesco1.jpg"
-},
-{
-"p": "cascia-pg--chiesa-di-sant-agostino-e-resti-della-ro",
-"com": "Cascia",
-"file": "Sant'Agostino Cascia.jpg"
-},
-{
-"p": "cascia-pg--collegiata-di-santa-maria",
-"com": "Cascia",
-"q": "Collegiata di Santa Maria Cascia"
-},
-{
-"p": "cascia-pg--roccaporena-luoghi-di-santa-rita",
-"com": "Cascia",
-"file": "Roccaporena da lontano.jpg"
+"n": "Santuario di Piandarca",
+"r2": 1
 },
 {
 "p": "cascia-pg--scoglio-della-preghiera",
 "com": "Cascia",
-"q": "Scoglio della preghiera Cascia"
-},
-{
-"p": "cascia-pg--area-archeologica-di-villa-san-silvestro",
-"com": "Cascia",
-"file": "VillaSanSilvestroCascia1.jpg"
+"n": "Scoglio della preghiera",
+"r2": 1
 },
 {
 "p": "costacciaro-pg--centro-storico-mura-e-porte",
 "com": "Costacciaro",
-"q": "Centro storico, mura e porte Costacciaro"
-},
-{
-"p": "costacciaro-pg--chiesa-di-san-francesco",
-"com": "Costacciaro",
-"file": "CostacciaroSanFrancesco4.jpg"
-},
-{
-"p": "costacciaro-pg--museo-laboratorio-del-parco-del-monte-cu",
-"com": "Costacciaro",
-"file": "CostacciaroSanMarcoEx2.jpg"
-},
-{
-"p": "costacciaro-pg--antico-frantoio-dell-olio",
-"com": "Costacciaro",
-"file": "Antico frantoio interno - Costacciaro.jpg"
+"n": "Centro storico, mura e porte",
+"r2": 1
 },
 {
 "p": "costacciaro-pg--parco-del-monte-cucco",
 "com": "Costacciaro",
-"q": "Parco del Monte Cucco Costacciaro"
-},
-{
-"p": "costacciaro-pg--grotta-di-monte-cucco",
-"com": "Costacciaro",
-"file": "Grottadimontecucco.jpg"
-},
-{
-"p": "gualdo-tadino-pg--rocca-flea-e-museo-civico",
-"com": "Gualdo Tadino",
-"file": "GualdoTadino LaRoccaFlea.JPG"
-},
-{
-"p": "gualdo-tadino-pg--cattedrale-di-san-benedetto",
-"com": "Gualdo Tadino",
-"q": "Cattedrale di San Benedetto Gualdo Tadino"
-},
-{
-"p": "gualdo-tadino-pg--museo-regionale-dell-emigrazione-pietro-",
-"com": "Gualdo Tadino",
-"file": "Museo regionale emigrazione Pietro Conti, Gualdo Tadino - Ingresso Museo.jpg"
-},
-{
-"p": "gualdo-tadino-pg--museo-opificio-rubboli",
-"com": "Gualdo Tadino",
-"file": "Museo Opificio Rubboli - Sala della Fornace - Aldo Ajò.jpg"
-},
-{
-"p": "gualdo-tadino-pg--chiesa-di-santa-maria-dei-raccomandati",
-"com": "Gualdo Tadino",
-"file": "Gualdo tadino, santa maria dei raccomandati, 01.jpg"
-},
-{
-"p": "gualdo-tadino-pg--palazzo-comunale-e-torre-civica",
-"com": "Gualdo Tadino",
-"file": "Gualdo Tadino - Municipio di Gualdo Tadino - 001.JPG"
-},
-{
-"p": "magione-pg--castello-dei-cavalieri-di-malta",
-"com": "Magione",
-"file": "MagioneUmbriaCastelloDeiCavalieriDiMalta1.jpg"
-},
-{
-"p": "magione-pg--torre-dei-lambardi",
-"com": "Magione",
-"file": "MagioneUmbriaTorreDeiLambardi05.jpg"
+"n": "Parco del Monte Cucco",
+"r2": 1
 },
 {
 "p": "magione-pg--museo-della-pesca-del-lago-trasimeno",
 "com": "Magione",
-"q": "Museo della pesca del Lago Trasimeno Magione"
-},
-{
-"p": "magione-pg--chiesa-di-san-giovanni-battista",
-"com": "Magione",
-"file": "MagioneUmbriaSanGiovanniBattista7.jpg"
-},
-{
-"p": "magione-pg--palazzo-comunale",
-"com": "Magione",
-"file": "MagioneUmbriaPalazzoComunale1.jpg"
+"n": "Museo della pesca del Lago Trasimeno",
+"r2": 1
 },
 {
 "p": "magione-pg--chiesa-della-madonna-delle-grazie",
 "com": "Magione",
-"q": "Chiesa della Madonna delle Grazie Magione"
-},
-{
-"p": "magione-pg--monte-del-lago",
-"com": "Magione",
-"file": "Magione, frazione Monte del Lago (01).jpg"
-},
-{
-"p": "magione-pg--montecolognola",
-"com": "Magione",
-"file": "MontecolognolaMagionePanorama5.jpg"
-},
-{
-"p": "magione-pg--castello-di-agello",
-"com": "Magione",
-"q": "Castello di Agello Magione"
+"n": "Chiesa della Madonna delle Grazie",
+"r2": 1
 },
 {
 "p": "magione-pg--castello-di-san-savino-ed-emissario-di-b",
 "com": "Magione",
-"q": "Castello di San Savino ed Emissario di Braccio Magione"
+"n": "Castello di San Savino ed Emissario di Braccio",
+"r2": 1
 },
 {
 "p": "magione-pg--oasi-naturalistica-la-valle",
 "com": "Magione",
-"q": "Oasi naturalistica La Valle Magione"
-},
-{
-"p": "magione-pg--chiesa-di-santa-maria-d-ancaelle",
-"com": "Magione",
-"file": "MagioneSantArcangeloSantaMariaAncaelle4.jpg"
-},
-{
-"p": "magione-pg--castello-di-antria",
-"com": "Magione",
-"file": "AntriaMagioneBorgo3.jpg"
-},
-{
-"p": "magione-pg--castello-di-zocco",
-"com": "Magione",
-"file": "Monte del Lago - Castello di Zocco - Il Portale - panoramio.jpg"
+"n": "Oasi naturalistica La Valle",
+"r2": 1
 },
 {
 "p": "magione-pg--rocca-baglioni-pompilij",
 "com": "Magione",
-"q": "Rocca Baglioni Pompilij Magione"
-},
-{
-"p": "piegaro-pg--museo-del-vetro",
-"com": "Piegaro",
-"file": "PiegaroMuseoDelVetro1.jpg"
+"n": "Rocca Baglioni Pompilij",
+"r2": 1
 },
 {
 "p": "piegaro-pg--museo-paleontologico-luigi-boldrini",
 "com": "Piegaro",
-"q": "Museo paleontologico «Luigi Boldrini» Piegaro"
+"n": "Museo paleontologico «Luigi Boldrini»",
+"r2": 1
 },
 {
 "p": "piegaro-pg--centro-storico-mura-e-palazzi",
 "com": "Piegaro",
-"q": "Centro storico, mura e palazzi Piegaro"
-},
-{
-"p": "piegaro-pg--chiesa-di-san-silvestro",
-"com": "Piegaro",
-"file": "PiegaroSanSilvestro2.jpg"
-},
-{
-"p": "piegaro-pg--castiglion-fosco",
-"com": "Piegaro",
-"file": "CastiglionFoscoPiegaroPanorama3.jpg"
-},
-{
-"p": "piegaro-pg--cibottola",
-"com": "Piegaro",
-"q": "Cibottola Piegaro"
-},
-{
-"p": "piegaro-pg--gaiche",
-"com": "Piegaro",
-"file": "GaichePiegaro1.jpg"
-},
-{
-"p": "preci-pg--abbazia-di-sant-eutizio",
-"com": "Preci",
-"file": "Eutizio1.jpg"
-},
-{
-"p": "preci-pg--museo-dell-abbazia-di-sant-eutizio",
-"com": "Preci",
-"q": "Museo dell'Abbazia di Sant'Eutizio Preci"
-},
-{
-"p": "preci-pg--museo-della-scuola-chirurgica-preciana",
-"com": "Preci",
-"q": "Museo della scuola chirurgica preciana Preci"
+"n": "Centro storico, mura e palazzi",
+"r2": 1
 },
 {
 "p": "preci-pg--centro-storico-castello-e-chiese-di-sant",
 "com": "Preci",
-"q": "Centro storico, castello e chiese di Santa Caterina e Santa Maria Preci"
+"n": "Centro storico, castello e chiese di Santa Caterina e Santa Maria",
+"r2": 1
 },
 {
 "p": "preci-pg--castello-di-roccanolfi",
 "com": "Preci",
-"q": "Castello di Roccanolfi Preci"
+"n": "Castello di Roccanolfi",
+"r2": 1
 },
 {
 "p": "preci-pg--castello-di-todiano",
 "com": "Preci",
-"q": "Castello di Todiano Preci"
-},
-{
-"p": "castelfranco-di-sotto-pi--torre-campanaria-e-municipio",
-"com": "Castelfranco di Sotto",
-"n": "Torre campanaria e Municipio",
+"n": "Castello di Todiano",
 "r2": 1
 },
 {
-"p": "castelfranco-di-sotto-pi--museo-archeologico-di-castelfranco-di-so",
-"com": "Castelfranco di Sotto",
-"n": "Museo archeologico di Castelfranco di Sotto",
-"r2": 1
+"p": "controguerra-te--torrione-e-centro-storico",
+"com": "Controguerra",
+"q": "Torrione e centro storico Controguerra"
 },
 {
-"p": "castelfranco-di-sotto-pi--museo-archeologico-di-orentano",
-"com": "Castelfranco di Sotto",
-"n": "Museo archeologico di Orentano",
-"r2": 1
+"p": "controguerra-te--palazzo-ducale",
+"com": "Controguerra",
+"q": "Palazzo Ducale Controguerra"
 },
 {
-"p": "castelfranco-di-sotto-pi--riserva-naturale-di-montefalcone-e-cerba",
-"com": "Castelfranco di Sotto",
-"n": "Riserva naturale di Montefalcone e Cerbaie",
-"r2": 1
+"p": "controguerra-te--chiesa-della-madonna-delle-grazie",
+"com": "Controguerra",
+"cat": "Chiesa della Madonna delle Grazie (Controguerra)",
+"q": "Chiesa della Madonna delle Grazie Controguerra"
 },
 {
-"p": "castelfranco-di-sotto-pi--villa-di-montefalcone",
-"com": "Castelfranco di Sotto",
-"n": "Villa di Montefalcone",
-"r2": 1
+"p": "controguerra-te--cappella-dell-icona",
+"com": "Controguerra",
+"q": "Cappella dell'Icona Controguerra"
 },
 {
-"p": "castelfranco-di-sotto-pi--il-callone-sull-arno",
-"com": "Castelfranco di Sotto",
-"n": "Il Callone sull'Arno",
-"r2": 1
+"p": "controguerra-te--museo-della-civilta-contadina-in-val-vib",
+"com": "Controguerra",
+"q": "Museo della civiltà contadina in Val Vibrata Controguerra"
 },
 {
-"p": "palaia-pi--borgo-di-palaia-e-torre-dell-orologio",
-"com": "Palaia",
-"n": "Borgo di Palaia e Torre dell'orologio",
-"r2": 1
+"p": "controguerra-te--colline-del-vino-e-percorso-del-vino",
+"com": "Controguerra",
+"q": "Colline del vino e Percorso del Vino Controguerra"
 },
 {
-"p": "palaia-pi--pieve-di-san-giovanni-battista-a-san-ger",
-"com": "Palaia",
-"n": "Pieve di San Giovanni Battista a San Gervasio",
-"r2": 1
+"p": "montorio-al-vomano-te--collegiata-di-san-rocco",
+"com": "Montorio al Vomano",
+"file": "Montorio al Vomano - Chiesa di San Rocco 01.jpg"
 },
 {
-"p": "palaia-pi--museo-della-civilta-contadina-e-casa-mus",
-"com": "Palaia",
-"n": "Museo della Civiltà Contadina e Casa Museo Vaccà Berlinghieri",
-"r2": 1
+"p": "montorio-al-vomano-te--piazza-orsini-e-centro-storico",
+"com": "Montorio al Vomano",
+"q": "Piazza Orsini e centro storico Montorio al Vomano"
 },
 {
-"p": "palaia-pi--sentieri-ad-anello-di-palaia",
-"com": "Palaia",
-"n": "Sentieri ad anello di Palaia",
-"r2": 1
+"p": "montorio-al-vomano-te--forte-san-carlo",
+"com": "Montorio al Vomano",
+"q": "Forte San Carlo Montorio al Vomano"
 },
 {
-"p": "palaia-pi--tartufo-bianco-e-strada-del-vino-delle-c",
-"com": "Palaia",
-"n": "Tartufo bianco e Strada del Vino delle Colline Pisane",
-"r2": 1
+"p": "montorio-al-vomano-te--chiesa-degli-zoccolanti-immacolata-conce",
+"com": "Montorio al Vomano",
+"file": "Chiostrozoccolanti1.jpg"
 },
 {
-"p": "larciano-pt--castello-di-larciano-e-museo-civico-arch",
-"com": "Larciano",
-"n": "Castello di Larciano e Museo civico archeologico",
-"r2": 1
+"p": "montorio-al-vomano-te--chiesa-e-convento-dei-cappuccini-santa-m",
+"com": "Montorio al Vomano",
+"q": "Chiesa e convento dei Cappuccini (Santa Maria della Salute) Montorio al Vomano"
 },
 {
-"p": "larciano-pt--giardino-della-memoria-e-monumento-lo-st",
-"com": "Larciano",
-"n": "Giardino della Memoria e monumento «Lo Stupore»",
-"r2": 1
+"p": "montorio-al-vomano-te--santuario-della-madonna-della-sgrima",
+"com": "Montorio al Vomano",
+"q": "Santuario della Madonna della Sgrima Montorio al Vomano"
 },
 {
-"p": "larciano-pt--riserva-del-padule-di-fucecchio-e-centro",
-"com": "Larciano",
-"n": "Riserva del Padule di Fucecchio e centro visite",
-"r2": 1
+"p": "montorio-al-vomano-te--chiesa-di-sant-antonio",
+"com": "Montorio al Vomano",
+"q": "Chiesa di Sant'Antonio Montorio al Vomano"
 },
 {
-"p": "larciano-pt--museo-della-civilta-contadina-casa-dei",
-"com": "Larciano",
-"n": "Museo della civiltà contadina Casa Dei",
-"r2": 1
+"p": "montorio-al-vomano-te--chiesa-di-san-filippo-neri",
+"com": "Montorio al Vomano",
+"q": "Chiesa di San Filippo Neri Montorio al Vomano"
 },
 {
-"p": "san-marcello-piteglio-pt--ponte-di-castruccio-ponte-di-campanelle",
-"com": "San Marcello Piteglio",
-"n": "Ponte di Castruccio (Ponte di Campanelle)",
-"r2": 1
+"p": "montorio-al-vomano-te--chiesa-di-santa-maria-di-brecciano",
+"com": "Montorio al Vomano",
+"q": "Chiesa di Santa Maria di Brecciano Montorio al Vomano"
 },
 {
-"p": "san-marcello-piteglio-pt--palazzo-achilli-e-munap",
-"com": "San Marcello Piteglio",
-"n": "Palazzo Achilli e MuNAP",
-"r2": 1
+"p": "mosciano-sant-angelo-te--museo-di-scienze-naturali-osservatorio-a",
+"com": "Mosciano Sant'Angelo",
+"q": "Museo di scienze naturali (Osservatorio Astronomico Colle Leone) Mosciano Sant'Angelo"
 },
 {
-"p": "san-marcello-piteglio-pt--pian-de-termini-osservatorio-e-parco-del",
-"com": "San Marcello Piteglio",
-"n": "Pian de' Termini, Osservatorio e Parco delle Stelle",
-"r2": 1
+"p": "mosciano-sant-angelo-te--montone-mura-e-torri",
+"com": "Mosciano Sant'Angelo",
+"q": "Montone, mura e torri Mosciano Sant'Angelo"
 },
 {
-"p": "san-marcello-piteglio-pt--san-marcello-pistoiese-e-la-chiesa-di-sa",
-"com": "San Marcello Piteglio",
-"n": "San Marcello Pistoiese e la chiesa di San Marcello",
-"r2": 1
+"p": "mosciano-sant-angelo-te--chiesa-di-sant-antonio-abate-e-sarcofago",
+"com": "Mosciano Sant'Angelo",
+"file": "Montone, chiesa di Sant'Antonio Abate 02.jpg"
 },
 {
-"p": "fratta-polesine-ro--villa-badoer-la-badoera",
-"com": "Fratta Polesine",
-"file": "Villa Badoer Fratta Polesine facciata by Marcok 2009-08-16 n08.jpg"
+"p": "mosciano-sant-angelo-te--torre-acquaviva",
+"com": "Mosciano Sant'Angelo",
+"file": "Mosciano Sant'Angelo - Torre 14.JPG"
 },
 {
-"p": "fratta-polesine-ro--museo-archeologico-nazionale-di-fratta-p",
-"com": "Fratta Polesine",
-"file": "Villa Badoer Fratta Polesine barchesse by Marcok 2009-08-16 n02.jpg"
+"p": "mosciano-sant-angelo-te--chiesa-del-ss-rosario",
+"com": "Mosciano Sant'Angelo",
+"q": "Chiesa del SS. Rosario Mosciano Sant'Angelo"
 },
 {
-"p": "fratta-polesine-ro--villa-grimani-molin-avezzu",
-"com": "Fratta Polesine",
-"q": "Villa Grimani Molin Avezzù Fratta Polesine"
+"p": "mosciano-sant-angelo-te--convento-dei-santi-sette-fratelli",
+"com": "Mosciano Sant'Angelo",
+"q": "Convento dei Santi Sette Fratelli Mosciano Sant'Angelo"
 },
 {
-"p": "fratta-polesine-ro--chiesa-di-san-francesco",
-"com": "Fratta Polesine",
-"file": "San Francesco (Fratta Polesine).JPG"
+"p": "nereto-te--chiesa-di-san-martino",
+"com": "Nereto",
+"file": "Chiesa San Martino Nereto Teramo.png"
 },
 {
-"p": "fratta-polesine-ro--chiesa-arcipretale-dei-santi-pietro-e-pa",
-"com": "Fratta Polesine",
-"file": "Santi Pietro e Paolo apostoli (Fratta Polesine).jpg"
+"p": "nereto-te--chiesa-parrocchiale-di-maria-ss-della-co",
+"com": "Nereto",
+"q": "Chiesa parrocchiale di Maria SS. della Consolazione e Campana del Bicentenario Nereto"
 },
 {
-"p": "fratta-polesine-ro--ecomuseo-mulino-al-pizzon",
-"com": "Fratta Polesine",
-"file": "Mulino al Pizzon, esterno e canale Scortico (Pizzon, Fratta Polesine) 01.jpg"
+"p": "nereto-te--chiesa-di-santa-maria-del-suffragio",
+"com": "Nereto",
+"q": "Chiesa di Santa Maria del Suffragio Nereto"
 },
 {
-"p": "arco-tn--arboreto-di-arco-parco-arciducale",
-"com": "Arco",
-"n": "Arboreto di Arco, Parco Arciducale",
-"r2": 1
-},
-{
-"p": "arco-tn--museo-delle-missioni-francescane",
-"com": "Arco",
-"n": "Museo delle missioni francescane",
-"r2": 1
-},
-{
-"p": "arco-tn--falesie-e-rock-master",
-"com": "Arco",
-"n": "Falesie e Rock Master",
-"r2": 1
-},
-{
-"p": "canazei-tn--la-sia-la-segheria-veneziana",
-"com": "Canazei",
-"n": "La Sia - La segheria veneziana",
-"r2": 1
-},
-{
-"p": "canazei-tn--museo-1915-1918-dolomiten",
-"com": "Canazei",
-"n": "Museo 1915-1918 Dolomiten",
-"r2": 1
-},
-{
-"p": "canazei-tn--sass-pordoi-la-terrazza-delle-dolomiti",
-"com": "Canazei",
-"n": "Sass Pordoi, la Terrazza delle Dolomiti",
-"r2": 1
-},
-{
-"p": "cavalese-tn--alpe-cermis",
-"com": "Cavalese",
-"n": "Alpe Cermis",
-"r2": 1
-},
-{
-"p": "lavarone-tn--lago-di-lavarone-e-sentiero-di-freud",
-"com": "Lavarone",
-"n": "Lago di Lavarone e Sentiero di Freud",
-"r2": 1
-},
-{
-"p": "lavarone-tn--museo-del-miele",
-"com": "Lavarone",
-"n": "Museo del Miele",
-"r2": 1
-},
-{
-"p": "male-tn--segheria-veneziana",
-"com": "Malé",
-"n": "Segheria Veneziana",
-"r2": 1
-},
-{
-"p": "male-tn--fucina-marinelli",
-"com": "Malé",
-"n": "Fucina Marinelli",
-"r2": 1
-},
-{
-"p": "male-tn--la-lec-di-male-lungo-il-rabbies",
-"com": "Malé",
-"n": "La Lec di Malé lungo il Rabbies",
-"r2": 1
-},
-{
-"p": "moena-tn--la-gran-vera-mostra-sulla-grande-guerra",
-"com": "Moena",
-"n": "La Gran Vera - mostra sulla Grande Guerra",
-"r2": 1
-},
-{
-"p": "moena-tn--museo-sul-fronte-dei-ricordi-stala-de-la",
-"com": "Moena",
-"n": "Museo Sul fronte dei ricordi (Stala de la Nenola)",
-"r2": 1
-},
-{
-"p": "moena-tn--bottega-del-bottaio-l-pinter",
-"com": "Moena",
-"n": "Bottega del bottaio «L Pinter»",
-"r2": 1
-},
-{
-"p": "riva-del-garda-tn--rocca-di-riva-e-mag-museo-alto-garda",
-"com": "Riva del Garda",
-"n": "Rocca di Riva e MAG Museo Alto Garda",
-"r2": 1
-},
-{
-"p": "riva-del-garda-tn--quartiere-marocco",
-"com": "Riva del Garda",
-"n": "Quartiere Marocco",
-"r2": 1
-},
-{
-"p": "riva-del-garda-tn--centrale-idroelettrica-di-riva-hydrotour",
-"com": "Riva del Garda",
-"n": "Centrale idroelettrica di Riva (Hydrotour Dolomiti)",
-"r2": 1
-},
-{
-"p": "riva-del-garda-tn--spiagge-di-riva",
-"com": "Riva del Garda",
-"n": "Spiagge di Riva",
-"r2": 1
+"p": "nereto-te--museo-delle-tradizioni-venatorie",
+"com": "Nereto",
+"q": "Museo delle tradizioni venatorie Nereto"
 },
 {
 "p": "alviano-tr--castello-doria-pamphili-rocca-di-alviano",
 "com": "Alviano",
-"q": "Castello Doria Pamphili (Rocca di Alviano) Alviano"
+"n": "Castello Doria Pamphili (Rocca di Alviano)",
+"r2": 1
 },
 {
 "p": "alviano-tr--musei-del-castello-di-alviano",
 "com": "Alviano",
-"q": "Musei del Castello di Alviano Alviano"
-},
-{
-"p": "alviano-tr--parrocchiale-di-santa-maria-assunta",
-"com": "Alviano",
-"file": "AlvianoSantaMariaAssunta9.jpg"
-},
-{
-"p": "alviano-tr--oasi-wwf-lago-di-alviano",
-"com": "Alviano",
-"q": "Oasi WWF Lago di Alviano Alviano"
+"n": "Musei del Castello di Alviano",
+"r2": 1
 },
 {
 "p": "castel-viscardo-tr--castello-dei-duchi-di-montevecchio",
 "com": "Castel Viscardo",
-"q": "Castello dei Duchi di Montevecchio Castel Viscardo"
-},
-{
-"p": "castel-viscardo-tr--chiesa-di-maria-santissima-annunziata",
-"com": "Castel Viscardo",
-"file": "CastelViscardoSantissimaAnnunziata2.jpg"
+"n": "Castello dei Duchi di Montevecchio",
+"r2": 1
 },
 {
 "p": "castel-viscardo-tr--centro-di-documentazione-delle-terrecott",
 "com": "Castel Viscardo",
-"q": "Centro di documentazione delle terrecotte Castel Viscardo"
+"n": "Centro di documentazione delle terrecotte",
+"r2": 1
 },
 {
 "p": "castel-viscardo-tr--necropoli-etrusca-di-caldane",
 "com": "Castel Viscardo",
-"q": "Necropoli etrusca di Caldane Castel Viscardo"
-},
-{
-"p": "castel-viscardo-tr--borghi-di-monterubiaglio-e-viceno",
-"com": "Castel Viscardo",
-"file": "MonterubiaglioCastelViscardo3.jpg"
+"n": "Necropoli etrusca di Caldane",
+"r2": 1
 },
 {
 "p": "castel-viscardo-tr--parco-naturale-s-t-i-n-a",
 "com": "Castel Viscardo",
-"q": "Parco Naturale S.T.I.N.A. Castel Viscardo"
-},
-{
-"p": "ferentillo-tr--museo-delle-mummie-cripta-di-santo-stefa",
-"com": "Ferentillo",
-"file": "MUSEOmUMMIE.JPG"
-},
-{
-"p": "ferentillo-tr--abbazia-di-san-pietro-in-valle",
-"com": "Ferentillo",
-"file": "Abbazia di San Pietro in Valle.JPG"
-},
-{
-"p": "ferentillo-tr--chiesa-di-santa-maria-a-matterella",
-"com": "Ferentillo",
-"file": "FerentilloMatterellaSantaMaria8.jpg"
+"n": "Parco Naturale S.T.I.N.A.",
+"r2": 1
 },
 {
 "p": "ferentillo-tr--rocche-di-precetto-e-matterella",
 "com": "Ferentillo",
-"q": "Rocche di Precetto e Matterella Ferentillo"
-},
-{
-"p": "ferentillo-tr--castello-di-umbriano",
-"com": "Ferentillo",
-"q": "Castello di Umbriano Ferentillo"
-},
-{
-"p": "ferentillo-tr--parco-fluviale-del-nera",
-"com": "Ferentillo",
-"q": "Parco fluviale del Nera Ferentillo"
+"n": "Rocche di Precetto e Matterella",
+"r2": 1
 },
 {
 "p": "ferentillo-tr--pareti-di-arrampicata-di-ferentillo",
 "com": "Ferentillo",
-"q": "Pareti di arrampicata di Ferentillo Ferentillo"
+"n": "Pareti di arrampicata di Ferentillo",
+"r2": 1
 },
 {
 "p": "monteleone-d-orvieto-tr--borgo-medievale-mura-e-porta-nord",
 "com": "Monteleone d'Orvieto",
-"q": "Borgo medievale, mura e Porta Nord Monteleone d'Orvieto"
-},
-{
-"p": "monteleone-d-orvieto-tr--torre-dell-orologio",
-"com": "Monteleone d'Orvieto",
-"file": "MonteleoneDOrvietoTorreDellOrologio2.jpg"
+"n": "Borgo medievale, mura e Porta Nord",
+"r2": 1
 },
 {
 "p": "monteleone-d-orvieto-tr--il-torrione",
 "com": "Monteleone d'Orvieto",
-"q": "Il Torrione Monteleone d'Orvieto"
-},
-{
-"p": "monteleone-d-orvieto-tr--teatro-dei-rustici",
-"com": "Monteleone d'Orvieto",
-"file": "MonteleoneDOrvietoTeatroDeiRustici.JPG"
+"n": "Il Torrione",
+"r2": 1
 },
 {
 "p": "monteleone-d-orvieto-tr--centro-documentazione-di-arte-musicale-a",
 "com": "Monteleone d'Orvieto",
-"q": "Centro documentazione di arte musicale «Attilio Parelli» Monteleone d'Orvieto"
-},
-{
-"p": "monteleone-d-orvieto-tr--chiesa-del-santissimo-crocifisso",
-"com": "Monteleone d'Orvieto",
-"file": "MonteleoneDOrvietoChiesaDelCrocifisso2.jpg"
-},
-{
-"p": "monteleone-d-orvieto-tr--chiesa-dei-santi-apostoli-pietro-e-paolo",
-"com": "Monteleone d'Orvieto",
-"file": "MonteleoneDOrvietoChiesaSSApostoliPietroEPaolo5.jpg"
+"n": "Centro documentazione di arte musicale «Attilio Parelli»",
+"r2": 1
 },
 {
 "p": "castelfranco-veneto-tv--mura-castello-e-torre-civica",
 "com": "Castelfranco Veneto",
-"q": "Mura, castello e Torre civica Castelfranco Veneto"
-},
-{
-"p": "castelfranco-veneto-tv--museo-casa-giorgione",
-"com": "Castelfranco Veneto",
-"q": "Museo Casa Giorgione Castelfranco Veneto"
+"n": "Mura, castello e Torre civica",
+"r2": 1
 },
 {
 "p": "castelfranco-veneto-tv--duomo-di-santa-maria-assunta-e-san-liber",
 "com": "Castelfranco Veneto",
-"q": "Duomo di Santa Maria Assunta e San Liberale e Pala di Giorgione Castelfranco Veneto"
-},
-{
-"p": "castelfranco-veneto-tv--teatro-accademico",
-"com": "Castelfranco Veneto",
-"q": "Teatro Accademico Castelfranco Veneto"
+"n": "Duomo di Santa Maria Assunta e San Liberale e Pala di Giorgione",
+"r2": 1
 },
 {
 "p": "castelfranco-veneto-tv--piazza-giorgione-paveion-e-corso-xxix-ap",
 "com": "Castelfranco Veneto",
-"q": "Piazza Giorgione, Paveion e Corso XXIX Aprile Castelfranco Veneto"
-},
-{
-"p": "castelfranco-veneto-tv--villa-revedin-bolasco-e-parco",
-"com": "Castelfranco Veneto",
-"file": "Bolasco 22 (38856360392).jpg"
-},
-{
-"p": "castelfranco-veneto-tv--villa-corner-tiepolo-chiminelli-museo-ag",
-"com": "Castelfranco Veneto",
-"file": "Facciata di Villa Chiminelli.JPG"
-},
-{
-"p": "castelfranco-veneto-tv--chiesa-di-san-giacomo-apostolo",
-"com": "Castelfranco Veneto",
-"cat": "San Giacomo (Castelfranco Veneto)",
-"q": "Chiesa di San Giacomo Apostolo Castelfranco Veneto"
+"n": "Piazza Giorgione, Paveion e Corso XXIX Aprile",
+"r2": 1
 },
 {
 "p": "castelfranco-veneto-tv--oratorio-del-cristo",
 "com": "Castelfranco Veneto",
-"q": "Oratorio del Cristo Castelfranco Veneto"
+"n": "Oratorio del Cristo",
+"r2": 1
 },
 {
 "p": "castelfranco-veneto-tv--oratorio-della-beata-vergine-delle-grazi",
 "com": "Castelfranco Veneto",
-"q": "Oratorio della Beata Vergine delle Grazie Castelfranco Veneto"
-},
-{
-"p": "castelfranco-veneto-tv--chiesa-di-santa-maria-della-pieve",
-"com": "Castelfranco Veneto",
-"file": "Castelfranco Veneto kosciol Santa Maria della Pieve 2.jpg"
+"n": "Oratorio della Beata Vergine delle Grazie",
+"r2": 1
 },
 {
 "p": "dolo-ve--antica-conca-di-dolo",
 "com": "Dolo",
-"q": "Antica conca di Dolo Dolo"
+"n": "Antica conca di Dolo",
+"r2": 1
 },
 {
 "p": "dolo-ve--squero-monumentale",
 "com": "Dolo",
-"q": "Squero monumentale Dolo"
+"n": "Squero monumentale",
+"r2": 1
 },
 {
 "p": "dolo-ve--villa-badoer-fattoretto-e-museo-del-vill",
 "com": "Dolo",
-"q": "Villa Badoer Fattoretto e Museo del Villano Dolo"
-},
-{
-"p": "dolo-ve--museo-archeologico-lino-vanuzzo-antiquar",
-"com": "Dolo",
-"cat": "Sambruson (Dolo)",
-"q": "Museo archeologico Lino Vanuzzo (Antiquarium di Sambruson) Dolo"
+"n": "Villa Badoer Fattoretto e Museo del Villano",
+"r2": 1
 },
 {
 "p": "dolo-ve--villa-venier-velluti",
 "com": "Dolo",
-"q": "Villa Venier Velluti Dolo"
-},
-{
-"p": "quarto-d-altino-ve--museo-nazionale-di-altino",
-"com": "Quarto d'Altino",
-"q": "Museo nazionale di Altino Quarto d'Altino"
-},
-{
-"p": "quarto-d-altino-ve--area-archeologica-di-altino",
-"com": "Quarto d'Altino",
-"q": "Area archeologica di Altino Quarto d'Altino"
-},
-{
-"p": "quarto-d-altino-ve--chiesa-di-sant-eliodoro",
-"com": "Quarto d'Altino",
-"cat": "San Eliodoro (Altino, Quarto d'Altino)",
-"q": "Chiesa di Sant'Eliodoro Quarto d'Altino"
-},
-{
-"p": "quarto-d-altino-ve--conca-di-portegrandi",
-"com": "Quarto d'Altino",
-"file": "Portegrandi.JPG"
+"n": "Villa Venier Velluti",
+"r2": 1
 },
 {
 "p": "quarto-d-altino-ve--fiume-sile-e-alzaia",
 "com": "Quarto d'Altino",
-"q": "Fiume Sile e Alzaia Quarto d'Altino"
+"n": "Fiume Sile e Alzaia",
+"r2": 1
 },
 {
 "p": "quarto-d-altino-ve--oasi-di-trepalade",
 "com": "Quarto d'Altino",
-"q": "Oasi di Trepalade Quarto d'Altino"
+"n": "Oasi di Trepalade",
+"r2": 1
 },
 {
 "p": "quarto-d-altino-ve--palude-di-san-michele-vecchio",
 "com": "Quarto d'Altino",
-"q": "Palude di San Michele Vecchio Quarto d'Altino"
-},
-{
-"p": "legnago-vr--torrione-di-legnago",
-"com": "Legnago",
-"file": "Torrione in Legnago (6).jpg"
+"n": "Palude di San Michele Vecchio",
+"r2": 1
 },
 {
 "p": "legnago-vr--museo-della-fondazione-fioroni",
 "com": "Legnago",
-"q": "Museo della Fondazione Fioroni Legnago"
-},
-{
-"p": "legnago-vr--centro-ambientale-archeologico-museo-civ",
-"com": "Legnago",
-"file": "Veduta esterna del museo.jpg"
+"n": "Museo della Fondazione Fioroni",
+"r2": 1
 },
 {
 "p": "legnago-vr--area-archeologica-delle-ex-cantine-pette",
 "com": "Legnago",
-"q": "Area archeologica delle ex Cantine Petternella Legnago"
+"n": "Area archeologica delle ex Cantine Petternella",
+"r2": 1
 },
 {
 "p": "legnago-vr--leoni-di-legnago",
 "com": "Legnago",
-"q": "Leoni di Legnago Legnago"
+"n": "Leoni di Legnago",
+"r2": 1
 },
 {
 "p": "legnago-vr--centro-storico-e-borghi-medievali",
 "com": "Legnago",
-"q": "Centro storico e borghi medievali Legnago"
+"n": "Centro storico e borghi medievali",
+"r2": 1
 },
 {
 "p": "legnago-vr--casa-natale-di-antonio-salieri",
 "com": "Legnago",
-"q": "Casa natale di Antonio Salieri Legnago"
-},
-{
-"p": "legnago-vr--teatro-salieri",
-"com": "Legnago",
-"file": "Teatro Salieri (Legnago) 02.JPG"
+"n": "Casa natale di Antonio Salieri",
+"r2": 1
 },
 {
 "p": "legnago-vr--viale-dei-tigli-e-la-legnago-liberty",
 "com": "Legnago",
-"q": "Viale dei Tigli e la Legnago Liberty Legnago"
+"n": "Viale dei Tigli e la Legnago Liberty",
+"r2": 1
 },
 {
 "p": "selva-di-progno-vr--museo-dei-cimbri-di-giazza",
 "com": "Selva di Progno",
-"q": "Museo dei Cimbri di Giazza Selva di Progno"
+"n": "Museo dei Cimbri di Giazza",
+"r2": 1
 },
 {
 "p": "selva-di-progno-vr--museo-dei-trombini",
 "com": "Selva di Progno",
-"q": "Museo dei Trombini Selva di Progno"
+"n": "Museo dei Trombini",
+"r2": 1
 },
 {
 "p": "selva-di-progno-vr--chiesa-di-san-bartolomeo-delle-montagne",
 "com": "Selva di Progno",
-"q": "Chiesa di San Bartolomeo delle Montagne Selva di Progno"
+"n": "Chiesa di San Bartolomeo delle Montagne",
+"r2": 1
 },
 {
 "p": "selva-di-progno-vr--ciclopedonale-della-val-d-illasi",
 "com": "Selva di Progno",
-"q": "Ciclopedonale della Val d'Illasi Selva di Progno"
+"n": "Ciclopedonale della Val d'Illasi",
+"r2": 1
 }
 ]
