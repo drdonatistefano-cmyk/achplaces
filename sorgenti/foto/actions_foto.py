@@ -9,7 +9,7 @@ from io import BytesIO
 UA = {'User-Agent': "AchsPlacesGuide/0.2 (https://achplaces.com; guida turistica non commerciale) python-requests"}
 OUT = 'out/'; os.makedirs(OUT + 'img', exist_ok=True)
 meta = json.load(open(OUT + 'meta.json')) if os.path.exists(OUT + 'meta.json') else {}
-coda = [x for x in json.load(open('sorgenti/foto/coda.json')) if x['p'] not in meta or x.get('r3') or x.get('r2b')]   # r3: rifà anche i luoghi con foto scartata dal controllo
+coda = [x for x in json.load(open('sorgenti/foto/coda.json')) if x['p'] not in meta or x.get('r3') or x.get('r2b') or x.get('r4')]   # r3: rifà anche i luoghi con foto scartata dal controllo
 PROVATI = OUT + 'provati.json'
 provati = set(json.load(open(PROVATI))) if os.path.exists(PROVATI) else set()
 LIM = time.time() + 60 * float(os.environ.get('MINUTI', '300'))
@@ -131,7 +131,7 @@ def risolvi3(x):
                 x['file'] = f; x['via'] = 'wikidata-area'; x['lab'] = el; return
 PROVATI2 = OUT + 'provati2.json'
 provati2 = set(json.load(open(PROVATI2))) if os.path.exists(PROVATI2) else set()
-da_risolvere = [x for x in coda if not x.get('file') and x['p'] not in provati and not x.get('r2') and not x.get('r3')]
+da_risolvere = [x for x in coda if not x.get('file') and x['p'] not in provati and not x.get('r2') and not x.get('r3') and not x.get('r4')]
 print('da risolvere', len(da_risolvere), flush=True)
 for i, x in enumerate(da_risolvere):
     if time.time() > LIM: break
@@ -163,7 +163,88 @@ for i, x in enumerate(terza):
     if i % 100 == 0: print('terza', i, sum(1 for y in terza if y.get('file')), flush=True); json.dump(sorted(provati3), open(PROVATI3, 'w'))
     time.sleep(0.5)
 json.dump(sorted(provati3), open(PROVATI3, 'w'))
-coda = [x for x in coda if x.get('file')]
+
+# 9/11/2026 quarta ricerca (voce "r4"): luoghi ancora senza foto dopo le prime tre.
+# A) albero delle categorie Commons del comune (P373 del comune, sottocategorie fino a 2 livelli, es. «Churches in X»):
+#    si cerca la sottocategoria che contiene tutte le parole distintive del luogo e se ne prende una foto.
+# B) Openverse (foto con licenza libera da Flickr e altri archivi): solo licenze CC BY, CC BY-SA, CC0 e pubblico dominio
+#    (mai NC o ND); titolo o etichette devono citare il luogo E il comune.
+ALBERI = {}
+def albero(ist):
+    if ist in ALBERI: return ALBERI[ist]
+    cats = []
+    r = get(WQ, params={'query': 'SELECT ?cat WHERE { ?c wdt:P635 "%s" ; wdt:P373 ?cat } LIMIT 1' % ist, 'format': 'json'})
+    b = r.json()['results']['bindings'] if r else []
+    if b:
+        radice = b[0]['cat']['value']; cats = [radice]; livello = [radice]
+        for _ in range(2):
+            nuovi = []
+            for c in livello:
+                rm = get(API, params={'action': 'query', 'format': 'json', 'list': 'categorymembers', 'cmtype': 'subcat', 'cmlimit': 500, 'cmtitle': 'Category:' + c})
+                for m in (rm.json().get('query', {}).get('categorymembers', []) if rm else []):
+                    t = m['title'][9:]
+                    if t not in cats: cats.append(t); nuovi.append(t)
+                if len(cats) > 600: break
+            livello = nuovi[:300]
+    ALBERI[ist] = cats; return cats
+OV = {'ok': True}
+def openverse(x, v, dv, cn):
+    if not OV['ok']: return
+    r = S.get('https://api.openverse.org/v1/images/', timeout=60, params={'q': v + ' ' + x['com'], 'license': 'by,by-sa,cc0,pdm', 'page_size': 20, 'mature': 'false'})
+    if r.status_code == 429: OV['ok'] = False; print('openverse: limite raggiunto', flush=True); return
+    if r.status_code != 200: return
+    for h in r.json().get('results', []):
+        testo = norm((h.get('title') or '') + ' ' + ' '.join(t.get('name', '') for t in (h.get('tags') or [])))
+        if BRUTTI.search(h.get('title') or ''): continue
+        if not ha(dv, testo) or cn not in testo: continue
+        lic = ('CC0' if h.get('license') == 'cc0' else 'Pubblico dominio' if h.get('license') == 'pdm' else 'CC ' + h.get('license', '').upper() + ' ' + (h.get('license_version') or '')).strip()
+        x['file'] = (h.get('title') or v) + ' ' + x['com']; x['via'] = 'openverse'
+        x['ov'] = [pulisci(h.get('creator')) or 'vedi pagina della foto', lic, h.get('foreign_landing_url') or '', h.get('thumbnail') or h.get('url')]
+        return
+def risolvi4(x):
+    com = x.get('com', ''); cn = norm(com); ist = x.get('istat')
+    vs = [(v, distinte(v, com)) for v in varianti(x['n'])]; vs = [(v, d) for v, d in vs if d]
+    if not vs: return
+    cats = albero(ist) if ist else []
+    for v, dv in vs:
+        cand = sorted([c for c in cats if ha(dv, norm(c))], key=len)
+        for c in cand[:3]:
+            rm = get(API, params={'action': 'query', 'format': 'json', 'list': 'categorymembers', 'cmtype': 'file', 'cmlimit': 20, 'cmtitle': 'Category:' + c})
+            for m in (rm.json().get('query', {}).get('categorymembers', []) if rm else []):
+                f = m['title'][5:]
+                if re.search(r'\.(jpe?g|png|webp)$', f, re.I) and not BRUTTI.search(f) and f.replace('_', ' ') != (x.get('no') or '').replace('_', ' '):
+                    x['file'] = f; x['via'] = 'albero'; x['catf'] = c; return
+    for v, dv in vs[:2]:
+        openverse(x, v, dv, cn)
+        if x.get('file'): return
+        time.sleep(1)
+PROVATI4 = OUT + 'provati4.json'
+provati4 = set(json.load(open(PROVATI4))) if os.path.exists(PROVATI4) else set()
+quarta = sorted([x for x in coda if x.get('r4') and not x.get('file') and x['p'] not in provati4], key=lambda x: x.get('istat', ''))
+print('quarta ricerca', len(quarta), flush=True)
+for i, x in enumerate(quarta):
+    if time.time() > LIM - 900: break
+    try: risolvi4(x)
+    except Exception: pass
+    provati4.add(x['p'])
+    if i % 100 == 0: print('quarta', i, sum(1 for y in quarta if y.get('file')), flush=True); json.dump(sorted(provati4), open(PROVATI4, 'w'))
+    time.sleep(0.05)
+json.dump(sorted(provati4), open(PROVATI4, 'w'))
+# foto Openverse: scaricate dalla miniatura, con autore, licenza e pagina originale
+for x in [y for y in coda if y.get('ov')]:
+    aut, lic, url, th = x['ov']
+    t = get(th) if th else None
+    if not t: continue
+    try:
+        im = Image.open(BytesIO(t.content)).convert('RGB'); w, h = im.size; s2 = min(w, h)
+        im = im.crop(((w - s2) // 2, (h - s2) // 2, (w - s2) // 2 + s2, (h - s2) // 2 + s2)).resize((168, 168), Image.LANCZOS)
+        fn = slug40(x['p'].replace('--', '-'))[:40] + '-' + hashlib.md5(x['p'].encode()).hexdigest()[:6] + '.webp'
+        im.save(OUT + 'img/' + fn, 'WEBP', quality=72, method=6)
+        col = '#%02x%02x%02x' % im.resize((1, 1)).getpixel((0, 0))
+    except Exception: continue
+    meta[x['p']] = [fn, aut, lic, url, col, x['file'], 'openverse']
+json.dump(meta, open(OUT + 'meta.json', 'w'), ensure_ascii=False, separators=(',', ':'))
+coda = [x for x in coda if x.get('file') and not x.get('ov')]
 print('in coda', len(coda), flush=True)
 fatti = 0
 for i in range(0, len(coda), 50):

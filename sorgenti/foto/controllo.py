@@ -32,7 +32,7 @@ for k, v in con.items():
     fl = norm(os.path.splitext(v.get('file', ''))[0]); fn=' '.join(fl)
     if BRUTTI.search(v.get('file', '')):
         scarti[k] = 'immagine non fotografica (stemma/mappa/cartello)'; continue
-    if v.get('via') in ('ricerca', 'categoria'):
+    if v.get('via') in ('ricerca', 'categoria', 'albero', 'openverse'):
         # 9/11: il nome del file cita un altro comune (e non il proprio): foto di un altro luogo
         cm = ' '.join(norm(v['com']))
         nn = ' ' + ' '.join(norm(v['n'])) + ' '
