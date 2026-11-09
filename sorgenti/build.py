@@ -40,7 +40,7 @@ for g in json.load(open(os.path.join(D,"geo","italy_geo.json"),encoding="utf-8")
     try: GEO.setdefault(norm(g["comune"]),(float(g["lat"]),float(g["lng"])))
     except: pass
 # comuni nati da fusioni dopo il 2018: media dei comuni d'origine
-FUS={"barberinotavarnelle":["barberinovaldelsa","tavarnellevaldipesa"],"rivadelpo":["berra","ro"],"tresignana":["formignana","tresigallo"]}
+FUS={"barberinotavarnelle":["barberinovaldelsa","tavarnellevaldipesa"],"rivadelpo":["berra","ro"],"tresignana":["formignana","tresigallo"],"presicceacquarica":["presicce","acquaricadelcapo"],"sangiovannidifassa":["pozzadifassa","vigodifassa"],"borgovalbelluna":["mel","lentiai","trichiana"]}
 ISTAT={}
 for r in csv.DictReader(open(os.path.join(D,"geo","comuni_istat.csv"),encoding="utf-8")):
     ISTAT[(norm(r["comune"]),r["sigla"])]=r["pro_com_t"]

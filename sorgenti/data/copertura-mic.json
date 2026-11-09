@@ -4186,6 +4186,46 @@
   "coperti": 1,
   "mancanti": []
  },
+ "Calascio (AQ)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Capestrano (AQ)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Castel di Sangro (AQ)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Celano (AQ)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Corfinio (AQ)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Massa d'Albe (AQ)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Pescina (AQ)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Villetta Barrea (AQ)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
  "Teramo (TE)": {
   "tot": 8,
   "coperti": 8,
@@ -4231,6 +4271,21 @@
   "coperti": 1,
   "mancanti": []
  },
+ "Martinsicuro (TE)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Morro d'Oro (TE)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Roseto degli Abruzzi (TE)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
  "Pescara (PE)": {
   "tot": 7,
   "coperti": 7,
@@ -4249,6 +4304,16 @@
  "Caramanico Terme (PE)": {
   "tot": 1,
   "coperti": 1,
+  "mancanti": []
+ },
+ "Loreto Aprutino (PE)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Manoppello (PE)": {
+  "tot": 2,
+  "coperti": 2,
   "mancanti": []
  },
  "Chieti (CH)": {
@@ -5417,6 +5482,16 @@
  "Vaglio Basilicata (PZ)": {
   "tot": 3,
   "coperti": 3,
+  "mancanti": []
+ },
+ "Grumento Nova (PZ)": {
+  "tot": 2,
+  "coperti": 2,
+  "mancanti": []
+ },
+ "Latronico (PZ)": {
+  "tot": 2,
+  "coperti": 2,
   "mancanti": []
  },
  "Matera (MT)": {
