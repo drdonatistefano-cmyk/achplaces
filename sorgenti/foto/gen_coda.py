@@ -10,10 +10,16 @@ c = json.load(open(F + 'foto2.json'))
 prov2 = set(json.load(open(R + 'provati2.json'))) if os.path.exists(R + 'provati2.json') else set()
 pid_of = lambda cc, a: (cc['slug'] + '--' + (a[0] if a[0] else slug40(a[1]))) if cc['slug'] else a[0]
 coda = []
+# 9/11: terza ricerca (r3) per i luoghi ancora senza foto dopo la seconda e per quelli con foto scartata dal controllo
+SC = json.load(open(F + 'controllo.json'))['scarti'] if os.path.exists(F + 'controllo.json') else {}
+FIN = set(json.load(open(F + 'foto-finale.json'))) if os.path.exists(F + 'foto-finale.json') else set()
+prov3 = set(json.load(open(R + 'provati3.json'))) if os.path.exists(R + 'provati3.json') else set()
 for cc in D['c']:
     for a in cc['places']:
         p = pid_of(cc, a)
         r = c.get(p, {})
+        if p not in FIN and p not in prov3 and (p in SC or (p in prov and p in prov2)):
+            coda.append({'p': p, 'com': cc['name'], 'n': a[1], 'istat': cc.get('istat', ''), 'r3': 1, 'no': r.get('file', '')}); continue
         if p in meta and r.get('img'): continue
         if p in prov and not (r.get('file') and r.get('file') != (meta.get(p) or [None]*6)[5]):
             if p in prov2: continue

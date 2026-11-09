@@ -20,7 +20,9 @@ for p, v in meta.items():
     shutil.copy2(R + 'img/' + img, F + 'img/' + img)
     r.update({'img': img, 'a': a, 'l': l, 'u': u, 'c': col})
     if len(v) > 5: r['file'] = v[5]; r['via'] = v[6]
-    if len(v) > 7: r['catf'] = v[7]   # categoria Commons da cui viene la foto
+    if len(v) > 7 and v[7]: r['catf'] = v[7]   # categoria Commons da cui viene la foto
+    elif len(v) > 7: r.pop('catf', None)
+    if len(v) > 8: r['lab'] = v[8]; r['s'] = 1   # 9/11: terza ricerca Wikidata per nome (aree vaste)
     n += 1
 json.dump(c, open(F + 'foto2.json.tmp', 'w'), ensure_ascii=False); os.replace(F + 'foto2.json.tmp', F + 'foto2.json')
 print('dal ramo foto:', n)

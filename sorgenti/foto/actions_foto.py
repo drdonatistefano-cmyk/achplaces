@@ -9,7 +9,7 @@ from io import BytesIO
 UA = {'User-Agent': "AchsPlacesGuide/0.2 (https://achplaces.com; guida turistica non commerciale) python-requests"}
 OUT = 'out/'; os.makedirs(OUT + 'img', exist_ok=True)
 meta = json.load(open(OUT + 'meta.json')) if os.path.exists(OUT + 'meta.json') else {}
-coda = [x for x in json.load(open('sorgenti/foto/coda.json')) if x['p'] not in meta]
+coda = [x for x in json.load(open('sorgenti/foto/coda.json')) if x['p'] not in meta or x.get('r3')]   # r3: rifà anche i luoghi con foto scartata dal controllo
 PROVATI = OUT + 'provati.json'
 provati = set(json.load(open(PROVATI))) if os.path.exists(PROVATI) else set()
 LIM = time.time() + 60 * float(os.environ.get('MINUTI', '300'))
@@ -89,9 +89,47 @@ def risolvi2(x):
             if ha(dv, tit): x['file'] = pg['title'][5:]; x['via'] = 'ricerca'; return
             cm = [c for c in cl if ha(dv, norm(c))]
             if cm: x['file'] = pg['title'][5:]; x['via'] = 'categoria'; x['catf'] = cm[0]; return
+
+# 9/11/2026 terza ricerca (voce "r3"): luoghi ad area vasta (parchi, monti, laghi, fiumi, riserve, coste, sentieri) che Wikidata non
+# colloca nel comune ma nella provincia, nella regione o in un comune vicino, e luoghi la cui foto è stata scartata dal controllo.
+# Ricerca per nome su Wikidata, accettata solo se l'elemento sta nel comune, nella sua provincia o regione, o in un comune della
+# provincia, e se il nome coincide (stesse parole distintive, tipo compatibile). Foto: P18, altrimenti la categoria Commons P373.
+WQ = 'https://query.wikidata.org/sparql'
+def parole(t, com): return set(distinte(t, com))
+def tipi3(t): return {w for w in norm(t).split() if w in GENW}
+def risolvi3(x):
+    ist = x.get('istat'); com = x.get('com', '')
+    if not ist: return
+    for v in varianti(x['n']):
+        dv = parole(v, com); esatto = not dv   # nome uguale al comune (es. Monte Cetona a Cetona): serve l'etichetta identica
+        if esatto: dv = {w for w in norm(v).split() if w not in STOP}
+        if not dv: continue
+        lab = v.replace('\\', '').replace('"', ' ')
+        q = """SELECT DISTINCT ?it ?itLabel ?img ?cat ?ord WHERE {
+ SERVICE wikibase:mwapi { bd:serviceParam wikibase:endpoint "www.wikidata.org"; wikibase:api "EntitySearch"; mwapi:search "%s"; mwapi:language "it"; mwapi:limit "10" . ?it wikibase:apiOutputItem mwapi:item . ?ord wikibase:apiOrdinal true . }
+ ?com wdt:P635 "%s" . ?com wdt:P131 ?prov . OPTIONAL{?prov wdt:P131 ?reg}
+ { ?it wdt:P131 ?com } UNION { ?it wdt:P131 ?prov } UNION { ?it wdt:P131 ?reg } UNION { ?it wdt:P131 ?a . ?a wdt:P131 ?prov } UNION { ?it wdt:P131 ?b . ?b wdt:P131 ?com }
+ OPTIONAL{?it wdt:P18 ?img} OPTIONAL{?it wdt:P373 ?cat}
+ SERVICE wikibase:label { bd:serviceParam wikibase:language "it,en". } } ORDER BY ?ord LIMIT 8""" % (lab, ist)
+        r = get(WQ, params={'query': q, 'format': 'json'})
+        for b in (r.json()['results']['bindings'] if r else []):
+            el = b.get('itLabel', {}).get('value', '')
+            de = {w for w in norm(el).split() if w not in STOP} if esatto else parole(el, com)
+            if esatto and de != dv: continue
+            if not de or not (de <= dv or dv <= de) or not (de & dv): continue
+            ta, tb = tipi3(v), tipi3(el)
+            if ta and tb and not (ta & tb): continue
+            f = ''
+            if 'img' in b: f = urllib.parse.unquote(b['img']['value'].split('Special:FilePath/')[-1])
+            elif 'cat' in b:
+                rm = get(API, params={'action': 'query', 'format': 'json', 'list': 'categorymembers', 'cmtype': 'file', 'cmlimit': 20, 'cmtitle': 'Category:' + b['cat']['value']})
+                for m in (rm.json().get('query', {}).get('categorymembers', []) if rm else []):
+                    if re.search(r'\.(jpe?g|png|webp)$', m['title'], re.I) and not BRUTTI.search(m['title']): f = m['title'][5:]; break
+            if f and not BRUTTI.search(f) and f.replace('_', ' ') != (x.get('no') or '').replace('_', ' '):
+                x['file'] = f; x['via'] = 'wikidata-area'; x['lab'] = el; return
 PROVATI2 = OUT + 'provati2.json'
 provati2 = set(json.load(open(PROVATI2))) if os.path.exists(PROVATI2) else set()
-da_risolvere = [x for x in coda if not x.get('file') and x['p'] not in provati and not x.get('r2')]
+da_risolvere = [x for x in coda if not x.get('file') and x['p'] not in provati and not x.get('r2') and not x.get('r3')]
 print('da risolvere', len(da_risolvere), flush=True)
 for i, x in enumerate(da_risolvere):
     if time.time() > LIM: break
@@ -111,6 +149,18 @@ for i, x in enumerate(seconda):
     if i % 200 == 0: print('seconda', i, sum(1 for y in seconda if y.get('file')), flush=True); json.dump(sorted(provati2), open(PROVATI2, 'w'))
     time.sleep(0.05)
 json.dump(sorted(provati2), open(PROVATI2, 'w'))
+PROVATI3 = OUT + 'provati3.json'
+provati3 = set(json.load(open(PROVATI3))) if os.path.exists(PROVATI3) else set()
+terza = [x for x in coda if x.get('r3') and not x.get('file') and x['p'] not in provati3]
+print('terza ricerca', len(terza), flush=True)
+for i, x in enumerate(terza):
+    if time.time() > LIM - 1200: break
+    try: risolvi3(x)
+    except Exception: pass
+    provati3.add(x['p'])
+    if i % 100 == 0: print('terza', i, sum(1 for y in terza if y.get('file')), flush=True); json.dump(sorted(provati3), open(PROVATI3, 'w'))
+    time.sleep(0.5)
+json.dump(sorted(provati3), open(PROVATI3, 'w'))
 coda = [x for x in coda if x.get('file')]
 print('in coda', len(coda), flush=True)
 fatti = 0
@@ -146,7 +196,10 @@ for i in range(0, len(coda), 50):
         except Exception:
             continue
         meta[x['p']] = [fn, aut, lic, ii.get('descriptionurl', ''), col, x['file'], x.get('via', 'wikidata')]
-        if x.get('catf'): meta[x['p']].append(x['catf']); fatti += 1
+        if x.get('catf'): meta[x['p']].append(x['catf'])
+        elif x.get('lab'): meta[x['p']].append('')   # posto della categoria vuoto
+        if x.get('lab'): meta[x['p']].append(x['lab'])
+        fatti += 1
         time.sleep(0.2)
     json.dump(meta, open(OUT + 'meta.json', 'w'), ensure_ascii=False, separators=(',', ':'))
     print('lotto', i // 50 + 1, 'foto', fatti, flush=True)
