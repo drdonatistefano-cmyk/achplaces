@@ -1,0 +1,28 @@
+name: Guardiano della pubblicazione (GitHub Pages)
+# 10/11/2026 sera. GitHub Pages ogni tanto si blocca nella fase «syncing_files» e dopo 10 minuti annulla la pubblicazione
+# (4 volte su circa 30 il 10/11, anche per modifiche di un solo file); inoltre ogni nuovo push su main annulla la
+# pubblicazione in corso. Se l'ultima pubblicazione dell'ultimo commit di main non e' riuscita, nessuno la rifà e il sito
+# resta indietro. Questo flusso guarda ogni 20 minuti e, se serve, la rilancia (al massimo 3 tentativi per commit).
+on:
+  schedule:
+    - cron: '7,27,47 * * * *'
+  workflow_dispatch:
+permissions:
+  actions: write
+  contents: read
+jobs:
+  guarda:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Controlla e rilancia
+        env: { GH_TOKEN: "${{ github.token }}", R: "${{ github.repository }}" }
+        run: |
+          testa=$(gh api repos/$R/commits/main --jq .sha)
+          riga=$(gh api "repos/$R/actions/runs?branch=main&per_page=30" --jq "[.workflow_runs[]|select(.name==\"pages build and deployment\" and .head_sha==\"$testa\")][0]|[.id,.status,.conclusion,.run_attempt]|@tsv")
+          echo "main $testa -> $riga"
+          [ -z "$riga" ] && { echo "nessuna pubblicazione per l'ultimo commit (il sito potrebbe non cambiare)"; exit 0; }
+          id=$(echo "$riga" | cut -f1); st=$(echo "$riga" | cut -f2); co=$(echo "$riga" | cut -f3); at=$(echo "$riga" | cut -f4)
+          if [ "$st" = "completed" ] && [ "$co" != "success" ] && [ "$at" -lt 3 ]; then
+            echo "pubblicazione $id finita con «$co» (tentativo $at): la rilancio"; gh api -X POST repos/$R/actions/runs/$id/rerun
+          else echo "niente da fare ($st $co, tentativo $at)"; fi
