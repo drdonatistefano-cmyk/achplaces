@@ -668,6 +668,20 @@ body{font-size:16px;line-height:1.5}
 #sheet.sload::after{content:"Caricamento dei dettagli…";display:block;padding:14px 0 6px;color:var(--mute);font-size:14px}
 .card .desc:empty{min-height:2.8em}
 .cphw.pcom{position:relative}.cphw.pcom::after{content:"COMUNE";position:absolute;left:4px;bottom:4px;font:800 8.5px/1 var(--sans);letter-spacing:.06em;color:#fff;background:rgba(0,0,0,.62);padding:3px 4px;border-radius:4px}
+/* 10/11 azzeramento comune alle tre guide (coordinamento/AZZERA-FILTRI.md) */
+.conta{position:sticky;top:var(--barh,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px;padding:10px 0}
+.status.conta{margin:10px 0 10px;justify-content:flex-start}
+.status.conta small{flex:1 1 auto;min-width:0}
+@media (max-width:759px){.status.conta:has(#su:not([hidden])){flex-wrap:nowrap;align-items:center;padding:8px 0;margin:8px 0}.status.conta:has(#su:not([hidden])) small{display:none}}
+.fcount.conta{margin:6px 0 10px}
+.azzera{margin-left:auto;flex:none;display:inline-flex;align-items:center;gap:6px;border:1px solid var(--terra);background:var(--paper);color:var(--terra);border-radius:999px;padding:7px 14px;font:600 14px/1.1 var(--sans);white-space:nowrap;cursor:pointer}
+.azzera .n,.giu .n{border-radius:999px;min-width:19px;height:19px;display:inline-grid;place-items:center;font-size:12px;line-height:1;padding:0 4px}
+.azzera .n{background:var(--terra);color:var(--on)}
+.giu{position:fixed;left:50%;transform:translateX(-50%);bottom:max(18px,env(safe-area-inset-bottom));z-index:40;border:0;background:var(--terra);color:var(--on);border-radius:999px;padding:12px 20px;font:700 15px/1.1 var(--sans);box-shadow:0 6px 24px rgba(0,0,0,.28);display:inline-flex;align-items:center;gap:8px;transition:transform .18s ease,opacity .18s ease;white-space:nowrap;cursor:pointer}
+.giu .n{background:var(--on);color:var(--terra)}
+.giu.via{transform:translateX(-50%) translateY(90px);opacity:0;pointer-events:none}
+.azzera[hidden],.giu[hidden]{display:none}
+@media (max-width:759px){.status.conta h2{font-size:1.05rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}.azzera{padding:6px 11px;font-size:13px}}
 </style>
 <script>/* statistiche (GoatCounter: senza cookie, solo visite alle pagine, solo sul dominio pubblico) */
 (function(){const GC="achplaces";/* nome del contatore goatcounter.com */
@@ -800,7 +814,7 @@ if(GC&&ON_WEB){try{const s=document.createElement("script");s.async=true;s.datas
 
 <main class="wrap" id="guide">
   <section class="xtra" id="xtra" aria-label="Idee per la visita"></section>
-  <div class="status"><h2 id="count"></h2><small id="verified"></small></div>
+  <div class="status conta"><h2 id="count"></h2><small id="verified"></small><button class="azzera" id="su" type="button" hidden data-goatcounter-click="filtri/azzera-places" data-goatcounter-title="Azzera i filtri (in alto)">✕ Azzera i filtri <span class="n">0</span></button></div>
   <div class="grid" id="grid"></div>
 </main>
 
@@ -913,7 +927,7 @@ if(GC&&ON_WEB){try{const s=document.createElement("script");s.async=true;s.datas
   <h2 id="f-title">Archivio delle fonti</h2>
   <p>Gli enti citati nelle schede della guida, raggruppati: prima quelli nazionali, poi regione per regione, divisi per tipo. Ogni scheda riporta i link precisi alle pagine usate.</p>
   <div class="fbar"><input class="srcsearch" id="srcq" type="search" placeholder="Cerca un ente o un comune…" aria-label="Cerca una fonte"><select id="srcr" aria-label="Regione"></select><select id="srct" aria-label="Tipo di fonte"></select></div>
-  <p id="srccount" class="fcount"></p>
+  <div class="fcount conta"><span id="srccount"></span><button class="azzera" id="suf" type="button" hidden data-goatcounter-click="filtri/azzera-places" data-goatcounter-title="Azzera i filtri delle fonti (in alto)">✕ Azzera i filtri <span class="n">0</span></button></div>
   <div id="srcl"></div>
 </section>
 
@@ -1129,12 +1143,11 @@ function renderActive(){
   $("badge").hidden=!secondary;$("badge").textContent=secondary;
   $("morebtn").classList.toggle("active",secondary>0);
   const n=nActive(); const rb=$("resetbtn");
-  rb.hidden=!n; $("resetn").textContent=n;
+  rb.hidden=true; $("resetn").textContent=n;mostraAzzera();
   rb.setAttribute("aria-label",`Azzera tutti i filtri (${n} attivi)`);
   if(!a.length){el.hidden=true;return;}
   el.hidden=false;el.innerHTML="";
   for(const [t,fn] of a){const b=document.createElement("button");b.type="button";b.className="apill";b.innerHTML=`${esc(t)} <span aria-hidden="true">×</span>`;b.setAttribute("aria-label","Togli filtro "+t);b.onclick=()=>{fn();update();};el.appendChild(b);}
-  if(a.length>1){const r=document.createElement("button");r.type="button";r.className="freset";r.textContent="↺ Azzera tutto";r.onclick=resetAll;el.appendChild(r);}
 }
 function clearFilters(){for(const k of ["cat","sub","price","ideal","time"])S[k].clear();S.alerts=false;S.near=null;S.q="";$("q").value="";$("searchwrap").classList.remove("has");}
 function resetAll(){clearFilters();if(!C.all){setComune("tutti");}else update();}
@@ -1152,7 +1165,7 @@ function renderGrid(list){
   window.__lista=list.map(p=>p.id);window.__n=(window.__n||0)+1;
   const g=$("grid");g.innerHTML="";
   $("count").textContent=list.length===CUR.length?`Tutti i ${list.length} luoghi`:`${list.length} ${list.length===1?"luogo":"luoghi"} su ${CUR.length}`;
-  if(!list.length){g.innerHTML=`<div class="empty">Nessun luogo con questi filtri.<br><button class="freset" type="button" id="er">Azzera i filtri</button></div>`;$("er").onclick=resetAll;return;}
+  if(!list.length){g.innerHTML=`<div class="empty">Nessun luogo con questi filtri.<br><button class="freset" type="button" id="er">✕ Azzera i filtri</button></div>`;$("er").onclick=resetAll;return;}
   const CH=24;let shown=0;const selN=list.length!==CUR.length||!!S.near;list.forEach((p,i)=>p._sel=selN?i+1:0);
   const more=()=>{const frag=document.createDocumentFragment();for(const p of list.slice(shown,shown+CH))frag.appendChild(cardEl(p));shown+=CH;
     const old=g.querySelector(".gmore");if(old)old.remove();g.appendChild(frag);
@@ -1439,7 +1452,7 @@ function frow(v,reg){const cs=v.c&&v.c.length?`<span class="fc">${v.nc>1?"Comuni
   return `<div class="frow"><div class="fsx"><a href="https://${esc(v.d)}" target="_blank" rel="noopener">${esc(v.n)}</a>${v.u?"":" <span class=\"fsecd\">🟠 secondaria</span>"}${cs}</div><span class="fn">${n}</span></div>`;}
 function fgruppi(L,reg,lim){const T=$("srct").value;return FT.filter(([k])=>!T||T===k).map(([k,l])=>{const g=L.filter(v=>v.t===k);if(!g.length)return"";const m=lim?g.slice(0,lim):g;
   return `<div class="fgrp"><h4>${l} · ${g.length}</h4>${m.map(v=>frow(v,reg)).join("")}${g.length>m.length?`<button type="button" class="fmore" data-k="${k}">Mostra tutti (${g.length})</button>`:""}</div>`;}).join("");}
-function renderFonti(){
+function renderFonti(){setTimeout(mostraAzzera,0);
   if(!FONTI){$("srccount").textContent="Caricamento delle fonti…";caricaFonti();return;}
   const sr=$("srcr"),st=$("srct");
   if(!sr.options.length){sr.innerHTML=`<option value="">Tutte le regioni</option>`+Object.keys(FONTI.reg).map(r=>`<option value="${r}">${esc(RNF[r]||r)}</option>`).join("");
@@ -1458,6 +1471,21 @@ function renderFonti(){
   $("srcl").onclick=e=>{const b=e.target.closest(".fmore");if(!b)return;const d=b.closest("details"),L=regs.find(([r])=>r===d.dataset.r)[1];const g=b.closest(".fgrp");g.outerHTML=fgruppi(L.filter(v=>v.t===b.dataset.k),true,0);};
 }
 $("srcq").addEventListener("input",renderFonti);
+/* 10/11 azzeramento comune (AZZERA-FILTRI.md): bottone fermo accanto al conteggio + pillola in fondo dopo 260 px */
+function vistaFonti(){const v=document.getElementById("view-fonti");return !!(v&&!v.hidden);}
+function nFonti(){return ($("srcq").value.trim()?1:0)+($("srcr").value?1:0)+($("srct").value?1:0);}
+function nAttivi(){return vistaFonti()?nFonti():nActive();}
+function mostraAzzera(){const f=vistaFonti(),n=nAttivi();
+  document.querySelectorAll(".azzera .n,.giu .n").forEach(e=>e.textContent=n);
+  $("su").hidden=f||n===0;$("suf").hidden=!f||n===0;$("giu").hidden=n===0;pillola();}
+function pillola(){const g=$("giu");if(!g.hidden)g.classList.toggle("via",window.scrollY<260);}
+function azzera(){if(vistaFonti()){$("srcq").value="";$("srcr").value="";$("srct").value="";renderFonti();}else resetAll();
+  mostraAzzera();window.scrollTo({top:0,behavior:"smooth"});}
+addEventListener("scroll",pillola,{passive:true});
+["su","suf","giu"].forEach(i=>$(i).addEventListener("click",azzera));
+{const b=$("bar");const alto=()=>document.documentElement.style.setProperty("--barh",(b&&b.offsetParent&&getComputedStyle(b).position==="sticky"?b.offsetHeight:0)+"px");
+ alto();if("ResizeObserver" in window&&b)new ResizeObserver(alto).observe(b);addEventListener("hashchange",()=>setTimeout(()=>{alto();mostraAzzera();},0));}
+
 function renderCoverage(){
   const provs=[...new Set(COMUNI.map(c=>c.prov))];
   $("coverage").innerHTML="<b>Copertura attuale.</b> "+provs.map(p=>{const cs=COMUNI.filter(c=>c.prov===p);return `${cs[0].provKind} di ${esc(cs[0].provName)}: ${cs.length} comuni, ${cs.reduce((a,c)=>a+c.places.length,0)} luoghi`;}).join(" · ")+`. Fonti in archivio: ${SOURCES.length}. Ultima verifica: ${esc(COMUNI[0].verified)}.`;
@@ -1532,5 +1560,6 @@ window.addEventListener("hashchange",()=>route(true));
 await PAUSA();
 route(true);
 </script>
+<button class="giu via" id="giu" type="button" hidden data-goatcounter-click="filtri/azzera-places" data-goatcounter-title="Azzera i filtri (in fondo)">✕ Azzera i filtri <span class="n">0</span></button>
 </body>
 </html>

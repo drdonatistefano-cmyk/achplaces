@@ -7,5 +7,8 @@ python3 mk6.py && python3 mk7.py && python3 mk8.py && python3 mk9.py && python3 
 python3 mk15.py
 python3 mk17.py
 python3 mk18.py
+python3 mk19.py
+python3 mk20.py
+python3 mk21.py
 cp /home/claude/achs-places-guide/filtri.html /home/claude/proto5/index.html
 echo filtri.html ok
