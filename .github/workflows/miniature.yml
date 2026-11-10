@@ -34,8 +34,6 @@ jobs:
             exit 0
           fi
           git commit -m "Miniature: aggiornate le foto in file singoli"
-          for i in 1 2 3 4 5; do
-            git push && break
-            git pull --rebase --autostash || true
-            sleep 5
-          done
+          # se dopo cinque tentativi non si e' salvato, il flusso deve fallire e vedersi
+          for i in 1 2 3 4 5; do git pull --rebase -q --no-edit && git push -q && exit 0; sleep $((RANDOM % 10 + 5)); done
+          echo "::error::le miniature non sono state salvate dopo 5 tentativi"; exit 1
