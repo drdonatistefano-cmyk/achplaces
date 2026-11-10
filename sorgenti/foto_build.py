@@ -19,7 +19,7 @@ for k, v in sorted(fin.items()):
 # 10/11/2026 ripiego: foto libera del comune (Wikidata P18) per i luoghi senza foto propria; una sola immagine per comune
 # nell'album (chiave "@<istat>"), la riga del luogo ha in sesta posizione la chiave e in settima il nome del comune.
 R = '/home/claude/foto-ramo/'
-if os.environ.get('FOTO_COMUNE') and os.path.exists(R + 'metacom.json'):   # 10/11: disattivato, Stefano vuole solo foto del luogo
+if os.environ.get('FOTO_COMUNE', '1') != '0' and os.path.exists(R + 'metacom.json'):   # 10/11 13:58: pubblicata su richiesta di Stefano (FOTO_COMUNE=0 per spegnerla)
     import sys as _s; _s.path.insert(0, G); from leggi_dati import righe as _rr
     import unicodedata as _ud, re as _re
     def _sl(s):
