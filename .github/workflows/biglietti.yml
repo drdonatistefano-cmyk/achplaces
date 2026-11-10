@@ -10,7 +10,7 @@ permissions:
 jobs:
   biglietti:
     runs-on: ubuntu-latest
-    timeout-minutes: 180
+    timeout-minutes: 330
     strategy:
       fail-fast: false
       matrix: { gruppo: [0, 1, 2, 3, 4] }

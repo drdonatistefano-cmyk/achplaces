@@ -19,6 +19,19 @@ for _h, _n in sorted(_per.items(), key=lambda x: (-x[1], x[0])):
     _g = _carico.index(min(_carico)); _gruppo[_h] = _g; _carico[_g] += _n
 mie = [u for u in tutti if _gruppo[urlparse(u).hostname or ''] == G]
 FO = f'out/link-{G}.json'; os.makedirs('out', exist_ok=True)
+
+import subprocess as _sp
+_ULT = [time.time()]
+def salva_ramo(fo, msg, forza=False):
+    """10/11 notte: salva sul ramo foto ogni 15 minuti, cosi' se il lavoro scade non si perde nulla."""
+    if not forza and time.time() - _ULT[0] < 900: return
+    _ULT[0] = time.time()
+    sh = lambda *a: _sp.run(['git', '-C', 'out'] + list(a), capture_output=True, text=True)
+    sh('add', os.path.basename(fo)); sh('commit', '-q', '-m', msg)
+    for k in range(5):
+        sh('pull', '--rebase', '-q', 'origin', 'foto')
+        if sh('push', '-q', 'origin', 'HEAD:foto').returncode == 0: return
+        time.sleep(5 + 5 * k)
 # (10/11 23:00, coordinamento) Il controllo e' settimanale: i risultati di una settimana
 # precedente non valgono, altrimenti un link che si rompe dopo il primo giro non verrebbe mai
 # visto. La settimana del file sta accanto, in link-<gruppo>.giro.
@@ -50,6 +63,8 @@ print('gruppo', G, 'link', len(mie), 'da fare', len(lav), flush=True)
 with ThreadPoolExecutor(16) as ex:
     for i, (u, v) in enumerate(ex.map(prova, lav)):
         fatto[u] = v
+        if i % 100 == 0:
+            json.dump(fatto, open(FO, 'w')); salva_ramo(FO, f'Link, gruppo {G}: {len(fatto)}')
         if i % 500 == 0:
             json.dump(fatto, open(FO, 'w')); print(i, collections.Counter(x[0] // 100 for x in fatto.values()), flush=True)
 json.dump(fatto, open(FO, 'w'), sort_keys=True)

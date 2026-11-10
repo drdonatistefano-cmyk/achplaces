@@ -10,6 +10,19 @@ G = int(sys.argv[1]) if len(sys.argv) > 1 else 0
 QUI = os.path.dirname(os.path.abspath(__file__))
 coda = [x for x in json.load(open(os.path.join(QUI, 'coda.json'))) if x['g'] == G]
 FO = f'out/biglietti-{G}.json'; os.makedirs('out', exist_ok=True)
+
+import subprocess as _sp
+_ULT = [time.time()]
+def salva_ramo(fo, msg, forza=False):
+    """10/11 notte: salva sul ramo foto ogni 15 minuti, cosi' se il lavoro scade non si perde nulla."""
+    if not forza and time.time() - _ULT[0] < 900: return
+    _ULT[0] = time.time()
+    sh = lambda *a: _sp.run(['git', '-C', 'out'] + list(a), capture_output=True, text=True)
+    sh('add', os.path.basename(fo)); sh('commit', '-q', '-m', msg)
+    for k in range(5):
+        sh('pull', '--rebase', '-q', 'origin', 'foto')
+        if sh('push', '-q', 'origin', 'HEAD:foto').returncode == 0: return
+        time.sleep(5 + 5 * k)
 fatto = json.load(open(FO)) if os.path.exists(FO) else {}
 S = requests.Session(); S.headers.update({'User-Agent': 'AchsPlacesGuide/0.4 (+https://achplaces.com; guida turistica)', 'Accept-Language': 'it,en;q=0.5'})
 def norm(t): return "".join(ch for ch in unicodedata.normalize("NFD", (t or '').lower()) if not unicodedata.combining(ch))
@@ -76,6 +89,8 @@ for k, x in enumerate(coda):
     fatto[x['id']] = r or {}
     if k % 300 == 0:
         json.dump(fatto, open(FO, 'w'), ensure_ascii=False)
+    if k % 50 == 0:
+        json.dump(fatto, open(FO, 'w'), ensure_ascii=False); salva_ramo(FO, f'Biglietti, gruppo {G}: {len(fatto)}')
         print(k, sum(1 for v in fatto.values() if 'tk' in v), 'biglietti', sum(1 for v in fatto.values() if 'free' in v), 'gratis', flush=True)
 json.dump(fatto, open(FO, 'w'), ensure_ascii=False, sort_keys=True)
 print('fine', sum(1 for v in fatto.values() if 'tk' in v), 'biglietti', sum(1 for v in fatto.values() if 'free' in v), 'gratis', 'su', len(coda))
