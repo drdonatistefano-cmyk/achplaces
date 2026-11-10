@@ -1,0 +1,7 @@
+# Indizi da Wikidata per San Vito di Leguzzano (10/11/2026): elenco di luoghi che esistono nel comune. NON sono fonti: servono a sapere cosa cercare.
+# Per ogni voce cerca una fonte ufficiale (sito del gestore indicato, Comune, parrocchia/Diocesi, Regione, ente turistico, MiC/ICCD) che la descriva.
+# Wikipedia serve solo a trovare link a fonti ufficiali (note, collegamenti esterni), mai come fonte da citare.
+- Museo etnografico sulla lavorazione del legno | museo di un ente pubblico, museo etnografico | sito: https://www.museialtovicentino.it/museo/museo-etnografico-sulla-lavorazione-del-legno/ | tutela: bene culturale italiano | wiki: https://it.wikipedia.org/wiki/Museo_etnografico_sulla_lavorazione_del_legno
+- chiesa dei Santi Vito, Modesto e Crescenzia | chiesa | wiki: https://it.wikipedia.org/wiki/Chiesa_dei_Santi_Vito,_Modesto_e_Crescenzia_(San_Vito_di_Leguzzano)
+- chiesa di San Valentino Martire | chiesa
+- municipio di San Vito di Leguzzano | palazzo comunale

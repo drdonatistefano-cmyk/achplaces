@@ -1,0 +1,16 @@
+# Indizi da Wikidata per Leini (10/11/2026): elenco di luoghi che esistono nel comune. NON sono fonti: servono a sapere cosa cercare.
+# Per ogni voce cerca una fonte ufficiale (sito del gestore indicato, Comune, parrocchia/Diocesi, Regione, ente turistico, MiC/ICCD) che la descriva.
+# Wikipedia serve solo a trovare link a fonti ufficiali (note, collegamenti esterni), mai come fonte da citare.
+- GAVS - Torino Cantiere Aeronautico N.1 | bene immobile | sito: http://www.gavs.it | tutela: bene culturale italiano
+- Museo Giovanni e Giuseppe Verde - Museo della fisarmonica | museo | sito: http://www.comune.leini.to.it/Home/Guida-al-paese?IDDettaglio=17276 | tutela: bene culturale italiano
+- GAVS - Gruppo Amici Velivoli Storici | bene immobile | tutela: bene culturale italiano
+- Santuario della Beata Vergine delle Grazie | chiesa | wiki: https://it.wikipedia.org/wiki/Santuario_della_Beata_Vergine_delle_Grazie_(Leini)
+- Torre dell'Ammiraglio | torre | wiki: https://it.wikipedia.org/wiki/Torre_dell%27Ammiraglio
+- chiesa dei Santi Pietro e Paolo | chiesa parrocchiale cattolica | wiki: https://it.wikipedia.org/wiki/Chiesa_dei_Santi_Pietro_e_Paolo_(Leini)
+- Cappella di San Giovanni Battista | cappella
+- Cappella di San Grato | cappella
+- Cappella di San Lorenzo | cappella
+- Cappella di San Pietro Martire | cappella
+- Cappella di San Rocco (o di Santa Maria) | cappella
+- chiesa della Beata Vergine Addolorata | chiesa
+- palazzo comunale | palazzo comunale

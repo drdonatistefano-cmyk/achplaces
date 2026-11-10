@@ -1,0 +1,25 @@
+# Indizi da Wikidata per Santa Venerina (10/11/2026): elenco di luoghi che esistono nel comune. NON sono fonti: servono a sapere cosa cercare.
+# Per ogni voce cerca una fonte ufficiale (sito del gestore indicato, Comune, parrocchia/Diocesi, Regione, ente turistico, MiC/ICCD) che la descriva.
+# Wikipedia serve solo a trovare link a fonti ufficiali (note, collegamenti esterni), mai come fonte da citare.
+- chiesa del Sacro Cuore di Gesù | chiesa | tutela: bene culturale italiano | wiki: https://it.wikipedia.org/wiki/Chiesa_del_Sacro_Cuore_di_Ges%C3%B9_(Santa_Venerina)
+- chiesa di Maria Santissima Immacolata | chiesa | sito: https://parrocchiadagaladelre.wordpress.com/ | wiki: https://it.wikipedia.org/wiki/Chiesa_di_Maria_Santissima_Immacolata_(Dagala_del_Re)
+- chiesa di Maria Santissima del Rosario | chiesa | sito: https://www.parrocchiacosentini.it | wiki: https://it.wikipedia.org/wiki/Chiesa_di_Maria_Santissima_del_Rosario_(Santa_Venerina)
+- chiesa di Santa Maria del Lume | chiesa | sito: http://www.arcipreturalinera.it/ | wiki: https://it.wikipedia.org/wiki/Chiesa_di_Maria_Santissima_del_Lume_(Linera)
+- chiesa di Santa Venera | chiesa | tutela: bene culturale italiano | wiki: https://it.wikipedia.org/wiki/Chiesa_di_Santa_Venera_(Santa_Venerina)
+- Chiesa di Maria Santissima del Carmelo e delle Anime Purganti | edificio | wiki: https://it.wikipedia.org/wiki/Chiesa_di_Maria_Santissima_del_Carmelo_e_delle_Anime_Purganti
+- Festa della Madonna del Carmelo | festività pubblica, festività religiosa | wiki: https://it.wikipedia.org/wiki/Festa_della_Madonna_del_Carmelo
+- Museo del palmento | museo etnografico | tutela: bene culturale italiano
+- chiesa Maria Santissima della Catena | chiesa | wiki: https://it.wikipedia.org/wiki/Chiesa_di_Maria_Vergine_della_Catena
+- chiesa della Tenutella | chiesa, rovine | wiki: https://it.wikipedia.org/wiki/Chiesa_della_Tenutella
+- chiesa di Maria Santissima Immacolata | chiesa, chiesa parrocchiale | wiki: https://it.wikipedia.org/wiki/Chiesa_di_Maria_Santissima_Immacolata_(Santa_Venerina)
+- chiesa di Maria Santissima dei Sette Dolori | cappella gentilizia, chiesa sconsacrata | wiki: https://it.wikipedia.org/wiki/Chiesa_di_Maria_Santissima_dei_Sette_Dolori_(Santa_Venerina)
+- chiesa di San Mauro Abate | chiesa | wiki: https://it.wikipedia.org/wiki/Chiesa_di_San_Mauro_Abate_(Monacella)
+- eremo di S.Stefano | bene immobile | tutela: bene culturale italiano
+- trichora di Santo Stefano | chiesa in rovina, cuba bizantina | wiki: https://it.wikipedia.org/wiki/Chiesa_di_Santo_Stefano_(Dagala_del_Re)
+- I.C. S. Venerina | centro territoriale permanente
+- chiesa di San Giuseppe | chiesa
+- chiesa di Santa Maria del Carmelo | chiesa
+- palazzo comunale | palazzo comunale
+- parco urbano di Cosentini | area naturale protetta, area protetta, parco cittadino
+- roverella | pianta monumentale
+- roverella | pianta monumentale

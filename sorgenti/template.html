@@ -73,6 +73,7 @@ h1 em{color:var(--terra);font-style:italic}
 .mlist{max-height:min(52vh,420px);overflow-y:auto;display:grid;grid-template-columns:1fr;gap:4px;-webkit-overflow-scrolling:touch}
 @media (min-width:640px){#com-list{grid-template-columns:1fr 1fr 1fr}.mpop{right:auto;width:min(820px,calc(100vw - 40px))}#prov-pop{width:min(460px,calc(100vw - 40px))}}
 .mgrp{grid-column:1/-1;font:800 11px var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--terra);margin:8px 4px 2px}
+.mlist [hidden]{display:none!important}
 .mopt{display:flex;align-items:center;gap:9px;min-height:42px;padding:0 10px;border-radius:10px;border:1px solid transparent;background:none;color:var(--ink);font:600 14.5px var(--sans);cursor:pointer;text-align:left;width:100%}
 .mopt .t{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .mopt small{color:var(--faint);font-size:12px}
@@ -730,11 +731,13 @@ if(GC&&ON_WEB){try{const s=document.createElement("script");s.async=true;s.datas
       <div class="msel"><span class="mlab">Comuni</span><button class="mbtn" id="com-btn" type="button" aria-haspopup="true" aria-expanded="false"><span class="mv" id="com-val"></span><span class="cv" aria-hidden="true">▼</span></button></div>
       <div class="mpop" id="reg-pop" hidden role="dialog" aria-label="Scegli le regioni">
         <div class="mphead"><b>Regioni</b><span>puoi sceglierne più di una</span></div>
+        <input class="mpq" id="reg-q" type="search" placeholder="Cerca una regione…" aria-label="Cerca una regione" autocomplete="off">
         <div class="mlist" id="reg-list"></div>
         <div class="mpfoot"><button type="button" class="mpall" id="reg-all">Tutte le regioni</button><button type="button" class="mpdone" data-close="reg">Fatto</button></div>
       </div>
       <div class="mpop" id="prov-pop" hidden role="dialog" aria-label="Scegli le province">
         <div class="mphead"><b>Province</b><span>puoi sceglierne più di una</span></div>
+        <input class="mpq" id="prov-q" type="search" placeholder="Cerca una provincia…" aria-label="Cerca una provincia" autocomplete="off">
         <div class="mlist" id="prov-list"></div>
         <div class="mpfoot"><button type="button" class="mpdone" data-close="prov">Fatto</button></div>
       </div>
@@ -1353,6 +1356,12 @@ $("com-list").onclick=e=>{const b=e.target.closest(".mopt");if(!b)return;const s
   vc=vc.includes(s)?vc.filter(x=>x!==s):[...vc,s];goView(viewProvs(),vc);popToggle("com",true);};
 $("com-all").onclick=()=>{goView(viewProvs(),[]);popToggle("com",true);};
 $("com-q").addEventListener("input",renderComList);
+/* 10/11/2026: ricerca anche dentro Regioni e Province; i titoli di regione restano solo se hanno province visibili */
+function filtraLista(qi,li){const s=fold($(qi).value.trim()),L=$(li);let g=null,gv=false;
+  for(const el of L.children){if(el.classList.contains("mgrp")){if(g)g.hidden=!gv;g=el;gv=false;continue}if(!el.classList.contains("mopt"))continue;const t=el.querySelector(".t");const ok=!s||fold(t?t.textContent:el.textContent).includes(s);el.hidden=!ok;if(ok)gv=true}
+  if(g)g.hidden=!gv;}
+$("reg-q").addEventListener("input",()=>filtraLista("reg-q","reg-list"));$("prov-q").addEventListener("input",()=>filtraLista("prov-q","prov-list"));
+{const _rp=renderPicker;renderPicker=function(){const r=_rp.apply(this,arguments);try{if($("reg-q").value)filtraLista("reg-q","reg-list");if($("prov-q").value)filtraLista("prov-q","prov-list");}catch(e){}return r;};}
 document.addEventListener("click",e=>{if(!e.composedPath().some(n=>n.classList&&n.classList.contains("pick")))popToggle(null);});
 document.addEventListener("keydown",e=>{if(e.key==="Escape")popToggle(null);});
 let keepFilters=false;

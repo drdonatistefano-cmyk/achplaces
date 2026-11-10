@@ -1,0 +1,19 @@
+# Indizi da Wikidata per Borrello (10/11/2026): elenco di luoghi che esistono nel comune. NON sono fonti: servono a sapere cosa cercare.
+# Per ogni voce cerca una fonte ufficiale (sito del gestore indicato, Comune, parrocchia/Diocesi, Regione, ente turistico, MiC/ICCD) che la descriva.
+# Wikipedia serve solo a trovare link a fonti ufficiali (note, collegamenti esterni), mai come fonte da citare.
+- Museo civico memorie della vita contadina | museo di un ente pubblico, museo etnografico | sito: http://conoscere.abruzzoturismo.it | tutela: bene culturale italiano | wiki: https://it.wikipedia.org/wiki/Museo_civico_memorie_della_vita_contadina
+- chiesa di Sant'Antonio | chiesa | sito: http://www.sangroaventino.it/sezioni/-Borrello/pagine.asp?idn=1541 | tutela: bene culturale italiano | wiki: https://it.wikipedia.org/wiki/Chiesa_di_Sant%27Antonio_(Borrello)
+- chiesa di Sant'Egidio | chiesa | sito: http://www.borrellosite.com/index.asp?ubi1=Il%20Paese&ubi2=La%20Chiesa%20Madre | tutela: bene culturale italiano | wiki: https://it.wikipedia.org/wiki/Chiesa_di_Sant%27Egidio_(Borrello)
+- riserva naturale guidata Cascate del Verde | area naturale protetta, cascata | sito: http://www.cascatedelverde.it | wiki: https://it.wikipedia.org/wiki/Riserva_naturale_guidata_Cascate_del_Verde
+- Palazzo baronale di Borrello | palazzo | wiki: https://it.wikipedia.org/wiki/Palazzo_Baronale_(Borrello)
+- biancospino | pianta monumentale
+- cerro | pianta monumentale
+- olmo campestre | pianta monumentale
+- palazzo comunale | palazzo comunale
+- pioppo tremolo | pianta monumentale
+- roverella | pianta monumentale
+- roverella | pianta monumentale
+- salice bianco | pianta monumentale
+- salice bianco | pianta monumentale
+- salice bianco | pianta monumentale
+- salice ripaiolo | pianta monumentale

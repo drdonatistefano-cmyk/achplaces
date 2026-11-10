@@ -1,0 +1,9 @@
+# Indizi da Wikidata per Ruviano (10/11/2026): elenco di luoghi che esistono nel comune. NON sono fonti: servono a sapere cosa cercare.
+# Per ogni voce cerca una fonte ufficiale (sito del gestore indicato, Comune, parrocchia/Diocesi, Regione, ente turistico, MiC/ICCD) che la descriva.
+# Wikipedia serve solo a trovare link a fonti ufficiali (note, collegamenti esterni), mai come fonte da citare.
+- Museo di arte sacra - Ruviano | casa museo, museo privato, museo religioso | tutela: bene culturale italiano
+- chiesa di San Leone Magno | chiesa | wiki: https://it.wikipedia.org/wiki/Chiesa_di_San_Leone_Magno_(Ruviano)
+- chiesa di San Domenico | chiesa
+- chiesa di Sant'Andrea Apostolo | chiesa
+- chiesa di Santa Maria degli Angeli | chiesa
+- municipio di Ruviano | palazzo comunale

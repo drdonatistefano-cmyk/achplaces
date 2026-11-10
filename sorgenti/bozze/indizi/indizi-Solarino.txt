@@ -1,0 +1,14 @@
+# Indizi da Wikidata per Solarino (10/11/2026): elenco di luoghi che esistono nel comune. NON sono fonti: servono a sapere cosa cercare.
+# Per ogni voce cerca una fonte ufficiale (sito del gestore indicato, Comune, parrocchia/Diocesi, Regione, ente turistico, MiC/ICCD) che la descriva.
+# Wikipedia serve solo a trovare link a fonti ufficiali (note, collegamenti esterni), mai come fonte da citare.
+- chiesa di San Paolo | chiesa madre | sito: http://www.parrocchiasanpaolosolarino.it | tutela: bene culturale italiano | wiki: https://it.wikipedia.org/wiki/Chiesa_di_San_Paolo_(Solarino)
+- Mostra storica permanente di pizzi e ricami artistici | bene immobile | sito: http://dati.beniculturali.it/mibact/luoghi/www.onlusmanidoro.it/ | tutela: bene culturale italiano
+- Palazzo Requisenz | palazzo | tutela: bene culturale italiano | wiki: https://it.wikipedia.org/wiki/Palazzo_Requisenz
+- Cava del Rivettazzo | necropoli, sito archeologico | wiki: https://it.wikipedia.org/wiki/Cava_del_Rivettazzo
+- Cozzo Collura | sito archeologico | wiki: https://it.wikipedia.org/wiki/Cozzo_Collura
+- Laboratorio etnologico San Paolo | centro culturale, museo etnografico
+- Mani d'Oro Onlus | museo etnografico, museo specializzato
+- Palazzo comunale | palazzo comunale
+- chiesa della Madonna delle Lacrime | chiesa
+- chiesa di San Paolo Apostolo | chiesa
+- monumento ai caduti di Solarino | sacrari militari della prima guerra mondiale

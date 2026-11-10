@@ -1,0 +1,11 @@
+# Indizi da Wikidata per Ronco Biellese (10/11/2026): elenco di luoghi che esistono nel comune. NON sono fonti: servono a sapere cosa cercare.
+# Per ogni voce cerca una fonte ufficiale (sito del gestore indicato, Comune, parrocchia/Diocesi, Regione, ente turistico, MiC/ICCD) che la descriva.
+# Wikipedia serve solo a trovare link a fonti ufficiali (note, collegamenti esterni), mai come fonte da citare.
+- Ecomuseo della terracotta | museo, museo di un ente pubblico, museo etnografico, museo specializzato | tutela: bene culturale italiano
+- laboratorio | bene immobile | tutela: bene culturale italiano
+- Riserva naturale del Brich Zumaglia | riserve naturali regionali d'Italia
+- chiesa di San Michele | chiesa
+- oratorio dei Santi Defendente e Antonio da Padova | chiesa
+- oratorio dei Santi Rocco e Grato | chiesa
+- oratorio di San Bernardo e dell'Immacolata | chiesa
+- palazzo comunale | palazzo comunale

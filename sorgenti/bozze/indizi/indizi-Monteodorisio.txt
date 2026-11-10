@@ -1,0 +1,11 @@
+# Indizi da Wikidata per Monteodorisio (10/11/2026): elenco di luoghi che esistono nel comune. NON sono fonti: servono a sapere cosa cercare.
+# Per ogni voce cerca una fonte ufficiale (sito del gestore indicato, Comune, parrocchia/Diocesi, Regione, ente turistico, MiC/ICCD) che la descriva.
+# Wikipedia serve solo a trovare link a fonti ufficiali (note, collegamenti esterni), mai come fonte da citare.
+- Museo per l'economia tra l'antichità ed il Rinascimento | museo | tutela: bene culturale italiano | wiki: https://it.wikipedia.org/wiki/Museo_per_l%27economia_tra_l%27antichit%C3%A0_ed_il_Rinascimento
+- castello di Monteodorisio | castello | tutela: bene culturale italiano | wiki: https://it.wikipedia.org/wiki/Castello_di_Monteodorisio
+- santuario della Madonna delle Grazie | santuario | tutela: bene culturale italiano | wiki: https://it.wikipedia.org/wiki/Santuario_della_Madonna_delle_Grazie_(Monteodorisio)
+- Borgo fortificato di Monteodorisio | borgo fortificato | wiki: https://it.wikipedia.org/wiki/Borgo_fortificato_di_Monteodorisio
+- Museo Archeologico del Vastese | museo archeologico, museo di un ente pubblico, museo storico | sito: http://www.fondazionevastese.it
+- chiesa di San Giovanni Battista | chiesa | wiki: https://it.wikipedia.org/wiki/Chiesa_di_San_Giovanni_Battista_(Monteodorisio)
+- ruderi del convento di San Francesco d'Assisi | convento | wiki: https://it.wikipedia.org/wiki/Convento_di_San_Francesco_d%27Assisi_(Monteodorisio)
+- municipio di Monteodorisio | palazzo comunale

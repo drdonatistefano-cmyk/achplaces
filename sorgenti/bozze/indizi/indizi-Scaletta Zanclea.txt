@@ -1,0 +1,15 @@
+# Indizi da Wikidata per Scaletta Zanclea (10/11/2026): elenco di luoghi che esistono nel comune. NON sono fonti: servono a sapere cosa cercare.
+# Per ogni voce cerca una fonte ufficiale (sito del gestore indicato, Comune, parrocchia/Diocesi, Regione, ente turistico, MiC/ICCD) che la descriva.
+# Wikipedia serve solo a trovare link a fonti ufficiali (note, collegamenti esterni), mai come fonte da citare.
+- Castello Rufo Ruffo | castello | tutela: bene culturale italiano | wiki: https://it.wikipedia.org/wiki/Castello_di_Scaletta_Zanclea
+- Museo storico artistico castello comunale "Rufo Ruffo" | edificio militare museo, museo d'arte, museo di un ente pubblico, museo religioso | sito: http://www.comunescalettazanclea.it | tutela: bene culturale italiano
+- Batteria San Placido | fortificazione | tutela: bene culturale italiano
+- chiesa di San Pietro | chiesa | tutela: bene culturale italiano
+- Palazzo comunale | palazzo comunale
+- chiesa di San Nicolò di Bari | chiesa
+- chiesa di San Placido Martire | chiesa
+- chiesa di Santa Maria Annunziata | chiesa
+- chiesa di Santa Maria del Carmelo | chiesa
+- chiesa di Santa Maria della Lettera | chiesa
+- chiesa di Santa Maria delle Grazie | chiesa
+- chiesa di Santa Maria di Loreto | chiesa

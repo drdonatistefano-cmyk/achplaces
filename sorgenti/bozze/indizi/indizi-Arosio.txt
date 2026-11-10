@@ -1,0 +1,14 @@
+# Indizi da Wikidata per Arosio (10/11/2026): elenco di luoghi che esistono nel comune. NON sono fonti: servono a sapere cosa cercare.
+# Per ogni voce cerca una fonte ufficiale (sito del gestore indicato, Comune, parrocchia/Diocesi, Regione, ente turistico, MiC/ICCD) che la descriva.
+# Wikipedia serve solo a trovare link a fonti ufficiali (note, collegamenti esterni), mai come fonte da citare.
+- raccolta museale avifauna lombarda | museo, museo di storia naturale | sito: http://www.nibbio.org | tutela: bene culturale italiano
+- Campanile della Chiesa dei SS. Nazaro e Celso | torre campanaria | tutela: bene culturale italiano
+- Casello 1 | museo | tutela: bene culturale italiano
+- Oratorio della Chiesa dei SS. Nazaro e Celso | oratorio | tutela: bene culturale italiano
+- Osservatorio ornitologico di Arosio | complesso di edifici, osservatorio | tutela: bene culturale italiano
+- Villa Olgiati Borri | complesso di edifici, villa | tutela: bene culturale italiano
+- Villa Olgiati Borri | villa | tutela: bene culturale italiano
+- chiesa dei SS. Nazaro e Celso | chiesa | tutela: bene culturale italiano
+- chiesa dei santi Nazaro e Celso | chiesa, complesso di edifici | tutela: bene culturale italiano
+- chiesa di San Filippo Neri | chiesa
+- palazzo comunale | palazzo comunale

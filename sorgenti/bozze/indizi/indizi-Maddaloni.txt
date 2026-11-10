@@ -1,0 +1,40 @@
+# Indizi da Wikidata per Maddaloni (10/11/2026): elenco di luoghi che esistono nel comune. NON sono fonti: servono a sapere cosa cercare.
+# Per ogni voce cerca una fonte ufficiale (sito del gestore indicato, Comune, parrocchia/Diocesi, Regione, ente turistico, MiC/ICCD) che la descriva.
+# Wikipedia serve solo a trovare link a fonti ufficiali (note, collegamenti esterni), mai come fonte da citare.
+- museo archeologico nazionale di Calatia | museo archeologico, museo d'arte, museo del Ministero della Cultura italiano, museo nazionale italiano, museo storico | sito: http://museoarcheologicocalatia.beniculturali.it/ | tutela: bene culturale italiano | wiki: https://it.wikipedia.org/wiki/Museo_archeologico_nazionale_di_Calatia
+- museo civico di Maddaloni | casa museo, museo archeologico, museo d'arte, museo di un ente pubblico | sito: https://cultura.gov.it/luogo/istituzione-museo-civico-di-maddaloni | tutela: bene culturale italiano | wiki: https://it.wikipedia.org/wiki/Museo_civico_di_Maddaloni
+- Calatia | città antica, sito archeologico | sito: http://cir.campania.beniculturali.it/archeocalatia/ | wiki: https://it.wikipedia.org/wiki/Calatia
+- Museo delle cere | museo | sito: http://www.museodellecerecaserta.it/ | wiki: https://it.wikipedia.org/wiki/Museo_delle_cere_(Caserta)
+- duomo di Maddaloni | basilica minore, chiesa | sito: http://www.diocesicaserta.it/scheda_p17.html | wiki: https://it.wikipedia.org/wiki/Basilica_del_Corpus_Domini_(Maddaloni)
+- Casa di Cura San Michele | organizzazione per la salute | sito: http://www.clinicasanmichele.com
+- Castello normanno | castello | tutela: bene culturale italiano
+- Masseria Monti | masseria | tutela: bene culturale italiano
+- casino ducale Carafa Stadera | bene immobile | tutela: bene culturale italiano
+- chiesa di Santa Margherita Vergine e Martire | chiesa parrocchiale | wiki: https://it.wikipedia.org/wiki/Chiesa_di_Santa_Margherita_Vergine_e_Martire_(Maddaloni)
+- chiesa di Santa Maria dei Raccomandati | chiesa | tutela: bene culturale italiano
+- complesso di Santa Maria de' Commendatis | chiesa, confraternita, monastero | wiki: https://it.wikipedia.org/wiki/Monastero_di_Santa_Maria_de_Commendatis
+- monumento ai Caduti | monumento commemorativo | tutela: bene culturale italiano
+- monumento ossario ai Caduti | ossario | tutela: bene culturale italiano
+- muro contenitivo dell'antica via Appia | mura | tutela: bene culturale italiano
+- steli sepolcrali | sito archeologico, stele | tutela: bene culturale italiano
+- Centro E.D.A. Distretto 13 | centro territoriale permanente
+- G. Bruno | collegio scolastico
+- Interconnessione Nord | chord
+- Liceo classico "Convitto Giordano Bruno" di Maddaloni | liceo classico
+- Liceo scientifico Nino Cortese | liceo scientifico
+- Piazza della Pace | piazza
+- Santuario S. Maria di Montedecoro | chiesa
+- Santuario di San Michele Arcangelo e Santa Maria del Monte | chiesa
+- Scuola di Commissariato | istituzione educativa, unità militare
+- chiesa di Maria Santissima Immacolata | chiesa
+- chiesa di Nostra Signora di Loreto | chiesa
+- chiesa di San Benedetto Abate | chiesa
+- chiesa di San Martino Vescovo | chiesa
+- chiesa di San Pietro Apostolo | chiesa
+- chiesa di Sant'Alfonso Maria De' Liguori | chiesa
+- chiesa di Sant'Aniello | chiesa
+- chiesa di Santa Maria Madre della Chiesa | chiesa
+- chiesa di Santa Maria di Montedecoro | chiesa
+- chiesa di Santa Sofia | chiesa
+- ex chiesa dell'Assunta | ex chiesa
+- municipio di Maddaloni | palazzo comunale

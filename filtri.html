@@ -235,6 +235,7 @@ body.tL #fp,body.ffold #fp{display:none}
 .mphead b{font-family:var(--serif);font-size:1.15rem;font-weight:600}.mphead span{font-size:12.5px;color:var(--mute)}
 .mlist{max-height:min(52vh,420px);overflow-y:auto;display:grid;gap:4px;-webkit-overflow-scrolling:touch}
 .mgrp{font:800 11px var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--terra);margin:8px 4px 2px}
+.mlist [hidden]{display:none!important}
 .mpq{width:100%;height:40px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);font:600 16px var(--sans);padding:0 12px;margin-bottom:8px}
 .mopt{display:flex;align-items:center;gap:9px;min-height:42px;padding:0 10px;border-radius:10px;border:1px solid transparent;background:none;color:var(--ink);font:600 14.5px var(--sans);cursor:pointer;text-align:left;width:100%}
 .mopt .t{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -320,6 +321,9 @@ body.tL #fp,body.ffold #fp{display:none}
 
 /* mk17: più spazio per l'elenco */
 .gcat .tog{align-self:center;white-space:nowrap}
+/* mk20 */
+.srow .chip{font-weight:700}.srow .chip i{font-weight:600}.srow{margin:2px 0 6px}
+.gtx{padding-top:0}
 .gsep{width:1px;align-self:stretch;margin:6px 2px;background:var(--line)}
 @media (max-width:759px){.gcat{align-items:center}}
 @media (min-width:900px){
@@ -394,7 +398,7 @@ window.__salvaIst=function(){if(window.__ist)return;window.__ist=1;const n=MAN&&
     for(let i=localStorage.length-1;i>=0;i--){const k=localStorage.key(i);if(k&&k.startsWith('ist:')&&k!=='ist:'+n)localStorage.removeItem(k);}};
   setTimeout(salva,800);};
 /* dati: IndexedDB (ultimo nome) in parallelo al manifest */
-const ATTESO='luoghi.6cbcd0451e.js';const pIdb=MEMO.leggi(ultimo);
+const ATTESO='luoghi.ddcfc7e9c8.js';const pIdb=MEMO.leggi(ultimo);
 const pPrimo=ultimo?null:fetch(ATTESO).then(r=>r.ok?leggiAPezzi(r):null).catch(()=>null);
 const pMan=fetch("manifest.json",{cache:"no-store"}).then(r=>r.json()).catch(()=>{try{return JSON.parse(LS.get('man')||'null');}catch(e){return null;}});
 (async()=>{MAN=await pMan;const nome=(MAN&&MAN.luoghi)||ultimo;if(!nome){vF.textContent='Dati non disponibili: controlla la connessione.';return;}
@@ -472,14 +476,15 @@ function renderF(noHead){
  const provV=st.provs.size?(st.provs.size===1?[...st.provs][0].split('|')[1]:st.provs.size+' province'):'Tutte';const comV=st.coms.size?(st.coms.size===1?C[[...st.coms][0]][0]:st.coms.size+' comuni'):'Tutti';
  const pc={};for(const p of B)pc[p[1]]=(pc[p[1]]||0)+1;
  let pop='';
- if(st.pop==='reg')pop=`<div class="mpop"><div class="mphead"><b>Regioni</b><span>puoi sceglierne più di una</span></div><div class="mlist">${regs.map(r=>`<button class="mopt${st.regs.has(r)?' on':''}" data-reg="${r}"><span class="t">${esc(RG(r))}</span><small>${rc[r]||0}</small></button>`).join('')}</div><div class="mpfoot"><button class="mpall" data-a="regall">Tutte le regioni</button><button class="mpdone" data-a="popclose">Fatto</button></div></div>`;
- if(st.pop==='prov')pop=`<div class="mpop"><div class="mphead"><b>Province</b><span>puoi sceglierne più di una</span></div><div class="mlist">${(()=>{let cr=null,o='';for(const [k,c] of provsIn()){if(c[2]!==cr&&st.regs.size!==1){cr=c[2];o+=`<div class="mgrp">${esc(RG(c[2]))}</div>`}o+=`<button class="mopt${st.provs.has(k)?' on':''}" data-pp="${esc(k)}"><span class="t">${esc(c[1])}</span></button>`}return o})()}</div><div class="mpfoot"><button class="mpall" data-pp="">Tutte le province</button><button class="mpdone" data-a="popclose">Fatto</button></div></div>`;
+ if(st.pop==='reg')pop=`<div class="mpop"><div class="mphead"><b>Regioni</b><span>puoi sceglierne più di una</span></div><input class="mpq" id="rq" type="search" placeholder="Cerca una regione…" autocomplete="off"><div class="mlist" id="rqlist">${regs.map(r=>`<button class="mopt${st.regs.has(r)?' on':''}" data-reg="${r}"><span class="t">${esc(RG(r))}</span><small>${rc[r]||0}</small></button>`).join('')}</div><div class="mpfoot"><button class="mpall" data-a="regall">Tutte le regioni</button><button class="mpdone" data-a="popclose">Fatto</button></div></div>`;
+ if(st.pop==='prov')pop=`<div class="mpop"><div class="mphead"><b>Province</b><span>puoi sceglierne più di una</span></div><input class="mpq" id="pq" type="search" placeholder="Cerca una provincia…" autocomplete="off"><div class="mlist" id="pqlist">${(()=>{let cr=null,o='';for(const [k,c] of provsIn()){if(c[2]!==cr&&st.regs.size!==1){cr=c[2];o+=`<div class="mgrp">${esc(RG(c[2]))}</div>`}o+=`<button class="mopt${st.provs.has(k)?' on':''}" data-pp="${esc(k)}"><span class="t">${esc(c[1])}</span></button>`}return o})()}</div><div class="mpfoot"><button class="mpall" data-pp="">Tutte le province</button><button class="mpdone" data-a="popclose">Fatto</button></div></div>`;
  if(st.pop==='com')pop=`<div class="mpop"><div class="mphead"><b>Comuni</b><span>puoi sceglierne più di uno</span></div><input class="mpq" id="cq" type="search" placeholder="Cerca un comune…" autocomplete="off"><div class="mlist" id="cqlist"></div><div class="mpfoot"><button class="mpall" data-cc="">Tutti i comuni</button><button class="mpdone" data-a="popclose">Fatto</button></div></div>`;
  let fh=`<div class="fx"><div class="pick"><div class="msel"><span class="mlab">Regioni</span><button class="mbtn" data-pop="reg" aria-expanded="${st.pop==='reg'}"><span class="mv">${esc(regV)}</span><span class="cv">▼</span></button></div><div class="msel"><span class="mlab">Province</span><button class="mbtn" data-pop="prov" aria-expanded="${st.pop==='prov'}"><span class="mv">${esc(provV)}</span><span class="cv">▼</span></button></div><div class="msel"><span class="mlab">Comuni</span><button class="mbtn" data-pop="com" aria-expanded="${st.pop==='com'}"><span class="mv">${esc(comV)}</span><span class="cv">▼</span></button></div>${pop}</div>
  <div class="row1"><label class="srch"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" placeholder="Cerca un comune o un luogo…" value="${esc(st.q)}" autocomplete="off"></label>${nFil()?`<button class="iconbtn reset" data-a="reset"><span aria-hidden="true">↺</span><span class="rl">Azzera</span><span class="badge">${nFil()}</span></button>`:''}<button class="iconbtn${st.near?' on':''}" data-a="near" aria-pressed="${!!st.near}"><span aria-hidden="true">${st.nearBusy?'⏳':'📍'}</span><span class="rl">Vicino a te</span></button></div>${st.nearErr?`<div class="nerr">${esc(st.nearErr)}</div>`:''}
  <div class="qlab">Cosa vuoi vedere</div>
- <div class="gcat">${M.map(x=>{const n=B.filter(p=>p[2]===x.k).length,c=(st.sel[x.k]||new Set()).size;return `<button class="qc${st.open===x.k?' on':''}${c?' has':''}" style="${cv(x.k)}" data-m="${x.k}"><span class="em">${x.e}</span><span class="ql">${x.l}</span><small>${c?c+' scelti':n}</small></button>`}).join('')}<span class="gsep" aria-hidden="true"></span>${TX.map(([k,e,l])=>`<button class="tog${st.tx.has(k)?' on':''}" data-t="${k}" aria-pressed="${st.tx.has(k)}">${e} ${l}</button>`).join('')}</div>
+ <div class="gcat">${M.map(x=>{const n=B.filter(p=>p[2]===x.k).length,c=(st.sel[x.k]||new Set()).size;return `<button class="qc${st.open===x.k?' on':''}${c?' has':''}" style="${cv(x.k)}" data-m="${x.k}"><span class="em">${x.e}</span><span class="ql">${x.l}</span><small>${c?c+' scelti':n}</small></button>`}).join('')}</div>
  ${m?`<div class="frow srow" style="${cv(m.k)}">${sel.size?`<button class="chip clr" data-clr="${m.k}">✕ Togli</button>`:''}${Object.entries(m.s).map(([s,e])=>{const n=B.filter(p=>p[2]===m.k&&p[3].includes(s)).length;return `<button class="chip${sel.has(s)?' on':''}${n?'':' zero'}" data-s="${esc(s)}">${e} ${s} <i>${n}</i></button>`}).join('')}</div>`:''}
+ <div class="gcat gtx">${TX.map(([k,e,l])=>`<button class="tog${st.tx.has(k)?' on':''}" data-t="${k}" aria-pressed="${st.tx.has(k)}">${e} ${l}</button>`).join('')}</div>
   <div class="grp" id="grp">${GR.map(([k,e,l])=>`<button class="${st.grp===k?'on':''}" data-g="${k}">${e} ${l}</button>`).join('')}</div></div>`;
  let h='';
  const catsOf=ps=>{const k={};for(const p of ps){if(SS){for(const s of p[3])if(st.sel[p[2]]&&st.sel[p[2]].has(s)){const kk=p[2]+'|'+s;k[kk]=(k[kk]||0)+1}}else k[p[2]]=(k[p[2]]||0)+1}
@@ -515,6 +520,10 @@ function renderF(noHead){
 
  h+=`<p class="note">Prototipo con i dati reali della guida. Tipi e civiltà sono assegnati in automatico dalle descrizioni prese dalle fonti ufficiali e vanno controllati prima della versione definitiva.</p>`;
  if(!noHead)$('fp').innerHTML=fh;$('vF').innerHTML=h;st.cnt=[R.length,new Set(R.map(p=>p[1])).size];
+ /* mk19: filtro dal vivo delle voci di Regioni e Province; i titoli di regione restano solo se hanno province visibili */
+ for(const [qi,li] of [['rq','rqlist'],['pq','pqlist']]){const q=$(qi);if(!q)continue;const ap=()=>{st['_'+qi]=q.value;const s=norm(q.value),L=$(li);let g=null,gv=false;
+  for(const el of L.children){if(el.classList.contains('mgrp')){if(g)g.hidden=!gv;g=el;gv=false;continue}const t=el.querySelector('.t');const ok=!s||norm(t?t.textContent:el.textContent).includes(s);el.hidden=!ok;if(ok)gv=true}
+  if(g)g.hidden=!gv};q.oninput=ap;if(st['_'+qi]){q.value=st['_'+qi];ap();}}
  const cq=$('cq');if(cq){const fill=()=>{const s=norm(cq.value);$('cqlist').innerHTML=comsIn().filter(([c])=>!s||norm(c[0]).includes(s)).slice(0,300).map(([c,ci])=>`<button class="mopt${st.coms.has(ci)?' on':''}" data-cc="${ci}"><span class="t">${esc(c[0])}</span><small>${esc(c[1])}</small></button>`).join('')};cq.oninput=fill;fill()}
  const q=$('q');q.oninput=()=>{st.q=q.value;st.lim=40;renderF(true);window.scrollTo(0,0)};
 }

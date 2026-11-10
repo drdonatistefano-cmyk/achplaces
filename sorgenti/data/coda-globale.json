@@ -19,87 +19,6 @@
 },
 {
 "tier": 2,
-"mic": 2,
-"premi": [],
-"regione": "campania",
-"nome": "Mondragone",
-"prov": "CE",
-"istat": "061052"
-},
-{
-"tier": 2,
-"mic": 2,
-"premi": [],
-"regione": "campania",
-"nome": "Montemarano",
-"prov": "AV",
-"istat": "064058"
-},
-{
-"tier": 2,
-"mic": 2,
-"premi": [],
-"regione": "campania",
-"nome": "Perdifumo",
-"prov": "SA",
-"istat": "065091"
-},
-{
-"tier": 2,
-"mic": 2,
-"premi": [],
-"regione": "liguria",
-"nome": "Maissana",
-"prov": "SP",
-"istat": "011018"
-},
-{
-"tier": 2,
-"mic": 2,
-"premi": [],
-"regione": "liguria",
-"nome": "Moconesi",
-"prov": "GE",
-"istat": "010036"
-},
-{
-"tier": 2,
-"mic": 2,
-"premi": [],
-"regione": "liguria",
-"nome": "San Colombano Certenoli",
-"prov": "GE",
-"istat": "010053"
-},
-{
-"tier": 2,
-"mic": 2,
-"premi": [],
-"regione": "lombardia",
-"nome": "Gazoldo degli Ippoliti",
-"prov": "MN",
-"istat": "020024"
-},
-{
-"tier": 2,
-"mic": 2,
-"premi": [],
-"regione": "lombardia",
-"nome": "Viggiù",
-"prov": "VA",
-"istat": "012139"
-},
-{
-"tier": 2,
-"mic": 2,
-"premi": [],
-"regione": "puglia",
-"nome": "Tuglie",
-"prov": "LE",
-"istat": "075089"
-},
-{
-"tier": 2,
 "mic": 1,
 "premi": [],
 "regione": "abruzzo",
@@ -121,36 +40,9 @@
 "mic": 1,
 "premi": [],
 "regione": "abruzzo",
-"nome": "Colledara",
-"prov": "TE",
-"istat": "067018"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "abruzzo",
 "nome": "Monteodorisio",
 "prov": "CH",
 "istat": "069055"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "abruzzo",
-"nome": "Picciano",
-"prov": "PE",
-"istat": "068031"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "abruzzo",
-"nome": "Sant'Eusanio del Sangro",
-"prov": "CH",
-"istat": "069085"
 },
 {
 "tier": 2,
@@ -184,15 +76,6 @@
 "mic": 1,
 "premi": [],
 "regione": "calabria",
-"nome": "Mammola",
-"prov": "RC",
-"istat": "080044"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "calabria",
 "nome": "Montauro",
 "prov": "CZ",
 "istat": "079080"
@@ -219,55 +102,10 @@
 "tier": 2,
 "mic": 1,
 "premi": [],
-"regione": "calabria",
-"nome": "Vallelonga",
-"prov": "VV",
-"istat": "102045"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "campania",
-"nome": "Corleto Monforte",
-"prov": "SA",
-"istat": "065048"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "campania",
-"nome": "Fragneto Monforte",
-"prov": "BN",
-"istat": "062034"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
 "regione": "campania",
 "nome": "Greci",
 "prov": "AV",
 "istat": "064037"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "campania",
-"nome": "Lettere",
-"prov": "NA",
-"istat": "063039"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "campania",
-"nome": "Pignataro Maggiore",
-"prov": "CE",
-"istat": "061060"
 },
 {
 "tier": 2,
@@ -283,36 +121,9 @@
 "mic": 1,
 "premi": [],
 "regione": "friuli-venezia-giulia",
-"nome": "Buja",
-"prov": "UD",
-"istat": "030013"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "friuli-venezia-giulia",
-"nome": "Colloredo di Monte Albano",
-"prov": "UD",
-"istat": "030028"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "friuli-venezia-giulia",
 "nome": "Grimacco",
 "prov": "UD",
 "istat": "030045"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "friuli-venezia-giulia",
-"nome": "Majano",
-"prov": "UD",
-"istat": "030053"
 },
 {
 "tier": 2,
@@ -328,15 +139,6 @@
 "mic": 1,
 "premi": [],
 "regione": "lombardia",
-"nome": "Aicurzio",
-"prov": "MB",
-"istat": "108002"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "lombardia",
 "nome": "Arosio",
 "prov": "CO",
 "istat": "013012"
@@ -346,90 +148,9 @@
 "mic": 1,
 "premi": [],
 "regione": "lombardia",
-"nome": "Cocquio-Trevisago",
-"prov": "VA",
-"istat": "012053"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "lombardia",
-"nome": "Mairago",
-"prov": "LO",
-"istat": "098034"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "lombardia",
 "nome": "Ronco Briantino",
 "prov": "MB",
 "istat": "108038"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "lombardia",
-"nome": "Samarate",
-"prov": "VA",
-"istat": "012118"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "lombardia",
-"nome": "San Daniele Po",
-"prov": "CR",
-"istat": "019089"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "lombardia",
-"nome": "Torre Pallavicina",
-"prov": "BG",
-"istat": "016217"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "lombardia",
-"nome": "Turate",
-"prov": "CO",
-"istat": "013227"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "molise",
-"nome": "Filignano",
-"prov": "IS",
-"istat": "094019"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "molise",
-"nome": "Matrice",
-"prov": "CB",
-"istat": "070037"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "molise",
-"nome": "San Polo Matese",
-"prov": "CB",
-"istat": "070071"
 },
 {
 "tier": 2,
@@ -687,172 +408,10 @@
 "tier": 2,
 "mic": 1,
 "premi": [],
-"regione": "umbria",
-"nome": "Monte Santa Maria Tiberina",
-"prov": "PG",
-"istat": "054032"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "umbria",
-"nome": "Montecastrilli",
-"prov": "TR",
-"istat": "055017"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "umbria",
-"nome": "Montegabbione",
-"prov": "TR",
-"istat": "055020"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "umbria",
-"nome": "Monteleone di Spoleto",
-"prov": "PG",
-"istat": "054031"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "umbria",
-"nome": "Otricoli",
-"prov": "TR",
-"istat": "055024"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "umbria",
-"nome": "Parrano",
-"prov": "TR",
-"istat": "055025"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "umbria",
-"nome": "Passignano sul Trasimeno",
-"prov": "PG",
-"istat": "054038"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "umbria",
-"nome": "Pietralunga",
-"prov": "PG",
-"istat": "054041"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "umbria",
-"nome": "Polino",
-"prov": "TR",
-"istat": "055027"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "umbria",
-"nome": "Porano",
-"prov": "TR",
-"istat": "055028"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "umbria",
-"nome": "Sant'Anatolia di Narco",
-"prov": "PG",
-"istat": "054045"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "umbria",
-"nome": "Scheggia e Pascelupo",
-"prov": "PG",
-"istat": "054046"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "umbria",
-"nome": "Valtopina",
-"prov": "PG",
-"istat": "054059"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Abano Terme",
-"prov": "PD",
-"istat": "028001"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Ariano nel Polesine",
-"prov": "RO",
-"istat": "029002"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
 "regione": "veneto",
 "nome": "Arre",
 "prov": "PD",
 "istat": "028006"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Asiago",
-"prov": "VI",
-"istat": "024009"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Baone",
-"prov": "PD",
-"istat": "028009"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Bardolino",
-"prov": "VR",
-"istat": "023006"
 },
 {
 "tier": 2,
@@ -868,36 +427,9 @@
 "mic": 1,
 "premi": [],
 "regione": "veneto",
-"nome": "Borgoricco",
-"prov": "PD",
-"istat": "028013"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Breganze",
-"prov": "VI",
-"istat": "024014"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
 "nome": "Brendola",
 "prov": "VI",
 "istat": "024015"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Campagna Lupia",
-"prov": "VE",
-"istat": "027002"
 },
 {
 "tier": 2,
@@ -913,189 +445,9 @@
 "mic": 1,
 "premi": [],
 "regione": "veneto",
-"nome": "Caorle",
-"prov": "VE",
-"istat": "027005"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Caprino Veronese",
-"prov": "VR",
-"istat": "023018"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Castello di Godego",
-"prov": "TV",
-"istat": "026013"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Castelnovo Bariano",
-"prov": "RO",
-"istat": "029013"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Cavaion Veronese",
-"prov": "VR",
-"istat": "023023"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Cervarese Santa Croce",
-"prov": "PD",
-"istat": "028030"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Chies d'Alpago",
-"prov": "BL",
-"istat": "025012"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Chioggia",
-"prov": "VE",
-"istat": "027008"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
 "nome": "Chiuppano",
 "prov": "VI",
 "istat": "024030"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Cinto Euganeo",
-"prov": "PD",
-"istat": "028031"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Cittadella",
-"prov": "PD",
-"istat": "028032"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Cologna Veneta",
-"prov": "VR",
-"istat": "023027"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Cornuda",
-"prov": "TV",
-"istat": "026023"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Cortina d'Ampezzo",
-"prov": "BL",
-"istat": "025016"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Dolcè",
-"prov": "VR",
-"istat": "023031"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Due Carrare",
-"prov": "PD",
-"istat": "028106"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Este",
-"prov": "PD",
-"istat": "028037"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Feltre",
-"prov": "BL",
-"istat": "025021"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Isola della Scala",
-"prov": "VR",
-"istat": "023040"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Maser",
-"prov": "TV",
-"istat": "026039"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Mira",
-"prov": "VE",
-"istat": "027023"
 },
 {
 "tier": 2,
@@ -1111,126 +463,9 @@
 "mic": 1,
 "premi": [],
 "regione": "veneto",
-"nome": "Monselice",
-"prov": "PD",
-"istat": "028055"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Montebelluna",
-"prov": "TV",
-"istat": "026046"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Montecchia di Crosara",
-"prov": "VR",
-"istat": "023049"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Montecchio Maggiore",
-"prov": "VI",
-"istat": "024061"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
 "nome": "Nove",
 "prov": "VI",
 "istat": "024073"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Pedavena",
-"prov": "BL",
-"istat": "025036"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Peschiera del Garda",
-"prov": "VR",
-"istat": "023059"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Porto Viro",
-"prov": "RO",
-"istat": "029052"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Riese Pio X",
-"prov": "TV",
-"istat": "026068"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Rivoli Veronese",
-"prov": "VR",
-"istat": "023062"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Romano d'Ezzelino",
-"prov": "VI",
-"istat": "024086"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Roncade",
-"prov": "TV",
-"istat": "026069"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Salzano",
-"prov": "VE",
-"istat": "027032"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "San Bonifacio",
-"prov": "VR",
-"istat": "023069"
 },
 {
 "tier": 2,
@@ -1264,60 +499,6 @@
 "mic": 1,
 "premi": [],
 "regione": "veneto",
-"nome": "Sant'Anna d'Alfaedo",
-"prov": "VR",
-"istat": "023078"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Santorso",
-"prov": "VI",
-"istat": "024095"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Sedico",
-"prov": "BL",
-"istat": "025053"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Selva di Cadore",
-"prov": "BL",
-"istat": "025054"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Sona",
-"prov": "VR",
-"istat": "023083"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Sovizzo",
-"prov": "VI",
-"istat": "024128"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
 "nome": "Stra",
 "prov": "VE",
 "istat": "027039"
@@ -1327,80 +508,8 @@
 "mic": 1,
 "premi": [],
 "regione": "veneto",
-"nome": "Tambre",
-"prov": "BL",
-"istat": "025060"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
 "nome": "Tombolo",
 "prov": "PD",
 "istat": "028091"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Tonezza del Cimone",
-"prov": "VI",
-"istat": "024106"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Trissino",
-"prov": "VI",
-"istat": "024110"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Valdagno",
-"prov": "VI",
-"istat": "024111"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Velo Veronese",
-"prov": "VR",
-"istat": "023090"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Vestenanova",
-"prov": "VR",
-"istat": "023093"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Villafranca di Verona",
-"prov": "VR",
-"istat": "023096"
-},
-{
-"tier": 2,
-"mic": 1,
-"premi": [],
-"regione": "veneto",
-"nome": "Volpago del Montello",
-"prov": "TV",
-"istat": "026093"
 }
 ]

@@ -1,0 +1,8 @@
+# Indizi da Wikidata per Fossato Serralta (10/11/2026): elenco di luoghi che esistono nel comune. NON sono fonti: servono a sapere cosa cercare.
+# Per ogni voce cerca una fonte ufficiale (sito del gestore indicato, Comune, parrocchia/Diocesi, Regione, ente turistico, MiC/ICCD) che la descriva.
+# Wikipedia serve solo a trovare link a fonti ufficiali (note, collegamenti esterni), mai come fonte da citare.
+- Museo dei cestai fossatesi | museo dell'industria | tutela: bene culturale italiano
+- Museo della Civiltà Contadina di Fossato Serralta | museo dell'industria
+- chiesa di San Nicola di Bari | chiesa
+- chiesa di Santa Maria delle Grazie | chiesa
+- palazzo comunale | palazzo comunale

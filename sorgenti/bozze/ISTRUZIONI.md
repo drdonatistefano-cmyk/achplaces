@@ -68,3 +68,6 @@ Le pagine web di calabriastraordinaria.it non restituiscono testo: cerca invece 
 
 ## Nota per il Friuli-Venezia Giulia (9/11)
 turismofvg.it blocca la lettura automatica: usa invece le schede di italia.it, il catalogo regionale del patrimonio culturale (SIRPAC / ERPAC, regione.fvg.it), i siti dei parchi (Prealpi Giulie, Dolomiti Friulane), degli ecomusei riconosciuti dalla Regione, il Touring e le schede MiC. Prima di chiudere un comune sotto i 3 luoghi prova almeno queste fonti.
+
+## Comuni difficili (10/11/2026)
+Se dopo le ricerche normali un comune resta sotto il minimo, si usa la tattica degli indizi: in /home/claude/bozze/indizi/indizi-<Comune>.txt c'è l'elenco Wikidata dei luoghi che esistono (non è una fonte). Per ogni indizio si cerca il nome esatto e si aprono fonti ufficiali trasversali: sito del gestore, parrocchia o Diocesi, chieseitaliane.chiesacattolica.it, sigecweb.beniculturali.it (schede ICCD), Touring, FAI, ISPRA (musei), portali turistici provinciali e consorzi (es. BIM), PDF e pagine alternative del Comune. Wikipedia solo per trovare link ufficiali nelle note.

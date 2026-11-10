@@ -1,0 +1,8 @@
+# Indizi da Wikidata per Cosoleto (10/11/2026): elenco di luoghi che esistono nel comune. NON sono fonti: servono a sapere cosa cercare.
+# Per ogni voce cerca una fonte ufficiale (sito del gestore indicato, Comune, parrocchia/Diocesi, Regione, ente turistico, MiC/ICCD) che la descriva.
+# Wikipedia serve solo a trovare link a fonti ufficiali (note, collegamenti esterni), mai come fonte da citare.
+- Museo delle carrozze di Cosoleto | museo specializzato | tutela: bene culturale italiano
+- chiesa di Santa Domenica | chiesa
+- chiesa di Santa Maria delle Grazie (nuova) | chiesa
+- chiesa di Santa Maria delle Grazie (vecchia) | chiesa
+- palazzo comunale | palazzo comunale

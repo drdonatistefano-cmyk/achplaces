@@ -1,0 +1,19 @@
+# Indizi da Wikidata per San Pietro al Natisone (10/11/2026): elenco di luoghi che esistono nel comune. NON sono fonti: servono a sapere cosa cercare.
+# Per ogni voce cerca una fonte ufficiale (sito del gestore indicato, Comune, parrocchia/Diocesi, Regione, ente turistico, MiC/ICCD) che la descriva.
+# Wikipedia serve solo a trovare link a fonti ufficiali (note, collegamenti esterni), mai come fonte da citare.
+- Castello del Monte Barda | castello | tutela: bene culturale italiano
+- SMO | casa museo, museo di storia naturale, museo etnografico, museo privato, museo specializzato | sito: http://wwww.smo-center.euewww.mismotu.it
+- chiesa di San Bartolomeo | chiesa | wiki: https://it.wikipedia.org/wiki/Chiesa_di_San_Bartolomeo_(San_Pietro_al_Natisone)
+- chiesa di San Quirino | chiesa | wiki: https://it.wikipedia.org/wiki/Chiesa_di_San_Quirino_(San_Pietro_al_Natisone)
+- duomo di San Pietro al Natisone | chiesa parrocchiale cattolica | wiki: https://it.wikipedia.org/wiki/Chiesa_di_San_Pietro_Apostolo_(San_Pietro_al_Natisone)
+- Convitto Nazionale "Paolo Diacono" di San Pietro Al Natisone | liceo classico
+- Vernasso | località
+- castagno | pianta monumentale
+- chiesa della Madonna Consolatrice | chiesa
+- chiesa di San Giacomo Maggiore Apostolo | chiesa
+- chiesa di San Luca Evangelista | chiesa
+- chiesa di San Nicola Vescovo | chiesa
+- chiesa di Sant'Antonio Abate | chiesa
+- chiesa di Santa Dorotea | chiesa
+- chiesa di Santa Maria Consolatrice | chiesa
+- municipio di San Pietro al Natisone | palazzo comunale
