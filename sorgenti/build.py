@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Costruisce index.html: legge i file data/spec-*.txt (formato a righe) e data/places-bologna.js,
 produce i blocchi JS COMUNI e SOURCES e li inserisce nel template al posto di /*PLACES*/."""
-import json, re, os
+import json, re, os, unicodedata
 HERE = os.path.dirname(os.path.abspath(__file__))
 D = os.path.join(HERE, "data")
 VERIFIED = "6 novembre 2026"
@@ -22,6 +22,35 @@ REGSRC = {"emilia-romagna": ("Emilia Romagna Turismo", "https://emiliaromagnatur
 DUR = {"short": "30-45 minuti", "mid": "1-1,5 ore", "long": "2 ore e oltre"}
 WIKI = {"Lugo": "Lugo_(Italia)", "Medicina": "Medicina_(Italia)", "Bentivoglio": "Bentivoglio_(Italia)", "Argenta": "Argenta_(Italia)", "Cento": "Cento_(Italia)", "Vinci": "Vinci_(Italia)", "Cattolica": "Cattolica_(Italia)", "Santa Sofia": "Santa_Sofia_(Italia)"}
 AW = {"borghi": "borghi", "arancione": "arancione", "unesco": "unesco", "creative": "creative"}
+
+_STOP = set("chiesa chiese museo musei civico civica parco area archeologica archeologico della delle dello degli dei del di da la le il lo gli san santa santo sant santi madonna basilica cattedrale duomo palazzo castello torre villa piazza centro storico borgo antico antica nazionale regionale comunale e ed con per tra fra sul sulla nel nella al alla ai alle in a casa monumento monumentale complesso".split())
+_TK = re.compile(r"bigliett|ticket|tariff|prezz|ingress|admission|prices|biglietteria")
+_HR = re.compile(r"orari|opening|hours|apertur|timetable")
+def _parole(t):
+    t = "".join(ch for ch in unicodedata.normalize("NFD", t.lower()) if not unicodedata.combining(ch))
+    return [w for w in re.split(r"[^a-z0-9]+", t) if len(w) >= 4 and w not in _STOP]
+AUTO = {"tk": [], "hr": []}
+# 10/11/2026 sera: titolo esatto della voce di it.wikipedia (data/wiki.json da Wikidata, piu' wiki-<gruppo>.json dal lavoro su GitHub)
+WIKI = {}
+for _wf in [os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "wiki.json")] + sorted(__import__("glob").glob("/home/claude/foto-ramo/wiki-*.json")):
+    try: WIKI.update({k: v for k, v in json.load(open(_wf)).items() if k not in WIKI})
+    except Exception: pass
+def _via(u):
+    """solo percorso e query dell'indirizzo, senza il dominio: «visitmodena.it» non e' una pagina di orari"""
+    v = u.split("://", 1)[-1].split("/", 1)[-1].lower() if "/" in u.split("://", 1)[-1] else ""
+    # notizie, eventi e aperture straordinarie non sono la pagina stabile di orari o biglietti
+    return "" if re.search(r"evento|event|news|novita|notizi|avviso|blog|straordinar|eccezional|riapertura|\d+-hours|itinerar|reopening|nuove-aperture|/20\d\d/", v) else v
+def link_da_fonti(name, srcs, csrcs):
+    pw = _parole(name.split(",")[0])
+    def cerca(rx):
+        for s in srcs:
+            if (len(s) < 3 or s[2] == "uff") and s[1].startswith("https://") and rx.search(_via(s[1])): return s[1]
+        if not pw: return ""
+        for n, u in csrcs:
+            txt = " ".join(_parole(n + " " + u.replace("-", " ").replace("/", " ")))
+            if u.startswith("https://") and rx.search(_via(u)) and sum(1 for w in pw if w in txt) >= min(2, len(pw)): return u
+        return ""
+    return cerca(_TK), cerca(_HR)
 
 def slugify(s):
     s = s.lower().replace("'", "-").replace("à", "a").replace("è", "e").replace("é", "e").replace("ì", "i").replace("ò", "o").replace("ù", "u")
@@ -121,10 +150,17 @@ def parse(path):
             p["hoursUrl"] = extra.get("orari") or lk.get("orari", "")
             p["ticketUrl"] = extra.get("biglietti") or lk.get("biglietti", "")
             if lk.get("off") and "off" not in extra: p["official"] = lk["off"]; p["ownSite"] = True
+            # 10/11/2026 sera: se mancano i link precisi, li prende dalle fonti ufficiali gia' citate (del luogo, o del
+            # comune quando il nome della fonte nomina il luogo) che sono pagine di biglietti/tariffe o di orari.
+            if not p["ticketUrl"] or not p["hoursUrl"]:
+                _tk, _hr = link_da_fonti(name, srcs, c["sources"])
+                if not p["ticketUrl"] and _tk and free is not True: p["ticketUrl"] = _tk; AUTO["tk"].append((c["name"], name, _tk))
+                if not p["hoursUrl"] and _hr: p["hoursUrl"] = _hr; AUTO["hr"].append((c["name"], name, _hr))
             if p["ticketUrl"] or p["hoursUrl"]: p["ownSite"] = True
             for k in ("hoursUrl", "ticketUrl"):
                 if p[k] and not any(x[1] == p[k] for x in p["sources"]): p["sources"].append([("Orari ufficiali" if k == "hoursUrl" else "Biglietti ufficiali") + " (pagina del gestore)", p[k], "uff"])
             if extra.get("mic"): p["mic"] = extra["mic"].split()
+            if WIKI.get(pid): p["wk"] = WIKI[pid]
             c["places"].append(p)
     for c in comuni:
         g = geo_of(c["name"])
@@ -253,7 +289,7 @@ for _c in comuni:
 _tqp=[_p for _c in comuni for _p in _c["places"] if _p.get("tq")]
 print("GetYourGuide: luoghi abbinati", sum(1 for _c in comuni for _p in _c["places"] if _p.get("gy")))
 print("Tiqets: luoghi abbinati", len(_tqp), "| bottone in card", sum(1 for _p in _tqp if _p.get("free") is not True and not _p.get("ticketUrl")), "| link in scheda", sum(1 for _p in _tqp if _p.get("free") is not True), "| gratuiti esclusi", sum(1 for _p in _tqp if _p.get("free") is True))
-PESANTI = ("why", "access", "official", "ownSite", "sources", "tip", "statusNote", "hoursUrl")   # ticketUrl resta nell'indice: tasto Ticket nelle card (8/11)
+PESANTI = ("why", "access", "official", "ownSite", "sources", "tip", "statusNote", "hoursUrl", "wk")   # ticketUrl resta nell'indice: tasto Ticket nelle card (8/11)
 VIA = ("hours", "booking", "rev", "mic")          # non usati dalla pagina
 # 9/11/2026 prezzo stimato (richiesta di Stefano) per i luoghi con ingresso «da verificare»: dai luoghi verificati dello stesso
 # tipo (nella stessa regione se ce ne sono almeno 8, altrimenti in tutta la guida). Se almeno 3 su 4 sono gratuiti → «probabilmente
@@ -400,6 +436,7 @@ with _tf.NamedTemporaryFile("w", suffix=".js", delete=False) as _f: _f.write(CER
 _cerca = _sp.run(["node", _f.name], input=json.dumps(dict(bo=os.path.join(D, "places-bologna.js"), extra=[[p["id"], p["name"], p.get("desc", ""), p.get("address", "")] for c in comuni for p in c["places"]]), ensure_ascii=False), capture_output=True, text=True, check=True).stdout
 for _old in glob.glob(os.path.join(HERE, "cerca.*.json")): os.remove(_old)
 NOME_CERCA = _scrivi("cerca", json.loads(_cerca))
+json.dump(AUTO, open("/tmp/link_auto.json", "w"), ensure_ascii=False); print("link dalle fonti: biglietti", len(AUTO["tk"]), "orari", len(AUTO["hr"]))
 json.dump(dict(v=2, dati=NOME_DATI, meta=NOME_META, fonti=NOME_FONTI, det=DET, cerca=NOME_CERCA), open(os.path.join(HERE, "manifest.json"), "w"))
 LOADER = r"""
 /* 9/11/2026 Tiqets (Awin, publisher 3146807 come Events): mid a 0 = link diretto alla pagina del prodotto; con l'ID inserzionista il clic passa da Awin */

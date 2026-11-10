@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
 <meta charset="utf-8">
-<script>try{if(localStorage.getItem("datiNome")!=="dati.a697798f5b.json"){var l=document.createElement("link");l.rel="preload";l.as="fetch";l.crossOrigin="anonymous";l.href="dati.a697798f5b.json";document.head.appendChild(l);}}catch(e){}</script>
+<script>try{if(localStorage.getItem("datiNome")!=="dati.20d4bfd4f1.json"){var l=document.createElement("link");l.rel="preload";l.as="fetch";l.crossOrigin="anonymous";l.href="dati.20d4bfd4f1.json";document.head.appendChild(l);}}catch(e){}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#161311">
 <title>Ach's Places Guide</title>
@@ -279,6 +279,19 @@ button.stat.on{box-shadow:inset 0 0 0 2px var(--sc)}
 .sheet .title{font-size:1.6rem;padding-right:42px;margin-top:6px}
 .sheet .lead{font-size:15.5px;margin:10px 0 0;max-width:62ch}
 .why{margin:10px 0 0;padding:10px 12px;border-radius:12px;background:color-mix(in srgb,var(--g) 9%,var(--paper));border:1px solid color-mix(in srgb,var(--g) 25%,transparent);font-size:14.5px}
+.tix{margin:14px 0 4px;padding:12px;border:1px solid var(--line);border-radius:14px;background:var(--paper)}
+.tix h3{margin:0 0 10px;font:700 15px/1.2 var(--sans)}
+.tixb{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);border-radius:12px;min-height:48px;padding:8px 12px}
+.tixb.uff{background:var(--terra);color:var(--on);font-size:15px}.tixb.uff svg{width:20px;height:20px;flex:none}
+.tixb.uff span{display:flex;flex-direction:column;min-width:0;flex:1}.tixb.uff small{opacity:.85;font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tixb.uff i{font-style:normal;font-weight:700}
+.tixb.uff.soft{background:var(--terra-soft);color:var(--terra-ink)}
+.tixb.par{margin-top:8px;border:1px solid var(--line);background:var(--bg)}.tixb.par span:not(.tixic){display:flex;flex-direction:column;flex:1;min-width:0}.tixb.par b{font-size:14.5px}.tixb.par small{color:var(--mute);font-size:12px}.tixb.par i{font-style:normal;font-weight:700;color:var(--mute)}
+.tixic{font-size:19px;width:20px;text-align:center;flex:none}
+.tixn{margin:8px 2px 0;font-size:12px;color:var(--mute);line-height:1.4}
+.tixfree{display:flex;gap:10px;align-items:center;padding:6px 2px}.tixfree svg{width:22px;height:22px;color:var(--ok);flex:none}
+.tixfree div{display:flex;flex-direction:column}.tixfree small{color:var(--mute);font-size:12.5px}
+.act .wk{font:700 16px/1 Georgia,"Times New Roman",serif}
 .facts{display:grid;gap:0;margin:14px 0 6px;border-top:1px solid var(--line)}
 .fact{display:grid;grid-template-columns:28px 1fr;gap:2px 10px;padding:10px 0;border-bottom:1px solid var(--line)}
 .fact .ic{font-size:18px;line-height:1.3;grid-row:span 2}
@@ -591,6 +604,9 @@ body{font-size:16px;line-height:1.5}
 .hero[hidden]+.topnav{padding-top:max(12px,env(safe-area-inset-top))!important}
 .topnav a.luoghibtn{border-color:var(--terra);color:var(--terra)}
 @media(max-width:560px){.topnav a{flex:1 1 auto;justify-content:center;white-space:nowrap;padding:0 8px;gap:4px}}
+/* 10/11 sera: Metodo e Fonti sulla stessa riga, spinti tutto a destra */
+.topnav #nav-metodo{margin-left:auto}
+@media(max-width:560px){.topnav a{flex:0 0 auto}}
 .xtra{display:grid;gap:10px;margin:2px 0 16px}
 .xtra[hidden]{display:none}
 .xbox{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:12px 14px;box-shadow:var(--shadow)}
@@ -1261,7 +1277,7 @@ function salvaIst(nome){setTimeout(()=>{if(IST_TOCCO||location.hash.slice(1))ret
 (async()=>{const cnt=document.getElementById("count");if(cnt&&!IST_ORIG)cnt.textContent="Caricamento dei luoghi…";
   let nome=null;try{nome=localStorage.getItem("datiNome");}catch(e){}
   const ultimo=nome,pIdb=nome?MEMO.leggi(nome):null;
-  const ATTESO="dati.a697798f5b.json",pPrimo=nome?null:fetch(ATTESO).then(r=>r.ok?leggiAPezzi(r):null).catch(()=>null);  /* primo accesso: in parallelo al manifest */
+  const ATTESO="dati.20d4bfd4f1.json",pPrimo=nome?null:fetch(ATTESO).then(r=>r.ok?leggiAPezzi(r):null).catch(()=>null);  /* primo accesso: in parallelo al manifest */
   try{MAN=await (await fetch("manifest.json",{cache:"no-store"})).json();nome=MAN.dati;try{localStorage.setItem("man",JSON.stringify(MAN));}catch(e){}}catch(e){try{MAN=JSON.parse(localStorage.getItem("man")||"null");}catch(e2){}}
   if(!nome){if(cnt)cnt.textContent="Dati non disponibili: controlla la connessione.";return;}
   let t=nome===ultimo&&pIdb?await pIdb:(pPrimo&&nome===ATTESO?await pPrimo:null)||await MEMO.leggi(nome);
@@ -1596,6 +1612,24 @@ $("stats").onclick=e=>{const b=e.target.closest("button.stat");if(!b)return;cons
   else if(a==="comuni"){popToggle("com",true);$("com-btn").scrollIntoView({block:"center",behavior:"smooth"});}
 };
 
+/* 10/11 sera: blocco Biglietti della scheda. Prima la biglietteria ufficiale (o la pagina delle tariffe del gestore),
+   poi i rivenditori partner, dichiarati come link affiliati. Wikipedia: ricerca su it.wikipedia di nome + comune. */
+function tixHtml(p){
+  /* 10/11 21:33: un solo bottone, sempre con il biglietto davanti. Punta al partner se c'e', altrimenti a chi vende il
+     biglietto (biglietteria ufficiale), altrimenti alla pagina delle tariffe del gestore. Stessa scelta del tasto delle card. */
+  if(p.free===true)return `<section class="tix" aria-label="Biglietti"><h3>🎟️ Biglietti</h3><div class="tixfree">${ic("check")}<div><b>Ingresso gratuito</b><small>${p.ticketUrl?`<a class="flink" href="${esc(p.ticketUrl)}" target="_blank" rel="noopener">Prenotazioni e info ufficiali ↗</a>`:"Verifica eventuali aperture limitate negli orari"}</small></div></div></section>`;
+  const t=tkUrl(p);let u,tit,sub,rel="noopener",gc="ufficiali",soft="";
+  if(t&&t[1]){u=t[0];tit="Biglietti";sub=`su ${t[1]} · partner`;rel="noopener sponsored";gc=t[1]==="Tiqets"?"tiqets":"getyourguide";}
+  else if(t){u=t[0];tit="Biglietteria ufficiale";sub=dom(u);}
+  else{u=p.official;tit=p.ownSite===false?"Tariffe sul portale turistico":"Tariffe sul sito ufficiale";sub=dom(u);soft=" soft";}
+  /* 10/11 21:36: GetYourGuide resta come secondo bottone «Visite guidate» quando non e' gia' lui il biglietto */
+  const vg=p.gy&&!(t&&t[0]===p.gy)?`<a class="tixb par" href="${esc(p.gy)}" target="_blank" rel="noopener sponsored" data-goatcounter-click="visite/getyourguide-places"><span class="tixic" aria-hidden="true">🧭</span><span><b>Visite guidate</b><small>su GetYourGuide · partner</small></span><i aria-hidden="true">↗</i></a>`:"";
+  const pn=(t&&t[1])||vg;
+  return `<section class="tix" aria-label="Biglietti"><h3>🎟️ Biglietti</h3><a class="tixb uff${soft}" href="${esc(u)}" target="_blank" rel="${rel}" data-goatcounter-click="biglietti/${gc}-places">${ic("ticket")}<span><b>${tit}</b><small>${esc(sub)}</small></span><i aria-hidden="true">↗</i></a>${vg}${pn?`<p class="tixn">Partner: la guida riceve una piccola commissione, il prezzo per te non cambia.${p.ticketUrl?` <a class="flink" href="${esc(p.ticketUrl)}" target="_blank" rel="noopener">Biglietteria ufficiale ↗</a>`:""}</p>`:""}</section>`;
+}
+function dom(u){try{return new URL(u).hostname.replace(/^www\./,"")}catch(e){return ""}}
+function wikiUrl(p){return p.wk?"https://it.wikipedia.org/wiki/"+encodeURIComponent(p.wk.replace(/ /g,"_")):"https://it.wikipedia.org/w/index.php?search="+encodeURIComponent(p.name.split(/[:(]/)[0].trim()+" "+p.com)+"&ns0=1";}
+
 const photoUrl=p=>`https://www.google.com/search?tbm=isch&q=${encodeURIComponent(p.name.split(/[:(,]/)[0].trim()+" "+p.com)}`;
 let lastFocus=null;
 function openSheet(id,from){
@@ -1612,8 +1646,8 @@ function openSheet(id,from){
     ${p.statusNote?`<div class="cnote" style="margin-top:12px"><span class="em" aria-hidden="true">⚠️</span><div>${esc(p.statusNote)}</div></div>`:""}
     <p class="lead">${esc(p.desc)}</p><span id="fcredw" data-pid="${esc(p.id)}">${credHtml(p.id)}</span>
     ${p.why?`<div class="why"><b>Perché andarci.</b> ${esc(p.why)}</div>`:""}${p.tip?`<div class="cnote"><span class="em" aria-hidden="true">💡</span><div>${esc(p.tip)}</div></div>`:""}
+    ${tixHtml(p)}
     <div class="facts">
-      <div class="fact"><span class="ic" aria-hidden="true">🎟️</span><small>Biglietto</small><div>${p.free===true?"Gratis":p.ticketUrl?`<a class="flink" href="${esc(p.ticketUrl)}" target="_blank" rel="noopener">Biglietti e tariffe ufficiali ↗</a>`:`<a class="flink soft" href="${esc(p.official)}" target="_blank" rel="noopener">${p.ownSite===false?"Info sul portale turistico ↗":"Cerca le tariffe sul sito ↗"}</a>`}${p.tq&&p.free!==true?`<br><a class="flink" href="${esc(p.tq)}" target="_blank" rel="noopener sponsored">Biglietti su Tiqets ↗</a>`:""}${p.gy&&p.free!==true?`<br><a class="flink" href="${esc(p.gy)}" target="_blank" rel="noopener sponsored">Visite ed esperienze su GetYourGuide ↗</a>`:""}</div></div>
       <div class="fact"><span class="ic" aria-hidden="true">🕘</span><small>Orari</small><div>${p.hoursUrl?`<a class="flink" href="${esc(p.hoursUrl)}" target="_blank" rel="noopener">Orari ufficiali ↗</a>`:p.free===true&&!p.indoor?"Spazio aperto: verifica eventuali limitazioni":`<a class="flink soft" href="${esc(p.official)}" target="_blank" rel="noopener">${p.ownSite===false?"Info sul portale turistico ↗":"Cerca gli orari sul sito ↗"}</a>`}</div></div>
       <div class="fact"><span class="ic" aria-hidden="true">⏱️</span><small>Tempo consigliato</small><div>${esc(p.duration)}</div></div>
       <div class="fact"><span class="ic" aria-hidden="true">♿</span><small>Accessibilità</small><div>${esc(p.access)}</div></div>
@@ -1622,6 +1656,7 @@ function openSheet(id,from){
     <div class="acts">
       <a class="act pri" href="${gm}" target="_blank" rel="noopener">${ic("nav")}Come arrivare</a>
       <a class="act" href="${esc(p.official)}" target="_blank" rel="noopener">${ic("ext")}${p.ownSite===false?"Scheda sul portale turistico":"Sito ufficiale"}</a>
+      <a class="act" href="${wikiUrl(p)}" target="_blank" rel="noopener" data-goatcounter-click="wikipedia-places" aria-label="${p.wk?"Voce di Wikipedia: "+esc(p.wk):"Cerca "+esc(p.name)+" su Wikipedia"}"><span class="wk" aria-hidden="true">W</span>${p.wk?"Wikipedia":"Cerca su Wikipedia"}</a>
       <button class="act" type="button" id="copyaddr">${ic("copy")}Copia indirizzo</button>
       <button class="act" type="button" id="favsheet">${ic("heart",FAV.has(p.id))}${FAV.has(p.id)?"Salvato nei miei luoghi":"Salva nei miei luoghi"}</button>
     </div>
