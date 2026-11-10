@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
 <meta charset="utf-8">
-<script>try{if(localStorage.getItem("datiNome")!=="dati.d6f5da6857.json"){var l=document.createElement("link");l.rel="preload";l.as="fetch";l.crossOrigin="anonymous";l.href="dati.d6f5da6857.json";document.head.appendChild(l);}}catch(e){}</script>
+<script>try{if(localStorage.getItem("datiNome")!=="dati.5a34f0896d.json"){var l=document.createElement("link");l.rel="preload";l.as="fetch";l.crossOrigin="anonymous";l.href="dati.5a34f0896d.json";document.head.appendChild(l);}}catch(e){}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#161311">
 <title>Ach's Places Guide</title>
@@ -1241,7 +1241,7 @@ function salvaIst(nome){setTimeout(()=>{if(IST_TOCCO||location.hash.slice(1))ret
 (async()=>{const cnt=document.getElementById("count");if(cnt&&!IST_ORIG)cnt.textContent="Caricamento dei luoghi…";
   let nome=null;try{nome=localStorage.getItem("datiNome");}catch(e){}
   const ultimo=nome,pIdb=nome?MEMO.leggi(nome):null;
-  const ATTESO="dati.d6f5da6857.json",pPrimo=nome?null:fetch(ATTESO).then(r=>r.ok?leggiAPezzi(r):null).catch(()=>null);  /* primo accesso: in parallelo al manifest */
+  const ATTESO="dati.5a34f0896d.json",pPrimo=nome?null:fetch(ATTESO).then(r=>r.ok?leggiAPezzi(r):null).catch(()=>null);  /* primo accesso: in parallelo al manifest */
   try{MAN=await (await fetch("manifest.json",{cache:"no-store"})).json();nome=MAN.dati;try{localStorage.setItem("man",JSON.stringify(MAN));}catch(e){}}catch(e){try{MAN=JSON.parse(localStorage.getItem("man")||"null");}catch(e2){}}
   if(!nome){if(cnt)cnt.textContent="Dati non disponibili: controlla la connessione.";return;}
   let t=nome===ultimo&&pIdb?await pIdb:(pPrimo&&nome===ATTESO?await pPrimo:null)||await MEMO.leggi(nome);
