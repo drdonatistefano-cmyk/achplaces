@@ -312,6 +312,7 @@ button.stat.on{box-shadow:inset 0 0 0 2px var(--sc)}
 .view h3{font-family:var(--serif);font-weight:600;font-size:1.2rem;margin:22px 0 6px}
 .view p,.view li{font-size:15px;line-height:1.55;max-width:72ch}
 .view ol,.view ul{padding-left:20px}
+.cov .covt{margin:0;line-height:1.5}.cov .covd{margin:4px 0 0;color:var(--mute);font-size:.9em}.cov details{margin-top:10px}.cov summary{cursor:pointer;font-weight:600;color:var(--terra)}.covtab{width:100%;border-collapse:collapse;margin-top:8px;font-size:.92em}.covtab th,.covtab td{padding:5px 6px;border-bottom:1px solid var(--line);text-align:right}.covtab th:first-child,.covtab td:first-child{text-align:left}.covtab th{font-weight:600;color:var(--mute)}
 .mcard{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:16px 18px;margin:12px 0}
 .srcf{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}
 .srcf button{height:36px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--ink);font:700 13px var(--sans);cursor:pointer}
@@ -821,7 +822,6 @@ if(GC&&ON_WEB){try{const s=document.createElement("script");s.async=true;s.datas
 <section class="wrap view" id="view-metodo" hidden aria-labelledby="m-title">
   <h2 id="m-title">Metodo e regole</h2>
   <p>Come Ach's Places Guide sceglie, verifica e pubblica i luoghi. Le stesse regole valgono per ogni comune d'Italia, così la guida può crescere provincia per provincia senza cambiare forma.</p>
-  <div class="mcard" id="coverage"></div>
   <h3>1. Procedura, comune per comune</h3>
   <ol>
     <li>Si parte dall'elenco ufficiale dei comuni della provincia (codici ISTAT).</li>
@@ -921,6 +921,8 @@ if(GC&&ON_WEB){try{const s=document.createElement("script");s.async=true;s.datas
     <li>Fonti aperte e gratuite da preferire quando raggiungibili: Wikidata (licenza CC0), open data del Ministero della Cultura e della Regione, elenchi ISTAT, OpenStreetMap (licenza ODbL, con attribuzione e senza carichi pesanti sui loro server).</li>
     <li>La guida pubblicata non chiama nessun servizio esterno: è una pagina statica, quindi non ha costi di funzionamento.</li>
   </ul>
+  <h3>Copertura attuale</h3>
+  <div class="mcard cov" id="coverage"></div>
 </section>
 
 <section class="wrap view" id="view-fonti" hidden aria-labelledby="f-title">
@@ -1493,7 +1495,7 @@ $("srcq").addEventListener("input",renderFonti);
 function vistaFonti(){const v=document.getElementById("view-fonti");return !!(v&&!v.hidden);}
 function nFonti(){return ($("srcq").value.trim()?1:0)+($("srcr").value?1:0)+($("srct").value?1:0);}
 function nAttivi(){return vistaFonti()?nFonti():nActive();}
-function mostraAzzera(){const f=vistaFonti(),n=nAttivi();
+function mostraAzzera(){const f=vistaFonti(),vm=document.getElementById("view-metodo"),n=(vm&&!vm.hidden)?0:nAttivi();
   document.querySelectorAll(".azzera .n,.giu .n").forEach(e=>e.textContent=n);
   $("su").hidden=f||n===0;$("suf").hidden=!f||n===0;$("giu").hidden=n===0;pillola();}
 function pillola(){const g=$("giu");if(!g.hidden)g.classList.toggle("via",window.scrollY<260);}
@@ -1505,8 +1507,12 @@ addEventListener("scroll",pillola,{passive:true});
  alto();if("ResizeObserver" in window&&b)new ResizeObserver(alto).observe(b);addEventListener("hashchange",()=>setTimeout(()=>{alto();mostraAzzera();},0));}
 
 function renderCoverage(){
-  const provs=[...new Set(COMUNI.map(c=>c.prov))];
-  $("coverage").innerHTML="<b>Copertura attuale.</b> "+provs.map(p=>{const cs=COMUNI.filter(c=>c.prov===p);return `${cs[0].provKind} di ${esc(cs[0].provName)}: ${cs.length} comuni, ${cs.reduce((a,c)=>a+c.places.length,0)} luoghi`;}).join(" · ")+`. Fonti in archivio: ${SOURCES.length}. Ultima verifica: ${esc(COMUNI[0].verified)}.`;
+  /* 10/11 sera: compatta, in fondo alla scheda Metodo: una riga di totali e il dettaglio per regione a richiesta */
+  const nf=n=>String(n).replace(/\B(?=(\d{3})+(?!\d))/g,"."),luo=cs=>cs.reduce((a,c)=>a+c.places.length,0);
+  const regs=[...new Set(COMUNI.map(c=>c.regione))].sort((a,b)=>REGN(a).localeCompare(REGN(b),"it"));
+  const righe=regs.map(r=>{const cs=COMUNI.filter(c=>c.regione===r),np=new Set(cs.map(c=>c.prov)).size;
+    return `<tr><td>${esc(REGN(r))}</td><td>${np}</td><td>${nf(cs.length)}</td><td>${nf(luo(cs))}</td></tr>`;}).join("");
+  $("coverage").innerHTML=`<p class="covt"><b>${nf(COMUNI.length)}</b> comuni · <b>${nf(luo(COMUNI))}</b> luoghi · <b>${new Set(COMUNI.map(c=>c.prov)).size}</b> province in <b>${regs.length}</b> regioni</p><p class="covd">Ultima verifica: ${esc(COMUNI[0].verified)}</p><details><summary>Dettaglio per regione</summary><table class="covtab"><thead><tr><th>Regione</th><th>Prov.</th><th>Comuni</th><th>Luoghi</th></tr></thead><tbody>${righe}</tbody></table></details>`;
 }
 function renderArch(){
   const el=$("arch");if(!el||typeof ARCH==="undefined")return;
