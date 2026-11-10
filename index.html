@@ -1334,7 +1334,9 @@ document.addEventListener("pointerdown",e=>{try{const t=e.target.closest(".card[
 /* ricerca: se l'indice non è ancora arrivato, lo si aspetta (di solito è già in memoria) */
 {const _u2=update;update=function(){if(S.q&&!CERCA.ok&&!CERCA.fail){const n=$("count");if(n)n.textContent="Ricerca in corso…";caricaCerca().then(()=>update());return;}return _u2.apply(this,arguments);};}
 document.getElementById("q").addEventListener("focus",()=>caricaCerca(),{once:true});
-setTimeout(()=>{("requestIdleCallback" in window)?requestIdleCallback(()=>caricaCerca(),{timeout:8000}):caricaCerca();},2500);
+/* 10/11/2026: l'indice della ricerca (circa 1 MB) non si scarica piu' da solo:
+   parte quando si tocca il campo di ricerca (riga sopra) o alla prima parola
+   digitata. Chi non cerca non lo scarica. */
 {const _up=update;update=function(){const r=_up.apply(this,arguments);try{const ps=[...new Set((CUR||[]).slice(0,60).map(p=>{const c=COMUNI.find(x=>x.slug===p.comSlug);return c&&c.prov;}).filter(Boolean))].slice(0,4);
   if(ps.length){precarica(ps);try{localStorage.setItem("ultProv",ps[0]);}catch(e){}}}catch(e){}return r;};}
 try{const u=localStorage.getItem("ultProv");if(u)precarica([u]);}catch(e){}
@@ -1523,19 +1525,19 @@ function renderGrid(list){
 }
 const gIO="IntersectionObserver" in window?new IntersectionObserver(es=>{for(const e of es)if(e.isIntersecting){gIO.unobserve(e.target);e.target.click();}},{rootMargin:"600px"}):null;
 let FOTO={};
-let FALB={},FAM=null;const FALBQ={};
-function caricaFoto(){fetch("manifest.json",{cache:"no-store"}).then(r=>r.json()).then(m=>{FAM=m&&m.fa||null;return m&&m.foto?fetch(m.foto):null}).then(r=>r?leggiAPezzi(r):null).then(async s=>{if(!s)return;await PAUSA();const j=JSON.parse(s);await PAUSA();if(j){FOTO=j;try{if(ULTIMA)renderGrid(ULTIMA);else update();}catch(e){}riempiFoto();}}).catch(()=>{});}
-/* foto raccolte in album per provincia (fa.<prov>.<hash>.json): si caricano solo quelli delle schede mostrate */
-function riempiFoto(){if(!FAM)return;document.querySelectorAll("img.cph[data-fid]:not([src])").forEach(im=>{const id=im.dataset.fid,f=FOTO[id];if(!f)return;const k=f[0];
-  if(FALB[k]){const b=FALB[k][f[5]||id];if(b)im.src="data:image/webp;base64,"+b;return;}
-  if(!FALBQ[k]&&FAM[k]){FALBQ[k]=fetch(FAM[k]).then(r=>r.json()).then(j=>{FALB[k]=j;riempiFoto();}).catch(()=>{});}});}
-{let rq=0;new MutationObserver(()=>{if(!rq){rq=1;requestAnimationFrame(()=>{rq=0;riempiFoto();});}}).observe(document.documentElement,{childList:true,subtree:true});}
+/* 10/11/2026: una miniatura = un file (f/<chiave>.webp), scaricata dal browser
+   solo quando si vede, con loading="lazy". Prima le miniature stavano negli
+   album per provincia (fa.<prov>.json): per mostrare tre schede di Roma si
+   scaricavano 2,6 MB e una prima visita arrivava a 11,5 MB. */
+function fotoSrc(id){const f=FOTO[id];return f?"f/"+(f[5]||id)+".webp":"";}
+function caricaFoto(){fetch("manifest.json",{cache:"no-store"}).then(r=>r.json()).then(m=>m&&m.foto?fetch(m.foto):null).then(r=>r?leggiAPezzi(r):null).then(async s=>{if(!s)return;await PAUSA();const j=JSON.parse(s);await PAUSA();if(j){FOTO=j;try{if(ULTIMA)renderGrid(ULTIMA);else update();}catch(e){}riempiFoto();}}).catch(()=>{});}
+function riempiFoto(){document.querySelectorAll("img.cph[data-fid]:not([src])").forEach(im=>{const s=fotoSrc(im.dataset.fid);if(s)im.src=s;});}
 setTimeout(caricaFoto,300);
 function cardEl(p){
     const c=document.createElement("article");c.className="card";c.dataset.pid=p.id;c.style.setProperty("--g",gcol(p.cat));
     const n=p._sel||p.rk,sub=C.isProv?`${esc(CATS[p.cat].label)} · ${esc(p.com)}`:`${esc(CATS[p.cat].label)} · ${esc(p.sub)}`;
     c.innerHTML=`<button class="cmain" type="button"><div class="crow${FOTO[p.id]?" hasph":""}">${n?`<div class="cnum${String(n).length>=4?" c4":""}" title="${p._sel?"Posizione nella selezione attuale":"Posizione nella classifica di tutta la guida"}"><small>N°</small><b>${n}</b></div>`:`<div class="cnum"></div>`}<div class="cbody">
-      <h3 class="title">${esc(p.name)}</h3><div class="csub">${sub}${p._sel&&p.rk?` <span class="cgl">· n. ${p.rk} in Italia</span>`:""}</div><p class="desc">${esc(p.desc)}</p></div>${FOTO[p.id]?`<span class="cphw${FOTO[p.id][5]?" pcom":""}"><img class="cph" data-fid="${esc(p.id)}" width="84" height="84" loading="lazy" decoding="async" alt="${FOTO[p.id][5]?"Foto del comune, non del luogo":""}" style="background:${FOTO[p.id][4]||"var(--line)"}"><span class="cdot" title="${esc(CATS[p.cat].label)}" role="img" aria-label="${esc(CATS[p.cat].label)}"></span></span>`:`<span class="cdot" title="${esc(CATS[p.cat].label)}" role="img" aria-label="${esc(CATS[p.cat].label)}"></span>`}</div><div class="meta cmeta">${ctags(p)}</div></button>
+      <h3 class="title">${esc(p.name)}</h3><div class="csub">${sub}${p._sel&&p.rk?` <span class="cgl">· n. ${p.rk} in Italia</span>`:""}</div><p class="desc">${esc(p.desc)}</p></div>${FOTO[p.id]?`<span class="cphw${FOTO[p.id][5]?" pcom":""}"><img class="cph" src="${fotoSrc(p.id)}" data-fid="${esc(p.id)}" width="84" height="84" loading="lazy" decoding="async" alt="${FOTO[p.id][5]?"Foto del comune, non del luogo":""}" style="background:${FOTO[p.id][4]||"var(--line)"}"><span class="cdot" title="${esc(CATS[p.cat].label)}" role="img" aria-label="${esc(CATS[p.cat].label)}"></span></span>`:`<span class="cdot" title="${esc(CATS[p.cat].label)}" role="img" aria-label="${esc(CATS[p.cat].label)}"></span>`}</div><div class="meta cmeta">${ctags(p)}</div></button>
       <div class="cfoot">${p.free===true?`<button class="cbtn tk fr" type="button" aria-label="Ingresso gratuito: vedi la scheda di ${esc(p.name)}">${ic("check")}Gratis</button>`:tkUrl(p)?`<a class="cbtn tk" href="${esc(tkUrl(p)[0])}" target="_blank" rel="noopener${tkUrl(p)[1]?" sponsored":""}" aria-label="Biglietti${tkUrl(p)[1]?" su "+tkUrl(p)[1]:" ufficiali"}: ${esc(p.name)}">${ic("ticket")}Biglietti</a>`:`<button class="cbtn tk" type="button" aria-label="Biglietto: vedi la scheda di ${esc(p.name)}">${ic("ticket")}Biglietti</button>`}<a class="cbtn ph" href="${photoUrl(p)}" target="_blank" rel="noopener" aria-label="Foto di ${esc(p.name)} su Google Immagini">${ic("cam")}Foto</a><button class="cbtn fav${FAV.has(p.id)?" on":""}" type="button" aria-pressed="${FAV.has(p.id)}" aria-label="Salva tra i miei luoghi">${ic("heart",FAV.has(p.id))}</button><button class="cbtn pri" type="button">Apri${ic("chev")}</button></div>`;
     const open=()=>openSheet(p.id,c.querySelector(".cmain"));
     c.querySelector(".cmain").onclick=open; c.querySelector(".cbtn.pri").onclick=open;
