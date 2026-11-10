@@ -26,11 +26,15 @@ jobs:
           git fetch origin foto
           git worktree add -B foto out origin/foto
           cd out
+          git sparse-checkout disable || true
           git config user.name "achplaces-bot"; git config user.email "actions@users.noreply.github.com"
           git remote set-url origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
       - uses: actions/setup-python@v5
         with: { python-version: '3.12' }
       - run: pip install requests pillow
+      - name: Foto dei comuni (ripiego, solo il primo lavoro)
+        if: matrix.gruppo == 0
+        run: python sorgenti/foto/actions_fotocom.py
       - name: Cerca, scarica e salva ogni 15 minuti
         env: { MINUTI: '300' }
         run: python sorgenti/foto/actions_foto6.py ${{ matrix.gruppo }}

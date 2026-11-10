@@ -148,7 +148,7 @@ def salva(msg):
     json.dump(sorted(provati), open(FP, 'w'))
     if os.environ.get('NO_PUSH'): return
     sh = lambda *a: subprocess.run(['git', '-C', OUT] + list(a), capture_output=True, text=True)
-    sh('add', '-A'); c = sh('commit', '-q', '-m', f'Foto gruppo {G}: {msg} ({len(meta)} trovate)')
+    sh('add', '--sparse', '-A'); c = sh('commit', '-q', '-m', f'Foto gruppo {G}: {msg} ({len(meta)} trovate)')
     if 'nothing to commit' in (c.stdout + c.stderr): return
     for k in range(6):
         sh('pull', '--rebase', '-q', 'origin', 'foto')
