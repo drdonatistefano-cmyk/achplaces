@@ -110,9 +110,8 @@ def via_coordinate(x):
     hits = [h for h in hits if re.search(r'\.(jpe?g|png|webp)$', h['title'], re.I) and not BRUTTI.search(h['title'])]
     dv = distinte(x['n'], x['com'])
     for h in hits:
-        if dv and ha(dv, norm(h['title'])): x['file'] = h['title'][5:]; x['via'] = 'coordinate'; return
-    vicini = [h for h in hits if h.get('dist', 999) <= 50]
-    if vicini: x['file'] = vicini[0]['title'][5:]; x['via'] = 'coordinate-vicino'
+        if dv and ha(dv, norm(h['title'])) and (norm(x['com']) in norm(h['title']) or not re.search(r'\d{4}|BEIC|Sicile|Farjasse', h['title'])): x['file'] = h['title'][5:]; x['via'] = 'coordinate'; return
+    # niente ripiego sulla foto più vicina: dava edifici diversi dal luogo (verifica del 10/11)
 
 def scarica(lotto):
     lotto = [x for x in lotto if x.get('file')]
