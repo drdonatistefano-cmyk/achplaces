@@ -36,15 +36,22 @@ NO = re.compile(r'evento|event[io]?/|news|notizi|novita|blog|press|newsletter|co
 BIGL = ('vivaticket', 'ticketone', 'coopculture', 'midaticket', 'ticketlandia', 'musement', 'eventbrite', 'clappit', 'boxol', 'liveticket', 'ticketsms', 'diyticket', 'arteventi', 'charta', 'museiitaliani', 'ticketmaster', 'getyourguide', 'tiqets')
 FREE = re.compile(r"(ingresso|accesso|entrata|visita)\s+(e'\s+|è\s+)?(gratuit[oa]|libero|libera|gratis)|free (entry|admission|of charge)|admission is free|entrance is free|ingresso a offerta libera", re.I)
 CACHE = {}
+import threading, collections
+BLOC = collections.defaultdict(threading.Lock)
 def leggi(u):
     if u in CACHE: return CACHE[u]
+    with BLOC[(u.split('/') + ['', '', ''])[2]]:
+        if u in CACHE: return CACHE[u]
+        time.sleep(0.25)
+        return _leggi(u)
+def _leggi(u):
     t = ''
     try:
-        r = S.get(u, timeout=20, allow_redirects=True)
+        r = S.get(u, timeout=12, allow_redirects=True)
         if r.status_code == 200 and 'html' in r.headers.get('content-type', ''): t = r.text[:900000]; u2 = r.url
         else: u2 = u
     except Exception: u2 = u
-    CACHE[u] = (t, u2); time.sleep(0.4); return CACHE[u]
+    CACHE[u] = (t, u2); return CACHE[u]
 def testo(s): return re.sub(r'\s+', ' ', html.unescape(re.sub(r'<[^>]+>', ' ', s))).strip()
 def esamina(x, u):
     h, base = leggi(u)
@@ -71,26 +78,23 @@ def esamina(x, u):
             tt = testo(corpo); i = m.start(); return {'free': tt[max(0, i - 90): i + 110], 'da': base}
     return None
 print('gruppo', G, 'luoghi', len(coda), 'gia fatti', len(fatto), flush=True)
-for k, x in enumerate(coda):
-    if x['id'] in fatto: continue
-    urls = list(dict.fromkeys([x['off']] + x['src']))[:5]
+def uno(x):
+    urls = list(dict.fromkeys([x['off']] + x['src']))[:4]
     r = None
-    lette = 0
     for u in urls:
         if not u or not u.startswith('https://'): continue
-        r = esamina(x, u)
-        if CACHE.get(u, ('', ''))[0]: lette += 1
+        try: r = esamina(x, u)
+        except Exception: r = None
         if r and 'tk' in r: break
-    # (10/11 23:00, coordinamento) Se nessuna pagina si e' aperta (sito lento, bloccato, fuori
-    # servizio) il luogo NON si segna come fatto: si riprova al prossimo giro. Prima finiva in
-    # «{}», cioe' «niente biglietto», e non veniva piu' guardato.
-    if not r and not lette:
-        continue
-    fatto[x['id']] = r or {}
-    if k % 300 == 0:
-        json.dump(fatto, open(FO, 'w'), ensure_ascii=False)
-    if k % 50 == 0:
-        json.dump(fatto, open(FO, 'w'), ensure_ascii=False); salva_ramo(FO, f'Biglietti, gruppo {G}: {len(fatto)}')
-        print(k, sum(1 for v in fatto.values() if 'tk' in v), 'biglietti', sum(1 for v in fatto.values() if 'free' in v), 'gratis', flush=True)
+    return x['id'], r or {}
+from concurrent.futures import ThreadPoolExecutor
+lav = [x for x in coda if x['id'] not in fatto]
+with ThreadPoolExecutor(12) as ex:
+    for k, (pid, r) in enumerate(ex.map(uno, lav)):
+        fatto[pid] = r
+        if k % 50 == 0:
+            json.dump(fatto, open(FO, 'w'), ensure_ascii=False); salva_ramo(FO, f'Biglietti, gruppo {G}: {len(fatto)}')
+        if k % 300 == 0:
+            print(k, sum(1 for v in fatto.values() if 'tk' in v), 'biglietti', sum(1 for v in fatto.values() if 'free' in v), 'gratis', flush=True)
 json.dump(fatto, open(FO, 'w'), ensure_ascii=False, sort_keys=True)
 print('fine', sum(1 for v in fatto.values() if 'tk' in v), 'biglietti', sum(1 for v in fatto.values() if 'free' in v), 'gratis', 'su', len(coda))
