@@ -1,4 +1,6 @@
 name: Guardiano della pubblicazione (GitHub Pages)
+# Dal 10/11 22:46 la pubblicazione e' il flusso «Pubblica il sito» (pubblica.yml). Il guardiano controlla che l'ultimo
+# commit di main che tocca il sito sia online (versione.txt pubblicato = quel commit); se no avvia «Pubblica il sito».
 # 10/11/2026 sera. GitHub Pages ogni tanto si blocca nella fase «syncing_files» e dopo 10 minuti annulla la pubblicazione
 # (4 volte su circa 30 il 10/11, anche per modifiche di un solo file); inoltre ogni nuovo push su main annulla la
 # pubblicazione in corso. Se l'ultima pubblicazione dell'ultimo commit di main non e' riuscita, nessuno la rifà e il sito
@@ -15,15 +17,17 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 50 }
       - name: Controlla e rilancia
         env: { GH_TOKEN: "${{ github.token }}", R: "${{ github.repository }}" }
         run: |
-          testa=$(gh api repos/$R/commits/main --jq .sha)
-          riga=$(gh api "repos/$R/actions/runs?branch=main&per_page=30" --jq "[.workflow_runs[]|select(.name==\"pages build and deployment\" and .head_sha==\"$testa\")][0]|[.id,.status,.conclusion,.run_attempt]|@tsv")
-          echo "main $testa -> $riga"
-          id=$(echo "$riga" | cut -f1)
-          [ -z "$id" ] && { echo "nessuna pubblicazione ancora registrata per l'ultimo commit"; exit 0; }
-          st=$(echo "$riga" | cut -f2); co=$(echo "$riga" | cut -f3); at=$(echo "$riga" | cut -f4)
-          if [ "$st" = "completed" ] && [ "$co" != "success" ] && [ "$at" -lt 3 ]; then
-            echo "pubblicazione $id finita con «$co» (tentativo $at): la rilancio"; gh api -X POST repos/$R/actions/runs/$id/rerun
-          else echo "niente da fare ($st $co, tentativo $at)"; fi
+          # ultimo commit che cambia il sito (esclusi sorgenti, flussi e README)
+          sito=$(git log -1 --format=%H -- . ':(exclude)sorgenti' ':(exclude).github' ':(exclude)README.md')
+          ok=$(gh api "repos/$R/actions/workflows/pubblica.yml/runs?status=success&per_page=20" --jq '[.workflow_runs[].head_sha]|join(" ")')
+          corso=$(gh api "repos/$R/actions/workflows/pubblica.yml/runs?per_page=10" --jq '[.workflow_runs[]|select(.status!="completed")]|length')
+          echo "ultimo commit del sito: $sito; in corso: $corso"
+          # online se una pubblicazione riuscita parte da quel commit o da uno successivo
+          for s in $ok; do if git merge-base --is-ancestor "$sito" "$s" 2>/dev/null; then echo "online"; exit 0; fi; done
+          if [ "$corso" -gt 0 ]; then echo "pubblicazione in corso, aspetto"; exit 0; fi
+          echo "non online: avvio «Pubblica il sito»"; gh api -X POST repos/$R/actions/workflows/pubblica.yml/dispatches -f ref=main
