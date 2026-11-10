@@ -1,0 +1,41 @@
+name: Miniature in file singoli
+
+on:
+  push:
+    paths:
+      - 'fa.*.json'
+      - 'sorgenti/esplodi_foto.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: miniature-places
+  cancel-in-progress: false
+
+jobs:
+  esplodi:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Scomponi gli album
+        run: python3 sorgenti/esplodi_foto.py
+
+      - name: Salva
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add f
+          if git diff --cached --quiet; then
+            echo "niente di nuovo"
+            exit 0
+          fi
+          git commit -m "Miniature: aggiornate le foto in file singoli"
+          for i in 1 2 3 4 5; do
+            git push && break
+            git pull --rebase --autostash || true
+            sleep 5
+          done
