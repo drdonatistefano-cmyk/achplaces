@@ -1,0 +1,65 @@
+{
+ "nota": "Le correzioni di velocita' del 10/11/2026 alla pagina di Places, come coppie vecchio/nuovo. Le applica sorgenti/velocizza.py dopo ogni costruzione, perche' build.py rigenera index.html da template.html, che ha ancora il codice di prima. Quando le correzioni saranno portate dentro template.html (e nei file che aggiungono la ricerca), questo file e velocizza.py si possono togliere.",
+ "sostituzioni": [
+  {
+   "vecchio": "ut(f,400);};",
+   "nuovo": "ut(f,400);};\n/* 10/11/2026: l'anticipo delle descrizioni di provincia non parte piu' da solo\n   all'avvio. Chi apre la guida e legge non scarica 290 KB che non ha chiesto;\n   l'anticipo parte al primo gesto (tocco, tasto, rotella, scorrimento). Al\n   tocco di una scheda la sua provincia parte comunque, dal gancio pointerdown. */\nlet GESTO=false,DAANT=[];\nconst anticipa=prs=>{if(GESTO){precarica(prs);return;}DAANT=prs;};\n[\"pointerdown\",\"keydown\",\"wheel\",\"touchstart\"].forEach(ev=>addEventListener(ev,()=>{if(GESTO)return;GESTO=true;if(DAANT.length)precarica(DAANT);},{once:true,passive:true,capture:true}));"
+  },
+  {
+   "vecchio": "setTimeout(()=>{(\"requestIdleCallback\" in window)?requestIdleCallback(()=>caricaCerca(),{timeout:8000}):caricaCerca();},2500);\n{const _up=",
+   "nuovo": "/* 10/11/2026: l'indice della ricerca (circa 1 MB) non si scarica piu' da solo:\n   parte quando si tocca il campo di ricerca (riga sopra) o alla prima parola\n   digitata. Chi non cerca non lo scarica. */\n{const _up="
+  },
+  {
+   "vecchio": "))].slice(0,4);\n  if(ps.length){precarica(ps);try{lo",
+   "nuovo": "))].slice(0,2);\n  if(ps.length){anticipa(ps);try{lo"
+  },
+  {
+   "vecchio": "Prov\");if(u)precarica([u]);}catc",
+   "nuovo": "Prov\");if(u)anticipa([u]);}catc"
+  },
+  {
+   "vecchio": "let FOTO={};\nlet FALB={},FAM=null;const FALBQ={};\nfunction ca",
+   "nuovo": "let FOTO={},FOTOM={};\n/* 10/11/2026: una miniatura = un file (f/<chiave>.webp), scaricata dal browser\n   solo quando si vede, con loading=\"lazy\". Prima le miniature stavano negli\n   album per provincia (fa.<prov>.json): per mostrare tre schede di Roma si\n   scaricavano 2,6 MB e una prima visita arrivava a 11,5 MB. */\n/* 10/11/2026: all'avvio si scarica solo fotom.<impronta>.json, cioe' per ogni\n   luogo il colore medio della foto e, per le foto del comune, la chiave\n   dell'immagine (\"#81807c @037032\"). Autore e licenza stanno in\n   cr.<provincia>.json e arrivano quando si apre una scheda: prima si\n   scaricavano tutti e 16.646 all'avvio (586 KB) per mostrarne tre. */\nfunction fotoCol(id){const m=FOTOM[id];return m?m.split(\" \")[0]:\"\";}\nfunction fotoCom(id){const m=FOTOM[id];const k=m&&m.split(\" \")[1];return k||\"\";}\nfunction fotoSrc(id){const m=FOTOM[id];if(!m)return \"\";return \"f/\"+(m.split(\" \")[1]||id)+\".webp\";}\nfunction fotoProv(id){return id.includes(\"--\")?id.split(\"--\")[0].split(\"-\").pop():\"bo\";}\nfunction ca"
+  },
+  {
+   "vecchio": ")).then(m=>{FAM=m&&m.fa||null;return m&&m.foto?fetch(m.foto):null}).then(r=>r",
+   "nuovo": ")).then(m=>{MAN=MAN||m;return m&&(m.fotom||m.foto)?fetch(m.fotom||m.foto):null;}).then(r=>r"
+  },
+  {
+   "vecchio": ");if(j){FOTO=j;try{if(UL",
+   "nuovo": ");if(j){FOTOM=j;try{if(UL"
+  },
+  {
+   "vecchio": "h(()=>{});}\n/* foto raccolte in album per provincia (fa.<prov>.<hash>.json): si caricano solo quelli delle schede mostrate */\nfunction riempiFoto(){if(!FAM)return;document.que",
+   "nuovo": "h(()=>{});}\nfunction riempiFoto(){document.que"
+  },
+  {
+   "vecchio": "(im=>{const id=im.dataset.fid,f=FOTO[id];if(!f)return;const k=f[0];\n  if(FALB[k]){const b=FALB[k][f[5]||id];if(b)im.src=\"data:image/webp;base64,\"+b;return;}\n  if(!FALBQ[k]&&FAM[k]){FALBQ[k]=fetch(FAM[k]).then(r=>r.json()).then(j=>{FALB[k]=j;riempiFoto();}).catch(()=>{});}});}\n{let rq=0;new MutationObserver(()=>{if(!rq){rq=1;requestAnimationFrame(()=>{rq=0;riempiFoto();});}}).observe(document.documentElement,{childList:true,subtree:true});}",
+   "nuovo": "(im=>{const s=fotoSrc(im.dataset.fid);if(s)im.src=s;});}\n/* crediti d'autore, una provincia per file, letti all'apertura di una scheda */\nconst CRED={},CREDP={};\nfunction credHtml(id){const c=CRED[id];if(!FOTOM[id]||!c)return \"\";\n  const com=c[3]?`Foto del comune di ${esc(c[3])}, non del luogo \\u00b7 `:\"\";\n  return `<a class=\"fcred\" href=\"${esc(c[2])}\" target=\"_blank\" rel=\"noopener\">\\ud83d\\udcf7 ${com}Foto: ${esc(c[0]||\"vedi pagina del file\")} \\u00b7 ${esc(c[1])} \\u00b7 Wikimedia Commons \\u2197</a>`;}\nfunction caricaCred(pr){if(CREDP[pr])return CREDP[pr];\n  const n=MAN&&MAN.cr&&MAN.cr[pr];if(!n)return CREDP[pr]=Promise.resolve();\n  return CREDP[pr]=(async()=>{try{let t=await MEMO.leggi(n);if(!t){const r=await fetch(n);if(!r.ok)return;t=await leggiAPezzi(r);MEMO.scrivi(n,t);}\n    Object.assign(CRED,JSON.parse(t));riempiCred();}catch(e){}})();}\nfunction riempiCred(){const w=document.getElementById(\"fcredw\");if(!w||w.firstChild)return;const id=w.dataset.pid;if(id)w.innerHTML=credHtml(id);}"
+  },
+  {
+   "vecchio": "=\"crow${FOTO[p.id]?\" has",
+   "nuovo": "=\"crow${FOTOM[p.id]?\" has"
+  },
+  {
+   "vecchio": "</div>${FOTO[p.id]?`<span class=\"cphw${FOTO[p.id][5]?\" pcom\":\"\"}\"><img class=\"cph\" data-fid=\"",
+   "nuovo": "</div>${FOTOM[p.id]?`<span class=\"cphw${fotoCom(p.id)?\" pcom\":\"\"}\"><img class=\"cph\" src=\"${fotoSrc(p.id)}\" data-fid=\""
+  },
+  {
+   "vecchio": "ync\" alt=\"${FOTO[p.id][5]?\"Foto del c",
+   "nuovo": "ync\" alt=\"${fotoCom(p.id)?\"Foto del c"
+  },
+  {
+   "vecchio": "ackground:${FOTO[p.id][4]||\"var(--lin",
+   "nuovo": "ackground:${fotoCol(p.id)||\"var(--lin"
+  },
+  {
+   "vecchio": "p.desc)}</p>${FOTO[p.id]?`<a class=\"fcred\" href=\"${esc(FOTO[p.id][3])}\" target=\"_blank\" rel=\"noopener\">📷 ${FOTO[p.id][5]?`Foto del comune di ${esc(FOTO[p.id][6])}, non del luogo · `:\"\"}Foto: ${esc(FOTO[p.id][1]||\"vedi pagina del file\")} · ${esc(FOTO[p.id][2])} · Wikimedia Commons ↗</a>`:\"\"}",
+   "nuovo": "p.desc)}</p><span id=\"fcredw\" data-pid=\"${esc(p.id)}\">${credHtml(p.id)}</span>"
+  },
+  {
+   "vecchio": "  $(\"scrim\").c",
+   "nuovo": "  caricaCred(fotoProv(p.id));riempiCred();$(\"scrim\").c"
+  }
+ ]
+}

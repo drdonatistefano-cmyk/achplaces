@@ -1,10 +1,23 @@
-name: Miniature in file singoli
+name: Miniature e velocità (rimette a posto dopo ogni costruzione)
+
+# build.py rigenera index.html da template.html, che ha ancora il codice di
+# prima del 10/11/2026, e riscrive il manifest senza le chiavi fotom e cr.
+# Questo flusso parte a ogni pubblicazione e rimette tutto com'era: miniature in
+# file singoli, crediti per provincia, pagina veloce. Se una chat costruisce e
+# pubblica senza i passi nuovi di giro_build.sh, qui si ripara da solo; se il
+# modello e' cambiato e le correzioni non combaciano piu', fallisce e si vede.
 
 on:
   push:
     paths:
+      - 'index.html'
+      - 'manifest.json'
       - 'fa.*.json'
+      - 'foto.*.json'
       - 'sorgenti/esplodi_foto.py'
+      - 'sorgenti/foto_split.py'
+      - 'sorgenti/velocizza.py'
+      - 'sorgenti/velocizza.json'
   workflow_dispatch:
 
 permissions:
@@ -15,25 +28,32 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  esplodi:
+  rimetti-a-posto:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
 
-      - name: Scomponi gli album
+      - name: Colori e crediti delle foto
+        run: python3 sorgenti/foto_split.py
+
+      - name: Miniature in file singoli
         run: python3 sorgenti/esplodi_foto.py
+
+      - name: Pagina veloce
+        run: python3 sorgenti/velocizza.py
 
       - name: Salva
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add f
+          git add -A f index.html manifest.json
+          git add -A -- 'fotom.*.json' 'cr.*.json'
           if git diff --cached --quiet; then
-            echo "niente di nuovo"
+            echo "tutto gia' a posto"
             exit 0
           fi
-          git commit -m "Miniature: aggiornate le foto in file singoli"
+          git commit -q -m "Places: rimesse a posto miniature, crediti e pagina veloce"
           # se dopo cinque tentativi non si e' salvato, il flusso deve fallire e vedersi
           for i in 1 2 3 4 5; do git pull --rebase -q --no-edit && git push -q && exit 0; sleep $((RANDOM % 10 + 5)); done
-          echo "::error::le miniature non sono state salvate dopo 5 tentativi"; exit 1
+          echo "::error::non salvato dopo 5 tentativi"; exit 1
