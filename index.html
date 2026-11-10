@@ -1314,6 +1314,13 @@ function QOK(p){if(!CERCA.ok){if(!p._t)p._t=fold(p.name+" "+p.desc+" "+p.sub+" "
   if(QOK_Q!==S.q){QOK_Q=S.q;QOK_W=fold(S.q).split(/\s+/).map(w=>[w,cercaParola(w)]);}
   return QOK_W.every(([w,r])=>r.ids.has(p.id)||cf(p.sub).includes(w)||cf(p.com).includes(w)||cf(CATS[p.cat].long).includes(w));}
 const precarica=prs=>{const f=()=>prs.forEach(pr=>caricaDet(pr));("requestIdleCallback" in window)?requestIdleCallback(f,{timeout:2500}):setTimeout(f,400);};
+/* 10/11/2026: l'anticipo delle descrizioni di provincia non parte piu' da solo
+   all'avvio. Chi apre la guida e legge non scarica 290 KB che non ha chiesto;
+   l'anticipo parte al primo gesto (tocco, tasto, rotella, scorrimento). Al
+   tocco di una scheda la sua provincia parte comunque, dal gancio pointerdown. */
+let GESTO=false,DAANT=[];
+const anticipa=prs=>{if(GESTO){precarica(prs);return;}DAANT=prs;};
+["pointerdown","keydown","wheel","touchstart"].forEach(ev=>addEventListener(ev,()=>{if(GESTO)return;GESTO=true;if(DAANT.length)precarica(DAANT);},{once:true,passive:true,capture:true}));
 /* classifica: punteggio di rilevanza (calcolato in costruzione; per Bologna con le stesse regole) e posizione */
 {const sc=p=>{let s=0;const u=(p.sources||[]).map(x=>x[1]||"").join(" ");if(p.unesco)s+=12;if(u.includes("touringclub.it"))s+=6;if(u.includes("italia.it"))s+=8;
   s+=Math.min(2,Math.max(0,(p.sources||[]).length-1))*2;if(p.status==="closed")s-=10;return Math.max(0,s+((D.pb||{})[p.id]||0));};
@@ -1337,9 +1344,9 @@ document.getElementById("q").addEventListener("focus",()=>caricaCerca(),{once:tr
 /* 10/11/2026: l'indice della ricerca (circa 1 MB) non si scarica piu' da solo:
    parte quando si tocca il campo di ricerca (riga sopra) o alla prima parola
    digitata. Chi non cerca non lo scarica. */
-{const _up=update;update=function(){const r=_up.apply(this,arguments);try{const ps=[...new Set((CUR||[]).slice(0,60).map(p=>{const c=COMUNI.find(x=>x.slug===p.comSlug);return c&&c.prov;}).filter(Boolean))].slice(0,4);
-  if(ps.length){precarica(ps);try{localStorage.setItem("ultProv",ps[0]);}catch(e){}}}catch(e){}return r;};}
-try{const u=localStorage.getItem("ultProv");if(u)precarica([u]);}catch(e){}
+{const _up=update;update=function(){const r=_up.apply(this,arguments);try{const ps=[...new Set((CUR||[]).slice(0,60).map(p=>{const c=COMUNI.find(x=>x.slug===p.comSlug);return c&&c.prov;}).filter(Boolean))].slice(0,2);
+  if(ps.length){anticipa(ps);try{localStorage.setItem("ultProv",ps[0]);}catch(e){}}}catch(e){}return r;};}
+try{const u=localStorage.getItem("ultProv");if(u)anticipa([u]);}catch(e){}
 
 /* Ogni luogo vive dentro il suo comune. Aggiungere un comune = aggiungere un oggetto a COMUNI. */
 const REGIONI=[["abruzzo","Abruzzo"],["basilicata","Basilicata"],["calabria","Calabria"],["campania","Campania"],["emilia-romagna","Emilia-Romagna"],["friuli-venezia-giulia","Friuli-Venezia Giulia"],["lazio","Lazio"],["liguria","Liguria"],["lombardia","Lombardia"],["marche","Marche"],["molise","Molise"],["piemonte","Piemonte"],["puglia","Puglia"],["sardegna","Sardegna"],["sicilia","Sicilia"],["toscana","Toscana"],["trentino-alto-adige","Trentino-Alto Adige"],["umbria","Umbria"],["valle-d-aosta","Valle d'Aosta"],["veneto","Veneto"]];
