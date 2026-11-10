@@ -1,0 +1,36 @@
+name: Foto da Wikipedia e coordinate (5 lavori per regione)
+# 10/11/2026: sesta ricerca foto. Immagine principale delle voci di it.wikipedia (pageimages, 50 titoli per richiesta) e
+# ricerca per coordinate su Commons (geosearch 150 m). Cinque lavori in parallelo, uno per gruppo di regioni; ognuno salva
+# sul ramo «foto» ogni 15 minuti i propri file (meta-<gruppo>.json, provati6-<gruppo>.json, img/). Lavora solo i luoghi
+# senza foto e non ancora provati. Gira il lunedì notte insieme alla ricerca settimanale, o a mano.
+on:
+  schedule:
+    - cron: '41 3 * * 1'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  foto:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix: { gruppo: [0, 1, 2, 3, 4] }
+    concurrency: { group: "foto6-${{ matrix.gruppo }}", cancel-in-progress: false }
+    steps:
+      - uses: actions/checkout@v4
+        with: { sparse-checkout: "sorgenti/foto\n.github", fetch-depth: 1 }
+      - name: Ramo foto
+        run: |
+          git fetch origin foto
+          git worktree add -B foto out origin/foto
+          cd out
+          git config user.name "achplaces-bot"; git config user.email "actions@users.noreply.github.com"
+          git remote set-url origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install requests pillow
+      - name: Cerca, scarica e salva ogni 15 minuti
+        env: { MINUTI: '300' }
+        run: python sorgenti/foto/actions_foto6.py ${{ matrix.gruppo }}

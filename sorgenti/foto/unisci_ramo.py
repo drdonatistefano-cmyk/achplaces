@@ -4,6 +4,10 @@ F = '/home/claude/foto/'; R = '/home/claude/foto-ramo/'
 if os.path.isdir(R + '.git'): subprocess.run(['git', '-C', R, 'fetch', '-q', '--depth', '1', 'origin', 'foto'], check=True); subprocess.run(['git', '-C', R, 'reset', '-q', '--hard', 'FETCH_HEAD'], check=True)
 else: subprocess.run(['git', 'clone', '-q', '--depth', '1', '-b', 'foto', 'https://github.com/drdonatistefano-cmyk/achplaces', R], check=True)
 meta = json.load(open(R + 'meta.json')); c = json.load(open(F + 'foto2.json')); n = 0
+# 10/11/2026: anche i file dei lavori paralleli (meta-<gruppo>.json, sesta ricerca: Wikipedia e coordinate)
+for _f in sorted(os.listdir(R)):
+    if _f.startswith('meta-') and _f.endswith('.json'):
+        for _k, _v in json.load(open(R + _f)).items(): meta.setdefault(_k, _v)
 # 9/11: i luoghi trovati solo con la ricerca su Commons non erano in foto2.json e venivano saltati: nome e comune dai dati della Guida
 import sys as _s9; _s9.path.insert(0, '/home/claude/achs-places-guide'); from leggi_dati import righe as _r9
 _G = '/home/claude/achs-places-guide/'; _m = json.load(open(_G + 'manifest.json')); _D = _r9(json.load(open(_G + _m['dati'])))
