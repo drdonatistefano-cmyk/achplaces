@@ -375,11 +375,15 @@ const MEMO={db:null,apri(){if(this.db)return this.db;this.db=new Promise(ok=>{tr
   r.onupgradeneeded=()=>r.result.createObjectStore("file");r.onsuccess=()=>ok(r.result);r.onerror=()=>ok(null);setTimeout(()=>ok(null),1500);}catch(e){ok(null);}});return this.db;},
   async leggi(k){if(!k)return null;const db=await this.apri();if(!db)return null;return new Promise(ok=>{try{const q=db.transaction("file").objectStore("file").get(k);q.onsuccess=()=>ok(q.result||null);q.onerror=()=>ok(null);}catch(e){ok(null);}});},
   async scrivi(k,v,man){const db=await this.apri();if(!db)return;try{const s=db.transaction("file","readwrite").objectStore("file");s.put(v,k);
-    if(!man)return;const tieni=[man.dati,man.meta,man.luoghi,man.testi,man.cerca,...Object.values(man.det||{})];const c=s.getAllKeys();c.onsuccess=()=>c.result.forEach(x=>{if(!tieni.includes(x))s.delete(x);});}catch(e){}}};
+    if(!man)return;const tieni=[man.dati,man.meta,man.luoghi,man.testi,man.cerca,man.fonti,man.foto,...Object.values(man.det||{})];const c=s.getAllKeys();c.onsuccess=()=>c.result.forEach(x=>{if(!tieni.includes(x))s.delete(x);});}catch(e){}}};
 const LS={get(k){try{return localStorage.getItem(k);}catch(e){return null;}},set(k,v){try{localStorage.setItem(k,v);}catch(e){}}};
 let MAN=null;
-async function testo(nome){let t=await MEMO.leggi(nome);if(t)return t;const r=await fetch(nome);if(!r.ok)throw Error(nome+": "+r.status);t=await r.text();MEMO.scrivi(nome,t,MAN);return t;}
-window.prendiT=async n=>JSON.parse(await testo((MAN&&MAN.testi)||n));
+async function testo(nome){let t=await MEMO.leggi(nome);if(t)return t;const r=await fetch(nome);if(!r.ok)throw Error(nome+": "+r.status);t=await leggiAPezzi(r);MEMO.scrivi(nome,t,MAN);return t;}
+/* 10/11/2026: il testo arriva e si decodifica a pezzi man mano che scende dalla rete (niente blocco unico a fine download) */
+async function leggiAPezzi(r){if(!r.body||typeof TextDecoder==="undefined")return r.text();const rd=r.body.getReader(),dec=new TextDecoder(),parti=[];for(;;){const {done,value}=await rd.read();if(done)break;parti.push(dec.decode(value,{stream:true}));}parti.push(dec.decode());return parti.join("");}
+window.prendiT=async n=>{const t=await testo((MAN&&MAN.testi)||n),R=t.split("\n"),T=[];
+  const pausa=()=>new Promise(r=>{const m=new MessageChannel();m.port1.onmessage=()=>r();m.port2.postMessage(0);});
+  if(R.length===1)return JSON.parse(t);for(let i=0;i<R.length-1;i++){await pausa();const a=JSON.parse(R[i]);for(const x of a)T.push(x);}await pausa();return [T,JSON.parse(R[R.length-1])];};
 /* istantanea della prima schermata: chiave = nome dei dati */
 const vF=document.getElementById('vF'),fp=document.getElementById('fp'),fbar=document.getElementById('fbar');
 const ultimo=LS.get('luoghiNome');
@@ -390,13 +394,21 @@ window.__salvaIst=function(){if(window.__ist)return;window.__ist=1;const n=MAN&&
     for(let i=localStorage.length-1;i>=0;i--){const k=localStorage.key(i);if(k&&k.startsWith('ist:')&&k!=='ist:'+n)localStorage.removeItem(k);}};
   setTimeout(salva,800);};
 /* dati: IndexedDB (ultimo nome) in parallelo al manifest */
-const ATTESO='luoghi.3ec9f491c9.js';const pIdb=MEMO.leggi(ultimo);
-const pPrimo=ultimo?null:fetch(ATTESO).then(r=>r.ok?r.text():null).catch(()=>null);
+const ATTESO='luoghi.16ed858f89.js';const pIdb=MEMO.leggi(ultimo);
+const pPrimo=ultimo?null:fetch(ATTESO).then(r=>r.ok?leggiAPezzi(r):null).catch(()=>null);
 const pMan=fetch("manifest.json",{cache:"no-store"}).then(r=>r.json()).catch(()=>{try{return JSON.parse(LS.get('man')||'null');}catch(e){return null;}});
 (async()=>{MAN=await pMan;const nome=(MAN&&MAN.luoghi)||ultimo;if(!nome){vF.textContent='Dati non disponibili: controlla la connessione.';return;}
   let t=nome===ultimo?await pIdb:null;if(!t&&pPrimo&&nome===ATTESO){t=await pPrimo;if(t)MEMO.scrivi(nome,t,MAN);}if(!t)t=await testo(nome);else if(nome===ultimo)MEMO.scrivi(nome,t,MAN);
   LS.set('luoghiNome',nome);if(MAN)LS.set('man',JSON.stringify(MAN));
-  const app=document.getElementById('app').textContent;const s=document.createElement('script');s.textContent=t+'\n'+app+'\n;window.__pronta=1;';
+  const app=document.getElementById('app').textContent;
+  /* 10/11/2026: dati e programma in due passi separati, così il telefono non resta bloccato in un solo blocco lungo */
+  const pz=()=>new Promise(r=>{const m=new MessageChannel();m.port1.onmessage=()=>r();m.port2.postMessage(0);});
+  /* le righe «const X=[...]» dei dati sono JSON: si leggono con JSON.parse, una per volta (più veloce che compilarle come programma) */
+  const resto=[];for(const riga of t.split('\n')){const mm=/^const ([A-Za-z_$][\w$]*)=([\[{"].*);$/.exec(riga);let ok=false;
+    if(mm){try{window[mm[1]]=JSON.parse(mm[2]);ok=true;}catch(e){}await pz();}if(!ok)resto.push(riga);}
+  const s0=document.createElement('script');s0.textContent=resto.join('\n');if(nome!==ultimo&&ist)vF.innerHTML='';document.body.appendChild(s0);
+  await new Promise(r=>{const m=new MessageChannel();m.port1.onmessage=()=>r();m.port2.postMessage(0);});
+  const s=document.createElement('script');s.textContent=app+'\n;window.__pronta=1;';
   if(nome!==ultimo&&ist)vF.innerHTML='';
   document.body.appendChild(s);
 })();
@@ -580,7 +592,7 @@ window.addEventListener('popstate',()=>{if($('sheet').classList.contains('open')
  if($('vL').classList.contains('on')){tab('F');return}if(st.hist.length)undrill()});
 if(window.matchMedia&&matchMedia('(max-width:759px)').matches){st.fold=true;document.body.classList.add('ffold')}
 renderF();
-setTimeout(()=>{prendiT(TESTI).then(a=>{const T=a[0],L=a[1];for(let i=0;i<P.length;i++){P[i][5]=T[i][0];P[i][6]=T[i][1]}for(let i=0;i<C.length;i++)C[i][4]=L[i];window.__testi=1;renderF(true);if(st.com!=null)renderL();if(window.__sheetP!=null)openSheet(window.__sheetP)}).catch(()=>{})},0);
+window.__caricaTesti=()=>{if(window.__ct)return;window.__ct=1;prendiT(TESTI).then(a=>{const T=a[0],L=a[1];for(let i=0;i<P.length;i++){P[i][5]=T[i][0];P[i][6]=T[i][1]}for(let i=0;i<C.length;i++)C[i][4]=L[i];window.__testi=1;renderF(true);if(st.com!=null)renderL();if(window.__sheetP!=null)openSheet(window.__sheetP)}).catch(()=>{window.__ct=0;})};["pointerdown","keydown","focusin"].forEach(ev=>document.addEventListener(ev,()=>window.__caricaTesti(),{once:true,capture:true,passive:true}));setTimeout(()=>{("requestIdleCallback" in window)?requestIdleCallback(()=>window.__caricaTesti(),{timeout:4000}):window.__caricaTesti();},6000);
 
 ;
 const KM_PER_MIN=0.5,EAT={lat:null,lng:null,label:""};
@@ -600,8 +612,9 @@ function eatUpdate(){
   E$("eat-off").hidden=!st.near;
 }
 function setOrigin(lat,lng,label){EAT.lat=lat;EAT.lng=lng;EAT.label=label;eatUpdate();}
-function openEat(){eatUpdate();try{E$("eat").showModal();}catch(e){E$("eat").setAttribute("open","");}}
-E$("eat-coms").innerHTML=C.filter(c=>c[6]!=null).map(c=>`<option value="${esc(c[0])} (${esc(c[1])})"></option>`).join("");
+function openEat(){eatComs();eatUpdate();try{E$("eat").showModal();}catch(e){E$("eat").setAttribute("open","");}}
+let eatComsOk=false;function eatComs(){if(eatComsOk)return;eatComsOk=true;E$("eat-coms").innerHTML=C.filter(c=>c[6]!=null).map(c=>`<option value="${esc(c[0])} (${esc(c[1])})"></option>`).join("");}
+E$("eat-txt").addEventListener("focus",eatComs);
 E$("eat").addEventListener("click",e=>{if(e.target===E$("eat"))E$("eat").close();});
 E$("eat-km").oninput=eatUpdate;E$("eat-min").oninput=eatUpdate;
 E$("eat-txt").addEventListener("input",()=>{const v=E$("eat-txt").value.trim().toLowerCase(),s=E$("eat-st");

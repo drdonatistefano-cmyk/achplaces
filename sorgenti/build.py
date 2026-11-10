@@ -40,7 +40,7 @@ for g in json.load(open(os.path.join(D,"geo","italy_geo.json"),encoding="utf-8")
     try: GEO.setdefault(norm(g["comune"]),(float(g["lat"]),float(g["lng"])))
     except: pass
 # comuni nati da fusioni dopo il 2018: media dei comuni d'origine
-FUS={"barberinotavarnelle":["barberinovaldelsa","tavarnellevaldipesa"],"rivadelpo":["berra","ro"],"tresignana":["formignana","tresigallo"],"presicceacquarica":["presicce","acquaricadelcapo"],"sangiovannidifassa":["pozzadifassa","vigodifassa"],"borgovalbelluna":["mel","lentiai","trichiana"]}
+FUS={"barberinotavarnelle":["barberinovaldelsa","tavarnellevaldipesa"],"rivadelpo":["berra","ro"],"tresignana":["formignana","tresigallo"],"presicceacquarica":["presicce","acquaricadelcapo"],"sangiovannidifassa":["pozzadifassa","vigodifassa"],"borgovalbelluna":["mel","lentiai","trichiana"],"luecuccaromonferrato":["lu","cuccaromonferrato"]}
 ISTAT={}
 for r in csv.DictReader(open(os.path.join(D,"geo","comuni_istat.csv"),encoding="utf-8")):
     ISTAT[(norm(r["comune"]),r["sigla"])]=r["pro_com_t"]
@@ -145,6 +145,61 @@ ORDER = ["bo", "ra", "fe", "fc", "rn", "mo", "re", "pr", "pc", "fi", "si"] + [k.
 files = sorted(glob.glob(os.path.join(D, "spec-*.txt")), key=lambda f: (ORDER.index(f[-6:-4]) if f[-6:-4] in ORDER else 99, f))
 comuni = [c for f in files for c in parse(f)]
 sources = json.load(open(os.path.join(D, "sources.json"), encoding="utf-8"))
+# 10/11/2026 Archivio fonti riorganizzato: tutte le fonti citate nelle schede, raggruppate per ente (dominio) e per regione.
+# Nazionali = enti citati in almeno 3 regioni; le altre stanno nella loro regione, divise per tipo. Il registro di lavoro
+# (sources.json) resta solo per le fonti «da consultare» o «consultate ma scartate» e per i nomi degli enti.
+def _fonti():
+    from urllib.parse import urlsplit
+    import collections as _co
+    FAM = ("cultura.gov.it", "beniculturali.it", "touringclub.it", "borghipiubelliditalia.it", "fondoambiente.it", "italia.it",
+           "unesco.org", "wikipedia.org", "bandierearancioni.it", "parks.it", "isprambiente.gov.it")
+    def fam(u):
+        h = urlsplit(u).netloc.lower().split(":")[0]
+        h = h[4:] if h.startswith("www.") else h
+        for f in FAM:
+            if h == f or h.endswith("." + f): return f
+        return h
+    def tipo(h):
+        if "wikipedia" in h: return "sec"
+        if re.search(r"(^|\.)comune\.|comune-|\.comune|comunedi|^comune", h): return "com"
+        if re.search(r"parco|park|riserv|oasi|parchi|natura|geopark|wwf|lipu|cai\.it|sentier", h): return "nat"
+        if re.search(r"muse|galleri|pinacotec|fondazione|castell|villa|rocca|teatro", h): return "mus"
+        if re.search(r"diocesi|chiesa|chiese|parrocchi|santuari|abbazi|monaster|beweb|duomo|cattedral|basilica|convento|vatican", h): return "sac"
+        if re.search(r"regione|turis|visit|welcome|provincia|cittametropolitana|\.tour|travel|guide|unione|gal|proloco|pro-loco|consorzio|ecomuse|apt|iat", h): return "tur"
+        return "alt"
+    NOMI = {"cultura.gov.it": "Ministero della Cultura (luoghi, musei, soprintendenze)", "beniculturali.it": "Catalogo generale dei beni culturali (MiC, ICCD)",
+            "touringclub.it": "Touring Club Italiano", "borghipiubelliditalia.it": "I Borghi più belli d'Italia", "fondoambiente.it": "FAI, Fondo per l'Ambiente Italiano",
+            "italia.it": "Italia.it, portale turistico nazionale (ENIT)", "unesco.org": "UNESCO, Patrimonio mondiale", "wikipedia.org": "Wikipedia (fonte secondaria)",
+            "bandierearancioni.it": "Bandiere Arancioni (Touring Club)", "parks.it": "Parks.it, portale dei parchi italiani", "isprambiente.gov.it": "ISPRA, Istituto superiore per la protezione e la ricerca ambientale"}
+    R = _co.defaultdict(dict)
+    def add(reg, comune, s, luogo):
+        if not (isinstance(s, (list, tuple)) and len(s) > 1 and str(s[1]).startswith("http")): return
+        f = fam(s[1]); e = R[reg].get(f)
+        if e is None: e = R[reg][f] = dict(n=_co.Counter(), l=0, c=set(), u=False, h=s[1])
+        e["n"][re.split(r",| – | - |\(", s[0])[0].strip()] += 1; e["c"].add(comune); e["l"] += 1 if luogo else 0
+        e["u"] |= (len(s) > 2 and s[2] == "uff") or "wikipedia" not in f
+    for c in comuni:
+        for s in c.get("sources", []): add(c["regione"], c["name"], s, False)
+        for p in c["places"]:
+            for s in p.get("sources", []): add(c["regione"], c["name"], s, True)
+    quante = _co.Counter(f for r in R for f in R[r])
+    def voce(f, es):
+        n = _co.Counter(); l = 0; cs = set(); u = False
+        for e in es: n.update(e["n"]); l += e["l"]; cs |= e["c"]; u |= e["u"]
+        nome = NOMI.get(f) or n.most_common(1)[0][0] or f
+        return dict(d=f, n=nome, l=l, nc=len(cs), c=sorted(cs, key=str.lower)[:12], t=tipo(f), u=1 if u else 0)
+    naz = sorted((voce(f, [R[r][f] for r in R if f in R[r]]) | dict(nr=quante[f]) for f in quante if quante[f] >= 3), key=lambda v: (-v["nc"], v["n"].lower()))
+    for v in naz: v.pop("c")
+    reg = {r: sorted((voce(f, [e]) for f, e in R[r].items() if quante[f] < 3), key=lambda v: (-v["nc"], v["n"].lower())) for r in sorted(R)}
+    reg = {r: v for r, v in reg.items() if v}
+    reg_l = {}
+    for x in sources:
+        if x.get("uso") in ("da consultare", "consultata ma scartata", "consultata"):
+            reg_l.setdefault("lavoro", []).append(dict(n=x["name"], h=x["url"], uso=x["uso"], note=x.get("note", ""), quando=x.get("checked", "")))
+    tot = len(naz) + sum(len(v) for v in reg.values())
+    return dict(naz=naz, reg=reg, lav=reg_l.get("lavoro", []), tot=tot)
+FONTI = _fonti()
+print("archivio fonti:", FONTI["tot"], "enti,", len(FONTI["naz"]), "nazionali,", len(FONTI["reg"]), "regioni")
 import check, sys
 n_bo = open(os.path.join(D, "places-bologna.js"), encoding="utf-8").read().count("{id:")
 errs, warns, qc = check.run(comuni, PROV, {"BO": n_bo}, {"BO": ["Bologna"]})
@@ -283,7 +338,7 @@ def _scrivi(pref, obj):
     t = json.dumps(obj, ensure_ascii=False, separators=(",", ":"))
     n = f"{pref}.{hashlib.sha256(t.encode('utf-8')).hexdigest()[:10]}.json"
     open(os.path.join(HERE, n), "w", encoding="utf-8").write(t); return n
-for _old in glob.glob(os.path.join(HERE, "dati.*.json")) + glob.glob(os.path.join(HERE, "det.*.json")) + glob.glob(os.path.join(HERE, "meta.*.json")): os.remove(_old)
+for _old in glob.glob(os.path.join(HERE, "dati.*.json")) + glob.glob(os.path.join(HERE, "det.*.json")) + glob.glob(os.path.join(HERE, "meta.*.json")) + glob.glob(os.path.join(HERE, "fonti.*.json")): os.remove(_old)
 def _bonus(x):
     b = (12 if x.get("autonomo") else 0) + {2: 15, 1: 8}.get(x.get("tci", 0), 0) + (6 if x.get("dnp") else 0) + (18 if x.get("unesco_nome") else 0) + min(12, x.get("natura", 0))
     if x.get("visitatori"): b += min(20, max(0, round(4 * math.log10(max(1, x["visitatori"])) - 12)))
@@ -312,8 +367,21 @@ COLONNE = r"""function COLONNE(D){if(!D.k)return D;const K=D.k,C=[],ks=Object.ke
 with _tf.NamedTemporaryFile("w", suffix=".js", delete=False) as _f:
     _f.write(COLONNE + "\nconst fs=require('fs');process.stdout.write(JSON.stringify(COLONNE(JSON.parse(fs.readFileSync(0,'utf8'))).c));")
 assert json.loads(_sp.run(["node", _f.name], input=json.dumps(dict(k=_K), ensure_ascii=False), capture_output=True, text=True, check=True).stdout) == json.loads(json.dumps(_leggeri)), "colonne: la decodifica JS non restituisce i dati"
-NOME_DATI = _scrivi("dati", dict(pb=PB, g=list(geo_of("Bologna")), k=_K, l=LINKS["bologna"], dz=_DZ, tb={k: v for k, v in TQ.items() if "--" not in k}, gb={k: v for k, v in GY.items() if "--" not in k}))
+# 10/11/2026 classifica calcolata qui e non nel browser: punteggio dei luoghi di Bologna (stesse regole della pagina) e posizione
+# di ogni luogo nell'ordine [luoghi di Bologna..., luoghi degli altri comuni...]; stesso confronto dei nomi (Intl.Collator "it").
+_RKJS = open(os.path.join(D, "places-bologna.js"), encoding="utf-8").read() + r"""
+;const fs=require('fs');const I=JSON.parse(fs.readFileSync(0,'utf8'));const PB=I.pb;
+const sc=p=>{let s=0;const u=(p.sources||[]).map(x=>x[1]||"").join(" ");if(p.unesco)s+=12;if(u.includes("touringclub.it"))s+=6;if(u.includes("italia.it"))s+=8;
+  s+=Math.min(2,Math.max(0,(p.sources||[]).length-1))*2;if(p.status==="closed")s-=10;return Math.max(0,s+(PB[p.id]||0));};
+const rb=PLACES.map(p=>p.r==null?sc(p):p.r);const T=PLACES.map((p,i)=>[rb[i],p.name]).concat(I.x);
+const ix=T.map((_,i)=>i);const CO=new Intl.Collator("it");ix.sort((a,b)=>T[b][0]-T[a][0]||CO.compare(T[a][1],T[b][1]));
+const rk=new Array(T.length);ix.forEach((g,i)=>rk[g]=i+1);process.stdout.write(JSON.stringify({rb,rk}));"""
+with _tf.NamedTemporaryFile("w", suffix=".js", delete=False, encoding="utf-8") as _f: _f.write(_RKJS)
+_RK = json.loads(_sp.run(["node", _f.name], input=json.dumps(dict(pb=PB, x=[[a[8], a[1]] for c in _leggeri for a in c["places"]]), ensure_ascii=False), capture_output=True, text=True, check=True).stdout)
+print("classifica pronta:", len(_RK["rk"]), "luoghi")
+NOME_DATI = _scrivi("dati", dict(rk=_RK["rk"], rb=_RK["rb"], pb=PB, g=list(geo_of("Bologna")), k=_K, l=LINKS["bologna"], dz=_DZ, tb={k: v for k, v in TQ.items() if "--" not in k}, gb={k: v for k, v in GY.items() if "--" not in k}))
 NOME_META = _scrivi("meta", dict(q=qc, s=sources, a=ARCH))
+NOME_FONTI = _scrivi("fonti", FONTI)
 DET = {pr: _scrivi("det." + pr.lower(), d) for pr, d in sorted(_det.items())}
 # 9/11/2026 indice delle parole per la ricerca (stesso risultato di «ogni parola cercata è contenuta nel testo del luogo»):
 # vocabolario delle parole (separate da spazi) di nome, descrizione e indirizzo, già ripiegate come nella pagina; per ogni parola
@@ -332,7 +400,7 @@ with _tf.NamedTemporaryFile("w", suffix=".js", delete=False) as _f: _f.write(CER
 _cerca = _sp.run(["node", _f.name], input=json.dumps(dict(bo=os.path.join(D, "places-bologna.js"), extra=[[p["id"], p["name"], p.get("desc", ""), p.get("address", "")] for c in comuni for p in c["places"]]), ensure_ascii=False), capture_output=True, text=True, check=True).stdout
 for _old in glob.glob(os.path.join(HERE, "cerca.*.json")): os.remove(_old)
 NOME_CERCA = _scrivi("cerca", json.loads(_cerca))
-json.dump(dict(v=2, dati=NOME_DATI, meta=NOME_META, det=DET, cerca=NOME_CERCA), open(os.path.join(HERE, "manifest.json"), "w"))
+json.dump(dict(v=2, dati=NOME_DATI, meta=NOME_META, fonti=NOME_FONTI, det=DET, cerca=NOME_CERCA), open(os.path.join(HERE, "manifest.json"), "w"))
 LOADER = r"""
 /* 9/11/2026 Tiqets (Awin, publisher 3146807 come Events): mid a 0 = link diretto alla pagina del prodotto; con l'ID inserzionista il clic passa da Awin */
 var AFF={awin:"3146807",mid:{"tiqets.com":12427},par:{"getyourguide":"partner_id=Y9VWGXI&utm_medium=online_publisher"},ord:["tq","gy"],nome:{tq:"Tiqets",gy:"GetYourGuide"}};
@@ -345,11 +413,15 @@ document.addEventListener("click",e=>{const a=e.target.closest&&e.target.closest
 const MEMO={db:null,apri(){if(this.db)return this.db;this.db=new Promise(ok=>{try{const r=indexedDB.open("luoghi",1);
   r.onupgradeneeded=()=>r.result.createObjectStore("file");r.onsuccess=()=>ok(r.result);r.onerror=()=>ok(null);setTimeout(()=>ok(null),1500);}catch(e){ok(null);}});return this.db;},
   async leggi(k){const db=await this.apri();if(!db)return null;return new Promise(ok=>{try{const q=db.transaction("file").objectStore("file").get(k);q.onsuccess=()=>ok(q.result||null);q.onerror=()=>ok(null);}catch(e){ok(null);}});},
-  async scrivi(k,v){const db=await this.apri();if(!db)return;try{const s=db.transaction("file","readwrite").objectStore("file");s.put(v,k);const tieni=MAN?[MAN.dati,MAN.meta,MAN.luoghi,MAN.testi,MAN.cerca,...Object.values(MAN.det||{})]:[k];const c=s.getAllKeys();c.onsuccess=()=>c.result.forEach(x=>{if(!tieni.includes(x))s.delete(x);});}catch(e){}}};
+  async scrivi(k,v){const db=await this.apri();if(!db)return;try{const s=db.transaction("file","readwrite").objectStore("file");s.put(v,k);const tieni=MAN?[MAN.dati,MAN.meta,MAN.luoghi,MAN.testi,MAN.cerca,MAN.fonti,MAN.foto,...Object.values(MAN.det||{})]:[k];const c=s.getAllKeys();c.onsuccess=()=>c.result.forEach(x=>{if(!tieni.includes(x))s.delete(x);});}catch(e){}}};
 let MAN=null;
 /* istantanea della prima schermata (8/11/2026): alla riapertura compare subito l'ultima prima schermata salvata;
    un attimo prima che la pagina vera disegni, si rimette il contenuto originale, così il risultato è identico */
-const IST_ID=["stats","count","verified","xtra","grid","active"];let IST_ORIG=null,IST_TOCCO=0;
+const IST_ID=["stats","count","verified","xtra","grid","active"],IST_SUBITO=["count","verified","grid"];
+/* 10/11/2026: l'avvio è diviso in pezzi brevi, così il telefono non resta bloccato */
+/* 10/11/2026: i file scaricati si decodificano a pezzi man mano che arrivano (niente blocco unico a fine download) */
+async function leggiAPezzi(r){if(!r.body||typeof TextDecoder==="undefined")return r.text();const rd=r.body.getReader(),dec=new TextDecoder(),parti=[];for(;;){const {done,value}=await rd.read();if(done)break;parti.push(dec.decode(value,{stream:true}));}parti.push(dec.decode());return parti.join("");}
+const PAUSA=()=>new Promise(r=>{if(typeof MessageChannel!=="undefined"){const m=new MessageChannel();m.port1.onmessage=()=>r();m.port2.postMessage(0);}else setTimeout(r,0);});let IST_ORIG=null,IST_TOCCO=0;
 ["pointerdown","keydown","input"].forEach(ev=>document.addEventListener(ev,()=>{IST_TOCCO=1;},{capture:true,passive:true}));
 try{const n=localStorage.getItem("datiNome"),o=!location.hash.slice(1)&&n&&JSON.parse(localStorage.getItem("istG:"+n)||"null");
   if(o){IST_ORIG=IST_ID.map(id=>{const e=document.getElementById(id);return [e.innerHTML,e.hidden];});IST_ID.forEach((id,i)=>{const e=document.getElementById(id);e.innerHTML=o[i][0];e.hidden=o[i][1];});}}catch(e){IST_ORIG=null;}
@@ -359,22 +431,23 @@ function salvaIst(nome){setTimeout(()=>{if(IST_TOCCO||location.hash.slice(1))ret
 (async()=>{const cnt=document.getElementById("count");if(cnt&&!IST_ORIG)cnt.textContent="Caricamento dei luoghi…";
   let nome=null;try{nome=localStorage.getItem("datiNome");}catch(e){}
   const ultimo=nome,pIdb=nome?MEMO.leggi(nome):null;
-  const ATTESO="""+json.dumps(NOME_DATI)+r""",pPrimo=nome?null:fetch(ATTESO).then(r=>r.ok?r.text():null).catch(()=>null);  /* primo accesso: in parallelo al manifest */
+  const ATTESO="""+json.dumps(NOME_DATI)+r""",pPrimo=nome?null:fetch(ATTESO).then(r=>r.ok?leggiAPezzi(r):null).catch(()=>null);  /* primo accesso: in parallelo al manifest */
   try{MAN=await (await fetch("manifest.json",{cache:"no-store"})).json();nome=MAN.dati;try{localStorage.setItem("man",JSON.stringify(MAN));}catch(e){}}catch(e){try{MAN=JSON.parse(localStorage.getItem("man")||"null");}catch(e2){}}
   if(!nome){if(cnt)cnt.textContent="Dati non disponibili: controlla la connessione.";return;}
   let t=nome===ultimo&&pIdb?await pIdb:(pPrimo&&nome===ATTESO?await pPrimo:null)||await MEMO.leggi(nome);
   if(t&&pPrimo&&nome===ATTESO)MEMO.scrivi(nome,t);
-  if(!t){const r=await fetch(nome);if(!r.ok){if(cnt)cnt.textContent="Dati non disponibili ("+r.status+")";return;}t=await r.text();MEMO.scrivi(nome,t);}
+  if(!t){const r=await fetch(nome);if(!r.ok){if(cnt)cnt.textContent="Dati non disponibili ("+r.status+")";return;}t=await leggiAPezzi(r);MEMO.scrivi(nome,t);}
   try{localStorage.setItem("datiNome",nome);}catch(e){}
-  const D=DECODIFICA(COLONNE(JSON.parse(t)));
-  if(IST_ORIG)IST_ID.forEach((id,i)=>{const e=document.getElementById(id);e.innerHTML=IST_ORIG[i][0];e.hidden=IST_ORIG[i][1];});
-  AVVIO(D);salvaIst(nome);})();
+  const J=JSON.parse(t);await PAUSA();COLONNE(J);await PAUSA();const D=DECODIFICA(J);await PAUSA();
+  if(IST_ORIG)IST_ID.forEach((id,i)=>{if(!IST_SUBITO.includes(id))return;const e=document.getElementById(id);e.innerHTML=IST_ORIG[i][0];e.hidden=IST_ORIG[i][1];});
+  await AVVIO(D);salvaIst(nome);})();
 """+DECODE+"\n"+COLONNE+r"""
-function AVVIO(D){
+async function AVVIO(D){
 {const CK=["storia","musei","sacro","natura","locale"];for(const c of D.c)c.places=c.places.map(a=>{const f=a[5],o={id:c.slug+"--"+a[0],name:a[1],cat:CK[a[2]],sub:a[3],desc:a[4],free:f.includes("F")?true:f.includes("P")?false:null,card:f.includes("c"),unesco:f.includes("u"),view:f.includes("v"),indoor:f.includes("i"),status:a[6]||"ok",t:a[7],r:a[8],address:"",price:"",duration:"",sources:[]};if(a[9])Object.assign(o,a[9]);return o;});
  for(const c of D.c){if(c.lede==null)c.lede="";if(c.notice==null)c.notice="";if(!c.sources)c.sources=[];}}
-const BO_GEO=D.g,COMUNI_EXTRA=D.c,LINKS_BO=D.l;let QC,SOURCES,ARCH;
-const caricaMeta=(()=>{let pr=null;return()=>pr||(pr=(async()=>{const n=MAN&&MAN.meta;if(!n)return;let t=await MEMO.leggi(n);if(!t){const r=await fetch(n);if(!r.ok)return;t=await r.text();MEMO.scrivi(n,t);}const m=JSON.parse(t);QC=m.q;SOURCES=m.s;ARCH=m.a;const h=location.hash.slice(1);if(h==="metodo"||h==="fonti")route(true);})());})();
+await PAUSA();
+const BO_GEO=D.g,COMUNI_EXTRA=D.c,LINKS_BO=D.l;let QC,SOURCES,ARCH;var RKALL=null;
+const caricaMeta=(()=>{let pr=null;return()=>pr||(pr=(async()=>{const n=MAN&&MAN.meta;if(!n)return;let t=await MEMO.leggi(n);if(!t){const r=await fetch(n);if(!r.ok)return;t=await leggiAPezzi(r);MEMO.scrivi(n,t);}const m=JSON.parse(t);QC=m.q;SOURCES=m.s;ARCH=m.a;const h=location.hash.slice(1);if(h==="metodo"||h==="fonti")route(true);})());})();
 ("requestIdleCallback" in window)?requestIdleCallback(()=>caricaMeta(),{timeout:4000}):setTimeout(()=>caricaMeta(),1500);
 for(const p of PLACES){const l=LINKS_BO[p.id];if(l){p.hoursUrl=l.orari||"";p.ticketUrl=l.biglietti||"";if(l.off)p.official=l.off;}}
 if(D.tb)for(const p of PLACES)if(D.tb[p.id])p.tq=D.tb[p.id];if(D.gb)for(const p of PLACES)if(D.gb[p.id])p.gy=D.gb[p.id];
@@ -384,7 +457,7 @@ const DETOK={},DETP={},IDPROV={};
 for(const c of COMUNI_EXTRA)for(const p of c.places)(IDPROV[p.id]||(IDPROV[p.id]=new Set())).add(c.prov);
 function caricaDet(pr){if(!pr||DETOK[pr])return Promise.resolve();if(DETP[pr])return DETP[pr];
   const n=MAN&&MAN.det&&MAN.det[pr];if(!n){DETOK[pr]=1;return Promise.resolve();}
-  return DETP[pr]=(async()=>{let t=await MEMO.leggi(n);if(!t){const r=await fetch(n);if(!r.ok)return;t=await r.text();MEMO.scrivi(n,t);}
+  return DETP[pr]=(async()=>{let t=await MEMO.leggi(n);if(!t){const r=await fetch(n);if(!r.ok)return;t=await leggiAPezzi(r);MEMO.scrivi(n,t);}
     const d=JSON.parse(t);for(const c of COMUNI_EXTRA){const dc=c.prov===pr&&d[c.slug];if(dc){if(dc._c)Object.assign(c,dc._c);for(const p of c.places)if(dc[p.id])Object.assign(p,dc[p.id]);}}DETOK[pr]=1;riempiDesc();})();}
 /* 9/11/2026: le card già disegnate ricevono la descrizione appena arriva il file della provincia */
 let PMAP=null;function riempiDesc(){if(!PMAP){PMAP=new Map();for(const c of COMUNI_EXTRA)for(const p of c.places)if(!PMAP.has(p.id))PMAP.set(p.id,p);}
@@ -392,7 +465,7 @@ let PMAP=null;function riempiDesc(){if(!PMAP){PMAP=new Map();for(const c of COMU
 /* 9/11/2026 ricerca con indice delle parole (cerca.<impronta>.json), scaricato in sottofondo; stesso risultato della ricerca sul testo */
 const CERCA={ok:false,fail:false,pr:null,V:null,P:null,ids:null,dec:new Map(),memo:new Map()};
 function caricaCerca(){if(CERCA.pr)return CERCA.pr;return CERCA.pr=(async()=>{try{const n=MAN&&MAN.cerca;if(!n)throw 0;let t=await MEMO.leggi(n);
-  if(!t){const r=await fetch(n);if(!r.ok)throw 0;t=await r.text();MEMO.scrivi(n,t);}const j=JSON.parse(t);
+  if(!t){const r=await fetch(n);if(!r.ok)throw 0;t=await leggiAPezzi(r);MEMO.scrivi(n,t);}const j=JSON.parse(t);await PAUSA();
   const ids=PLACES.map(p=>p.id);for(const c of COMUNI_EXTRA)for(const p of c.places)ids.push(p.id);
   if(j.n!==ids.length||(ids.length&&(j.ids[0]!==ids[0]||j.ids[1]!==ids[ids.length-1])))throw 0;
   CERCA.V=j.v;CERCA.P=j.p;CERCA.ids=ids;CERCA.ok=true;}catch(e){CERCA.fail=true;}})();}
@@ -411,8 +484,10 @@ const precarica=prs=>{const f=()=>prs.forEach(pr=>caricaDet(pr));("requestIdleCa
 /* classifica: punteggio di rilevanza (calcolato in costruzione; per Bologna con le stesse regole) e posizione */
 {const sc=p=>{let s=0;const u=(p.sources||[]).map(x=>x[1]||"").join(" ");if(p.unesco)s+=12;if(u.includes("touringclub.it"))s+=6;if(u.includes("italia.it"))s+=8;
   s+=Math.min(2,Math.max(0,(p.sources||[]).length-1))*2;if(p.status==="closed")s-=10;return Math.max(0,s+((D.pb||{})[p.id]||0));};
- const tutti=[...PLACES.map(p=>(p.r==null&&(p.r=sc(p)),p))];for(const c of COMUNI_EXTRA)for(const p of c.places)tutti.push(p);
- {const CO=new Intl.Collator("it");tutti.sort((a,b)=>b.r-a.r||CO.compare(a.name,b.name));}tutti.forEach((p,i)=>p.rk=i+1);}
+ const tutti=[...PLACES];for(const c of COMUNI_EXTRA)for(const p of c.places)tutti.push(p);
+ if(D.rk&&D.rk.length===tutti.length){PLACES.forEach((p,i)=>{if(p.r==null)p.r=D.rb[i];});RKALL=new Array(tutti.length);tutti.forEach((p,i)=>{p.rk=D.rk[i];RKALL[p.rk-1]=p;});}
+ else{PLACES.forEach(p=>{if(p.r==null)p.r=sc(p);});const CO=new Intl.Collator("it");tutti.sort((a,b)=>b.r-a.r||CO.compare(a.name,b.name));tutti.forEach((p,i)=>p.rk=i+1);RKALL=tutti;}}
+await PAUSA();
 {const _os=openSheet;openSheet=function(id,from){const ps=[...(IDPROV[id]||[])].filter(pr=>!DETOK[pr]),sh=$("sheet");
   sh.dataset.pid=id;sh.classList.toggle("sload",ps.length>0);_os(id,from);if(!ps.length)return;
   Promise.all(ps.map(caricaDet)).then(()=>{if(sh.dataset.pid!==id||!sh.classList.contains("open"))return;const y=sh.scrollTop,f=lastFocus;sh.classList.remove("sload");_os(id,f);sh.scrollTop=y;});};}

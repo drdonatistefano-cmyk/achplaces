@@ -236,7 +236,7 @@ button.stat.on{box-shadow:inset 0 0 0 2px var(--sc)}
 @media (min-width:640px){.grid{grid-template-columns:1fr 1fr}}
 @media (min-width:1024px){.grid{grid-template-columns:1fr 1fr 1fr;gap:14px}}
 .gmore{grid-column:1/-1;justify-self:center;margin:8px auto 4px}
-.card{content-visibility:auto;contain-intrinsic-size:auto 260px;background:var(--paper);border-radius:var(--r);box-shadow:var(--shadow);border:1px solid var(--line);position:relative;overflow:hidden;display:flex;flex-direction:column}
+.card{content-visibility:auto;contain:layout paint;contain-intrinsic-size:auto 256px;background:var(--paper);border-radius:var(--r);box-shadow:var(--shadow);border:1px solid var(--line);position:relative;overflow:hidden;display:flex;flex-direction:column}
 .cmain{display:flex;flex-direction:column;gap:6px;flex:1;padding:14px 16px 10px 18px;border:0;background:none;cursor:pointer;text-align:left;font:inherit;color:inherit;width:100%}
 .cfoot{display:flex;gap:8px;padding:0 16px 12px 18px}
 .cbtn{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;border-radius:11px;border:1px solid var(--line);background:var(--bg);font-weight:650;font-size:14px;text-decoration:none;color:var(--ink);cursor:pointer}
@@ -315,6 +315,17 @@ button.stat.on{box-shadow:inset 0 0 0 2px var(--sc)}
 .srcf{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}
 .srcf button{height:36px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--ink);font:700 13px var(--sans);cursor:pointer}
 .srcf button.on{background:var(--terra);color:#fff;border-color:var(--terra)}
+.fbar{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 4px}.fbar select{height:42px;border:1px solid var(--line);border-radius:12px;background:var(--paper);color:var(--ink);font:600 15px var(--sans);padding:0 10px;max-width:100%}
+.fcount{color:var(--mute);font-size:13.5px;margin:6px 0 10px}
+.fsec{background:var(--paper);border:1px solid var(--line);border-radius:14px;margin:10px 0;overflow:hidden}
+.fsec>summary{list-style:none;cursor:pointer;padding:13px 16px;display:flex;align-items:baseline;gap:8px;font:700 16px var(--sans)}
+.fsec>summary::-webkit-details-marker{display:none}.fsec>summary::after{content:"▾";margin-left:auto;color:var(--mute);transition:transform .2s}.fsec[open]>summary::after{transform:rotate(180deg)}
+.fsec>summary small{color:var(--mute);font-weight:600;font-size:13px}
+.fgrp{padding:0 16px 12px}.fgrp h4{margin:10px 0 4px;font:800 11.5px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--terra)}
+.frow{display:flex;gap:10px;align-items:baseline;padding:7px 0;border-top:1px solid var(--line);font-size:14.5px}
+.frow:first-of-type{border-top:0}.frow .fsx{flex:1;min-width:0;overflow-wrap:anywhere}.frow a{font-weight:700;color:var(--ink)}.fsecd{font-size:11.5px;color:var(--mute)}.fbar select{flex:1 1 150px}
+.frow .fn{color:var(--mute);font-size:12.5px;white-space:nowrap}.frow .fc{display:block;color:var(--mute);font-size:12.5px;font-weight:500;margin-top:2px}
+.fmore{margin:6px 0 2px;height:34px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:var(--paper);font:700 13px var(--sans);color:var(--ink);cursor:pointer}
 .srcl{display:grid;gap:10px}
 @media (min-width:760px){.srcl{grid-template-columns:1fr 1fr}}
 .srci{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-size:14px}
@@ -371,7 +382,7 @@ body{font-size:16px;line-height:1.5}
 .gtag{background:color-mix(in srgb,var(--g) 15%,var(--paper));color:color-mix(in srgb,var(--g) 85%,var(--ink));height:24px;font-size:12px;padding:0 9px 0 7px}
 .top{font-size:12.5px}
 .ctag{font-weight:700;color:var(--terra-ink)}
-.card{border-radius:18px;contain-intrinsic-size:auto 210px}
+.card{border-radius:18px;contain-intrinsic-size:auto 212px}
 .card::before{width:3px}
 .cmain{gap:7px;padding:14px 16px 8px 17px}
 .title{font-size:1.14rem;line-height:1.25;font-weight:780;letter-spacing:-.012em}
@@ -896,12 +907,10 @@ if(GC&&ON_WEB){try{const s=document.createElement("script");s.async=true;s.datas
 
 <section class="wrap view" id="view-fonti" hidden aria-labelledby="f-title">
   <h2 id="f-title">Archivio delle fonti</h2>
-  <p>Tutte le fonti consultate o da consultare, dal livello nazionale a quello del singolo comune. L'archivio cresce con la ricerca: ogni nuova provincia aggiunge le sue fonti.</p>
-  <div class="srcf" id="srcf"></div>
-  <div class="srcf" id="srca" aria-label="Filtra per area"></div>
-  <input class="srcsearch" id="srcq" type="search" placeholder="Cerca una fonte…" aria-label="Cerca una fonte">
-  <p id="srccount" style="color:var(--mute);font-size:13.5px"></p>
-  <div class="srcl" id="srcl"></div>
+  <p>Gli enti citati nelle schede della guida, raggruppati: prima quelli nazionali, poi regione per regione, divisi per tipo. Ogni scheda riporta i link precisi alle pagine usate.</p>
+  <div class="fbar"><input class="srcsearch" id="srcq" type="search" placeholder="Cerca un ente o un comune…" aria-label="Cerca una fonte"><select id="srcr" aria-label="Regione"></select><select id="srct" aria-label="Tipo di fonte"></select></div>
+  <p id="srccount" class="fcount"></p>
+  <div id="srcl"></div>
 </section>
 
 <div class="wrap">
@@ -1003,7 +1012,7 @@ function multiView(provs,coms){
   const nPl=cs.reduce((a,c)=>a+c.places.length,0);
   return {slug,isProv:true,all,provs,coms,name,regione:regs.length===1?regs[0]:"tutte",prov:provs[0],provName:f.provName,provKind:f.provKind,verified:f.verified,cardName:"",aw:[],
     lede:all?`${nPl} luoghi in ${cs.length} comuni di ${provs.length} province, in ${listIt(regs.map(REGN))}. Scegli cosa vedere o dove, oppure tocca 📍 per i luoghi vicino a te.`:coms.length?`I luoghi di ${listIt(cs.map(c=>c.name))}, insieme. Ogni scheda indica il suo comune.`:`Tutti i luoghi dei ${cs.length} comuni${provs.length>1?" delle province scelte":""}, insieme. Ogni scheda indica il suo comune; usa i filtri o scegli uno o più comuni per restringere.`,notice:"",
-    sources:[...new Map(cs.flatMap(c=>c.sources).filter(s=>!/^Wikipedia/.test(s[0])&&!/scheda di/.test(s[0])).map(s=>[s[1],s])).values()],places:cs.flatMap(c=>c.places),n:cs.length};}
+    sources:[...new Map(cs.flatMap(c=>c.sources).filter(s=>!/^Wikipedia/.test(s[0])&&!/scheda di/.test(s[0])).map(s=>[s[1],s])).values()],places:all&&typeof RKALL!=="undefined"&&RKALL?RKALL:cs.flatMap(c=>c.places),n:cs.length};}
 function parseView(slug){
   const toks=(slug||"").split("+").filter(Boolean);
   if(!toks.length||toks.includes("tutti"))return multiView(ALLP(),[]);
@@ -1135,11 +1144,12 @@ function ctags(p){const tm=TIME.find(x=>x[0]===p.t);return nearTag(p)+statusTag(
 function tags(p){return nearTag(p)+statusTag(p)+priceTag(p)+(p.card?`<span class="mst">💳 Card</span>`:"")+(p.indoor?`<span class="mst">☔ Al coperto</span>`:"")+(p.view?`<span class="mst">🌅 Panorama</span>`:"")+(p.unesco?`<span class="mst">🌍 UNESCO</span>`:"")+`<span class="mst">⏱️ ${esc(p.duration)}</span>`;}
 
 function renderGrid(list){
+  ULTIMA=list;
   window.__lista=list.map(p=>p.id);window.__n=(window.__n||0)+1;
   const g=$("grid");g.innerHTML="";
   $("count").textContent=list.length===CUR.length?`Tutti i ${list.length} luoghi`:`${list.length} ${list.length===1?"luogo":"luoghi"} su ${CUR.length}`;
   if(!list.length){g.innerHTML=`<div class="empty">Nessun luogo con questi filtri.<br><button class="freset" type="button" id="er">Azzera i filtri</button></div>`;$("er").onclick=resetAll;return;}
-  const CH=36;let shown=0;const selN=list.length!==CUR.length||!!S.near;list.forEach((p,i)=>p._sel=selN?i+1:0);
+  const CH=24;let shown=0;const selN=list.length!==CUR.length||!!S.near;list.forEach((p,i)=>p._sel=selN?i+1:0);
   const more=()=>{const frag=document.createDocumentFragment();for(const p of list.slice(shown,shown+CH))frag.appendChild(cardEl(p));shown+=CH;
     const old=g.querySelector(".gmore");if(old)old.remove();g.appendChild(frag);
     if(shown<list.length){const m=document.createElement("button");m.type="button";m.className="gmore freset";m.textContent=`Mostra altri ${Math.min(CH,list.length-shown)} di ${list.length-shown}`;m.onclick=more;g.appendChild(m);if(gIO)gIO.observe(m);}};
@@ -1149,7 +1159,7 @@ function renderGrid(list){
 const gIO="IntersectionObserver" in window?new IntersectionObserver(es=>{for(const e of es)if(e.isIntersecting){gIO.unobserve(e.target);e.target.click();}},{rootMargin:"600px"}):null;
 let FOTO={};
 let FALB={},FAM=null;const FALBQ={};
-function caricaFoto(){fetch("manifest.json",{cache:"no-store"}).then(r=>r.json()).then(m=>{FAM=m&&m.fa||null;return m&&m.foto?fetch(m.foto):null}).then(r=>r?r.json():null).then(j=>{if(j){FOTO=j;try{update();}catch(e){}riempiFoto();}}).catch(()=>{});}
+function caricaFoto(){fetch("manifest.json",{cache:"no-store"}).then(r=>r.json()).then(m=>{FAM=m&&m.fa||null;return m&&m.foto?fetch(m.foto):null}).then(r=>r?leggiAPezzi(r):null).then(async s=>{if(!s)return;await PAUSA();const j=JSON.parse(s);await PAUSA();if(j){FOTO=j;try{if(ULTIMA)renderGrid(ULTIMA);else update();}catch(e){}riempiFoto();}}).catch(()=>{});}
 /* foto raccolte in album per provincia (fa.<prov>.<hash>.json): si caricano solo quelli delle schede mostrate */
 function riempiFoto(){if(!FAM)return;document.querySelectorAll("img.cph[data-fid]:not([src])").forEach(im=>{const id=im.dataset.fid,f=FOTO[id];if(!f)return;const k=f[0];
   if(FALB[k]){const b=FALB[k][id];if(b)im.src="data:image/webp;base64,"+b;return;}
@@ -1267,11 +1277,18 @@ matchMedia("(max-width:759px)").addEventListener("change",()=>{const p=$("qbar")
 
 const CAPI=new Set([/*CAPI*/]);
 const rank=p=>(p.unesco?0:2)+(CAPI.has(p.com)?0:1)+(p.status==="closed"?4:0);
+let PRIMA=true,UPV=0,ULTIMA=null;
+function ordRk(l){for(let i=1;i<l.length;i++)if((l[i-1].rk||1e9)>=(l[i].rk||1e9))return false;return true;}
 function update(){
   const order={storia:0,sacro:1,musei:2,natura:3,locale:4};
-  const list=CUR.filter(p=>pass(p)).sort(S.near?(a,b)=>distOf(a,S.near)-distOf(b,S.near):(a,b)=>(a.rk||1e9)-(b.rk||1e9)||rank(a)-rank(b)||order[a.cat]-order[b.cat]||(C.isProv?a.com.localeCompare(b.com,"it"):0));
+  const list=CUR.filter(p=>pass(p));if(S.near||!ordRk(list))list.sort(S.near?(a,b)=>distOf(a,S.near)-distOf(b,S.near):(a,b)=>(a.rk||1e9)-(b.rk||1e9)||rank(a)-rank(b)||order[a.cat]-order[b.cat]||(C.isProv?a.com.localeCompare(b.com,"it"):0));
   $("nearn").hidden=!S.near;
-  renderFilters();renderActive();renderGrid(list);renderStats();renderAwards();renderXtra();
+  const resto=()=>{renderFilters();renderActive();renderStats();renderAwards();renderXtra();$("fshow").textContent=list.length===1?"Mostra 1 luogo":`Mostra ${list.length} luoghi`;};
+  /* 10/11/2026: alla prima apertura si disegnano subito le card; conteggi, filtri e statistiche arrivano appena il telefono è libero */
+  if(PRIMA){PRIMA=false;renderGrid(list);const v=++UPV,dopo=f=>("requestIdleCallback" in window)?requestIdleCallback(f,{timeout:700}):setTimeout(f,60);
+    dopo(()=>{if(v!==UPV)return;renderStats();renderAwards();renderActive();$("fshow").textContent=list.length===1?"Mostra 1 luogo":`Mostra ${list.length} luoghi`;
+      dopo(()=>{if(v!==UPV)return;renderFilters();renderXtra();dopo(()=>{if(v===UPV)renderPicker();});});});return;}
+  UPV++;renderFilters();renderActive();renderGrid(list);renderStats();renderAwards();renderXtra();
   $("fshow").textContent=list.length===1?"Mostra 1 luogo":`Mostra ${list.length} luoghi`;
 }
 function fillSelect(sel,opts,val){sel.innerHTML=opts.map(([v,l,dis])=>`<option value="${esc(v)}"${dis?" disabled":""}${v===val?" selected":""}>${esc(l)}</option>`).join("");}
@@ -1347,14 +1364,14 @@ function setComune(slug,fromHash){
   document.title=`${c.name} · Ach's Places Guide`;
   $("kicktxt").textContent=`Ach's Places Guide · ${c.name}`;
   $("h1").innerHTML=`Tutti i luoghi, <em>da vedere</em> e da scoprire.`;
-  renderAwards();
+  if(!PRIMA)renderAwards();
   $("lede").textContent=ledeTxt(c);
   $("lede").hidden=!!(c.all||c.isProv);
 
   $("verified").textContent=`Dati verificati il ${c.verified}`;
   $("nav-guida").href="#"+c.slug;
   if(!fromHash&&location.hash.slice(1)!==c.slug){try{history.replaceState(null,"","#"+c.slug);}catch(e){location.hash=c.slug;}}
-  renderPicker();renderStats();update();
+  if(!PRIMA){renderPicker();renderStats();}update();
   if(PENDING){const id=PENDING;PENDING=null;setTimeout(()=>openSheet(id),50);}
 }
 
@@ -1403,20 +1420,32 @@ function showView(v){
   $("view-metodo").hidden=v!=="metodo";$("view-fonti").hidden=v!=="fonti";
   if(!g){document.title=(v==="metodo"?"Metodo":"Archivio fonti")+" · Ach's Places Guide";window.scrollTo(0,0);}
 }
-const LV=[["tutte","Tutte"],["nazionale","🇮🇹 Nazionali"],["regionale","🗺️ Regionali"],["provinciale","🏙️ Provinciali"],["locale","📍 Locali"]];
-let SL="tutte", SA="tutte";
-const AREAS=()=>{const provs=[...new Set(COMUNI.map(c=>c.prov))];return [["tutte","Tutte le aree"],["IT","🇮🇹 Italia"],["ER","🗺️ Emilia-Romagna"],["TOS","🗺️ Toscana"],...provs.map(p=>[p,"📍 "+COMUNI.find(c=>c.prov===p).provName])];};
+const RNF={"abruzzo":"Abruzzo","basilicata":"Basilicata","calabria":"Calabria","campania":"Campania","emilia-romagna":"Emilia-Romagna","friuli-venezia-giulia":"Friuli-Venezia Giulia","lazio":"Lazio","liguria":"Liguria","lombardia":"Lombardia","marche":"Marche","molise":"Molise","piemonte":"Piemonte","puglia":"Puglia","sardegna":"Sardegna","sicilia":"Sicilia","toscana":"Toscana","trentino-alto-adige":"Trentino-Alto Adige","umbria":"Umbria","valle-d-aosta":"Valle d'Aosta","veneto":"Veneto"};
+let FONTI=null,FONTI_P=null;
+const FT=[["tur","Turismo, Regione e Province"],["com","Siti dei Comuni"],["mus","Musei, ville e castelli"],["sac","Diocesi, chiese e santuari"],["nat","Parchi e natura"],["alt","Altri enti e associazioni"],["sec","Fonti secondarie"]];
+const caricaFonti=()=>FONTI_P||(FONTI_P=(async()=>{const n=MAN&&MAN.fonti;if(!n)return;let t=await MEMO.leggi(n);if(!t){const r=await fetch(n);if(!r.ok)return;t=await leggiAPezzi(r);MEMO.scrivi(n,t);}FONTI=JSON.parse(t);if(location.hash==="#fonti")renderFonti();})());
+function frow(v,reg){const cs=v.c&&v.c.length?`<span class="fc">${v.nc>1?"Comuni: ":"Comune: "}${esc(v.c.join(", "))}${v.nc>v.c.length?` e altri ${v.nc-v.c.length}`:""}</span>`:"";
+  const n=reg?`${v.l?v.l+" luoghi":"scheda del comune"}`:`${v.nc.toLocaleString("it")} comuni · ${v.nr} regioni`;
+  return `<div class="frow"><div class="fsx"><a href="https://${esc(v.d)}" target="_blank" rel="noopener">${esc(v.n)}</a>${v.u?"":" <span class=\"fsecd\">🟠 secondaria</span>"}${cs}</div><span class="fn">${n}</span></div>`;}
+function fgruppi(L,reg,lim){const T=$("srct").value;return FT.filter(([k])=>!T||T===k).map(([k,l])=>{const g=L.filter(v=>v.t===k);if(!g.length)return"";const m=lim?g.slice(0,lim):g;
+  return `<div class="fgrp"><h4>${l} · ${g.length}</h4>${m.map(v=>frow(v,reg)).join("")}${g.length>m.length?`<button type="button" class="fmore" data-k="${k}">Mostra tutti (${g.length})</button>`:""}</div>`;}).join("");}
 function renderFonti(){
-  if(!SOURCES){$("srccount").textContent="Caricamento delle fonti…";caricaMeta();return;}
-  const q=($("srcq").value||"").toLowerCase().trim();
-  $("srcf").innerHTML="";
-  for(const [k,l] of LV){const b=document.createElement("button");b.type="button";b.className=SL===k?"on":"";const n=k==="tutte"?SOURCES.length:SOURCES.filter(s=>s.level===k).length;b.textContent=`${l} · ${n}`;b.onclick=()=>{SL=k;renderFonti();};$("srcf").appendChild(b);}
-  $("srca").innerHTML="";
-  for(const [k,l] of AREAS()){const b=document.createElement("button");b.type="button";b.className=SA===k?"on":"";const n=k==="tutte"?SOURCES.length:SOURCES.filter(s=>s.area===k).length;b.textContent=`${l} · ${n}`;b.onclick=()=>{SA=k;renderFonti();};$("srca").appendChild(b);}
-  const order={nazionale:0,regionale:1,provinciale:2,locale:3};
-  const L=SOURCES.filter(s=>(SL==="tutte"||s.level===SL)&&(SA==="tutte"||s.area===SA)&&(!q||(s.name+" "+s.scope+" "+s.note+" "+s.type).toLowerCase().includes(q))).sort((a,b)=>order[a.level]-order[b.level]||a.name.localeCompare(b.name,"it"));
-  $("srccount").textContent=`${L.length} fonti · ${SOURCES.filter(s=>s.uso==="usata").length} già usate, ${SOURCES.filter(s=>s.uso==="consultata"||s.uso==="consultata ma scartata").length} consultate ma scartate, ${SOURCES.filter(s=>s.uso==="da consultare").length} da consultare nelle prossime passate`;
-  $("srcl").innerHTML=L.map(s=>`<div class="srci"><span class="lv">${esc(s.level)} · ${esc(s.type)} · ${esc(s.area==="IT"?"Italia":s.area==="ER"?"Emilia-Romagna":s.area==="TOS"?"Toscana":(COMUNI.find(c=>c.prov===s.area)||{provName:s.area}).provName)}</span><br><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a> <span class="rel ${s.rel}">${s.rel==="uff"?"🟢 ufficiale":"🟠 secondaria"}</span><small>${esc(s.scope)}</small><small>${s.uso==="usata"?"✅ usata":(s.uso==="consultata"||s.uso==="consultata ma scartata")?"👁️ consultata, non usata":"🔜 da consultare"} · controllata il ${esc(s.checked)}${s.note?" · "+esc(s.note):""}</small>${s.verifica?`<small>🔎 ${esc(s.verifica)}</small>`:""}</div>`).join("");
+  if(!FONTI){$("srccount").textContent="Caricamento delle fonti…";caricaFonti();return;}
+  const sr=$("srcr"),st=$("srct");
+  if(!sr.options.length){sr.innerHTML=`<option value="">Tutte le regioni</option>`+Object.keys(FONTI.reg).map(r=>`<option value="${r}">${esc(RNF[r]||r)}</option>`).join("");
+    st.innerHTML=`<option value="">Tutti i tipi</option>`+FT.map(([k,l])=>`<option value="${k}">${l}</option>`).join("");sr.onchange=st.onchange=renderFonti;}
+  const q=fold($("srcq").value.trim()),R=sr.value,T=st.value;
+  const ok=v=>(!T||v.t===T)&&(!q||fold(v.n+" "+v.d+" "+(v.c||[]).join(" ")).includes(q));
+  const naz=FONTI.naz.filter(ok),regs=Object.entries(FONTI.reg).filter(([r])=>!R||r===R).map(([r,L])=>[r,L.filter(ok)]).filter(([,L])=>L.length);
+  const nr=regs.reduce((a,[,L])=>a+L.length,0);
+  $("srccount").textContent=`${((R?0:naz.length)+nr).toLocaleString("it")} enti su ${FONTI.tot.toLocaleString("it")}: ${R?"":naz.length+" nazionali, "}${nr.toLocaleString("it")} ${R?"in "+(RNF[R]||R):"regionali e locali"}${FONTI.lav.length&&!q&&!R?` · ${FONTI.lav.length} da consultare o scartate`:""}`;
+  const aperte=!!(q||R);let h="";
+  if(naz.length&&!R)h+=`<details class="fsec" open><summary>🇮🇹 Fonti nazionali <small>${naz.length}</small></summary><div class="fgrp">${naz.map(v=>frow(v,false)).join("")}</div></details>`;
+  h+=regs.map(([r,L])=>`<details class="fsec" data-r="${r}"${aperte?" open":""}><summary>🗺️ ${esc(RNF[r]||r)} <small>${L.length} enti · ${new Set(L.flatMap(v=>v.c||[])).size} comuni</small></summary>${aperte?fgruppi(L,true,q?0:30):""}</details>`).join("");
+  if(FONTI.lav.length&&!q&&!R&&!T)h+=`<details class="fsec"><summary>🗂️ Da consultare o scartate <small>${FONTI.lav.length}</small></summary><div class="fgrp">${FONTI.lav.map(s=>`<div class="frow"><a href="${esc(s.h)}" target="_blank" rel="noopener">${esc(s.n)}<span class="fc">${s.uso==="da consultare"?"🔜 da consultare":"👁️ consultata, non usata"}${s.note?" · "+esc(s.note):""}</span></a></div>`).join("")}</div></details>`;
+  $("srcl").innerHTML=h||`<p class="fcount">Nessuna fonte trovata.</p>`;
+  $("srcl").querySelectorAll("details[data-r]").forEach(d=>d.addEventListener("toggle",()=>{if(d.open&&!d.querySelector(".fgrp")){const L=regs.find(([r])=>r===d.dataset.r)[1];d.insertAdjacentHTML("beforeend",fgruppi(L,true,30));}}));
+  $("srcl").onclick=e=>{const b=e.target.closest(".fmore");if(!b)return;const d=b.closest("details"),L=regs.find(([r])=>r===d.dataset.r)[1];const g=b.closest(".fgrp");g.outerHTML=fgruppi(L.filter(v=>v.t===b.dataset.k),true,0);};
 }
 $("srcq").addEventListener("input",renderFonti);
 function renderCoverage(){
@@ -1490,6 +1519,7 @@ $("eat-off").onclick=()=>{S.near=null;$("eat").close();update();};
 /* aggancio per le prove automatiche (nessun effetto sulla pagina) */
 window.__T={S,update:()=>update(),setComune:x=>setComune(x),det:pr=>caricaDet(pr),provs:()=>Object.keys((MAN&&MAN.det)||{})};
 window.addEventListener("hashchange",()=>route(true));
+await PAUSA();
 route(true);
 </script>
 </body>
