@@ -4,6 +4,7 @@ Agrigento | Valle dei Templi | Valle dei Templi => biglietti-per-la-valle-dei-te
 Bergamo | Palazzo e Giardini Moroni | Palazzo e Giardini Moroni => biglietti-per-palazzo-moroni-entry-ticket
 Bologna | Museo Ducati (Borgo Panigale) | Museo Ducati => biglietti-per-museo-ducati-biglietto-d-ingresso
 Camogli | Abbazia di San Fruttuoso | Abbazia di San Fruttuoso => biglietti-per-abbazia-di-san-fruttuoso
+Caravino | Castello e Parco di Masino | Castello e Parco di Masino => biglietti-per-castello-e-parco-di-masino
 Casalzuigno | Villa Della Porta Bozzolo | Villa Della Porta Bozzolo => biglietti-per-villa-della-porta-bozzolo
 Castelnuovo Berardenga | Chianti Sculpture Park | Chianti Sculpture Park => biglietti-per-chianti-sculpture-park
 Cattolica | Acquario di Cattolica | Acquario di Cattolica => biglietti-per-acquario-di-cattolica-biglietto-con-accesso-rapido

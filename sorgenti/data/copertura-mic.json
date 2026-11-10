@@ -6599,6 +6599,31 @@
   "coperti": 2,
   "mancanti": []
  },
+ "Basaluzzo (AL)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Bistagno (AL)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Bosio (AL)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Carrega Ligure (AL)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Castelnuovo Scrivia (AL)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
  "Arcevia (AN)": {
   "tot": 1,
   "coperti": 1,
@@ -6827,6 +6852,26 @@
  "Subbiano (AR)": {
   "tot": 2,
   "coperti": 2,
+  "mancanti": []
+ },
+ "Agliano Terme (AT)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Albugnano (AT)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Castell'Alfero (AT)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Cisterna d'Asti (AT)": {
+  "tot": 1,
+  "coperti": 1,
   "mancanti": []
  },
  "Altavilla Irpina (AV)": {
@@ -7399,6 +7444,11 @@
   "coperti": 1,
   "mancanti": []
  },
+ "Trivento (CB)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
  "Aversa (CE)": {
   "tot": 1,
   "coperti": 1,
@@ -7537,6 +7587,51 @@
  "Tornareccio (CH)": {
   "tot": 2,
   "coperti": 2,
+  "mancanti": []
+ },
+ "Alto (CN)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Argentera (CN)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Bagnolo Piemonte (CN)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Barge (CN)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Bellino (CN)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Borgo San Dalmazzo (CN)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Castiglione Falletto (CN)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Celle di Macra (CN)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Centallo (CN)": {
+  "tot": 1,
+  "coperti": 1,
   "mancanti": []
  },
  "Albese con Cassano (CO)": {
@@ -8184,6 +8279,11 @@
   "coperti": 1,
   "mancanti": []
  },
+ "Sant'Elena Sannita (IS)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
  "Cirò Marina (KR)": {
   "tot": 1,
   "coperti": 1,
@@ -8740,6 +8840,36 @@
   "mancanti": []
  },
  "Sant'Anastasia (NA)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Agrate Conturbia (NO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Ameno (NO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Bellinzago Novarese (NO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Borgomanero (NO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Cameri (NO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Casalbeltrame (NO)": {
   "tot": 1,
   "coperti": 1,
   "mancanti": []
@@ -9834,6 +9964,91 @@
   "coperti": 2,
   "mancanti": []
  },
+ "Almese (TO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Alpignano (TO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Andezeno (TO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Andrate (TO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Bricherasio (TO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Brosso (TO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Bussoleno (TO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Cambiano (TO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Cantoira (TO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Caravino (TO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Carignano (TO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Caselette (TO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Cavour (TO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Ceres (TO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Ceresole Reale (TO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Chiaverano (TO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Chivasso (TO)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
  "Partanna (TP)": {
   "tot": 2,
   "coperti": 2,
@@ -10125,6 +10340,21 @@
   "mancanti": []
  },
  "Venegono Inferiore (VA)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Antrona Schieranco (VB)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Belgirate (VB)": {
+  "tot": 1,
+  "coperti": 1,
+  "mancanti": []
+ },
+ "Campertogno (VC)": {
   "tot": 1,
   "coperti": 1,
   "mancanti": []

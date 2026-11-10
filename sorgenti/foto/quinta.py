@@ -19,10 +19,13 @@ BRUTTI = re.compile(r'stemma|coat[ _]of[ _]arms|wappen|blason|logo|mappa|map[ _.
 CACHE = F + 'quinta-cache.json'
 cache = json.load(open(CACHE)) if os.path.exists(CACHE) else {}
 def elementi(ist):
-    if ist in cache: return cache[ist]
+    if ist in cache and (cache[ist] or os.environ.get('NORETRY')): return cache[ist]
     q = '''SELECT DISTINCT ?it ?l ?img WHERE { ?com wdt:P635 "%s" . { ?it wdt:P131 ?com } UNION { ?it wdt:P131 ?x . ?x wdt:P131 ?com }
  ?it wdt:P18 ?img . ?it rdfs:label ?l . FILTER(lang(?l)="it") } LIMIT 3000''' % ist
     _b = curl(['-G','https://query.wikidata.org/sparql','--data-urlencode','query='+q,'-H','Accept: application/sparql-results+json'], tries=2)
+    if not _b:   # comuni grandi: la query con il secondo livello va in timeout, si riprova solo con il primo livello
+        q2 = '''SELECT DISTINCT ?it ?l ?img WHERE { ?com wdt:P635 "%s" . ?it wdt:P131 ?com ; wdt:P18 ?img ; rdfs:label ?l . FILTER(lang(?l)="it") } LIMIT 5000''' % ist
+        _b = curl(['-G','https://query.wikidata.org/sparql','--data-urlencode','query='+q2,'-H','Accept: application/sparql-results+json'], tries=3)
     b = json.loads(_b)['results']['bindings'] if _b else []
     out = [[x['l']['value'], urllib.parse.unquote(x['img']['value'].split('Special:FilePath/')[-1])] for x in b]
     cache[ist] = out

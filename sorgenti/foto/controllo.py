@@ -23,7 +23,13 @@ ALTRI = {' '.join(norm(r['comune'])) for r in _csv.DictReader(open('/home/claude
 GENC = set('ponte ponti prato valle montagna monte bianco laghi lago aosta trinita santa sant onofrio barbara corbara chiesa piana marina porto torre castello rocca villa palazzo fontana'.split())
 scarti, dubbi = {}, []
 # esclusioni manuali dopo verifica a vista
-ESCLUSI = {'spoleto-pg--basilica-di-san-salvatore': 'foto dubbia (verifica a vista)'}
+ESCLUSI = {'spoleto-pg--basilica-di-san-salvatore': 'foto dubbia (verifica a vista)',
+  # 10/11: controllo a vista delle foto della quarta e quinta ricerca
+  'rimini-rn--part-palazzi-dell-arte-rimini': 'foto di un altro luogo (Ponte di Tiberio)', 'pisa-pi--torre-pendente': 'foto di un campeggio omonimo',
+  'roma-rm--la-nuvola': 'foto di fiori, non dell\'edificio', 'pescara-pe--pescara-vecchia': 'foto della vecchia stazione', 'nicotera-vv--nicotera-marina': 'foto di una persona',
+  'monfalcone-go--marina-julia': 'foto pubblicitaria di un campeggio', 'angera-va--palude-e-oasi-della-bruschera': 'foto generica', 'monza-mb--villa-reale': 'foto di un cigno, non della villa',
+  'caltagirone-ct--museo-naturalistico-del-comprensorio-cal': 'foto di una chiesa', 'arcevia-an--chiesa-di-san-lorenzo-ad-avacelli': 'foto del castello, non della chiesa',
+  'bernalda-mt--parco-archeologico-di-metaponto': 'foto di una spiaggia', 'morigerati-sa--museo-etnografico': 'foto di un oggetto, non del museo'}
 # 9/11: foto scelte a mano dopo verifica (esenti dal controllo «gemelli»): luoghi senza foto specifica su Commons,
 # a cui si dà una foto diversa del complesso a cui appartengono (es. le Cattedrali sotterranee UNESCO di Canelli)
 MANUALI = json.load(open(F + 'manuali.json')) if os.path.exists(F + 'manuali.json') else {}
