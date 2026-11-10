@@ -21,8 +21,9 @@ jobs:
           testa=$(gh api repos/$R/commits/main --jq .sha)
           riga=$(gh api "repos/$R/actions/runs?branch=main&per_page=30" --jq "[.workflow_runs[]|select(.name==\"pages build and deployment\" and .head_sha==\"$testa\")][0]|[.id,.status,.conclusion,.run_attempt]|@tsv")
           echo "main $testa -> $riga"
-          [ -z "$riga" ] && { echo "nessuna pubblicazione per l'ultimo commit (il sito potrebbe non cambiare)"; exit 0; }
-          id=$(echo "$riga" | cut -f1); st=$(echo "$riga" | cut -f2); co=$(echo "$riga" | cut -f3); at=$(echo "$riga" | cut -f4)
+          id=$(echo "$riga" | cut -f1)
+          [ -z "$id" ] && { echo "nessuna pubblicazione ancora registrata per l'ultimo commit"; exit 0; }
+          st=$(echo "$riga" | cut -f2); co=$(echo "$riga" | cut -f3); at=$(echo "$riga" | cut -f4)
           if [ "$st" = "completed" ] && [ "$co" != "success" ] && [ "$at" -lt 3 ]; then
             echo "pubblicazione $id finita con «$co» (tentativo $at): la rilancio"; gh api -X POST repos/$R/actions/runs/$id/rerun
           else echo "niente da fare ($st $co, tentativo $at)"; fi
