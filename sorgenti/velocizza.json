@@ -1,5 +1,5 @@
 {
- "nota": "Le correzioni di velocita' del 10/11/2026 alla pagina di Places, come coppie vecchio/nuovo. Le applica sorgenti/velocizza.py dopo ogni costruzione, perche' build.py rigenera index.html da template.html, che ha ancora il codice di prima. Quando le correzioni saranno portate dentro template.html (e nei file che aggiungono la ricerca), questo file e velocizza.py si possono togliere.",
+ "nota": "Le correzioni di velocita' del 10/11/2026 alla pagina di Places, come coppie vecchio/nuovo. Le applica sorgenti/velocizza.py dopo ogni costruzione, perche' build.py rigenera index.html da template.html, che ha ancora il codice di prima. Quando le correzioni saranno portate dentro template.html (e nei file che aggiungono la ricerca), questo file e velocizza.py si possono togliere. AGGIORNAMENTO 10/11/2026 sera: le 15 correzioni sono state portate nei sorgenti (4 in build.py, 11 in template.html); ora velocizza.py trova la pagina gia' corretta e non tocca niente. Resta come paracadute.",
  "sostituzioni": [
   {
    "vecchio": "ut(f,400);};",

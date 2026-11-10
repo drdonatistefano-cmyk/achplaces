@@ -1174,20 +1174,38 @@ function renderGrid(list){
   more();
 }
 const gIO="IntersectionObserver" in window?new IntersectionObserver(es=>{for(const e of es)if(e.isIntersecting){gIO.unobserve(e.target);e.target.click();}},{rootMargin:"600px"}):null;
-let FOTO={};
-let FALB={},FAM=null;const FALBQ={};
-function caricaFoto(){fetch("manifest.json",{cache:"no-store"}).then(r=>r.json()).then(m=>{FAM=m&&m.fa||null;return m&&m.foto?fetch(m.foto):null}).then(r=>r?leggiAPezzi(r):null).then(async s=>{if(!s)return;await PAUSA();const j=JSON.parse(s);await PAUSA();if(j){FOTO=j;try{if(ULTIMA)renderGrid(ULTIMA);else update();}catch(e){}riempiFoto();}}).catch(()=>{});}
-/* foto raccolte in album per provincia (fa.<prov>.<hash>.json): si caricano solo quelli delle schede mostrate */
-function riempiFoto(){if(!FAM)return;document.querySelectorAll("img.cph[data-fid]:not([src])").forEach(im=>{const id=im.dataset.fid,f=FOTO[id];if(!f)return;const k=f[0];
-  if(FALB[k]){const b=FALB[k][f[5]||id];if(b)im.src="data:image/webp;base64,"+b;return;}
-  if(!FALBQ[k]&&FAM[k]){FALBQ[k]=fetch(FAM[k]).then(r=>r.json()).then(j=>{FALB[k]=j;riempiFoto();}).catch(()=>{});}});}
-{let rq=0;new MutationObserver(()=>{if(!rq){rq=1;requestAnimationFrame(()=>{rq=0;riempiFoto();});}}).observe(document.documentElement,{childList:true,subtree:true});}
+let FOTO={},FOTOM={};
+/* 10/11/2026: una miniatura = un file (f/<chiave>.webp), scaricata dal browser
+   solo quando si vede, con loading="lazy". Prima le miniature stavano negli
+   album per provincia (fa.<prov>.json): per mostrare tre schede di Roma si
+   scaricavano 2,6 MB e una prima visita arrivava a 11,5 MB. */
+/* 10/11/2026: all'avvio si scarica solo fotom.<impronta>.json, cioe' per ogni
+   luogo il colore medio della foto e, per le foto del comune, la chiave
+   dell'immagine ("#81807c @037032"). Autore e licenza stanno in
+   cr.<provincia>.json e arrivano quando si apre una scheda: prima si
+   scaricavano tutti e 16.646 all'avvio (586 KB) per mostrarne tre. */
+function fotoCol(id){const m=FOTOM[id];return m?m.split(" ")[0]:"";}
+function fotoCom(id){const m=FOTOM[id];const k=m&&m.split(" ")[1];return k||"";}
+function fotoSrc(id){const m=FOTOM[id];if(!m)return "";return "f/"+(m.split(" ")[1]||id)+".webp";}
+function fotoProv(id){return id.includes("--")?id.split("--")[0].split("-").pop():"bo";}
+function caricaFoto(){fetch("manifest.json",{cache:"no-store"}).then(r=>r.json()).then(m=>{MAN=MAN||m;return m&&(m.fotom||m.foto)?fetch(m.fotom||m.foto):null;}).then(r=>r?leggiAPezzi(r):null).then(async s=>{if(!s)return;await PAUSA();const j=JSON.parse(s);await PAUSA();if(j){FOTOM=j;try{if(ULTIMA)renderGrid(ULTIMA);else update();}catch(e){}riempiFoto();}}).catch(()=>{});}
+function riempiFoto(){document.querySelectorAll("img.cph[data-fid]:not([src])").forEach(im=>{const s=fotoSrc(im.dataset.fid);if(s)im.src=s;});}
+/* crediti d'autore, una provincia per file, letti all'apertura di una scheda */
+const CRED={},CREDP={};
+function credHtml(id){const c=CRED[id];if(!FOTOM[id]||!c)return "";
+  const com=c[3]?`Foto del comune di ${esc(c[3])}, non del luogo \u00b7 `:"";
+  return `<a class="fcred" href="${esc(c[2])}" target="_blank" rel="noopener">\ud83d\udcf7 ${com}Foto: ${esc(c[0]||"vedi pagina del file")} \u00b7 ${esc(c[1])} \u00b7 Wikimedia Commons \u2197</a>`;}
+function caricaCred(pr){if(CREDP[pr])return CREDP[pr];
+  const n=MAN&&MAN.cr&&MAN.cr[pr];if(!n)return CREDP[pr]=Promise.resolve();
+  return CREDP[pr]=(async()=>{try{let t=await MEMO.leggi(n);if(!t){const r=await fetch(n);if(!r.ok)return;t=await leggiAPezzi(r);MEMO.scrivi(n,t);}
+    Object.assign(CRED,JSON.parse(t));riempiCred();}catch(e){}})();}
+function riempiCred(){const w=document.getElementById("fcredw");if(!w||w.firstChild)return;const id=w.dataset.pid;if(id)w.innerHTML=credHtml(id);}
 setTimeout(caricaFoto,300);
 function cardEl(p){
     const c=document.createElement("article");c.className="card";c.dataset.pid=p.id;c.style.setProperty("--g",gcol(p.cat));
     const n=p._sel||p.rk,sub=C.isProv?`${esc(CATS[p.cat].label)} · ${esc(p.com)}`:`${esc(CATS[p.cat].label)} · ${esc(p.sub)}`;
-    c.innerHTML=`<button class="cmain" type="button"><div class="crow${FOTO[p.id]?" hasph":""}">${n?`<div class="cnum${String(n).length>=4?" c4":""}" title="${p._sel?"Posizione nella selezione attuale":"Posizione nella classifica di tutta la guida"}"><small>N°</small><b>${n}</b></div>`:`<div class="cnum"></div>`}<div class="cbody">
-      <h3 class="title">${esc(p.name)}</h3><div class="csub">${sub}${p._sel&&p.rk?` <span class="cgl">· n. ${p.rk} in Italia</span>`:""}</div><p class="desc">${esc(p.desc)}</p></div>${FOTO[p.id]?`<span class="cphw${FOTO[p.id][5]?" pcom":""}"><img class="cph" data-fid="${esc(p.id)}" width="84" height="84" loading="lazy" decoding="async" alt="${FOTO[p.id][5]?"Foto del comune, non del luogo":""}" style="background:${FOTO[p.id][4]||"var(--line)"}"><span class="cdot" title="${esc(CATS[p.cat].label)}" role="img" aria-label="${esc(CATS[p.cat].label)}"></span></span>`:`<span class="cdot" title="${esc(CATS[p.cat].label)}" role="img" aria-label="${esc(CATS[p.cat].label)}"></span>`}</div><div class="meta cmeta">${ctags(p)}</div></button>
+    c.innerHTML=`<button class="cmain" type="button"><div class="crow${FOTOM[p.id]?" hasph":""}">${n?`<div class="cnum${String(n).length>=4?" c4":""}" title="${p._sel?"Posizione nella selezione attuale":"Posizione nella classifica di tutta la guida"}"><small>N°</small><b>${n}</b></div>`:`<div class="cnum"></div>`}<div class="cbody">
+      <h3 class="title">${esc(p.name)}</h3><div class="csub">${sub}${p._sel&&p.rk?` <span class="cgl">· n. ${p.rk} in Italia</span>`:""}</div><p class="desc">${esc(p.desc)}</p></div>${FOTOM[p.id]?`<span class="cphw${fotoCom(p.id)?" pcom":""}"><img class="cph" src="${fotoSrc(p.id)}" data-fid="${esc(p.id)}" width="84" height="84" loading="lazy" decoding="async" alt="${fotoCom(p.id)?"Foto del comune, non del luogo":""}" style="background:${fotoCol(p.id)||"var(--line)"}"><span class="cdot" title="${esc(CATS[p.cat].label)}" role="img" aria-label="${esc(CATS[p.cat].label)}"></span></span>`:`<span class="cdot" title="${esc(CATS[p.cat].label)}" role="img" aria-label="${esc(CATS[p.cat].label)}"></span>`}</div><div class="meta cmeta">${ctags(p)}</div></button>
       <div class="cfoot">${p.free===true?`<button class="cbtn tk fr" type="button" aria-label="Ingresso gratuito: vedi la scheda di ${esc(p.name)}">${ic("check")}Gratis</button>`:tkUrl(p)?`<a class="cbtn tk" href="${esc(tkUrl(p)[0])}" target="_blank" rel="noopener${tkUrl(p)[1]?" sponsored":""}" aria-label="Biglietti${tkUrl(p)[1]?" su "+tkUrl(p)[1]:" ufficiali"}: ${esc(p.name)}">${ic("ticket")}Biglietti</a>`:`<button class="cbtn tk" type="button" aria-label="Biglietto: vedi la scheda di ${esc(p.name)}">${ic("ticket")}Biglietti</button>`}<a class="cbtn ph" href="${photoUrl(p)}" target="_blank" rel="noopener" aria-label="Foto di ${esc(p.name)} su Google Immagini">${ic("cam")}Foto</a><button class="cbtn fav${FAV.has(p.id)?" on":""}" type="button" aria-pressed="${FAV.has(p.id)}" aria-label="Salva tra i miei luoghi">${ic("heart",FAV.has(p.id))}</button><button class="cbtn pri" type="button">Apri${ic("chev")}</button></div>`;
     const open=()=>openSheet(p.id,c.querySelector(".cmain"));
     c.querySelector(".cmain").onclick=open; c.querySelector(".cbtn.pri").onclick=open;
@@ -1233,7 +1251,7 @@ function openSheet(id,from){
     <div class="ctag" style="margin-top:4px">📍 ${esc(p.com)} (${esc(p.comSlug.split("-").pop().toUpperCase())})</div>
     <div class="meta" style="padding-top:8px">${tags(p)}</div>
     ${p.statusNote?`<div class="cnote" style="margin-top:12px"><span class="em" aria-hidden="true">⚠️</span><div>${esc(p.statusNote)}</div></div>`:""}
-    <p class="lead">${esc(p.desc)}</p>${FOTO[p.id]?`<a class="fcred" href="${esc(FOTO[p.id][3])}" target="_blank" rel="noopener">📷 ${FOTO[p.id][5]?`Foto del comune di ${esc(FOTO[p.id][6])}, non del luogo · `:""}Foto: ${esc(FOTO[p.id][1]||"vedi pagina del file")} · ${esc(FOTO[p.id][2])} · Wikimedia Commons ↗</a>`:""}
+    <p class="lead">${esc(p.desc)}</p><span id="fcredw" data-pid="${esc(p.id)}">${credHtml(p.id)}</span>
     ${p.why?`<div class="why"><b>Perché andarci.</b> ${esc(p.why)}</div>`:""}${p.tip?`<div class="cnote"><span class="em" aria-hidden="true">💡</span><div>${esc(p.tip)}</div></div>`:""}
     <div class="facts">
       <div class="fact"><span class="ic" aria-hidden="true">🎟️</span><small>Biglietto</small><div>${p.free===true?"Gratis":p.ticketUrl?`<a class="flink" href="${esc(p.ticketUrl)}" target="_blank" rel="noopener">Biglietti e tariffe ufficiali ↗</a>`:`<a class="flink soft" href="${esc(p.official)}" target="_blank" rel="noopener">${p.ownSite===false?"Info sul portale turistico ↗":"Cerca le tariffe sul sito ↗"}</a>`}${p.tq&&p.free!==true?`<br><a class="flink" href="${esc(p.tq)}" target="_blank" rel="noopener sponsored">Biglietti su Tiqets ↗</a>`:""}${p.gy&&p.free!==true?`<br><a class="flink" href="${esc(p.gy)}" target="_blank" rel="noopener sponsored">Visite ed esperienze su GetYourGuide ↗</a>`:""}</div></div>
@@ -1249,7 +1267,7 @@ function openSheet(id,from){
       <button class="act" type="button" id="favsheet">${ic("heart",FAV.has(p.id))}${FAV.has(p.id)?"Salvato nei miei luoghi":"Salva nei miei luoghi"}</button>
     </div>
     <div class="src"><b>Fonti verificate il ${esc(ver)}</b><ul>${p.sources.map(s=>`<li><a href="${esc(s[1])}" target="_blank" rel="noopener">${esc(s[0])}</a><span class="rel ${s[2]}">${s[2]==="uff"?"🟢 ufficiale":"🟠 da ricontrollare"}</span></li>`).join("")}</ul></div>`;
-  $("scrim").classList.add("open");sh.classList.add("open");document.body.style.overflow="hidden";
+  caricaCred(fotoProv(p.id));riempiCred();$("scrim").classList.add("open");sh.classList.add("open");document.body.style.overflow="hidden";
   $("sclose").onclick=closeSheet;$("sclose").focus();
   $("favsheet").onclick=e=>{favToggle(p.id);e.currentTarget.innerHTML=ic("heart",FAV.has(p.id))+(FAV.has(p.id)?"Salvato nei miei luoghi":"Salva nei miei luoghi");renderXtra();const f=document.querySelector(`.card .cbtn.fav[data-id="${CSS.escape(p.id)}"]`);};
   $("copyaddr").onclick=async e=>{const b=e.currentTarget;try{await navigator.clipboard.writeText(p.address);b.innerHTML=ic("check")+"Copiato";b.classList.add("copied");}catch(err){b.textContent="Copia non riuscita";}};

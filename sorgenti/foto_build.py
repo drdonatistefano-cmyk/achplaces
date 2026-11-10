@@ -15,7 +15,7 @@ for k, v in sorted(fin.items()):
     if v.get('img') and v.get('l') and os.path.exists(F + 'img/' + v['img']):
         ch = chiave(k)
         out[k] = [ch, v.get('a', ''), v['l'], v.get('u', ''), v.get('c', '')]
-        alb.setdefault(ch, {})[k] = base64.b64encode(open(F + 'img/' + v['img'], 'rb').read()).decode()
+        alb[k] = F + 'img/' + v['img']
 # 10/11/2026 ripiego: foto libera del comune (Wikidata P18) per i luoghi senza foto propria; una sola immagine per comune
 # nell'album (chiave "@<istat>"), la riga del luogo ha in sesta posizione la chiave e in settima il nome del comune.
 R = '/home/claude/foto-ramo/'
@@ -33,17 +33,24 @@ if os.environ.get('FOTO_COMUNE', '1') != '0' and os.path.exists(R + 'metacom.jso
             if k in out: continue
             ch = chiave(k); ak = '@' + ist
             out[k] = [ch, v[1], v[2], v[3], v[4], ak, cc['name']]; nc += 1
-            if ak not in alb.setdefault(ch, {}): alb[ch][ak] = base64.b64encode(open(R + 'img/' + v[0], 'rb').read()).decode()
+            alb.setdefault(ak, R + 'img/' + v[0])
     print('luoghi con foto del comune:', nc)
+# 10/11/2026 sera: niente più album fa.<prov>.json (85 MB, la pagina non li usa): ogni miniatura va direttamente in
+# f/<chiave>.webp, chiave = id del luogo o "@<istat>" per la foto del comune (come fotoSrc() nella pagina).
 for f in glob.glob(G + 'foto.*.json') + glob.glob(G + 'fa.*.json'): os.remove(f)
 if os.path.isdir(G + 'img'): shutil.rmtree(G + 'img')
-fa = {}
-for ch, d in sorted(alb.items()):
-    b = json.dumps(d, separators=(',', ':')).encode()
-    n = 'fa.%s.%s.json' % (ch, hashlib.sha256(b).hexdigest()[:10]); open(G + n, 'wb').write(b); fa[ch] = n
+FD = G + 'f/'; os.makedirs(FD, exist_ok=True); nuove = uguali = 0
+for k, src in alb.items():
+    dst = FD + k + '.webp'; dati = open(src, 'rb').read()
+    if os.path.exists(dst) and os.path.getsize(dst) == len(dati) and open(dst, 'rb').read() == dati: uguali += 1; continue
+    open(dst, 'wb').write(dati); nuove += 1
+via = 0
+for f in os.listdir(FD):
+    if f.endswith('.webp') and f[:-5] not in alb: os.remove(FD + f); via += 1
 b = json.dumps(out, ensure_ascii=False, separators=(',', ':')).encode()
 name = 'foto.%s.json' % hashlib.sha256(b).hexdigest()[:10]
 open(G + name, 'wb').write(b)
-m = json.load(open(G + 'manifest.json')); m['foto'] = name; m['fa'] = fa
+m = json.load(open(G + 'manifest.json')); m['foto'] = name; m.pop('fa', None)
 json.dump(m, open(G + 'manifest.json', 'w'), ensure_ascii=False)
-print('foto in guida:', len(out), name, 'album:', len(fa), 'peso album KB:', sum(os.path.getsize(G + x) for x in fa.values()) // 1024)
+print('foto in guida:', len(out), name, 'miniature in f/:', len(alb), '(nuove %d, uguali %d, tolte %d)' % (nuove, uguali, via),
+      'peso f/ MB:', round(sum(os.path.getsize(FD + x) for x in os.listdir(FD)) / 1048576, 1))
