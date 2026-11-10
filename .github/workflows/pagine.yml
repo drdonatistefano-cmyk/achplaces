@@ -1,0 +1,30 @@
+name: Pagine per Google (comuni, luoghi, mappa del sito)
+# Rigenera le pagine statiche indicizzabili quando cambiano i dati pubblicati.
+# La guida interattiva (index.html) non viene toccata.
+on:
+  push:
+    branches: [main]
+    paths: ["manifest.json", "sorgenti/pagine.py", ".github/workflows/pagine.yml"]
+  schedule:
+    - cron: "41 4 * * 2"   # martedì notte, rete di sicurezza
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: { group: pagine, cancel-in-progress: false }
+jobs:
+  pagine:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 1 }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Genera le pagine
+        run: python3 sorgenti/pagine.py
+      - name: Salva
+        run: |
+          git config user.name "achplaces-bot"; git config user.email "actions@users.noreply.github.com"
+          git add comune luogo regione comuni sitemap.xml sitemap-*.xml robots.txt pagine.css
+          git commit -qm "Pagine per Google: $(date +%F)" || exit 0
+          for i in 1 2 3 4 5; do git pull --rebase -q --no-edit && git push -q && exit 0; sleep $((RANDOM % 15 + 5)); done; exit 1
