@@ -1,31 +1,41 @@
-name: Foto da Wikimedia Commons
+name: Miniature in file singoli
+
 on:
-  schedule:
-    - cron: '23 2 * * 1'   # 9/11: foto una volta a settimana (lunedì notte), decisione di Stefano
+  push:
+    paths:
+      - 'fa.*.json'
+      - 'sorgenti/esplodi_foto.py'
   workflow_dispatch:
+
 permissions:
   contents: write
-concurrency: { group: foto, cancel-in-progress: false }
+
+concurrency:
+  group: foto-places
+  cancel-in-progress: false
+
 jobs:
-  foto:
+  esplodi:
     runs-on: ubuntu-latest
-    timeout-minutes: 330
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
-      - name: Ramo foto esistente
+
+      - name: Scomponi gli album
+        run: python3 sorgenti/esplodi_foto.py
+
+      - name: Salva
         run: |
-          git fetch origin foto || true
-          if git rev-parse --verify origin/foto >/dev/null 2>&1; then git worktree add -B foto out origin/foto; else git worktree add --orphan -b foto out; fi
-      - uses: actions/setup-python@v5
-        with: { python-version: '3.12' }
-      - run: pip install requests pillow
-      - name: Scarica foto e licenze
-        env: { MINUTI: '300' }
-        run: python sorgenti/foto/actions_foto.py
-      - name: Salva nel ramo foto
-        run: |
-          cd out
-          git config user.name "achplaces-bot"; git config user.email "actions@users.noreply.github.com"
-          git add -A
-          git commit -q -m "Foto: $(python -c "import json;print(len(json.load(open('meta.json'))))") luoghi" || exit 0
-          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" foto
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add f
+          if git diff --cached --quiet; then
+            echo "niente di nuovo"
+            exit 0
+          fi
+          git commit -m "Miniature: aggiornate le foto in file singoli"
+          for i in 1 2 3 4 5; do
+            git push && break
+            git pull --rebase --autostash || true
+            sleep 5
+          done
