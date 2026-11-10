@@ -3,7 +3,7 @@ name: Controllo di tutti i link (5 lavori)
 # Ognuno dei cinque lavori salva out/link-<gruppo>.json sul ramo «foto». Gira il lunedì o a mano. Gratuito.
 on:
   schedule:
-    - cron: '47 6 * * 1'
+    - cron: '53 6 * * 1'
   workflow_dispatch:
 permissions:
   contents: write
