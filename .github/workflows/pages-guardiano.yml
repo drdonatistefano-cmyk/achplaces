@@ -24,10 +24,21 @@ jobs:
         run: |
           # ultimo commit che cambia il sito (esclusi sorgenti, flussi e README)
           sito=$(git log -1 --format=%H -- . ':(exclude)sorgenti' ':(exclude).github' ':(exclude)README.md')
+          # (10/11 23:00, coordinamento) se l'ultimo commit del sito e' piu' vecchio dei 50 scaricati,
+          # $sito e' vuoto e nessuna pubblicazione risulterebbe mai «online»: senza questo controllo il
+          # guardiano ripubblicherebbe 250 MB ogni 20 minuti per sempre. Un commit cosi' vecchio e' gia'
+          # stato pubblicato dal suo push o dai giri precedenti.
+          if [ -z "$sito" ]; then echo "ultimo commit del sito oltre i 50 scaricati: considero online"; exit 0; fi
           ok=$(gh api "repos/$R/actions/workflows/pubblica.yml/runs?status=success&per_page=20" --jq '[.workflow_runs[].head_sha]|join(" ")')
           corso=$(gh api "repos/$R/actions/workflows/pubblica.yml/runs?per_page=10" --jq '[.workflow_runs[]|select(.status!="completed")]|length')
           echo "ultimo commit del sito: $sito; in corso: $corso"
           # online se una pubblicazione riuscita parte da quel commit o da uno successivo
           for s in $ok; do if git merge-base --is-ancestor "$sito" "$s" 2>/dev/null; then echo "online"; exit 0; fi; done
           if [ "$corso" -gt 0 ]; then echo "pubblicazione in corso, aspetto"; exit 0; fi
+          # (10/11 23:00, coordinamento) al massimo 3 tentativi falliti in 24 ore per lo stesso stato del sito:
+          # oltre, il guardiano si ferma e diventa rosso, cosi' si vede, invece di ripubblicare ogni 20 minuti
+          da=$(date -u -d '-24 hours' +%Y-%m-%dT%H:%M:%SZ)
+          falliti=$(gh api "repos/$R/actions/workflows/pubblica.yml/runs?per_page=30&created=>$da" --jq '[.workflow_runs[]|select(.conclusion=="failure" or .conclusion=="cancelled" or .conclusion=="timed_out")|.head_sha]|join(" ")')
+          n=0; for s in $falliti; do git merge-base --is-ancestor "$sito" "$s" 2>/dev/null && n=$((n+1)); done
+          if [ "$n" -ge 3 ]; then echo "::error::la pubblicazione di $sito e' fallita $n volte in 24 ore: smetto di riprovare, serve guardarci"; exit 1; fi
           echo "non online: avvio «Pubblica il sito»"; gh api -X POST repos/$R/actions/workflows/pubblica.yml/dispatches -f ref=main

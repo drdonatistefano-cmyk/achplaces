@@ -8,9 +8,26 @@ import requests
 G = int(sys.argv[1]) if len(sys.argv) > 1 else 0
 QUI = os.path.dirname(os.path.abspath(__file__))
 tutti = json.load(open(os.path.join(QUI, 'tutti.json')))
-mie = [u for i, u in enumerate(tutti) if i % 5 == G]
+# (10/11 23:00, coordinamento) Ogni sito sta in UN solo lavoro. Prima i link erano divisi a caso
+# (i % 5): i cinque lavori bussavano insieme agli stessi siti - 2.804 link su it.wikipedia.org,
+# 1.949 su italia.it, 1.244 su cultura.gov.it - e un sito che rallenta o blocca avrebbe fatto
+# risultare rotti centinaia di link buoni. Divisione stabile: siti dal piu' grande al piu' piccolo,
+# ognuno al lavoro meno carico.
+_per = collections.Counter(urlparse(u).hostname or '' for u in tutti)
+_carico, _gruppo = [0] * 5, {}
+for _h, _n in sorted(_per.items(), key=lambda x: (-x[1], x[0])):
+    _g = _carico.index(min(_carico)); _gruppo[_h] = _g; _carico[_g] += _n
+mie = [u for u in tutti if _gruppo[urlparse(u).hostname or ''] == G]
 FO = f'out/link-{G}.json'; os.makedirs('out', exist_ok=True)
-fatto = json.load(open(FO)) if os.path.exists(FO) else {}
+# (10/11 23:00, coordinamento) Il controllo e' settimanale: i risultati di una settimana
+# precedente non valgono, altrimenti un link che si rompe dopo il primo giro non verrebbe mai
+# visto. La settimana del file sta accanto, in link-<gruppo>.giro.
+import datetime as _dt
+_sett = '%d-W%02d' % _dt.date.today().isocalendar()[:2]
+_FG = f'out/link-{G}.giro'
+_vecchio = open(_FG).read().strip() if os.path.exists(_FG) else ''
+fatto = json.load(open(FO)) if os.path.exists(FO) and _vecchio == _sett else {}
+open(_FG, 'w').write(_sett)
 H = {'User-Agent': 'Mozilla/5.0 (compatible; AchsPlacesGuide-linkcheck/1.0; +https://achplaces.com)', 'Accept': 'text/html,application/xhtml+xml,*/*;q=0.8', 'Accept-Language': 'it,en;q=0.5'}
 blocchi = collections.defaultdict(threading.Lock)
 def prova(u):

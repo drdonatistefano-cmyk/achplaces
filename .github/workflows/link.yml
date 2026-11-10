@@ -32,7 +32,7 @@ jobs:
       - name: Salva
         run: |
           cd out
-          git add link-${{ matrix.gruppo }}.json
+          git add link-${{ matrix.gruppo }}.json link-${{ matrix.gruppo }}.giro
           git commit -q -m "Link, gruppo ${{ matrix.gruppo }}" || exit 0
           for i in 1 2 3 4 5 6; do git pull --rebase -q origin foto && git push -q origin HEAD:foto && exit 0; sleep $((RANDOM % 15 + 5)); done
           exit 1

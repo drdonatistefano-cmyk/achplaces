@@ -62,10 +62,17 @@ for k, x in enumerate(coda):
     if x['id'] in fatto: continue
     urls = list(dict.fromkeys([x['off']] + x['src']))[:5]
     r = None
+    lette = 0
     for u in urls:
         if not u or not u.startswith('https://'): continue
         r = esamina(x, u)
+        if CACHE.get(u, ('', ''))[0]: lette += 1
         if r and 'tk' in r: break
+    # (10/11 23:00, coordinamento) Se nessuna pagina si e' aperta (sito lento, bloccato, fuori
+    # servizio) il luogo NON si segna come fatto: si riprova al prossimo giro. Prima finiva in
+    # «{}», cioe' «niente biglietto», e non veniva piu' guardato.
+    if not r and not lette:
+        continue
     fatto[x['id']] = r or {}
     if k % 300 == 0:
         json.dump(fatto, open(FO, 'w'), ensure_ascii=False)
