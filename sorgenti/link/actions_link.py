@@ -125,8 +125,10 @@ if WORKER:
            and (urlparse(u).hostname or '').endswith('.it')]
     print('seconda passata da Cloudflare:', len(rip), 'link', flush=True)
     presi = 0
-    for i in range(0, len(rip), 15):
-        pezzo = rip[i:i + 15]
+    # 10 alla volta, non 15: nel piano gratuito un Worker fa al massimo 50 richieste per volta e
+    # ogni rimando (http -> https, -> www) ne conta una; 10 link con tre rimandi restano sotto.
+    for i in range(0, len(rip), 10):
+        pezzo = rip[i:i + 10]
         try:
             r = requests.post(WORKER, json={'u': pezzo}, timeout=120, headers={'User-Agent': H['User-Agent']})
             esiti = r.json() if r.status_code == 200 else {}
