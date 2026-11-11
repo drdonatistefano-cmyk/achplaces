@@ -5,6 +5,8 @@ import json, os, sys, time, threading, collections
 from concurrent.futures import ThreadPoolExecutor
 from urllib.parse import urlparse
 import requests
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 G = int(sys.argv[1]) if len(sys.argv) > 1 else 0
 QUI = os.path.dirname(os.path.abspath(__file__))
 tutti = json.load(open(os.path.join(QUI, 'tutti.json')))
@@ -73,7 +75,20 @@ def prova(u):
                 return u, [c, fin if fin != u else '', '']
             except Exception as e:
                 err = type(e).__name__
-                if k == 0 and err not in ('SSLError',): time.sleep(2); continue
+                if err == 'SSLError':
+                    # (11/11) Certificato che Python rifiuta ma i browser di solito accettano: quasi
+                    # sempre manca un certificato intermedio, che i browser vanno a prendere da soli.
+                    # Si riprova senza verifica solo per leggere se la pagina esiste: non si invia
+                    # niente e il contenuto non si usa. Il risultato tiene scritto «SSLError», cosi'
+                    # chi lo legge sa che il certificato del sito va guardato.
+                    try:
+                        r = requests.get(u, headers=H, timeout=15, allow_redirects=True, stream=True, verify=False)
+                        c = r.status_code; fin = r.url; r.close()
+                        falliti_di_fila[host] = 0
+                        return u, [c, fin if fin != u else '', 'SSLError']
+                    except Exception as e2:
+                        err = type(e2).__name__
+                if k == 0 and err != 'SSLError': time.sleep(2); continue
                 if err in ERR_SITO:
                     falliti_di_fila[host] += 1
                     if falliti_di_fila[host] >= 4:
