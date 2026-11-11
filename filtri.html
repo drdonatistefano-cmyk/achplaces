@@ -375,6 +375,9 @@ body.tL #fp,body.ffold #fp{display:none}
 @media (max-width:759px){.giu{display:none!important}.rst.azzera{padding:6px 10px;font-size:12.5px}}
 /* mk22 sottofiltri visibili */
 @media (min-width:760px){.frow{flex-wrap:wrap;overflow:visible;row-gap:6px}}
+/* mk23 Metodo e Fonti a destra */
+.tabs .seg{width:100%;flex:1 1 auto}
+.tabs .seg a.tab[href$="#metodo"]{margin-left:auto}
 </style></head><body>
 <div class="wrap">
 <div class="tabs"><div class="seg"><a class="tab gl" href="index.html" aria-label="Torna alla Guida">🧭 <span class="t">Guida</span></a><button class="tab on" id="tabF" data-tab="F">🔎 <span class="t">Luoghi</span></button><button class="tab" id="tabL" data-tab="L" disabled>📍 <span class="t" id="tabLt">Elenco</span></button><a class="tab gl sm" href="index.html#metodo" aria-label="Metodo">📐 <span class="t">Metodo</span></a><a class="tab gl sm" href="index.html#fonti" aria-label="Fonti">📚 <span class="t">Fonti</span></a></div><div id="fp"></div><div class="fbar" id="fbar"></div></div>

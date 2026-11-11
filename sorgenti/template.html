@@ -838,29 +838,11 @@ if(GC&&ON_WEB){try{const s=document.createElement("script");s.async=true;s.datas
 <section class="wrap view" id="view-metodo" hidden aria-labelledby="m-title">
   <h2 id="m-title">Metodo e regole</h2>
   <p>Come Ach's Places Guide sceglie, verifica e pubblica i luoghi. Le stesse regole valgono per ogni comune d'Italia, così la guida può crescere provincia per provincia senza cambiare forma.</p>
-  <h3>1. Procedura, comune per comune</h3>
-  <ol>
-    <li>Si parte dall'elenco ufficiale dei comuni della provincia (codici ISTAT).</li>
-    <li>Per ogni comune si legge prima la fonte regionale (in Emilia-Romagna la scheda di Emilia Romagna Turismo, in Toscana Visit Tuscany), poi quella provinciale o di destinazione (Bologna Welcome, Turismo Imolese, Visit Romagna, Riviera di Rimini, Feel Florence) e infine quella locale (sito turistico del Comune, sito del museo o del parco).</li>
-    <li>Si incrociano i riconoscimenti nazionali: UNESCO, I Borghi più belli d'Italia, Bandiere Arancioni del Touring Club.</li>
-    <li>Prezzi, orari, chiusure e prenotazioni si prendono solo dal sito ufficiale del luogo o dell'ente che lo gestisce.</li>
-    <li>Wikipedia, stampa e blog servono a trovare luoghi e a segnalare problemi, mai come unica fonte di prezzi o orari: sono marcati 🟠.</li>
-    <li>I testi sono scritti da zero: nessun paragrafo è copiato dalle fonti.</li>
-    <li>Ogni dato che non si trova viene scritto "da verificare", senza inventarlo.</li>
-    <li>Ogni fonte usata entra nell'Archivio fonti con data di controllo.</li>
-  </ol>
-  <h3>2. Quali luoghi entrano</h3>
-  <ul>
-    <li><b>Prima passata:</b> da 1 a 6 luoghi per comune, i capoluoghi più completi (Bologna 27, Firenze 40, Ravenna 18, Ferrara 14, Rimini 9).</li>
-    <li>Entrano i luoghi che la fonte ufficiale indica tra quelli da non perdere, quelli con un riconoscimento e quelli unici nel loro genere.</li>
-    <li>Restano fuori luoghi privati non visitabili (salvo esterni notevoli, dichiarati), attività commerciali qualsiasi, eventi temporanei.</li>
-    <li>Un luogo chiuso resta in elenco con l'etichetta ⛔ se la chiusura è temporanea, così il turista sa che esiste e quando riapre.</li>
-  </ul>
-  <h3>3. Tassonomia</h3>
+  <h3>1. Tassonomia</h3>
   <p>Cinque famiglie, valide per tutta Italia: 🏛️ Storia e monumenti, ⛪ Luoghi sacri, 🖼️ Musei, 🌳 Natura, 🧀 Vita locale. Ogni famiglia ha sottocategorie (borghi, castelli, pievi, case museo, mare, grotte, terme, motori…). I filtri mostrano solo le sottocategorie presenti nel luogo scelto.</p>
-  <h3>4. La scheda di ogni luogo</h3>
+  <h3>2. La scheda di ogni luogo</h3>
   <p>Nome, categoria e tipo, descrizione, perché andarci, ingresso gratuito o a pagamento con link ufficiale a biglietti e orari, tempo consigliato, accessibilità, indirizzo, link a Come arrivare (Google Maps) e al sito ufficiale, fonti con livello di affidabilità e data di verifica. Etichette: 🆓 gratis, 🎟️ a pagamento, ❔ ingresso da verificare, ☔ al coperto, 🌅 panorama, 🌍 UNESCO, ⚠️ avviso, ⛔ chiuso ora.</p>
-  <h3>5. Gerarchia delle fonti</h3>
+  <h3>3. Gerarchia delle fonti</h3>
   <ol>
     <li>🟢 Sito ufficiale del luogo o del suo gestore.</li>
     <li>🟢 Ufficio turistico ufficiale (Comune, destinazione, Regione).</li>
@@ -868,14 +850,14 @@ if(GC&&ON_WEB){try{const s=document.createElement("script");s.async=true;s.datas
     <li>🟢 Associazioni che rilasciano riconoscimenti (Borghi più belli d'Italia, Touring Club).</li>
     <li>🟠 Fonti secondarie: Wikipedia, stampa locale, guide e blog. Da ricontrollare.</li>
   </ol>
-  <h3>6. Regole legali</h3>
+  <h3>4. Regole legali</h3>
   <ul>
     <li>Nessuna mappa incorporata e nessun dato di Google copiato o salvato: "Come arrivare" apre Google Maps con un semplice link, "Foto" apre una ricerca su Google Immagini.</li>
     <li>Nessuna foto ripubblicata: le immagini restano sui siti dei titolari.</li>
     <li>Testi originali, citazioni brevi solo se indispensabili, sempre con la fonte.</li>
     <li>Marchi e nomi di riconoscimenti usati solo per informare, con link all'ente che li rilascia.</li>
   </ul>
-  <h3>7. Design e dispositivi</h3>
+  <h3>5. Design e dispositivi</h3>
   <ul>
     <li>Prima il telefono: filtri a chip con icone, scheda dal basso, pulsanti grandi; su tablet e desktop griglia a più colonne.</li>
     <li>Tutti i filtri sono a scelta multipla: Province, Comuni, Cosa, Tipo, Ingresso, Ideale per (pioggia, panorama, UNESCO, Borghi più belli, Bandiera Arancione), Tempo. Dentro un filtro le voci si sommano, tra filtri diversi si combinano.</li>
@@ -883,16 +865,16 @@ if(GC&&ON_WEB){try{const s=document.createElement("script");s.async=true;s.datas
     <li><b>📍 Vicino a te</b>: dalla posizione del telefono (o da un comune scelto) si fissano raggio e tempo in auto, e la guida mostra solo i luoghi entro quella distanza, ordinati dal più vicino, con distanza e tempo stimato su ogni scheda.</li>
     <li>I numeri in alto (luoghi, gratuiti, comuni o al coperto, con avvisi) sono anche scorciatoie: toccandoli si accende il filtro corrispondente.</li>
   </ul>
-  <h3>8. Struttura dei dati</h3>
+  <h3>6. Struttura dei dati</h3>
   <p>Ogni comune è un oggetto con codice ISTAT, provincia, riconoscimenti, avvisi, fonti e luoghi. Ogni luogo ha un identificativo unico "comune--luogo". Le coordinate sono facoltative: senza coordinate, Come arrivare usa nome, indirizzo e comune. Aggiungere una provincia significa aggiungere i suoi comuni, senza toccare la pagina.</p>
-  <h3>9. Manutenzione</h3>
+  <h3>7. Manutenzione</h3>
   <ul>
     <li>Ogni scheda riporta la data di verifica. Prezzi e orari non sono copiati nella guida: si leggono sempre sul sito del gestore, così non invecchiano.</li>
     <li>Le fonti 🟠 sono le prime da sostituire con una fonte ufficiale.</li>
     <li>A ogni aggiornamento si controllano le schede del Ministero della Cultura per i luoghi statali, i siti dei musei e la stampa locale per chiusure e riaperture. Nell'archivio ogni fonte è segnata come usata, consultata ma scartata (dati vecchi o non affidabili) o da consultare.</li>
     <li>Le chiusure (es. Rocca di Imola, Asinelli) si ricontrollano a ogni aggiornamento.</li>
   </ul>
-  <h3>10. Come leggere le schede</h3>
+  <h3>8. Come leggere le schede</h3>
   <ul>
     <li>🟢 fonte ufficiale · 🟠 fonte secondaria, da ricontrollare.</li>
     <li>⚠️ avviso (lavori, orari ridotti, riaperture annunciate) · ⛔ chiuso ora: l'avviso è sempre dentro la scheda del luogo, non in cima alla pagina.</li>
@@ -900,7 +882,7 @@ if(GC&&ON_WEB){try{const s=document.createElement("script");s.async=true;s.datas
     <li>La prima domenica del mese molti musei statali e alcuni civici sono gratuiti.</li>
     <li>Prezzi e orari cambiano: controlla il sito ufficiale prima di partire.</li>
   </ul>
-  <h3>11. Protocollo di ricerca, uguale per ogni provincia</h3>
+  <h3>9. Protocollo di ricerca, uguale per ogni provincia</h3>
   <p>Ogni provincia si ricerca nello stesso ordine, con le stesse domande e gli stessi controlli, così una scheda di Rimini vale quanto una di Firenze.</p>
   <ol>
     <li><b>Fase 0, elenco.</b> Si scarica l'elenco ufficiale dei comuni (codici ISTAT) e si segnano le fusioni recenti. Obiettivo: tutti i comuni con almeno una scheda; quelli ancora vuoti compaiono nella tabella di controllo qui sotto.</li>
@@ -919,7 +901,7 @@ if(GC&&ON_WEB){try{const s=document.createElement("script");s.async=true;s.datas
     <li><b>Archivio.</b> Ogni fonte consultata entra nell'Archivio fonti con area, livello, affidabilità, esito (usata, consultata ma scartata, da consultare) e data.</li>
     <li><b>Costo zero.</b> Solo ricerca web standard e pagine ufficiali; dati aperti per codici e coordinate dei comuni.</li>
   </ol>
-  <h3>12. Note legali e crediti</h3>
+  <h3>10. Note legali e crediti</h3>
   <ul>
     <li>Testi originali di Ach's Places Guide; le informazioni pratiche sono riassunte dalle fonti citate in ogni scheda.</li>
     <li>Nessun contenuto di Google è copiato o mostrato: "Come arrivare" e "Foto" sono semplici link che aprono Google Maps e Google Immagini.</li>
@@ -927,18 +909,16 @@ if(GC&&ON_WEB){try{const s=document.createElement("script");s.async=true;s.datas
   </ul>
   <h3>Archivio delle fonti per regione</h3>
   <div id="arch"></div>
-  <h3>13. Controllo di qualità automatico</h3>
+  <h3>11. Controllo di qualità automatico</h3>
   <p>Ogni volta che la guida viene rigenerata, un controllo legge tutte le schede di tutte le province con le stesse regole. Gli <b>errori</b> bloccano la pubblicazione: categoria o tipo non previsti, identificativo duplicato, nessuna fonte ufficiale, link non sicuro, avviso o chiusura senza spiegazione, codice ISTAT o coordinate del comune mancanti. Gli <b>avvisi</b> diventano la lista di lavoro della passata successiva: luoghi a pagamento senza link al sito del gestore, descrizioni troppo brevi, comuni ancora senza schede.</p>
   <div class="mcard" id="qc"></div>
-  <h3>14. Ricerca a costo zero</h3>
+  <h3>12. Ricerca a costo zero</h3>
   <ul>
     <li>Nessun servizio a crediti o a pagamento: la ricerca usa solo la ricerca web standard e la lettura diretta delle pagine ufficiali.</li>
     <li>Una ricerca copre più comuni insieme, limitata al sito ufficiale giusto (es. Emilia Romagna Turismo, Ravenna Turismo), e i risultati si salvano subito nelle note: nessuna pagina si cerca due volte.</li>
     <li>Fonti aperte e gratuite da preferire quando raggiungibili: Wikidata (licenza CC0), open data del Ministero della Cultura e della Regione, elenchi ISTAT, OpenStreetMap (licenza ODbL, con attribuzione e senza carichi pesanti sui loro server).</li>
     <li>La guida pubblicata non chiama nessun servizio esterno: è una pagina statica, quindi non ha costi di funzionamento.</li>
   </ul>
-  <h3>Copertura attuale</h3>
-  <div class="mcard cov" id="coverage"></div>
 </section>
 
 <section class="wrap view" id="view-fonti" hidden aria-labelledby="f-title">
@@ -1547,7 +1527,7 @@ function renderCoverage(){
   const regs=[...new Set(COMUNI.map(c=>c.regione))].sort((a,b)=>REGN(a).localeCompare(REGN(b),"it"));
   const righe=regs.map(r=>{const cs=COMUNI.filter(c=>c.regione===r),np=new Set(cs.map(c=>c.prov)).size;
     return `<tr><td>${esc(REGN(r))}</td><td>${np}</td><td>${nf(cs.length)}</td><td>${nf(luo(cs))}</td></tr>`;}).join("");
-  $("coverage").innerHTML=`<p class="covt"><b>${nf(COMUNI.length)}</b> comuni · <b>${nf(luo(COMUNI))}</b> luoghi · <b>${new Set(COMUNI.map(c=>c.prov)).size}</b> province in <b>${regs.length}</b> regioni</p><p class="covd">Ultima verifica: ${esc(COMUNI[0].verified)}</p><details><summary>Dettaglio per regione</summary><table class="covtab"><thead><tr><th>Regione</th><th>Prov.</th><th>Comuni</th><th>Luoghi</th></tr></thead><tbody>${righe}</tbody></table></details>`;
+  if($("coverage"))$("coverage").innerHTML=`<p class="covt"><b>${nf(COMUNI.length)}</b> comuni · <b>${nf(luo(COMUNI))}</b> luoghi · <b>${new Set(COMUNI.map(c=>c.prov)).size}</b> province in <b>${regs.length}</b> regioni</p><p class="covd">Ultima verifica: ${esc(COMUNI[0].verified)}</p><details><summary>Dettaglio per regione</summary><table class="covtab"><thead><tr><th>Regione</th><th>Prov.</th><th>Comuni</th><th>Luoghi</th></tr></thead><tbody>${righe}</tbody></table></details>`;
 }
 function renderArch(){
   const el=$("arch");if(!el||typeof ARCH==="undefined")return;

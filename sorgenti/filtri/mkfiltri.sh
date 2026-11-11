@@ -11,5 +11,6 @@ python3 mk19.py
 python3 mk20.py
 python3 mk21.py
 python3 mk22.py
+python3 mk23.py
 cp /home/claude/achs-places-guide/filtri.html /home/claude/proto5/index.html
 echo filtri.html ok
