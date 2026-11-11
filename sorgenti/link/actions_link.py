@@ -43,18 +43,42 @@ fatto = json.load(open(FO)) if os.path.exists(FO) and _vecchio == _sett else {}
 open(_FG, 'w').write(_sett)
 H = {'User-Agent': 'Mozilla/5.0 (compatible; AchsPlacesGuide-linkcheck/1.0; +https://achplaces.com)', 'Accept': 'text/html,application/xhtml+xml,*/*;q=0.8', 'Accept-Language': 'it,en;q=0.5'}
 blocchi = collections.defaultdict(threading.Lock)
+# (11/11, coordinamento) Un sito che non si lascia raggiungere da GitHub non va interrogato link
+# per link. L'11/11 cultura.gov.it ha risposto «ConnectTimeout» a 353 link su 377: ogni link
+# costava due attese da 25 secondi, uno dopo l'altro, e il lavoro e' arrivato al tempo massimo
+# dopo 5 ore e mezza. Dopo 4 errori di collegamento di fila lo stesso sito si lascia stare per il
+# resto del giro, e i suoi link restano segnati «SitoNonRaggiungibile».
+#
+# COME LEGGERE IL RISULTATO [codice, indirizzo finale, errore]:
+#   codice 404 o 410          -> link rotto davvero
+#   codice 200-399            -> funziona
+#   codice 0                  -> NON VERIFICATO da GitHub, non «rotto»: siti che bloccano i server
+#                                (cultura.gov.it, letsmarche.it, parchi siciliani), certificati che
+#                                Python non accetta ma i browser si' (SSLError). Per una persona
+#                                col browser quasi sempre funzionano: non vanno tolti dalla guida.
+ERR_SITO = ('ConnectTimeout', 'ConnectionError', 'SSLError')
+falliti_di_fila = collections.Counter()
+bloccati = set()
 def prova(u):
     host = urlparse(u).hostname or ''
     with blocchi[host]:
+        if host in bloccati:
+            return u, [0, '', 'SitoNonRaggiungibile']
         for k in range(2):
             try:
-                r = requests.get(u, headers=H, timeout=25, allow_redirects=True, stream=True)
+                r = requests.get(u, headers=H, timeout=15, allow_redirects=True, stream=True)
                 c = r.status_code; fin = r.url; r.close()
+                falliti_di_fila[host] = 0          # il sito risponde, anche se con un errore
                 if c in (429, 503) and k == 0: time.sleep(5); continue
                 return u, [c, fin if fin != u else '', '']
             except Exception as e:
                 err = type(e).__name__
-                if k == 0: time.sleep(2); continue
+                if k == 0 and err not in ('SSLError',): time.sleep(2); continue
+                if err in ERR_SITO:
+                    falliti_di_fila[host] += 1
+                    if falliti_di_fila[host] >= 4:
+                        bloccati.add(host)
+                        print('sito non raggiungibile da GitHub, lo lascio stare:', host, flush=True)
                 return u, [0, '', err]
             finally:
                 time.sleep(0.3)
