@@ -1,0 +1,16 @@
+name: prova-worker
+on: workflow_dispatch
+permissions: {}
+jobs:
+  prova:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Diretto da GitHub (atteso bloccato)
+        run: |
+          for u in https://letsmarche.it/-/lapedona-2 https://cultura.gov.it/ https://www.parmawelcome.it/; do
+            echo "$u -> $(curl -s -o /dev/null -w '%{http_code}' -m 15 -A 'Mozilla/5.0' "$u" || echo errore)"; done
+      - name: Tramite il Worker
+        run: |
+          curl -sS -m 90 -X POST https://achplaces-link.drdonatistefano.workers.dev/ -H 'content-type: application/json' \
+            -d '{"u":["https://letsmarche.it/-/lapedona-2","https://cultura.gov.it/","https://www.parmawelcome.it/","https://www.parchiarcheologici.regione.sicilia.it/","https://cultura.gov.it/pagina-che-non-esiste-xyz","https://example.com/"]}'
