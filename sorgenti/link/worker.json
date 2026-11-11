@@ -1,0 +1,4 @@
+{
+  "nota": "Indirizzo del Worker di Cloudflare che controlla i link che GitHub non raggiunge (vedi worker.js). Vuoto = passo saltato. Non e un dato segreto: il Worker dice solo se una pagina .it esiste.",
+  "url": ""
+}

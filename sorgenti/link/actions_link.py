@@ -107,4 +107,43 @@ with ThreadPoolExecutor(16) as ex:
         if i % 500 == 0:
             json.dump(fatto, open(FO, 'w')); print(i, collections.Counter(x[0] // 100 for x in fatto.values()), flush=True)
 json.dump(fatto, open(FO, 'w'), sort_keys=True)
+
+# (11/11, coordinamento) Seconda passata dalla rete di Cloudflare. Molti siti pubblici italiani
+# chiudono la porta ai server di GitHub (Microsoft Azure) ma rispondono da altre reti: i link
+# rimasti a 0 per un problema di collegamento si mandano al Worker di sorgenti/link/worker.js,
+# 15 alla volta. Se il Worker trova la pagina, il risultato diventa [codice, finale, "cf"]; se
+# non la trova nemmeno lui, resta 0 con scritto anche il suo errore. Senza indirizzo in
+# worker.json il passo si salta.
+DA_CF = ('ConnectTimeout', 'ConnectionError', 'ReadTimeout', 'SitoNonRaggiungibile')
+try:
+    WORKER = (os.environ.get('LINK_WORKER') or
+              json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'worker.json'))).get('url') or '').strip()
+except Exception:
+    WORKER = ''
+if WORKER:
+    rip = [u for u in mie if fatto.get(u, [1])[0] == 0 and str(fatto[u][2]).split('+')[0] in DA_CF
+           and (urlparse(u).hostname or '').endswith('.it')]
+    print('seconda passata da Cloudflare:', len(rip), 'link', flush=True)
+    presi = 0
+    for i in range(0, len(rip), 15):
+        pezzo = rip[i:i + 15]
+        try:
+            r = requests.post(WORKER, json={'u': pezzo}, timeout=120, headers={'User-Agent': H['User-Agent']})
+            esiti = r.json() if r.status_code == 200 else {}
+        except Exception as e:
+            print('Worker non raggiungibile:', type(e).__name__, flush=True)
+            break
+        for u in pezzo:
+            v = esiti.get(u)
+            if isinstance(v, list) and len(v) == 3:
+                if v[0]:
+                    fatto[u] = v; presi += 1
+                else:
+                    fatto[u] = [0, '', f"{fatto[u][2]}+{v[2]}"]
+        if i % 150 == 0:
+            json.dump(fatto, open(FO, 'w'), sort_keys=True); salva_ramo(FO, f'Link, gruppo {G}: Cloudflare {i + len(pezzo)}')
+        time.sleep(1)
+    print('raggiunti da Cloudflare:', presi, 'su', len(rip), flush=True)
+    json.dump(fatto, open(FO, 'w'), sort_keys=True)
+
 print('fine', collections.Counter(x[0] for x in fatto.values()).most_common(12))
