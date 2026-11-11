@@ -136,8 +136,12 @@ if WORKER:
         for u in pezzo:
             v = esiti.get(u)
             if isinstance(v, list) and len(v) == 3:
-                if v[0]:
+                # 520-530 sono errori fra Cloudflare e il sito (certificato, DNS), non la
+                # risposta del sito: il link resta NON VERIFICATO, mai rotto.
+                if v[0] and not 520 <= v[0] <= 530:
                     fatto[u] = v; presi += 1
+                elif v[0]:
+                    fatto[u] = [0, '', f"{fatto[u][2]}+cf{v[0]}"]
                 else:
                     fatto[u] = [0, '', f"{fatto[u][2]}+{v[2]}"]
         if i % 150 == 0:
