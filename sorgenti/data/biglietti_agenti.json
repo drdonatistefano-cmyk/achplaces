@@ -1,4 +1,33 @@
 {
+"aci-castello-ct--castello-normanno-e-museo-civico": {
+"nota": "Scheda MiC senza tariffe e con orari non validi (tutti Chiuso)"
+},
+"aci-castello-ct--museo-casa-del-nespolo": {
+"free": false,
+"hr": "https://cultura.gov.it/luogo/museo-casa-del-nespolo",
+"nota": "Scheda MiC con biglietto intero 1,50 euro; orari non validi (tutti Chiuso)"
+},
+"acireale-ct--biblioteca-e-pinacoteca-zelantea": {
+"nota": "Scheda MiC senza tariffe e con orari non validi; sito accademiadeglizelanti.it non apribile"
+},
+"acireale-ct--teatro-dei-pupi-pennisi-macri-collezione": {
+"nota": "Nessuna pagina ufficiale trovata"
+},
+"adria-ro--museo-archeologico-nazionale-di-adria": {
+"free": false,
+"hr": "https://museoadria.cultura.gov.it/visita/",
+"nota": "Museo archeologico nazionale di Adria (MiC), pagina Visita con orari e tariffe; acquisto online tramite Musei Italiani",
+"tk": "https://museoadria.cultura.gov.it/visita/"
+},
+"adria-ro--septem-maria-museum": {
+"nota": "nessun sito ufficiale trovato (solo portale parks.it, non usato)"
+},
+"aggius-ss--meoc-museo-etnografico-oliva-carta-canna": {
+"nota": "nessuna pagina ufficiale del gestore trovata"
+},
+"aggius-ss--museo-del-banditismo": {
+"nota": "nessuna pagina ufficiale del gestore trovata"
+},
 "aglie-to--castello-ducale-di-aglie": {
 "nota": "pagina Direzione regionale musei Piemonte non verificabile con WebFetch"
 },
@@ -19,6 +48,9 @@
 "hr": "https://www.coopculture.it/it/poi/parco-archeologico-e-paesaggistico-della-valle-dei-templi/",
 "nota": "CoopCulture, biglietto unico del Parco Valle dei Templi (biglietteria presso il Tempio di Giunone)",
 "tk": "https://www.coopculture.it/it/prodotti/biglietto-parco-archeologico-e-paesaggistico-della-valle-dei-templi/"
+},
+"ala-tn--museo-del-pianoforte-antico": {
+"nota": "Solo scheda cultura.gov.it ferma al 2021 (orari assenti, tariffe non affidabili): non usata"
 },
 "alatri-fr--museo-civico-in-palazzo-gottifredo": {
 "nota": "Nessuna pagina ufficiale del gestore trovata"
@@ -71,11 +103,42 @@
 "argenta-fe--delizia-di-benvignante": {
 "nota": "Ferrara Terra e Acqua: visibile solo dall'esterno, in restauro, nessun orario o tariffa"
 },
+"aritzo-nu--ecomuseo-della-montagna-sarda-museo-etno": {
+"nota": "non trovato: solo portali turistici; budget ricerche esaurito"
+},
+"aritzo-nu--sa-bovida-carcere-spagnolo": {
+"nota": "non trovato: solo portali turistici; budget ricerche esaurito"
+},
+"armungia-su--bottega-del-fabbro": {
+"nota": "nessuna pagina ufficiale trovata"
+},
+"armungia-su--museo-etnografico-sa-domu-de-is-ainas": {
+"hr": "https://cultura.gov.it/luogo/museo-storico-etnografico-sa-domu-de-is-ainas",
+"nota": "Ministero della Cultura, scheda luogo: orari ma nessuna tariffa"
+},
+"arqua-petrarca-pd--casa-del-petrarca": {
+"free": false,
+"hr": "https://padovacultura.padovanet.it/it/musei/casa-del-petrarca",
+"nota": "Comune di Padova (Padova Cultura), scheda Casa del Petrarca con tariffe intero 6, ridotto 4 e orari stagionali",
+"tk": "https://padovacultura.padovanet.it/it/musei/casa-del-petrarca"
+},
+"asolo-tv--museo-civico-di-asolo": {
+"free": false,
+"hr": "https://www.museoasolo.it/contatti/",
+"nota": "Museo Civico di Asolo, pagina contatti con orari e tariffe (intero 7)",
+"tk": "https://www.museoasolo.it/contatti/"
+},
 "assisi-pg--rocca-maggiore": {
 "nota": "Non trovato: pagina Comune di Assisi non leggibile con WebFetch (robots)"
 },
 "atripalda-av--parco-archeologico-dell-antica-abellinum": {
+"hr": "https://cultura.gov.it/luogo/palazzo-della-dogana-dei-grani-e-area-archeologica-dellantica-abellinum",
 "nota": "MiC cultura.gov.it scheda Dogana dei Grani e Area archeologica Abellinum vista in ricerca, non apribile (robots): da con"
+},
+"atzara-nu--mama-museo-d-arte-moderna-e-contemporane": {
+"free": false,
+"hr": "https://cultura.gov.it/luogo/museo-d-arte-moderna-e-contemporanea-antonio-ortiz-echague",
+"nota": "Ministero della Cultura, scheda luogo (intero 2 euro, ridotto 1,50; orari indicati come chiuso tutti i giorni, non affid"
 },
 "avellino-av--museo-irpino-complesso-monumentale-carce": {
 "nota": "Nessuna pagina ufficiale con orari o tariffe trovata (solo pagine eventi cultura.gov.it)"
@@ -83,8 +146,7 @@
 "bacoli-na--piscina-mirabilis": {
 "free": false,
 "hr": "https://cultura.gov.it/luogo/parco-archeologico-dei-campi-flegrei-piscina-mirabilis-misenum",
-"nota": "scheda MiC: mer sab dom 9-19.30 su prenotazione, intero 5 euro ridotto 2; biglietteria indicata CoopCulture (pagina non ",
-"tk": "https://cultura.gov.it/luogo/parco-archeologico-dei-campi-flegrei-piscina-mirabilis-misenum"
+"nota": "scheda MiC: mer sab dom 9-19.30 su prenotazione, intero 5 euro ridotto 2; biglietteria indicata CoopCulture (pagina non "
 },
 "barberino-di-mugello-fi--villa-medicea-di-cafaggiolo": {
 "nota": "Regione Toscana: nessuna informazione su visite, orari o biglietti"
@@ -99,6 +161,7 @@
 "tk": "https://www.aqp.it/en/node/348"
 },
 "barletta-bt--palazzo-della-marra-pinacoteca-giuseppe-": {
+"hr": "https://cultura.gov.it/luogo/pinacoteca-giuseppe-de-nittis",
 "nota": "Ministero della Cultura, scheda luogo (robots, da verificare)"
 },
 "barolo-cn--castello-falletti-e-wimu": {
@@ -140,8 +203,27 @@
 "bienno-bs--mulino-museo": {
 "nota": "nessuna pagina ufficiale trovata"
 },
+"bitti-nu--museo-della-civilta-contadina-e-pastoral": {
+"free": false,
+"hr": "https://cultura.gov.it/luogo/museo-della-civilta-contadina-e-pastorale",
+"nota": "Ministero della Cultura, scheda luogo (intero 2,60, ridotto 2,10, cumulativo 3,60 euro; mar-dom 9-12.30 e pomeriggio sta"
+},
+"bitti-nu--villaggio-santuario-nuragico-di-romanzes": {
+"free": false,
+"hr": "https://cultura.gov.it/luogo/museo-della-civilta-contadina-e-pastorale",
+"nota": "Ministero della Cultura, scheda del Museo civilta contadina con biglietto cumulativo 3,60 euro che include Romanzesu; sc"
+},
 "bonorva-ss--necropoli-di-sant-andrea-priu": {
 "nota": "Nessuna pagina ufficiale trovata (solo portali turistici e schede generiche)"
+},
+"borgo-valsugana-tn--arte-sella": {
+"nota": "Non verificato: il sito ufficiale artesella.it rimanda a artesella.it/en/visit/tariffe-e-orari/ ma la pagina non e aprib"
+},
+"borgo-valsugana-tn--mostra-permanente-della-grande-guerra-in": {
+"nota": "Nessuna pagina ufficiale trovata (ricerche esaurite)"
+},
+"bormio-so--museo-civico-di-bormio-palazzo-de-simoni": {
+"nota": "Nessuna pagina ufficiale biglietti/orari; solo pagina evento TicketTailor (mostra Ricami al Museo) con biglietto museo 5"
 },
 "bova-rc--museo-della-lingua-greco-calabra-gerhard": {
 "nota": "nessuna pagina ufficiale trovata (solo italia.it, FAI, museionline)"
@@ -169,19 +251,59 @@
 "nota": "Fondazione Brescia Musei, biglietto integrato 19 euro, acquisto su Ticketlandia",
 "tk": "https://www.bresciamusei.com/biglietti/"
 },
+"bressanone-bz--museo-della-farmacia": {
+"nota": "Solo portali turistici, sito del museo non trovato"
+},
+"bressanone-bz--palazzo-vescovile-hofburg-e-museo-dioces": {
+"nota": "hofburg.it non apribile e assente dai risultati di ricerca"
+},
+"bronte-ct--ducea-di-nelson-e-castello-nelson": {
+"nota": "Nessuna pagina ufficiale trovata"
+},
 "buccino-sa--museo-archeologico-nazionale-di-volcei-m": {
+"hr": "https://cultura.gov.it/luogo/museo-archeologico-nazionale-di-volcei-marcello-gigante-di-buccino",
 "nota": "MiC cultura.gov.it scheda luogo vista in ricerca, non apribile (robots): da controllare"
+},
+"cabras-or--area-archeologica-di-tharros": {
+"free": false,
+"hr": "https://corporate.coopculture.it/en/poi/archaeological-area-of-tharros/",
+"nota": "Scheda MiC (intero 11 euro, ridotto 9, gestore Fondazione Mont'e Prama, biglietteria CoopCulture); orari stagionali da p"
+},
+"caderzone-terme-tn--museo-della-malga": {
+"nota": "Solo portali turistici (visittrentino, campigliodolomiti), nessuna pagina del gestore"
 },
 "cagliari-ca--museo-archeologico-nazionale": {
 "nota": "scheda cultura.gov.it non leggibile (robots), sito del museo non raggiungibile; nessuna pagina ufficiale verificata"
 },
+"cagliari-ca--museo-del-beato-nicola-da-gesturi": {
+"nota": "nessuna pagina ufficiale del gestore trovata"
+},
+"cagliari-ca--museo-del-tesoro-e-area-archeologica-di-": {
+"nota": "sito ufficiale mutseu.org non emerso nelle ricerche ne apribile; solo portali turistici"
+},
+"cagliari-ca--museo-etnografico-regionale-collezione-l": {
+"nota": "sito ISRE non apribile ne emerso con pagina orari; solo portali turistici"
+},
+"cagliari-ca--museo-ferroviario-sardo": {
+"nota": "nessuna pagina ufficiale del gestore trovata"
+},
+"cagliari-ca--palazzo-di-citta": {
+"nota": "sito Musei Civici Cagliari non emerso nelle ricerche; portale comunale lo dà temporaneamente chiuso"
+},
 "cagliari-ca--pinacoteca-nazionale": {
 "nota": "Non trovato: sito Musei nazionali di Cagliari e pagina cultura.gov.it non raggiungibili con WebFetch"
+},
+"campo-tures-bz--castel-tures": {
+"free": false,
+"hr": "https://burgeninstitut.com/information_taufers_en.htm",
+"nota": "Istituto Italiano dei Castelli (Burgeninstitut), pagina informazioni con orari inverno 2026/27 e tariffe (adulti 12/15 e",
+"tk": "https://burgeninstitut.com/information_taufers_en.htm"
 },
 "caneva-pn--sito-palafitticolo-del-palu-di-livenza": {
 "nota": "Non trovato: solo portali turistici e pagine evento"
 },
 "canosa-di-puglia-bt--parco-archeologico-e-antiquarium-di-san-": {
+"hr": "https://cultura.gov.it/luogo/parco-archeologico-e-antiquarium-di-s-leucio",
 "nota": "Ministero della Cultura, scheda luogo (robots, da verificare)"
 },
 "capaccio-paestum-sa--area-archeologica-e-templi-di-paestum": {
@@ -195,6 +317,9 @@
 },
 "capaccio-paestum-sa--museo-archeologico-nazionale-di-paestum": {
 "nota": "Pagina orari e biglietti di museopaestum.cultura.gov.it reindirizza a parchipaestumvelia.cultura.gov.it, non apribile"
+},
+"capo-d-orlando-me--villa-piccolo-casa-museo": {
+"nota": "fondazionepiccolo.it non apribile con WebFetch (non in allowlist) e nessuna pagina orari/biglietti nei risultati di rice"
 },
 "capo-di-ponte-bs--mupre-museo-nazionale-della-preistoria-d": {
 "free": false,
@@ -220,6 +345,22 @@
 "capua-ce--museo-provinciale-campano": {
 "nota": "Sito ufficiale non raggiungibile ne trovato nei risultati di ricerca"
 },
+"carbonia-su--museo-del-carbone-grande-miniera-di-serb": {
+"free": false,
+"hr": "https://www.museodelcarbone.it/en/visit/opening-hours-and-ticket-prices/",
+"nota": "Museo del Carbone, pagina orari e prezzi (intero 8 euro, ridotto 6, prenotazione online FareHarbor)",
+"tk": "https://www.museodelcarbone.it/en/visit/opening-hours-and-ticket-prices/"
+},
+"carbonia-su--parco-archeologico-di-monte-sirai": {
+"free": false,
+"hr": "https://cultura.gov.it/luogo/parco-archeologico-monte-sirai",
+"nota": "Scheda MiC Luoghi della cultura (intero 6 euro, ridotto 5); incluso anche nel Pass 15 euro del Museo del Carbone"
+},
+"carloforte-su--museo-civico-casa-del-duca": {
+"free": false,
+"hr": "https://cultura.gov.it/luogo/museo-civico-di-carlo-forte",
+"nota": "Ministero della Cultura, scheda luogo (intero 2 euro, ridotto 1,50; aggiornata 2021)"
+},
 "carmignano-po--villa-medicea-la-ferdinanda": {
 "nota": "villa privata, visite saltuarie; pagina villegiardinimedicei.it non verificabile"
 },
@@ -242,6 +383,7 @@
 "tk": "https://pompeiisites.org/info-per-la-visita/orari-e-tariffe/"
 },
 "castellana-grotte-ba--museo-speleologico-franco-anelli": {
+"hr": "https://cultura.gov.it/luogo/museo-speleologico-franco-anelli",
 "nota": "Ministero della Cultura, scheda luogo (robots, da verificare); pagina Grotte di Castellana senza orari"
 },
 "castellaneta-ta--museo-rodolfo-valentino-muv": {
@@ -268,6 +410,14 @@
 "castro-dei-volsci-fr--torre-dell-orologio-mostra-nino-manfredi": {
 "nota": "Non trovata pagina ufficiale con biglietti o orari"
 },
+"castroreale-me--museo-civico-di-castroreale": {
+"nota": "Nessuna pagina ufficiale trovata"
+},
+"castroreale-me--museo-parrocchiale-in-santa-maria-degli-": {
+"free": false,
+"hr": "https://cultura.gov.it/luogo/museo-parrocchiale-di-castroreale",
+"nota": "Scheda MiC Museo parrocchiale di Castroreale (chiesa di S. Maria degli Angeli), intero 2 euro; orari non validi (tutti C"
+},
 "cecina-li--museo-archeologico-la-cinquantina": {
 "nota": "nessuna pagina ufficiale trovata"
 },
@@ -280,8 +430,7 @@
 "cerreto-guidi-fi--villa-medicea-di-cerreto-guidi-e-museo-s": {
 "free": false,
 "hr": "https://cultura.gov.it/luogo/villa-medicea-di-cerreto-guidi-e-museo-storico-della-caccia-e-del-territorio",
-"nota": "Ministero della Cultura, scheda luogo (8 euro, ridotto 2 euro; abbonamento annuale 16 euro)",
-"tk": "https://cultura.gov.it/luogo/villa-medicea-di-cerreto-guidi-e-museo-storico-della-caccia-e-del-territorio"
+"nota": "Ministero della Cultura, scheda luogo (8 euro, ridotto 2 euro; abbonamento annuale 16 euro)"
 },
 "cerveteri-rm--museo-archeologico-nazionale-cerite": {
 "nota": "Non trovato: pagina PACT del museo non leggibile con WebFetch (robots)"
@@ -310,9 +459,18 @@
 "cherasco-cn--palazzo-salmatoris": {
 "nota": "Nessuna pagina ufficiale del gestore trovata (solo notizie e Abbonamento Musei)"
 },
+"chiavenna-so--museo-del-tesoro-di-san-lorenzo": {
+"nota": "Nessuna pagina ufficiale con orari/tariffe; solo PDF didattico della Diocesi di Como (beniartistici.diocesidicomo.it)"
+},
 "chieti-ch--museo-archeologico-nazionale-la-civitell": {
 "hr": "https://comune.chieti.it/vivere-il-comune/luoghi/museo-archeologico-la-civitella/",
 "nota": "Comune di Chieti, scheda luogo con orari (aggiornata 2024); pagina Direzione regionale musei non leggibile"
+},
+"chiusa-bz--gudon-chiesa-di-san-martino-e-museo-loca": {
+"nota": "Nessuna pagina ufficiale trovata (ricerche esaurite)"
+},
+"chiusa-bz--museo-civico-di-chiusa-e-chiesa-dei-capp": {
+"nota": "Solo pagine turistiche (klausen.it, suedtirolerland), nessuna pagina del gestore verificata"
 },
 "cingoli-mc--museo-archeologico-statale": {
 "nota": "Solo pagine eventi cultura.gov.it, non verificabili (robots)"
@@ -332,8 +490,7 @@
 "cividale-del-friuli-ud--museo-archeologico-nazionale": {
 "free": false,
 "hr": "https://cultura.gov.it/luogo/museo-archeologico-nazionale-di-cividale-del-friuli",
-"nota": "Ministero della Cultura, scheda luogo (6 euro, ridotto 2 euro; mar-dom 10-19)",
-"tk": "https://cultura.gov.it/luogo/museo-archeologico-nazionale-di-cividale-del-friuli"
+"nota": "Ministero della Cultura, scheda luogo (6 euro, ridotto 2 euro; mar-dom 10-19)"
 },
 "cividale-del-friuli-ud--museo-cristiano-e-tesoro-del-duomo": {
 "nota": "sito del museo mucris.com non raggiungibile per verifica"
@@ -354,11 +511,26 @@
 },
 "codigoro-fe--campanile-di-pomposa": {
 "hr": "https://cultura.gov.it/luogo/abbazia-di-pomposa-e-museo-pomposiano",
-"nota": "Ministero della Cultura, scheda Abbazia di Pomposa: biglietto abbazia 5 euro, non dice se il campanile e visitabile",
-"tk": "https://cultura.gov.it/luogo/abbazia-di-pomposa-e-museo-pomposiano"
+"nota": "Ministero della Cultura, scheda Abbazia di Pomposa: biglietto abbazia 5 euro, non dice se il campanile e visitabile"
+},
+"codogno-lo--raccolta-d-arte-carlo-lamberti": {
+"nota": "Nessuna pagina ufficiale trovata"
+},
+"como-co--museo-archeologico-paolo-giovio": {
+"nota": "Nessuna pagina ufficiale del Comune di Como con orari/tariffe trovata (solo PDF vecchi e notizie)"
+},
+"como-co--museo-storico-giuseppe-garibaldi": {
+"nota": "Nessuna pagina ufficiale del Comune di Como trovata; scheda MiC indica intero 4 euro ma non e' del gestore"
+},
+"como-co--pinacoteca-civica-di-palazzo-volpi": {
+"nota": "Nessuna pagina ufficiale del Comune di Como con orari/tariffe trovata"
 },
 "conca-dei-marini-sa--torre-del-capo-di-conca-torre-bianca": {
 "nota": "Ricerche esaurite, non trovata pagina ufficiale"
+},
+"conegliano-tv--casa-museo-di-giovanni-battista-cima": {
+"hr": "https://www.fondazionegbcima.com/index-cima.html",
+"nota": "Fondazione G.B. Cima, orari sab-dom; tariffe non indicate"
 },
 "corigliano-d-otranto-le--castello-de-monti": {
 "nota": "Nessuna pagina ufficiale trovata (solo italia.it e schede generiche)"
@@ -372,7 +544,23 @@
 "corinaldo-an--teatro-carlo-goldoni": {
 "nota": "Corinaldo Turismo ha solo scheda storica senza orari ne tariffe"
 },
+"corleone-pa--museo-civico-pippo-rizzo": {
+"nota": "Nessuna pagina ufficiale trovata"
+},
+"desenzano-del-garda-bs--museo-civico-archeologico-giovanni-rambo": {
+"nota": "Solo scheda cultura.gov.it con orari 2022-23 (intero 8 euro); sito ufficiale museorambotti.it non apribile"
+},
+"desenzano-del-garda-bs--torre-museo-e-ossario-di-san-martino-del": {
+"free": false,
+"hr": "https://www.solferinoesanmartino.it/tickets-and-timetables/?lang=en",
+"nota": "Societa Solferino e San Martino, pagina San Martino (museo e torre intero 7 euro); pagina orari linkata dal sito, non ap",
+"tk": "https://www.solferinoesanmartino.it/at-san-martino-della-battaglia/?lang=en"
+},
+"egna-bz--museo-di-cultura-popolare": {
+"nota": "Nessuna pagina ufficiale trovata (ricerche esaurite)"
+},
 "ercolano-na--teatro-antico": {
+"hr": "https://cultura.gov.it/luogo/parco-archeologico-di-ercolano-teatro-romano",
 "nota": "scheda MiC cultura.gov.it vista nella ricerca, WebFetch bloccato da robots; visite solo in aperture straordinarie second"
 },
 "ercolano-na--villa-dei-papiri": {
@@ -385,6 +573,7 @@
 "nota": "scheda cultura.gov.it non apribile (robots), nessuna altra fonte ufficiale"
 },
 "fasano-br--museo-archeologico-nazionale-giuseppe-an": {
+"hr": "https://cultura.gov.it/luogo/museo-archeologico-nazionale-giuseppe-andreassi-e-parco-archeologico-di-egnazia",
 "nota": "Direzione regionale Musei Puglia, pagina Acquista biglietti (generica, senza prezzo del sito); orari da scheda MiC non a",
 "tk": "https://museipuglia.cultura.gov.it/ticket/"
 },
@@ -412,8 +601,16 @@
 "nota": "Museo Marino Marini, pagine tariffe (intero 10 euro, acquisto online FareHarbor indicato dal museo) e orari",
 "tk": "https://museomarinomarini.it/en/info-and-contact/info-and-contact/"
 },
+"fluminimaggiore-su--tempio-di-antas": {
+"hr": "https://cultura.gov.it/luogo/area-archeologica-di-antas-tempio-punico-romano",
+"nota": "Ministero della Cultura, scheda luogo: orari stagionali, nessuna tariffa; gestore Startuno"
+},
 "foggia-fg--museo-civico-e-pinacoteca-palazzo-arpi": {
+"hr": "https://cultura.gov.it/luogo/museo-civico-di-foggia",
 "nota": "Scheda MiC Museo civico di Foggia, non apribile (robots); sede Palazzo Arpi da confermare"
+},
+"fordongianus-or--casa-aragonese": {
+"nota": "Nessuna pagina ufficiale trovata"
 },
 "formello-rm--palazzo-chigi-e-museo-dell-agro-veientan": {
 "nota": "solo portale Tiberland (CoopCulture turismo) con orari, non sito del gestore; nessuna pagina del Comune trovata"
@@ -448,11 +645,27 @@
 "gaeta-lt--museo-diocesano-cardinale-tommaso-de-vio": {
 "nota": "Nessuna pagina ufficiale del gestore trovata (solo Wikipedia, museionline, notizie)"
 },
+"gallipoli-le--museo-civico-emanuele-barba": {
+"nota": "Ministero della Cultura, scheda luogo senza tariffe e con orari tutti \"chiuso\" (dati incompleti, agg. 2024); nessun sito"
+},
+"galtelli-nu--museo-etnografico-sa-domo-e-sos-marras": {
+"nota": "non trovato: solo portali turistici (italia.it, sardegnaturismo); budget ricerche esaurito"
+},
+"gardone-riviera-bs--il-vittoriale-degli-italiani": {
+"free": false,
+"hr": "https://bottega.vittoriale.it/#/prezzi-e-orari",
+"nota": "Biglietteria online indicata da vittoriale.it e da cultura.gov.it (intero 10 euro); non apribile, da verificare",
+"tk": "https://bottega.vittoriale.it/#/prezzi-e-orari"
+},
 "garessio-cn--castello-reale-di-casotto-valcasotto": {
 "nota": "nessuna pagina ufficiale del gestore trovata"
 },
 "gavi-al--forte-di-gavi": {
 "nota": "scheda cultura.gov.it non apribile (robots), nessuna altra fonte ufficiale"
+},
+"genoni-su--museo-del-cavallino-della-giara": {
+"hr": "https://museocavallinodellagiara.it/en/museum/",
+"nota": "sito del museo, pagina Museum con orari; pagina orari e biglietti non apribile"
 },
 "genova-ge--galleria-nazionale-di-palazzo-spinola": {
 "free": false,
@@ -478,6 +691,12 @@
 "gerano-rm--museo-dell-infiorata": {
 "nota": "Nessuna pagina ufficiale del gestore trovata; scheda cultura.gov.it non leggibile (robots), solo portali turistici"
 },
+"gibellina-tp--mac-museo-d-arte-contemporanea-ludovico-": {
+"nota": "Sito ufficiale macgibellina.it indicato da luoghidelcontemporaneo.cultura.gov.it ma non apribile con WebFetch e non comp"
+},
+"gibellina-tp--museo-delle-trame-mediterranee-baglio-di": {
+"nota": "Fondazione Orestiadi ha pagine /biglietti/ e /contatti/orari/ (viste nel menu del sito) ma non apribili con WebFetch e n"
+},
 "gioia-del-colle-ba--parco-archeologico-di-monte-sannace": {
 "nota": "Pagina Direzione regionale musei Puglia senza orari ne tariffe; scheda cultura.gov.it non leggibile (robots)"
 },
@@ -497,6 +716,7 @@
 "tk": "https://www.castellorealedigovone.it/en/buy-your-ticket/"
 },
 "gravina-in-puglia-ba--museo-della-fondazione-pomarici-santomas": {
+"hr": "https://cultura.gov.it/luogo/museo-della-fondazione-ettore-pomarici-santomasi",
 "nota": "Ministero della Cultura, scheda luogo (WebFetch bloccato da robots, da verificare)"
 },
 "gressoney-saint-jean-ao--castel-savoia": {
@@ -511,6 +731,12 @@
 "nota": "Castello di Grinzane Cavour, pagina biglietti e prenotazioni (intero 8 euro)",
 "tk": "https://www.castellogrinzane.com/en/tickets-and-bookings/"
 },
+"grosio-so--museo-civico-villa-visconti-venosta": {
+"nota": "Nessuna pagina ufficiale biglietti/orari nei risultati; sito villaviscontivenosta.it non apribile"
+},
+"grosio-so--parco-delle-incisioni-rupestri-e-rupe-ma": {
+"nota": "Sito ufficiale parcoincisionigrosio.it ha una pagina Plan your visit (/en/plan-your-visit/) vista nel menu ma non nei ri"
+},
 "grottaferrata-rm--museo-archeologico-dell-abbazia-greca-di": {
 "nota": "schede cultura.gov.it bloccate (robots), nessun sito ufficiale del museo trovato"
 },
@@ -521,6 +747,7 @@
 "tk": "https://www.coopculture.it/en/products/grottaglie-ceramics-museum-admission-ticket/"
 },
 "grotte-di-castro-vt--museo-civita": {
+"hr": "https://cultura.gov.it/luogo/museo-civita",
 "nota": "scheda MiC cultura.gov.it vista nella ricerca, WebFetch bloccato da robots"
 },
 "grotte-di-castro-vt--museo-della-basilica-santuario": {
@@ -531,6 +758,17 @@
 },
 "guastalla-re--teatro-ruggero-ruggeri": {
 "nota": "nessuna pagina ufficiale trovata (solo reggioemiliawelcome)"
+},
+"irgoli-nu--complesso-nuragico-di-janna-e-pruna-e-fo": {
+"free": false,
+"hr": "https://cultura.gov.it/luogo/complesso-nuragico-di-janna-e-pruna-e-la-fonte-sacra-di-su-notante",
+"nota": "Scheda MiC Luoghi della cultura (intero 2 euro, ridotto 1), ultimo aggiornamento 2021, orari non indicati (tutti Chiuso)"
+},
+"isili-su--marate-museo-per-l-arte-del-rame-e-del-t": {
+"nota": "nessuna pagina ufficiale trovata"
+},
+"isili-su--nuraghe-is-paras": {
+"nota": "nessuna pagina ufficiale trovata"
 },
 "itri-lt--museo-del-brigantaggio": {
 "nota": "Nessuna pagina ufficiale del gestore trovata; scheda cultura.gov.it non leggibile (robots)"
@@ -544,8 +782,7 @@
 "lacco-ameno-na--museo-archeologico-di-pithecusae": {
 "free": false,
 "hr": "https://cultura.gov.it/luogo/museo-archeologico-di-pithecusae-villa-arbusto",
-"nota": "MiC cultura.gov.it scheda luogo (orari e tariffe 8/6/3 euro, niente vendita online); sito pithecusae.it non apribile",
-"tk": "https://cultura.gov.it/luogo/museo-archeologico-di-pithecusae-villa-arbusto"
+"nota": "MiC cultura.gov.it scheda luogo (orari e tariffe 8/6/3 euro, niente vendita online); sito pithecusae.it non apribile"
 },
 "lacco-ameno-na--villa-arbusto-e-giardino-museo-angelo-ri": {
 "hr": "https://cultura.gov.it/luogo/museo-archeologico-di-pithecusae-villa-arbusto",
@@ -557,34 +794,52 @@
 "lecce-le--anfiteatro-romano": {
 "free": false,
 "hr": "https://cultura.gov.it/luogo/teatro-e-anfiteatro-romano",
-"nota": "Scheda MiC Teatro e Anfiteatro romano di Lecce, intero 5 euro ridotto 2 euro",
-"tk": "https://cultura.gov.it/luogo/teatro-e-anfiteatro-romano"
+"nota": "Scheda MiC Teatro e Anfiteatro romano di Lecce, intero 5 euro ridotto 2 euro"
 },
 "lecce-le--castello-di-carlo-v": {
 "free": false,
 "hr": "https://cultura.gov.it/luogo/castello-carlo-v-di-lecce",
-"nota": "Scheda MiC Castello Carlo V, intero 10 euro ridotto 6 euro (corte interna gratuita)",
-"tk": "https://cultura.gov.it/luogo/castello-carlo-v-di-lecce"
+"nota": "Scheda MiC Castello Carlo V, intero 10 euro ridotto 6 euro (corte interna gratuita)"
 },
 "lecce-le--museo-sigismondo-castromediano": {
+"hr": "https://cultura.gov.it/luogo/museo-sigismondo-castromediano",
 "nota": "Scheda MiC Museo Sigismondo Castromediano, non apribile (robots)"
+},
+"lecce-le--parco-archeologico-di-rudiae": {
+"nota": "Nessuna pagina ufficiale del gestore trovata (solo portali turistici, notizie e schede eventi cultura.gov.it)"
 },
 "lecce-le--teatro-romano-e-museo-del-teatro-romano": {
 "hr": "https://cultura.gov.it/luogo/teatro-e-anfiteatro-romano",
-"nota": "Scheda MiC Teatro e Anfiteatro romano; non chiaro se copre anche il Museo del teatro romano",
-"tk": "https://cultura.gov.it/luogo/teatro-e-anfiteatro-romano"
+"nota": "Scheda MiC Teatro e Anfiteatro romano; non chiaro se copre anche il Museo del teatro romano"
 },
 "ledro-tn--museo-delle-palafitte-e-villaggio-palafi": {
 "nota": "Non trovato: sito palafitteledro.it non raggiungibile con WebFetch"
 },
 "lesina-fg--centro-visite-e-museo-naturalistico-con-": {
+"hr": "https://cultura.gov.it/luogo/museo-naturalistico-del-comune-di-lesina",
 "nota": "Scheda MiC Museo naturalistico del Comune di Lesina, non apribile (robots)"
 },
 "lesina-fg--museo-etnografico-casa-del-pescatore": {
+"hr": "https://cultura.gov.it/luogo/museo-etnografico-del-comune-di-lesina",
 "nota": "Scheda MiC Museo etnografico del Comune di Lesina, non apribile (robots)"
+},
+"licata-ag--museo-archeologico-della-badia": {
+"nota": "Solo scheda MiC cultura.gov.it (agg. 2021: lun-ven 9-13, senza tariffe), non del gestore regionale; nessun sito ufficial"
 },
 "licenza-rm--museo-civico-oraziano": {
 "nota": "Nessuna pagina ufficiale del gestore trovata; scheda cultura.gov.it non leggibile (robots), solo portali turistici"
+},
+"loceri-nu--museo-etnografico-sa-domu-e-s-olia": {
+"nota": "Nessuna pagina ufficiale trovata"
+},
+"luras-ss--collezione-forteleoni": {
+"nota": "non cercato per limite ricerche"
+},
+"luras-ss--museo-etnografico-galluras-museo-della-f": {
+"nota": "nessuna pagina ufficiale del gestore trovata"
+},
+"luserna-tn--centro-di-documentazione-lusern-dokument": {
+"nota": "sito museum.lusern.it solo http, non apribile in https"
 },
 "maglie-le--museo-civico-di-paleontologia-e-paletnol": {
 "nota": "Scheda cultura.gov.it non leggibile (robots); nessun sito ufficiale trovato"
@@ -598,8 +853,19 @@
 "maiori-sa--torre-normanna-e-spiaggia-di-salicerchie": {
 "nota": "Nessuna pagina ufficiale trovata (solo portali turistici)"
 },
+"mamoiada-nu--museo-della-cultura-e-del-lavoro": {
+"nota": "Nessuna pagina ufficiale trovata"
+},
+"mamoiada-nu--museo-delle-maschere-mediterranee": {
+"free": false,
+"hr": "https://cultura.gov.it/luogo/museo-delle-maschere-mediterranee",
+"nota": "Scheda MiC Luoghi della cultura (intero 4 euro, ridotto 2,60), orari non validi (tutti Chiuso); sito museo museodellemas"
+},
 "mamoiada-nu--necropoli-di-istevene-sa-conchedda-istev": {
 "nota": "Sardegna Cultura la indica come sito non gestito, senza orari ne tariffe"
+},
+"manduria-ta--museo-manduria-terra-di-messapi-nell-ex-": {
+"nota": "Nessuna pagina ufficiale del gestore trovata (solo museionline, FAI, notizie)"
 },
 "manerba-del-garda-bs--sito-palafitticolo-di-san-sivino-detto-d": {
 "nota": "nessuna pagina ufficiale trovata"
@@ -615,6 +881,13 @@
 },
 "margherita-di-savoia-bt--pinacoteca-comunale-f-galante-civera-nel": {
 "nota": "Nessuna pagina ufficiale trovata"
+},
+"marsala-tp--isola-di-mozia-e-museo-whitaker": {
+"free": false,
+"nota": "Sito della Fondazione Whitaker non comparso nei risultati; scheda MiC cultura.gov.it (agg. 2021) con 6/3 euro ma orari t"
+},
+"martina-franca-ta--muba-museo-della-basilica-di-san-martino": {
+"nota": "Nessuna pagina ufficiale del museo o della basilica trovata (solo portali turistici)"
 },
 "martina-franca-ta--museo-del-parco-pianelle": {
 "nota": "Nessuna pagina ufficiale trovata (solo portali turistici)"
@@ -643,20 +916,54 @@
 "nota": "Direzione regionale Musei Puglia pagina biglietti (generica); scheda MiC con orari, senza prezzi",
 "tk": "https://museipuglia.cultura.gov.it/ticket/"
 },
+"mazara-del-vallo-tp--museo-diocesano": {
+"nota": "Solo scheda MiC cultura.gov.it (agg. 2021, orari contraddittori, senza tariffe); sito diocesimazara.it non verificato"
+},
+"menaggio-co--villa-mylius-vigoni-e-loveno": {
+"free": false,
+"hr": "https://www.villavigoni.eu/attivita/opportunita/visite-guidate/",
+"nota": "Villa Vigoni, pagina visite guidate (giovedi ore 15 mar-ott escluso agosto, intero 14 euro, prenotazione obbligatoria)",
+"tk": "https://www.villavigoni.eu/attivita/opportunita/visite-guidate/"
+},
 "mesola-fe--castello-estense-di-mesola": {
 "nota": "Nessuna pagina ufficiale trovata"
 },
 "milano-mi--cenacolo-vinciano": {
 "free": false,
 "hr": "https://cultura.gov.it/luogo/museo-del-cenacolo-vinciano",
-"nota": "Ministero della Cultura, scheda luogo (intero 15 euro, prenotazione obbligatoria; biglietteria ufficiale Vivaticket indi",
-"tk": "https://cultura.gov.it/luogo/museo-del-cenacolo-vinciano"
+"nota": "Ministero della Cultura, scheda luogo (intero 15 euro, prenotazione obbligatoria; biglietteria ufficiale Vivaticket indi"
+},
+"milano-mi--civico-museo-archeologico": {
+"free": false,
+"hr": "https://cultura.gov.it/luogo/civico-museo-archeologico-di-milano",
+"nota": "Ministero della Cultura, scheda luogo (dati forse non aggiornati); sito museoarcheologicomilano.it non apribile"
+},
+"milano-mi--gam-galleria-d-arte-moderna-e-villa-real": {
+"free": false,
+"hr": "https://www.comune.milano.it/en/web/gam-galleria-arte-moderna/organizza-la-tua-visita/orari-e-biglietti",
+"nota": "Comune di Milano, pagina GAM orari e biglietti (intero 5 euro, mar-dom 10-17.30); vendita online su circuito Vivaticket ",
+"tk": "https://www.comune.milano.it/en/web/gam-galleria-arte-moderna/organizza-la-tua-visita/orari-e-biglietti"
+},
+"milano-mi--museo-del-risorgimento": {
+"free": true,
+"hr": "https://www.comune.milano.it/en/web/civiche-raccolte-storiche/museo_del_risorgimento/immagina-la-tua-visita",
+"nota": "Comune di Milano, Civiche Raccolte Storiche: biglietti del museo gratuiti, mar-dom 10-17.30",
+"tk": "https://www.comune.milano.it/en/web/civiche-raccolte-storiche/museo_del_risorgimento/immagina-la-tua-visita"
+},
+"milano-mi--museo-poldi-pezzoli": {
+"free": false,
+"hr": "https://museopoldipezzoli.it/en/visit/info/",
+"nota": "Museo Poldi Pezzoli, pagina Info (intero 15 euro, orari); acquisto online indicato dal museo: ?https://ticket.midaticket",
+"tk": "https://museopoldipezzoli.it/en/visit/info/"
+},
+"milano-mi--palazzo-reale": {
+"free": false,
+"nota": "Indirizzo indicato da cultura.gov.it (scheda aggiornata 2022) come pagina biglietti del sito ufficiale; sito non apribil"
 },
 "milano-mi--pinacoteca-di-brera": {
 "free": false,
 "hr": "https://pinacotecabrera.org/en/visit/orari/",
-"nota": "Ministero della Cultura scheda tariffe (20 euro) e Pinacoteca di Brera pagina orari con prenotazione obbligatoria",
-"tk": "https://cultura.gov.it/luogo/pinacoteca-di-brera-1"
+"nota": "Ministero della Cultura scheda tariffe (20 euro) e Pinacoteca di Brera pagina orari con prenotazione obbligatoria"
 },
 "militello-in-val-di-catania-ct--museo-d-arte-sacra-san-nicolo": {
 "nota": "nessuna pagina ufficiale trovata"
@@ -683,10 +990,17 @@
 "tk": "https://www.lamalcontenta.it/contatti/?lang=en"
 },
 "monasterace-rc--museo-archeologico-dell-antica-kaulon": {
+"hr": "https://cultura.gov.it/luogo/museo-e-parco-archeologico-dellantica-kaulonia",
 "nota": "Ministero della Cultura, scheda luogo (WebFetch bloccato da robots)"
 },
 "moncalieri-to--castello-reale-di-moncalieri": {
 "nota": "pagina Direzione regionale musei Piemonte non verificabile con WebFetch"
+},
+"montagnana-pd--museo-civico-antonio-giacomelli-e-mastio": {
+"free": false,
+"hr": "https://www.comune.montagnana.pd.it/Luoghi?ID=2758",
+"nota": "Comune di Montagnana, scheda museo con tariffe museo 3,50/2 e mastio 2 e orari; biglietteria IAT",
+"tk": "https://www.comune.montagnana.pd.it/Luoghi?ID=2758"
 },
 "montefiascone-vt--rocca-dei-papi-e-giardino": {
 "free": false,
@@ -695,10 +1009,20 @@
 "tk": "https://www.archeoares.it/en/rocca-dei-papi-montefiascone/"
 },
 "montesarchio-bn--castello-e-museo-archeologico-nazionale-": {
+"hr": "https://cultura.gov.it/luogo/castello-di-montesarchio-e-museo-archeologico-nazionale-del-sannio-caudino",
 "nota": "Ministero della Cultura, scheda luogo (WebFetch bloccato da robots, da verificare)"
+},
+"monza-mb--villa-reale": {
+"nota": "Tariffe 2026 (15/12 euro) da comunicato PDF reggiadimonza.it; pagina turismo.monza.it cita shop ecommerce.reggiadimonza."
 },
 "morano-calabro-cs--centro-studi-naturalistici-del-pollino-i": {
 "nota": "Non trovata pagina ufficiale con orari o tariffe"
+},
+"morimondo-mi--monastero-e-museo-dell-abbazia": {
+"nota": "Sito ufficiale abbaziamorimondo.it non apribile e nessuna pagina ufficiale trovata nelle ricerche"
+},
+"morimondo-mi--museo-civico-angelo-comolli": {
+"nota": "Nessuna pagina ufficiale trovata"
 },
 "napoli-na--castel-nuovo-maschio-angioino": {
 "free": false,
@@ -715,13 +1039,14 @@
 "napoli-na--certosa-e-museo-di-san-martino": {
 "free": false,
 "hr": "https://cultura.gov.it/luogo/certosa-e-museo-di-san-martino",
-"nota": "Ministero della Cultura, scheda luogo con tariffe (6 euro) e orari, acquisto via Musei Italiani",
-"tk": "https://cultura.gov.it/luogo/certosa-e-museo-di-san-martino"
+"nota": "Ministero della Cultura, scheda luogo con tariffe (6 euro) e orari, acquisto via Musei Italiani"
 },
 "napoli-na--conservatorio-e-museo-storico-musicale-d": {
+"hr": "https://cultura.gov.it/luogo/museo-storico-musicale-di-napoli",
 "nota": "scheda MiC cultura.gov.it vista nella ricerca, WebFetch bloccato da robots"
 },
 "napoli-na--musa-museo-degli-strumenti-astronomici": {
+"hr": "https://cultura.gov.it/luogo/museo-degli-strumenti-astronomici",
 "nota": "scheda MiC cultura.gov.it vista nella ricerca, WebFetch bloccato da robots; sito INAF beniculturali.inaf.it/musei/napoli"
 },
 "napoli-na--museo-archeologico-nazionale-mann": {
@@ -747,8 +1072,7 @@
 "napoli-na--palazzo-reale": {
 "free": false,
 "hr": "https://cultura.gov.it/luogo/palazzo-reale-di-napoli-1",
-"nota": "Ministero della Cultura, scheda luogo Palazzo Reale di Napoli (intero 15 euro, biglietteria Musei Italiani)",
-"tk": "https://cultura.gov.it/luogo/palazzo-reale-di-napoli-1"
+"nota": "Ministero della Cultura, scheda luogo Palazzo Reale di Napoli (intero 15 euro, biglietteria Musei Italiani)"
 },
 "napoli-na--pausilypon-e-grotta-di-seiano": {
 "nota": "trovate solo pagine evento cultura.gov.it e portali; nessuna pagina ufficiale stabile di biglietti/orari"
@@ -769,6 +1093,7 @@
 "tk": "https://www.ordinemauriziano.it/palazzina-di-caccia-di-stupinigi/visita-stupinigi/"
 },
 "nocera-superiore-sa--teatro-ellenistico-romano-di-pareti": {
+"hr": "https://cultura.gov.it/luogo/area-archeologica-del-teatro-ellenistico-romano-di-nocera-superiore",
 "nota": "MiC cultura.gov.it scheda luogo vista in ricerca, non apribile (robots): da controllare"
 },
 "norma-lt--museo-civico-archeologico-padre-annibale": {
@@ -780,11 +1105,32 @@
 "noto-sr--palazzo-ducezio": {
 "nota": "Nessuna pagina ufficiale verificata"
 },
+"nuoro-nu--man-museo-d-arte-della-provincia-di-nuor": {
+"free": false,
+"hr": "https://cultura.gov.it/luogo/museo-man-museo-d-arte-provincia-di-nuoro",
+"nota": "Ministero della Cultura, scheda luogo MAN (intero 5 euro, ridotto 3 euro; mar-dom 10-19; aggiornata 2021); museoman.it n"
+},
+"nuoro-nu--museo-deleddiano-casa-natale-di-grazia-d": {
+"nota": "scheda MiC con orari non attendibili (tutti chiuso); sito ISRE non apribile"
+},
+"nuoro-nu--museo-etnografico-sardo": {
+"free": false,
+"nota": "non trovato link con tariffe/orari; scheda idese.cultura.gov.it Museo del Costume indica solo ingresso a pagamento; isre"
+},
 "olevano-di-lomellina-pv--museo-di-arte-e-tradizione-contadina": {
 "nota": "Nessuna pagina ufficiale trovata"
 },
+"oliena-nu--villaggio-nuragico-sa-sedda-e-sos-carros": {
+"free": false,
+"nota": "non trovato link con tariffe/orari; scheda idese.cultura.gov.it indica solo ingresso a pagamento (gestore coop Corrasi)"
+},
 "opi-aq--museo-del-camoscio-e-area-faunistica": {
 "nota": "scheda cultura.gov.it non apribile (robots), nessuna altra fonte ufficiale"
+},
+"orani-nu--museo-nivola": {
+"free": false,
+"hr": "https://cultura.gov.it/luogo/museo-nivola",
+"nota": "Scheda MiC Luoghi della cultura (intero 7 euro, ridotto 5, chiuso mercoledi); museonivola.it non apribile"
 },
 "oria-br--museo-diocesano-palazzo-vescovile": {
 "nota": "Nessuna pagina ufficiale trovata (solo portali)"
@@ -809,10 +1155,44 @@
 "ostuni-br--museo-di-civilta-preclassiche-della-murg": {
 "nota": "Nessuna pagina ufficiale trovata"
 },
+"otranto-le--castello-aragonese": {
+"free": false,
+"hr": "https://cultura.gov.it/luogo/castello-di-otranto",
+"nota": "Ministero della Cultura, scheda luogo con tariffe (intero 12 euro, ridotto 10 e 8 euro); orari della scheda incoerenti ("
+},
 "padova-pd--palazzo-della-ragione": {
 "free": false,
 "nota": "Comune di Padova PadovaCultura, solo carte cumulative che includono il Palazzo, orari non trovati",
 "tk": "https://padovacultura.padovanet.it/en/musei/multiple-entry-tickets"
+},
+"palazzolo-acreide-sr--casa-museo-antonino-uccello": {
+"free": false,
+"nota": "Sito regionale con soli PDF vecchi; scheda MiC cultura.gov.it (agg. 2021) con 2 euro/1 euro ma orari tutti \"chiuso\""
+},
+"palermo-pa--gam-galleria-d-arte-moderna-empedocle-re": {
+"nota": "Sito ufficiale GAM Palermo non apribile e non emerso dalle ricerche; solo portali turistici"
+},
+"palermo-pa--la-cuba-e-la-necropoli-punica": {
+"nota": "Nessuna pagina ufficiale del gestore trovata (solo notizie, Balarm, FAI, museionline)"
+},
+"palermo-pa--museo-regionale-di-palazzo-mirto": {
+"free": false,
+"hr": "https://cultura.gov.it/luogo/museo-regionale-di-palazzo-mirto",
+"nota": "Ministero della Cultura, scheda luogo (intero 6 euro, ridotto 3, cumulativo 10 con Abatellis e Oratorio dei Bianchi; mar"
+},
+"palermo-pa--museo-riso-arte-moderna-e-contemporanea": {
+"nota": "Nessuna pagina ufficiale con tariffe e orari verificata (solo carta dei servizi PDF e scheda Luoghi del Contemporaneo se"
+},
+"palermo-pa--palazzo-abatellis-galleria-regionale-del": {
+"free": false,
+"hr": "https://cultura.gov.it/luogo/galleria-regionale-della-sicilia-di-palazzo-abatellis",
+"nota": "Ministero della Cultura, scheda luogo con tariffe (intero 8 euro, ridotto 4 euro); orari della scheda non compilati"
+},
+"palermo-pa--palazzo-branciforte": {
+"free": false,
+"hr": "https://palazzobranciforte.it",
+"nota": "Sito ufficiale Palazzo Branciforte, home con orari e tariffe (intero 10 euro); la home rimanda alla biglietteria online ",
+"tk": "https://palazzobranciforte.it"
 },
 "palermo-pa--palazzo-dei-normanni": {
 "free": false,
@@ -832,12 +1212,18 @@
 "palmi-rc--casa-della-cultura-leonida-repaci": {
 "nota": "Non trovata pagina ufficiale verificabile (comune.palmi.rc.it e cultura.gov.it senza pagina utile)"
 },
+"perfugas-ss--santa-maria-degli-angeli-e-museo-diocesa": {
+"nota": "non cercato per limite ricerche"
+},
 "perugia-pg--casa-museo-di-palazzo-sorbello": {
 "hr": "https://www.fondazioneranieri.org/en/foundation/timetable/",
 "nota": "Fondazione Ranieri di Sorbello, orari Art Collection e visite su appuntamento; tariffe non indicate"
 },
 "perugia-pg--galleria-nazionale-dell-umbria": {
 "nota": "Nessuna pagina ufficiale verificata"
+},
+"perugia-pg--nobile-collegio-del-cambio": {
+"nota": "Il portale del Comune di Perugia rimanda a collegiodelcambio.it per orari e biglietti, ma il sito non e apribile e non c"
 },
 "perugia-pg--pozzo-etrusco": {
 "free": false,
@@ -856,8 +1242,32 @@
 "pietrelcina-bn--convento-dei-cappuccini-e-museo-padre-pi": {
 "nota": "Nessuna pagina ufficiale trovata"
 },
+"pieve-di-cadore-bl--casa-natale-di-tiziano": {
+"free": false,
+"hr": "https://www.museicadoredolomiti.it/en/the-birth-home-of-titian/",
+"nota": "Musei Cadore Dolomiti, scheda Casa Tiziano con tariffe (intero 6); orari riferiti al 2023",
+"tk": "https://www.museicadoredolomiti.it/en/the-birth-home-of-titian/"
+},
+"pieve-di-cadore-bl--museo-archeologico-cadorino": {
+"free": false,
+"hr": "https://magnificacomunitadicadore.it/cadore/musei/1/marc-museo-archeologico-cadorino.html",
+"nota": "Musei Cadore Dolomiti (tariffe intero 6) e Magnifica Comunita di Cadore (orari; chiuso per lavori fino al 5/12/2026)",
+"tk": "https://www.museicadoredolomiti.it/en/the-archeological-museum-of-cadore/"
+},
+"pieve-di-cadore-bl--museo-dell-occhiale": {
+"free": false,
+"hr": "https://www.museodellocchiale.it/visita/",
+"nota": "Museo dell'Occhiale, pagina Visita con orari e tariffe (intero 8)",
+"tk": "https://www.museodellocchiale.it/visita/"
+},
+"pizzighettone-cr--museo-civico-di-pizzighettone": {
+"nota": "Nessuna pagina ufficiale del Comune con orari trovata"
+},
 "poggiardo-le--museo-archeologico-della-civilta-messapi": {
 "nota": "Scheda cultura.gov.it non leggibile (robots); nessun sito ufficiale trovato"
+},
+"poggiardo-le--museo-degli-affreschi-della-cripta-di-sa": {
+"nota": "Ministero della Cultura, scheda luogo senza tariffe e con orari tutti \"chiuso\" (agg. 2021); nessun sito ufficiale verifi"
 },
 "polcenigo-pn--sito-palafitticolo-del-palu-di-livenza": {
 "nota": "trovati solo portali turistici, nessuna pagina ufficiale del gestore"
@@ -881,10 +1291,19 @@
 "tk": "https://pompeiisites.org/en/visiting-info/timetables-and-tickets/"
 },
 "pontecagnano-faiano-sa--parco-archeologico-urbano-dell-antica-pi": {
+"hr": "https://cultura.gov.it/luogo/parco-archeologico-urbano-dell-antica-picentia",
 "nota": "MiC cultura.gov.it scheda luogo vista in ricerca, non apribile (robots); distinta dalla scheda Museo e Parco archeologic"
+},
+"ponti-sul-mincio-mn--museo-sacrario-del-reggimento-giovani-fa": {
+"nota": "Nessuna pagina ufficiale del gestore trovata"
 },
 "pordenone-pn--museo-civico-d-arte-palazzo-ricchieri": {
 "nota": "Sito comunale museoarte senza orari e tariffe verificabili; solo PDF delibera tariffe 2023"
+},
+"porto-torres-ss--museo-antiquarium-turritano": {
+"free": false,
+"hr": "https://cultura.gov.it/luogo/museo-archeologico-nazionale-antiquarium-turritano-e-area-archeologica",
+"nota": "Ministero della Cultura, scheda luogo (tariffe 5/2/8 euro, mar-sab 9-16; nessuna vendita online); antiquariumportotorres"
 },
 "porto-torres-ss--necropoli-di-su-crucifissu-mannu": {
 "nota": "nessuna pagina ufficiale trovata"
@@ -913,8 +1332,11 @@
 "racconigi-cn--castello-e-parco-di-racconigi": {
 "free": false,
 "hr": "https://cultura.gov.it/luogo/complesso-monumentale-del-castello-e-parco-di-racconigi",
-"nota": "Ministero della Cultura, scheda luogo con tariffe (8 euro, parco 2 euro) e orari; prenotazione obbligatoria su museiital",
-"tk": "https://cultura.gov.it/luogo/complesso-monumentale-del-castello-e-parco-di-racconigi"
+"nota": "Ministero della Cultura, scheda luogo con tariffe (8 euro, parco 2 euro) e orari; prenotazione obbligatoria su museiital"
+},
+"randazzo-ct--castello-svevo-e-museo-archeologico-paol": {
+"hr": "https://cultura.gov.it/luogo/museo-archeologico-paolo-vagliasindi",
+"nota": "Scheda MiC Museo archeologico Paolo Vagliasindi, orari tutti i giorni 9-13, senza tariffe"
 },
 "ravello-sa--auditorium-oscar-niemeyer": {
 "nota": "Fondazione Ravello: nessuna pagina visite trovata"
@@ -961,8 +1383,7 @@
 "roma-rm--gallerie-nazionali-di-arte-antica-palazz": {
 "free": false,
 "hr": "https://cultura.gov.it/luogo/gallerie-nazionali-di-arte-antica-palazzo-barberini",
-"nota": "Ministero della Cultura, scheda luogo (15 euro, valido Barberini e Corsini); vendita indicata su CoopCulture, sito barbe",
-"tk": "https://cultura.gov.it/luogo/gallerie-nazionali-di-arte-antica-palazzo-barberini"
+"nota": "Ministero della Cultura, scheda luogo (15 euro, valido Barberini e Corsini); vendita indicata su CoopCulture, sito barbe"
 },
 "roma-rm--museo-delle-civilta": {
 "free": false,
@@ -987,8 +1408,7 @@
 "roma-rm--piazza-venezia-e-vittoriano": {
 "free": true,
 "hr": "https://cultura.gov.it/luogo/monumento-a-vittorio-emanuele-ii-vittoriano",
-"nota": "Ministero della Cultura scheda VIVE, Vittoriano libero, a pagamento terrazza e musei (18 euro)",
-"tk": "https://cultura.gov.it/luogo/monumento-a-vittorio-emanuele-ii-vittoriano"
+"nota": "Ministero della Cultura scheda VIVE, Vittoriano libero, a pagamento terrazza e musei (18 euro)"
 },
 "roma-rm--via-appia-antica-e-catacombe-di-san-seba": {
 "free": false,
@@ -1000,10 +1420,17 @@
 "nota": "Nessuna pagina ufficiale trovata (solo portali turistici)"
 },
 "rosignano-marittimo-li--museo-archeologico-nazionale-di-castigli": {
+"hr": "https://cultura.gov.it/luogo/museo-archeologico-nazionale-di-castiglioncello",
 "nota": "Ministero della Cultura, scheda luogo vista in ricerca ma bloccata da robots, da verificare"
 },
 "rosignano-marittimo-li--museo-di-storia-naturale": {
 "nota": "Non trovato: nessuna pagina ufficiale tra i risultati"
+},
+"rovereto-tn--casa-d-arte-futurista-depero": {
+"free": false,
+"hr": "https://www.mart.tn.it/visita-casa-depero",
+"nota": "Mart, pagina Visita Casa Depero con orari e tariffe (intero 7)",
+"tk": "https://www.mart.tn.it/visita-casa-depero"
 },
 "ruvo-di-puglia-ba--pinacoteca-comunale-di-arte-contemporane": {
 "nota": "Nessuna pagina ufficiale trovata (solo portali e notizie)"
@@ -1020,13 +1447,24 @@
 "sabbioneta-mn--teatro-all-antica": {
 "nota": "Nessuna pagina ufficiale verificabile; il Comune rimanda a visitsabbioneta.it (non raggiungibile)"
 },
+"sadali-su--casa-museo-sa-omu-e-zia-cramella": {
+"nota": "nessuna pagina ufficiale trovata"
+},
+"salemi-tp--museo-del-risorgimento-mostra-di-cimeli-": {
+"nota": "Solo scheda MiC cultura.gov.it (agg. 2021, tutti i giorni \"chiuso\", senza tariffe)"
+},
+"salemi-tp--polo-museale-museo-civico-nell-ex-colleg": {
+"nota": "Solo scheda MiC cultura.gov.it (agg. 2021, tutti i giorni \"chiuso\", senza tariffe)"
+},
 "salerno-sa--area-archeologica-di-fratte": {
+"hr": "https://cultura.gov.it/luogo/area-archeologica-di-fratte",
 "nota": "MiC cultura.gov.it scheda luogo vista in ricerca, non apribile (robots): da controllare"
 },
 "salerno-sa--castello-di-arechi": {
 "nota": "non trovata pagina ufficiale del gestore: solo portali turistici e FAI senza orari"
 },
 "salerno-sa--museo-archeologico-provinciale": {
+"hr": "https://cultura.gov.it/luogo/museo-archeologico-provinciale-di-salerno",
 "nota": "MiC cultura.gov.it scheda luogo vista in ricerca, non apribile (robots): da controllare"
 },
 "salerno-sa--museo-diocesano-san-matteo": {
@@ -1036,6 +1474,9 @@
 "hr": "https://www.parchidelducato.it/parco.stirone.piacenziano/centri-visita-dettaglio.php?id=1064",
 "nota": "Parchi del Ducato (gestore in convenzione col Comune), scheda centro visita con orari, prezzi non indicati"
 },
+"san-benedetto-po-mn--museo-civico-polironiano": {
+"nota": "Sito del museo (museocivicopolironiano.it) non apribile (fuori allowlist) e senza pagina biglietti nei risultati; tariff"
+},
 "san-felice-circeo-lt--grotta-guattari": {
 "nota": "Solo pagine evento su cultura.gov.it, nessuna pagina biglietti/orari ufficiale trovata"
 },
@@ -1044,6 +1485,9 @@
 },
 "san-gimignano-si--musei-civici-e-torre-grossa": {
 "nota": "sito ufficiale sangimignanomusei.it non raggiungibile con WebFetch, non verificato"
+},
+"san-marco-d-alunzio-me--museo-della-cultura-e-delle-arti-figurat": {
+"nota": "Nessuna pagina ufficiale del gestore (Comune) trovata; scheda MiC cultura.gov.it ferma al 2021, tutti i giorni \"chiuso\","
 },
 "san-pietro-al-natisone-ud--smo-museo-di-paesaggi-e-narrazioni": {
 "hr": "https://www.mismotu.it/en/point/smo-slovensko-multimedialno-okno/",
@@ -1055,6 +1499,19 @@
 "sant-agata-di-puglia-fg--castello-imperiale": {
 "nota": "Nessuna pagina ufficiale trovata (solo portali turistici)"
 },
+"sant-angelo-lodigiano-lo--castello-bolognini-e-museo-morando-bolog": {
+"nota": "castellobolognini.it non apribile e senza pagine orari nei risultati"
+},
+"sant-angelo-lodigiano-lo--museo-lombardo-di-storia-dell-agricoltur": {
+"nota": "Nessuna pagina ufficiale trovata"
+},
+"santa-margherita-di-belice-ag--museo-della-memoria": {
+"nota": "Nessuna pagina ufficiale trovata"
+},
+"santa-margherita-di-belice-ag--palazzo-filangeri-cuto-e-parco-museo-let": {
+"free": false,
+"nota": "Solo scheda MiC cultura.gov.it (agg. 2022, intero 4 euro, superata dal prezzo noto di 6 euro); sito del Parco Gattopardo"
+},
 "santa-marinella-rm--museo-del-mare-e-della-navigazione-antic": {
 "free": false,
 "hr": "https://www.coopculture.it/en/products/biglietto-integrato-complesso-monumentale-del-castello-di-santa-severa/",
@@ -1065,11 +1522,15 @@
 "hr": "https://corporate.coopculture.it/en/poi/villa-abbas-civic-museum-and-archaeological-area/",
 "nota": "CoopCulture, scheda Museo Villa Abbas con orari ma senza tariffe ne link biglietto; pagina forse datata"
 },
+"sardara-su--santuario-nuragico-e-pozzo-sacro-di-sant": {
+"free": false,
+"hr": "https://cultura.gov.it/luogo/area-archeologica-di-sant-anastasia",
+"nota": "Scheda MiC Luoghi della cultura (intero 4,50 cumulativo, ridotto 2,60); orari biglietteria incoerenti, verificare"
+},
 "sarno-sa--museo-archeologico-nazionale-della-valle": {
 "free": false,
 "hr": "https://cultura.gov.it/luogo/museo-archeologico-nazionale-della-valle-del-sarno",
-"nota": "Ministero della Cultura, scheda luogo (intero 5 euro, ridotto 2, gratis under 18; acquisto online su Musei Italiani)",
-"tk": "https://cultura.gov.it/luogo/museo-archeologico-nazionale-della-valle-del-sarno"
+"nota": "Ministero della Cultura, scheda luogo (intero 5 euro, ridotto 2, gratis under 18; acquisto online su Musei Italiani)"
 },
 "scanno-aq--museo-della-lana": {
 "nota": "Scheda cultura.gov.it esistente ma non apribile con WebFetch (robots), non verificata"
@@ -1089,7 +1550,11 @@
 "sezze-lt--museo-archeologico-comunale": {
 "nota": "Nessuna pagina ufficiale del gestore trovata (solo italia.it e museionline)"
 },
+"siddi-su--casa-steri-museo-delle-tradizioni-agroal": {
+"nota": "Unica fonte scheda MiC del 2021 con prezzi obsoleti (4 euro), scartata"
+},
 "siena-si--museo-delle-biccherne-archivio-di-stato-": {
+"hr": "https://cultura.gov.it/luogo/collezione-delle-tavolette-di-biccherna-e-mostra-documentaria",
 "nota": "Ministero della Cultura, scheda luogo vista in ricerca ma bloccata da robots, da verificare"
 },
 "siracusa-sr--castello-eurialo": {
@@ -1103,6 +1568,21 @@
 },
 "siracusa-sr--teatro-greco": {
 "nota": "Nessuna pagina ufficiale del Parco archeologico di Siracusa verificabile; solo rivenditori"
+},
+"sirmione-bs--grotte-di-catullo-e-museo-archeologico": {
+"free": false,
+"hr": "https://museilombardia.cultura.gov.it/en/museums/grotte-di-catullo-e-museo-archeologico-di-sirmione/",
+"nota": "Direzione regionale Musei Lombardia (intero 8 euro, cumulativo 14); prenotazione obbligatoria su ?https://museidelgarda.",
+"tk": "https://museilombardia.cultura.gov.it/en/museums/grotte-di-catullo-e-museo-archeologico-di-sirmione/"
+},
+"solferino-mn--museo-del-risorgimento-di-solferino-e-sa": {
+"nota": "Home ufficiale Società Solferino e San Martino linka una pagina Biglietti e orari (solferinoesanmartino.it/tickets-and-t"
+},
+"soncino-cr--museo-civico-archeologico-aquaria": {
+"nota": "Sito ufficiale non raggiungibile ne' trovato nei risultati"
+},
+"soncino-cr--museo-della-stampa-casa-degli-stampatori": {
+"nota": "museostampasoncino.it non apribile e senza pagine orari nei risultati"
 },
 "soragna-pr--sinagoga-e-museo-ebraico-fausto-levi": {
 "nota": "nessuna pagina ufficiale trovata"
@@ -1130,10 +1610,14 @@
 "spilamberto-mo--torrione-e-antiquarium": {
 "nota": "nessuna pagina ufficiale trovata (solo visitmodena e portali)"
 },
+"suni-or--nuraghe-nuraddeo": {
+"nota": "Nessuna pagina ufficiale trovata"
+},
 "taranto-ta--marta-museo-archeologico-nazionale": {
 "nota": "Nessuna pagina ufficiale verificata"
 },
 "tarquinia-vt--museo-archeologico-nazionale-palazzo-vit": {
+"hr": "https://cultura.gov.it/luogo/museo-archeologico-nazionale-di-tarquinia",
 "nota": "Scheda MiC del Parco archeologico di Cerveteri e Tarquinia, non apribile (robots), da verificare"
 },
 "tarquinia-vt--necropoli-dei-monterozzi": {
@@ -1145,8 +1629,19 @@
 "nota": "Organica, sito ufficiale: biglietto a offerta libera (carta dei servizi 2026), orari pagina Visit",
 "tk": "https://www.organicamuseo.it/wp-content/uploads/2026/05/Organica-carta-dei-servizi.pdf"
 },
+"termini-imerese-pa--area-archeologica-e-antiquarium-di-himer": {
+"free": false,
+"hr": "https://cultura.gov.it/luogo/area-archeologica-e-antiquarium-di-himera",
+"nota": "Scheda MiC con tariffe (intero 4 euro, aggiornata 2021), orari non validi (tutti Chiuso); il sito del Parco Himera Solun"
+},
+"termini-imerese-pa--museo-civico-baldassare-romano": {
+"nota": "Nessuna pagina ufficiale trovata"
+},
 "terracina-lt--museo-civico-pio-capponi": {
 "nota": "Nessuna pagina ufficiale del gestore trovata (solo portali turistici)"
+},
+"tignale-bs--museo-del-parco-alto-garda-bresciano-cen": {
+"nota": "Trovati solo portali (parks.it) e PDF; nessuna pagina ufficiale del gestore"
 },
 "tirano-so--trenino-rosso-del-bernina-e-stazioni-di-": {
 "nota": "Non trovato: sito RhB non raggiungibile con WebFetch, solo rivenditori nei risultati"
@@ -1197,13 +1692,18 @@
 "nota": "Sito Liverino 1894: visita solo su prenotazione telefonica, nessun orario o tariffa"
 },
 "trani-bt--castello-svevo": {
+"hr": "https://cultura.gov.it/luogo/castello-svevo-di-trani",
 "nota": "Ministero della Cultura, scheda luogo (robots, da verificare)"
 },
 "trarego-viggiona-vb--museo-tattile-di-scienze-naturali-del-la": {
 "nota": "Nessuna pagina ufficiale del gestore verificata (solo portale turistico Distretto Laghi)"
 },
 "tuscania-vt--necropoli-madonna-dell-olivo-grotta-dell": {
+"hr": "https://cultura.gov.it/luogo/necropoli-madonna-dell-olivo",
 "nota": "Scheda luogo MiC cultura.gov.it, non apribile (robots), da verificare"
+},
+"ugento-le--nuovo-museo-archeologico": {
+"nota": "Sito del sistema museale di Ugento (web5.linksmt.it) non leggibile; nessuna pagina ufficiale con tariffe o orari verific"
 },
 "urbino-pu--palazzo-ducale-e-galleria-nazionale-dell": {
 "nota": "sito ufficiale gndm.it non verificabile con WebFetch"
@@ -1211,8 +1711,7 @@
 "urbisaglia-mc--parco-archeologico-e-museo-archeologico-": {
 "free": false,
 "hr": "https://cultura.gov.it/luogo/museo-archeologico-nazionale-e-parco-archeologico-di-urbs-salvia",
-"nota": "Ministero della Cultura, scheda luogo (intero 5 euro; museo in ristrutturazione, orari indicati come chiuso)",
-"tk": "https://cultura.gov.it/luogo/museo-archeologico-nazionale-e-parco-archeologico-di-urbs-salvia"
+"nota": "Ministero della Cultura, scheda luogo (intero 5 euro; museo in ristrutturazione, orari indicati come chiuso)"
 },
 "urbisaglia-mc--rocca-di-urbisaglia": {
 "nota": "Nessuna pagina ufficiale trovata (solo pagine eventi cultura.gov.it)"
@@ -1220,8 +1719,17 @@
 "usseglio-to--antico-complesso-parrocchiale-museo-civi": {
 "nota": "sito ufficiale museotazzetti.it non apribile con WebFetch"
 },
+"valle-aurina-bz--museo-delle-miniere-nel-granaio-di-cadip": {
+"nota": "Solo portali turistici/culturali generici; pagina del Museo provinciale delle miniere non trovata"
+},
 "valsinni-mt--castello-dei-morra": {
 "nota": "nessuna pagina ufficiale trovata (solo italia.it e portali)"
+},
+"varenna-lc--villa-monastero-casa-museo": {
+"free": false,
+"hr": "https://www.coopculture.it/en/products/villa-monastero-ticket/",
+"nota": "CoopCulture, biglietteria di Villa Monastero (contatto villa.monastero@coopculture.it); designazione sul sito villamonas",
+"tk": "https://www.coopculture.it/en/products/villa-monastero-ticket/"
 },
 "velletri-rm--museo-archeologico-oreste-nardini": {
 "nota": "Velletri Musei: scheda https://www.velletrimusei.it/it/archaeological-museum-english rimanda a /it/tariffe-museo-archeol"
@@ -1289,6 +1797,18 @@
 "verona-vr--arche-scaligere": {
 "nota": "pagine del Comune di Verona sulle Arche non leggibili (robots), nessuna pagina ufficiale verificabile"
 },
+"verona-vr--area-archeologica-di-corte-sgarzerie-cri": {
+"nota": "Nessuna pagina ufficiale del gestore trovata nei risultati"
+},
+"verona-vr--ipogeo-di-santa-maria-in-stelle": {
+"nota": "nessuna pagina ufficiale trovata"
+},
+"verona-vr--museo-archeologico-nazionale-di-verona": {
+"free": false,
+"hr": "https://manverona.cultura.gov.it/en/prepare-tour/",
+"nota": "MAN Verona (cultura.gov.it), pagina Prepara la visita: ven-lun 10-18, intero 5 euro, acquisto online via Musei italiani",
+"tk": "https://manverona.cultura.gov.it/en/prepare-tour/"
+},
 "verona-vr--museo-di-castelvecchio": {
 "nota": "verona.midaticket.it non indicata come ufficiale da una pagina del gestore, pagina cultura.gov.it non apribile"
 },
@@ -1297,6 +1817,9 @@
 },
 "verona-vr--palazzo-maffei": {
 "nota": "Non trovato: sito ufficiale non raggiungibile con WebFetch, solo rivenditori nei risultati"
+},
+"verona-vr--scavi-scaligeri": {
+"nota": "Nessuna pagina ufficiale del gestore trovata nei risultati"
 },
 "verona-vr--teatro-romano-e-museo-archeologico": {
 "hr": "https://www.comune.verona.it/Vivere-il-comune/Luoghi/Museo-Archeologico-Teatro-Romano-Ex-convento-San-Gerolamo",
@@ -1345,6 +1868,7 @@
 "nota": "sito ufficiale della villa non raggiungibile, trovati solo portali terzi"
 },
 "vico-del-gargano-fg--museo-comunale-trappeto-maratea": {
+"hr": "https://cultura.gov.it/luogo/museo-comunale-trappeto-maratea",
 "nota": "Scheda MiC Museo comunale Trappeto Maratea, non apribile (robots)"
 },
 "vico-equense-na--museo-mineralogico-campano": {
@@ -1358,7 +1882,32 @@
 "vigarano-mainarda-fe--delizia-della-diamantina": {
 "nota": "nessuna pagina ufficiale con orari o tariffe trovata"
 },
+"villagrande-strisaili-nu--area-archeologica-di-sa-carcaredda": {
+"free": false,
+"hr": "https://cultura.gov.it/luogo/area-di-sa-carcaredda",
+"nota": "Ministero della Cultura, scheda luogo (intero 3 euro, ridotto 1,50; aggiornata 2021, orari indicati come chiuso tutti i "
+},
+"villagrande-strisaili-nu--tomba-di-giganti-di-troculu": {
+"nota": "non trovato: nessuna pagina ufficiale con tariffe o orari"
+},
+"villagrande-strisaili-nu--villaggio-santuario-di-s-arcu-e-is-forro": {
+"free": false,
+"hr": "https://cultura.gov.it/luogo/area-di-s-arcu-e-is-forros",
+"nota": "Ministero della Cultura, scheda luogo (intero 5, ridotto 3, cumulativo 8 euro; biglietteria 8-18, prenotazione obbligato"
+},
+"villanovaforru-su--museo-civico-archeologico-genna-maria": {
+"free": false,
+"hr": "https://cultura.gov.it/luogo/museo-civico-archeologico-genna-maria",
+"nota": "Ministero della Cultura, scheda luogo (museo 6 euro, cumulativo con il parco 10 euro)"
+},
+"villasimius-su--fortezza-vecchia": {
+"nota": "nessuna pagina ufficiale trovata"
+},
+"villasimius-su--museo-archeologico-di-villasimius": {
+"nota": "nessuna pagina ufficiale trovata"
+},
 "viterbo-vt--area-archeologica-di-ferento": {
+"hr": "https://cultura.gov.it/luogo/area-archeologica-antica-citta-di-ferento",
 "nota": "Scheda luogo MiC cultura.gov.it, non apribile (robots), da verificare"
 },
 "viterbo-vt--museo-nazionale-etrusco-di-rocca-alborno": {
@@ -1376,7 +1925,15 @@
 "voghiera-fe--delizia-di-belriguardo-e-museo-civico": {
 "free": false,
 "hr": "https://cultura.gov.it/luogo/museo-civico-di-belriguardo",
-"nota": "Ministero della Cultura, scheda Museo civico di Belriguardo (5 euro, ridotto 2 euro; gio-dom)",
-"tk": "https://cultura.gov.it/luogo/museo-civico-di-belriguardo"
+"nota": "Ministero della Cultura, scheda Museo civico di Belriguardo (5 euro, ridotto 2 euro; gio-dom)"
+},
+"zavattarello-pv--il-magazzino-dei-ricordi": {
+"nota": "Nessuna pagina ufficiale trovata; pieghevole su in-lombardia.it indica associazione Magazzino dei Ricordi (magazzinodeir"
+},
+"zavattarello-pv--museo-di-arte-contemporanea-giuseppe-e-t": {
+"nota": "Nessuna pagina ufficiale del gestore trovata; solo scheda cultura.gov.it e portali"
+},
+"zogno-bg--museo-di-san-lorenzo": {
+"nota": "Non cercato per limite di ricerche; nessuna pagina ufficiale"
 }
 }

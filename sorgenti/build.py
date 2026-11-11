@@ -365,7 +365,7 @@ for _c in _leggeri:
             if _alt: _p["official"] = _alt[0]; _p["ownSite"] = False
         # 10/11 21:48: il tasto Biglietti delle card non apre mai la scheda e basta: senza biglietteria ne' partner porta alla
         # pagina delle tariffe del gestore (o del portale ufficiale), come il bottone della scheda.
-        if _p.get("free") is not True and not _p.get("ticketUrl") and not _p.get("tq") and _p.get("official"): _p["tf"] = _p["official"]
+        if _p.get("free") is not True and not _p.get("ticketUrl") and not _p.get("tq") and (_p.get("hoursUrl") or _p.get("official")): _p["tf"] = _p.get("hoursUrl") or _p["official"]
         _d = {k: _p.pop(k) for k in PESANTI if k in _p}
         for k in VIA: _p.pop(k, None)
         if not _p.get("ticketUrl"): _p.pop("ticketUrl", None)

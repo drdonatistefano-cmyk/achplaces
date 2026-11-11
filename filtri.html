@@ -373,6 +373,8 @@ body.tL #fp,body.ffold #fp{display:none}
 .giu.via{transform:translateX(-50%) translateY(90px);opacity:0;pointer-events:none}
 .giu[hidden]{display:none}
 @media (max-width:759px){.giu{display:none!important}.rst.azzera{padding:6px 10px;font-size:12.5px}}
+/* mk22 sottofiltri visibili */
+@media (min-width:760px){.frow{flex-wrap:wrap;overflow:visible;row-gap:6px}}
 </style></head><body>
 <div class="wrap">
 <div class="tabs"><div class="seg"><a class="tab gl" href="index.html" aria-label="Torna alla Guida">🧭 <span class="t">Guida</span></a><button class="tab on" id="tabF" data-tab="F">🔎 <span class="t">Luoghi</span></button><button class="tab" id="tabL" data-tab="L" disabled>📍 <span class="t" id="tabLt">Elenco</span></button><a class="tab gl sm" href="index.html#metodo" aria-label="Metodo">📐 <span class="t">Metodo</span></a><a class="tab gl sm" href="index.html#fonti" aria-label="Fonti">📚 <span class="t">Fonti</span></a></div><div id="fp"></div><div class="fbar" id="fbar"></div></div>
@@ -407,7 +409,7 @@ window.__salvaIst=function(){if(window.__ist)return;window.__ist=1;const n=MAN&&
     for(let i=localStorage.length-1;i>=0;i--){const k=localStorage.key(i);if(k&&k.startsWith('ist:')&&k!=='ist:'+n)localStorage.removeItem(k);}};
   setTimeout(salva,800);};
 /* dati: IndexedDB (ultimo nome) in parallelo al manifest */
-const ATTESO='luoghi.8227a39f85.js';const pIdb=MEMO.leggi(ultimo);
+const ATTESO='luoghi.30421ba92e.js';const pIdb=MEMO.leggi(ultimo);
 const pPrimo=ultimo?null:fetch(ATTESO).then(r=>r.ok?leggiAPezzi(r):null).catch(()=>null);
 const pMan=fetch("manifest.json",{cache:"no-store"}).then(r=>r.json()).catch(()=>{try{return JSON.parse(LS.get('man')||'null');}catch(e){return null;}});
 (async()=>{MAN=await pMan;const nome=(MAN&&MAN.luoghi)||ultimo;if(!nome){vF.textContent='Dati non disponibili: controlla la connessione.';return;}
