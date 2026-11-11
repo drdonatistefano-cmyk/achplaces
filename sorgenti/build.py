@@ -30,9 +30,15 @@ def _parole(t):
     t = "".join(ch for ch in unicodedata.normalize("NFD", t.lower()) if not unicodedata.combining(ch))
     return [w for w in re.split(r"[^a-z0-9]+", t) if len(w) >= 4 and w not in _STOP]
 AUTO = {"tk": [], "hr": []}
+_DATA = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
+def _jl(n):
+    try: return json.load(open(os.path.join(_DATA, n)))
+    except Exception: return {}
+BIG_GH = _jl("biglietti.json"); BIG_AG = _jl("biglietti_agenti.json")
+_LC = _jl("link_correzioni.json"); LINK_RID = _LC.get("rid", {}); LINK_ROTTI = set(_LC.get("rotti", {}))
 # 10/11/2026 sera: titolo esatto della voce di it.wikipedia (data/wiki.json da Wikidata, piu' wiki-<gruppo>.json dal lavoro su GitHub)
 WIKI = {}
-for _wf in [os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "wiki.json")] + sorted(__import__("glob").glob("/home/claude/foto-ramo/wiki-*.json")):
+for _wf in [os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "wiki.json")]:   # gia' filtrato da wiki_unisci.py
     try: WIKI.update({k: v for k, v in json.load(open(_wf)).items() if k not in WIKI})
     except Exception: pass
 def _via(u):
@@ -156,6 +162,18 @@ def parse(path):
                 _tk, _hr = link_da_fonti(name, srcs, c["sources"])
                 if not p["ticketUrl"] and _tk and free is not True: p["ticketUrl"] = _tk; AUTO["tk"].append((c["name"], name, _tk))
                 if not p["hoursUrl"] and _hr: p["hoursUrl"] = _hr; AUTO["hr"].append((c["name"], name, _hr))
+            # 11/11/2026: biglietti e orari dalle ricerche (lavoro GitHub sulle pagine ufficiali, poi ricerche una per una)
+            _bg = BIG_AG.get(pid) or {}
+            if _bg.get("free") is True and free is not True:
+                free = p["free"] = True; p["price"] = "Gratuito"
+                if _bg.get("tk"): p["sources"].append(["Ingresso gratuito (pagina ufficiale)", _bg["tk"], "uff"])
+            elif _bg.get("free") is False and free is None: free = p["free"] = False
+            if _bg.get("tk") and not p["ticketUrl"] and free is not True: p["ticketUrl"] = _bg["tk"]
+            if _bg.get("hr") and not p["hoursUrl"]: p["hoursUrl"] = _bg["hr"]
+            _bc = BIG_GH.get(pid) or {}
+            if _bc.get("tk") and not p["ticketUrl"] and free is not True: p["ticketUrl"] = _bc["tk"]
+            if "free" in _bc and free is None:
+                free = p["free"] = True; p["price"] = "Gratuito"; p["sources"].append(["Ingresso libero (pagina ufficiale)", _bc["da"], "uff"])
             if p["ticketUrl"] or p["hoursUrl"]: p["ownSite"] = True
             for k in ("hoursUrl", "ticketUrl"):
                 if p[k] and not any(x[1] == p[k] for x in p["sources"]): p["sources"].append([("Orari ufficiali" if k == "hoursUrl" else "Biglietti ufficiali") + " (pagina del gestore)", p[k], "uff"])
@@ -320,6 +338,9 @@ for _c in comuni:
             pag = [v for v in cs if v > 0]
             if pag: _p["ps"] = int(round(_st.median(pag))); _nst[1] += 1
 print("prezzo stimato: probabilmente gratis", _nst[0], "| stima in euro", _nst[1])
+for _cc in comuni:   # 11/11: fonti dei comuni, stessa correzione dei link
+    _fs = [[_s[0], LINK_RID.get(_s[1], _s[1])] + list(_s[2:]) for _s in _cc["sources"]]
+    _cc["sources"] = [_s for _s in _fs if _s[1] not in LINK_ROTTI] or _fs
 _leggeri = copy.deepcopy(comuni); _det = {}
 # 9/11/2026 velocità: nella prima schermata solo nome, categoria, comune, etichette e filtri.
 # Le descrizioni vanno nei file per provincia, tranne quelle dei luoghi più in alto in classifica (prime card della vista «tutti»);
@@ -330,6 +351,21 @@ for _c in _leggeri:
     if _cc: _det.setdefault(_c["prov"], {}).setdefault(_c["slug"], {})["_c"] = _cc
     for _p in _c["places"]:
         if _p["id"] not in _TOP and _p.get("desc"): _det.setdefault(_c["prov"], {}).setdefault(_c["slug"], {}).setdefault(_p["id"], {})["desc"] = _p.pop("desc")
+        # 11/11/2026: correzione dei link dal controllo settimanale (link.yml): reindirizzamenti -> indirizzo nuovo,
+        # pagine sparite (404/410 o rimandate alla home) -> tolte; il sito ufficiale rotto lascia il posto alla prima fonte ufficiale viva.
+        for _k in ("official", "ticketUrl", "hoursUrl", "tf"):
+            if _p.get(_k): _p[_k] = LINK_RID.get(_p[_k], _p[_k])
+        _p["sources"] = [[_s[0], LINK_RID.get(_s[1], _s[1])] + list(_s[2:]) for _s in _p["sources"]]
+        _vive = [_s for _s in _p["sources"] if _s[1] not in LINK_ROTTI]
+        if _vive: _p["sources"] = _vive
+        for _k in ("ticketUrl", "hoursUrl", "tf"):
+            if _p.get(_k) in LINK_ROTTI: _p.pop(_k)
+        if _p.get("official") in LINK_ROTTI:
+            _alt = [_s[1] for _s in _vive if len(_s) < 3 or _s[2] == "uff"] or [_s[1] for _s in _vive] or [_s[1] for _s in c["sources"] if _s[1] not in LINK_ROTTI]
+            if _alt: _p["official"] = _alt[0]; _p["ownSite"] = False
+        # 10/11 21:48: il tasto Biglietti delle card non apre mai la scheda e basta: senza biglietteria ne' partner porta alla
+        # pagina delle tariffe del gestore (o del portale ufficiale), come il bottone della scheda.
+        if _p.get("free") is not True and not _p.get("ticketUrl") and not _p.get("tq") and _p.get("official"): _p["tf"] = _p["official"]
         _d = {k: _p.pop(k) for k in PESANTI if k in _p}
         for k in VIA: _p.pop(k, None)
         if not _p.get("ticketUrl"): _p.pop("ticketUrl", None)
@@ -436,6 +472,8 @@ with _tf.NamedTemporaryFile("w", suffix=".js", delete=False) as _f: _f.write(CER
 _cerca = _sp.run(["node", _f.name], input=json.dumps(dict(bo=os.path.join(D, "places-bologna.js"), extra=[[p["id"], p["name"], p.get("desc", ""), p.get("address", "")] for c in comuni for p in c["places"]]), ensure_ascii=False), capture_output=True, text=True, check=True).stdout
 for _old in glob.glob(os.path.join(HERE, "cerca.*.json")): os.remove(_old)
 NOME_CERCA = _scrivi("cerca", json.loads(_cerca))
+_senza = [dict(id=_p["id"], r=_p.get("r", 0), c=c["name"], pr=c["prov"], n=_p["name"], cat=_p["cat"], sub=_p["sub"], free=_p["free"], price=_p.get("price", ""), off=_p.get("official", ""), src=[x[1] for x in _p["sources"]], tq=bool(_p.get("tq")), gy=bool(_p.get("gy"))) for c in comuni for _p in c["places"] if _p["free"] is not True and not _p.get("ticketUrl") and not _p.get("tq")]
+json.dump(_senza, open("/tmp/senza_biglietto.json", "w"), ensure_ascii=False); print("senza link al biglietto:", len(_senza), "(da verificare", sum(1 for x in _senza if x["free"] is None), ")")
 json.dump(AUTO, open("/tmp/link_auto.json", "w"), ensure_ascii=False); print("link dalle fonti: biglietti", len(AUTO["tk"]), "orari", len(AUTO["hr"]))
 json.dump(dict(v=2, dati=NOME_DATI, meta=NOME_META, fonti=NOME_FONTI, det=DET, cerca=NOME_CERCA), open(os.path.join(HERE, "manifest.json"), "w"))
 LOADER = r"""
