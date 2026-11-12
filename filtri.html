@@ -44,6 +44,7 @@ button{font:inherit;color:inherit;cursor:pointer;-webkit-tap-highlight-color:tra
 #zoom{position:absolute;right:14px;top:calc(76px + env(safe-area-inset-top));display:flex;flex-direction:column;gap:2px;padding:4px;border-radius:18px}
 .zm{width:44px;height:44px;border:0;border-radius:14px;background:none;display:grid;place-items:center}
 .zm:hover{background:rgba(255,255,255,.07)}
+#toast{position:absolute;left:50%;top:18px;transform:translateX(-50%);z-index:30;max-width:86%;padding:9px 16px;border-radius:999px;background:var(--panel,#fff);color:var(--ink,#111);border:1px solid var(--ln);box-shadow:0 6px 20px rgba(0,0,0,.14);font-size:13.5px;text-align:center;transition:opacity .3s;pointer-events:none}#toast.off{opacity:0}@media (max-width:699.98px){#toast{top:118px}}#gps.busy svg{animation:gp 1s linear infinite}@keyframes gp{to{transform:rotate(360deg)}}
 #hint{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);font-size:12.5px;color:var(--mut);white-space:nowrap;padding:8px 14px;border-radius:999px;pointer-events:none;transition:opacity .4s}
 #levels{display:flex;gap:2px;margin-left:6px;padding-left:10px;border-left:1px solid var(--ln)}
 #levels span{font-size:12px;padding:6px 9px;border-radius:10px;color:var(--fa);white-space:nowrap}
@@ -265,6 +266,7 @@ html[data-t=carta] .gl{box-shadow:0 10px 30px rgba(60,40,20,.12)}
     <div id="zoom" class="gl">
       <button class="zm" id="zin" aria-label="Ingrandisci"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
       <button class="zm" id="zout" aria-label="Rimpicciolisci"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14"/></svg></button>
+      <button class="zm" id="gps" aria-label="La mia posizione" title="La mia posizione"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg></button>
       <button class="zm" id="tema" aria-label="Cambia i colori" aria-expanded="false"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.8-.9 1.8-1.9 0-.5-.2-.9-.5-1.3-.3-.3-.5-.8-.5-1.2 0-1 .8-1.8 1.8-1.8H17a4 4 0 0 0 4-4c0-4.4-4-7.8-9-7.8z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7.5" r="1"/></svg></button>
       <button class="zm" id="home" aria-label="Tutta l'Italia"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11 12 4l8 7"/><path d="M6 10v10h12V10"/></svg></button>
     </div>
@@ -462,6 +464,14 @@ map.addEventListener('dblclick',e=>{const p=pt(e),v=vista();vai(v.x0+p[0]/v.z,v.
 map.addEventListener('click',e=>{if(trascinato||e.target.closest('button,#top,#zoom,#temi'))return;const [px,py]=pt(e);let o=null;for(const q of GR){const dx=q.px-px,dy=q.py-py;if(dx*dx+dy*dy<=(q.r+6)*(q.r+6)){o=q;break;}}if(!o)return;
   if(o.cs.length===1){const ci=o.cs[0],mine=BY[ci].filter(pi=>passa(P[pi]));S.sel=ci;S.pin=null;vai(o.x,o.y,Math.max(S.k,14));if(mine.length===1)apri(mine[0]);else if(isPhone())sheetTo('mid');}
   else{S.sel=null;vai(o.x,o.y,o.many?S.k*2.2:o.next);}});
+function toast(t){let e=$('toast');if(!e){e=document.createElement('div');e.id='toast';e.className='off';$('map').appendChild(e);}e.textContent=t;e.classList.remove('off');clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.add('off'),3200);}
+$('gps').onclick=()=>{const b=$('gps');if(!navigator.geolocation){toast('Posizione non disponibile su questo dispositivo');return;}
+  b.classList.add('busy');navigator.geolocation.getCurrentPosition(g=>{b.classList.remove('busy');
+    const [x,y]=proj(g.coords.latitude,g.coords.longitude);let best=-1,bd=1e18;
+    for(let i=0;i<C.length;i++){const c=C[i];if(c.x==null)continue;const dx=c.x-x,dy=c.y-y,d=dx*dx+dy*dy;if(d<bd){bd=d;best=i;}}
+    if(best<0||bd>40*40){toast('Sei fuori dai comuni della guida');return;}
+    const c=C[best];S.sel=best;S.pin=[x,y];vai(c.x,c.y,Math.max(S.k,14));if(isPhone())sheetTo('mid');toast('Sei vicino a '+c.n);
+  },e=>{b.classList.remove('busy');toast(e.code===1?'Consenti l’accesso alla posizione nelle impostazioni':'Posizione non trovata, riprova');},{enableHighAccuracy:false,timeout:10000,maximumAge:300000});};
 $('zin').onclick=()=>vai(S.cx,S.cy,S.k*2);$('zout').onclick=()=>vai(S.cx,S.cy,S.k/2);$('home').onclick=()=>{S.sel=null;S.pin=null;const h=casa();vai(h[0],h[1],1);};
 $('items').addEventListener('click',e=>{const b=e.target.closest('button[data-p]');if(b)apri(+b.dataset.p);});
 $('nvr').addEventListener('click',e=>{if(e.target.closest('[data-tutti]')){S.sel=null;completo();}});
