@@ -762,7 +762,7 @@ document.addEventListener("DOMContentLoaded",function(){const t=document.createE
 <nav class="ach-guide" aria-label="Le guide di Ach">
   <a class="ach-guide__btn" href="https://achevents.com/" data-goatcounter-click="guide/vai-events" data-goatcounter-title="Vai a Ach's Events Guide"><span class="ach-guide__ico" aria-hidden="true">🎭</span><span class="ach-guide__txt"><b>Events</b><small>spettacoli, mostre, cinema</small></span><span class="ach-guide__arr" aria-hidden="true">→</span></a>
   <a class="ach-guide__btn" href="https://achdinners.com/" data-goatcounter-click="guide/vai-dinners" data-goatcounter-title="Vai a Ach's Dinners Guide"><span class="ach-guide__ico" aria-hidden="true">🍝</span><span class="ach-guide__txt"><b>Dinners</b><small>dove mangiare</small></span><span class="ach-guide__arr" aria-hidden="true">→</span></a>
-  <span class="ach-meta"><a href="#metodo" class="ach-mlink" data-nav="metodo">📐 Metodo</a><a href="#fonti" class="ach-mlink" data-nav="fonti">📚 <span class="lg">Archivio fonti</span><span class="sm">Fonti</span></a></span>
+  <span class="ach-meta"><a href="#metodo" class="ach-mlink" data-nav="metodo" aria-label="Metodo">📐 <span class="lg">Metodo</span></a><a href="#fonti" class="ach-mlink" data-nav="fonti" aria-label="Archivio fonti">📚 <span class="lg">Archivio fonti</span><span class="sm">Fonti</span></a></span>
 </nav>
 <style>
 .ach-guide{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 4px;align-items:center}
@@ -810,6 +810,20 @@ document.addEventListener("DOMContentLoaded",function(){const t=document.createE
 .cnum b{font-size:1.42rem!important}
 .cnum.c4 b{font-family:var(--sans)!important;font-size:1.02rem!important;font-weight:850!important;letter-spacing:-.03em}
 .cnum.c4 small{font-size:9px}
+/* 12/11/2026 iPhone: filtri a scomparsa. Si vedono ricerca, «Vicino a te» e il tasto Filtri; zone, aggregatori,
+   categorie e filtri si aprono con un tocco. I filtri attivi restano visibili come pillole. */
+#ftog{display:none}
+@media (max-width:759px){
+  #ftog{display:inline-flex;gap:6px;font-weight:700}
+  #ftog[aria-expanded="true"]{background:var(--terra);border-color:var(--terra);color:var(--on)}
+  #ftog .badge{background:var(--warn);color:#fff}
+  body:not(.fopen) .hero .pick,body:not(.fopen) .topnav .aggr,body:not(.fopen) #bar .cats,body:not(.fopen) #bar #subwrap,body:not(.fopen) #bar #facets{display:none!important}
+  body.fopen #bar .cats,body.fopen #bar #facets{animation:fd2 .2s ease}
+  @keyframes fd2{from{opacity:0;transform:translateY(-4px)}to{opacity:1}}
+  .ach-guide{gap:6px;margin:10px 0 2px}
+  .ach-guide__btn{padding:6px 12px 6px 8px;gap:6px}.ach-guide__txt small{display:none}.ach-guide__arr{display:none}
+  .ach-meta{margin-left:auto}.ach-mlink{width:38px;padding:0;justify-content:center}.ach-mlink .lg,.ach-mlink .sm{display:none!important}
+}
 </style>
     <div class="stats" id="stats"></div>
     <div class="pick" aria-label="Scegli il luogo">
@@ -851,6 +865,7 @@ document.addEventListener("DOMContentLoaded",function(){const t=document.createE
       </label>
       <button class="iconbtn reset" id="resetbtn" type="button" hidden><span aria-hidden="true">↺</span><span class="rl">Azzera</span><span class="badge" id="resetn">0</span></button>
       <button class="iconbtn eatbtn" id="eatbtn" type="button" aria-haspopup="dialog" aria-controls="eat"><span aria-hidden="true">📍</span><span class="rl">Vicino a te</span><span class="badge" id="nearn" hidden>●</span></button>
+      <button class="iconbtn" id="ftog" type="button" aria-expanded="false" aria-controls="bar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg><span>Filtri</span><span class="badge" id="ftogn" hidden>0</span></button>
       <button class="iconbtn" id="morebtn" type="button" aria-expanded="false" aria-controls="qbar">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
         <span>Filtri</span><span class="badge" id="badge" hidden>0</span>
@@ -1212,7 +1227,8 @@ function activeList(){
   if(S.near)a.push([`📍 Entro ${fmtKm(S.near.km)} km da ${S.near.label}`,()=>{S.near=null;}]);
   return a;
 }
-function nActive(){return (C&&!C.all?1:0)+S.cat.size+S.sub.size+S.price.size+S.ideal.size+S.time.size+(S.alerts?1:0)+(S.q?1:0)+(S.near?1:0);}
+function ftogConta(){const n=S.cat.size+S.sub.size+S.price.size+S.ideal.size+S.time.size+(S.alerts?1:0);const b=$("ftogn");if(b){b.textContent=n;b.hidden=!n;}}
+function nActive(){ftogConta();return (C&&!C.all?1:0)+S.cat.size+S.sub.size+S.price.size+S.ideal.size+S.time.size+(S.alerts?1:0)+(S.q?1:0)+(S.near?1:0);}
 function renderActive(){
   const a=activeList(), el=$("active");
   const secondary=S.price.size+S.ideal.size+S.time.size;
@@ -1436,6 +1452,8 @@ $("facets").appendChild($("awards"));
 $("fdone").onclick=()=>openFacet(null);
 function openSheetF(on){const p=$("qbar");p.classList.toggle("open",on);if(on)delete p.dataset.open;$("fscrim").classList.toggle("open",on);document.body.style.overflow=on?"hidden":"";$("morebtn").setAttribute("aria-expanded",String(on));if(on)$("fclose").focus();}
 $("morebtn").onclick=()=>openSheetF(true);
+$("ftog").onclick=()=>{const on=!document.body.classList.contains("fopen");document.body.classList.toggle("fopen",on);$("ftog").setAttribute("aria-expanded",String(on));
+  if(on){const t=document.querySelector(".hero .pick");if(t&&t.getBoundingClientRect().top<0)window.scrollTo({top:Math.max(0,t.getBoundingClientRect().top+scrollY-12),behavior:"smooth"});}};
 $("fclose").onclick=()=>openSheetF(false);
 $("fscrim").onclick=()=>openSheetF(false);
 $("fshow").onclick=()=>{openSheetF(false);$("count").scrollIntoView({behavior:"smooth",block:"start"});};
