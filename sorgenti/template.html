@@ -605,8 +605,17 @@ body{font-size:16px;line-height:1.5}
 @media(max-width:560px){.topnav a{flex:1 1 auto;justify-content:center;white-space:nowrap;padding:0 8px;gap:4px}}
 /* 10/11 sera: Metodo e Fonti sulla stessa riga, spinti tutto a destra */
 .topnav .aggr{margin-left:auto;display:flex;gap:2px;padding:3px;border-radius:999px;background:color-mix(in srgb,var(--ink) 6%,var(--bg));border:1px solid var(--line)}
-.topnav .aggr a{height:30px;padding:0 12px;border:0;background:transparent;font-weight:650;color:var(--mute)}
-.topnav .aggr a:hover{background:var(--paper);color:var(--ink)}
+.topnav .aggr .agg{display:inline-flex;align-items:center;gap:5px;height:30px;padding:0 12px;border:0;border-radius:999px;background:transparent;font:650 13px var(--sans);color:var(--mute);cursor:pointer;white-space:nowrap}
+.topnav .aggr .agg:hover{background:var(--paper);color:var(--ink)}
+.topnav .aggr .agg.on{background:var(--paper);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+/* 12/11/2026: luoghi raggruppati per comune, provincia, regione o area, direttamente nella Guida */
+.ghead{grid-column:1/-1;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:18px 2px 0;padding-top:12px;border-top:1px solid var(--line)}
+.ghead.g0{margin-top:0;border-top:0;padding-top:0}
+.ghead h3{margin:0;font:700 1.25rem/1.2 var(--serif);color:var(--ink)}
+.ghead small{color:var(--mute);font-size:13px}
+.ghead .gsub{color:var(--terra);font-size:13px;font-weight:650}
+.gall{grid-column:1/-1;justify-self:start;height:38px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--terra-ink);font:650 13.5px var(--sans);cursor:pointer}
+.gall:hover{border-color:var(--terra)}
 @media (max-width:759px){.topnav{overflow-x:auto;scrollbar-width:none}.topnav::-webkit-scrollbar{display:none}.topnav .aggr{flex:none}.topnav .aggr a{padding:0 10px;font-size:12.5px}}
 /* 12/11/2026: passando sopra un filtro se ne legge il nome intero */
 .tipz{position:fixed;z-index:9999;left:0;top:0;transform:translate(-50%,-100%) translateY(6px);opacity:0;pointer-events:none;background:var(--ink);color:var(--paper);font:650 13px/1.2 var(--sans);padding:7px 11px;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.22);transition:opacity .14s,transform .14s;white-space:nowrap}
@@ -812,7 +821,7 @@ document.addEventListener("DOMContentLoaded",function(){const t=document.createE
     <div class="awards" id="awards"></div>
     <p class="lede" id="lede"></p>
   </header>
-  <nav class="topnav" aria-label="Sezioni"><a href="#" id="nav-guida">🧭 Guida</a><a class="luoghibtn" href="filtri.html" id="nav-luoghi" aria-label="Luoghi: esplora per regione, categoria e comune">🔎 Luoghi</a><span class="aggr" role="group" aria-label="Esplora per"><a href="filtri.html#g=p" class="agg">📍 Luoghi</a><a href="filtri.html#g=c" class="agg">🏘️ Comuni</a><a href="filtri.html#g=v" class="agg">🗺️ Province</a><a href="filtri.html#g=r" class="agg">🧭 Regioni</a><a href="filtri.html#g=a" class="agg">🇮🇹 Nord-Sud</a></span><a href="#metodo" id="nav-metodo">📐 Metodo</a><a href="#fonti" id="nav-fonti">📚 <span class="lg">Archivio fonti</span><span class="sm">Fonti</span></a></nav>
+  <nav class="topnav" aria-label="Sezioni"><a href="#" id="nav-guida">🧭 Guida</a><a class="luoghibtn" href="filtri.html" id="nav-luoghi" aria-label="Luoghi: esplora per regione, categoria e comune">🔎 Luoghi</a><span class="aggr" role="group" aria-label="Raggruppa i luoghi"><button type="button" class="agg on" data-grp="p" aria-pressed="true">📍 Luoghi</button><button type="button" class="agg" data-grp="c" aria-pressed="false">🏘️ Comuni</button><button type="button" class="agg" data-grp="v" aria-pressed="false">🗺️ Province</button><button type="button" class="agg" data-grp="r" aria-pressed="false">🧭 Regioni</button><button type="button" class="agg" data-grp="a" aria-pressed="false">🇮🇹 Nord-Sud</button></span><a href="#metodo" id="nav-metodo">📐 Metodo</a><a href="#fonti" id="nav-fonti">📚 <span class="lg">Archivio fonti</span><span class="sm">Fonti</span></a></nav>
 </div>
 
 <div class="bar" id="bar">
@@ -1221,8 +1230,36 @@ function renderGrid(list){
     const old=g.querySelector(".gmore");if(old)old.remove();g.appendChild(frag);
     if(shown<list.length){const m=document.createElement("button");m.type="button";m.className="gmore freset";m.textContent=`Mostra altri ${Math.min(CH,list.length-shown)} di ${list.length-shown}`;m.onclick=more;g.appendChild(m);if(gIO)gIO.observe(m);}};
   if(gIO)gIO.disconnect();
+  if(S.grp&&S.grp!=="p"){renderGruppi(list,g);return;}
   more();
 }
+/* 12/11/2026: aggregatori. Si parte sempre dai luoghi; Comuni, Province, Regioni e Nord-Sud raggruppano la stessa lista qui sotto,
+   con un'intestazione per gruppo, i primi luoghi e «Mostra tutti». I gruppi arrivano 10 alla volta. */
+const AREE_G={nord:["piemonte","valle-d-aosta","lombardia","trentino-alto-adige","veneto","friuli-venezia-giulia","liguria","emilia-romagna"],centro:["toscana","umbria","marche","lazio"]};
+const areaDi=r=>AREE_G.nord.includes(r)?"Nord":AREE_G.centro.includes(r)?"Centro":"Sud e Isole";
+let COMMAP=null;
+function infoCom(p){if(!COMMAP){COMMAP=new Map(COMUNI.map(c=>[c.slug,c]));}return COMMAP.get(p.comSlug)||{name:p.com,provName:"",regione:""};}
+function renderGruppi(list,g){
+  const key={c:p=>p.comSlug,v:p=>{const c=infoCom(p);return c.regione+"|"+c.provName;},r:p=>infoCom(p).regione,a:p=>areaDi(infoCom(p).regione)}[S.grp];
+  const M=new Map();for(const p of list){const k=key(p);let a=M.get(k);if(!a){a=[];M.set(k,a);}a.push(p);}
+  let G=[...M.entries()];
+  if(S.grp==="a"){const o={"Nord":0,"Centro":1,"Sud e Isole":2};G.sort((x,y)=>o[x[0]]-o[y[0]]);}else G.sort((x,y)=>y[1].length-x[1].length||String(x[0]).localeCompare(String(y[0]),"it"));
+  const nome=(k,ps)=>{const c=infoCom(ps[0]);if(S.grp==="c")return [c.name||ps[0].com,(c.provName?provLong(c):"")+(c.regione?" · "+REGN(c.regione):"")];
+    if(S.grp==="v")return [c.provName,REGN(c.regione)];if(S.grp==="r")return [REGN(k),""];return [k,""];};
+  const PRIMI=S.grp==="c"?3:S.grp==="a"?9:6;let gi=0;
+  const altri=()=>{const frag=document.createDocumentFragment();
+    for(const [k,ps] of G.slice(gi,gi+10)){const [n,sub]=nome(k,ps);const hd=document.createElement("div");hd.className="ghead"+(gi===0&&frag.childNodes.length===0?" g0":"");
+      hd.innerHTML=`<h3>${esc(n)}</h3><small>${ps.length} ${ps.length===1?"luogo":"luoghi"}</small>${sub?`<span class="gsub">${esc(sub)}</span>`:""}`;frag.appendChild(hd);
+      let k2=0;const piu=()=>{const f2=document.createDocumentFragment();for(const p of ps.slice(k2,k2+(k2?24:PRIMI)))f2.appendChild(cardEl(p));k2+=k2?24:PRIMI;return f2;};
+      frag.appendChild(piu());
+      if(ps.length>PRIMI){const b=document.createElement("button");b.type="button";b.className="gall";const lab=()=>`Mostra ${k2===PRIMI?"tutti i "+ps.length:"altri "+Math.min(24,ps.length-k2)} luoghi${S.grp==="c"?" di "+n:""}`;b.textContent=lab();
+        b.onclick=()=>{b.before(piu());if(k2>=ps.length)b.remove();else b.textContent=lab();};frag.appendChild(b);}}
+    gi+=10;const old=g.querySelector(".gmore");if(old)old.remove();g.appendChild(frag);
+    if(gi<G.length){const m=document.createElement("button");m.type="button";m.className="gmore freset";m.textContent=`Mostra altri ${Math.min(10,G.length-gi)} gruppi di ${G.length-gi}`;m.onclick=altri;g.appendChild(m);if(gIO)gIO.observe(m);}};
+  altri();}
+document.querySelector(".topnav .aggr").addEventListener("click",e=>{const b=e.target.closest("[data-grp]");if(!b)return;S.grp=b.dataset.grp;
+  document.querySelectorAll(".topnav .aggr .agg").forEach(x=>{const on=x===b;x.classList.toggle("on",on);x.setAttribute("aria-pressed",on);});
+  if(location.hash==="#metodo"||location.hash==="#fonti")location.hash="";update();const gr=$("grid");if(gr)gr.scrollIntoView({block:"start",behavior:"smooth"});});
 const gIO="IntersectionObserver" in window?new IntersectionObserver(es=>{for(const e of es)if(e.isIntersecting){gIO.unobserve(e.target);e.target.click();}},{rootMargin:"600px"}):null;
 let FOTO={},FOTOM={};
 /* 10/11/2026: una miniatura = un file (f/<chiave>.webp), scaricata dal browser
