@@ -1524,7 +1524,7 @@ function pass(p,skip){
   if(skip!=="time"&&S.time.size&&!S.time.has(p.t))return false;
   if(S.alerts&&p.status==="ok")return false;
   if(skip!=="near"&&S.near&&distOf(p,S.near)>S.near.km)return false;
-  if(S.q&&!QOK(p))return false;
+  if(S.q){if(p._qq!==S.q||p._qo!==(typeof CERCA!=="undefined"&&CERCA.ok)){p._qq=S.q;p._qo=(typeof CERCA!=="undefined"&&CERCA.ok);p._qr=QOK(p);}if(!p._qr)return false;}/* 12/11: esito della ricerca calcolato una volta per luogo e per parola cercata */
   return true;
 }
 const fold=s=>s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
@@ -1542,20 +1542,41 @@ function chip(em,t,n,on,g,onclick,lab){
 }
 const gcol=c=>`var(--c-${c})`;
 
+/* 12/11: i numeri dei filtri si contano in un solo giro sui luoghi (prima un giro per ogni bottone) */
+function contaFiltri(){
+  const qok=typeof CERCA!=="undefined"&&CERCA.ok,subG=new Set([...S.sub].map(x=>x.split("|")[0]));
+  const R={cat:{},sub:{},price:{},ideal:{},time:{}};
+  for(const p of CUR){
+    if(S.alerts&&p.status==="ok")continue;
+    if(S.near&&distOf(p,S.near)>S.near.km)continue;
+    if(S.q){if(p._qq!==S.q||p._qo!==qok){p._qq=S.q;p._qo=qok;p._qr=QOK(p);}if(!p._qr)continue;}
+    const fv=FVG(p),g=fv[0];let f=0;
+    if(S.cat.size&&!S.cat.has(g))f|=1;
+    if(S.sub.size&&subG.has(g)&&!fv[1].some(t=>S.sub.has(g+"|"+t)))f|=2;
+    if(S.price.size&&![...S.price].some(k=>priceOk(p,k)))f|=4;
+    if(S.ideal.size&&![...S.ideal].some(k=>idealOk(p,k)))f|=8;
+    if(S.time.size&&!S.time.has(p.t))f|=16;
+    if(!(f&~1))R.cat[g]=(R.cat[g]||0)+1;
+    if(!(f&~2)&&S.cat.has(g))for(const t of fv[1]){const k=g+"|"+t;R.sub[k]=(R.sub[k]||0)+1;}
+    if(!(f&~4))for(const [k] of PRICE)if(priceOk(p,k))R.price[k]=(R.price[k]||0)+1;
+    if(!(f&~8))for(const [k] of IDEAL)if(idealOk(p,k))R.ideal[k]=(R.ideal[k]||0)+1;
+    if(!(f&~16))R.time[p.t]=(R.time[p.t]||0)+1;
+  }
+  return R;}
 function renderFilters(){
+  const N=contaFiltri();
   const gc=$("g-cat");gc.innerHTML="";
   for(const m of FVM){const k=m.k,c={em:m.e,label:m.l};
-    const n=CUR.filter(p=>FVG(p)[0]===k&&pass(p,"cat")).length;
+    const n=N.cat[k]||0;
     gc.appendChild(chip(c.em,c.label,n,S.cat.has(k),m.c,()=>{tog(S.cat,k);if(!S.cat.has(k))for(const x of [...S.sub])if(x.startsWith(k+"|"))S.sub.delete(x);update();},"Categoria"));
   }
   $("clr-cat").hidden=!S.cat.size;
   const gs=$("g-sub");gs.innerHTML="";$("subwrap").hidden=!S.cat.size;
   if(S.cat.size){
     for(const m of FVM){const k=m.k; if(!S.cat.has(k))continue;
-      const base=CUR.filter(p=>FVG(p)[0]===k&&pass(p,"sub"));
       for(const [s,em] of Object.entries(m.s)){
         const key=k+"|"+s;
-        const n=base.filter(p=>FVG(p)[1].includes(s)).length;
+        const n=N.sub[key]||0;
         if(!n&&!S.sub.has(key))continue;
         gs.appendChild(chip(em,s,n,S.sub.has(key),m.c,()=>{tog(S.sub,key);update();},"Tipo"));
       }
@@ -1565,19 +1586,19 @@ function renderFilters(){
   renderFacets();
   const gp=$("g-price");gp.innerHTML="";
   for(const [k,em,t] of PRICE){
-    const n=CUR.filter(p=>pass(p,"price")&&priceOk(p,k)).length;
+    const n=N.price[k]||0;
     if(!n&&!S.price.has(k)&&k!=="free"&&k!=="paid")continue;
     gp.appendChild(chip(em,t,n,S.price.has(k),null,()=>{tog(S.price,k);update();},"Ingresso"));
   }
   const gi=$("g-ideal");gi.innerHTML="";
   for(const [k,em,t] of IDEAL){
     if((k==="borghi"||k==="arancione")&&!CUR.some(p=>p.aw.includes(k)))continue;
-    const n=CUR.filter(p=>pass(p,"ideal")&&idealOk(p,k)).length;
+    const n=N.ideal[k]||0;
     gi.appendChild(chip(em,t,n,S.ideal.has(k),null,()=>{tog(S.ideal,k);update();},"Ideale per"));
   }
   const gt=$("g-time");gt.innerHTML="";
   for(const [k,em,t] of TIME){
-    const n=CUR.filter(p=>pass(p,"time")&&p.t===k).length;
+    const n=N.time[k]||0;
     gt.appendChild(chip(em,t,n,S.time.has(k),null,()=>{tog(S.time,k);update();},"Tempo"));
   }
 }
@@ -2012,7 +2033,7 @@ function nFonti(){return ($("srcq").value.trim()?1:0)+($("srcr").value?1:0)+($("
 function nAttivi(){return vistaFonti()?nFonti():nActive();}
 function mostraAzzera(){const f=vistaFonti(),vm=document.getElementById("view-metodo"),n=(vm&&!vm.hidden)?0:nAttivi();
   document.querySelectorAll(".azzera .n,.giu .n").forEach(e=>e.textContent=n);
-  $("su").hidden=f||n===0;$("suf").hidden=!f||n===0;$("giu").hidden=n===0;pillola();}
+  $("su").hidden=f||n===0;$("suf").hidden=!f||n===0;$("giu").hidden=n===0;if(!pillola.r)pillola.r=requestAnimationFrame(()=>{pillola.r=0;pillola();});}/* 12/11: letta a fine disegno, senza forzare un ricalcolo della pagina */
 function pillola(){const g=$("giu");if(!g.hidden)g.classList.toggle("via",window.scrollY<260);}
 function azzera(){if(vistaFonti()){$("srcq").value="";$("srcr").value="";$("srct").value="";renderFonti();}else resetAll();
   mostraAzzera();window.scrollTo({top:0,behavior:"smooth"});}

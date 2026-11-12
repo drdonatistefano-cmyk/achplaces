@@ -285,7 +285,9 @@ html[data-t=carta] .gl{box-shadow:0 10px 30px rgba(60,40,20,.12)}
 <aside id="gs" class="off" role="dialog" aria-modal="true" aria-labelledby="s-title"></aside>
 <script>
 (async()=>{
-const NOME=/*MAPPA*/;let DATA=null;
+const NOME=/*MAPPA*/,NOMEN=/*MAPPAN*/;let DATA=null;
+/* 12/11: i nomi, i link e le schede arrivano da un secondo file, scaricato in parallelo: la mappa si disegna prima */
+const PN=fetch(NOMEN).then(r=>r.ok?r:fetch('manifest.json',{cache:'no-store'}).then(r=>r.json()).then(m=>fetch(m.mappan))).then(r=>r.text()).catch(()=>null);
 try{let r=await fetch(NOME);if(!r.ok){const m=await (await fetch('manifest.json',{cache:'no-store'})).json();r=await fetch(m.mappa);}DATA=await r.json();}catch(e){document.getElementById('nv').textContent='Dati non disponibili';return;}
 const G=[
  {k:'arch',l:'Archeologia',long:'Archeologia',em:'🏺',c:'#F0A27A',s:['Preistoria','Nuragici','Etruschi','Greci','Fenici','Italici','Romani','Tardoantichi','Medievali','Altro']},
@@ -307,8 +309,13 @@ const IC={ticket:'<path d="M2 9V7a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v2a3 3 0 0 0 0 6
  book:'<path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/>'};
 const ic=n=>`<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${IC[n]}</svg>`;
 const C=DATA.C.map((c,i)=>({i,n:c[0],pr:c[1],rg:c[2],aw:c[3]||'',x:c[4],y:c[5],sl:c[6],pv:c[7],v:c[8],f:fold(c[0]+' '+c[1])}));
-const P=DATA.P.map((p,i)=>({i,n:p[0],ci:p[1],g:p[2],t:p[3].map(x=>DATA.T[x]),fl:p[4]||'',sx:p[5],k:p[6],f:fold(p[0])}));
+const P=DATA.pc.map((ci,i)=>({i,n:'',ci,g:DATA.pg.charCodeAt(i)-48,t:DATA.pt[i].length?DATA.pt[i].map(x=>DATA.T[x]):[],fl:DATA.pf[i]||'',sx:0,k:-1,f:null}));
+let NOMI=false,XS=null,XO=null,QW='';
+const XG=()=>XO||(XS?(XO=JSON.parse(XS)):{});
+function piegaNomi(){if(P.length&&P[0].f!==null)return;for(const p of P)p.f=fold(p.n);}
 const BY=C.map(()=>[]);P.forEach((p,i)=>BY[p.ci].push(i));
+const DOPO=()=>new Promise(r=>requestAnimationFrame(()=>setTimeout(r,0)));/* a disegno fatto, in pezzi separati */
+PN.then(async t=>{if(!t)return;await DOPO();const n=JSON.parse(t);t=null;await DOPO();const N=n.N.split('\n'),K=n.K;for(let i=0;i<P.length;i++){P[i].n=N[i];P[i].k=K[i];}for(const i in n.S)P[+i].sx=n.S[i];DATA.U=n.U.split('\n');XS=n.X;await DOPO();NOMI=true;MK='';disegnaFiltri();completo();});
 function gruppi(key){const m=new Map();for(const c of C){const k=key(c);let o=m.get(k);if(!o){o={k,sx:0,sy:0,m:0,cs:[]};m.set(k,o);}o.sx+=c.x;o.sy+=c.y;o.m++;o.cs.push(c.i);}return [...m.values()].map(o=>({...o,x:o.sx/o.m,y:o.sy/o.m}));}
 const REG=gruppi(c=>c.rg),PRV=gruppi(c=>c.rg+'|'+c.pr);
 const S={cx:450,cy:585,k:1,cats:new Set(),subs:new Set(),quick:new Set(),q:'',sel:null,filt:null,pin:null};
@@ -343,9 +350,10 @@ function passa(p,skip){
   if(skip!=='cat'&&S.cats.size&&!S.cats.has(p.g))return false;
   if(skip!=='sub'&&S.subs.size){let mine=false,ok=false;for(const k of S.subs){const j=k.indexOf('|'),g=+k.slice(0,j);if(g===p.g){mine=true;if(p.t.includes(k.slice(j+1)))ok=true;}}if(mine&&!ok)return false;}
   for(const q of S.quick){if(q==='b'||q==='a'){if(!C[p.ci].aw.includes(q))return false;}else if(!p.fl.includes(q))return false;}
-  if(S.q){const w=fold(S.q.trim());if(w&&!p.f.includes(w)&&!C[p.ci].f.includes(w))return false;}
+  if(QW&&!(p.f&&p.f.includes(QW))&&!C[p.ci].f.includes(QW))return false;
   return true;}
-function conti(){const key=[...S.cats].join()+'/'+[...S.subs].join()+'/'+[...S.quick].join()+'/'+S.q;if(M&&MK===key)return M;MK=key;
+function conti(){const key=[...S.cats].join()+'/'+[...S.subs].join()+'/'+[...S.quick].join()+'/'+S.q+'/'+NOMI;if(M&&MK===key)return M;MK=key;
+  QW=S.q?fold(S.q.trim()):'';if(QW&&NOMI)piegaNomi();
   const cc=new Uint16Array(C.length),cat=[0,0,0,0,0,0],sub={};let tot=0;
   for(const p of P){if(passa(p)){cc[p.ci]++;tot++;}if(passa(p,'cat'))cat[p.g]++;if(S.cats.has(p.g)&&passa(p,'sub'))for(const t of p.t){const k=p.g+'|'+t;sub[k]=(sub[k]||0)+1;}}
   return M={cc,cat,sub,tot};}
@@ -416,6 +424,7 @@ function lista(m,inV){
   $('nv').textContent=nf.format(sel!=null?m.cc[sel]:nVis);if(typeof vedoLista!=='undefined'&&!vedoLista)$('ltxt').textContent='Mostra luoghi · '+$('nv').textContent;
   $('nvl').textContent=sel!=null?'luoghi a '+C[sel].n:(nVis===1?'luogo in vista':'luoghi in vista')+(nAttivi()?' con i filtri':'');
   $('nvr').innerHTML=sel!=null?`${esc(C[sel].pr)}<br><button class="crumbbtn" data-tutti="1">Tutta la zona</button>`:`${nf.format(vis.length)} comuni`;
+  if(!NOMI){$('items').innerHTML='<div class="empty">Carico i nomi dei luoghi…</div>';return;}
   const pool=sel!=null?[C[sel]]:vis.sort((a,b)=>m.cc[b.i]-m.cc[a.i]).slice(0,50);
   const it=pool.map(c=>BY[c.i].filter(pi=>passa(P[pi]))),out=[];
   for(let r=0;out.length<80;r++){let any=false;for(const a of it){if(a[r]!=null){any=true;out.push(a[r]);if(out.length>=80)break;}}if(!any)break;}
@@ -497,7 +506,7 @@ $('items').addEventListener('touchmove',e=>{if(iy!=null&&e.touches[0].clientY-iy
 const sl40=s=>s.normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"").slice(0,40).replace(/-+$/,"");
 const DETP={};let MAN=null;
 async function man(){if(MAN)return MAN;try{MAN=await (await fetch('manifest.json',{cache:'no-store'})).json();}catch(e){MAN={};}return MAN;}
-async function dettagli(pi){const p=P[pi],c=C[p.ci],x=DATA.X[pi]||{};let det=x.d||null;
+async function dettagli(pi){const p=P[pi],c=C[p.ci],x=XG()[pi]||{};let det=x.d||null;
   if(!det){const m=await man(),n=m.det&&m.det[c.pv];if(n){if(!DETP[n])DETP[n]=fetch(n).then(r=>r.ok?r.json():{}).catch(()=>({}));const dd=await DETP[n];det=(dd[c.sl]||{})[c.sl+'--'+(p.sx||sl40(p.n))]||{};}}
   det=det||{};const u=k=>k!=null&&k>=0?DATA.U[k]:'';
   return {desc:det.desc||x.ds||'',why:det.why,tip:det.tip,sn:det.statusNote,st:p.fl.includes('w')?'warn':p.fl.includes('x')?'closed':'ok',ac:det.access,du:det.duration,ad:det.address,pc:det.price,

@@ -98,14 +98,25 @@ for c in d['c']:
         if not a[4]: X.get(len(P) - 1, {}).pop('ds', None)
 miss = [c for c in C if c[4] is None]
 assert not miss, ('comuni senza coordinate', [c[0] for c in miss[:5]])
-out = dict(R=[r['d'] for r in GEO['reg']], V=[p['d'] for p in GEO['pro']], C=C, P=P, T=TAGS, U=U, X=X, VER=VER)
-t = json.dumps(out, ensure_ascii=False, separators=(',', ':'))
-nome = 'mappa.' + hashlib.sha256(t.encode()).hexdigest()[:10] + '.json'
-for f in glob.glob(os.path.join(HERE, 'mappa.*.json')):
-    if not f.endswith(nome): os.remove(f)
-open(os.path.join(HERE, nome), 'w').write(t)
-M['mappa'] = nome
+# 12/11 sera: dati in due file. Il primo (confini, comuni, numeri dei luoghi) basta per disegnare la mappa
+# ed e' piccolo; il secondo (nomi, link, schede) arriva subito dopo, in parallelo.
+for x in P: assert '\n' not in x[0]
+core = dict(R=[r['d'] for r in GEO['reg']], V=[p['d'] for p in GEO['pro']], C=C, T=TAGS, VER=VER,
+            pc=[x[1] for x in P], pg=''.join(str(x[2]) for x in P), pt=[x[3] for x in P], pf=[x[4] for x in P])
+assert all('\n' not in u for u in U)
+nomi = dict(N='\n'.join(x[0] for x in P), S={str(i): x[5] for i, x in enumerate(P) if x[5]}, K=[x[6] for x in P],
+            U='\n'.join(U), X=json.dumps(X, ensure_ascii=False, separators=(',', ':')))
+def scrivi(pref, obj):
+    t = json.dumps(obj, ensure_ascii=False, separators=(',', ':'))
+    n = pref + '.' + hashlib.sha256(t.encode()).hexdigest()[:10] + '.json'
+    for f in glob.glob(os.path.join(HERE, pref + '.*.json')):
+        if not f.endswith(n): os.remove(f)
+    open(os.path.join(HERE, n), 'w').write(t)
+    return n, t
+nome, t = scrivi('mappa', core)
+nomen, tn = scrivi('mappan', nomi)
+M['mappa'] = nome; M['mappan'] = nomen
 json.dump(M, open(os.path.join(HERE, 'manifest.json'), 'w'), ensure_ascii=False, separators=(',', ':'))
 tpl = open(os.path.join(HERE, 'mappa_tpl.html')).read()
-open(os.path.join(HERE, 'filtri.html'), 'w').write(tpl.replace('/*MAPPA*/', json.dumps(nome)))
-print('mappa:', nome, len(t) // 1024, 'KB,', len(C), 'comuni,', len(P), 'luoghi,', len(U), 'link')
+open(os.path.join(HERE, 'filtri.html'), 'w').write(tpl.replace('/*MAPPA*/', json.dumps(nome)).replace('/*MAPPAN*/', json.dumps(nomen)))
+print('mappa:', nome, len(t) // 1024, 'KB +', nomen, len(tn) // 1024, 'KB,', len(C), 'comuni,', len(P), 'luoghi,', len(U), 'link')
