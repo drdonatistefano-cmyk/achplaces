@@ -342,6 +342,16 @@ for _cc in comuni:   # 11/11: fonti dei comuni, stessa correzione dei link
     _fs = [[_s[0], LINK_RID.get(_s[1], _s[1])] + list(_s[2:]) for _s in _cc["sources"]]
     _cc["sources"] = [_s for _s in _fs if _s[1] not in LINK_ROTTI] or _fs
 _leggeri = copy.deepcopy(comuni); _det = {}
+# 12/11/2026: tipi della pagina Luoghi (Archeologia per civiltà, Castelli, Pievi...) calcolati qui sulla descrizione completa,
+# perché nell'indice della Guida le descrizioni non ci sono. Una combinazione per luogo, nello stesso ordine dei luoghi.
+from fvtipi import T as _fvT
+_FVZ, _FVV = [], []
+for _cfv in comuni:
+    for _pfv in _cfv["places"]:
+        _g, _ts = _fvT(dict(name=_pfv["name"], desc=_pfv.get("desc", "") or "", sub=_pfv["sub"], cat=_pfv["cat"]))
+        _z = _g + "|" + ",".join(_ts)
+        if _z not in _FVZ: _FVZ.append(_z)
+        _FVV.append(_FVZ.index(_z))
 # 9/11/2026 velocità: nella prima schermata solo nome, categoria, comune, etichette e filtri.
 # Le descrizioni vanno nei file per provincia, tranne quelle dei luoghi più in alto in classifica (prime card della vista «tutti»);
 # lede, avvisi e fonti dei comuni vanno nei file per provincia (chiave "_c").
@@ -425,6 +435,7 @@ for _c in _leggeri:
 _K = dict(n=[len(c["places"]) for c in _leggeri], ck={k: [c.get(k) for c in _leggeri] for k in _ck},
           cm={k: [i for i, c in enumerate(_leggeri) if k not in c] for k in _ck}, p=[[a[q] for c in _leggeri for a in c["places"]] for q in range(9)], x={})
 _K["cm"] = {k: v for k, v in _K["cm"].items() if v}
+assert len(_FVV) == sum(len(c["places"]) for c in _leggeri) and all(a[1] == p["name"] for a, p in zip((a for c in _leggeri for a in c["places"]), (p for c in comuni for p in c["places"]))), "tipi Luoghi: ordine dei luoghi diverso"
 _g = 0
 for _c in _leggeri:
     for a in _c["places"]:
@@ -451,7 +462,7 @@ const rk=new Array(T.length);ix.forEach((g,i)=>rk[g]=i+1);process.stdout.write(J
 with _tf.NamedTemporaryFile("w", suffix=".js", delete=False, encoding="utf-8") as _f: _f.write(_RKJS)
 _RK = json.loads(_sp.run(["node", _f.name], input=json.dumps(dict(pb=PB, x=[[a[8], a[1]] for c in _leggeri for a in c["places"]]), ensure_ascii=False), capture_output=True, text=True, check=True).stdout)
 print("classifica pronta:", len(_RK["rk"]), "luoghi")
-NOME_DATI = _scrivi("dati", dict(rk=_RK["rk"], rb=_RK["rb"], pb=PB, g=list(geo_of("Bologna")), k=_K, l=LINKS["bologna"], dz=_DZ, tb={k: v for k, v in TQ.items() if "--" not in k}, gb={k: v for k, v in GY.items() if "--" not in k}))
+NOME_DATI = _scrivi("dati", dict(fv=dict(z=_FVZ, v=_FVV), rk=_RK["rk"], rb=_RK["rb"], pb=PB, g=list(geo_of("Bologna")), k=_K, l=LINKS["bologna"], dz=_DZ, tb={k: v for k, v in TQ.items() if "--" not in k}, gb={k: v for k, v in GY.items() if "--" not in k}))
 NOME_META = _scrivi("meta", dict(q=qc, s=sources, a=ARCH))
 NOME_FONTI = _scrivi("fonti", FONTI)
 DET = {pr: _scrivi("det." + pr.lower(), d) for pr, d in sorted(_det.items())}
@@ -519,6 +530,7 @@ function salvaIst(nome){setTimeout(()=>{if(IST_TOCCO||location.hash.slice(1))ret
 """+DECODE+"\n"+COLONNE+r"""
 async function AVVIO(D){
 {const CK=["storia","musei","sacro","natura","locale"];for(const c of D.c)c.places=c.places.map(a=>{const f=a[5],o={id:c.slug+"--"+a[0],name:a[1],cat:CK[a[2]],sub:a[3],desc:a[4],free:f.includes("F")?true:f.includes("P")?false:null,card:f.includes("c"),unesco:f.includes("u"),view:f.includes("v"),indoor:f.includes("i"),status:a[6]||"ok",t:a[7],r:a[8],address:"",price:"",duration:"",sources:[]};if(a[9])Object.assign(o,a[9]);return o;});
+ if(D.fv){let g=0;const Z=D.fv.z.map(z=>{const [a,b]=z.split("|");return [a,b.split(",")];});for(const c of D.c)for(const p of c.places)p._fv=Z[D.fv.v[g++]];}
  for(const c of D.c){if(c.lede==null)c.lede="";if(c.notice==null)c.notice="";if(!c.sources)c.sources=[];}}
 await PAUSA();
 const BO_GEO=D.g,COMUNI_EXTRA=D.c,LINKS_BO=D.l;let QC,SOURCES,ARCH;var RKALL=null;

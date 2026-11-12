@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
 <meta charset="utf-8">
-<script>try{if(localStorage.getItem("datiNome")!=="dati.e146e3b57d.json"){var l=document.createElement("link");l.rel="preload";l.as="fetch";l.crossOrigin="anonymous";l.href="dati.e146e3b57d.json";document.head.appendChild(l);}}catch(e){}</script>
+<script>try{if(localStorage.getItem("datiNome")!=="dati.8cdc3894b7.json"){var l=document.createElement("link");l.rel="preload";l.as="fetch";l.crossOrigin="anonymous";l.href="dati.8cdc3894b7.json";document.head.appendChild(l);}}catch(e){}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#161311">
 <title>Ach's Places Guide</title>
@@ -12,7 +12,7 @@
   --bg:#f6efe4; --paper:#fffdf9; --ink:#231d18; --mute:#7a6f63; --faint:#a99d8f; --line:#e8ddcc;
   --terra:#3d5f7d; --terra-soft:#e4ecf3; --terra-ink:#2f4d68; --on:#fff;
   --warn:#9a6400; --warn-soft:#fbefd6; --bad:#a1261c; --bad-soft:#f8dfdc; --ok:#3f7a4c; --ok-soft:#e3efe5;
-  --c-storia:#8a7356; --c-sacro:#4f5fb0; --c-musei:#7d4f9a; --c-natura:#3f7a4c; --c-locale:#2a7f7a;
+  --c-storia:#8a7356; --c-arch:#a0603a; --c-sacro:#4f5fb0; --c-musei:#7d4f9a; --c-natura:#3f7a4c; --c-locale:#2a7f7a;
   --shadow:0 1px 2px rgba(60,40,20,.06),0 4px 14px rgba(60,40,20,.06); --r:16px;
   --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
   --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;
@@ -22,13 +22,13 @@
   --bg:#161311; --paper:#201c19; --ink:#f1e9df; --mute:#ab9f92; --faint:#7d7268; --line:#332d28;
   --terra:#8fb3d3; --terra-soft:#1f2a35; --terra-ink:#b9d0e4; --on:#102131;
   --warn:#e3b35a; --warn-soft:#352a16; --bad:#f08a7e; --bad-soft:#3a201d; --ok:#6fb07d; --ok-soft:#1c2c20;
-  --c-storia:#c4ae90; --c-sacro:#93a0f0; --c-musei:#b48ad0; --c-natura:#6fb07d; --c-locale:#5fbdb6;
+  --c-storia:#c4ae90; --c-arch:#e09a6f; --c-sacro:#93a0f0; --c-musei:#b48ad0; --c-natura:#6fb07d; --c-locale:#5fbdb6;
   --shadow:none; color-scheme:dark;}}
 :root[data-theme="dark"]{
   --bg:#161311; --paper:#201c19; --ink:#f1e9df; --mute:#ab9f92; --faint:#7d7268; --line:#332d28;
   --terra:#8fb3d3; --terra-soft:#1f2a35; --terra-ink:#b9d0e4; --on:#102131;
   --warn:#e3b35a; --warn-soft:#352a16; --bad:#f08a7e; --bad-soft:#3a201d; --ok:#6fb07d; --ok-soft:#1c2c20;
-  --c-storia:#c4ae90; --c-sacro:#93a0f0; --c-musei:#b48ad0; --c-natura:#6fb07d; --c-locale:#5fbdb6;
+  --c-storia:#c4ae90; --c-arch:#e09a6f; --c-sacro:#93a0f0; --c-musei:#b48ad0; --c-natura:#6fb07d; --c-locale:#5fbdb6;
   --shadow:none; color-scheme:dark;}
 *{box-sizing:border-box}
 [hidden]{display:none!important}
@@ -133,7 +133,7 @@ button.stat.on{box-shadow:inset 0 0 0 2px var(--sc)}
 #g-cat .qc:disabled{opacity:.4;cursor:default}
 .qc .lg{display:none}.qc .t{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 @media (min-width:760px){
-  #g-cat{grid-auto-flow:row;grid-template-columns:repeat(5,minmax(0,1fr));overflow:visible}
+  #g-cat{grid-auto-flow:row;grid-template-columns:repeat(6,minmax(0,1fr));overflow:visible}
   #g-cat .qc{min-width:0}#g-cat .qc .t{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
   #g-cat .qc{height:60px;flex-direction:row;justify-content:flex-start;gap:10px;padding:0 14px;font-size:14.5px}
   #g-cat .qc small{margin-left:auto;font-size:12px}
@@ -955,6 +955,47 @@ const CATS={
   natura:{label:"Natura",long:"Natura",em:"🌳",subs:{"Parchi urbani":"🌳","Colline e sentieri":"🥾","Montagna":"🏔️","Mare e spiagge":"🏖️","Laghi e fiumi":"🏞️","Parchi e riserve naturali":"🦌","Grotte e geositi":"🪨","Giardini botanici":"🌿","Paesaggi e zone d'interesse":"🗺️"}},
   locale:{label:"Tradizioni",long:"Vita locale e curiosità",em:"🧀",subs:{"Mercati storici":"🧀","Enogastronomia":"🍷","Terme":"♨️","Artigianato":"🧵","Angoli nascosti":"🔍","Motori":"🏍️"}}
 };
+/* 12/11/2026: categorie e tipi uguali alla pagina Luoghi (Archeologia per civiltà, Monumenti, Sacro, Musei, Natura, Tradizioni) */
+const FVM=[
+ {k:"arch",l:"Archeologia",e:"🏺",c:"var(--c-arch)",s:{"Preistoria":"🦴","Nuragici":"🗿","Etruschi":"⚱️","Greci":"🏛️","Fenici":"⛵","Italici":"🛡️","Romani":"🏟️","Tardoantichi":"✝️","Medievali":"🏰","Altro":"❔"}},
+ {k:"mon",l:"Monumenti",e:"🏰",c:"var(--c-storia)",s:{"Castelli":"🏰","Fortezze":"🛡️","Mura":"🧱","Torri":"🗼","Palazzi":"🏛️","Ville":"🏡","Piazze":"⛲","Centri":"🏙️","Borghi":"🏘️","Abbandonati":"🏚️","Portici":"🏛️","Teatri":"🎭","Ponti":"🌉","Fontane":"⛲","Monumenti":"🗽","Memoriali":"🕯️"}},
+ {k:"sacro",l:"Sacro",e:"⛪",c:"var(--c-sacro)",s:{"Chiese":"⛪","Pievi":"⛪","Basiliche":"⛪","Duomi":"⛪","Abbazie":"📿","Conventi":"📿","Santuari":"🙏","Oratori":"🕍","Battisteri":"💧","Sinagoghe":"🕎","Monti sacri":"⛰️","Complessi":"🔔","Cimiteri":"🕯️"}},
+ {k:"musei",l:"Musei",e:"🖼️",c:"var(--c-musei)",s:{"Pittura":"🖼️","Moderna":"🎨","Ceramica":"🏺","Archeologici":"⚱️","Scienza":"🔭","Storia":"📜","Dimore":"🏠","Diocesani":"✝️","Etnografici":"🧺","Tecnica":"⚙️","Militari":"🎖️","Tematici":"🗂️"}},
+ {k:"nat",l:"Natura",e:"🌿",c:"var(--c-natura)",s:{"Parchi":"🌲","Riserve":"🦅","Giardini":"🌷","Orti":"🌱","Laghi":"🏞️","Fiumi":"🌊","Cascate":"💦","Spiagge":"🏖️","Montagna":"⛰️","Vulcani":"🌋","Grotte":"🕳️","Geositi":"🪨","Sentieri":"🥾","Panorami":"🌄"}},
+ {k:"trad",l:"Tradizioni",e:"🧺",c:"var(--c-locale)",s:{"Mercati":"🧺","Terme":"♨️","Sapori":"🍷","Ceramica":"🏺","Botteghe":"🧵","Motori":"🏎️","Curiosità":"✨"}}];
+const FVMM=Object.fromEntries(FVM.map(m=>[m.k,m]));
+const FVA=[["Preistoria",/preistor|paleolit|neolit|età del (bronzo|ferro)|rupestr|palafitt|dolmen|menhir|neanderthal/],["Nuragici",/nurag|tomb[ae] dei giganti|pozzo sacro|domus de janas/],["Etruschi",/etrusc/],["Greci",/\bgrec|magna grecia|ellenist/],["Fenici",/fenic|punic/],["Italici",/sannit|messap|picen|\bvolsc|camun|dauni|celt|\bitalic/],["Romani",/roman|anfiteatr|domus|\bforo\b|augusto|imperial/],["Tardoantichi",/paleocrist|bizantin|longobard|tardoantic|catacomb/],["Medievali",/medieval|castrum/]];
+function fvTag(p){
+  const t=(p.name+" "+(p.desc||"")).toLowerCase(),s=p.sub,c=p.cat,h=r=>r.test(t);
+  if(s==="Archeologia"){const a=FVA.filter(x=>x[1].test(t)).map(x=>x[0]);return ["arch",a.length?a:["Altro"]];}
+  if(c==="storia"){
+    if(s==="Castelli e fortezze")return ["mon",[h(/fort|rocca|cittadella|bastion/)&&!h(/castell/)?"Fortezze":"Castelli",...(h(/\bmura|porta /)?["Mura"]:[])]];
+    if(s==="Palazzi e ville")return ["mon",[h(/^villa|\bvilla /)?"Ville":"Palazzi"]];
+    if(s==="Piazze e centro storico")return ["mon",[h(/piazza/)?"Piazze":"Centri",...(h(/portic/)?["Portici"]:[])]];
+    if(s==="Portici UNESCO")return ["mon",["Portici"]];
+    if(s==="Monumenti e memoriali")return ["mon",[h(/\bponte/)?"Ponti":h(/fontan/)?"Fontane":h(/memorial|caduti|sacrario|guerra|resistenza|shoah/)?"Memoriali":h(/\barco|porta /)?"Mura":"Monumenti"]];
+    return ["mon",[{"Borghi":"Borghi","Torri":"Torri","Teatri storici":"Teatri","Borghi abbandonati":"Abbandonati"}[s]||"Monumenti"]];}
+  if(c==="sacro"){
+    if(s==="Chiese e pievi")return ["sacro",[h(/oratori/)?"Oratori":h(/\bpieve/)?"Pievi":h(/battister/)?"Battisteri":h(/sinagog/)?"Sinagoghe":"Chiese"]];
+    if(s==="Abbazie e monasteri")return ["sacro",[h(/convent/)&&!h(/abbazi/)?"Conventi":"Abbazie"]];
+    if(s==="Santuari")return ["sacro",[h(/sacro monte/)?"Monti sacri":"Santuari"]];
+    return ["sacro",[{"Cattedrali e duomi":"Duomi","Basiliche":"Basiliche","Complessi monumentali":"Complessi","Cimiteri monumentali":"Cimiteri"}[s]||"Chiese"]];}
+  if(c==="musei"){let o;
+    if(s==="Tematici")o=[h(/diocesan|arte sacra/)?"Diocesani":h(/etnograf|civiltà contadina|tradizion/)?"Etnografici":h(/militar|guerra|armi/)?"Militari":h(/industria|tecnic|ferrovi|\bauto|moto|macchin/)?"Tecnica":"Tematici"];
+    else o=[{"Arte antica":"Pittura","Arte moderna":"Moderna","Archeologici":"Archeologici","Case museo":"Dimore","Scienza e università":"Scienza","Storia della città":"Storia"}[s]||"Tematici"];
+    if(s==="Arte antica"||s==="Arte moderna"||h(/pittur|pittor|dipint|pinacotec|quadr|affresc|\btel[ae]\b/))o.push("Pittura");
+    if(h(/ceramic|maiolic|porcellan|terracott/))o.push("Ceramica");
+    return ["musei",[...new Set(o)]];}
+  if(c==="natura"){
+    if(s==="Parchi e riserve naturali")return ["nat",[h(/riserva|oasi/)&&!h(/parco/)?"Riserve":"Parchi"]];
+    if(s==="Laghi e fiumi")return ["nat",[h(/cascat/)?"Cascate":h(/lago|laghi/)?"Laghi":"Fiumi"]];
+    if(s==="Grotte e geositi")return ["nat",[h(/grott/)?"Grotte":"Geositi"]];
+    if(s==="Montagna")return ["nat",[h(/vulcan|etna|vesuvio/)?"Vulcani":"Montagna"]];
+    if(s==="Giardini botanici")return ["nat",[h(/orto botanic/)?"Orti":"Giardini"]];
+    return ["nat",[{"Parchi urbani":"Giardini","Colline e sentieri":"Sentieri","Paesaggi e zone d'interesse":"Panorami","Mare e spiagge":"Spiagge"}[s]||"Panorami"]];}
+  const o=[{"Mercati storici":"Mercati","Terme":"Terme","Enogastronomia":"Sapori","Artigianato":"Botteghe","Motori":"Motori","Angoli nascosti":"Curiosità"}[s]||"Curiosità"];
+  if(h(/ceramic|maiolic/))o.push("Ceramica");return ["trad",o];}
+const FVG=p=>p._fv||(p._fv=fvTag(p));
 const PRICE=[["free","🆓","Gratis","Gratuito"],["paid","🎟️","A pagamento","A pagamento"],["unk","❔","Da verificare sul sito","Da verificare"],["card","💳","Gratis con Card","Card"]];
 const IDEAL=[["rain","☔","Se piove","Al coperto"],["view","🌅","Panorama","Panorama"],["unesco","🌍","UNESCO","UNESCO"],["borghi","🏘️","Borghi più belli","Borghi"],["arancione","🟠","Bandiera Arancione","Arancione"]];
 const AWARDS={unesco:["🌍","Patrimonio UNESCO nel comune","https://www.unesco.it/it/"],borghi:["🏘️","I Borghi più belli d'Italia","https://borghipiubelliditalia.it/"],arancione:["🟠","Bandiera Arancione TCI","https://www.bandierearancioni.it/"],creative:["🎨","Città creativa UNESCO","https://www.unesco.it/it/"]};
@@ -1238,7 +1279,7 @@ function salvaIst(nome){setTimeout(()=>{if(IST_TOCCO||location.hash.slice(1))ret
 (async()=>{const cnt=document.getElementById("count");if(cnt&&!IST_ORIG)cnt.textContent="Caricamento dei luoghi…";
   let nome=null;try{nome=localStorage.getItem("datiNome");}catch(e){}
   const ultimo=nome,pIdb=nome?MEMO.leggi(nome):null;
-  const ATTESO="dati.e146e3b57d.json",pPrimo=nome?null:fetch(ATTESO).then(r=>r.ok?leggiAPezzi(r):null).catch(()=>null);  /* primo accesso: in parallelo al manifest */
+  const ATTESO="dati.8cdc3894b7.json",pPrimo=nome?null:fetch(ATTESO).then(r=>r.ok?leggiAPezzi(r):null).catch(()=>null);  /* primo accesso: in parallelo al manifest */
   try{MAN=await (await fetch("manifest.json",{cache:"no-store"})).json();nome=MAN.dati;try{localStorage.setItem("man",JSON.stringify(MAN));}catch(e){}}catch(e){try{MAN=JSON.parse(localStorage.getItem("man")||"null");}catch(e2){}}
   if(!nome){if(cnt)cnt.textContent="Dati non disponibili: controlla la connessione.";return;}
   let t=nome===ultimo&&pIdb?await pIdb:(pPrimo&&nome===ATTESO?await pPrimo:null)||await MEMO.leggi(nome);
@@ -1256,6 +1297,7 @@ function COLONNE(D){if(!D.k)return D;const K=D.k,C=[],ks=Object.keys(K.ck);let g
     c.places=pl;C.push(c);}D.c=C;D.k=undefined;return D;}
 async function AVVIO(D){
 {const CK=["storia","musei","sacro","natura","locale"];for(const c of D.c)c.places=c.places.map(a=>{const f=a[5],o={id:c.slug+"--"+a[0],name:a[1],cat:CK[a[2]],sub:a[3],desc:a[4],free:f.includes("F")?true:f.includes("P")?false:null,card:f.includes("c"),unesco:f.includes("u"),view:f.includes("v"),indoor:f.includes("i"),status:a[6]||"ok",t:a[7],r:a[8],address:"",price:"",duration:"",sources:[]};if(a[9])Object.assign(o,a[9]);return o;});
+ if(D.fv){let g=0;const Z=D.fv.z.map(z=>{const [a,b]=z.split("|");return [a,b.split(",")];});for(const c of D.c)for(const p of c.places)p._fv=Z[D.fv.v[g++]];}
  for(const c of D.c){if(c.lede==null)c.lede="";if(c.notice==null)c.notice="";if(!c.sources)c.sources=[];}}
 await PAUSA();
 const BO_GEO=D.g,COMUNI_EXTRA=D.c,LINKS_BO=D.l;let QC,SOURCES,ARCH;var RKALL=null;
@@ -1397,8 +1439,8 @@ const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",
 const priceOk=(p,k)=>k==="free"?p.free===true:k==="paid"?p.free===false:k==="unk"?p.free===null:p.card;
 /* Dentro un gruppo i filtri si sommano (O), tra gruppi diversi si combinano (E). "Ideale per" richiede tutte le voci scelte. */
 function pass(p,skip){
-  if(skip!=="cat"&&S.cat.size&&!S.cat.has(p.cat))return false;
-  if(skip!=="sub"&&S.sub.size&&[...S.sub].some(x=>x.startsWith(p.cat+"|"))&&!S.sub.has(p.cat+"|"+p.sub))return false;
+  if(skip!=="cat"&&S.cat.size&&!S.cat.has(FVG(p)[0]))return false;
+  if(skip!=="sub"&&S.sub.size){const [g,ts]=FVG(p);if([...S.sub].some(x=>x.startsWith(g+"|"))&&!ts.some(t=>S.sub.has(g+"|"+t)))return false;}
   if(skip!=="price"&&S.price.size&&![...S.price].some(k=>priceOk(p,k)))return false;
   if(skip!=="ideal"&&S.ideal.size&&![...S.ideal].some(k=>idealOk(p,k)))return false;
   if(skip!=="time"&&S.time.size&&!S.time.has(p.t))return false;
@@ -1424,19 +1466,20 @@ const gcol=c=>`var(--c-${c})`;
 
 function renderFilters(){
   const gc=$("g-cat");gc.innerHTML="";
-  for(const [k,c] of Object.entries(CATS)){
-    const n=CUR.filter(p=>p.cat===k&&pass(p,"cat")).length;
-    gc.appendChild(chip(c.em,c.label,n,S.cat.has(k),gcol(k),()=>{tog(S.cat,k);if(!S.cat.has(k))for(const x of [...S.sub])if(x.startsWith(k+"|"))S.sub.delete(x);update();},"Categoria"));
+  for(const m of FVM){const k=m.k,c={em:m.e,label:m.l};
+    const n=CUR.filter(p=>FVG(p)[0]===k&&pass(p,"cat")).length;
+    gc.appendChild(chip(c.em,c.label,n,S.cat.has(k),m.c,()=>{tog(S.cat,k);if(!S.cat.has(k))for(const x of [...S.sub])if(x.startsWith(k+"|"))S.sub.delete(x);update();},"Categoria"));
   }
   $("clr-cat").hidden=!S.cat.size;
   const gs=$("g-sub");gs.innerHTML="";$("subwrap").hidden=!S.cat.size;
   if(S.cat.size){
-    for(const k of Object.keys(CATS)){ if(!S.cat.has(k))continue;
-      for(const [s,em] of Object.entries(CATS[k].subs)){
+    for(const m of FVM){const k=m.k; if(!S.cat.has(k))continue;
+      const base=CUR.filter(p=>FVG(p)[0]===k&&pass(p,"sub"));
+      for(const [s,em] of Object.entries(m.s)){
         const key=k+"|"+s;
-        const n=CUR.filter(p=>p.cat===k&&p.sub===s&&pass(p,"sub")).length;
+        const n=base.filter(p=>FVG(p)[1].includes(s)).length;
         if(!n&&!S.sub.has(key))continue;
-        gs.appendChild(chip(em,s,n,S.sub.has(key),gcol(k),()=>{tog(S.sub,key);update();},"Tipo"));
+        gs.appendChild(chip(em,s,n,S.sub.has(key),m.c,()=>{tog(S.sub,key);update();},"Tipo"));
       }
     }
   }
@@ -1462,8 +1505,8 @@ function renderFilters(){
 }
 function activeList(){
   const a=[];
-  for(const k of S.cat)a.push([CATS[k].em+" "+CATS[k].label,()=>{S.cat.delete(k);for(const x of [...S.sub])if(x.startsWith(k+"|"))S.sub.delete(x);}]);
-  for(const key of S.sub){const [k,s]=key.split("|");a.push([CATS[k].subs[s]+" "+nm(s),()=>{S.sub.delete(key);}]);}
+  for(const k of S.cat)a.push([FVMM[k].e+" "+FVMM[k].l,()=>{S.cat.delete(k);for(const x of [...S.sub])if(x.startsWith(k+"|"))S.sub.delete(x);}]);
+  for(const key of S.sub){const [k,s]=key.split("|");a.push([FVMM[k].s[s]+" "+nm(s),()=>{S.sub.delete(key);}]);}
   for(const k of S.price){const p=PRICE.find(x=>x[0]===k);a.push([p[1]+" "+p[2],()=>{S.price.delete(k);}]);}
   for(const k of S.ideal){const p=IDEAL.find(x=>x[0]===k);a.push([p[1]+" "+p[2],()=>{S.ideal.delete(k);}]);}
   for(const k of S.time){const p=TIME.find(x=>x[0]===k);a.push([p[1]+" "+p[2],()=>{S.time.delete(k);}]);}
