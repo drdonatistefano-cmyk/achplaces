@@ -617,6 +617,23 @@ body{font-size:16px;line-height:1.5}
 .ghead .gsub{color:var(--terra);font-size:13px;font-weight:650}
 .gall{grid-column:1/-1;justify-self:start;height:38px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--terra-ink);font:650 13.5px var(--sans);cursor:pointer}
 .gall:hover{border-color:var(--terra)}
+.acard{display:flex;align-items:center;gap:14px;width:100%;min-width:0;max-width:100%;text-align:left;padding:14px 14px 14px 16px;border-radius:var(--r);border:1px solid var(--line);background:var(--paper);box-shadow:var(--shadow);color:var(--ink);cursor:pointer;font:inherit;transition:transform .15s,border-color .15s}
+@media (hover:hover){.acard:hover{border-color:var(--terra);transform:translateY(-1px)}}
+.acard .ab{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}
+.acard .an{font:700 1.15rem/1.2 var(--serif)}
+.acard .as{font-size:12.5px;font-weight:700;color:var(--terra)}
+.acard .ap{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px}
+.apill{display:inline-flex;align-items:center;gap:3px;height:22px;padding:0 7px;border-radius:999px;font-size:12px;font-weight:650;background:color-mix(in srgb,var(--g) 14%,var(--paper));color:color-mix(in srgb,var(--g) 80%,var(--ink))}
+.acard .at{font-size:12.5px;color:var(--mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:2px}
+.acard .ac{display:flex;flex-direction:column;align-items:center;flex:none;min-width:58px}
+.acard .ac b{font:700 1.6rem/1 var(--serif);color:var(--terra)}
+.acard .ac small{font-size:11.5px;color:var(--mute)}
+.acard .ac .ax{margin-top:2px;font-size:11px}
+.acard .ach{color:var(--faint);font-size:22px}
+.gcrumb{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:0 0 4px}
+.gcrumb button{height:34px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--terra-ink);font:650 13.5px var(--sans);cursor:pointer}
+.gcrumb button[aria-current]{background:var(--terra);border-color:var(--terra);color:var(--on)}
+.gcrumb span{color:var(--faint)}
 @media (max-width:759px){.topnav{overflow-x:auto;scrollbar-width:none}.topnav::-webkit-scrollbar{display:none}.topnav .aggr{flex:none}.topnav .aggr a{padding:0 10px;font-size:12.5px}}
 /* 12/11/2026: passando sopra un filtro se ne legge il nome intero */
 .tipz{position:fixed;z-index:9999;left:0;top:0;transform:translate(-50%,-100%) translateY(6px);opacity:0;pointer-events:none;background:var(--ink);color:var(--paper);font:650 13px/1.2 var(--sans);padding:7px 11px;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.22);transition:opacity .14s,transform .14s;white-space:nowrap}
@@ -1598,24 +1615,34 @@ const areaDi=r=>AREE_G.nord.includes(r)?"Nord":AREE_G.centro.includes(r)?"Centro
 let COMMAP=null;
 function infoCom(p){if(!COMMAP){COMMAP=new Map(COMUNI.map(c=>[c.slug,c]));}return COMMAP.get(p.comSlug)||{name:p.com,provName:"",regione:""};}
 function renderGruppi(list,g){
-  const key={c:p=>p.comSlug,v:p=>{const c=infoCom(p);return c.regione+"|"+c.provName;},r:p=>infoCom(p).regione,a:p=>areaDi(infoCom(p).regione)}[S.grp];
-  const M=new Map();for(const p of list){const k=key(p);let a=M.get(k);if(!a){a=[];M.set(k,a);}a.push(p);}
+  /* livelli dal piu' largo al piu' stretto; ogni tocco su un aggregato scende di un livello, fino ai luoghi */
+  const ORD=["a","r","v","c","p"],K={c:p=>p.comSlug,v:p=>{const c=infoCom(p);return c.regione+"|"+c.provName;},r:p=>infoCom(p).regione,a:p=>areaDi(infoCom(p).regione)};
+  const D=S.drill||(S.drill=[]);for(const d of D)list=list.filter(p=>K[d.g](p)===d.k);
+  const liv=D.length?ORD[ORD.indexOf(D[D.length-1].g)+1]:S.grp;
+  const NOMI={a:"Nord-Sud",r:"Regioni",v:"Province",c:"Comuni"};
+  const bc=document.createElement("div");bc.className="gcrumb";
+  bc.innerHTML=`<button type="button" data-lv="-1">${NOMI[S.grp]}</button>`+D.map((d,i)=>`<span aria-hidden="true">›</span><button type="button" data-lv="${i}"${i===D.length-1?' aria-current="true"':""}>${esc(d.n)}</button>`).join("");
+  bc.onclick=e=>{const b=e.target.closest("[data-lv]");if(!b)return;S.drill=D.slice(0,+b.dataset.lv+1);update();window.scrollTo({top:Math.max(0,$("grid").getBoundingClientRect().top+scrollY-140)});};
+  if(D.length)g.appendChild(bc);
+  if(liv==="p"){let shown=0;const more=()=>{const f=document.createDocumentFragment();for(const p of list.slice(shown,shown+24))f.appendChild(cardEl(p));shown+=24;const o=g.querySelector(".gmore");if(o)o.remove();g.appendChild(f);
+      if(shown<list.length){const m=document.createElement("button");m.type="button";m.className="gmore freset";m.textContent=`Mostra altri ${Math.min(24,list.length-shown)} di ${list.length-shown}`;m.onclick=more;g.appendChild(m);if(gIO)gIO.observe(m);}};more();return;}
+  const M=new Map();for(const p of list){const k=K[liv](p);let a=M.get(k);if(!a){a=[];M.set(k,a);}a.push(p);}
   let G=[...M.entries()];
-  if(S.grp==="a"){const o={"Nord":0,"Centro":1,"Sud e Isole":2};G.sort((x,y)=>o[x[0]]-o[y[0]]);}else G.sort((x,y)=>y[1].length-x[1].length||String(x[0]).localeCompare(String(y[0]),"it"));
-  const nome=(k,ps)=>{const c=infoCom(ps[0]);if(S.grp==="c")return [c.name||ps[0].com,(c.provName?provLong(c):"")+(c.regione?" · "+REGN(c.regione):"")];
-    if(S.grp==="v")return [c.provName,REGN(c.regione)];if(S.grp==="r")return [REGN(k),""];return [k,""];};
-  const PRIMI=S.grp==="c"?3:S.grp==="a"?9:6;let gi=0;
-  const altri=()=>{const frag=document.createDocumentFragment();
-    for(const [k,ps] of G.slice(gi,gi+10)){const [n,sub]=nome(k,ps);const hd=document.createElement("div");hd.className="ghead"+(gi===0&&frag.childNodes.length===0?" g0":"");
-      hd.innerHTML=`<h3>${esc(n)}</h3><small>${ps.length} ${ps.length===1?"luogo":"luoghi"}</small>${sub?`<span class="gsub">${esc(sub)}</span>`:""}`;frag.appendChild(hd);
-      let k2=0;const piu=()=>{const f2=document.createDocumentFragment();for(const p of ps.slice(k2,k2+(k2?24:PRIMI)))f2.appendChild(cardEl(p));k2+=k2?24:PRIMI;return f2;};
-      frag.appendChild(piu());
-      if(ps.length>PRIMI){const b=document.createElement("button");b.type="button";b.className="gall";const lab=()=>`Mostra ${k2===PRIMI?"tutti i "+ps.length:"altri "+Math.min(24,ps.length-k2)} luoghi${S.grp==="c"?" di "+n:""}`;b.textContent=lab();
-        b.onclick=()=>{b.before(piu());if(k2>=ps.length)b.remove();else b.textContent=lab();};frag.appendChild(b);}}
-    gi+=10;const old=g.querySelector(".gmore");if(old)old.remove();g.appendChild(frag);
-    if(gi<G.length){const m=document.createElement("button");m.type="button";m.className="gmore freset";m.textContent=`Mostra altri ${Math.min(10,G.length-gi)} gruppi di ${G.length-gi}`;m.onclick=altri;g.appendChild(m);if(gIO)gIO.observe(m);}};
+  if(liv==="a"){const o={"Nord":0,"Centro":1,"Sud e Isole":2};G.sort((x,y)=>o[x[0]]-o[y[0]]);}else G.sort((x,y)=>y[1].length-x[1].length||String(x[0]).localeCompare(String(y[0]),"it"));
+  const nome=(k,ps)=>{const c=infoCom(ps[0]);if(liv==="c")return [c.name||ps[0].com,c.provName?provLong(c):""];if(liv==="v")return [c.provName===REGN(c.regione)?c.provName:provLong(c),REGN(c.regione)];if(liv==="r")return [REGN(k),areaDi(k)];return [k,""];};
+  const sotto=(ps)=>{if(liv==="c")return "";const nx={a:"r",r:"v",v:"c"}[liv],s=new Set(ps.map(K[nx]));return s.size+" "+({r:s.size===1?"regione":"regioni",v:s.size===1?"provincia":"province",c:s.size===1?"comune":"comuni"}[nx]);};
+  let gi=0;
+  const altri=()=>{const f=document.createDocumentFragment();
+    for(const [k,ps] of G.slice(gi,gi+30)){const [n,sub]=nome(k,ps),cnt={};for(const p of ps){const x=FVG(p)[0];cnt[x]=(cnt[x]||0)+1;}
+      const pills=FVM.filter(m=>cnt[m.k]).sort((a,b)=>cnt[b.k]-cnt[a.k]).map(m=>`<span class="apill" style="--g:${m.c}" title="${esc(m.l)}">${m.e} ${cnt[m.k]}</span>`).join("");
+      const top=ps.slice(0,3).map(p=>esc(p.name)).join(" · ");
+      const b=document.createElement("button");b.type="button";b.className="acard";
+      b.innerHTML=`<span class="ab"><b class="an">${esc(n)}</b>${sub?`<span class="as">${esc(sub)}</span>`:""}<span class="ap">${pills}</span><span class="at">${top}</span></span><span class="ac"><b>${ps.length}</b><small>${ps.length===1?"luogo":"luoghi"}</small>${sotto(ps)?`<small class="ax">${sotto(ps)}</small>`:""}</span><span class="ach" aria-hidden="true">›</span>`;
+      b.onclick=()=>{D.push({g:liv,k,n});update();window.scrollTo({top:Math.max(0,$("grid").getBoundingClientRect().top+scrollY-140)});};f.appendChild(b);}
+    gi+=30;const o=g.querySelector(".gmore");if(o)o.remove();g.appendChild(f);
+    if(gi<G.length){const m=document.createElement("button");m.type="button";m.className="gmore freset";m.textContent=`Mostra altri ${Math.min(30,G.length-gi)} di ${G.length-gi}`;m.onclick=altri;g.appendChild(m);if(gIO)gIO.observe(m);}};
   altri();}
-document.querySelector(".topnav .aggr").addEventListener("click",e=>{const b=e.target.closest("[data-grp]");if(!b)return;S.grp=b.dataset.grp;
+document.querySelector(".topnav .aggr").addEventListener("click",e=>{const b=e.target.closest("[data-grp]");if(!b)return;S.grp=b.dataset.grp;S.drill=[];
   document.querySelectorAll(".topnav .aggr .agg").forEach(x=>{const on=x===b;x.classList.toggle("on",on);x.setAttribute("aria-pressed",on);});
   if(location.hash==="#metodo"||location.hash==="#fonti")location.hash="";update();const gr=$("grid");if(gr)gr.scrollIntoView({block:"start",behavior:"smooth"});});
 const gIO="IntersectionObserver" in window?new IntersectionObserver(es=>{for(const e of es)if(e.isIntersecting){gIO.unobserve(e.target);e.target.click();}},{rootMargin:"600px"}):null;
