@@ -1379,15 +1379,18 @@ function cardEl(p){
 }
 /* riconoscimenti: nei comuni il bollino con link all'ente; in ogni vista i pulsanti rapidi UNESCO, Borghi, Bandiere Arancioni */
 function renderAwards(){
-  const c=C, cnt=k=>CUR.filter(p=>idealOk(p,k)).length;
+  const c=C, cnt=k=>fissi()[k]||0;
   const links=(c.aw||[]).map(k=>AWARDS[k]?`<a class="aw" href="${AWARDS[k][2]}" target="_blank" rel="noopener">${AWARDS[k][0]} ${esc(AWARDS[k][1])}</a>`:"").join("");
   const quick=[["unesco","🌍","UNESCO"],["borghi","🏘️","Borghi più belli"],["arancione","🟠","Bandiere Arancioni"]].map(([k,em,l])=>{const n=cnt(k);return n?`<button type="button" class="aw awq${S.ideal.has(k)?" on":""}" data-k="${k}" aria-pressed="${S.ideal.has(k)}">${em} ${l}</button>`:"";}).join("");
   $("awards").innerHTML=quick;
 }
 $("awards").addEventListener("click",e=>{const b=e.target.closest(".awq");if(!b)return;tog(S.ideal,b.dataset.k);update();});
-function renderStats(){
-  const vis=CUR.filter(p=>pass(p)).length, filt=nActive()>0;
-  const free=CUR.filter(p=>p.free===true).length, card=CUR.filter(p=>p.card).length, alerts=CUR.filter(p=>p.status!=="ok").length, indoor=CUR.filter(p=>p.indoor).length;
+/* 14/11: i numeri che dipendono solo dal comune o dalla zona si contano una volta sola per zona */
+const FISSI=new WeakMap();
+function fissi(){let f=FISSI.get(CUR);if(!f){f={free:0,card:0,alerts:0,indoor:0,unesco:0,borghi:0,arancione:0};for(const p of CUR){if(p.free===true)f.free++;if(p.card)f.card++;if(p.status!=="ok")f.alerts++;if(p.indoor)f.indoor++;if(p.unesco)f.unesco++;const a=p.aw||[];if(a.includes("borghi"))f.borghi++;if(a.includes("arancione"))f.arancione++;}FISSI.set(CUR,f);}return f;}
+function renderStats(nvis){
+  const vis=typeof nvis==="number"?nvis:CUR.filter(p=>pass(p)).length, filt=nActive()>0;
+  const {free,card,alerts,indoor}=fissi();
   const tile=(sc,ic,n,l,act,on,of)=>`<${act?"button type=\"button\" data-act=\""+act+"\"":"div"} class="stat${on?" on":""}" style="--sc:${sc}"${act?` aria-pressed="${!!on}"`:""}>${of?`<span class="of">${of}</span>`:`<span class="si" aria-hidden="true">${ic}</span>`}<b>${n}</b><span>${l}</span></${act?"button":"div"}>`;
   const third=C.isProv?tile("var(--c-sacro)","📍",C.n,"comuni","comuni"):card?tile("var(--c-sacro)","💳",card,"con Card","card",S.price.has("card")):tile("var(--c-sacro)","☔",indoor,"al coperto","rain",S.ideal.has("rain"));
   $("stats").innerHTML=tile("var(--terra)","🏛️",vis<CUR.length?(String(vis).length+String(CUR.length).length<=6?`${vis}<small class="ofn">/${CUR.length}</small>`:`${vis}`):CUR.length,vis<CUR.length?"visibili":"luoghi",filt?"reset":null,false,"")+tile("var(--ok)","🆓",free,"gratuiti","free",S.price.has("free"))+third+tile("var(--warn)","⚠️",alerts,"con avvisi","alerts",S.alerts);
@@ -1508,8 +1511,10 @@ function update(){
   if(PRIMA){PRIMA=false;renderGrid(list);const v=++UPV,dopo=f=>("requestIdleCallback" in window)?requestIdleCallback(f,{timeout:700}):setTimeout(f,60);
     dopo(()=>{if(v!==UPV)return;renderStats();renderAwards();renderActive();$("fshow").textContent=list.length===1?"Mostra 1 luogo":`Mostra ${list.length} luoghi`;
       dopo(()=>{if(v!==UPV)return;renderFilters();renderXtra();dopo(()=>{if(v===UPV)renderPicker();});});});return;}
-  UPV++;renderFilters();renderActive();renderGrid(list);renderStats();renderAwards();renderXtra();
+  /* 14/11: subito i bottoni e le card; numeri in alto, riconoscimenti e conteggi extra al giro dopo (un compito lungo diviso in due) */
+  const v2=++UPV;renderFilters();renderActive();renderGrid(list);
   $("fshow").textContent=list.length===1?"Mostra 1 luogo":`Mostra ${list.length} luoghi`;
+  requestAnimationFrame(()=>setTimeout(()=>{if(v2!==UPV)return;renderStats(list.length);renderAwards();renderXtra();},0));
 }
 function fillSelect(sel,opts,val){sel.innerHTML=opts.map(([v,l,dis])=>`<option value="${esc(v)}"${dis?" disabled":""}${v===val?" selected":""}>${esc(l)}</option>`).join("");}
 function provReg(p){return (COMUNI.find(c=>c.prov===p)||{}).regione;}

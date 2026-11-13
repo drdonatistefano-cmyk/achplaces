@@ -118,5 +118,5 @@ nomen, tn = scrivi('mappan', nomi)
 M['mappa'] = nome; M['mappan'] = nomen
 json.dump(M, open(os.path.join(HERE, 'manifest.json'), 'w'), ensure_ascii=False, separators=(',', ':'))
 tpl = open(os.path.join(HERE, 'mappa_tpl.html')).read()
-open(os.path.join(HERE, 'filtri.html'), 'w').write(tpl.replace('/*MAPPA*/', json.dumps(nome)).replace('/*MAPPAN*/', json.dumps(nomen)))
+open(os.path.join(HERE, 'filtri.html'), 'w').write(tpl.replace('/*MAPPA*/', json.dumps(nome)).replace('/*MAPPAN*/', json.dumps(nomen)).replace('__MAPPA_NOME__', nome).replace('__MAPPAN_NOME__', nomen))
 print('mappa:', nome, len(t) // 1024, 'KB +', nomen, len(tn) // 1024, 'KB,', len(C), 'comuni,', len(P), 'luoghi,', len(U), 'link')

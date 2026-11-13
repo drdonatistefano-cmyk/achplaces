@@ -99,7 +99,9 @@ b.innerHTML=L==="en"?"<span>IT</span>":"<span>EN</span>";
 b.onclick=function(){var n=L==="en"?"it":"en";try{localStorage.setItem("lang",n);}catch(e){}var u=location.href.replace(/([?&])lang=(it|en)&?/,"$1").replace(/[?&]$/,"");location.href=u;if(u===location.href)location.reload();};
 var g=document.querySelector(".ach-guide")||document.getElementById("gbtn");
 if(g&&g.id==="gbtn"){g.parentNode.insertBefore(b,g.nextSibling);b.classList.add("lb-map");}else if(g){g.appendChild(b);}else{b.classList.add("lb-float");document.body.appendChild(b);}}
-if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",bottone);else bottone();})();</script>
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",bottone);else bottone();
+/* 14/11: copia nel telefono (sw.js) per i ritorni, solo sul sito */
+if("serviceWorker" in navigator&&/(^|\\.)achplaces\\.com$|^localhost$/.test(location.hostname))addEventListener("load",function(){navigator.serviceWorker.register("/sw.js").then(function(r){setTimeout(function(){r.active&&r.active.postMessage("pulisci");},9000);}).catch(function(){});});})();</script>
 <style id="en-boot-css">html.en-wait body{opacity:0}
 #langbtn{font:600 12.5px/1 Inter,system-ui,sans-serif;letter-spacing:.04em;display:inline-flex;align-items:center;justify-content:center;min-width:38px;height:30px;padding:0 10px;margin-left:6px;border-radius:999px;border:1.5px solid currentColor;background:transparent;color:inherit;cursor:pointer;opacity:.85}
 #langbtn:hover{opacity:1}#langbtn.lb-map{position:relative;z-index:6;height:40px;min-width:44px;background:var(--panel,#fff);color:var(--ink,#1d1b18);border:1px solid var(--ln,rgba(0,0,0,.12));box-shadow:0 2px 10px rgba(0,0,0,.08);margin-left:8px}
