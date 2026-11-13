@@ -50,13 +50,20 @@ const PAT=[
  [/^(\d+)-(\d+) minuti$/,(m,a,b)=>`${a}-${b} minutes`],
  [/^(\d+) minuti$/,(m,a)=>`${a} minutes`],
  [/^(\d+) or[ae]$/,(m,a)=>`${a} ${a==="1"?"hour":"hours"}`],
- [/^(\d+) giorni$/,(m,a)=>`${a} days`]
+ [/^(\d+) giorni$/,(m,a)=>`${a} days`],
+ [/^Foto: (.+)$/,(m,a)=>`Photo: ${a}`],
+ [/^(.+?)(\s*[↗›»→]+)$/,(m,a,b)=>{const x=tr(a);return x!==a?x+b:null;}]
 ];
 /* prefissi: emoji o simboli davanti al testo (🗺️ Lazio, 📍 Bologna) */
 const PRE=/^([\p{Extended_Pictographic}\p{Emoji_Presentation}️‍✕✓↗·•–—\s]+)(.+)$/u;
+const CACHE=new Map();
 function tr(s){
   if(!s)return s;
   let v=D[s];if(v!==undefined)return v;
+  v=CACHE.get(s);if(v!==undefined)return v;
+  v=tr0(s);if(CACHE.size>30000)CACHE.clear();CACHE.set(s,v);return v;
+}
+function tr0(s){
   const m=MEM.get(enk(s));if(m)return m;
   for(const [re,f] of PAT){const r=s.match(re);if(r){const o=f(...r);if(o!=null)return o;}}
   const p=s.match(PRE);if(p){const x=tr(p[2]);if(x!==p[2])return p[1]+x;}
@@ -87,6 +94,16 @@ function giro(root){
   let n;while(n=w.nextNode())testo(n);
   for(const e of root.querySelectorAll("[placeholder],[aria-label],[title],[alt]"))attr(e);
 }
+/* giro su tutta la pagina a pezzi di circa 12 ms, per non bloccare (prima i nodi in alto, cioe' quelli che si vedono) */
+let gen=0;
+function giroTutto(fine){const g=++gen;let fatti=0;
+  const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT|NodeFilter.SHOW_ELEMENT,{acceptNode:n=>n.nodeType===1?(SKIP.has(n.nodeName)||n.hasAttribute("data-noen")?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT):NodeFilter.FILTER_ACCEPT});
+  const pezzo=()=>{if(g!==gen)return;const t0=performance.now();let n,k=0;
+    while((k++&31)||performance.now()-t0<10){n=w.nextNode();if(!n)break;fatti++;
+      if(n.nodeType===3)testo(n);else{if(n.hasAttribute("data-pid"))provDi(n.getAttribute("data-pid"));if(n.hasAttributes())attr(n);}}
+    if(fine&&(fatti>600||!n)){const f=fine;fine=null;f();}
+    if(n)setTimeout(pezzo,0);};
+  pezzo();}
 let coda=new Set(),pronto=false;
 function svuota(){const c=coda;coda=new Set();pronto=false;for(const n of c)if(n.isConnected)giro(n);}
 const MO=new MutationObserver(list=>{
@@ -95,15 +112,15 @@ const MO=new MutationObserver(list=>{
     else if(r.type==="attributes")coda.add(r.target);
     else for(const n of r.addedNodes)coda.add(n);
   }
-  if(!pronto){pronto=true;queueMicrotask(svuota);}
+  if(!pronto){pronto=true;requestAnimationFrame(svuota);}/* prima del disegno, fuori dal compito della pagina */
 });
 /* memoria delle traduzioni, per provincia */
 const MAN=W.ACH_EN_MAN||{};const caricate={},attese={};
 function caricaMem(chiave){
   const n=chiave==="ui"?MAN.ui:(MAN.det||{})[chiave];if(!n||caricate[chiave])return attese[chiave]||Promise.resolve();
   caricate[chiave]=1;
-  return attese[chiave]=fetch(n).then(r=>r.ok?r.json():null).then(j=>{if(!j)return;for(const k in j)MEM.set(k,j[k]);
-    requestAnimationFrame(()=>giro(document.body));}).catch(()=>{});
+  return attese[chiave]=fetch(n).then(r=>r.ok?r.json():null).then(j=>{if(!j)return;for(const k in j)MEM.set(k,j[k]);CACHE.clear();
+    requestAnimationFrame(()=>giroTutto());}).catch(()=>{});
 }
 /* quando la pagina scarica le schede di una provincia, scarico anche le sue traduzioni */
 const f0=W.fetch.bind(W);
@@ -121,9 +138,8 @@ function avvia(){
   aggancia();document.addEventListener("DOMContentLoaded",aggancia);W.addEventListener("load",aggancia);
   document.documentElement.lang="en";
   if(document.title)document.title=tr(document.title);
-  giro(document.body);
   MO.observe(document.body,{subtree:true,childList:true,characterData:true,attributes:true,attributeFilter:ATTR});
-  document.documentElement.classList.remove("en-wait");
+  giroTutto(()=>document.documentElement.classList.remove("en-wait"));
   try{const f=document.querySelector("footer")||document.querySelector(".foot");if(f&&!document.getElementById("en-nota")){const p=document.createElement("p");p.id="en-nota";p.setAttribute("data-noen","");p.style.cssText="font-size:12px;opacity:.75;margin:10px 0 0";p.textContent="English version: the descriptions are machine-translated from the original Italian texts (Opus-MT, an open model). Place names stay in Italian, as you will find them on site.";f.appendChild(p);}}catch(e){}
 }
 caricaMem("ui");caricaMem("BO");

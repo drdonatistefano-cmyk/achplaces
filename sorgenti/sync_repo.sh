@@ -6,9 +6,10 @@ cd $R; git pull -q --rebase
 # 13/11: se un'altra sessione ha cambiato le sorgenti che copio (mappa_tpl.html, template.html, build.py...) dopo l'ultima mia pubblicazione, mi fermo: prima vanno riprese in locale
 U=$(cat $L/.ultimo_sync 2>/dev/null); if [ -n "$U" ]; then for f in $(git diff --name-only $U HEAD -- sorgenti/ | sed 's#^sorgenti/##'); do [ -e "$L/$f" ] && ! cmp -s "sorgenti/$f" "$L/$f" && { echo "FERMO: sorgenti/$f cambiato da altri dopo $U: riprenderlo in locale e unire le modifiche"; exit 1; }; done; fi
 for f in $(ls -p | grep -v / | grep -vE '^(CNAME|README.md|pagine.css|robots.txt|sitemap.*xml|statistiche.html)$'); do [ -e $L/$f ] || git rm -q $f; done
-cd $L; cp index.html filtri.html manifest.json $(ls | grep -E '^(cerca|cr\.[a-z]{2}|dati|det\.[a-z]{2}|fonti|foto|fotom\.[a-z]{2}|fotom|meta|testi|mappa|mappan)\.[0-9a-f]{10}\.json$|^luoghi\.[0-9a-f]{10}\.js$') $R/
+cd $L; cp index.html filtri.html manifest.json $(ls | grep -E '^(cerca|cr\.[a-z]{2}|dati|det\.[a-z]{2}|fonti|foto|fotom\.[a-z]{2}|fotom|meta|testi|mappa|mappan)\.[0-9a-f]{10}\.json$|^luoghi\.[0-9a-f]{10}\.js$|^en\.([a-z]{2}\.|ui\.)?[0-9a-f]{10}\.json$|^en\.[0-9a-f]{10}\.js$') $R/
 cd $R; cp -r $L/f/. f/; comm -23 <(ls f|sort) <(ls $L/f|sort) | sed 's#^#f/#' | xargs -r git rm -q
 cp $L/build.py $L/template.html $L/foto_build.py $L/biglietti_agenti.py $L/biglietti_unisci.py $L/sync_repo.sh $L/fvtipi.py $L/mappa_build.py $L/mappa_tpl.html sorgenti/; cp $L/data/italia_geo.json sorgenti/data/
+mkdir -p sorgenti/traduci; cp $L/traduci/estrai.py $L/traduci/traduci.py $L/traduci/en_build.py $L/traduci/en_motore.js $L/traduci/en_diz.json $L/traduci/ui_it.json sorgenti/traduci/ 2>/dev/null; cmp -s $L/traduci/testi_it.jsonl sorgenti/traduci/testi_it.jsonl || cp $L/traduci/testi_it.jsonl sorgenti/traduci/
 cp $L/data/biglietti_agenti.json $L/data/biglietti.json $L/data/verifica_link.json $L/data/link_correzioni.json $L/data/wiki.json sorgenti/data/
 cp /home/claude/proto/mk2[0-9].py /home/claude/proto/mkfiltri.sh sorgenti/filtri/
 git add -A .

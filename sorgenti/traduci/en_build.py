@@ -72,7 +72,7 @@ def main():
     M['en'] = {'js': njs, 'ui': nui, 'det': det}
     json.dump(M, open(os.path.join(SITO, 'manifest.json'), 'w'), ensure_ascii=False, separators=(',', ':'))
     boot = BOOT.replace('__MAN__', json.dumps({'ui': nui, 'det': det}, separators=(',', ':'))).replace('__JS__', njs)
-    for pag in ('index.html', 'filtri.html'):
+    for pag in ('index.html', 'filtri.html', 'index_art.html'):
         f = os.path.join(SITO, pag)
         if not os.path.exists(f): continue
         h = open(f, encoding='utf-8').read()
@@ -88,6 +88,7 @@ BOOT = '''<script id="en-boot">/* 13/11/2026: lingua della pagina. Scelta salvat
    (senza l'italiano tra le lingue del browser la guida si apre in inglese). Pulsante IT/EN in alto. */
 (function(){var L=null,d=document.documentElement;try{L=localStorage.getItem("lang");}catch(e){}
 var q=location.search.match(/[?&]lang=(it|en)\\b/);if(q){L=q[1];try{localStorage.setItem("lang",L);}catch(e){}}
+if(L!=="it"&&L!=="en"&&(navigator.webdriver||/bot|crawl|spider|slurp|lighthouse/i.test(navigator.userAgent||"")))L="it";/* programmi automatici (istantanea, motori di ricerca): italiano */
 if(L!=="it"&&L!=="en"){var ls=navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||"it"];L="en";for(var i=0;i<ls.length;i++)if(/^it\\b/i.test(ls[i]||"")){L="it";break;}}
 window.ACH_LANG=L;
 if(L==="en"){d.lang="en";d.classList.add("en-wait");setTimeout(function(){d.classList.remove("en-wait");},1200);
