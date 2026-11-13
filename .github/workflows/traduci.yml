@@ -27,7 +27,7 @@ jobs:
           cd out && git sparse-checkout disable 2>/dev/null || true
           mkdir -p memoria
       - uses: actions/setup-python@v5
-        with: { python-version: '3.12', cache: pip }
+        with: { python-version: '3.12' }
       - name: Modello
         run: |
           pip install -q ctranslate2 sentencepiece sacremoses "transformers[torch]" --extra-index-url https://download.pytorch.org/whl/cpu
