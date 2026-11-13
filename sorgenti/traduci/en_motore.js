@@ -51,6 +51,8 @@ const PAT=[
  [/^(\d+) minuti$/,(m,a)=>`${a} minutes`],
  [/^(\d+) or[ae]$/,(m,a)=>`${a} ${a==="1"?"hour":"hours"}`],
  [/^(\d+) giorni$/,(m,a)=>`${a} days`],
+ [/^(\d[\d.]*) luoghi in (\d[\d.]*) comuni di (\d+) province, in (.+)$/,(m,a,b,c,l)=>`${a} places in ${b} towns across ${c} provinces, in ${l.replace(/\.$/,"").split(/, | e /).map(T).join(", ")}`],
+ [/^Monumenti, chiese, musei, natura e angoli nascosti del comune di (.+) \((Città metropolitana di|provincia di) (.+)\), con biglietti, orari e come arrivare\. Ogni scheda cita le sue fonti\.$/,(m,a,k,p)=>`Monuments, churches, museums, nature and hidden corners of ${T(a)} (${k==="provincia di"?"province of":"metropolitan city of"} ${T(p)}), with tickets, opening hours and directions. Every entry cites its sources.`],
  [/^Foto: (.+)$/,(m,a)=>`Photo: ${a}`],
  [/^(.+?)(\s*[↗›»→]+)$/,(m,a,b)=>{const x=tr(a);return x!==a?x+b:null;}]
 ];
@@ -125,7 +127,17 @@ function caricaMem(chiave){
 /* quando la pagina scarica le schede di una provincia, scarico anche le sue traduzioni */
 const f0=W.fetch.bind(W);
 W.fetch=function(u,o){try{const s=typeof u==="string"?u:(u&&u.url)||"";const m=s.match(/(?:^|\/)det\.([a-z]{2})\.[0-9a-f]{10}\.json/);if(m)caricaMem(m[1].toUpperCase());}catch(e){}return f0(u,o);};
-W.ACH_EN={tr,giro,carica:caricaMem,enk,MEM,D};
+/* ricerca in inglese: la pagina legge la casella di ricerca gia' tradotta in italiano (castle -> castell, Florence -> firenze);
+   chi guarda continua a vedere le parole che ha scritto */
+const QF=[["old town","centro storico"],["historic centre","centro storico"],["historic center","centro storico"],["aosta valley","valle d'aosta"],["south tyrol","alto adige"],["leaning tower","torre pendente"]];
+const QC={rome:"roma",florence:"firenze",venice:"venezia",naples:"napoli",milan:"milano",turin:"torino",genoa:"genova",padua:"padova",mantua:"mantova",syracuse:"siracusa",tuscany:"toscana",sicily:"sicilia",sardinia:"sardegna",lombardy:"lombardia",piedmont:"piemonte",apulia:"puglia",leghorn:"livorno",the:"",of:"",and:"",a:"",in:""};
+const QS=[["amphitheat","anfiteatr"],["castle","castell"],["fortress","fortezz"],["fort","fort"],["tower","torr"],["wall","mura"],["palace","palazz"],["square","piazz"],["church","chies"],["cathedral","duomo"],["basilica","basilic"],["abbey","abbazi"],["monaster","monaster"],["convent","convent"],["sanctuar","santuari"],["chapel","cappell"],["baptist","battister"],["museum","muse"],["galler","galleri"],["painting","pittur"],["archaeolog","archeolog"],["archeolog","archeolog"],["ruin","rovin"],["roman","roman"],["etruscan","etrusc"],["greek","grec"],["mediev","mediev"],["theat","teatr"],["bridge","ponte"],["fountain","fontan"],["garden","giardin"],["botanic","botanic"],["park","parc"],["reserve","riserv"],["lake","lag"],["river","fium"],["waterfall","cascat"],["beach","spiagg"],["sea","mare"],["island","isol"],["mountain","mont"],["volcan","vulcan"],["cave","grott"],["trail","sentier"],["path","sentier"],["hik","sentier"],["view","panoram"],["panoram","panoram"],["village","borg"],["market","mercat"],["spa","term"],["thermal","term"],["cemeter","cimiter"],["lighthouse","faro"],["harbo","port"],["library","bibliotec"],["science","scienz"],["universit","universit"],["wine","vin"],["cheese","formagg"],["mosaic","mosaic"],["fresco","affresc"],["synagog","sinagog"],["villa","vill"],["gate","porta"],["arch","arco"],["column","colonn"],["temple","tempi"],["necropol","necropol"],["tomb","tomb"],["catacomb","catacomb"]];
+function qIt(v){if(!v)return v;let s=" "+v.toLowerCase()+" ";for(const [a,b] of QF)s=s.split(" "+a+" ").join(" "+b+" ");
+  return s.trim().split(/\s+/).map(w=>{if(w in QC)return QC[w];for(const [a,b] of QS)if(w.startsWith(a))return b;return w;}).filter(Boolean).join(" ");}
+function ricercaInglese(el){if(!el||el.__en)return;el.__en=1;const P=Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,"value");
+  try{Object.defineProperty(el,"value",{configurable:true,get(){return qIt(P.get.call(this));},set(x){P.set.call(this,x);}});}catch(e){}}
+function cercaCaselle(){for(const id of ["q","mq","qs"])ricercaInglese(document.getElementById(id));for(const e of document.querySelectorAll('input[type="search"]'))ricercaInglese(e);}
+W.ACH_EN={tr,giro,carica:caricaMem,enk,MEM,D,qIt};
 W.ENL=s=>tr(s);
 let agganciato=false;
 function aggancia(){/* Guida: anche le province lette dalla memoria del telefono (senza fetch) */
@@ -135,6 +147,7 @@ function aggancia(){/* Guida: anche le province lette dalla memoria del telefono
   try{for(const k of Object.keys(DETOK).concat(Object.keys(DETP)))caricaMem(String(k).toUpperCase());}catch(e){}
 }
 function avvia(){
+  cercaCaselle();document.addEventListener("DOMContentLoaded",cercaCaselle);
   aggancia();document.addEventListener("DOMContentLoaded",aggancia);W.addEventListener("load",aggancia);
   document.documentElement.lang="en";
   if(document.title)document.title=tr(document.title);

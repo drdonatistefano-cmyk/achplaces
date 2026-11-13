@@ -75,7 +75,7 @@ for i in range(len(K["n"])):
                    "desc": a[4] or "", "gratis": "F" in f, "pagamento": "P" in f,
                    "unesco": "u" in f, "vista": "v" in f, "coperto": "i" in f,
                    "stato": a[6] or "ok", "tempo": Z["t"][a[7]] if a[7] is not None else "",
-                   "ps": TESTI[x["ps"]] if "ps" in x and x["ps"] < len(TESTI) else "",
+                   "ps": x.get("ps", ""),  # 13/11: stima del prezzo (numero), non un indice dei testi
                    "tq": x.get("tq", ""), "gy": x.get("gy", ""), "ticketUrl": x.get("ticketUrl", "")})
         g += 1
     c["places"] = pl
@@ -186,7 +186,7 @@ def link_biglietti(p):
 
 def ricco(p):
     """Ha una pagina propria solo il luogo con abbastanza contenuto da reggerla da solo."""
-    return bool(p.get("ps")) or p.get("pagamento") or p.get("unesco")
+    return p.get("ps") not in ("", None) or p.get("pagamento") or p.get("unesco")
 
 
 def etichette(p):
@@ -235,7 +235,6 @@ def blocco_pieno(p, c):
     """Scheda completa nella pagina del luogo."""
     t = [etichette(p)]
     if p.get("desc"): t.append(f"<p>{e(p['desc'])}</p>")
-    if p.get("ps") and p["ps"] != p.get("desc"): t.append(f"<p>{e(p['ps'])}</p>")
     if p.get("why"): t.append(f"<p><b>Perché andarci.</b> {e(p['why'])}</p>")
     if p.get("statusNote"): t.append(f'<p class="avviso">{e(p["statusNote"])}</p>')
     elif p.get("stato") == "closed": t.append('<p class="avviso">Luogo attualmente chiuso: verifica prima di partire.</p>')
@@ -249,7 +248,7 @@ def blocco_pieno(p, c):
 
 def ld_luogo(p, c):
     d = {"@context": "https://schema.org", "@type": "TouristAttraction", "name": p["name"],
-         "description": taglia(p.get("desc") or p.get("ps") or p["name"], 300),
+         "description": taglia(p.get("desc") or p["name"], 300),
          "address": {"@type": "PostalAddress", "addressLocality": c["name"],
                      "addressRegion": c.get("prov", ""), "addressCountry": "IT"}}
     if p.get("address"): d["address"]["streetAddress"] = p["address"]
@@ -309,7 +308,7 @@ for c in sorted(comuni, key=lambda c: (c["regione"], c["prov"], c["name"])):
         for p in pl:
             if not ricco(p): continue
             t2 = f"{p['name']}, {c['name']} ({c['prov']}): cosa sapere prima di andarci"
-            d2 = taglia(p.get("desc") or p.get("ps"))
+            d2 = taglia(p.get("desc"))
             b = [f'<p class="briciole"><a href="/">Italia</a> › <a href="/regione/{e(c["regione"])}/">{e(reg)}</a> › '
                  f'<a href="/comune/{e(c["slug"])}/">{e(c["name"])}</a></p>',
                  "<h1>" + e(p["name"]) + "</h1>",
