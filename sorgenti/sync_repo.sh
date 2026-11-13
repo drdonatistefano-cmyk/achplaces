@@ -3,6 +3,8 @@
 set -e
 L=/home/claude/achs-places-guide; R=/home/claude/achplaces
 cd $R; git pull -q --rebase
+# 13/11: se un'altra sessione ha cambiato le sorgenti che copio (mappa_tpl.html, template.html, build.py...) dopo l'ultima mia pubblicazione, mi fermo: prima vanno riprese in locale
+U=$(cat $L/.ultimo_sync 2>/dev/null); if [ -n "$U" ]; then for f in $(git diff --name-only $U HEAD -- sorgenti/ | sed 's#^sorgenti/##'); do [ -e "$L/$f" ] && ! cmp -s "sorgenti/$f" "$L/$f" && { echo "FERMO: sorgenti/$f cambiato da altri dopo $U: riprenderlo in locale e unire le modifiche"; exit 1; }; done; fi
 for f in $(ls -p | grep -v / | grep -vE '^(CNAME|README.md|pagine.css|robots.txt|sitemap.*xml|statistiche.html)$'); do [ -e $L/$f ] || git rm -q $f; done
 cd $L; cp index.html filtri.html manifest.json $(ls | grep -E '^(cerca|cr\.[a-z]{2}|dati|det\.[a-z]{2}|fonti|foto|fotom\.[a-z]{2}|fotom|meta|testi|mappa|mappan)\.[0-9a-f]{10}\.json$|^luoghi\.[0-9a-f]{10}\.js$') $R/
 cd $R; cp -r $L/f/. f/; comm -23 <(ls f|sort) <(ls $L/f|sort) | sed 's#^#f/#' | xargs -r git rm -q
@@ -20,4 +22,4 @@ git commit -q -m "$1
 Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 Claude-Session: https://claude.ai/code/session_01ACcrpvVomkgGZtxFEtwykb"
 git pull -q --rebase; for f in statistiche.html CNAME robots.txt; do [ -e "$f" ] || { echo "MANCA $f: non pubblico"; exit 1; }; done
-git push -q origin main; git log --oneline -1
+git push -q origin main && git rev-parse HEAD > $L/.ultimo_sync; git log --oneline -1
