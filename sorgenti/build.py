@@ -506,10 +506,10 @@ let MAN=null;
 const IST_ID=["stats","count","verified","xtra","grid","active"],IST_SUBITO=["count","verified","grid"];
 /* 10/11/2026: l'avvio è diviso in pezzi brevi, così il telefono non resta bloccato */
 /* 10/11/2026: i file scaricati si decodificano a pezzi man mano che arrivano (niente blocco unico a fine download) */
-async function leggiAPezzi(r){if(!r.body||typeof TextDecoder==="undefined")return r.text();const rd=r.body.getReader(),dec=new TextDecoder(),parti=[];for(;;){const {done,value}=await rd.read();if(done)break;parti.push(dec.decode(value,{stream:true}));}parti.push(dec.decode());return parti.join("");}
+async function leggiAPezzi(r){if(!r.body||typeof TextDecoder==="undefined")return r.text();const rd=r.body.getReader(),dec=new TextDecoder(),parti=[];for(;;){const {done,value}=await rd.read();if(done)break;parti.push(dec.decode(value,{stream:true}));}parti.push(dec.decode());if(window.__fotoDopo){const f=window.__fotoDopo;window.__fotoDopo=null;setTimeout(f,0);}return parti.join("");}
 const PAUSA=()=>new Promise(r=>{if(typeof MessageChannel!=="undefined"){const m=new MessageChannel();m.port1.onmessage=()=>r();m.port2.postMessage(0);}else setTimeout(r,0);});let IST_ORIG=null,IST_TOCCO=0;
 ["pointerdown","keydown","input"].forEach(ev=>document.addEventListener(ev,()=>{IST_TOCCO=1;},{capture:true,passive:true}));
-try{const n=localStorage.getItem("datiNome"),o=!location.hash.slice(1)&&n&&JSON.parse(localStorage.getItem("istG:"+n)||"null");
+try{const n=localStorage.getItem("datiNome"),o=!location.hash.slice(1)&&((n&&JSON.parse(localStorage.getItem("istG:"+n)||"null"))||(window.IST_BASE&&window.IST_BASE.v));
   if(o){IST_ORIG=IST_ID.map(id=>{const e=document.getElementById(id);return [e.innerHTML,e.hidden];});IST_ID.forEach((id,i)=>{const e=document.getElementById(id);e.innerHTML=o[i][0];e.hidden=o[i][1];});}}catch(e){IST_ORIG=null;}
 function salvaIst(nome){setTimeout(()=>{if(IST_TOCCO||location.hash.slice(1))return;try{
   localStorage.setItem("istG:"+nome,JSON.stringify(IST_ID.map(id=>{const e=document.getElementById(id);return [e.innerHTML,e.hidden];})));

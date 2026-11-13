@@ -446,7 +446,8 @@ function vai(cx,cy,k,dur=560){cancelAnimationFrame(anim);const a={cx:S.cx,cy:S.c
   const passo=now=>{const t=dur?Math.min(1,(now-t0)/dur):1,e=t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
     S.k=Math.exp(Math.log(a.k)+(Math.log(b.k)-Math.log(a.k))*e);S.cx=a.cx+(b.cx-a.cx)*e;S.cy=a.cy+(b.cy-a.cy)*e;
     veloce();if(t<1)anim=requestAnimationFrame(passo);else completo();};anim=requestAnimationFrame(passo);}
-let raf=0;function muovi(){if(!raf)raf=requestAnimationFrame(()=>{raf=0;veloce();});dopo();}
+/* 13/11/2026: durante un pizzico non si ridisegna mai (prima bastava fermarsi 120 ms a meta' gesto e partiva il ridisegno, che faceva scattare la mappa); si ridisegna a dita alzate */
+let raf=0;function muovi(){if(!raf)raf=requestAnimationFrame(()=>{raf=0;veloce();});if(!ptr.size)dopo();}
 function zoomAt(f,sx,sy){const v=vista(),k1=clampK(S.k*f),wx=v.x0+sx/v.z,wy=v.y0+sy/v.z,z1=base*k1;S.k=k1;S.cx=wx-(sx-W/2)/z1;S.cy=wy-(sy-H/2)/z1;muovi();}
 
 /* ---------- gesti con inerzia ---------- */

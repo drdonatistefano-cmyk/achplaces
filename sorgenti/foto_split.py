@@ -83,6 +83,15 @@ def main():
         peso_cr += p
 
     man["fotom"] = n_mini
+    # 13/11/2026: il nome di fotom va anche in testa alla pagina, cosi' la pagina lo
+    # scarica subito, senza leggere prima manifest.json (un giro in rete in meno)
+    import re
+    pag = os.path.join(RADICE, "index.html")
+    if os.path.exists(pag):
+        t = open(pag, encoding="utf-8").read()
+        t = re.sub(r'<script id="prefoto">.*?</script>\n?', "", t)
+        t = t.replace('<meta charset="utf-8">', '<meta charset="utf-8">\n<script id="prefoto">window.FOTOM_NOME=' + json.dumps(n_mini) + ';</script>', 1)
+        open(pag, "w", encoding="utf-8").write(t)
     man["cr"] = cr
     with open(man_p, "w", encoding="utf-8") as f:
         json.dump(man, f, ensure_ascii=False)

@@ -18,6 +18,7 @@ on:
       - 'sorgenti/foto_split.py'
       - 'sorgenti/velocizza.py'
       - 'sorgenti/velocizza.json'
+      - 'sorgenti/istantanea.py'
   workflow_dispatch:
 
 permissions:
@@ -42,6 +43,13 @@ jobs:
 
       - name: Pagina veloce
         run: python3 sorgenti/velocizza.py
+
+      # 13/11/2026: la prima schermata (le prime schede con le foto) va in testa
+      # alla pagina, cosi' anche alla prima visita le schede compaiono subito
+      - name: Prima schermata pronta
+        run: |
+          pip install -q playwright==1.48.0 && python3 -m playwright install --with-deps chromium >/dev/null 2>&1 || echo "playwright non installato: salto"
+          python3 sorgenti/istantanea.py
 
       - name: Salva
         run: |

@@ -1343,11 +1343,13 @@ let FOTO={},FOTOM={};
    dell'immagine ("#81807c @037032"). Autore e licenza stanno in
    cr.<provincia>.json e arrivano quando si apre una scheda: prima si
    scaricavano tutti e 16.646 all'avvio (586 KB) per mostrarne tre. */
+/* 13/11/2026: finche' fotom non e' arrivato le schede provano subito la foto f/<id>.webp; se non c'e' resta il pallino, come prima */
+let FOTO_OK=false;window.fotoNo=function(im){const w=im.parentNode,d=w&&w.querySelector(".cdot");if(d&&w.classList.contains("cphw"))w.replaceWith(d);else im.remove();};
 function fotoCol(id){const m=FOTOM[id];return m?m.split(" ")[0]:"";}
 function fotoCom(id){const m=FOTOM[id];const k=m&&m.split(" ")[1];return k||"";}
-function fotoSrc(id){const m=FOTOM[id];if(!m)return "";return "f/"+(m.split(" ")[1]||id)+".webp";}
+function fotoSrc(id){const m=FOTOM[id];if(!m)return FOTO_OK?"":"f/"+id+".webp";return "f/"+(m.split(" ")[1]||id)+".webp";}
 function fotoProv(id){return id.includes("--")?id.split("--")[0].split("-").pop():"bo";}
-function caricaFoto(){fetch("manifest.json",{cache:"no-store"}).then(r=>r.json()).then(m=>{MAN=MAN||m;return m&&(m.fotom||m.foto)?fetch(m.fotom||m.foto):null;}).then(r=>r?leggiAPezzi(r):null).then(async s=>{if(!s)return;await PAUSA();const j=JSON.parse(s);await PAUSA();if(j){FOTOM=j;try{if(ULTIMA)renderGrid(ULTIMA);else update();}catch(e){}riempiFoto();}}).catch(()=>{});}
+function caricaFoto(){(window.FOTOM_NOME?fetch(window.FOTOM_NOME).then(r=>r.ok?r:null).catch(()=>null):Promise.resolve(null)).then(r=>r||fetch("manifest.json",{cache:"no-store"}).then(r=>r.json()).then(m=>{MAN=MAN||m;return m&&(m.fotom||m.foto)?fetch(m.fotom||m.foto):null;})).then(r=>r?leggiAPezzi(r):null).then(async s=>{if(!s)return;await PAUSA();const j=JSON.parse(s);await PAUSA();if(j){FOTOM=j;FOTO_OK=true;try{if(ULTIMA)renderGrid(ULTIMA);else update();}catch(e){}riempiFoto();}}).catch(()=>{});}
 function riempiFoto(){document.querySelectorAll("img.cph[data-fid]:not([src])").forEach(im=>{const s=fotoSrc(im.dataset.fid);if(s)im.src=s;});}
 /* crediti d'autore, una provincia per file, letti all'apertura di una scheda */
 const CRED={},CREDP={};
@@ -1359,12 +1361,15 @@ function caricaCred(pr){if(CREDP[pr])return CREDP[pr];
   return CREDP[pr]=(async()=>{try{let t=await MEMO.leggi(n);if(!t){const r=await fetch(n);if(!r.ok)return;t=await leggiAPezzi(r);MEMO.scrivi(n,t);}
     Object.assign(CRED,JSON.parse(t));riempiCred();}catch(e){}})();}
 function riempiCred(){const w=document.getElementById("fcredw");if(!w||w.firstChild)return;const id=w.dataset.pid;if(id)w.innerHTML=credHtml(id);}
-setTimeout(caricaFoto,300);
+/* 13/11/2026: i colori delle foto (fotom) partono appena finito di scaricare i dati, senza passare dal manifest:
+   prima aspettavano 300 ms e un giro in rete in piu' e le foto arrivavano 1,3 s dopo le schede. Se i dati sono gia'
+   nel telefono (nessun preload in testa) partono subito. */
+{let fatto=false;const via=()=>{if(!fatto){fatto=true;caricaFoto();}};if(!document.querySelector('link[rel=preload][as=fetch]'))via();else{window.__fotoDopo=via;setTimeout(via,4000);}}
 function cardEl(p){
     const c=document.createElement("article");c.className="card";c.dataset.pid=p.id;c.style.setProperty("--g",gcol(p.cat));
     const n=p._sel||p.rk,sub=C.isProv?`${esc(CATS[p.cat].label)} · ${esc(p.com)}`:`${esc(CATS[p.cat].label)} · ${esc(p.sub)}`;
     c.innerHTML=`<button class="cmain" type="button"><div class="crow${FOTOM[p.id]?" hasph":""}">${n?`<div class="cnum${String(n).length>=4?" c4":""}" title="${p._sel?"Posizione nella selezione attuale":"Posizione nella classifica di tutta la guida"}"><small>N°</small><b>${n}</b></div>`:`<div class="cnum"></div>`}<div class="cbody">
-      <h3 class="title">${esc(p.name)}</h3><div class="csub">${sub}${p._sel&&p.rk?` <span class="cgl">· n. ${p.rk} in Italia</span>`:""}</div><p class="desc">${esc(p.desc)}</p></div>${FOTOM[p.id]?`<span class="cphw${fotoCom(p.id)?" pcom":""}"><img class="cph" src="${fotoSrc(p.id)}" data-fid="${esc(p.id)}" width="84" height="84" loading="lazy" decoding="async" alt="${fotoCom(p.id)?"Foto del comune, non del luogo":""}" style="background:${fotoCol(p.id)||"var(--line)"}"><span class="cdot" title="${esc(CATS[p.cat].label)}" role="img" aria-label="${esc(CATS[p.cat].label)}"></span></span>`:`<span class="cdot" title="${esc(CATS[p.cat].label)}" role="img" aria-label="${esc(CATS[p.cat].label)}"></span>`}</div><div class="meta cmeta">${ctags(p)}</div></button>
+      <h3 class="title">${esc(p.name)}</h3><div class="csub">${sub}${p._sel&&p.rk?` <span class="cgl">· n. ${p.rk} in Italia</span>`:""}</div><p class="desc">${esc(p.desc)}</p></div>${(FOTOM[p.id]||!FOTO_OK)?`<span class="cphw${fotoCom(p.id)?" pcom":""}"><img class="cph" src="${fotoSrc(p.id)}" data-fid="${esc(p.id)}" onerror="fotoNo(this)" width="84" height="84" loading="lazy" decoding="async" alt="${fotoCom(p.id)?"Foto del comune, non del luogo":""}" style="background:${fotoCol(p.id)||"var(--line)"}"><span class="cdot" title="${esc(CATS[p.cat].label)}" role="img" aria-label="${esc(CATS[p.cat].label)}"></span></span>`:`<span class="cdot" title="${esc(CATS[p.cat].label)}" role="img" aria-label="${esc(CATS[p.cat].label)}"></span>`}</div><div class="meta cmeta">${ctags(p)}</div></button>
       <div class="cfoot">${p.free===true?`<button class="cbtn tk fr" type="button" aria-label="Ingresso gratuito: vedi la scheda di ${esc(p.name)}">${ic("check")}Gratis</button>`:tkUrl(p)?`<a class="cbtn tk" href="${esc(tkUrl(p)[0])}" target="_blank" rel="noopener${tkUrl(p)[1]?" sponsored":""}" aria-label="Biglietti${tkUrl(p)[1]?" su "+tkUrl(p)[1]:" ufficiali"}: ${esc(p.name)}">${ic("ticket")}Biglietti</a>`:p.tf?`<a class="cbtn tk" href="${esc(p.tf)}" target="_blank" rel="noopener" aria-label="Tariffe sul sito ufficiale: ${esc(p.name)}">${ic("ticket")}Biglietti</a>`:`<button class="cbtn tk" type="button" aria-label="Biglietto: vedi la scheda di ${esc(p.name)}">${ic("ticket")}Biglietti</button>`}<a class="cbtn ph" href="${photoUrl(p)}" target="_blank" rel="noopener" aria-label="Foto di ${esc(p.name)} su Google Immagini">${ic("cam")}Foto</a><button class="cbtn fav${FAV.has(p.id)?" on":""}" type="button" aria-pressed="${FAV.has(p.id)}" aria-label="Salva tra i miei luoghi">${ic("heart",FAV.has(p.id))}</button><button class="cbtn pri" type="button">Apri${ic("chev")}</button></div>`;
     const open=()=>openSheet(p.id,c.querySelector(".cmain"));
     c.querySelector(".cmain").onclick=open; c.querySelector(".cbtn.pri").onclick=open;
