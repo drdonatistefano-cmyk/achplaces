@@ -35,6 +35,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
       - name: Colori e crediti delle foto
         run: python3 sorgenti/foto_split.py
 
@@ -48,7 +52,7 @@ jobs:
       # alla pagina, cosi' anche alla prima visita le schede compaiono subito
       - name: Prima schermata pronta
         run: |
-          pip install -q playwright==1.48.0 && python3 -m playwright install --with-deps chromium >/dev/null 2>&1 || echo "playwright non installato: salto"
+          pip install -q playwright && python3 -m playwright install --with-deps chromium >/dev/null 2>&1 || echo "playwright non installato: salto"
           python3 sorgenti/istantanea.py
 
       - name: Salva
