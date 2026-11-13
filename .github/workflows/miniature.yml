@@ -11,6 +11,8 @@ on:
   push:
     paths:
       - 'index.html'
+      - 'filtri.html'
+      - 'mappa.*.json'
       - 'manifest.json'
       - 'fa.*.json'
       - 'foto.*.json'
@@ -59,7 +61,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A f index.html manifest.json
+          git add -A f index.html filtri.html manifest.json
           git add -A -- 'fotom.*.json' 'cr.*.json'
           if git diff --cached --quiet; then
             echo "tutto gia' a posto"

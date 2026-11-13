@@ -283,6 +283,25 @@ html[data-t=carta] .gl{box-shadow:0 10px 30px rgba(60,40,20,.12)}
 
 <div id="gsscrim" class="off"></div>
 <aside id="gs" class="off" role="dialog" aria-modal="true" aria-labelledby="s-title"></aside>
+<script>/* 13/11/2026: prima che arrivino i dati, l'Italia con le bolle delle regioni si disegna da MAPPA_PRIMA (in testa alla pagina, la scrive sorgenti/istantanea.py); poi la mappa vera ridisegna lo stesso foglio */
+(function(){try{const D=window.MAPPA_PRIMA;if(!D||!D.R||!D.B)return;const map=document.getElementById('map'),layer=document.getElementById('layer'),cv=document.getElementById('cv');
+let tk='carta';try{tk=localStorage.getItem('tema2')||'carta';}catch(e){}const TH=D.T[tk]||D.T.carta;if(!TH)return;
+if(TH.css){document.documentElement.dataset.t=tk;for(const [a,b] of Object.entries(TH.css))document.documentElement.style.setProperty(a,b);}
+if(innerWidth<700){for(const id of ['filt','veil']){const e=document.getElementById(id);if(e)e.classList.add('off');}const l=document.getElementById('list');if(l)l.style.transform=`translate3d(0,${Math.max(0,map.offsetHeight-18-l.offsetTop)}px,0)`;}
+const rc=map.getBoundingClientRect(),W=rc.width,H=rc.height;if(!W||!H)return;
+const PAD=W<700?118:70,base=Math.min(W/900,(H-PAD)/1180)*.95,DPR=Math.min(2,devicePixelRatio||1),MG=Math.round(Math.max(W,H)*.25);
+cv.width=Math.round((W+2*MG)*DPR);cv.height=Math.round((H+2*MG)*DPR);cv.style.width=(W+2*MG)+'px';cv.style.height=(H+2*MG)+'px';layer.style.left=-MG+'px';layer.style.top=-MG+'px';
+const z=base,cx=450,cy=585-PAD/2/base,x0=cx-W/2/z,y0=cy-H/2/z,g=cv.getContext('2d');
+g.setTransform(DPR,0,0,DPR,0,0);g.save();g.translate(MG-x0*z,MG-y0*z);g.scale(z,z);g.lineJoin='round';g.fillStyle=TH.land;g.strokeStyle=TH.edge;g.lineWidth=1.1/z;
+const PR=D.R.map(d=>new Path2D(d));for(const p of PR)g.fill(p);for(const p of PR)g.stroke(p);g.restore();
+g.textAlign='center';g.textBaseline='middle';const HF=TH.fill.replace(/[\d.]+\)$/,'0.08)'),ph=W<520?.84:1,nf=new Intl.NumberFormat('it-IT');
+const B=D.B.slice().sort((a,b)=>b[2]-a[2]);
+for(let i=B.length-1;i>=0;i--){const [x,y,n,lab]=B[i],r=(W<700?Math.min(19,7+Math.sqrt(n)*.3)/ph:Math.min(40,11+Math.sqrt(n)*.68))*ph,X=(x-x0)*z+MG,Y=(y-y0)*z+MG;
+ g.beginPath();g.arc(X,Y,r*1.55,0,6.2832);g.fillStyle=HF;g.fill();
+ g.beginPath();g.arc(X,Y,r,0,6.2832);g.fillStyle=TH.fill;g.fill();g.lineWidth=1.5;g.strokeStyle=TH.bub;g.stroke();
+ g.fillStyle=TH.txt;g.font=`600 ${r<11?10:12}px "Space Grotesk",Inter,sans-serif`;g.fillText(nf.format(n),X,Y+.5);
+ if(W>=700&&r>21&&lab){g.font='500 11px Inter,sans-serif';g.lineWidth=3;g.strokeStyle=TH.halo;g.strokeText(lab,X,Y+r+13);g.fillStyle=TH.lab;g.fillText(lab,X,Y+r+13);}}
+}catch(e){}})();</script>
 <script>
 (async()=>{
 const NOME=/*MAPPA*/,NOMEN=/*MAPPAN*/;let DATA=null;
@@ -593,7 +612,7 @@ function luoghi(on){vedoLista=on;const b=$('lbtn');b.setAttribute('aria-pressed'
 $('lbtn').onclick=()=>luoghi(!vedoLista);
 /* su telefono la mappa usa tutto lo schermo quando i luoghi sono nascosti */
 {let t='carta';try{t=localStorage.getItem('tema2')||'carta';}catch(e){}tema(t);}
-window.__mappa={gr:()=>GR,S,veloce,completo,tema};
+window.__mappa={gr:()=>GR,S,veloce,completo,tema,TEMI};
 misura();{const h=casa();S.cx=h[0];S.cy=h[1];}filtri(desk());disegnaFiltri();sheetTo('low',false);
 try{document.fonts.ready.then(()=>{if(W)completo();});}catch(e){}
 })();
