@@ -825,53 +825,15 @@ document.addEventListener("DOMContentLoaded",function(){const t=document.createE
   #ftog{display:inline-flex;gap:6px;font-weight:700}
   #ftog[aria-expanded="true"]{background:var(--terra);border-color:var(--terra);color:var(--on)}
   #ftog .badge{background:var(--warn);color:#fff}
-  body:not(.fopen) .topnav .zgrp,body:not(.fopen) .topnav .zzona,body:not(.fopen) #bar .cats,body:not(.fopen) #bar #subwrap,body:not(.fopen) #bar #facets{display:none!important}
+  body:not(.fopen) .hero .pick,body:not(.fopen) .topnav .aggr,body:not(.fopen) #bar .cats,body:not(.fopen) #bar #subwrap,body:not(.fopen) #bar #facets{display:none!important}
   body.fopen #bar .cats,body.fopen #bar #facets{animation:fd2 .2s ease}
   @keyframes fd2{from{opacity:0;transform:translateY(-4px)}to{opacity:1}}
   .ach-guide{gap:6px;margin:10px 0 2px}
   .ach-guide__btn{padding:6px 12px 6px 8px;gap:6px}.ach-guide__txt small{display:none}.ach-guide__arr{display:none}
   .ach-meta{margin-left:auto}.ach-mlink{width:38px;padding:0;justify-content:center}.ach-mlink .lg,.ach-mlink .sm{display:none!important}
 }
-
-/* 13/11: riquadro Vista / Mostra per / Zona (prima i tre gruppi erano sparsi e con le stesse icone) */
-.topnav{display:grid!important;grid-template-columns:1fr;gap:0!important;flex-wrap:nowrap;overflow:visible!important;background:var(--paper);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:6px 16px!important;margin:6px 0 16px!important}
-.topnav .zrow{display:flex;align-items:center;gap:14px;padding:9px 0;min-width:0}
-.topnav .zrow+.zrow{border-top:1px solid color-mix(in srgb,var(--line) 70%,transparent)}
-.topnav .zlab{flex:0 0 92px;font:800 10.5px/1.2 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
-.topnav .zseg,.topnav .aggr{display:inline-flex!important;gap:2px;padding:3px;border-radius:999px;background:color-mix(in srgb,var(--ink) 6%,var(--bg));border:1px solid var(--line);margin:0!important;flex:none;max-width:100%;overflow-x:auto;scrollbar-width:none}
-.topnav .zseg::-webkit-scrollbar,.topnav .aggr::-webkit-scrollbar{display:none}
-.topnav .zseg a,.topnav .aggr .agg{display:inline-flex;align-items:center;gap:6px;height:32px!important;padding:0 14px!important;border:0!important;border-radius:999px;background:transparent!important;color:var(--mute)!important;font:700 13.5px var(--sans)!important;text-decoration:none;white-space:nowrap;cursor:pointer;flex:none!important;box-shadow:none}
-.topnav .zseg a:hover,.topnav .aggr .agg:hover{color:var(--ink)!important}
-.topnav .zseg a[aria-current="page"],.topnav .aggr .agg.on{background:var(--paper)!important;color:var(--ink)!important;box-shadow:0 1px 3px rgba(0,0,0,.14)!important}
-.topnav .zseg a.luoghibtn{color:var(--terra)!important}
-.topnav .zzona .pick{flex:1;margin:0!important;max-width:640px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr))!important}
-.topnav .zrow.zview{justify-content:flex-start}
-.topnav>#nav-metodo,.topnav>#nav-fonti{display:none}
-.hero.onlykick+.topnav .zgrp,.hero.onlykick+.topnav .zzona,.hero[hidden]+.topnav .zgrp,.hero[hidden]+.topnav .zzona{display:none!important}
-.hero.onlykick+.topnav>#nav-metodo,.hero.onlykick+.topnav>#nav-fonti,.hero[hidden]+.topnav>#nav-metodo,.hero[hidden]+.topnav>#nav-fonti{display:inline-flex!important}
-.hero.onlykick+.topnav,.hero[hidden]+.topnav{display:flex!important;flex-wrap:wrap;align-items:center;gap:8px!important;background:transparent;border:0;box-shadow:none;padding:0!important}
-.hero.onlykick+.topnav .zrow,.hero[hidden]+.topnav .zrow{padding:0;border:0}.hero.onlykick+.topnav .zlab,.hero[hidden]+.topnav .zlab{display:none}
-.hero.onlykick+.topnav>#nav-metodo[aria-current="page"],.hero.onlykick+.topnav>#nav-fonti[aria-current="page"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
-@media (max-width:759px){
-  .topnav{padding:4px 12px!important;border-radius:16px}
-  .topnav .zrow{flex-wrap:wrap;gap:6px 10px;padding:8px 0}
-  .topnav .zlab{flex:0 0 100%}
-  .topnav .zrow.zview .zlab{display:none}
-  .topnav .zrow.zview .zseg{width:100%}.topnav .zrow.zview .zseg a{flex:1 1 0!important;justify-content:center}
-  .topnav .zzona .pick{flex:1 1 100%}
-  .topnav .aggr{width:100%}.topnav .aggr .agg{flex:1 1 auto!important;justify-content:center;padding:0 6px!important;font-size:12.5px!important;min-width:0}
-}
-@media (max-width:759px){body:not(.fopen) .hero:not([hidden])+.topnav{background:transparent;border:0;box-shadow:none;padding:0!important}}
 </style>
     <div class="stats" id="stats"></div>
-    <div class="awards" id="awards"></div>
-    <p class="lede" id="lede"></p>
-  </header>
-  <nav class="topnav" aria-label="Sezioni">
-  <!-- 13/11: un solo riquadro, tre righe con il loro nome: Vista, Mostra per, Zona -->
-  <div class="zrow zview"><span class="zlab">Vista</span><span class="zseg"><a href="#" id="nav-guida">🧭 Guida</a><a class="luoghibtn" href="filtri.html" id="nav-luoghi" aria-label="Mappa: i luoghi sulla mappa d'Italia, per regione, provincia e comune">🗺️ Mappa</a></span></div>
-  <div class="zrow zgrp"><span class="zlab">Mostra per</span><span class="aggr" role="group" aria-label="Raggruppa i luoghi"><button type="button" class="agg on" data-grp="p" aria-pressed="true">Luoghi</button><button type="button" class="agg" data-grp="c" aria-pressed="false">Comuni</button><button type="button" class="agg" data-grp="v" aria-pressed="false">Province</button><button type="button" class="agg" data-grp="r" aria-pressed="false">Regioni</button><button type="button" class="agg" data-grp="a" aria-pressed="false">Nord-Sud</button></span></div>
-  <div class="zrow zzona"><span class="zlab">Zona</span>
     <div class="pick" aria-label="Scegli il luogo">
       <div class="msel"><span class="mlab">Regioni</span><button class="mbtn" id="reg-btn" type="button" aria-haspopup="true" aria-expanded="false"><span class="mv" id="reg-val"></span><span class="cv" aria-hidden="true">▼</span></button></div>
       <div class="msel"><span class="mlab">Province</span><button class="mbtn" id="prov-btn" type="button" aria-haspopup="true" aria-expanded="false"><span class="mv" id="prov-val"></span><span class="cv" aria-hidden="true">▼</span></button></div>
@@ -895,8 +857,10 @@ document.addEventListener("DOMContentLoaded",function(){const t=document.createE
         <div class="mpfoot"><button type="button" class="mpall" id="com-all">Tutti i comuni</button><button type="button" class="mpdone" data-close="com">Fatto</button></div>
       </div>
     </div>
-  </div>
-  <a href="#metodo" id="nav-metodo">📐 Metodo</a><a href="#fonti" id="nav-fonti">📚 <span class="lg">Archivio fonti</span><span class="sm">Fonti</span></a></nav>
+    <div class="awards" id="awards"></div>
+    <p class="lede" id="lede"></p>
+  </header>
+  <nav class="topnav" aria-label="Sezioni"><a href="#" id="nav-guida">🧭 Guida</a><a class="luoghibtn" href="filtri.html" id="nav-luoghi" aria-label="Mappa: i luoghi sulla mappa d'Italia, per regione, provincia e comune">🗺️ Mappa</a><span class="aggr" role="group" aria-label="Raggruppa i luoghi"><button type="button" class="agg on" data-grp="p" aria-pressed="true">📍 Luoghi</button><button type="button" class="agg" data-grp="c" aria-pressed="false">🏘️ Comuni</button><button type="button" class="agg" data-grp="v" aria-pressed="false">🗺️ Province</button><button type="button" class="agg" data-grp="r" aria-pressed="false">🧭 Regioni</button><button type="button" class="agg" data-grp="a" aria-pressed="false">🇮🇹 Nord-Sud</button></span><a href="#metodo" id="nav-metodo">📐 Metodo</a><a href="#fonti" id="nav-fonti">📚 <span class="lg">Archivio fonti</span><span class="sm">Fonti</span></a></nav>
 </div>
 
 <div class="bar" id="bar">
@@ -1523,7 +1487,7 @@ $("fdone").onclick=()=>openFacet(null);
 function openSheetF(on){const p=$("qbar");p.classList.toggle("open",on);if(on)delete p.dataset.open;$("fscrim").classList.toggle("open",on);document.body.style.overflow=on?"hidden":"";$("morebtn").setAttribute("aria-expanded",String(on));if(on)$("fclose").focus();}
 $("morebtn").onclick=()=>openSheetF(true);
 $("ftog").onclick=()=>{const on=!document.body.classList.contains("fopen");document.body.classList.toggle("fopen",on);$("ftog").setAttribute("aria-expanded",String(on));
-  if(on){const t=document.querySelector(".pick");if(t&&t.getBoundingClientRect().top<0)window.scrollTo({top:Math.max(0,t.getBoundingClientRect().top+scrollY-12),behavior:"smooth"});}};
+  if(on){const t=document.querySelector(".hero .pick");if(t&&t.getBoundingClientRect().top<0)window.scrollTo({top:Math.max(0,t.getBoundingClientRect().top+scrollY-12),behavior:"smooth"});}};
 $("fclose").onclick=()=>openSheetF(false);
 $("fscrim").onclick=()=>openSheetF(false);
 $("fshow").onclick=()=>{openSheetF(false);$("count").scrollIntoView({behavior:"smooth",block:"start"});};
