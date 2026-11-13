@@ -1,0 +1,45 @@
+name: Traduzione inglese
+# 13/11/2026: traduce in inglese i testi della guida (sorgenti/traduci/testi_it.jsonl) con il modello aperto
+# Opus-MT it->en (Helsinki-NLP, CC BY 4.0) e salva la memoria di traduzione nel ramo «traduzioni».
+# Traduce solo i testi nuovi. Nessun servizio di terzi. Si avvia quando cambia l'elenco dei testi, o a mano.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['sorgenti/traduci/testi_it.jsonl', 'sorgenti/traduci/traduci.py']
+permissions:
+  contents: write
+concurrency: { group: traduci, cancel-in-progress: false }
+jobs:
+  traduci:
+    runs-on: ubuntu-latest
+    timeout-minutes: 345
+    strategy:
+      fail-fast: false
+      matrix: { parte: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] }
+    steps:
+      - uses: actions/checkout@v4
+        with: { sparse-checkout: "sorgenti/traduci\n.github", fetch-depth: 1 }
+      - name: Ramo traduzioni
+        run: |
+          git config user.name "achplaces-bot"; git config user.email "actions@users.noreply.github.com"
+          git fetch -q origin traduzioni && git worktree add -B traduzioni out origin/traduzioni
+          cd out && git sparse-checkout disable 2>/dev/null || true
+          mkdir -p memoria
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12', cache: pip }
+      - name: Modello
+        run: |
+          pip install -q ctranslate2 sentencepiece sacremoses "transformers[torch]" --extra-index-url https://download.pytorch.org/whl/cpu
+          ct2-transformers-converter --model Helsinki-NLP/opus-mt-it-en --output_dir modello --quantization int8
+      - name: Traduci
+        run: python sorgenti/traduci/traduci.py sorgenti/traduci/testi_it.jsonl out/memoria ${{ matrix.parte }} 12
+      - name: Salva
+        if: always()
+        run: |
+          cd out
+          [ -f memoria/${{ matrix.parte }}.jsonl ] || exit 0
+          git add memoria/${{ matrix.parte }}.jsonl
+          git commit -q -m "Traduzioni inglesi, parte ${{ matrix.parte }}" || exit 0
+          for i in 1 2 3 4 5 6 7 8; do git pull --rebase -q origin traduzioni 2>/dev/null; git push -q origin HEAD:traduzioni && exit 0; sleep $((RANDOM % 20 + 5)); done
+          exit 1
