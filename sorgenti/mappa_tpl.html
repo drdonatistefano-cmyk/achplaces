@@ -54,6 +54,8 @@ button{font:inherit;color:inherit;cursor:pointer;-webkit-tap-highlight-color:tra
 #levels button:hover{color:var(--ink)}
 #levels button.on{background:rgba(94,234,212,.16);color:#A7F3E8;box-shadow:0 1px 2px rgba(0,0,0,.12)}
 /* pannello filtri */
+/* 14/11: su iPad e telefono il pannello dei filtri parte chiuso (prima restava aperto qualche secondo all'apertura) */
+@media (max-width:1279.98px){#filt.off0{display:none}}
 #filt{position:absolute;z-index:6;display:flex;flex-direction:column;gap:20px;padding:20px;border-radius:24px;overflow:auto;transition:transform .35s cubic-bezier(.2,.8,.2,1),opacity .25s}
 #filt.off{opacity:0;pointer-events:none}
 .fh{display:flex;align-items:center;justify-content:space-between}
@@ -256,7 +258,7 @@ html[data-t=carta] .gl{box-shadow:0 10px 30px rgba(60,40,20,.12)}
 </head>
 <body>
 <div id="app">
-  <aside id="filt" class="gl" aria-label="Filtri">
+  <aside id="filt" class="gl off0" aria-label="Filtri">
     <div class="fh">
       <div style="display:flex;align-items:center;gap:10px">
         <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#5EEAD4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3.5 3 5 6 5 9.5A5 5 0 0 1 12 17a5 5 0 0 1-5-5.5C7 8 8.5 5 12 2z"/><path d="M12 17v5"/></svg>
@@ -619,7 +621,7 @@ $('gsscrim').onclick=chiudi;addEventListener('keydown',e=>{if(e.key==='Escape'&&
 
 /* ---------- filtri a scomparsa ---------- */
 const desk=()=>innerWidth>=1280;
-function filtri(open){S.filt=open;$('filt').classList.toggle('off',!open);$('veil').classList.toggle('off',!(open&&!desk()));$('fbtn').classList.toggle('hideDesk',open&&desk());requestAnimationFrame(()=>{misura();completo();});}
+function filtri(open){S.filt=open;$('filt').classList.remove('off0');$('filt').classList.toggle('off',!open);$('veil').classList.toggle('off',!(open&&!desk()));$('fbtn').classList.toggle('hideDesk',open&&desk());requestAnimationFrame(()=>{misura();completo();});}
 $('fbtn').onclick=()=>filtri(!S.filt);$('fclose').onclick=()=>filtri(false);$('veil').onclick=()=>filtri(false);$('show').onclick=()=>filtri(false);
 $('reset').onclick=azzera;$('rbtn').onclick=azzera;
 let qt;$('q').addEventListener('input',e=>{clearTimeout(qt);qt=setTimeout(()=>{S.q=e.target.value;cambia();},200);});
