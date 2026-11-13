@@ -4,7 +4,7 @@ name: Pagine per Google (comuni, luoghi, mappa del sito)
 on:
   push:
     branches: [main]
-    paths: ["manifest.json", "sorgenti/pagine.py", ".github/workflows/pagine.yml"]
+    paths: ["manifest.json", "sorgenti/pagine.py", "sorgenti/traduci/pagine_en.py", "sorgenti/traduci/en_diz.json", ".github/workflows/pagine.yml"]
   schedule:
     - cron: "41 4 * * 2"   # martedì notte, rete di sicurezza
   workflow_dispatch:
@@ -18,13 +18,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with: { fetch-depth: 1 }
+      - name: Memoria delle traduzioni
+        run: git fetch -q --depth 1 origin traduzioni:refs/remotes/origin/traduzioni || true
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
       - name: Genera le pagine
         run: python3 sorgenti/pagine.py
+      - name: Pagine in inglese
+        # 13/11/2026: stesse pagine in inglese sotto en/, con hreflang e sitemap-en (sorgenti/traduci/pagine_en.py)
+        run: python3 sorgenti/traduci/pagine_en.py .
       - name: Salva
         run: |
           git config user.name "achplaces-bot"; git config user.email "actions@users.noreply.github.com"
-          git add comune luogo regione comuni sitemap.xml sitemap-*.xml robots.txt pagine.css
+          git add -A comune luogo regione comuni en sitemap.xml sitemap-*.xml robots.txt pagine.css
           git commit -qm "Pagine per Google: $(date +%F)" || exit 0
           for i in 1 2 3 4 5; do git pull --rebase -q --no-edit && git push -q && exit 0; sleep $((RANDOM % 15 + 5)); done; exit 1
