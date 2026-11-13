@@ -40,6 +40,13 @@ def raccogli():
                 for c in (CAMPI_C if pid == '_c' else CAMPI):
                     t = x.get(c)
                     if da_tradurre(t): d[en_k(t)] = t
+    # descrizioni brevi in dati (i primi luoghi della classifica), colonna 4 delle righe
+    sys.path.insert(0, HERE)
+    from leggi_dati import righe
+    dd = righe(json.load(open(os.path.join(HERE, M['dati']))))
+    for c in dd['c']:
+        for a in c['places']:
+            if len(a) > 4 and da_tradurre(a[4]): out.setdefault(c['prov'], {})[en_k(a[4])] = a[4]
     BO = json.loads(subprocess.check_output(['node', '-e', "const fs=require('fs');eval(fs.readFileSync('" + os.path.join(HERE, 'data', 'places-bologna.js') + "','utf8').replace('const PLACES','globalThis.PLACES'));console.log(JSON.stringify(PLACES))"]))
     d = out.setdefault('BO', {})
     for p in BO:
@@ -51,6 +58,8 @@ def raccogli():
 if __name__ == '__main__':
     R = raccogli()
     tutti = {}
+    for t in json.load(open(os.path.join(HERE, 'traduci', 'ui_it.json'))):  # testi lunghi dell'interfaccia (Metodo, note)
+        if da_tradurre(t): tutti[en_k(t)] = t
     for d in R.values(): tutti.update(d)
     dest = sys.argv[1] if len(sys.argv) > 1 else os.path.join(HERE, 'traduci', 'testi_it.jsonl')
     with open(dest, 'w') as f:
