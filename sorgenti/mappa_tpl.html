@@ -114,6 +114,15 @@ html[data-t=carta] .row{background:#fff;border-color:color-mix(in srgb,var(--g) 
   #list{width:360px;flex:none;margin:14px;border-radius:24px}
   #filt{left:14px;top:calc(70px + env(safe-area-inset-top));width:390px;max-height:calc(100% - 90px)}
   #filt.off{transform:translateY(-10px)}
+  /* 14/11: su iPad il riquadro «Stai guardando / Raggruppa per» va sulla seconda riga, a tutta larghezza (prima si sovrapponeva) */
+  #top{flex-wrap:wrap;row-gap:8px;right:14px}
+  #crumb{flex:1 1 100%;max-width:460px;flex-direction:column;align-items:stretch;gap:6px;padding:8px 8px 8px 12px}
+  #crumb .t{display:flex;align-items:baseline;gap:8px;white-space:nowrap;min-width:0}#crumb .cap{flex:none;font-size:10px}
+  #levels .lcap{display:none}#levels{padding:0;margin:0;border:0}#levels .lseg{width:100%}#levels button{flex:1}
+  #zoom{top:calc(172px + env(safe-area-inset-top))}
+  #hint{display:none}
+}
+@media (min-width:700px) and (max-width:1279.98px){#temi{top:calc(172px + env(safe-area-inset-top))}
 }
 /* telefono: mappa sopra, lista che sale dal basso */
 @media (max-width:699.98px){
