@@ -287,8 +287,10 @@ html[data-t=carta] .gl{box-shadow:0 10px 30px rgba(60,40,20,.12)}
 (async()=>{
 const NOME=/*MAPPA*/,NOMEN=/*MAPPAN*/;let DATA=null;
 /* 12/11: i nomi, i link e le schede arrivano da un secondo file, scaricato in parallelo: la mappa si disegna prima */
-const PN=fetch(NOMEN).then(r=>r.ok?r:fetch('manifest.json',{cache:'no-store'}).then(r=>r.json()).then(m=>fetch(m.mappan))).then(r=>r.text()).catch(()=>null);
-try{let r=await fetch(NOME);if(!r.ok){const m=await (await fetch('manifest.json',{cache:'no-store'})).json();r=await fetch(m.mappa);}DATA=await r.json();}catch(e){document.getElementById('nv').textContent='Dati non disponibili';return;}
+/* 13/11/2026: il file dei nomi (320 KB) parte quando e' arrivato quello della mappa (144 KB): prima si dividevano la rete e la mappa compariva dopo entrambi */
+let _mappaOk;const MAPPA_OK=new Promise(r=>_mappaOk=r);setTimeout(()=>_mappaOk(),6000);
+const PN=MAPPA_OK.then(()=>fetch(NOMEN)).then(r=>r.ok?r:fetch('manifest.json',{cache:'no-store'}).then(r=>r.json()).then(m=>fetch(m.mappan))).then(r=>r.text()).catch(()=>null);
+try{let r=await fetch(NOME);if(!r.ok){const m=await (await fetch('manifest.json',{cache:'no-store'})).json();r=await fetch(m.mappa);}DATA=await r.json();_mappaOk();}catch(e){_mappaOk();document.getElementById('nv').textContent='Dati non disponibili';return;}
 const G=[
  {k:'arch',l:'Archeologia',long:'Archeologia',em:'🏺',c:'#F0A27A',s:['Preistoria','Nuragici','Etruschi','Greci','Fenici','Italici','Romani','Tardoantichi','Medievali','Altro']},
  {k:'mon',l:'Monumenti',long:'Storia e monumenti',em:'🏛️',c:'#E3CDA8',s:['Castelli','Fortezze','Mura','Torri','Palazzi','Ville','Piazze','Centri','Borghi','Abbandonati','Portici','Teatri','Ponti','Fontane','Monumenti','Memoriali']},
@@ -403,16 +405,20 @@ function completo(){clearTimeout(timer);R={cx:S.cx,cy:S.cy,k:S.k};
   g.restore();
   g.textAlign='center';g.textBaseline='middle';const HF=TH.fill.replace(/[\d.]+\)$/,'0.08)');
   const CW=W+2*MG,CH=H+2*MG;
-  for(let i=keep.length-1;i>=0;i--){const o=keep[i],x=o.px+MG,y=o.py+MG,r=o.r,sel=o.cs.length===1&&S.sel===o.cs[0];if(x<-r*2-80||y<-r*2-20||x>CW+r*2+80||y>CH+r*2+20)continue;
+  /* 13/11/2026: prima le bolle che si vedono, nel fotogramma dopo quelle del bordo (servono solo se si trascina): il ridisegno costa la meta' */
+  const dentro=o=>o.px>-o.r-60&&o.py>-o.r-30&&o.px<W+o.r+60&&o.py<H+o.r+30;
+  const bolla=o=>{const x=o.px+MG,y=o.py+MG,r=o.r,sel=o.cs.length===1&&S.sel===o.cs[0];if(x<-r*2-80||y<-r*2-20||x>CW+r*2+80||y>CH+r*2+20)return;
     g.beginPath();g.arc(x,y,r*1.55,0,6.2832);g.fillStyle=sel?'rgba(255,184,107,.10)':HF;g.fill();
     g.beginPath();g.arc(x,y,r,0,6.2832);g.fillStyle=sel?'rgba(255,184,107,.25)':TH.fill;g.fill();g.lineWidth=sel?2.4:1.5;g.strokeStyle=sel?'#FFB86B':TH.bub;g.stroke();
     g.fillStyle=TH.txt;g.font=`600 ${r<11?10:12}px "Space Grotesk",Inter,sans-serif`;g.fillText(nf.format(o.n),x,y+.5);
     if(o.many&&lev===2)o.lab=C[o.cs[0]].n+' e dintorni';
     const lab=lev===0?(W<700?false:r>21):lev===1?(S.k>3.4&&r>15):(!o.many&&(S.k>14||o.n>10));
-    if(lab){g.font='500 11px Inter,sans-serif';g.lineWidth=3;g.strokeStyle=TH.halo;g.strokeText(o.lab,x,y+r+13);g.fillStyle=TH.lab;g.fillText(o.lab,x,y+r+13);}}
+    if(lab){g.font='500 11px Inter,sans-serif';g.lineWidth=3;g.strokeStyle=TH.halo;g.strokeText(o.lab,x,y+r+13);g.fillStyle=TH.lab;g.fillText(o.lab,x,y+r+13);}};
+  const BORDO=[];for(let i=keep.length-1;i>=0;i--){const o=keep[i];if(dentro(o))bolla(o);else BORDO.push(o);}
   if(S.pin){const x=(S.pin[0]-v.x0)*z+MG,y=(S.pin[1]-v.y0)*z+MG;g.beginPath();g.arc(x,y,13,0,6.2832);g.fillStyle='rgba(255,184,107,.25)';g.fill();g.beginPath();g.arc(x,y,7,0,6.2832);g.fillStyle='#FFB86B';g.fill();g.lineWidth=2;g.strokeStyle='#fff';g.stroke();}
   layer.style.transform='';
   const gen=++GEN;requestAnimationFrame(()=>setTimeout(()=>{if(gen!==GEN)return;
+  if(BORDO.length&&layer.style.transform===''){g.textAlign='center';g.textBaseline='middle';for(const o of BORDO)bolla(o);}
   let near=null,bd=1e18;for(const c of C){const d=(c.x-S.cx)**2+(c.y-S.cy)**2;if(d<bd){bd=d;near=c;}}
   $('lev').textContent=['Regioni','Province','Comuni'][lev];
   $('where').textContent=lev===0?"Tutta l'Italia":lev===1?(RN[near.rg]||near.rg):(RN[near.rg]||near.rg)+' › '+near.pr;
