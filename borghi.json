@@ -1,609 +1,1992 @@
 {
-"tipi": {
-"post": {
-"description": "",
-"hierarchical": false,
-"has_archive": false,
-"name": "Articoli",
-"slug": "post",
-"icon": "dashicons-admin-post",
-"taxonomies": [
-"category",
-"post_tag"
-],
-"rest_base": "posts",
-"rest_namespace": "wp/v2",
-"template": [],
-"template_lock": false,
-"_links": {
-"collection": [
+"schede": [
 {
-"href": "https://borghipiubelliditalia.it/wp-json/wp/v2/types"
-}
-],
-"wp:items": [
-{
-"href": "https://borghipiubelliditalia.it/wp-json/wp/v2/posts"
-}
-],
-"curies": [
-{
-"name": "wp",
-"href": "https://api.w.org/{rel}",
-"templated": true
-}
-]
-}
+"url": "https://borghipiubelliditalia.it/borgo/aiello-calabro/",
+"titolo": "Aiello Calabro",
+"comune": ""
 },
-"page": {
-"description": "",
-"hierarchical": true,
-"has_archive": false,
-"name": "Pagine",
-"slug": "page",
-"icon": "dashicons-admin-page",
-"taxonomies": [],
-"rest_base": "pages",
-"rest_namespace": "wp/v2",
-"template": [],
-"template_lock": false,
-"_links": {
-"collection": [
 {
-"href": "https://borghipiubelliditalia.it/wp-json/wp/v2/types"
-}
-],
-"wp:items": [
-{
-"href": "https://borghipiubelliditalia.it/wp-json/wp/v2/pages"
-}
-],
-"curies": [
-{
-"name": "wp",
-"href": "https://api.w.org/{rel}",
-"templated": true
-}
-]
-}
+"url": "https://borghipiubelliditalia.it/borgo/san-nicola-arcella/",
+"titolo": "San Nicola Arcella",
+"comune": ""
 },
-"attachment": {
-"description": "",
-"hierarchical": false,
-"has_archive": false,
-"name": "Media",
-"slug": "attachment",
-"icon": "dashicons-admin-media",
-"taxonomies": [],
-"rest_base": "media",
-"rest_namespace": "wp/v2",
-"template": [],
-"template_lock": false,
-"_links": {
-"collection": [
 {
-"href": "https://borghipiubelliditalia.it/wp-json/wp/v2/types"
-}
-],
-"wp:items": [
-{
-"href": "https://borghipiubelliditalia.it/wp-json/wp/v2/media"
-}
-],
-"curies": [
-{
-"name": "wp",
-"href": "https://api.w.org/{rel}",
-"templated": true
-}
-]
-}
+"url": "https://borghipiubelliditalia.it/borgo/borgo-il-piazzo/",
+"titolo": "Borgo il Piazzo",
+"comune": ""
 },
-"nav_menu_item": {
-"description": "",
-"hierarchical": false,
-"has_archive": false,
-"name": "Voci del menu di navigazione",
-"slug": "nav_menu_item",
-"icon": null,
-"taxonomies": [
-"nav_menu"
-],
-"rest_base": "menu-items",
-"rest_namespace": "wp/v2",
-"template": [],
-"template_lock": false,
-"_links": {
-"collection": [
 {
-"href": "https://borghipiubelliditalia.it/wp-json/wp/v2/types"
-}
-],
-"wp:items": [
-{
-"href": "https://borghipiubelliditalia.it/wp-json/wp/v2/menu-items"
-}
-],
-"curies": [
-{
-"name": "wp",
-"href": "https://api.w.org/{rel}",
-"templated": true
-}
-]
-}
+"url": "https://borghipiubelliditalia.it/borgo/castelvetro-di-modena/",
+"titolo": "Castelvetro di Modena",
+"comune": ""
 },
-"wp_block": {
-"description": "",
-"hierarchical": false,
-"has_archive": false,
-"name": "Pattern",
-"slug": "wp_block",
-"icon": null,
-"taxonomies": [
-"wp_pattern_category"
-],
-"rest_base": "blocks",
-"rest_namespace": "wp/v2",
-"template": [],
-"template_lock": false,
-"_links": {
-"collection": [
 {
-"href": "https://borghipiubelliditalia.it/wp-json/wp/v2/types"
-}
-],
-"wp:items": [
-{
-"href": "https://borghipiubelliditalia.it/wp-json/wp/v2/blocks"
-}
-],
-"curies": [
-{
-"name": "wp",
-"href": "https://api.w.org/{rel}",
-"templated": true
-}
-]
-}
+"url": "https://borghipiubelliditalia.it/borgo/cusano-mutri/",
+"titolo": "Cusano Mutri",
+"comune": ""
 },
-"wp_template": {
-"description": "Template da includere nel tuo tema.",
-"hierarchical": false,
-"has_archive": false,
-"name": "Template",
-"slug": "wp_template",
-"icon": null,
-"taxonomies": [],
-"rest_base": "templates",
-"rest_namespace": "wp/v2",
-"template": [],
-"template_lock": false,
-"_links": {
-"collection": [
 {
-"href": "https://borghipiubelliditalia.it/wp-json/wp/v2/types"
-}
-],
-"wp:items": [
-{
-"href": "https://borghipiubelliditalia.it/wp-json/wp/v2/templates"
-}
-],
-"curies": [
-{
-"name": "wp",
-"href": "https://api.w.org/{rel}",
-"templated": true
-}
-]
-}
+"url": "https://borghipiubelliditalia.it/borgo/borgo-vecchio/",
+"titolo": "Borgo Vecchio",
+"comune": ""
 },
-"wp_template_part": {
-"description": "Parti di template da includere nei tuoi template.",
-"hierarchical": false,
-"has_archive": false,
-"name": "Parti del template",
-"slug": "wp_template_part",
-"icon": null,
-"taxonomies": [],
-"rest_base": "template-parts",
-"rest_namespace": "wp/v2",
-"template": [],
-"template_lock": false,
-"_links": {
-"collection": [
 {
-"href": "https://borghipiubelliditalia.it/wp-json/wp/v2/types"
-}
-],
-"wp:items": [
-{
-"href": "https://borghipiubelliditalia.it/wp-json/wp/v2/template-parts"
-}
-],
-"curies": [
-{
-"name": "wp",
-"href": "https://api.w.org/{rel}",
-"templated": true
-}
-]
-}
+"url": "https://borghipiubelliditalia.it/borgo/limone-sul-garda/",
+"titolo": "Limone sul Garda",
+"comune": ""
 },
-"wp_global_styles": {
-"description": "Stili globali da includere nei temi.",
-"hierarchical": false,
-"has_archive": false,
-"name": "Stili globali",
-"slug": "wp_global_styles",
-"icon": null,
-"taxonomies": [],
-"rest_base": "global-styles",
-"rest_namespace": "wp/v2",
-"template": [],
-"template_lock": false,
-"_links": {
-"collection": [
 {
-"href": "https://borghipiubelliditalia.it/wp-json/wp/v2/types"
-}
-],
-"wp:items": [
-{
-"href": "https://borghipiubelliditalia.it/wp-json/wp/v2/global-styles"
-}
-],
-"curies": [
-{
-"name": "wp",
-"href": "https://api.w.org/{rel}",
-"templated": true
-}
-]
-}
+"url": "https://borghipiubelliditalia.it/borgo/pieve-di-teco/",
+"titolo": "Pieve di Teco",
+"comune": ""
 },
-"wp_navigation": {
-"description": "Menu di navigazione che possono essere inseriti nel tuo sito.",
-"hierarchical": false,
-"has_archive": false,
-"name": "Menu di navigazione",
-"slug": "wp_navigation",
-"icon": null,
-"taxonomies": [],
-"rest_base": "navigation",
-"rest_namespace": "wp/v2",
-"template": [],
-"template_lock": false,
-"_links": {
-"collection": [
 {
-"href": "https://borghipiubelliditalia.it/wp-json/wp/v2/types"
-}
-],
-"wp:items": [
-{
-"href": "https://borghipiubelliditalia.it/wp-json/wp/v2/navigation"
-}
-],
-"curies": [
-{
-"name": "wp",
-"href": "https://api.w.org/{rel}",
-"templated": true
-}
-]
-}
+"url": "https://borghipiubelliditalia.it/borgo/rivello/",
+"titolo": "Rivello",
+"comune": ""
 },
-"wp_font_family": {
-"description": "",
-"hierarchical": false,
-"has_archive": false,
-"name": "Famiglie di font",
-"slug": "wp_font_family",
-"icon": null,
-"taxonomies": [],
-"rest_base": "font-families",
-"rest_namespace": "wp/v2",
-"template": [],
-"template_lock": false,
-"_links": {
-"collection": [
 {
-"href": "https://borghipiubelliditalia.it/wp-json/wp/v2/types"
-}
-],
-"wp:items": [
-{
-"href": "https://borghipiubelliditalia.it/wp-json/wp/v2/font-families"
-}
-],
-"curies": [
-{
-"name": "wp",
-"href": "https://api.w.org/{rel}",
-"templated": true
-}
-]
-}
+"url": "https://borghipiubelliditalia.it/borgo/trebisacce/",
+"titolo": "Trebisacce",
+"comune": ""
 },
-"wp_font_face": {
-"description": "",
-"hierarchical": false,
-"has_archive": false,
-"name": "Font",
-"slug": "wp_font_face",
-"icon": null,
-"taxonomies": [],
-"rest_base": "font-families/(?P<font_family_id>[\\d]+)/font-faces",
-"rest_namespace": "wp/v2",
-"template": [],
-"template_lock": false,
-"_links": {
-"collection": [
 {
-"href": "https://borghipiubelliditalia.it/wp-json/wp/v2/types"
-}
-],
-"wp:items": [
-{
-"href": "https://borghipiubelliditalia.it/wp-json/wp/v2/font-families/(/?P<font_family_id>[\\d]+)/font-faces"
-}
-],
-"curies": [
-{
-"name": "wp",
-"href": "https://api.w.org/{rel}",
-"templated": true
-}
-]
-}
+"url": "https://borghipiubelliditalia.it/borgo/gravina-in-puglia/",
+"titolo": "Gravina in Puglia",
+"comune": ""
 },
-"ajde_events": {
-"description": "Questo è dove è possibile aggiungere nuovi eventi al calendario.",
-"hierarchical": false,
-"has_archive": true,
-"name": "Eventi",
-"slug": "ajde_events",
-"icon": null,
-"taxonomies": [
-"post_tag",
-"event_type",
-"event_type_2"
-],
-"rest_base": "ajde_events",
-"rest_namespace": "wp/v2",
-"template": [
-[
-"core/paragraph",
 {
-"placeholder": "Add Event Description...",
-"lock": {
-"move": false,
-"remove": false
-}
-}
-]
-],
-"template_lock": false,
-"_links": {
-"collection": [
-{
-"href": "https://borghipiubelliditalia.it/wp-json/wp/v2/types"
-}
-],
-"wp:items": [
-{
-"href": "https://borghipiubelliditalia.it/wp-json/wp/v2/ajde_events"
-}
-],
-"curies": [
-{
-"name": "wp",
-"href": "https://api.w.org/{rel}",
-"templated": true
-}
-]
-}
+"url": "https://borghipiubelliditalia.it/borgo/spilimbergo/",
+"titolo": "Spilimbergo",
+"comune": ""
 },
-"dt_portfolio": {
-"description": "",
-"hierarchical": false,
-"has_archive": true,
-"name": "Portafoglio",
-"slug": "dt_portfolio",
-"icon": null,
-"taxonomies": [
-"dt_portfolio_category",
-"dt_portfolio_tags"
-],
-"rest_base": "dt_portfolio",
-"rest_namespace": "wp/v2",
-"template": [],
-"template_lock": false,
-"_links": {
-"collection": [
 {
-"href": "https://borghipiubelliditalia.it/wp-json/wp/v2/types"
-}
-],
-"wp:items": [
-{
-"href": "https://borghipiubelliditalia.it/wp-json/wp/v2/dt_portfolio"
-}
-],
-"curies": [
-{
-"name": "wp",
-"href": "https://api.w.org/{rel}",
-"templated": true
-}
-]
-}
+"url": "https://borghipiubelliditalia.it/borgo/cividale-del-friuli/",
+"titolo": "Cividale del Friuli",
+"comune": ""
 },
-"dt_slideshow": {
-"description": "",
-"hierarchical": false,
-"has_archive": true,
-"name": "Presentazioni",
-"slug": "dt_slideshow",
-"icon": null,
-"taxonomies": [],
-"rest_base": "dt_slideshow",
-"rest_namespace": "wp/v2",
-"template": [],
-"template_lock": false,
-"_links": {
-"collection": [
 {
-"href": "https://borghipiubelliditalia.it/wp-json/wp/v2/types"
-}
-],
-"wp:items": [
-{
-"href": "https://borghipiubelliditalia.it/wp-json/wp/v2/dt_slideshow"
-}
-],
-"curies": [
-{
-"name": "wp",
-"href": "https://api.w.org/{rel}",
-"templated": true
-}
-]
-}
+"url": "https://borghipiubelliditalia.it/borgo/ceriana/",
+"titolo": "Ceriana",
+"comune": ""
 },
-"dt_gallery": {
-"description": "",
-"hierarchical": false,
-"has_archive": true,
-"name": "Album fotografici",
-"slug": "dt_gallery",
-"icon": null,
-"taxonomies": [
-"dt_gallery_category"
-],
-"rest_base": "dt_gallery",
-"rest_namespace": "wp/v2",
-"template": [],
-"template_lock": false,
-"_links": {
-"collection": [
 {
-"href": "https://borghipiubelliditalia.it/wp-json/wp/v2/types"
-}
-],
-"wp:items": [
-{
-"href": "https://borghipiubelliditalia.it/wp-json/wp/v2/dt_gallery"
-}
-],
-"curies": [
-{
-"name": "wp",
-"href": "https://api.w.org/{rel}",
-"templated": true
-}
-]
-}
+"url": "https://borghipiubelliditalia.it/borgo/forza-dagro/",
+"titolo": "Forza D’Agrò",
+"comune": ""
 },
-"wpb_gutenberg_param": {
-"description": "",
-"hierarchical": false,
-"has_archive": false,
-"name": "Gutenberg attrs",
-"slug": "wpb_gutenberg_param",
-"icon": null,
-"taxonomies": [],
-"rest_base": "wpb_gutenberg_param",
-"rest_namespace": "wp/v2",
-"template": [],
-"template_lock": false,
-"_links": {
-"collection": [
 {
-"href": "https://borghipiubelliditalia.it/wp-json/wp/v2/types"
-}
-],
-"wp:items": [
-{
-"href": "https://borghipiubelliditalia.it/wp-json/wp/v2/wpb_gutenberg_param"
-}
-],
-"curies": [
-{
-"name": "wp",
-"href": "https://api.w.org/{rel}",
-"templated": true
-}
-]
-}
-}
+"url": "https://borghipiubelliditalia.it/borgo/ripatransone/",
+"titolo": "Ripatransone",
+"comune": ""
 },
+{
+"url": "https://borghipiubelliditalia.it/borgo/rassa/",
+"titolo": "Rassa",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/bertinoro/",
+"titolo": "Bertinoro",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/bagolino/",
+"titolo": "Bagolino",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/mulazzo/",
+"titolo": "Mulazzo",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/scheggino/",
+"titolo": "Scheggino",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/capranica-prenestina/",
+"titolo": "Capranica Prenestina",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/corenno-plinio/",
+"titolo": "Corenno Plinio",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/repubblica-di-san-marino/",
+"titolo": "REPUBBLICA DI SAN MARINO",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/agira/",
+"titolo": "Agira",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/giano-dellumbria/",
+"titolo": "Giano dell’Umbria",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/monteprandone/",
+"titolo": "Monteprandone",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/maccagno-imperiale/",
+"titolo": "Maccagno Imperiale",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/badalucco/",
+"titolo": "Badalucco",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/frigento/",
+"titolo": "Frigento",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/palena/",
+"titolo": "Palena",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/fontainemore/",
+"titolo": "Fontainemore",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/barolo/",
+"titolo": "Barolo",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/clusone/",
+"titolo": "Clusone",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/nemi/",
+"titolo": "Nemi",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/maratea/",
+"titolo": "Maratea",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/caldes/",
+"titolo": "Caldes",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/casale-marittimo/",
+"titolo": "Casale Marittimo",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/tempio-pausania/",
+"titolo": "Tempio Pausania",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/malcesine/",
+"titolo": "Malcesine",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/sammichele-di-bari/",
+"titolo": "Sammichele di bari",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/golferenzo/",
+"titolo": "Golferenzo",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/bagno-di-romagna/",
+"titolo": "Bagno di Romagna",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/san-donato-in-poggio/",
+"titolo": "San Donato in Poggio",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/borgo-valsugana/",
+"titolo": "Borgo Valsugana",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/guarene/",
+"titolo": "Guarene",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/badolato/",
+"titolo": "Badolato",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/celle-ligure/",
+"titolo": "Celle Ligure",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/ronciglione/",
+"titolo": "Ronciglione",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/castagnole-delle-lanze/",
+"titolo": "Castagnole delle Lanze",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/stroncone/",
+"titolo": "Stroncone",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/ossana/",
+"titolo": "Ossana",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/arcevia/",
+"titolo": "Arcevia",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/lollove/",
+"titolo": "Lollove",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/gesualdo/",
+"titolo": "Gesualdo",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/deiva-marina/",
+"titolo": "Deiva Marina",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/bagnara-di-romagna/",
+"titolo": "Bagnara di Romagna",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/ingria/",
+"titolo": "Ingria",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/rosazza/",
+"titolo": "Rosazza",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/varzi/",
+"titolo": "Varzi",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/miglionico/",
+"titolo": "Miglionico",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/nocera-umbra/",
+"titolo": "Nocera Umbra",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/castelnuovo-di-porto/",
+"titolo": "Castelnuovo di Porto",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/bellano/",
+"titolo": "Bellano",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/calascibetta/",
+"titolo": "Calascibetta",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/campiglia-marittima/",
+"titolo": "Campiglia Marittima",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/luserna/",
+"titolo": "Luserna",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/pieve-tesino/",
+"titolo": "Pieve Tesino",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/buccheri/",
+"titolo": "Buccheri",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/crecchio/",
+"titolo": "Crecchio",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/petritoli/",
+"titolo": "Petritoli",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/la-maddalena/",
+"titolo": "La Maddalena",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/montechiarugolo/",
+"titolo": "Montechiarugolo",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/monte-santangelo/",
+"titolo": "Monte Sant’Angelo",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/casoli/",
+"titolo": "Casoli",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/tropea/",
+"titolo": "Tropea",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/monteleone-dorvieto/",
+"titolo": "Monteleone D’Orvieto",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/bassano-in-teverina/",
+"titolo": "Bassano in Teverina",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/populonia/",
+"titolo": "Populonia",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/militello-in-val-di-catania/",
+"titolo": "Militello in Val di Catania",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/montefioralle/",
+"titolo": "Montefioralle",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/lucignano/",
+"titolo": "Lucignano",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/sutri/",
+"titolo": "Sutri",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/vitorchiano/",
+"titolo": "Vitorchiano",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/cocconato/",
+"titolo": "Cocconato",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/diano-castello/",
+"titolo": "Diano Castello",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/perinaldo/",
+"titolo": "Perinaldo",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/caccuri/",
+"titolo": "Caccuri",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/morro-dalba/",
+"titolo": "Morro D’Alba",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/strassoldo/",
+"titolo": "Strassoldo",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/troina/",
+"titolo": "Troina",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/san-felice-circeo/",
+"titolo": "San Felice Circeo",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/atina/",
+"titolo": "Atina",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/monforte-dalba/",
+"titolo": "Monforte d’Alba",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/pergola/",
+"titolo": "Pergola",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/palmanova/",
+"titolo": "Palmanova",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/mercatello-sul-metauro/",
+"titolo": "Mercatello sul Metauro",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/maruggio/",
+"titolo": "Maruggio",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/campli/",
+"titolo": "Campli",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/palazzuolo-sul-senio/",
+"titolo": "Palazzuolo sul Senio",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/montaione/",
+"titolo": "Montaione",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/capalbio/",
+"titolo": "Capalbio",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/taggia/",
+"titolo": "Taggia",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/cella-monte/",
+"titolo": "Cella Monte",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/percile/",
+"titolo": "Percile",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/bondone/",
+"titolo": "Bondone",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/esanatoglia/",
+"titolo": "Esanatoglia",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/monteleone-di-spoleto/",
+"titolo": "Monteleone di Spoleto",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/rocca-imperiale/",
+"titolo": "Rocca Imperiale",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/summonte/",
+"titolo": "Summonte",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/sassoferrato/",
+"titolo": "Sassoferrato",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/sadali/",
+"titolo": "Sadali",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/sappada-vecchia-plodn/",
+"titolo": "Sappada Vecchia-Plodn",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/castelrotto-kastelruth/",
+"titolo": "Castelrotto / Kastelruth",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/castel-san-pietro-romano/",
+"titolo": "Castel San Pietro Romano",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/passignano-sul-trasimeno/",
+"titolo": "Passignano sul Trasimeno",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/mel-di-borgo-valbelluna/",
+"titolo": "Mel di Borgo Valbelluna",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/buonvicino/",
+"titolo": "Buonvicino",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/irsina/",
+"titolo": "Irsina",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/montecchio/",
+"titolo": "Montecchio",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/erice/",
+"titolo": "Erice",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/torre-di-palme-2/",
+"titolo": "Torre Di Palme",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/servigliano/",
+"titolo": "Servigliano",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/raggiolo/",
+"titolo": "Raggiolo",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/verucchio/",
+"titolo": "Verucchio",
+"comune": "VERUCCHIO"
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/sottoguda/",
+"titolo": "Sottoguda",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/follina/",
+"titolo": "Follina",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/sen-jan-di-fassa/",
+"titolo": "Sèn Jan di Fassa",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/sellano/",
+"titolo": "Sellano",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/preci/",
+"titolo": "Preci",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/allerona/",
+"titolo": "Allerona",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/pico/",
+"titolo": "Pico",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/greccio/",
+"titolo": "Greccio",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/castrodeivolsci/",
+"titolo": "Castro dei Volsci",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/amatrice/",
+"titolo": "Amatrice",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/zungoli/",
+"titolo": "Zungoli",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/savignano-irpino/",
+"titolo": "Savignano Irpino",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/san-giorgio/",
+"titolo": "San Giorgio",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/montesarchio/",
+"titolo": "Montesarchio",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/oriolo/",
+"titolo": "Oriolo",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/posada/",
+"titolo": "Posada",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/salemi/",
+"titolo": "Salemi",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/vallo-di-nera/",
+"titolo": "Vallo di Nera",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/trevi/",
+"titolo": "Trevi",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/torgiano/",
+"titolo": "Torgiano",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/spello/",
+"titolo": "Spello",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/san-gemini/",
+"titolo": "San Gemini",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/panicale/",
+"titolo": "Panicale",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/paciano/",
+"titolo": "Paciano",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/norcia/",
+"titolo": "Norcia",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/montone/",
+"titolo": "Montone",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/montefalco/",
+"titolo": "Montefalco",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/monte-castello-di-vibio/",
+"titolo": "Monte Castello di Vibio",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/massa-martana/",
+"titolo": "Massa Martana",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/lugnano-in-teverina/",
+"titolo": "Lugnano in Teverina",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/pescocostanzo/",
+"titolo": "Pescocostanzo",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/torre-alfina/",
+"titolo": "Torre Alfina",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/subiaco/",
+"titolo": "Subiaco",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/sperlonga/",
+"titolo": "Sperlonga",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/orvinio/",
+"titolo": "Orvinio",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/collalto-sabino/",
+"titolo": "Collalto Sabino",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/civita-di-bagnoregio/",
+"titolo": "Civita di Bagnoregio",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/castel-gandolfo/",
+"titolo": "Castel Gandolfo",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/castel-di-tora/",
+"titolo": "Castel di Tora",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/boville-ernica/",
+"titolo": "Boville Ernica",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/guardiagrele/",
+"titolo": "Guardiagrele",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/villalago/",
+"titolo": "Villalago",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/tagliacozzo/",
+"titolo": "Tagliacozzo",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/scanno/",
+"titolo": "Scanno",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/santo-stefano-di-sessanio/",
+"titolo": "Santo Stefano di Sessanio",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/rocca-san-giovanni/",
+"titolo": "Rocca San Giovanni",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/pretoro/",
+"titolo": "Pretoro",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/pietracamela/",
+"titolo": "Pietracamela",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/pettorano-sul-gizio/",
+"titolo": "Pettorano sul Gizio",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/penne/",
+"titolo": "Penne",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/pacentro-2/",
+"titolo": "Pacentro",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/opi/",
+"titolo": "Opi",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/navelli/",
+"titolo": "Navelli",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/introdacqua/",
+"titolo": "Introdacqua",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/civitella-del-tronto/",
+"titolo": "Civitella del Tronto",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/citta-santangelo/",
+"titolo": "Città Sant’Angelo",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/castelli/",
+"titolo": "Castelli",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/castel-del-monte/",
+"titolo": "Castel del Monte",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/caramanico-terme/",
+"titolo": "Caramanico Terme",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/bugnara/",
+"titolo": "Bugnara",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/anversa-degli-abruzzi/",
+"titolo": "Anversa degli Abruzzi",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/abbateggio/",
+"titolo": "Abbateggio",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/sepino/",
+"titolo": "Sepino",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/oratino/",
+"titolo": "Oratino",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/frosolone/",
+"titolo": "Frosolone",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/fornelli/",
+"titolo": "Fornelli",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/nusco/",
+"titolo": "Nusco",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/monteverde/",
+"titolo": "Monteverde",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/furore/",
+"titolo": "Furore",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/conca-dei-marini/",
+"titolo": "Conca dei Marini",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/castellabate/",
+"titolo": "Castellabate",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/atrani/",
+"titolo": "Atrani",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/albori/",
+"titolo": "Albori",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/deruta/",
+"titolo": "Deruta",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/corciano/",
+"titolo": "Corciano",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/citerna/",
+"titolo": "Citerna",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/castiglione-del-lago/",
+"titolo": "Castiglione del Lago",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/bevagna/",
+"titolo": "Bevagna",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/viggianello/",
+"titolo": "Viggianello",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/venosa/",
+"titolo": "Venosa",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/bettona/",
+"titolo": "Bettona",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/arrone/",
+"titolo": "Arrone",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/acquasparta/",
+"titolo": "Acquasparta",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/pietrapertosa/",
+"titolo": "Pietrapertosa",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/guardia-perticara/",
+"titolo": "Guardia Perticara",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/castelmezzano/",
+"titolo": "Castelmezzano",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/acerenza/",
+"titolo": "Acerenza",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/visso/",
+"titolo": "Visso",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/vico-del-gargano/",
+"titolo": "Vico del Gargano",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/specchia/",
+"titolo": "Specchia",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/roseto-valfortore/",
+"titolo": "Roseto Valfortore",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/presicce-acquarica/",
+"titolo": "Presicce – Acquarica",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/pietramontecorvino/",
+"titolo": "Pietramontecorvino",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/treia/",
+"titolo": "Treia",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/otranto/",
+"titolo": "Otranto",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/sarnano/",
+"titolo": "Sarnano",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/locorotondo/",
+"titolo": "Locorotondo",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/san-ginesio/",
+"titolo": "San Ginesio",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/offida/",
+"titolo": "Offida",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/cisternino/",
+"titolo": "Cisternino",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/bovino/",
+"titolo": "Bovino",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/alberona/",
+"titolo": "Alberona",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/stilo/",
+"titolo": "Stilo",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/santa-severina/",
+"titolo": "Santa Severina",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/morano-calabro/",
+"titolo": "Morano Calabro",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/gerace/",
+"titolo": "Gerace",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/fiumefreddo-bruzio/",
+"titolo": "Fiumefreddo Bruzio",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/civita/",
+"titolo": "Civita",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/offagna/",
+"titolo": "Offagna",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/moresco/",
+"titolo": "Moresco",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/montelupone/",
+"titolo": "Montelupone",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/monte-grimano-terme/",
+"titolo": "Monte Grimano Terme",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/montefiore-aso/",
+"titolo": "Montefiore dell’Aso",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/montefabbri/",
+"titolo": "Montefabbri",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/montecosaro/",
+"titolo": "Montecosaro",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/montecassiano/",
+"titolo": "Montecassiano",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/mondolfo/",
+"titolo": "Mondolfo",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/mondavio/",
+"titolo": "Mondavio",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/macerata-feltria/",
+"titolo": "Macerata Feltria",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/grottammare/",
+"titolo": "Grottammare",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/gradara/",
+"titolo": "Gradara",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/frontino/",
+"titolo": "Frontino",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/corinaldo/",
+"titolo": "Corinaldo",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/cingoli/",
+"titolo": "Cingoli",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/bova/",
+"titolo": "Bova",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/altomonte/",
+"titolo": "Altomonte",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/aieta/",
+"titolo": "Aieta",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/castelsardo/",
+"titolo": "Castelsardo",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/carloforte/",
+"titolo": "Carloforte",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/bosa/",
+"titolo": "Bosa",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/suvereto/",
+"titolo": "Suvereto",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/sovana/",
+"titolo": "Sovana",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/santa-fiora/",
+"titolo": "Santa Fiora",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/scarperia/",
+"titolo": "Scarperia",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/san-casciano-dei-bagni/",
+"titolo": "San Casciano dei Bagni",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/porto-ercole/",
+"titolo": "Porto Ercole",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/poppi/",
+"titolo": "Poppi",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/pitigliano/",
+"titolo": "Pitigliano",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/montescudaio/",
+"titolo": "Montescudaio",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/montemerano/",
+"titolo": "Montemerano",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/loro-ciuffenna/",
+"titolo": "Loro Ciuffenna",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/giglio-castello/",
+"titolo": "Giglio Castello",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/coreglia-antelminelli/",
+"titolo": "Coreglia Antelminelli",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/cetona/",
+"titolo": "Cetona",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/castiglione-di-garfagnana/",
+"titolo": "Castiglione di Garfagnana",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/castelfranco-di-sopra/",
+"titolo": "Castelfranco di Sopra",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/buonconvento/",
+"titolo": "Buonconvento",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/barga/",
+"titolo": "Barga",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/anghiari/",
+"titolo": "Anghiari",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/atzara/",
+"titolo": "Atzara",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/vigoleno/",
+"titolo": "Vigoleno",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/san-leo/",
+"titolo": "San Leo",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/san-giovanni-in-marignano/",
+"titolo": "San Giovanni in Marignano",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/montegridolfo/",
+"titolo": "Montegridolfo",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/montefiore-conca/",
+"titolo": "Montefiore Conca",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/sutera/",
+"titolo": "Sutera",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/sperlinga/",
+"titolo": "Sperlinga",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/gualtieri/",
+"titolo": "Gualtieri",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/fiumalbo/",
+"titolo": "Fiumalbo",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/dozza/",
+"titolo": "Dozza",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/compiano/",
+"titolo": "Compiano",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/savoca/",
+"titolo": "Savoca",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/castel-arquato/",
+"titolo": "Castell’Arquato",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/gardone-riviera/",
+"titolo": "Gardone Riviera",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/brisighella/",
+"titolo": "Brisighella",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/bobbio/",
+"titolo": "Bobbio",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/san-marco-dalunzio/",
+"titolo": "San Marco D’Alunzio",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/sambuca-di-sicilia/",
+"titolo": "Sambuca di Sicilia",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/petralia-soprana/",
+"titolo": "Petralia Soprana",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/venzone/",
+"titolo": "Venzone",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/valvasone-arzene/",
+"titolo": "Valvasone Arzene",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/toppo/",
+"titolo": "Toppo",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/sesto-al-reghena/",
+"titolo": "Sesto al Reghena",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/polcenigo/",
+"titolo": "Polcenigo",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/poffabro/",
+"titolo": "Poffabro",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/gradisca-di-isonzo/",
+"titolo": "Gradisca d’Isonzo",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/fagagna/",
+"titolo": "Fagagna",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/cordovado/",
+"titolo": "Cordovado",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/clauiano/",
+"titolo": "Clauiano",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/palazzolo-acreide/",
+"titolo": "Palazzolo Acreide",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/novara-di-sicilia/",
+"titolo": "Novara di Sicilia",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/monterosso-almo/",
+"titolo": "Monterosso Almo",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/montalbano-elicona/",
+"titolo": "Montalbano Elicona",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/geraci-siculo/",
+"titolo": "Geraci Siculo",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/gangi/",
+"titolo": "Gangi",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/portobuffole/",
+"titolo": "Portobuffolè",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/montagnana/",
+"titolo": "Montagnana",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/cison-di-valmarino/",
+"titolo": "Cison di Valmarino",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/borghetto/",
+"titolo": "Borghetto",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/asolo/",
+"titolo": "Asolo",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/arqua-petrarca/",
+"titolo": "Arquà Petrarca",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/ferla/",
+"titolo": "Ferla",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/vipiteno-sterzing/",
+"titolo": "Vipiteno – Sterzing",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/san-lorenzo-in-banale/",
+"titolo": "San Lorenzo in Banale",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/rango/",
+"titolo": "Rango",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/cefalu/",
+"titolo": "Cefalù",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/castroreale/",
+"titolo": "Castroreale",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/castiglione-di-sicilia/",
+"titolo": "Castiglione di Sicilia",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/castelmola/",
+"titolo": "Castelmola",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/mezzano/",
+"titolo": "Mezzano",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/glorenza-glurns/",
+"titolo": "Glorenza – Glurns",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/egna-neumarkt/",
+"titolo": "Egna – Neumarkt",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/chiusa-klausen/",
+"titolo": "Chiusa – Klausen",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/canale/",
+"titolo": "Canale",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/zavattarello/",
+"titolo": "Zavattarello",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/tremosine-sul-garda/",
+"titolo": "Tremosine sul Garda",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/tremezzo/",
+"titolo": "Tremezzo",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/soncino/",
+"titolo": "Soncino",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/san-benedetto-po/",
+"titolo": "San Benedetto Po",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/sabbioneta/",
+"titolo": "Sabbioneta",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/pomponesco/",
+"titolo": "Pomponesco",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/morimondo/",
+"titolo": "Morimondo",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/monte-isola/",
+"titolo": "Monte Isola",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/lovere/",
+"titolo": "Lovere",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/gromo/",
+"titolo": "Gromo",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/grazie/",
+"titolo": "Grazie",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/gradella/",
+"titolo": "Gradella",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/fortunago/",
+"titolo": "Fortunago",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/cornello-dei-tasso/",
+"titolo": "Cornello dei Tasso",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/castelponzone/",
+"titolo": "Castelponzone",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/castellaro-lagusello/",
+"titolo": "Castellaro Lagusello",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/cassinetta-di-lugagnano/",
+"titolo": "Cassinetta di Lugagnano",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/bienno/",
+"titolo": "Bienno",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/zuccarello/",
+"titolo": "Zuccarello",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/vernazza/",
+"titolo": "Vernazza",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/verezzi/",
+"titolo": "Verezzi",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/varese-ligure/",
+"titolo": "Varese Ligure",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/triora/",
+"titolo": "Triora",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/tellaro/",
+"titolo": "Tellaro",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/seborga/",
+"titolo": "Seborga",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/noli/",
+"titolo": "Noli",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/montemarcello/",
+"titolo": "Montemarcello",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/moneglia/",
+"titolo": "Moneglia",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/millesimo/",
+"titolo": "Millesimo",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/lingueglietta/",
+"titolo": "Lingueglietta",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/laigueglia/",
+"titolo": "Laigueglia",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/framura/",
+"titolo": "Framura",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/finalborgo/",
+"titolo": "Finalborgo",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/colletta/",
+"titolo": "Colletta",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/cervo/",
+"titolo": "Cervo",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/castelvecchio-di-rocca-barbena/",
+"titolo": "Castelvecchio di Rocca Barbena",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/campo-ligure/",
+"titolo": "Campo Ligure",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/brugnato/",
+"titolo": "Brugnato",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/apricale/",
+"titolo": "Apricale",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/volpedo/",
+"titolo": "Volpedo",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/vogogna/",
+"titolo": "Vogogna",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/usseaux/",
+"titolo": "Usseaux",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/ricetto-di-candelo/",
+"titolo": "Ricetto di Candelo",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/ostana/",
+"titolo": "Ostana",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/orta-san-giulio/",
+"titolo": "Orta San Giulio",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/neive/",
+"titolo": "Neive",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/mombaldone/",
+"titolo": "Mombaldone",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/garessio/",
+"titolo": "Garessio",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/garbagna/",
+"titolo": "Garbagna",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/chianale/",
+"titolo": "Chianale",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/bard/",
+"titolo": "Bard",
+"comune": ""
+},
+{
+"url": "https://borghipiubelliditalia.it/borgo/etroubles/",
+"titolo": "Etroubles",
+"comune": ""
+}
+],
 "borghi": {
 "dozza-bo": {
-"url": "https://borghipiubelliditalia.it/evento/dozza-civitas-medievale/",
-"titolo": "Dozza – CIVITAS MEDIEVALE",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/dozza/",
+"titolo": "Dozza",
+"comune": ""
 },
 "brisighella-ra": {
 "url": "https://borghipiubelliditalia.it/borgo/brisighella/",
 "titolo": "Brisighella",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "bagnara-di-romagna-ra": {
 "url": "https://borghipiubelliditalia.it/borgo/bagnara-di-romagna/",
 "titolo": "Bagnara di Romagna",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "bertinoro-fc": {
 "url": "https://borghipiubelliditalia.it/borgo/bertinoro/",
 "titolo": "Bertinoro",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "bagno-di-romagna-fc": {
 "url": "https://borghipiubelliditalia.it/borgo/bagno-di-romagna/",
 "titolo": "Bagno di Romagna",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "verucchio-rn": {
 "url": "https://borghipiubelliditalia.it/borgo/verucchio/",
 "titolo": "Verucchio",
-"tipo": "dt_portfolio"
+"comune": "VERUCCHIO"
 },
 "san-leo-rn": {
 "url": "https://borghipiubelliditalia.it/borgo/san-leo/",
 "titolo": "San Leo",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "montefiore-conca-rn": {
 "url": "https://borghipiubelliditalia.it/borgo/montefiore-conca/",
 "titolo": "Montefiore Conca",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "montegridolfo-rn": {
 "url": "https://borghipiubelliditalia.it/borgo/montegridolfo/",
 "titolo": "Montegridolfo",
-"tipo": "dt_portfolio"
+"comune": ""
 },
-"san-giovanni-in-marignano-rn": null,
-"fiumalbo-mo": null,
+"san-giovanni-in-marignano-rn": {
+"url": "https://borghipiubelliditalia.it/borgo/san-giovanni-in-marignano/",
+"titolo": "San Giovanni in Marignano",
+"comune": ""
+},
+"fiumalbo-mo": {
+"url": "https://borghipiubelliditalia.it/borgo/fiumalbo/",
+"titolo": "Fiumalbo",
+"comune": ""
+},
 "gualtieri-re": {
-"url": "https://borghipiubelliditalia.it/evento/accendiamo-il-natale-2025-a-gualtieri/",
-"titolo": "Accendiamo il Natale 2025 a Gualtieri",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/gualtieri/",
+"titolo": "Gualtieri",
+"comune": ""
 },
 "compiano-pr": {
 "url": "https://borghipiubelliditalia.it/borgo/compiano/",
 "titolo": "Compiano",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "montechiarugolo-pr": {
 "url": "https://borghipiubelliditalia.it/borgo/montechiarugolo/",
 "titolo": "Montechiarugolo",
-"tipo": "dt_portfolio"
+"comune": ""
 },
-"bobbio-pc": null,
+"bobbio-pc": {
+"url": "https://borghipiubelliditalia.it/borgo/bobbio/",
+"titolo": "Bobbio",
+"comune": ""
+},
 "castell-arquato-pc": null,
 "vernasca-pc": null,
 "barberino-tavarnelle-fi": null,
@@ -611,1189 +1994,1293 @@
 "montaione-fi": {
 "url": "https://borghipiubelliditalia.it/borgo/montaione/",
 "titolo": "Montaione",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "scarperia-e-san-piero-fi": null,
 "palazzuolo-sul-senio-fi": {
 "url": "https://borghipiubelliditalia.it/borgo/palazzuolo-sul-senio/",
 "titolo": "Palazzuolo sul Senio",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "cetona-si": {
-"url": "https://borghipiubelliditalia.it/evento/estate-2020-cetona/",
-"titolo": "ESTATE 2020 CETONA",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/cetona/",
+"titolo": "Cetona",
+"comune": ""
 },
 "san-casciano-dei-bagni-si": {
 "url": "https://borghipiubelliditalia.it/borgo/san-casciano-dei-bagni/",
 "titolo": "San Casciano dei Bagni",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "buonconvento-si": {
-"url": "https://borghipiubelliditalia.it/evento/accensione-fiaccola-di-natale-2024-a-buonconvento/",
-"titolo": "Accensione fiaccola di Natale 2024 a Buonconvento",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/buonconvento/",
+"titolo": "Buonconvento",
+"comune": ""
 },
 "anghiari-ar": {
-"url": "https://borghipiubelliditalia.it/evento/anghiari-al-lavoro-per-un-museo-accessibile/",
-"titolo": "ANGHIARI – AL LAVORO PER UN MUSEO ACCESSIBILE",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/anghiari/",
+"titolo": "Anghiari",
+"comune": ""
 },
 "lucignano-ar": {
 "url": "https://borghipiubelliditalia.it/borgo/lucignano/",
 "titolo": "Lucignano",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "loro-ciuffenna-ar": {
 "url": "https://borghipiubelliditalia.it/borgo/loro-ciuffenna/",
 "titolo": "Loro Ciuffenna",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "ortignano-raggiolo-ar": null,
 "castelfranco-piandisco-ar": null,
 "poppi-ar": {
-"url": "https://borghipiubelliditalia.it/evento/dantediil-processo-a-dante-dal-castello-di-poppi/",
-"titolo": "Dantedì:“Il processo a Dante” dal Castello di Poppi",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/poppi/",
+"titolo": "Poppi",
+"comune": ""
 },
-"barga-lu": null,
+"barga-lu": {
+"url": "https://borghipiubelliditalia.it/borgo/barga/",
+"titolo": "Barga",
+"comune": ""
+},
 "castiglione-di-garfagnana-lu": {
-"url": "https://borghipiubelliditalia.it/evento/carnevale-2025-in-piazza-a-castiglione-di-garfagnana/",
-"titolo": "Carnevale 2025 in Piazza a Castiglione di Garfagnana",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/castiglione-di-garfagnana/",
+"titolo": "Castiglione di Garfagnana",
+"comune": ""
 },
 "coreglia-antelminelli-lu": {
 "url": "https://borghipiubelliditalia.it/borgo/coreglia-antelminelli/",
 "titolo": "Coreglia Antelminelli",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "pitigliano-gr": {
 "url": "https://borghipiubelliditalia.it/borgo/pitigliano/",
 "titolo": "Pitigliano",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "sorano-gr": null,
 "capalbio-gr": {
 "url": "https://borghipiubelliditalia.it/borgo/capalbio/",
 "titolo": "Capalbio",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "isola-del-giglio-gr": null,
 "manciano-gr": null,
 "monte-argentario-gr": null,
 "santa-fiora-gr": {
-"url": "https://borghipiubelliditalia.it/evento/carnevale-morto-2026-a-santa-fiora/",
-"titolo": "Carnevale morto 2026 a Santa Fiora",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/santa-fiora/",
+"titolo": "Santa Fiora",
+"comune": ""
 },
 "casale-marittimo-pi": {
 "url": "https://borghipiubelliditalia.it/borgo/casale-marittimo/",
 "titolo": "Casale Marittimo",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "montescudaio-pi": {
-"url": "https://borghipiubelliditalia.it/evento/montescudaio-sotto-lalbero-2021/",
-"titolo": "Montescudaio sotto l’albero 2021",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/montescudaio/",
+"titolo": "Montescudaio",
+"comune": ""
 },
 "suvereto-li": {
-"url": "https://borghipiubelliditalia.it/evento/%f0%9d%99%8e%f0%9d%99%9a%f0%9d%99%a7%f0%9d%99%96%f0%9d%99%a9%f0%9d%99%96-%f0%9d%99%99%f0%9d%99%9a%f0%9d%99%a1%f0%9d%99%a1%f0%9d%99%8a%f0%9d%99%a8%f0%9d%99%a5%f0%9d%99%9e%f0%9d%99%a9/",
-"titolo": "𝙎𝙚𝙧𝙖𝙩𝙖 𝙙𝙚𝙡𝙡’𝙊𝙨𝙥𝙞𝙩𝙚 2026 a Suvereto",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/suvereto/",
+"titolo": "Suvereto",
+"comune": ""
 },
 "piombino-li": null,
 "mulazzo-ms": {
 "url": "https://borghipiubelliditalia.it/borgo/mulazzo/",
 "titolo": "Mulazzo",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "subiaco-rm": {
-"url": "https://borghipiubelliditalia.it/evento/borgo-divino-in-tour-a-subiaco/",
-"titolo": "Borgo diVino in tour a Subiaco",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/subiaco/",
+"titolo": "Subiaco",
+"comune": ""
 },
 "capranica-prenestina-rm": {
 "url": "https://borghipiubelliditalia.it/borgo/capranica-prenestina/",
 "titolo": "Capranica Prenestina",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "nemi-rm": {
 "url": "https://borghipiubelliditalia.it/borgo/nemi/",
 "titolo": "Nemi",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "castel-gandolfo-rm": {
-"url": "https://borghipiubelliditalia.it/evento/carnevalago-il-1-e-2-marzo-2025-il-carnevale-arriva-al-lago-di-castel-gandolfo/",
-"titolo": "Carnevalago! Il 1 e 2 marzo 2025 il carnevale arriva al Lago di Castel Gandolfo",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/castel-gandolfo/",
+"titolo": "Castel Gandolfo",
+"comune": ""
 },
 "castel-san-pietro-romano-rm": {
 "url": "https://borghipiubelliditalia.it/borgo/castel-san-pietro-romano/",
 "titolo": "Castel San Pietro Romano",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "castelnuovo-di-porto-rm": {
 "url": "https://borghipiubelliditalia.it/borgo/castelnuovo-di-porto/",
 "titolo": "Castelnuovo di Porto",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "percile-rm": {
 "url": "https://borghipiubelliditalia.it/borgo/percile/",
 "titolo": "Percile",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "sperlonga-lt": {
-"url": "https://borghipiubelliditalia.it/evento/concerti-nei-borghi-piu-belli-ditalia-sperlonga/",
-"titolo": "Concerti nei Borghi più belli d’Italia – Sperlonga",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/sperlonga/",
+"titolo": "Sperlonga",
+"comune": ""
 },
 "campodimele-lt": null,
 "atina-fr": {
 "url": "https://borghipiubelliditalia.it/borgo/atina/",
 "titolo": "Atina",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "castro-dei-volsci-fr": {
-"url": "https://borghipiubelliditalia.it/evento/concerti-nei-borghi-piu-belli-ditalia-castro-dei-volsci/",
-"titolo": "Concerti nei Borghi più belli d’Italia – Castro dei Volsci",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/castrodeivolsci/",
+"titolo": "Castro dei Volsci",
+"comune": ""
 },
 "boville-ernica-fr": {
 "url": "https://borghipiubelliditalia.it/borgo/boville-ernica/",
 "titolo": "Boville Ernica",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "monte-san-giovanni-campano-fr": null,
 "pico-fr": {
 "url": "https://borghipiubelliditalia.it/borgo/pico/",
 "titolo": "Pico",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "magliano-sabina-ri": null,
-"castel-di-tora-ri": null,
+"castel-di-tora-ri": {
+"url": "https://borghipiubelliditalia.it/borgo/castel-di-tora/",
+"titolo": "Castel di Tora",
+"comune": ""
+},
 "collalto-sabino-ri": {
 "url": "https://borghipiubelliditalia.it/borgo/collalto-sabino/",
 "titolo": "Collalto Sabino",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "greccio-ri": {
 "url": "https://borghipiubelliditalia.it/borgo/greccio/",
 "titolo": "Greccio",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "orvinio-ri": {
 "url": "https://borghipiubelliditalia.it/borgo/orvinio/",
 "titolo": "Orvinio",
-"tipo": "dt_portfolio"
+"comune": ""
 },
-"bagnoregio-vt": {
-"url": "https://borghipiubelliditalia.it/borgo/civita-di-bagnoregio/",
-"titolo": "Civita di Bagnoregio",
-"tipo": "dt_portfolio"
-},
+"bagnoregio-vt": null,
 "caprarola-vt": null,
 "vitorchiano-vt": {
 "url": "https://borghipiubelliditalia.it/borgo/vitorchiano/",
 "titolo": "Vitorchiano",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "sutri-vt": {
 "url": "https://borghipiubelliditalia.it/borgo/sutri/",
 "titolo": "Sutri",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "acquapendente-vt": null,
 "ronciglione-vt": {
 "url": "https://borghipiubelliditalia.it/borgo/ronciglione/",
 "titolo": "Ronciglione",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "bassano-in-teverina-vt": {
 "url": "https://borghipiubelliditalia.it/borgo/bassano-in-teverina/",
 "titolo": "Bassano in Teverina",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "castellabate-sa": {
 "url": "https://borghipiubelliditalia.it/borgo/castellabate/",
 "titolo": "Castellabate",
-"tipo": "dt_portfolio"
+"comune": ""
 },
-"furore-sa": null,
+"furore-sa": {
+"url": "https://borghipiubelliditalia.it/borgo/furore/",
+"titolo": "Furore",
+"comune": ""
+},
 "atrani-sa": {
 "url": "https://borghipiubelliditalia.it/borgo/atrani/",
 "titolo": "Atrani",
-"tipo": "dt_portfolio"
+"comune": ""
 },
-"conca-dei-marini-sa": null,
-"vietri-sul-mare-sa": {
-"url": "https://borghipiubelliditalia.it/evento/borgo-divino-2024-in-tour-a-vietri-sul-mare/",
-"titolo": "Borgo diVino 2024 in tour a Vietri sul Mare",
-"tipo": "ajde_events"
+"conca-dei-marini-sa": {
+"url": "https://borghipiubelliditalia.it/borgo/conca-dei-marini/",
+"titolo": "Conca dei Marini",
+"comune": ""
 },
+"vietri-sul-mare-sa": null,
 "summonte-av": {
 "url": "https://borghipiubelliditalia.it/borgo/summonte/",
 "titolo": "Summonte",
-"tipo": "dt_portfolio"
+"comune": ""
 },
-"nusco-av": null,
+"nusco-av": {
+"url": "https://borghipiubelliditalia.it/borgo/nusco/",
+"titolo": "Nusco",
+"comune": ""
+},
 "frigento-av": {
 "url": "https://borghipiubelliditalia.it/borgo/frigento/",
 "titolo": "Frigento",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "gesualdo-av": {
 "url": "https://borghipiubelliditalia.it/borgo/gesualdo/",
 "titolo": "Gesualdo",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "monteverde-av": {
-"url": "https://borghipiubelliditalia.it/evento/monteverde-estate/",
-"titolo": "Monteverde Estate",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/monteverde/",
+"titolo": "Monteverde",
+"comune": ""
 },
 "savignano-irpino-av": {
 "url": "https://borghipiubelliditalia.it/borgo/savignano-irpino/",
 "titolo": "Savignano Irpino",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "zungoli-av": {
 "url": "https://borghipiubelliditalia.it/borgo/zungoli/",
 "titolo": "Zungoli",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "montesarchio-bn": {
 "url": "https://borghipiubelliditalia.it/borgo/montesarchio/",
 "titolo": "Montesarchio",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "cusano-mutri-bn": {
 "url": "https://borghipiubelliditalia.it/borgo/cusano-mutri/",
 "titolo": "Cusano Mutri",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "sant-agata-de-goti-bn": null,
 "locorotondo-ba": {
 "url": "https://borghipiubelliditalia.it/borgo/locorotondo/",
 "titolo": "Locorotondo",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "sammichele-di-bari-ba": {
 "url": "https://borghipiubelliditalia.it/borgo/sammichele-di-bari/",
 "titolo": "Sammichele di bari",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "cisternino-br": {
-"url": "https://borghipiubelliditalia.it/evento/borgo-divino-2024-in-tour-a-cisternino/",
-"titolo": "Borgo diVino 2024 in tour a Cisternino",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/cisternino/",
+"titolo": "Cisternino",
+"comune": ""
 },
 "monte-sant-angelo-fg": null,
-"bovino-fg": null,
-"alberona-fg": null,
+"bovino-fg": {
+"url": "https://borghipiubelliditalia.it/borgo/bovino/",
+"titolo": "Bovino",
+"comune": ""
+},
+"alberona-fg": {
+"url": "https://borghipiubelliditalia.it/borgo/alberona/",
+"titolo": "Alberona",
+"comune": ""
+},
 "vico-del-gargano-fg": {
 "url": "https://borghipiubelliditalia.it/borgo/vico-del-gargano/",
 "titolo": "Vico del Gargano",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "pietramontecorvino-fg": {
 "url": "https://borghipiubelliditalia.it/borgo/pietramontecorvino/",
 "titolo": "Pietramontecorvino",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "roseto-valfortore-fg": {
-"url": "https://borghipiubelliditalia.it/evento/enzo-gragnaniello-chiude-il-festival-della-montagna-di-roseto-valfortore/",
-"titolo": "Enzo Gragnaniello chiude il ‘Festival della Montagna’ di Roseto Valfortore",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/roseto-valfortore/",
+"titolo": "Roseto Valfortore",
+"comune": ""
 },
-"otranto-le": null,
-"specchia-le": null,
-"presicce-acquarica-le": null,
+"otranto-le": {
+"url": "https://borghipiubelliditalia.it/borgo/otranto/",
+"titolo": "Otranto",
+"comune": ""
+},
+"specchia-le": {
+"url": "https://borghipiubelliditalia.it/borgo/specchia/",
+"titolo": "Specchia",
+"comune": ""
+},
+"presicce-acquarica-le": {
+"url": "https://borghipiubelliditalia.it/borgo/presicce-acquarica/",
+"titolo": "Presicce – Acquarica",
+"comune": ""
+},
 "maruggio-ta": {
 "url": "https://borghipiubelliditalia.it/borgo/maruggio/",
 "titolo": "Maruggio",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "cefalu-pa": {
-"url": "https://borghipiubelliditalia.it/evento/cefalu-dautore-notti-culturali-sotto-le-stelle/",
-"titolo": "Cefalù d’autore – Notti Culturali sotto le stelle",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/cefalu/",
+"titolo": "Cefalù",
+"comune": ""
 },
 "geraci-siculo-pa": {
-"url": "https://borghipiubelliditalia.it/evento/natale-nel-borgo-2025-a-geraci-siculo/",
-"titolo": "“Natale nel borgo 2025” a Geraci Siculo",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/geraci-siculo/",
+"titolo": "Geraci Siculo",
+"comune": ""
 },
 "gangi-pa": {
-"url": "https://borghipiubelliditalia.it/evento/engioy-natale-2022-a-gangi/",
-"titolo": "Engioy Natale 2022 a Gangi",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/gangi/",
+"titolo": "Gangi",
+"comune": ""
 },
 "petralia-soprana-pa": {
 "url": "https://borghipiubelliditalia.it/borgo/petralia-soprana/",
 "titolo": "Petralia Soprana",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "militello-in-val-di-catania-ct": {
 "url": "https://borghipiubelliditalia.it/borgo/militello-in-val-di-catania/",
 "titolo": "Militello in Val di Catania",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "castiglione-di-sicilia-ct": {
 "url": "https://borghipiubelliditalia.it/borgo/castiglione-di-sicilia/",
 "titolo": "Castiglione di Sicilia",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "castroreale-me": {
 "url": "https://borghipiubelliditalia.it/borgo/castroreale/",
 "titolo": "Castroreale",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "novara-di-sicilia-me": {
 "url": "https://borghipiubelliditalia.it/borgo/novara-di-sicilia/",
 "titolo": "Novara di Sicilia",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "san-marco-d-alunzio-me": null,
 "savoca-me": {
-"url": "https://borghipiubelliditalia.it/evento/alla-scoperta-dellincantevole-savoca/",
-"titolo": "Alla scoperta dell’incantevole Savoca",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/savoca/",
+"titolo": "Savoca",
+"comune": ""
 },
 "castelmola-me": {
 "url": "https://borghipiubelliditalia.it/borgo/castelmola/",
 "titolo": "Castelmola",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "forza-d-agro-me": null,
 "montalbano-elicona-me": {
 "url": "https://borghipiubelliditalia.it/borgo/montalbano-elicona/",
 "titolo": "Montalbano Elicona",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "sambuca-di-sicilia-ag": {
-"url": "https://borghipiubelliditalia.it/evento/natale-2022-a-sambuca-di-sicilia/",
-"titolo": "Natale 2022 a Sambuca di Sicilia",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/sambuca-di-sicilia/",
+"titolo": "Sambuca di Sicilia",
+"comune": ""
 },
 "sutera-cl": {
-"url": "https://borghipiubelliditalia.it/evento/23-edizione-presepe-vivente-di-sutera/",
-"titolo": "23° edizione “Presepe Vivente di Sutera”",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/sutera/",
+"titolo": "Sutera",
+"comune": ""
 },
 "sperlinga-en": {
 "url": "https://borghipiubelliditalia.it/borgo/sperlinga/",
 "titolo": "Sperlinga",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "calascibetta-en": {
 "url": "https://borghipiubelliditalia.it/borgo/calascibetta/",
 "titolo": "Calascibetta",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "troina-en": {
 "url": "https://borghipiubelliditalia.it/borgo/troina/",
 "titolo": "Troina",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "monterosso-almo-rg": {
-"url": "https://borghipiubelliditalia.it/evento/37-ed-presepe-vivente-di-monterosso-almo/",
-"titolo": "37° ED. PRESEPE VIVENTE DI MONTEROSSO ALMO",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/monterosso-almo/",
+"titolo": "Monterosso Almo",
+"comune": ""
 },
 "palazzolo-acreide-sr": {
-"url": "https://borghipiubelliditalia.it/evento/mostra-tiraz-palazzolo-acreide/",
-"titolo": "MOSTRA TIRAZ PALAZZOLO ACREIDE",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/palazzolo-acreide/",
+"titolo": "Palazzolo Acreide",
+"comune": ""
 },
 "buccheri-sr": {
 "url": "https://borghipiubelliditalia.it/borgo/buccheri/",
 "titolo": "Buccheri",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "ferla-sr": {
 "url": "https://borghipiubelliditalia.it/borgo/ferla/",
 "titolo": "Ferla",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "erice-tp": {
-"url": "https://borghipiubelliditalia.it/evento/borgo-divino-2024-in-tour-a-erice/",
-"titolo": "Borgo diVino 2024 in tour a Erice",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/erice/",
+"titolo": "Erice",
+"comune": ""
 },
 "salemi-tp": {
-"url": "https://borghipiubelliditalia.it/evento/festa-di-san-giuseppe-2025-a-salemi/",
-"titolo": "Festa di San Giuseppe 2025 a Salemi",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/salemi/",
+"titolo": "Salemi",
+"comune": ""
 },
 "la-maddalena-ss": {
-"url": "https://borghipiubelliditalia.it/evento/natalisola-il-natale-a-la-maddalena/",
-"titolo": "Natalisola – Il Natale a La Maddalena",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/la-maddalena/",
+"titolo": "La Maddalena",
+"comune": ""
 },
 "tempio-pausania-ss": {
 "url": "https://borghipiubelliditalia.it/borgo/tempio-pausania/",
 "titolo": "Tempio Pausania",
-"tipo": "dt_portfolio"
+"comune": ""
 },
-"castelsardo-ss": null,
+"castelsardo-ss": {
+"url": "https://borghipiubelliditalia.it/borgo/castelsardo/",
+"titolo": "Castelsardo",
+"comune": ""
+},
 "atzara-nu": {
-"url": "https://borghipiubelliditalia.it/evento/bando-concorso-comune-di-atzara/",
-"titolo": "BANDO CONCORSO COMUNE DI ATZARA",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/atzara/",
+"titolo": "Atzara",
+"comune": ""
 },
 "bosa-or": {
-"url": "https://borghipiubelliditalia.it/evento/calendario-estivo-bosa/",
-"titolo": "CALENDARIO ESTIVO BOSA",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/bosa/",
+"titolo": "Bosa",
+"comune": ""
 },
-"carloforte-su": null,
+"carloforte-su": {
+"url": "https://borghipiubelliditalia.it/borgo/carloforte/",
+"titolo": "Carloforte",
+"comune": ""
+},
 "sadali-su": {
 "url": "https://borghipiubelliditalia.it/borgo/sadali/",
 "titolo": "Sadali",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "morimondo-mi": {
 "url": "https://borghipiubelliditalia.it/borgo/morimondo/",
 "titolo": "Morimondo",
-"tipo": "dt_portfolio"
+"comune": ""
 },
-"cassinetta-di-lugagnano-mi": null,
+"cassinetta-di-lugagnano-mi": {
+"url": "https://borghipiubelliditalia.it/borgo/cassinetta-di-lugagnano/",
+"titolo": "Cassinetta di Lugagnano",
+"comune": ""
+},
 "lovere-bg": {
-"url": "https://borghipiubelliditalia.it/evento/borgo-divino-in-tour-a-lovere/",
-"titolo": "Borgo diVino in tour a Lovere",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/lovere/",
+"titolo": "Lovere",
+"comune": ""
 },
 "clusone-bg": {
 "url": "https://borghipiubelliditalia.it/borgo/clusone/",
 "titolo": "Clusone",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "camerata-cornello-bg": null,
 "gromo-bg": {
 "url": "https://borghipiubelliditalia.it/borgo/gromo/",
 "titolo": "Gromo",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "bienno-bs": {
-"url": "https://borghipiubelliditalia.it/evento/31-mostra-mercato-bienno/",
-"titolo": "31^ MOSTRA MERCATO BIENNO",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/bienno/",
+"titolo": "Bienno",
+"comune": ""
 },
 "gardone-riviera-bs": {
 "url": "https://borghipiubelliditalia.it/borgo/gardone-riviera/",
 "titolo": "Gardone Riviera",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "bagolino-bs": {
 "url": "https://borghipiubelliditalia.it/borgo/bagolino/",
 "titolo": "Bagolino",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "limone-sul-garda-bs": {
 "url": "https://borghipiubelliditalia.it/borgo/limone-sul-garda/",
 "titolo": "Limone sul Garda",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "monte-isola-bs": {
 "url": "https://borghipiubelliditalia.it/borgo/monte-isola/",
 "titolo": "Monte Isola",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "tremosine-sul-garda-bs": {
 "url": "https://borghipiubelliditalia.it/borgo/tremosine-sul-garda/",
 "titolo": "Tremosine sul Garda",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "tremezzina-co": null,
 "soncino-cr": {
 "url": "https://borghipiubelliditalia.it/borgo/soncino/",
 "titolo": "Soncino",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "pandino-cr": null,
 "scandolara-ravara-cr": null,
 "bellano-lc": {
 "url": "https://borghipiubelliditalia.it/borgo/bellano/",
 "titolo": "Bellano",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "dervio-lc": null,
 "sabbioneta-mn": {
-"url": "https://borghipiubelliditalia.it/evento/il-villaggio-di-babbo-natale-2022-a-sabbioneta/",
-"titolo": "IL VILLAGGIO DI BABBO NATALE 2022 A SABBIONETA",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/sabbioneta/",
+"titolo": "Sabbioneta",
+"comune": ""
 },
 "san-benedetto-po-mn": {
 "url": "https://borghipiubelliditalia.it/borgo/san-benedetto-po/",
 "titolo": "San Benedetto Po",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "curtatone-mn": null,
 "monzambano-mn": null,
 "pomponesco-mn": {
 "url": "https://borghipiubelliditalia.it/borgo/pomponesco/",
 "titolo": "Pomponesco",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "zavattarello-pv": {
 "url": "https://borghipiubelliditalia.it/borgo/zavattarello/",
 "titolo": "Zavattarello",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "fortunago-pv": {
-"url": "https://borghipiubelliditalia.it/evento/borgo-divino-in-tour-a-fortunago/",
-"titolo": "Borgo diVino in tour a Fortunago",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/fortunago/",
+"titolo": "Fortunago",
+"comune": ""
 },
 "golferenzo-pv": {
 "url": "https://borghipiubelliditalia.it/borgo/golferenzo/",
 "titolo": "Golferenzo",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "varzi-pv": {
 "url": "https://borghipiubelliditalia.it/borgo/varzi/",
 "titolo": "Varzi",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "maccagno-con-pino-e-veddasca-va": null,
 "malcesine-vr": {
 "url": "https://borghipiubelliditalia.it/borgo/malcesine/",
 "titolo": "Malcesine",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "sant-ambrogio-di-valpolicella-vr": null,
-"valeggio-sul-mincio-vr": {
-"url": "https://borghipiubelliditalia.it/evento/valeggio-sul-mincio-mercatino-dellantiquariato/",
-"titolo": "VALEGGIO SUL MINCIO – Mercatino dell’Antiquariato",
-"tipo": "ajde_events"
+"valeggio-sul-mincio-vr": null,
+"arqua-petrarca-pd": {
+"url": "https://borghipiubelliditalia.it/borgo/arqua-petrarca/",
+"titolo": "Arquà Petrarca",
+"comune": ""
 },
-"arqua-petrarca-pd": null,
-"montagnana-pd": null,
+"montagnana-pd": {
+"url": "https://borghipiubelliditalia.it/borgo/montagnana/",
+"titolo": "Montagnana",
+"comune": ""
+},
 "asolo-tv": {
-"url": "https://borghipiubelliditalia.it/evento/alla-scoperta-di-asolo/",
-"titolo": "Alla scoperta di Asolo",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/asolo/",
+"titolo": "Asolo",
+"comune": ""
 },
 "cison-di-valmarino-tv": {
 "url": "https://borghipiubelliditalia.it/borgo/cison-di-valmarino/",
 "titolo": "Cison di Valmarino",
-"tipo": "dt_portfolio"
+"comune": ""
 },
-"follina-tv": null,
-"portobuffole-tv": null,
-"borgo-valbelluna-bl": {
-"url": "https://borghipiubelliditalia.it/borgo/mel-di-borgo-valbelluna/",
-"titolo": "Mel di Borgo Valbelluna",
-"tipo": "dt_portfolio"
+"follina-tv": {
+"url": "https://borghipiubelliditalia.it/borgo/follina/",
+"titolo": "Follina",
+"comune": ""
 },
-"rocca-pietore-bl": {
-"url": "https://borghipiubelliditalia.it/raccolta-fondi/",
-"titolo": "Raccolta fondi per il Borgo di Sottoguda (Rocca Pietore)",
-"tipo": "post"
+"portobuffole-tv": {
+"url": "https://borghipiubelliditalia.it/borgo/portobuffole/",
+"titolo": "Portobuffolè",
+"comune": ""
 },
+"borgo-valbelluna-bl": null,
+"rocca-pietore-bl": null,
 "luserna-tn": {
 "url": "https://borghipiubelliditalia.it/borgo/luserna/",
 "titolo": "Luserna",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "borgo-valsugana-tn": {
 "url": "https://borghipiubelliditalia.it/borgo/borgo-valsugana/",
 "titolo": "Borgo Valsugana",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "pieve-tesino-tn": {
 "url": "https://borghipiubelliditalia.it/borgo/pieve-tesino/",
 "titolo": "Pieve Tesino",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "tenno-tn": null,
 "bleggio-superiore-tn": null,
 "bondone-tn": {
 "url": "https://borghipiubelliditalia.it/borgo/bondone/",
 "titolo": "Bondone",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "mezzano-tn": {
-"url": "https://borghipiubelliditalia.it/evento/mezzano-culla-di-note-non-solo-di-musica-ma-anche-di-latte-e-fieno/",
-"titolo": "MEZZANO CULLA DI NOTE. NON SOLO DI MUSICA, MA ANCHE DI LATTE E FIENO",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/mezzano/",
+"titolo": "Mezzano",
+"comune": ""
 },
 "ossana-tn": {
 "url": "https://borghipiubelliditalia.it/borgo/ossana/",
 "titolo": "Ossana",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "san-giovanni-di-fassa-tn": null,
 "san-lorenzo-dorsino-tn": null,
-"chiusa-bz": {
-"url": "https://borghipiubelliditalia.it/evento/concerto-estivo-della-banda-musicale-di-chiusa/",
-"titolo": "Concerto estivo della banda musicale di Chiusa",
-"tipo": "ajde_events"
-},
-"egna-bz": {
-"url": "https://borghipiubelliditalia.it/evento/borgo-divino-in-tour-a-egna/",
-"titolo": "Borgo diVino in tour a Egna",
-"tipo": "ajde_events"
-},
+"chiusa-bz": null,
+"egna-bz": null,
 "vipiteno-bz": null,
-"castelrotto-bz": {
-"url": "https://borghipiubelliditalia.it/evento/natale-in-montagna-2025-a-castelrotto/",
-"titolo": "Natale in montagna 2025 a Castelrotto",
-"tipo": "ajde_events"
-},
-"glorenza-bz": {
-"url": "https://borghipiubelliditalia.it/evento/esposizione-nella-torre-di-sluderno-e-cammino-di-ronda-glorenza/",
-"titolo": "Esposizione nella Torre di Sluderno e cammino di ronda – Glorenza",
-"tipo": "ajde_events"
-},
+"castelrotto-bz": null,
+"glorenza-bz": null,
 "spello-pg": {
-"url": "https://borghipiubelliditalia.it/evento/65-ed-festa-dellolivo-e-sagra-della-bruschetta-oro-di-spello/",
-"titolo": "65° ed. Festa dell’Olivo e Sagra della Bruschetta   “Oro di Spello”",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/spello/",
+"titolo": "Spello",
+"comune": ""
 },
 "bevagna-pg": {
 "url": "https://borghipiubelliditalia.it/borgo/bevagna/",
 "titolo": "Bevagna",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "montefalco-pg": {
 "url": "https://borghipiubelliditalia.it/borgo/montefalco/",
 "titolo": "Montefalco",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "trevi-pg": {
 "url": "https://borghipiubelliditalia.it/borgo/trevi/",
 "titolo": "Trevi",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "norcia-pg": {
 "url": "https://borghipiubelliditalia.it/borgo/norcia/",
 "titolo": "Norcia",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "castiglione-del-lago-pg": {
-"url": "https://borghipiubelliditalia.it/evento/evento-espositivo-a-castiglione-del-lago/",
-"titolo": "EVENTO ESPOSITIVO A CASTIGLIONE DEL LAGO",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/castiglione-del-lago/",
+"titolo": "Castiglione del Lago",
+"comune": ""
 },
 "deruta-pg": {
 "url": "https://borghipiubelliditalia.it/borgo/deruta/",
 "titolo": "Deruta",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "torgiano-pg": {
 "url": "https://borghipiubelliditalia.it/borgo/torgiano/",
 "titolo": "Torgiano",
-"tipo": "dt_portfolio"
+"comune": ""
 },
-"corciano-pg": null,
+"corciano-pg": {
+"url": "https://borghipiubelliditalia.it/borgo/corciano/",
+"titolo": "Corciano",
+"comune": ""
+},
 "panicale-pg": {
 "url": "https://borghipiubelliditalia.it/borgo/panicale/",
 "titolo": "Panicale",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "bettona-pg": {
-"url": "https://borghipiubelliditalia.it/evento/17ma-edizione-del-presepe-vivente-di-bettona/",
-"titolo": "17ma edizione del Presepe Vivente di Bettona",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/bettona/",
+"titolo": "Bettona",
+"comune": ""
 },
 "monte-castello-di-vibio-pg": {
 "url": "https://borghipiubelliditalia.it/borgo/monte-castello-di-vibio/",
 "titolo": "Monte Castello di Vibio",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "massa-martana-pg": {
-"url": "https://borghipiubelliditalia.it/evento/angy-organizza-il-centro-estivo-2024-a-massa-martana/",
-"titolo": "“Angy” organizza il centro estivo 2024 a Massa Martana",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/massa-martana/",
+"titolo": "Massa Martana",
+"comune": ""
 },
 "citerna-pg": {
 "url": "https://borghipiubelliditalia.it/borgo/citerna/",
 "titolo": "Citerna",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "montone-pg": {
 "url": "https://borghipiubelliditalia.it/borgo/montone/",
 "titolo": "Montone",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "paciano-pg": {
 "url": "https://borghipiubelliditalia.it/borgo/paciano/",
 "titolo": "Paciano",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "vallo-di-nera-pg": {
 "url": "https://borghipiubelliditalia.it/borgo/vallo-di-nera/",
 "titolo": "Vallo di Nera",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "allerona-tr": {
-"url": "https://borghipiubelliditalia.it/evento/presepe-vivente-2025-a-allerona/",
-"titolo": "Presepe Vivente 2025 a Allerona",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/allerona/",
+"titolo": "Allerona",
+"comune": ""
 },
 "san-gemini-tr": {
-"url": "https://borghipiubelliditalia.it/evento/san-gemini-%f0%9d%90%a7%f0%9d%90%9a%f0%9d%90%ad%f0%9d%90%ae%f0%9d%90%ab%f0%9d%90%80%f0%9d%90%ad%f0%9d%90%ad%f0%9d%90%a2%f0%9d%90%af%f0%9d%90%9a-%f0%9d%90%a7%f0%9d%90%9a%f0%9d%90%ad%f0%9d%90%ae/",
-"titolo": "SAN GEMINI 𝐧𝐚𝐭𝐮𝐫𝐀𝐭𝐭𝐢𝐯𝐚: 𝐧𝐚𝐭𝐮𝐫𝐚, 𝐬𝐭𝐨𝐫𝐢𝐞 𝐞 𝐦𝐨𝐯𝐢𝐦𝐞𝐧𝐭𝐨 𝐝𝐚 𝐯𝐢𝐯𝐞𝐫𝐞 𝐢𝐧 𝐟𝐚𝐦𝐢𝐠𝐥𝐢𝐚",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/san-gemini/",
+"titolo": "San Gemini",
+"comune": ""
 },
 "lugnano-in-teverina-tr": {
-"url": "https://borghipiubelliditalia.it/evento/festa-della-donna-2024-lugnano-in-teverina/",
-"titolo": "FESTA DELLA DONNA 2024  LUGNANO IN TEVERINA",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/lugnano-in-teverina/",
+"titolo": "Lugnano in Teverina",
+"comune": ""
 },
-"acquasparta-tr": null,
+"acquasparta-tr": {
+"url": "https://borghipiubelliditalia.it/borgo/acquasparta/",
+"titolo": "Acquasparta",
+"comune": ""
+},
 "arrone-tr": {
-"url": "https://borghipiubelliditalia.it/evento/alla-ricerca-dei-fiori-di-san-giovanni-ad-arrone/",
-"titolo": "Alla ricerca dei fiori di San Giovanni ad Arrone",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/arrone/",
+"titolo": "Arrone",
+"comune": ""
 },
 "sassoferrato-an": {
 "url": "https://borghipiubelliditalia.it/borgo/sassoferrato/",
 "titolo": "Sassoferrato",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "offagna-an": {
-"url": "https://borghipiubelliditalia.it/evento/offagna-medievale/",
-"titolo": "Offagna Medievale",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/offagna/",
+"titolo": "Offagna",
+"comune": ""
 },
 "corinaldo-an": {
-"url": "https://borghipiubelliditalia.it/evento/concorso-fotografico-mario-carafoli-corinaldo/",
-"titolo": "Concorso Fotografico Mario Carafòli – Corinaldo",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/corinaldo/",
+"titolo": "Corinaldo",
+"comune": ""
 },
 "morro-d-alba-an": null,
 "macerata-feltria-pu": {
 "url": "https://borghipiubelliditalia.it/borgo/macerata-feltria/",
 "titolo": "Macerata Feltria",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "frontino-pu": {
-"url": "https://borghipiubelliditalia.it/evento/la-cultura-vien-viaggiando-frontino/",
-"titolo": "La cultura vien viaggiando – Frontino",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/frontino/",
+"titolo": "Frontino",
+"comune": ""
 },
 "mercatello-sul-metauro-pu": {
-"url": "https://borghipiubelliditalia.it/evento/iniziative-natalizie-2025-mercatello-sul-metauro/",
-"titolo": "Iniziative natalizie 2025 Mercatello sul Metauro",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/mercatello-sul-metauro/",
+"titolo": "Mercatello sul Metauro",
+"comune": ""
 },
 "mondavio-pu": {
 "url": "https://borghipiubelliditalia.it/borgo/mondavio/",
 "titolo": "Mondavio",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "gradara-pu": {
-"url": "https://borghipiubelliditalia.it/evento/san-valentino-2025-a-gradara/",
-"titolo": "San Valentino 2025 a Gradara",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/gradara/",
+"titolo": "Gradara",
+"comune": ""
 },
-"mondolfo-pu": null,
+"mondolfo-pu": {
+"url": "https://borghipiubelliditalia.it/borgo/mondolfo/",
+"titolo": "Mondolfo",
+"comune": ""
+},
 "monte-grimano-terme-pu": {
 "url": "https://borghipiubelliditalia.it/borgo/monte-grimano-terme/",
 "titolo": "Monte Grimano Terme",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "vallefoglia-pu": null,
 "cingoli-mc": {
-"url": "https://borghipiubelliditalia.it/evento/cingoli-nellarte-del-novecento-inaugurazione-pinacoteca-comunale-donatello-stefanucci/",
-"titolo": "CINGOLI NELL’ARTE DEL NOVECENTO  INAUGURAZIONE PINACOTECA COMUNALE “DONATELLO STEFANUCCI”",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/cingoli/",
+"titolo": "Cingoli",
+"comune": ""
 },
 "montecassiano-mc": {
-"url": "https://borghipiubelliditalia.it/evento/inaugurazione-piazza-unita-ditalia-a-montecassiano/",
-"titolo": "Inaugurazione Piazza Unità d’Italia a Montecassiano",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/montecassiano/",
+"titolo": "Montecassiano",
+"comune": ""
 },
 "treia-mc": {
 "url": "https://borghipiubelliditalia.it/borgo/treia/",
 "titolo": "Treia",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "montelupone-mc": {
-"url": "https://borghipiubelliditalia.it/evento/montelupone-il-test-chiude-la-stagione-teatrale/",
-"titolo": "MONTELUPONE, “IL TEST” CHIUDE LA STAGIONE TEATRALE",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/montelupone/",
+"titolo": "Montelupone",
+"comune": ""
 },
-"montecosaro-mc": null,
+"montecosaro-mc": {
+"url": "https://borghipiubelliditalia.it/borgo/montecosaro/",
+"titolo": "Montecosaro",
+"comune": ""
+},
 "san-ginesio-mc": {
 "url": "https://borghipiubelliditalia.it/borgo/san-ginesio/",
 "titolo": "San Ginesio",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "sarnano-mc": {
 "url": "https://borghipiubelliditalia.it/borgo/sarnano/",
 "titolo": "Sarnano",
-"tipo": "dt_portfolio"
+"comune": ""
 },
-"visso-mc": null,
+"visso-mc": {
+"url": "https://borghipiubelliditalia.it/borgo/visso/",
+"titolo": "Visso",
+"comune": ""
+},
 "ripatransone-ap": {
 "url": "https://borghipiubelliditalia.it/borgo/ripatransone/",
 "titolo": "Ripatransone",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "grottammare-ap": {
-"url": "https://borghipiubelliditalia.it/evento/borgo-divino-2024-in-tour-a-grottammare/",
-"titolo": "Borgo diVino 2024 in tour a Grottammare",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/grottammare/",
+"titolo": "Grottammare",
+"comune": ""
 },
 "montefiore-dell-aso-ap": null,
 "offida-ap": {
 "url": "https://borghipiubelliditalia.it/borgo/offida/",
 "titolo": "Offida",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "moresco-fm": {
-"url": "https://borghipiubelliditalia.it/evento/33ma-sagra-del-braciere-moresco/",
-"titolo": "33MA SAGRA DEL BRACIERE MORESCO",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/moresco/",
+"titolo": "Moresco",
+"comune": ""
 },
 "scanno-aq": {
-"url": "https://borghipiubelliditalia.it/evento/giornate-fai-2025-a-scanno/",
-"titolo": "Giornate Fai 2025 a Scanno",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/scanno/",
+"titolo": "Scanno",
+"comune": ""
 },
-"pescocostanzo-aq": null,
-"tagliacozzo-aq": null,
+"pescocostanzo-aq": {
+"url": "https://borghipiubelliditalia.it/borgo/pescocostanzo/",
+"titolo": "Pescocostanzo",
+"comune": ""
+},
+"tagliacozzo-aq": {
+"url": "https://borghipiubelliditalia.it/borgo/tagliacozzo/",
+"titolo": "Tagliacozzo",
+"comune": ""
+},
 "castel-del-monte-aq": {
 "url": "https://borghipiubelliditalia.it/borgo/castel-del-monte/",
 "titolo": "Castel del Monte",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "opi-aq": {
-"url": "https://borghipiubelliditalia.it/evento/concerti-nei-borghi-2024-opi/",
-"titolo": "CONCERTI NEI BORGHI 2024 – OPI",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/opi/",
+"titolo": "Opi",
+"comune": ""
 },
-"villalago-aq": null,
+"villalago-aq": {
+"url": "https://borghipiubelliditalia.it/borgo/villalago/",
+"titolo": "Villalago",
+"comune": ""
+},
 "anversa-degli-abruzzi-aq": {
 "url": "https://borghipiubelliditalia.it/borgo/anversa-degli-abruzzi/",
 "titolo": "Anversa degli Abruzzi",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "bugnara-aq": {
 "url": "https://borghipiubelliditalia.it/borgo/bugnara/",
 "titolo": "Bugnara",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "introdacqua-aq": {
 "url": "https://borghipiubelliditalia.it/borgo/introdacqua/",
 "titolo": "Introdacqua",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "navelli-aq": {
 "url": "https://borghipiubelliditalia.it/borgo/navelli/",
 "titolo": "Navelli",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "pacentro-aq": {
 "url": "https://borghipiubelliditalia.it/borgo/pacentro-2/",
 "titolo": "Pacentro",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "pettorano-sul-gizio-aq": {
-"url": "https://borghipiubelliditalia.it/evento/2-evento-di-avvicinamento-festival-nazionale-dei-borghi-piu-belli-ditalia-a-pettorano-sul-gizio/",
-"titolo": "2° evento di avvicinamento Festival nazionale dei borghi più belli d’Italia a PETTORANO SUL GIZIO",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/pettorano-sul-gizio/",
+"titolo": "Pettorano sul Gizio",
+"comune": ""
 },
 "santo-stefano-di-sessanio-aq": {
 "url": "https://borghipiubelliditalia.it/borgo/santo-stefano-di-sessanio/",
 "titolo": "Santo Stefano di Sessanio",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "castelli-te": {
-"url": "https://borghipiubelliditalia.it/evento/castelli-e-castellacci-2025/",
-"titolo": "Castelli e Castellacci 2025",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/castelli/",
+"titolo": "Castelli",
+"comune": ""
 },
 "civitella-del-tronto-te": {
 "url": "https://borghipiubelliditalia.it/borgo/civitella-del-tronto/",
 "titolo": "Civitella del Tronto",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "pietracamela-te": {
 "url": "https://borghipiubelliditalia.it/borgo/pietracamela/",
 "titolo": "Pietracamela",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "penne-pe": {
 "url": "https://borghipiubelliditalia.it/borgo/penne/",
 "titolo": "Penne",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "citta-sant-angelo-pe": null,
 "caramanico-terme-pe": {
 "url": "https://borghipiubelliditalia.it/borgo/caramanico-terme/",
 "titolo": "Caramanico Terme",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "abbateggio-pe": {
 "url": "https://borghipiubelliditalia.it/borgo/abbateggio/",
 "titolo": "Abbateggio",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "guardiagrele-ch": {
-"url": "https://borghipiubelliditalia.it/evento/eventi-natalizi-2023-guardiagrele/",
-"titolo": "Eventi natalizi 2023 Guardiagrele",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/guardiagrele/",
+"titolo": "Guardiagrele",
+"comune": ""
 },
 "palena-ch": {
 "url": "https://borghipiubelliditalia.it/borgo/palena/",
 "titolo": "Palena",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "pretoro-ch": {
 "url": "https://borghipiubelliditalia.it/borgo/pretoro/",
 "titolo": "Pretoro",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "rocca-san-giovanni-ch": {
 "url": "https://borghipiubelliditalia.it/borgo/rocca-san-giovanni/",
 "titolo": "Rocca San Giovanni",
-"tipo": "dt_portfolio"
+"comune": ""
 },
-"usseaux-to": null,
+"usseaux-to": {
+"url": "https://borghipiubelliditalia.it/borgo/usseaux/",
+"titolo": "Usseaux",
+"comune": ""
+},
 "cella-monte-al": {
 "url": "https://borghipiubelliditalia.it/borgo/cella-monte/",
 "titolo": "Cella Monte",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "volpedo-al": {
-"url": "https://borghipiubelliditalia.it/evento/carnevale-2026-a-volpedo/",
-"titolo": "Carnevale 2026 a Volpedo",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/volpedo/",
+"titolo": "Volpedo",
+"comune": ""
 },
 "garbagna-al": {
 "url": "https://borghipiubelliditalia.it/borgo/garbagna/",
 "titolo": "Garbagna",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "cocconato-at": {
-"url": "https://borghipiubelliditalia.it/evento/25-aprile-2025-a-cocconato/",
-"titolo": "25 Aprile 2025 a Cocconato",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/cocconato/",
+"titolo": "Cocconato",
+"comune": ""
 },
 "mombaldone-at": {
 "url": "https://borghipiubelliditalia.it/borgo/mombaldone/",
 "titolo": "Mombaldone",
-"tipo": "dt_portfolio"
+"comune": ""
 },
-"candelo-bi": {
-"url": "https://borghipiubelliditalia.it/evento/candelo-e-nikon-al-lavoro-per-una-grande-mostra-evento-la-fotografia-come-emozione-open-air/",
-"titolo": "CANDELO E NIKON: AL LAVORO PER UNA GRANDE MOSTRA-EVENTO LA FOTOGRAFIA COME EMOZIONE OPEN AIR",
-"tipo": "ajde_events"
-},
+"candelo-bi": null,
 "rosazza-bi": {
 "url": "https://borghipiubelliditalia.it/borgo/rosazza/",
 "titolo": "Rosazza",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "garessio-cn": {
 "url": "https://borghipiubelliditalia.it/borgo/garessio/",
 "titolo": "Garessio",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "neive-cn": {
 "url": "https://borghipiubelliditalia.it/borgo/neive/",
 "titolo": "Neive",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "monforte-d-alba-cn": null,
-"pontechianale-cn": {
-"url": "https://borghipiubelliditalia.it/evento/mercatini-di-natale-2026-a-pontechianale/",
-"titolo": "Mercatini di Natale 2026 a Pontechianale",
-"tipo": "ajde_events"
-},
+"pontechianale-cn": null,
 "ostana-cn": {
 "url": "https://borghipiubelliditalia.it/borgo/ostana/",
 "titolo": "Ostana",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "orta-san-giulio-no": {
 "url": "https://borghipiubelliditalia.it/borgo/orta-san-giulio/",
 "titolo": "Orta San Giulio",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "vogogna-vb": {
 "url": "https://borghipiubelliditalia.it/borgo/vogogna/",
 "titolo": "Vogogna",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "bard-ao": {
 "url": "https://borghipiubelliditalia.it/borgo/bard/",
 "titolo": "Bard",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "etroubles-ao": {
 "url": "https://borghipiubelliditalia.it/borgo/etroubles/",
 "titolo": "Etroubles",
-"tipo": "dt_portfolio"
+"comune": ""
 },
-"campo-ligure-ge": null,
+"campo-ligure-ge": {
+"url": "https://borghipiubelliditalia.it/borgo/campo-ligure/",
+"titolo": "Campo Ligure",
+"comune": ""
+},
 "moneglia-ge": {
-"url": "https://borghipiubelliditalia.it/evento/41-edizione-della-mostra-mercato-olio-di-oliva-di-moneglia/",
-"titolo": "41^ edizione della Mostra Mercato Olio di Oliva  di Moneglia",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/moneglia/",
+"titolo": "Moneglia",
+"comune": ""
 },
 "perinaldo-im": {
 "url": "https://borghipiubelliditalia.it/borgo/perinaldo/",
 "titolo": "Perinaldo",
-"tipo": "dt_portfolio"
+"comune": ""
 },
-"seborga-im": null,
-"triora-im": null,
+"seborga-im": {
+"url": "https://borghipiubelliditalia.it/borgo/seborga/",
+"titolo": "Seborga",
+"comune": ""
+},
+"triora-im": {
+"url": "https://borghipiubelliditalia.it/borgo/triora/",
+"titolo": "Triora",
+"comune": ""
+},
 "apricale-im": {
-"url": "https://borghipiubelliditalia.it/evento/borgo-dei-desideri-a-apricale/",
-"titolo": "Borgo dei Desideri a Apricale",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/apricale/",
+"titolo": "Apricale",
+"comune": ""
 },
 "cervo-im": {
 "url": "https://borghipiubelliditalia.it/borgo/cervo/",
 "titolo": "Cervo",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "ceriana-im": {
 "url": "https://borghipiubelliditalia.it/borgo/ceriana/",
 "titolo": "Ceriana",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "diano-castello-im": {
 "url": "https://borghipiubelliditalia.it/borgo/diano-castello/",
 "titolo": "Diano Castello",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "cipressa-im": null,
-"pieve-di-teco-im": null,
+"pieve-di-teco-im": {
+"url": "https://borghipiubelliditalia.it/borgo/pieve-di-teco/",
+"titolo": "Pieve di Teco",
+"comune": ""
+},
 "taggia-im": {
 "url": "https://borghipiubelliditalia.it/borgo/taggia/",
 "titolo": "Taggia",
-"tipo": "dt_portfolio"
+"comune": ""
 },
-"vernazza-sp": null,
+"vernazza-sp": {
+"url": "https://borghipiubelliditalia.it/borgo/vernazza/",
+"titolo": "Vernazza",
+"comune": ""
+},
 "brugnato-sp": {
 "url": "https://borghipiubelliditalia.it/borgo/brugnato/",
 "titolo": "Brugnato",
-"tipo": "dt_portfolio"
+"comune": ""
 },
-"varese-ligure-sp": null,
+"varese-ligure-sp": {
+"url": "https://borghipiubelliditalia.it/borgo/varese-ligure/",
+"titolo": "Varese Ligure",
+"comune": ""
+},
 "deiva-marina-sp": {
 "url": "https://borghipiubelliditalia.it/borgo/deiva-marina/",
 "titolo": "Deiva Marina",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "framura-sp": {
 "url": "https://borghipiubelliditalia.it/borgo/framura/",
 "titolo": "Framura",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "ameglia-sp": null,
 "lerici-sp": null,
-"castelvecchio-di-rocca-barbena-sv": null,
-"noli-sv": null,
+"castelvecchio-di-rocca-barbena-sv": {
+"url": "https://borghipiubelliditalia.it/borgo/castelvecchio-di-rocca-barbena/",
+"titolo": "Castelvecchio di Rocca Barbena",
+"comune": ""
+},
+"noli-sv": {
+"url": "https://borghipiubelliditalia.it/borgo/noli/",
+"titolo": "Noli",
+"comune": ""
+},
 "finale-ligure-sv": null,
 "zuccarello-sv": {
 "url": "https://borghipiubelliditalia.it/borgo/zuccarello/",
 "titolo": "Zuccarello",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "borgio-verezzi-sv": null,
 "castelbianco-sv": null,
 "laigueglia-sv": {
 "url": "https://borghipiubelliditalia.it/borgo/laigueglia/",
 "titolo": "Laigueglia",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "millesimo-sv": {
 "url": "https://borghipiubelliditalia.it/borgo/millesimo/",
 "titolo": "Millesimo",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "palmanova-ud": {
 "url": "https://borghipiubelliditalia.it/borgo/palmanova/",
 "titolo": "Palmanova",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "venzone-ud": {
 "url": "https://borghipiubelliditalia.it/borgo/venzone/",
 "titolo": "Venzone",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "gradisca-d-isonzo-go": null,
 "oriolo-cs": {
-"url": "https://borghipiubelliditalia.it/evento/natale-2022-a-oriolo/",
-"titolo": "Natale 2022 a Oriolo",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/oriolo/",
+"titolo": "Oriolo",
+"comune": ""
 },
-"frosolone-is": null,
+"frosolone-is": {
+"url": "https://borghipiubelliditalia.it/borgo/frosolone/",
+"titolo": "Frosolone",
+"comune": ""
+},
 "irsina-mt": {
 "url": "https://borghipiubelliditalia.it/borgo/irsina/",
 "titolo": "Irsina",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "posada-nu": {
 "url": "https://borghipiubelliditalia.it/borgo/posada/",
 "titolo": "Posada",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "monteleone-di-spoleto-pg": {
 "url": "https://borghipiubelliditalia.it/borgo/monteleone-di-spoleto/",
 "titolo": "Monteleone di Spoleto",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "passignano-sul-trasimeno-pg": {
 "url": "https://borghipiubelliditalia.it/borgo/passignano-sul-trasimeno/",
 "titolo": "Passignano sul Trasimeno",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "frisanco-pn": null,
 "polcenigo-pn": {
 "url": "https://borghipiubelliditalia.it/borgo/polcenigo/",
 "titolo": "Polcenigo",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "sesto-al-reghena-pn": {
 "url": "https://borghipiubelliditalia.it/borgo/sesto-al-reghena/",
 "titolo": "Sesto al Reghena",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "maratea-pz": {
 "url": "https://borghipiubelliditalia.it/borgo/maratea/",
 "titolo": "Maratea",
-"tipo": "dt_portfolio"
+"comune": ""
 },
-"bova-rc": null,
+"bova-rc": {
+"url": "https://borghipiubelliditalia.it/borgo/bova/",
+"titolo": "Bova",
+"comune": ""
+},
 "caldes-tn": {
 "url": "https://borghipiubelliditalia.it/borgo/caldes/",
 "titolo": "Caldes",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "monteleone-d-orvieto-tr": null,
 "altomonte-cs": {
 "url": "https://borghipiubelliditalia.it/borgo/altomonte/",
 "titolo": "Altomonte",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "civita-cs": {
-"url": "https://borghipiubelliditalia.it/borgo/civita-di-bagnoregio/",
-"titolo": "Civita di Bagnoregio",
-"tipo": "dt_portfolio"
+"url": "https://borghipiubelliditalia.it/borgo/civita/",
+"titolo": "Civita",
+"comune": ""
 },
 "morano-calabro-cs": {
 "url": "https://borghipiubelliditalia.it/borgo/morano-calabro/",
 "titolo": "Morano Calabro",
-"tipo": "dt_portfolio"
+"comune": ""
 },
 "santa-severina-kr": {
-"url": "https://borghipiubelliditalia.it/evento/convegno-studi-e-ricerche-a-santa-severina/",
-"titolo": "Convegno “Studi e ricerche a Santa Severina”",
-"tipo": "ajde_events"
+"url": "https://borghipiubelliditalia.it/borgo/santa-severina/",
+"titolo": "Santa Severina",
+"comune": ""
 },
 "gerace-rc": {
 "url": "https://borghipiubelliditalia.it/borgo/gerace/",
 "titolo": "Gerace",
-"tipo": "dt_portfolio"
+"comune": ""
 },
-"stilo-rc": null
+"stilo-rc": {
+"url": "https://borghipiubelliditalia.it/borgo/stilo/",
+"titolo": "Stilo",
+"comune": ""
+}
 }
 }
