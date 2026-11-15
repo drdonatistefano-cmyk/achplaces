@@ -122,7 +122,7 @@ def unesco():
             righe.append({"q": g("item").rsplit("/", 1)[-1], "nome": g("itemLabel"), "whc": g("whc"), "lat": None, "lng": None, "istat": ist, "comune": com, "via": "parte di"}); n2 += 1
     print("unesco: luoghi e comuni «parte di» un bene", n2, flush=True)
     # nomi ufficiali dall'elenco UNESCO
-    nomi = {}
+    nomi = {}; cat = {}
     t, _ = get("https://whc.unesco.org/en/list/xml/")
     if t:
         for row in re.findall(r"<row>(.*?)</row>", t, flags=re.S):
@@ -130,7 +130,9 @@ def unesco():
             nm = re.search(r"<site>(.*?)</site>", row, flags=re.S)
             if idn and nm and st and "Italy" in st.group(1):
                 nomi[idn.group(1)] = html.unescape(re.sub(r"<[^>]+>", "", nm.group(1))).strip()
-    json.dump({"componenti": righe, "nomi_ufficiali": nomi}, open(os.path.join(OUT, "unesco.json"), "w"), ensure_ascii=False, indent=0)
+                ct = re.search(r"<category>(.*?)</category>", row, flags=re.S)
+                if ct: cat[idn.group(1)] = ct.group(1).strip()
+    json.dump({"componenti": righe, "nomi_ufficiali": nomi, "categorie": cat}, open(os.path.join(OUT, "unesco.json"), "w"), ensure_ascii=False, indent=0)
     print("unesco: componenti", len(righe), "beni italiani nell'elenco ufficiale", len(nomi))
 
 if __name__ == "__main__":
