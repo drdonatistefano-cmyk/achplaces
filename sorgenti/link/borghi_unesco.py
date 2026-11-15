@@ -51,17 +51,39 @@ def borghi():
         if len(res) < 100: break
         time.sleep(0.5)
     print("schede borghi:", len(schede), flush=True)
-    perc = {}; pert = {}
+    def nk(t): return re.sub(r" ", "", norm(t))           # Castell’Arquato = Castell'Arquato
+    def nomi(t):                                           # «Chiusa – Klausen», «Castelrotto / Kastelruth»
+        return {nk(t)} | {nk(x) for x in re.split(r"\s[–/-]\s", t)}
+    pert = {}
     for x in schede:
-        if x["comune"]: perc.setdefault(norm(x["comune"]), []).append(x)
-        pert.setdefault(norm(x["titolo"]), []).append(x)
-    out = {}
+        for k in nomi(x["titolo"]): pert.setdefault(k, []).append(x)
+    out = {}; resto = []
     for c in L:
-        nn = norm(c["nome"])
-        k = pert.get(nn) or perc.get(nn) or []
-        # preferisci la scheda col titolo uguale al comune, poi quella del capoluogo
-        out[c["slug"]] = {"url": k[0]["url"], "titolo": k[0]["titolo"], "comune": k[0]["comune"]} if k else None
-        print(f"{c['nome']}: {out[c['slug']]['url'] if k else '-'}", flush=True)
+        k = pert.get(nk(c["nome"]))
+        out[c["slug"]] = {"url": k[0]["url"], "titolo": k[0]["titolo"], "via": "titolo"} if k else None
+        if not k: resto.append(c)
+    # borghi che sono frazioni: si apre la scheda e si legge il comune scritto nella pagina («Comune di …»)
+    usati = {v["url"] for v in out.values() if v}
+    perc = {}
+    for x in schede:
+        if x["url"] in usati: continue
+        pg, _ = get(x["url"])
+        if not pg: continue
+        testo = html.unescape(re.sub(r"<[^>]+>", " ", re.sub(r"(?s)<(script|style)[^>]*>.*?</\1>", " ", pg)))
+        testo = re.sub(r"\s+", " ", testo)
+        m = re.search(r"(?i)\bcomune\s+di\s+([A-ZÀ-Ý][\w'’À-ÿ]*(?:\s+(?:[A-ZÀ-Ý][\w'’À-ÿ]*|di|del|della|dei|de|d’|d'|in|sul|sull’|al|e|con)){0,5})", testo)
+        x["comune"] = m.group(1).strip() if m else ""
+        i = testo.lower().find("comune di"); x["brano"] = testo[max(0, i - 60): i + 120] if i >= 0 else ""
+        print("  ", x["titolo"], "->", x["comune"] or "?", flush=True)
+        for k in nomi(x["comune"]) if x["comune"] else []: perc.setdefault(k, []).append(x)
+        time.sleep(0.4)
+    for c in resto:
+        nn = nk(c["nome"]); k = perc.get(nn)
+        if not k:   # «Comune di Borgo Valbelluna (BL)» o nomi composti: il nome del comune all'inizio del testo letto
+            k = [x for x in schede if x.get("comune") and nk(x["comune"]).startswith(nn)]
+        if k: out[c["slug"]] = {"url": k[0]["url"], "titolo": k[0]["titolo"], "via": "comune: " + k[0]["comune"]}
+    for c in L:
+        v = out[c["slug"]]; print(f"{c['nome']}: {v['url'] + '  (' + v['via'] + ')' if v else '-'}", flush=True)
     json.dump({"schede": schede, "borghi": out}, open(os.path.join(OUT, "borghi.json"), "w"), ensure_ascii=False, indent=0)
     print("borghi: trovati", sum(1 for v in out.values() if v), "su", len(out))
 
