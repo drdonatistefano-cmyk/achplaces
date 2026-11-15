@@ -60,7 +60,7 @@ def borghi():
     print("borghi: trovati", sum(1 for v in out.values() if v), "su", len(out))
 
 def unesco():
-    q = """SELECT ?item ?itemLabel ?whc ?coord ?com ?istat WHERE {
+    q = """SELECT ?item ?itemLabel ?whc ?coord ?com ?comLabel ?istat WHERE {
       ?item wdt:P757 ?whc . ?item wdt:P17 wd:Q38 .
       OPTIONAL { ?item wdt:P625 ?coord }
       OPTIONAL { ?item wdt:P131 ?com . OPTIONAL { ?com wdt:P635 ?istat } }
@@ -74,7 +74,7 @@ def unesco():
             if c:
                 m = re.match(r"Point\(([-\d.]+) ([-\d.]+)\)", c)
                 if m: lng, lat = float(m.group(1)), float(m.group(2))
-            righe.append({"q": g("item").rsplit("/", 1)[-1], "nome": g("itemLabel"), "whc": g("whc"), "lat": lat, "lng": lng, "istat": g("istat")})
+            righe.append({"q": g("item").rsplit("/", 1)[-1], "nome": g("itemLabel"), "whc": g("whc"), "lat": lat, "lng": lng, "istat": g("istat"), "comune": g("comLabel")})
     # nomi ufficiali dall'elenco UNESCO
     nomi = {}
     t, _ = get("https://whc.unesco.org/en/list/xml/")
