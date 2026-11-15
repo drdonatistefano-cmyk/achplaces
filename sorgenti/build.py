@@ -307,7 +307,7 @@ for _c in comuni:
 _tqp=[_p for _c in comuni for _p in _c["places"] if _p.get("tq")]
 print("GetYourGuide: luoghi abbinati", sum(1 for _c in comuni for _p in _c["places"] if _p.get("gy")))
 print("Tiqets: luoghi abbinati", len(_tqp), "| bottone in card", sum(1 for _p in _tqp if _p.get("free") is not True and not _p.get("ticketUrl")), "| link in scheda", sum(1 for _p in _tqp if _p.get("free") is not True), "| gratuiti esclusi", sum(1 for _p in _tqp if _p.get("free") is True))
-PESANTI = ("why", "access", "official", "ownSite", "sources", "tip", "statusNote", "hoursUrl", "wk")   # ticketUrl resta nell'indice: tasto Ticket nelle card (8/11)
+PESANTI = ("why", "access", "official", "ownSite", "sources", "tip", "statusNote", "hoursUrl", "wk", "wh", "whn")   # ticketUrl resta nell'indice: tasto Ticket nelle card (8/11)
 VIA = ("hours", "booking", "rev", "mic")          # non usati dalla pagina
 # 9/11/2026 prezzo stimato (richiesta di Stefano) per i luoghi con ingresso «da verificare»: dai luoghi verificati dello stesso
 # tipo (nella stessa regione se ce ne sono almeno 8, altrimenti in tutta la guida). Se almeno 3 su 4 sono gratuiti → «probabilmente
@@ -341,6 +341,93 @@ print("prezzo stimato: probabilmente gratis", _nst[0], "| stima in euro", _nst[1
 for _cc in comuni:   # 11/11: fonti dei comuni, stessa correzione dei link
     _fs = [[_s[0], LINK_RID.get(_s[1], _s[1])] + list(_s[2:]) for _s in _cc["sources"]]
     _cc["sources"] = [_s for _s in _fs if _s[1] not in LINK_ROTTI] or _fs
+# 15/11/2026 link diretti: pagina ufficiale UNESCO del bene (whc.unesco.org/en/list/<n>/) nella scheda dei luoghi
+# UNESCO, e scheda ufficiale del borgo (borghipiubelliditalia.it/borgo/...) per i comuni del club. Dati raccolti da
+# sorgenti/link/borghi_unesco.py (Actions, ramo collegamenti) e copiati in data/collegamenti/. Solo beni col nome
+# ufficiale nell'elenco UNESCO; con piu' beni nello stesso comune decide la somiglianza dei nomi, altrimenti niente link.
+def _collegamenti():
+    import unicodedata as _u
+    def nn(t): return re.sub(r"[^a-z0-9]+", " ", _u.normalize("NFD", t or "").encode("ascii", "ignore").decode().lower()).strip()
+    def parole(t): return {w for w in nn(t).split() if len(w) > 3}
+    try: U = json.load(open(os.path.join(D, "collegamenti", "unesco.json"), encoding="utf-8"))
+    except Exception: U = None
+    try: B = json.load(open(os.path.join(D, "collegamenti", "borghi.json"), encoding="utf-8"))["borghi"]
+    except Exception: B = {}
+    nb = nu = 0
+    for c in comuni:
+        v = B.get(c["slug"])
+        if v and "aw" in c and "borghi" in c["aw"]:
+            m = re.match(r"https://borghipiubelliditalia\.it/borgo/([a-z0-9-]+)/?$", v["url"])
+            if m: c["bu"] = m.group(1); nb += 1
+    if not U: return
+    N = {k: re.sub(r"<[^>]+>", "", v).strip() for k, v in U["nomi_ufficiali"].items()}
+    per = {}
+    # componenti isolate di un bene grande (una sola in una provincia, contro 8 o piu' altrove): errori di Wikidata
+    # come Santa Maria della Scala di Siena segnata nel bene di Roma -> scartate
+    import collections as _co
+    prov = _co.defaultdict(_co.Counter)
+    for x in U["componenti"]:
+        m = re.match(r"\d+", x.get("whc") or ""); ist = x.get("istat") or ""
+        if m and len(ist) == 6: prov[m.group()][ist[:3]] += 1
+    def isolata(i, ist):
+        c = prov.get(i); return bool(c) and len(ist) == 6 and c[ist[:3]] == 1 and sum(c.values()) - 1 >= 8
+    CAT = U.get("categorie") or {}
+    NOMI = _co.defaultdict(set)          # nomi del bene: ufficiale (inglese) e italiano di Wikidata
+    for i, v in N.items(): NOMI[i].add(v)
+    for x in U["componenti"]:
+        m = re.match(r"\d+", x.get("whc") or "")
+        if m and m.group() in N and not re.search(r"-\d", x["whc"]) and x.get("nome") and not x.get("via"): NOMI[m.group()].add(x["nome"])
+    for x in U["componenti"]:
+        m = re.match(r"\d+", x.get("whc") or "")
+        if not m or m.group() not in N or isolata(m.group(), x.get("istat") or ""): continue
+        ist = x.get("istat") or ""
+        for k in ([ist] if len(ist) == 6 else []) + ([nn(x["comune"])] if x.get("comune") and len(ist) != 3 else []):
+            per.setdefault(k, []).append((m.group(), x["nome"] or ""))
+    FRAZ = [(re.match(r"\d+", x["whc"]).group(), x["nome"] or "", x["comune"]) for x in U["componenti"]
+            if re.match(r"\d+", x.get("whc") or "") and re.match(r"\d+", x["whc"]).group() in N and not x.get("istat") and x.get("comune") and x.get("nome")]
+    def contiene(t, nome):               # «Venezia e la sua laguna» contiene «Venezia»
+        return re.search(r"(^| )" + re.escape(nn(nome)) + r"( |$)", nn(t)) is not None
+    how = _co.Counter()
+    for c in comuni:
+        cand = list(dict.fromkeys(per.get(c.get("istat"), []) + per.get(nn(c["name"]), [])))
+        ids = sorted({i for i, _ in cand})
+        pernome = sorted(i for i in N if any(contiene(t, c["name"]) for t in NOMI[i]))
+        for p in c["places"]:
+            if not p.get("unesco"): continue
+            w = None
+            # 1) la fonte del luogo e' gia' la pagina UNESCO del bene
+            for u in [x[1] for x in p.get("sources", []) if isinstance(x, (list, tuple)) and len(x) > 1] + [p.get("official") or ""]:
+                m = re.match(r"https?://whc\.unesco\.org/(?:en|fr|es)/list/(\d+)", u or "")
+                if m and m.group(1) in N: w = m.group(1); how["fonte"] += 1; break
+            # 2) nome del luogo simile a una componente del bene nel comune (o al nome del bene)
+            if not w and ids:
+                pw = parole(p["name"]); best = (0, None)
+                for i, nome in cand:
+                    for t in [nome] + list(NOMI[i]):
+                        q = parole(t); sc = len(pw & q) / max(1, len(pw | q)) if pw and q else 0
+                        if sc > best[0]: best = (sc, i)
+                if best[0] >= 0.25: w = best[1]; how["nome"] += 1
+            # 2b) componente segnata in una frazione (senza codice ISTAT) che compare nel nome del luogo: Villa Foscari a Malcontenta
+            if not w:
+                pw = parole(p["name"])
+                for i, nome, fr in FRAZ:
+                    if contiene(p["name"], fr) and pw and len(pw & parole(nome)) / max(1, len(pw | parole(nome))) >= 0.4: w = i; how["frazione"] += 1; break
+            # 3) il centro storico UNESCO del comune (Roma, Firenze, Siena, Napoli)
+            if not w:
+                cs = [i for i in set(ids) | set(pernome) if N[i].startswith("Historic Centre")]
+                if len(cs) == 1: w = cs[0]; how["centro storico"] += 1
+            # 4) un solo bene nel comune, e la componente e' il comune intero o porta il suo nome (Cinque Terre, Val d'Orcia)
+            if not w and len(ids) == 1 and any(contiene(nome, c["name"]) for i, nome in cand): w = ids[0]; how["comune nel bene"] += 1
+            # 4b) un solo bene nel comune, dello stesso tipo del luogo (naturale per i luoghi di natura, culturale per gli altri)
+            if not w and len(ids) == 1 and CAT.get(ids[0]):
+                k = CAT[ids[0]]
+                if k == "Mixed" or (k == "Natural") == (p.get("cat") == "natura"): w = ids[0]; how["unico bene, stesso tipo"] += 1
+            # 5) il nome del bene contiene il nome del comune (Venezia e la sua laguna, Mantova e Sabbioneta)
+            if not w and len(pernome) == 1: w = pernome[0]; how["nome del bene"] += 1
+            if w: p["wh"] = w; p["whn"] = N[w]; nu += 1
+    print("collegamenti UNESCO per regola:", dict(how))
+    print(f"collegamenti: {nb} borghi con la scheda ufficiale, {nu} luoghi con la pagina UNESCO del bene")
+_collegamenti()
 _leggeri = copy.deepcopy(comuni); _det = {}
 # 12/11/2026: tipi della pagina Luoghi (Archeologia per civiltà, Castelli, Pievi...) calcolati qui sulla descrizione completa,
 # perché nell'indice della Guida le descrizioni non ci sono. Una combinazione per luogo, nello stesso ordine dei luoghi.
