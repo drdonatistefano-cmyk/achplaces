@@ -1,0 +1,25 @@
+<dialog id="eat" aria-labelledby="eat-h">
+  <form method="dialog" class="eathead"><h2 id="eat-h">📍 Luoghi vicino a te</h2><button class="fx" value="close" aria-label="Chiudi">×</button></form>
+  <div class="eatbody">
+    <div class="eatsec"><b>Da dove parti</b>
+      <button type="button" class="eatgeo" id="eat-geo">📍 Usa la mia posizione</button>
+      <input id="eat-txt" type="text" list="eat-coms" placeholder="o scegli un comune di partenza" autocomplete="off">
+      <datalist id="eat-coms"></datalist>
+      <small id="eat-st" class="eatst">Nessuna posizione scelta.</small>
+    </div>
+    <div class="eatsec"><label for="eat-km"><b>Raggio</b> <span class="eatv" id="eat-kmv">10 km</span></label>
+      <input id="eat-km" type="range" min="1" max="100" step="1" value="10">
+      <div class="eatchips" data-for="eat-km"><button type="button" data-v="5">5 km</button><button type="button" data-v="10">10 km</button><button type="button" data-v="25">25 km</button><button type="button" data-v="50">50 km</button></div>
+    </div>
+    <div class="eatsec"><label for="eat-min"><b>Tempo in auto</b> <span class="eatv" id="eat-minv">30 min</span></label>
+      <input id="eat-min" type="range" min="5" max="120" step="5" value="30">
+      <div class="eatchips" data-for="eat-min"><button type="button" data-v="15">15 min</button><button type="button" data-v="30">30 min</button><button type="button" data-v="45">45 min</button><button type="button" data-v="60">1 ora</button></div>
+    </div>
+    <p class="eatres" id="eat-res"></p>
+  </div>
+  <div class="eatfoot">
+    <button type="button" class="eatgo" id="eat-apply" aria-disabled="true">Mostra i luoghi</button>
+    <button type="button" class="eatgo alt" id="eat-off" hidden>Togli il filtro distanza</button>
+    <small>Distanze in linea d'aria dal punto del luogo, o dal centro del suo comune se il punto esatto non è noto (≈). Il tempo in auto è una stima (circa 40 km/h su strada); quello reale lo vedi con «Come arrivare». La posizione resta sul tuo dispositivo e non viene salvata.</small>
+  </div>
+</dialog>

@@ -1,0 +1,219 @@
+{
+ "https://bottega.vittoriale.it/#/prezzi-e-orari": {
+  "c": 200,
+  "f": "https://bottega.vittoriale.it/#/prezzi-e-orari",
+  "t": "booking - vittoriale degli italiani",
+  "bigl": true,
+  "orari": false
+ },
+ "https://cultura.gov.it/luogo/area-archeologica-antica-citta-di-ferento": {
+  "c": 200,
+  "f": "https://cultura.gov.it/luogo/area-archeologica-antica-citta-di-ferento",
+  "t": "area archeologica antica città di ferento - ministero della cultura",
+  "bigl": true,
+  "orari": true
+ },
+ "https://cultura.gov.it/luogo/area-archeologica-del-teatro-ellenistico-romano-di-nocera-superiore": {
+  "c": 200,
+  "f": "https://cultura.gov.it/luogo/area-archeologica-del-teatro-ellenistico-romano-di-nocera-superiore",
+  "t": "area archeologica del teatro ellenistico-romano di nocera superiore - ministero della cultura",
+  "bigl": true,
+  "orari": true
+ },
+ "https://cultura.gov.it/luogo/area-archeologica-di-fratte": {
+  "c": 200,
+  "f": "https://cultura.gov.it/luogo/area-archeologica-di-fratte",
+  "t": "area archeologica di fratte - ministero della cultura",
+  "bigl": true,
+  "orari": true
+ },
+ "https://cultura.gov.it/luogo/castello-di-montesarchio-e-museo-archeologico-nazionale-del-sannio-caudino": {
+  "c": 200,
+  "f": "https://cultura.gov.it/luogo/castello-di-montesarchio-e-museo-archeologico-nazionale-del-sannio-caudino",
+  "t": "castello di montesarchio e museo archeologico nazionale del sannio caudino - ministero della cultura",
+  "bigl": true,
+  "orari": true
+ },
+ "https://cultura.gov.it/luogo/castello-svevo-di-trani": {
+  "c": 200,
+  "f": "https://cultura.gov.it/luogo/castello-svevo-di-trani",
+  "t": "castello svevo di trani - ministero della cultura",
+  "bigl": true,
+  "orari": true
+ },
+ "https://cultura.gov.it/luogo/collezione-delle-tavolette-di-biccherna-e-mostra-documentaria": {
+  "c": 200,
+  "f": "https://cultura.gov.it/luogo/collezione-delle-tavolette-di-biccherna-e-mostra-documentaria",
+  "t": "collezione delle tavolette di biccherna e mostra documentaria - ministero della cultura",
+  "bigl": true,
+  "orari": true
+ },
+ "https://cultura.gov.it/luogo/museo-archeologico-nazionale-di-castiglioncello": {
+  "c": 200,
+  "f": "https://cultura.gov.it/luogo/museo-archeologico-nazionale-di-castiglioncello",
+  "t": "museo archeologico statale di castiglioncello - ministero della cultura",
+  "bigl": true,
+  "orari": true
+ },
+ "https://cultura.gov.it/luogo/museo-archeologico-nazionale-di-tarquinia": {
+  "c": 200,
+  "f": "https://cultura.gov.it/luogo/museo-archeologico-nazionale-di-tarquinia",
+  "t": "parco archeologico di cerveteri e tarquinia - museo archeologico nazionale di tarquinia - ministero della cultura",
+  "bigl": true,
+  "orari": true
+ },
+ "https://cultura.gov.it/luogo/museo-archeologico-nazionale-di-volcei-marcello-gigante-di-buccino": {
+  "c": 200,
+  "f": "https://cultura.gov.it/luogo/museo-archeologico-nazionale-di-volcei-marcello-gigante-di-buccino",
+  "t": "museo archeologico nazionale  di volcei &quot;marcello gigante&quot; - buccino - ministero della cultura",
+  "bigl": true,
+  "orari": true
+ },
+ "https://cultura.gov.it/luogo/museo-archeologico-nazionale-giuseppe-andreassi-e-parco-archeologico-di-egnazia": {
+  "c": 200,
+  "f": "https://cultura.gov.it/luogo/museo-archeologico-nazionale-giuseppe-andreassi-e-parco-archeologico-di-egnazia",
+  "t": "museo archeologico nazionale “giuseppe andreassi” e parco archeologico di egnazia - ministero della cultura",
+  "bigl": true,
+  "orari": true
+ },
+ "https://cultura.gov.it/luogo/museo-archeologico-provinciale-di-salerno": {
+  "c": 200,
+  "f": "https://cultura.gov.it/luogo/museo-archeologico-provinciale-di-salerno",
+  "t": "museo archeologico provinciale di salerno - ministero della cultura",
+  "bigl": true,
+  "orari": true
+ },
+ "https://cultura.gov.it/luogo/museo-civico-di-foggia": {
+  "c": 200,
+  "f": "https://cultura.gov.it/luogo/museo-civico-di-foggia",
+  "t": "museo civico di foggia - ministero della cultura",
+  "bigl": true,
+  "orari": true
+ },
+ "https://cultura.gov.it/luogo/museo-civita": {
+  "c": 200,
+  "f": "https://cultura.gov.it/luogo/museo-civita",
+  "t": "museo civita - ministero della cultura",
+  "bigl": true,
+  "orari": true
+ },
+ "https://cultura.gov.it/luogo/museo-comunale-trappeto-maratea": {
+  "c": 200,
+  "f": "https://cultura.gov.it/luogo/museo-comunale-trappeto-maratea",
+  "t": "museo comunale trappeto maratea - ministero della cultura",
+  "bigl": true,
+  "orari": true
+ },
+ "https://cultura.gov.it/luogo/museo-degli-strumenti-astronomici": {
+  "c": 200,
+  "f": "https://cultura.gov.it/luogo/museo-degli-strumenti-astronomici",
+  "t": "museo degli strumenti astronomici - ministero della cultura",
+  "bigl": true,
+  "orari": true
+ },
+ "https://cultura.gov.it/luogo/museo-della-fondazione-ettore-pomarici-santomasi": {
+  "c": 200,
+  "f": "https://cultura.gov.it/luogo/museo-della-fondazione-ettore-pomarici-santomasi",
+  "t": "museo della fondazione ettore pomarici santomasi - ministero della cultura",
+  "bigl": true,
+  "orari": true
+ },
+ "https://cultura.gov.it/luogo/museo-e-parco-archeologico-dellantica-kaulonia": {
+  "c": 200,
+  "f": "https://cultura.gov.it/luogo/museo-e-parco-archeologico-dellantica-kaulonia",
+  "t": "museo e parco archeologico dell&#039;antica kaulonìa - ministero della cultura",
+  "bigl": true,
+  "orari": true
+ },
+ "https://cultura.gov.it/luogo/museo-etnografico-del-comune-di-lesina": {
+  "c": 200,
+  "f": "https://cultura.gov.it/luogo/museo-etnografico-del-comune-di-lesina",
+  "t": "museo etnografico del comune di lesina - ministero della cultura",
+  "bigl": true,
+  "orari": true
+ },
+ "https://cultura.gov.it/luogo/museo-naturalistico-del-comune-di-lesina": {
+  "c": 200,
+  "f": "https://cultura.gov.it/luogo/museo-naturalistico-del-comune-di-lesina",
+  "t": "museo naturalistico del comune di lesina - ministero della cultura",
+  "bigl": true,
+  "orari": true
+ },
+ "https://cultura.gov.it/luogo/museo-sigismondo-castromediano": {
+  "c": 200,
+  "f": "https://cultura.gov.it/luogo/museo-sigismondo-castromediano",
+  "t": "museo sigismondo castromediano - ministero della cultura",
+  "bigl": true,
+  "orari": true
+ },
+ "https://cultura.gov.it/luogo/museo-speleologico-franco-anelli": {
+  "c": 200,
+  "f": "https://cultura.gov.it/luogo/museo-speleologico-franco-anelli",
+  "t": "museo speleologico franco anelli - ministero della cultura",
+  "bigl": true,
+  "orari": true
+ },
+ "https://cultura.gov.it/luogo/museo-storico-musicale-di-napoli": {
+  "c": 200,
+  "f": "https://cultura.gov.it/luogo/museo-storico-musicale-di-napoli",
+  "t": "museo storico musicale di napoli - ministero della cultura",
+  "bigl": true,
+  "orari": true
+ },
+ "https://cultura.gov.it/luogo/necropoli-madonna-dell-olivo": {
+  "c": 200,
+  "f": "https://cultura.gov.it/luogo/necropoli-madonna-dell-olivo",
+  "t": "necropoli &quot;madonna dell&#039;olivo&quot; - ministero della cultura",
+  "bigl": true,
+  "orari": true
+ },
+ "https://cultura.gov.it/luogo/palazzo-della-dogana-dei-grani-e-area-archeologica-dellantica-abellinum": {
+  "c": 200,
+  "f": "https://cultura.gov.it/luogo/palazzo-della-dogana-dei-grani-e-area-archeologica-dellantica-abellinum",
+  "t": "palazzo della dogana dei grani e area archeologica dell’antica abellinum - ministero della cultura",
+  "bigl": true,
+  "orari": true
+ },
+ "https://cultura.gov.it/luogo/parco-archeologico-di-ercolano-teatro-romano": {
+  "c": 200,
+  "f": "https://cultura.gov.it/luogo/parco-archeologico-di-ercolano-teatro-romano",
+  "t": "parco archeologico di ercolano - teatro romano - ministero della cultura",
+  "bigl": true,
+  "orari": true
+ },
+ "https://cultura.gov.it/luogo/parco-archeologico-e-antiquarium-di-s-leucio": {
+  "c": 200,
+  "f": "https://cultura.gov.it/luogo/parco-archeologico-e-antiquarium-di-s-leucio",
+  "t": "parco archeologico e antiquarium di s.leucio - ministero della cultura",
+  "bigl": true,
+  "orari": true
+ },
+ "https://cultura.gov.it/luogo/parco-archeologico-urbano-dell-antica-picentia": {
+  "c": 200,
+  "f": "https://cultura.gov.it/luogo/parco-archeologico-urbano-dell-antica-picentia",
+  "t": "parco archeologico urbano dell’antica picentia - ministero della cultura",
+  "bigl": true,
+  "orari": true
+ },
+ "https://cultura.gov.it/luogo/pinacoteca-giuseppe-de-nittis": {
+  "c": 200,
+  "f": "https://cultura.gov.it/luogo/pinacoteca-giuseppe-de-nittis",
+  "t": "pinacoteca &quot;giuseppe de nittis&quot; - ministero della cultura",
+  "bigl": true,
+  "orari": true
+ },
+ "https://www.palazzorealemilano.it/la-tua-visita/biglietti-e-prenotazioni": {
+  "c": 403,
+  "f": "https://www.palazzorealemilano.it/la-tua-visita/biglietti-e-prenotazioni",
+  "t": "403 forbidden",
+  "bigl": false,
+  "orari": false
+ },
+ "https://www.solferinoesanmartino.it/tickets-and-timetables/?lang=en": {
+  "c": 200,
+  "f": "https://www.solferinoesanmartino.it/tickets-and-timetables/?lang=en",
+  "t": "tickets and timetables - san martino e solferino",
+  "bigl": true,
+  "orari": true
+ }
+}

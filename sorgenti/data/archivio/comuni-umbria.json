@@ -1,0 +1,2140 @@
+{
+"regione": "umbria",
+"fonti": {
+"elenco": "ISTAT, elenco comuni al 21 febbraio 2026 (CC BY 4.0), copia Codewriter90x/Italian_Cities su GitHub",
+"siti": "Indice PA (AgID), copia opendatasicilia/comuni-italiani su GitHub, ottobre 2025",
+"mic": "Ministero della Cultura, banca dati Luoghi della cultura (DBUnico, dati.beniculturali.it), copia chimpactonit/proj_webp su GitHub"
+},
+"comuni": [
+{
+"istat": "054001",
+"nome": "Assisi",
+"prov": "PG",
+"sito": "http://comune.assisi.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Galleria d'arte contemporanea della Pro Civitate Christiana",
+"DBUnico.100671"
+],
+[
+"Museo delle arti e mestieri, della casa e della civiltà popolare",
+"DBUnico.100672"
+],
+[
+"Foro romano e collezione archeologica",
+"DBUnico.100673"
+],
+[
+"Museo di San Pietro e cripta di San Vittorino",
+"DBUnico.100674"
+],
+[
+"Museo diocesano e cripta di San Rufino",
+"DBUnico.100675"
+],
+[
+"Museo Pericle Fazzini",
+"DBUnico.100676"
+],
+[
+"Pinacoteca comunale di Assisi",
+"DBUnico.100677"
+],
+[
+"Basilica di San Francesco - Assisi",
+"DBUnico.100679"
+],
+[
+"Museo della Porziuncola",
+"DBUnico.100680"
+],
+[
+"MUMA - Museo missionario indios",
+"DBUnico.100681"
+],
+[
+"Basilica di Santa Maria degli Angeli",
+"DBUnico.108050"
+],
+[
+"Laboratorio ecologico di Geo-Paleontologia",
+"DBUnico.108055"
+],
+[
+"Bosco di San Francesco",
+"DBUnico.108135"
+],
+[
+"Mostra permanente degli antichi mestieri e della civiltà contadina di Assisi",
+"DBUnico.108156"
+],
+[
+"Rocca Maggiore",
+"DBUnico.108157"
+],
+[
+"Archivio di Stato di Perugia. Sezione di Assisi",
+"DBUnico.135676"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Assisi"
+},
+{
+"istat": "054002",
+"nome": "Bastia Umbra",
+"prov": "PG",
+"sito": "http://comune.bastia.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Bastia_Umbra"
+},
+{
+"istat": "054003",
+"nome": "Bettona",
+"prov": "PG",
+"sito": "http://comune.bettona.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo della città di Bettona",
+"DBUnico.100682"
+],
+[
+"Villa del Boccaglione",
+"MiBAC.7077"
+]
+],
+"premi": [
+"borghi"
+],
+"wiki": "https://it.wikipedia.org/wiki/Bettona"
+},
+{
+"istat": "054004",
+"nome": "Bevagna",
+"prov": "PG",
+"sito": "http://comune.bevagna.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Mosaico delle terme romane",
+"DBUnico.100683"
+],
+[
+"Museo civico di Bevagna",
+"DBUnico.100684"
+],
+[
+"Teatro Francesco Torti",
+"DBUnico.108109"
+]
+],
+"premi": [
+"borghi",
+"arancione"
+],
+"wiki": "https://it.wikipedia.org/wiki/Bevagna"
+},
+{
+"istat": "054005",
+"nome": "Campello sul Clitunno",
+"prov": "PG",
+"sito": "http://comune.campello.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Tempietto sul Clitunno",
+"DBUnico.20097"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Campello_sul_Clitunno"
+},
+{
+"istat": "054006",
+"nome": "Cannara",
+"prov": "PG",
+"sito": "http://comune.cannara.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Antiquarium comunale \"Urvinum Hortense\"",
+"DBUnico.100685"
+],
+[
+"Museo della città e del territorio",
+"DBUnico.108066"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Cannara"
+},
+{
+"istat": "054007",
+"nome": "Cascia",
+"prov": "PG",
+"sito": "http://comune.cascia.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo comunale di Palazzo Santi",
+"DBUnico.100686"
+],
+[
+"Chiesa-Museo di Sant'Antonio Abate",
+"DBUnico.104435"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Cascia"
+},
+{
+"istat": "054008",
+"nome": "Castel Ritaldi",
+"prov": "PG",
+"sito": "http://comune.castelritaldi.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Castel_Ritaldi"
+},
+{
+"istat": "054009",
+"nome": "Castiglione del Lago",
+"prov": "PG",
+"sito": "http://comune.castiglione-del-lago.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Circuito museale aperto: Palazzo della Corgna e fortezza medievale",
+"DBUnico.100687"
+]
+],
+"premi": [
+"borghi"
+],
+"wiki": "https://it.wikipedia.org/wiki/Castiglione_del_Lago"
+},
+{
+"istat": "054010",
+"nome": "Cerreto di Spoleto",
+"prov": "PG",
+"sito": "http://comune.cerretodispoleto.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo delle Mummie di Borgo Cerreto - Centro di Documentazione Baronio Vincenzi",
+"DBUnico.108040"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Cerreto_di_Spoleto"
+},
+{
+"istat": "054011",
+"nome": "Citerna",
+"prov": "PG",
+"sito": "http://citerna.net",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Teatro Bontempelli",
+"DBUnico.108110"
+]
+],
+"premi": [
+"borghi"
+],
+"wiki": "https://it.wikipedia.org/wiki/Citerna"
+},
+{
+"istat": "054012",
+"nome": "Città della Pieve",
+"prov": "PG",
+"sito": "http://comune.cittadellapieve.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Oratorio di Santa Maria dei Bianchi",
+"DBUnico.104436"
+],
+[
+"San Pietro",
+"DBUnico.104438"
+],
+[
+"Raccolta d’arte della Cattedrale",
+"DBUnico.105419"
+],
+[
+"Museo civico - diocesano ex Chiesa di Santa Maria dei Servi",
+"DBUnico.108047"
+],
+[
+"Museo di storia naturale e del territorio \"A.Verri\" - Palazzo della Corgna",
+"DBUnico.108076"
+],
+[
+"Il Giardino dei Lauri",
+"DBUnico.108091"
+]
+],
+"premi": [
+"arancione"
+],
+"wiki": "https://it.wikipedia.org/wiki/Città_della_Pieve"
+},
+{
+"istat": "054013",
+"nome": "Città di Castello",
+"prov": "PG",
+"sito": "http://comune.cittadicastello.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Centro di documentazione delle arti grafiche \"Grifani-Donati\" 1799",
+"DBUnico.100690"
+],
+[
+"Collezione tessile di Tela umbra",
+"DBUnico.100691"
+],
+[
+"Collezione Burri - Palazzo Albizzini",
+"DBUnico.100692"
+],
+[
+"Museo del Duomo di Città di Castello",
+"DBUnico.100693"
+],
+[
+"Oratorio di San Crescentino",
+"DBUnico.100694"
+],
+[
+"Pinacoteca comunale di Città di Castello",
+"DBUnico.100695"
+],
+[
+"Raccolta civica di Città di Castello",
+"DBUnico.100696"
+],
+[
+"Raccolta fermodellistica \"Gioacchino Capelletti\"",
+"DBUnico.100697"
+],
+[
+"Collezione Burri - Ex seccatoi del tabacco",
+"DBUnico.100698"
+],
+[
+"Campanile Cilindrico",
+"DBUnico.108045"
+],
+[
+"Centro delle tradizioni popolari \"Livio Dalla Ragione\"",
+"DBUnico.108065"
+],
+[
+"Villa Franchetti \"La Montesca\"",
+"DBUnico.108104"
+],
+[
+"Teatro degli Illuminati",
+"DBUnico.108126"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Città_di_Castello"
+},
+{
+"istat": "054014",
+"nome": "Collazzone",
+"prov": "PG",
+"sito": "http://comune.collazzone.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Collazzone"
+},
+{
+"istat": "054015",
+"nome": "Corciano",
+"prov": "PG",
+"sito": "http://comune.corciano.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo diocesano diffuso di Pieve del Vescovo",
+"DBUnico.100699"
+],
+[
+"Museo della casa contadina di Corciano",
+"DBUnico.100700"
+],
+[
+"Museo della Pievania \"Giuseppe Laudati\"",
+"DBUnico.100701"
+],
+[
+"Antiquarium di Corciano",
+"DBUnico.108082"
+],
+[
+"Chiesa-Museo di San Francesco",
+"DBUnico.20477"
+],
+[
+"Necropoli di Fosso Rigo",
+"MiBAC.7082"
+]
+],
+"premi": [
+"borghi"
+],
+"wiki": "https://it.wikipedia.org/wiki/Corciano"
+},
+{
+"istat": "054016",
+"nome": "Costacciaro",
+"prov": "PG",
+"sito": "http://comunecostacciaro.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo-laboratorio del Parco del Monte Cucco",
+"DBUnico.100702"
+],
+[
+"Antico frantoio dell’olio",
+"DBUnico.108068"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Costacciaro"
+},
+{
+"istat": "054017",
+"nome": "Deruta",
+"prov": "PG",
+"sito": "http://comunederuta.gov.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Fondazione ceramica contemporanea d'autore \"Alviero Moretti\"",
+"DBUnico.100703"
+],
+[
+"Museo regionale della ceramica di Deruta",
+"DBUnico.100704"
+],
+[
+"Museo di fabbrica \"Ubaldo Grazia Maioliche\"",
+"DBUnico.100705"
+],
+[
+"Pinacoteca comunale di Deruta",
+"DBUnico.100706"
+],
+[
+"Santuario della Madonna dei Bagni",
+"DBUnico.100707"
+],
+[
+"Galleria di storia naturale dell’Università degli Studi di Perugia",
+"DBUnico.108087"
+]
+],
+"premi": [
+"borghi"
+],
+"wiki": "https://it.wikipedia.org/wiki/Deruta"
+},
+{
+"istat": "054018",
+"nome": "Foligno",
+"prov": "PG",
+"sito": "http://comune.foligno.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo della città di Palazzo Trinci",
+"DBUnico.100709"
+],
+[
+"Museo capitolare diocesano di Foligno",
+"DBUnico.105053"
+],
+[
+"Centro italiano d’arte contemporanea (CIAC)",
+"DBUnico.108053"
+],
+[
+"Museo archeologico Colfiorito (MAC)",
+"DBUnico.108072"
+],
+[
+"Museo naturalistico del Parco di Colfiorito",
+"DBUnico.108079"
+],
+[
+"Auditorium San Domenico",
+"DBUnico.108111"
+],
+[
+"Palazzo Trinci",
+"DBUnico.108136"
+],
+[
+"Oratorio della Nunziatella",
+"DBUnico.111985"
+],
+[
+"Abbazia di Sassovivo",
+"DBUnico.134443"
+],
+[
+"Archivio di Stato di Perugia. Sezione di Foligno",
+"DBUnico.135675"
+],
+[
+"Foligno - Loc. Rasiglia",
+"MiBAC.7085"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Foligno"
+},
+{
+"istat": "054019",
+"nome": "Fossato di Vico",
+"prov": "PG",
+"sito": "http://comune.fossatodivico.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Antiquarium comunale di Fossato di Vico",
+"DBUnico.100710"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Fossato_di_Vico"
+},
+{
+"istat": "054020",
+"nome": "Fratta Todina",
+"prov": "PG",
+"sito": "http://comune.frattatodina.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Fratta_Todina"
+},
+{
+"istat": "054021",
+"nome": "Giano dell'Umbria",
+"prov": "PG",
+"sito": "http://comune.giano-dellumbria.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Giano_dell'Umbria"
+},
+{
+"istat": "054022",
+"nome": "Gualdo Cattaneo",
+"prov": "PG",
+"sito": "http://comune.gualdocattaneo.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Rocca Sonora",
+"DBUnico.108099"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Gualdo_Cattaneo"
+},
+{
+"istat": "054023",
+"nome": "Gualdo Tadino",
+"prov": "PG",
+"sito": "http://comune.gualdo-tadino.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo civico - Rocca Flea",
+"DBUnico.100711"
+],
+[
+"Museo regionale dell'emigrazione \"Pietro Conti\"",
+"DBUnico.100712"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Gualdo_Tadino"
+},
+{
+"istat": "054024",
+"nome": "Gubbio",
+"prov": "PG",
+"sito": "http://comune.gubbio.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo Civico Palazzo dei Consoli",
+"DBUnico.100713"
+],
+[
+"Museo della Maiolica a Lustro",
+"DBUnico.100714"
+],
+[
+"Teatro comunale di Gubbio",
+"DBUnico.108112"
+],
+[
+"Raccolta delle Memorie Ubaldiane",
+"DBUnico.108133"
+],
+[
+"Museo diocesano di Gubbio",
+"DBUnico.108150"
+],
+[
+"Archivio di Stato di Perugia. Sezione di Gubbio",
+"DBUnico.135677"
+],
+[
+"Parco archeologico del Teatro romano di Gubbio",
+"DBUnico.20012"
+],
+[
+"Palazzo Ducale di Gubbio",
+"DBUnico.20182"
+],
+[
+"Chiesa di Santa Maria Nuova",
+"DBUnico.20465"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Gubbio"
+},
+{
+"istat": "054025",
+"nome": "Lisciano Niccone",
+"prov": "PG",
+"sito": "http://lisciano.org",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Lisciano_Niccone"
+},
+{
+"istat": "054026",
+"nome": "Magione",
+"prov": "PG",
+"sito": "http://comune.magione.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo della pesca del Lago Trasimeno",
+"DBUnico.100716"
+],
+[
+"Torre dei Lambardi",
+"DBUnico.100717"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Magione"
+},
+{
+"istat": "054027",
+"nome": "Marsciano",
+"prov": "PG",
+"sito": "http://comune.marsciano.pg.it/",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo dinamico del laterizio e delle terrecotte",
+"DBUnico.100718"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Marsciano"
+},
+{
+"istat": "054028",
+"nome": "Massa Martana",
+"prov": "PG",
+"sito": "http://comune.massamartana.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Centro documentazione Monti Martani",
+"DBUnico.108060"
+],
+[
+"Catacomba di Villa San Faustino",
+"DBUnico.108098"
+]
+],
+"premi": [
+"borghi"
+],
+"wiki": "https://it.wikipedia.org/wiki/Massa_Martana"
+},
+{
+"istat": "054029",
+"nome": "Monte Castello di Vibio",
+"prov": "PG",
+"sito": "http://comune.montecastellodivibio.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Teatro della Concordia",
+"DBUnico.108113"
+],
+[
+"Torre di Porta Maggio",
+"DBUnico.108134"
+]
+],
+"premi": [
+"borghi"
+],
+"wiki": "https://it.wikipedia.org/wiki/Monte_Castello_di_Vibio"
+},
+{
+"istat": "054030",
+"nome": "Montefalco",
+"prov": "PG",
+"sito": "http://comune.montefalco.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Complesso museale di San Francesco (Montefalco) di Montefalco",
+"DBUnico.100719"
+]
+],
+"premi": [
+"borghi",
+"arancione"
+],
+"wiki": "https://it.wikipedia.org/wiki/Montefalco"
+},
+{
+"istat": "054031",
+"nome": "Monteleone di Spoleto",
+"prov": "PG",
+"sito": "http://comune.monteleone-di-spoleto.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Teatro comunale di Monteleone di Spoleto",
+"DBUnico.108115"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Monteleone_di_Spoleto"
+},
+{
+"istat": "054032",
+"nome": "Monte Santa Maria Tiberina",
+"prov": "PG",
+"sito": "http://montesantamariatiberina.org",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Palazzo Museo del Marchesato imperiale",
+"DBUnico.108131"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Monte_Santa_Maria_Tiberina"
+},
+{
+"istat": "054033",
+"nome": "Montone",
+"prov": "PG",
+"sito": "http://comunemontone.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Complesso museale di San Francesco (Montone) di Montone (fiume)",
+"DBUnico.100720"
+]
+],
+"premi": [
+"borghi",
+"arancione"
+],
+"wiki": "https://it.wikipedia.org/wiki/Montone"
+},
+{
+"istat": "054034",
+"nome": "Nocera Umbra",
+"prov": "PG",
+"sito": "http://comune.noceraumbra.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo civico di San Francesco",
+"DBUnico.100721"
+],
+[
+"Museo archeologico e Centro di documentazione siti territoriali",
+"DBUnico.108062"
+]
+],
+"premi": [
+"arancione"
+],
+"wiki": "https://it.wikipedia.org/wiki/Nocera_Umbra"
+},
+{
+"istat": "054035",
+"nome": "Norcia",
+"prov": "PG",
+"sito": "http://comune.norcia.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Mostra archeologica permanente presso il Criptoportico romano di Porta Ascolana",
+"DBUnico.100722"
+],
+[
+"Museo dei mulini e delle marcite",
+"DBUnico.100723"
+],
+[
+"Museo civico e diocesano di Norcia",
+"DBUnico.100724"
+],
+[
+"Mostra permanente degli antichi mestieri e della civiltà contadina di Norcia",
+"DBUnico.108078"
+],
+[
+"Teatro civico di Norcia",
+"DBUnico.108116"
+]
+],
+"premi": [
+"borghi",
+"arancione"
+],
+"wiki": "https://it.wikipedia.org/wiki/Norcia"
+},
+{
+"istat": "054036",
+"nome": "Paciano",
+"prov": "PG",
+"sito": "http://comune.paciano.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo di San Giuseppe di Paciano",
+"DBUnico.103873"
+]
+],
+"premi": [
+"borghi"
+],
+"wiki": "https://it.wikipedia.org/wiki/Paciano"
+},
+{
+"istat": "054037",
+"nome": "Panicale",
+"prov": "PG",
+"sito": "http://comune.panicale.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo del tulle \"Anita Belleschi Grifoni\"",
+"DBUnico.100725"
+],
+[
+"Museo della Madonna della Sbarra",
+"DBUnico.100726"
+],
+[
+"Pinacoteca Mariottini",
+"DBUnico.100727"
+],
+[
+"Chiesa di San Sebastiano",
+"DBUnico.108077"
+],
+[
+"Teatro Cesare Caporali",
+"DBUnico.108118"
+]
+],
+"premi": [
+"borghi",
+"arancione"
+],
+"wiki": "https://it.wikipedia.org/wiki/Panicale"
+},
+{
+"istat": "054038",
+"nome": "Passignano sul Trasimeno",
+"prov": "PG",
+"sito": "http://comune.passignano-sul-trasimeno.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Centro di documentazione Imbarcazioni tradizionali delle acque interne italiane",
+"DBUnico.100728"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Passignano_sul_Trasimeno"
+},
+{
+"istat": "054039",
+"nome": "Perugia",
+"prov": "PG",
+"sito": "http://comune.perugia.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Cappella di San Severo",
+"DBUnico.100729"
+],
+[
+"Centro di documentazione della Civiltà lungo il Tevere",
+"DBUnico.100730"
+],
+[
+"Museo del capitolo della Cattedrale di San Lorenzo",
+"DBUnico.100731"
+],
+[
+"Museo di Palazzo della Penna",
+"DBUnico.100734"
+],
+[
+"Museo storico della Perugina",
+"DBUnico.100735"
+],
+[
+"Museo \"Studio di vetrate artistiche Moretti Caselli\"",
+"DBUnico.100736"
+],
+[
+"Nobile Collegio del Cambio",
+"DBUnico.100737"
+],
+[
+"Officina della scienza e della tecnologia (POST)",
+"DBUnico.100738"
+],
+[
+"Pozzo etrusco",
+"DBUnico.100739"
+],
+[
+"Sala dell'udienza del Nobile Collegio della Mercanzia",
+"DBUnico.100741"
+],
+[
+"Museo del gioco e del giocattolo di Perugia",
+"DBUnico.103874"
+],
+[
+"Laboratorio di tessitura artistica a mano \"Giuditta Brozzetti\"",
+"DBUnico.105060"
+],
+[
+"Centro studi americanistici Circolo Amerindiano",
+"DBUnico.108043"
+],
+[
+"Palazzo dei Priori",
+"DBUnico.108044"
+],
+[
+"Fuseum",
+"DBUnico.108049"
+],
+[
+"Palazzo Baldeschi al Corso",
+"DBUnico.108054"
+],
+[
+"Chiesa di San Bevignate",
+"DBUnico.108080"
+],
+[
+"Museo della Rocca Paolina",
+"DBUnico.108096"
+],
+[
+"Museo delle acque",
+"DBUnico.108097"
+],
+[
+"Casa-Museo di Palazzo Sorbello",
+"DBUnico.108101"
+],
+[
+"Museo dell’accademia di belle arti",
+"DBUnico.108108"
+],
+[
+"Teatro Morlacchi",
+"DBUnico.108119"
+],
+[
+"Teatro del Pavone",
+"DBUnico.108127"
+],
+[
+"Teatro la Sapienza",
+"DBUnico.108128"
+],
+[
+"Museo delle porte e delle mura urbiche",
+"DBUnico.108154"
+],
+[
+"Raccolta di Palazzo Murena",
+"DBUnico.111986"
+],
+[
+"Archivio di Stato di Perugia",
+"DBUnico.122334"
+],
+[
+"Villa del Colle del Cardinale",
+"DBUnico.20066"
+],
+[
+"Museo archeologico nazionale dell'Umbria",
+"DBUnico.20323"
+],
+[
+"Ipogeo dei Volumni e Necropoli del Palazzone",
+"DBUnico.20373"
+],
+[
+"Musei nazionali di Perugia - Galleria nazionale dell’Umbria",
+"DBUnico.20393"
+],
+[
+"Soprintendenza archivistica e bibliografica dell'Umbria",
+"MiBAC.7073"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Perugia"
+},
+{
+"istat": "054040",
+"nome": "Piegaro",
+"prov": "PG",
+"sito": "http://comune.piegaro.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo del vetro di Piegaro",
+"DBUnico.108052"
+],
+[
+"Museo paleontologico \"Luigi Boldrini\" di Pietrafitta",
+"DBUnico.108132"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Piegaro"
+},
+{
+"istat": "054041",
+"nome": "Pietralunga",
+"prov": "PG",
+"sito": "http://pietralunga.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo ornitologico - naturalistico \"S. Bambini\"",
+"DBUnico.100742"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Pietralunga"
+},
+{
+"istat": "054042",
+"nome": "Poggiodomo",
+"prov": "PG",
+"sito": "http://comune.poggiodomo.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Poggiodomo"
+},
+{
+"istat": "054043",
+"nome": "Preci",
+"prov": "PG",
+"sito": "http://comune.preci.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo dell’Abbazia di Sant'Eutizio",
+"DBUnico.106018"
+],
+[
+"Museo della scuola chirurgica preciana",
+"DBUnico.111987"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Preci"
+},
+{
+"istat": "054044",
+"nome": "San Giustino",
+"prov": "PG",
+"sito": "http://comune.sangiustino.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo storico e scientifico del tabacco",
+"DBUnico.100743"
+],
+[
+"Stabilimento Tipografico \"Pliniana\"",
+"DBUnico.108048"
+],
+[
+"Villa Magherini Graziani e Museo archeologico della Villa di Plinio Il Giovane",
+"DBUnico.108149"
+],
+[
+"Castello Bufalini",
+"DBUnico.20525"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/San_Giustino"
+},
+{
+"istat": "054045",
+"nome": "Sant'Anatolia di Narco",
+"prov": "PG",
+"sito": "http://comune.santanatoliadinarco.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo della canapa di Sant'Anatolia di Narco",
+"DBUnico.108085"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Sant'Anatolia_di_Narco"
+},
+{
+"istat": "054046",
+"nome": "Scheggia e Pascelupo",
+"prov": "PG",
+"sito": "http://comunescheggiaepascelupo.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Abbazia di Sant'Emiliano",
+"DBUnico.20746"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Scheggia_e_Pascelupo"
+},
+{
+"istat": "054047",
+"nome": "Scheggino",
+"prov": "PG",
+"sito": "http://comune.scheggino.pg.it/",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Scheggino"
+},
+{
+"istat": "054048",
+"nome": "Sellano",
+"prov": "PG",
+"sito": "http://comune.sellano.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Sellano"
+},
+{
+"istat": "054049",
+"nome": "Sigillo",
+"prov": "PG",
+"sito": "http://comune.sigillo.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Sigillo"
+},
+{
+"istat": "054050",
+"nome": "Spello",
+"prov": "PG",
+"sito": "http://comune.spello.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Pinacoteca civica di Spello",
+"DBUnico.100745"
+],
+[
+"Villa Fidelia",
+"DBUnico.100746"
+],
+[
+"Collezione permanente Emilio Greco",
+"DBUnico.108067"
+],
+[
+"Collegiata di S. Maria Maggiore",
+"DBUnico.108071"
+],
+[
+"Mosaici di Villa S. Anna",
+"DBUnico.108084"
+],
+[
+"Teatro comunale Subasio",
+"DBUnico.108120"
+]
+],
+"premi": [
+"borghi",
+"arancione"
+],
+"wiki": "https://it.wikipedia.org/wiki/Spello"
+},
+{
+"istat": "054051",
+"nome": "Spoleto",
+"prov": "PG",
+"sito": "http://comune.spoleto.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Casa romana",
+"DBUnico.100747"
+],
+[
+"Laboratorio di scienze della terra - Collezione Toni",
+"DBUnico.100749"
+],
+[
+"Museo del tessile e del costume antico",
+"DBUnico.100750"
+],
+[
+"Centro visita Monteluco",
+"DBUnico.108046"
+],
+[
+"Museo diocesano e Basilica di Sant'Eufemia",
+"DBUnico.108056"
+],
+[
+"Museo delle miniere di Morgnano",
+"DBUnico.108059"
+],
+[
+"Rocca Albornoz - Museo nazionale del Ducato di Spoleto",
+"DBUnico.108074"
+],
+[
+"Palazzo Collicola arti visive - Museo Carandente",
+"DBUnico.108089"
+],
+[
+"Villa Redenta",
+"DBUnico.108106"
+],
+[
+"Teatro nuovo",
+"DBUnico.108121"
+],
+[
+"Teatro Caio Melisso",
+"DBUnico.108122"
+],
+[
+"Basilica di Sant'Eufemia",
+"DBUnico.108137"
+],
+[
+"Palazzo Collicola",
+"DBUnico.108138"
+],
+[
+"Archivio di Stato di Perugia. Sezione di Spoleto",
+"DBUnico.135674"
+],
+[
+"Rocca Albornoziana di Spoleto",
+"DBUnico.20130"
+],
+[
+"Museo archeologico nazionale e Teatro romano di Spoleto",
+"DBUnico.20309"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Spoleto"
+},
+{
+"istat": "054052",
+"nome": "Todi",
+"prov": "PG",
+"sito": "http://comune.todi.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Campanile di San Fortunato",
+"DBUnico.100754"
+],
+[
+"Cisterne romane di Todi",
+"DBUnico.100755"
+],
+[
+"Museo archeologico e Pinacoteca comunale di Todi",
+"DBUnico.100756"
+],
+[
+"Museo della civiltà contadina di Todi",
+"DBUnico.100757"
+],
+[
+"Raccolte nella Cattedrale",
+"DBUnico.100758"
+],
+[
+"Palazzo del Capitano del Popolo",
+"DBUnico.108039"
+],
+[
+"Complesso delle Lucrezie e Lapidarium",
+"DBUnico.108057"
+],
+[
+"Teatro comunale di Todi",
+"DBUnico.108123"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Todi"
+},
+{
+"istat": "054053",
+"nome": "Torgiano",
+"prov": "PG",
+"sito": "http://comune.torgiano.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo del vino Torgiano (MUVIT)",
+"DBUnico.100759"
+],
+[
+"Museo dell'olivo e dell'olio",
+"DBUnico.100760"
+],
+[
+"Parco di sculture di Brufa",
+"DBUnico.108058"
+],
+[
+"Museo Arte Ceramica Contemporanea (Donazione Nino Caruso e Vaselle d'autore)",
+"DBUnico.108092"
+]
+],
+"premi": [
+"borghi"
+],
+"wiki": "https://it.wikipedia.org/wiki/Torgiano"
+},
+{
+"istat": "054054",
+"nome": "Trevi",
+"prov": "PG",
+"sito": "http://comune.trevi.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Complesso Museale di S. Francesco di Trevi",
+"DBUnico.100761"
+],
+[
+"Villa Fabri",
+"DBUnico.108103"
+],
+[
+"Teatro Clitunno",
+"DBUnico.108124"
+],
+[
+"Palazzo Lucarini",
+"DBUnico.111989"
+]
+],
+"premi": [
+"borghi",
+"arancione"
+],
+"wiki": "https://it.wikipedia.org/wiki/Trevi"
+},
+{
+"istat": "054055",
+"nome": "Tuoro sul Trasimeno",
+"prov": "PG",
+"sito": "http://comune.tuoro-sul-trasimeno.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Centro di documentazione permanente su Annibale e la battaglia del Trasimeno",
+"DBUnico.100762"
+],
+[
+"Centro di documentazione dell'isola Maggiore",
+"DBUnico.100763"
+],
+[
+"Museo all'aperto \"Campo del Sole\"",
+"DBUnico.100764"
+],
+[
+"Museo del merletto di Tuoro sul Trasimeno",
+"DBUnico.108081"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Tuoro_sul_Trasimeno"
+},
+{
+"istat": "054056",
+"nome": "Umbertide",
+"prov": "PG",
+"sito": "http://comune.umbertide.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo civico di Santa Croce",
+"DBUnico.100765"
+],
+[
+"Centro per l'arte contemporanea La Rocca di Umbertide",
+"DBUnico.100766"
+],
+[
+"Galleria Rometti",
+"DBUnico.108042"
+],
+[
+"Teatro dei Riuniti",
+"DBUnico.108125"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Umbertide"
+},
+{
+"istat": "054057",
+"nome": "Valfabbrica",
+"prov": "PG",
+"sito": "http://comune.valfabbrica.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Valfabbrica"
+},
+{
+"istat": "054058",
+"nome": "Vallo di Nera",
+"prov": "PG",
+"sito": "http://comune.vallodinera.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"La casa dei racconti",
+"DBUnico.108095"
+]
+],
+"premi": [
+"borghi",
+"arancione"
+],
+"wiki": "https://it.wikipedia.org/wiki/Vallo_di_Nera"
+},
+{
+"istat": "054059",
+"nome": "Valtopina",
+"prov": "PG",
+"sito": "http://comune.valtopina.pg.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo del ricamo e del tessile",
+"DBUnico.108094"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Valtopina"
+},
+{
+"istat": "055001",
+"nome": "Acquasparta",
+"prov": "TR",
+"sito": "http://comune.acquasparta.tr.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [
+"borghi"
+],
+"wiki": "https://it.wikipedia.org/wiki/Acquasparta"
+},
+{
+"istat": "055002",
+"nome": "Allerona",
+"prov": "TR",
+"sito": "http://comune.allerona.tr.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo dei cicli geologici",
+"DBUnico.108073"
+],
+[
+"Villa Cahen",
+"DBUnico.108088"
+],
+[
+"Mostra permanente dei Pugnaloni",
+"DBUnico.108100"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Allerona"
+},
+{
+"istat": "055003",
+"nome": "Alviano",
+"prov": "TR",
+"sito": "http://comune.alviano.tr.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Castello di Alviano",
+"DBUnico.100767"
+],
+[
+"Musei del Castello di Alviano",
+"DBUnico.108151"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Alviano"
+},
+{
+"istat": "055004",
+"nome": "Amelia",
+"prov": "TR",
+"sito": "http://comune.amelia.tr.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Cisterna Romana di Piazza Matteotti (Amelia)",
+"DBUnico.100768"
+],
+[
+"Teatro sociale  (Amelia)",
+"DBUnico.108129"
+],
+[
+"Museo civico archeologico e Pinacoteca \"Edilberto Rosa\"",
+"DBUnico.108153"
+],
+[
+"Palazzo Petrignani",
+"MiBAC.7149"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Amelia"
+},
+{
+"istat": "055005",
+"nome": "Arrone",
+"prov": "TR",
+"sito": "http://comune.arrone.terni.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [
+"borghi"
+],
+"wiki": "https://it.wikipedia.org/wiki/Arrone"
+},
+{
+"istat": "055006",
+"nome": "Attigliano",
+"prov": "TR",
+"sito": "http://comunediattigliano.gov.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Attigliano"
+},
+{
+"istat": "055007",
+"nome": "Baschi",
+"prov": "TR",
+"sito": "http://comune.baschi.tr.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Antiquarium comunale di Paesi Baschi",
+"DBUnico.100770"
+],
+[
+"Museo ovoteca",
+"DBUnico.108069"
+],
+[
+"Area archeologica di Scoppieto",
+"DBUnico.108083"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Baschi"
+},
+{
+"istat": "055008",
+"nome": "Calvi dell'Umbria",
+"prov": "TR",
+"sito": "http://comune.calvidellumbria.tr.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo del Monastero delle Orsoline",
+"DBUnico.100771"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Calvi_dell'Umbria"
+},
+{
+"istat": "055009",
+"nome": "Castel Giorgio",
+"prov": "TR",
+"sito": "http://comune.castelgiorgio.tr.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Castel_Giorgio"
+},
+{
+"istat": "055010",
+"nome": "Castel Viscardo",
+"prov": "TR",
+"sito": "http://comune.castelviscardo.tr.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Centro di documentazione delle terrecotte",
+"DBUnico.100772"
+],
+[
+"Necropoli di Caldane",
+"DBUnico.108064"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Castel_Viscardo"
+},
+{
+"istat": "055011",
+"nome": "Fabro",
+"prov": "TR",
+"sito": "http://comune.fabro.tr.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Fabro"
+},
+{
+"istat": "055012",
+"nome": "Ferentillo",
+"prov": "TR",
+"sito": "http://comune.ferentillo.tr.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Cimitero-Museo \"Le Mummie di Ferentillo\"",
+"DBUnico.100773"
+],
+[
+"Museo etnografico della civiltà preindustriale \"Casarivoso\"",
+"DBUnico.100774"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Ferentillo"
+},
+{
+"istat": "055013",
+"nome": "Ficulle",
+"prov": "TR",
+"sito": "http://comune.ficulle.tr.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Ficulle"
+},
+{
+"istat": "055014",
+"nome": "Giove",
+"prov": "TR",
+"sito": "http://comune.giove.tr.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [
+"borghi"
+],
+"wiki": "https://it.wikipedia.org/wiki/Giove"
+},
+{
+"istat": "055015",
+"nome": "Guardea",
+"prov": "TR",
+"sito": "http://comune.guardea.tr.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Guardea"
+},
+{
+"istat": "055016",
+"nome": "Lugnano in Teverina",
+"prov": "TR",
+"sito": "http://comune.lugnanointeverina.tr.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Antiquarium comunale di Lugnano in Teverina",
+"DBUnico.100775"
+]
+],
+"premi": [
+"borghi"
+],
+"wiki": "https://it.wikipedia.org/wiki/Lugnano_in_Teverina"
+},
+{
+"istat": "055017",
+"nome": "Montecastrilli",
+"prov": "TR",
+"sito": "http://comune.montecastrilli.tr.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Mostra permanente di arnesi e strumenti della civiltà contadina",
+"DBUnico.100776"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Montecastrilli"
+},
+{
+"istat": "055018",
+"nome": "Montecchio",
+"prov": "TR",
+"sito": "http://comune.montecchio.tr.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Antiquarium comunale di Montecchio",
+"DBUnico.100777"
+],
+[
+"Museo della civiltà contadina di Montecchio",
+"DBUnico.100778"
+],
+[
+"Necropoli umbro-etrusca del Vallone San Lorenzo",
+"DBUnico.20786"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Montecchio"
+},
+{
+"istat": "055019",
+"nome": "Montefranco",
+"prov": "TR",
+"sito": "http://comune.montefranco.tr.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Montefranco"
+},
+{
+"istat": "055020",
+"nome": "Montegabbione",
+"prov": "TR",
+"sito": "http://comune.montegabbione.tr.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Convento della Scarzuola e Città Buzziana",
+"DBUnico.100779"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Montegabbione"
+},
+{
+"istat": "055021",
+"nome": "Monteleone d'Orvieto",
+"prov": "TR",
+"sito": "http://comune.monteleone.tr.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Centro documentazione di arte musicale \"Attilio Parelli\"",
+"DBUnico.100780"
+],
+[
+"Teatro dei Rustici",
+"DBUnico.108114"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Monteleone_d'Orvieto"
+},
+{
+"istat": "055022",
+"nome": "Narni",
+"prov": "TR",
+"sito": "http://comune.narni.tr.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Narni sotterranea",
+"DBUnico.100781"
+],
+[
+"Rocca Albornoz di Narni",
+"DBUnico.100782"
+],
+[
+"Acquedotto Romano Formina",
+"DBUnico.104445"
+],
+[
+"Palazzo Eroli",
+"DBUnico.105061"
+],
+[
+"Teatro comunale di Narni",
+"DBUnico.108130"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Narni"
+},
+{
+"istat": "055023",
+"nome": "Orvieto",
+"prov": "TR",
+"sito": "http://comune.orvieto.tr.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo \"Claudio Faina\" e Museo civico",
+"DBUnico.100784"
+],
+[
+"Museo Emilio Greco",
+"DBUnico.100785"
+],
+[
+"Orvieto underground",
+"DBUnico.100786"
+],
+[
+"Pozzo della Cava",
+"DBUnico.100787"
+],
+[
+"Pozzo di San Patrizio",
+"DBUnico.100788"
+],
+[
+"Torre del Moro",
+"DBUnico.100789"
+],
+[
+"Museo dell'opera del Duomo (MODO)",
+"DBUnico.100790"
+],
+[
+"Museo delle maioliche medievali e rinascimentali orvietane",
+"DBUnico.108086"
+],
+[
+"Museo archeologico nazionale di Orvieto",
+"DBUnico.108090"
+],
+[
+"Teatro Luigi Mancinelli",
+"DBUnico.108117"
+],
+[
+"Palazzo Coelli",
+"DBUnico.111990"
+],
+[
+"Necropoli etrusca di Crocifisso del Tufo",
+"DBUnico.20212"
+],
+[
+"Ex Chiesa di Sant'Agostino di Orvieto",
+"DBUnico.20424"
+],
+[
+"Complesso dei Palazzi papali",
+"DBUnico.20455"
+],
+[
+"Abbazia di San Severo e Martirio",
+"DBUnico.20749"
+],
+[
+"Tombe Golini ed Hescanas",
+"MiBAC.7081"
+],
+[
+"Area Archeologica del Santuario Etrusco di Cannicella",
+"MiBAC.7137"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Orvieto"
+},
+{
+"istat": "055024",
+"nome": "Otricoli",
+"prov": "TR",
+"sito": "http://comune.otricoli.tr.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Antiquarium comunale di Otricoli",
+"DBUnico.100791"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Otricoli"
+},
+{
+"istat": "055025",
+"nome": "Parrano",
+"prov": "TR",
+"sito": "http://comune.parrano.tr.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Centro di documentazione territoriale e Tane del Diavolo",
+"DBUnico.100792"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Parrano"
+},
+{
+"istat": "055026",
+"nome": "Penna in Teverina",
+"prov": "TR",
+"sito": "http://comune.pennainteverina.tr.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Penna_in_Teverina"
+},
+{
+"istat": "055027",
+"nome": "Polino",
+"prov": "TR",
+"sito": "http://comune.polino.tr.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo - laboratorio dell'appennino Umbro \"Sotto - Sopra\"",
+"DBUnico.100793"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Polino"
+},
+{
+"istat": "055028",
+"nome": "Porano",
+"prov": "TR",
+"sito": "http://comune.porano.tr.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Villa Paolina",
+"DBUnico.108102"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Porano"
+},
+{
+"istat": "055029",
+"nome": "San Gemini",
+"prov": "TR",
+"sito": "http://comune.sangemini.tr.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Geo-Lab - Museo laboratorio di scienze della terra",
+"DBUnico.100794"
+],
+[
+"Museo dell’opera di Guido Calori",
+"DBUnico.108158"
+]
+],
+"premi": [
+"borghi"
+],
+"wiki": "https://it.wikipedia.org/wiki/San_Gemini"
+},
+{
+"istat": "055030",
+"nome": "San Venanzo",
+"prov": "TR",
+"sito": "http://comune.sanvenanzo.tr.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Parco e museo vulcanologico di San Venanzo",
+"DBUnico.100796"
+],
+[
+"Villa Faina",
+"DBUnico.108041"
+],
+[
+"Centro di documentazione Flora e Fauna del Monte Peglia",
+"DBUnico.108051"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/San_Venanzo"
+},
+{
+"istat": "055031",
+"nome": "Stroncone",
+"prov": "TR",
+"sito": "http://comune.stroncone.tr.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Stroncone"
+},
+{
+"istat": "055032",
+"nome": "Terni",
+"prov": "TR",
+"sito": "http://comune.terni.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Anfiteatro romano di Terni",
+"DBUnico.100798"
+],
+[
+"Mostra permanente di paleontologia",
+"DBUnico.100801"
+],
+[
+"Museo archeologico - CAOS (Centro Arti Opificio Siri)",
+"DBUnico.100802"
+],
+[
+"Museo d’arte moderna e contemporanea \"Aurelio De Felice\" - CAOS (Centro Arti Opificio Siri)",
+"DBUnico.108061"
+],
+[
+"Museo del motorismo ternano",
+"DBUnico.108063"
+],
+[
+"Museo delle armi",
+"DBUnico.108070"
+],
+[
+"Villa Franchetti O \"Villalago\"",
+"DBUnico.108105"
+],
+[
+"Museo diocesano e Capitolare",
+"DBUnico.108155"
+],
+[
+"Centro di documentazione dell’Area naturale protetta del Parco Fluviale del Nel Nera",
+"DBUnico.111994"
+],
+[
+"Raccolta d’arte Fondazione Cassa di Risparmio di Terni e Narni",
+"DBUnico.111995"
+],
+[
+"Archivio di Stato di Terni",
+"DBUnico.114594"
+],
+[
+"Area archeologica di Carsulae",
+"DBUnico.20620"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Terni"
+},
+{
+"istat": "055033",
+"nome": "Avigliano Umbro",
+"prov": "TR",
+"sito": "http://comune.aviglianoumbro.tr.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Centro di paleontologia vegetale della foresta fossile di Dunarobba",
+"DBUnico.100804"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Avigliano_Umbro"
+}
+]
+}

@@ -1,0 +1,212 @@
+{
+ "aggiornato": "2026-11-07",
+ "regola": "Ogni voce si riconferma all'avvio del livello 1 della regione; gli indirizzi segnati 'da ricontrollare' non si usano come prova finché non sono confermati.",
+ "nazionali": [
+  {
+   "nome": "Ministero della Cultura, luoghi della cultura statali",
+   "url": "https://cultura.gov.it/luoghi",
+   "uso": "Musei e monumenti statali: esistenza, gestore, link ufficiale",
+   "stato": "non emerso nelle ricerche di controllo, da ricontrollare"
+  },
+  {
+   "nome": "MiC, banca dati Luoghi della cultura (DBUnico, dati aperti)",
+   "url": "https://dati.cultura.gov.it/",
+   "uso": "Elenco dei luoghi della cultura per comune (base dell'archivio comunale)",
+   "stato": "copia su GitHub usata: chimpactonit/proj_webp, 6.702 luoghi"
+  },
+  {
+   "nome": "UNESCO, siti italiani del Patrimonio mondiale",
+   "url": "https://whc.unesco.org/en/statesparties/it",
+   "uso": "Riconoscimento UNESCO del luogo o del comune",
+   "stato": "da ricontrollare"
+  },
+  {
+   "nome": "I Borghi più belli d'Italia, elenco per regione",
+   "url": "https://borghipiubelliditalia.it/en/borghi/",
+   "uso": "Registro bollino Borghi",
+   "stato": "verificata il 7 novembre 2026"
+  },
+  {
+   "nome": "Touring Club Italiano, Bandiere Arancioni",
+   "url": "https://www.bandierearancioni.it/",
+   "uso": "Registro bollino Bandiera Arancione",
+   "stato": "verificata il 7 novembre 2026"
+  },
+  {
+   "nome": "TCI, guida Bandiere Arancioni 2024 con elenco per regione (PDF)",
+   "url": "https://admin-istituzionale.touringclub.it/uploads/Guida_BA_2024_digital_light.pdf",
+   "uso": "Controllo incrociato dei comuni Bandiera Arancione (aprile 2024; integrare con le nuove assegnazioni)",
+   "stato": "verificata il 7 novembre 2026"
+  },
+  {
+   "nome": "TCI, notizia nuove Bandiere Arancioni (308 borghi, 2026)",
+   "url": "https://www.touringclub.it/notizie/bandiere-arancioni/ecco-le-sei-nuove-bandiere-arancioni-salgono-a-308-i-borghi-certificati-dal-touring-club-italiano",
+   "uso": "Aggiornamento del registro: Sassetta (LI), Stenico (TN), Montefusco (AV) tra le nuove",
+   "stato": "verificata il 7 novembre 2026"
+  },
+  {
+   "nome": "ISTAT, elenco dei comuni al 21 febbraio 2026",
+   "url": "https://github.com/Codewriter90x/Italian_Cities",
+   "uso": "Elenco ufficiale dei comuni e fusioni (copia GitHub, licenza CC BY 4.0)",
+   "stato": "verificata il 7 novembre 2026"
+  },
+  {
+   "nome": "Indice PA (AgID), siti istituzionali dei comuni",
+   "url": "https://github.com/opendatasicilia/comuni-italiani",
+   "uso": "Sito ufficiale di ogni comune (copia GitHub, ottobre 2025)",
+   "stato": "verificata il 7 novembre 2026"
+  },
+  {
+   "nome": "Italia.it, portale turistico nazionale",
+   "url": "https://www.italia.it/it",
+   "uso": "Solo orientamento",
+   "stato": "da ricontrollare"
+  },
+  {
+   "nome": "FAI, beni del Fondo Ambiente Italiano",
+   "url": "https://fondoambiente.it/",
+   "uso": "Beni FAI aperti al pubblico",
+   "stato": "da ricontrollare"
+  }
+ ],
+ "regioni": {
+  "emilia-romagna": {
+   "portale": [
+    "Emilia Romagna Turismo",
+    "https://emiliaromagnaturismo.it/",
+    "verificata il 7 novembre 2026"
+   ],
+   "borghi": "https://borghipiubelliditalia.it/en/emilia-romagna/",
+   "parchi": [
+    "Regione Emilia-Romagna, parchi e Natura 2000",
+    "https://ambiente.regione.emilia-romagna.it/it/parchi-natura2000",
+    "da ricontrollare"
+   ],
+   "province": {
+    "BO": [
+     "Bologna Welcome",
+     "https://www.bolognawelcome.com/"
+    ],
+    "FC": [
+     "Emilia Romagna Turismo, Forlì-Cesena",
+     "https://emiliaromagnaturismo.it/en/towns/cesena"
+    ],
+    "FE": [
+     "Ferrara Terra e Acqua",
+     "https://www.ferraraterraeacqua.it/"
+    ],
+    "MO": [
+     "Visit Modena",
+     "https://www.visitmodena.it/"
+    ],
+    "PC": [
+     "Visit Emilia",
+     "https://www.visitemilia.com/"
+    ],
+    "PR": [
+     "Parma Welcome",
+     "https://parmawelcome.it/"
+    ],
+    "RA": [
+     "Turismo Ravenna",
+     "https://www.turismo.ra.it/"
+    ],
+    "RE": [
+     "Visit Emilia",
+     "https://www.visitemilia.com/"
+    ],
+    "RN": [
+     "Visit Rimini",
+     "https://www.visitrimini.com/"
+    ]
+   }
+  },
+  "toscana": {
+   "portale": [
+    "Visit Tuscany (Regione Toscana)",
+    "https://www.visittuscany.com/it/index.html",
+    "confermato dalla Regione Toscana; da ricontrollare"
+   ],
+   "borghi": "https://borghipiubelliditalia.it/en/toscana/",
+   "parchi": null,
+   "province": {
+    "FI": [
+     "Feel Florence",
+     "https://www.feelflorence.it/"
+    ]
+   },
+   "nota": "La Toscana è organizzata in ambiti turistici, non per provincia: per SI, AR, LU, GR, PI, LI, MS, PT, PO si useranno le schede degli ambiti su Visit Tuscany e i siti degli ambiti."
+  },
+  "lombardia": {
+   "portale": [
+    "in-Lombardia, sito ufficiale del turismo",
+    "https://www.in-lombardia.it/",
+    "verificata il 7 novembre 2026"
+   ],
+   "borghi": "https://borghipiubelliditalia.it/en/lombardia/",
+   "parchi": null,
+   "province": {},
+   "nota": "in-Lombardia ha una sezione per ciascuna delle 12 province (BG, BS, CO, CR, LC, LO, MN, MI, MB, PV, SO, VA): da usare come fonte provinciale di base."
+  },
+  "veneto": {
+   "portale": [
+    "Veneto.eu",
+    "https://www.veneto.eu/",
+    "elenco dei portali regionali della Regione Marche (ottobre 2023), da riconfermare all'avvio della regione"
+   ],
+   "borghi": "https://borghipiubelliditalia.it/en/veneto/",
+   "parchi": null,
+   "province": {}
+  },
+  "lazio": {
+   "portale": [
+    "Visit Lazio",
+    "https://www.visitlazio.com/",
+    "indicato come portale del turismo dal sito della Regione Lazio"
+   ],
+   "borghi": null,
+   "parchi": [
+    "Parchi Lazio, portale delle aree protette (indicato dal sito della Regione Lazio)",
+    "",
+    "indirizzo da trovare all'avvio del Lazio"
+   ],
+   "province": {}
+  },
+  "campania": {
+   "portale": [
+    "inCampania",
+    "https://incampania.com/",
+    "elenco dei portali regionali della Regione Marche (ottobre 2023), da riconfermare all'avvio della regione"
+   ],
+   "borghi": null,
+   "parchi": null,
+   "province": {}
+  },
+  "sardegna": {
+   "portale": [
+    "Sardegna Turismo",
+    "https://www.sardegnaturismo.it/",
+    "elenco dei portali regionali della Regione Marche (ottobre 2023), da riconfermare all'avvio della regione"
+   ],
+   "borghi": null,
+   "parchi": null,
+   "province": {},
+   "nota": "Le province sarde sono cambiate nel 2025-2026: l'elenco dei comuni segue i codici ISTAT del 21 febbraio 2026."
+  },
+  "trentino-alto-adige": {
+   "portale": [
+    "Visit Trentino",
+    "https://www.visittrentino.info/it",
+    "elenco dei portali regionali della Regione Marche (ottobre 2023), da riconfermare all'avvio della regione"
+   ],
+   "portale2": [
+    "Alto Adige / Südtirol",
+    "https://www.suedtirol.info/it/it",
+    "elenco dei portali regionali della Regione Marche (ottobre 2023), da riconfermare all'avvio della regione"
+   ],
+   "borghi": null,
+   "parchi": null,
+   "province": {}
+  }
+ }
+}

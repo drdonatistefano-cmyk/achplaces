@@ -1,0 +1,12 @@
+# Indizi da Wikidata per Campolongo Maggiore (10/11/2026): elenco di luoghi che esistono nel comune. NON sono fonti: servono a sapere cosa cercare.
+# Per ogni voce cerca una fonte ufficiale (sito del gestore indicato, Comune, parrocchia/Diocesi, Regione, ente turistico, MiC/ICCD) che la descriva.
+# Wikipedia serve solo a trovare link a fonti ufficiali (note, collegamenti esterni), mai come fonte da citare.
+- Bojon | villaggio | wiki: https://it.wikipedia.org/wiki/Bojon
+- Mostra didattico archeologica "Gianna Ravagnan" | museo archeologico | tutela: bene culturale italiano
+- chiesa di San Lorenzo | chiesa | wiki: https://it.wikipedia.org/wiki/Chiesa_di_San_Lorenzo_(Campolongo_Maggiore)
+- chiesa dei Santi Felice e Fortunato | chiesa
+- chiesa di San Nicola | chiesa
+- chiesa di Santa Maria Assunta | chiesa
+- municipio di Campolongo Maggiore | palazzo comunale
+- oratorio della Madonna di Lourdes | oratorio
+- oratorio di Sant'Antonio da Padova | chiesa

@@ -1,0 +1,16 @@
+# Indizi da Wikidata per Pray (10/11/2026): elenco di luoghi che esistono nel comune. NON sono fonti: servono a sapere cosa cercare.
+# Per ogni voce cerca una fonte ufficiale (sito del gestore indicato, Comune, parrocchia/Diocesi, Regione, ente turistico, MiC/ICCD) che la descriva.
+# Wikipedia serve solo a trovare link a fonti ufficiali (note, collegamenti esterni), mai come fonte da citare.
+- Valle Sessera | valle | wiki: https://it.wikipedia.org/wiki/Valle_Sessera
+- chiesa dell'Assunta (Santuario del Guarnero) | chiesa
+- chiesa della Beata Vergine d'Oropa | chiesa
+- chiesa della Madonna Immacolata | chiesa
+- chiesa di San Giuseppe | chiesa
+- chiesa di San Grato | chiesa
+- chiesa di San Pietro | chiesa
+- chiesa di San Rocco | chiesa
+- chiesa di Sant'Ambrogio | chiesa
+- chiesa di Sant'Antonio | chiesa
+- chiesa di Sant'Eusebio | chiesa
+- oratorio di Santa Maria Assunta | chiesa
+- palazzo comunale | palazzo comunale

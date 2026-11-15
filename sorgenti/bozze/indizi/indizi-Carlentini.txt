@@ -1,0 +1,23 @@
+# Indizi da Wikidata per Carlentini (10/11/2026): elenco di luoghi che esistono nel comune. NON sono fonti: servono a sapere cosa cercare.
+# Per ogni voce cerca una fonte ufficiale (sito del gestore indicato, Comune, parrocchia/Diocesi, Regione, ente turistico, MiC/ICCD) che la descriva.
+# Wikipedia serve solo a trovare link a fonti ufficiali (note, collegamenti esterni), mai come fonte da citare.
+- chiesa di Santa Tecla Vergine | chiesa | sito: http://www.parrocchiasantatecla.it/nuovosito/index.php?option=com_content&view=featured&Itemid=101 | wiki: https://it.wikipedia.org/wiki/Chiesa_di_Santa_Tecla_Vergine
+- area archeologica di Lentinoi | museo, parco archeologico | tutela: bene culturale italiano
+- terremoto di Carlentini del 1990 | disastro, disastro naturale, terremoto | wiki: https://it.wikipedia.org/wiki/Terremoto_di_Carlentini_del_1990
+- Chiesa Madre, Carlentini | chiesa
+- Grotta del Crocifisso | chiesa
+- I.T.I. Carlentini | istituto tecnico
+- I.T.I. Carlentini-Serale- | istituto tecnico
+- Palazzo comunale | palazzo comunale
+- Parco archeologico di Leontinoi e Megara - Area archeologica di Leontinoi - San Mauro | museo di un ente pubblico, parco archeologico
+- chiesa Santa Famiglia di Nazaret | chiesa
+- chiesa del Cuore Immacolato di Maria e Sant'Anna | chiesa
+- chiesa dell'Immacolata Concezione | chiesa
+- chiesa della Madonna del Carmine | chiesa
+- chiesa di Maria Santissima della Stella | chiesa
+- chiesa di San Giuseppe Giusto | chiesa
+- chiesa di San Sebastiano | chiesa
+- chiesa di Sant'Anna | chiesa
+- chiesa di Santa Maria degli Ammalati | chiesa
+- chiesa di Santa Maria delle Grazie | chiesa
+- chiesa di Santa Maria di Roccadia | chiesa

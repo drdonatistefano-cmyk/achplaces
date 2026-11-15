@@ -1,0 +1,6 @@
+# Indizi da Wikidata per Rosta (10/11/2026): elenco di luoghi che esistono nel comune. NON sono fonti: servono a sapere cosa cercare.
+# Per ogni voce cerca una fonte ufficiale (sito del gestore indicato, Comune, parrocchia/Diocesi, Regione, ente turistico, MiC/ICCD) che la descriva.
+# Wikipedia serve solo a trovare link a fonti ufficiali (note, collegamenti esterni), mai come fonte da citare.
+- Cappella della Madonna delle Grazie | cappella
+- chiesa di San Michele Arcangelo | chiesa
+- palazzo comunale | palazzo comunale

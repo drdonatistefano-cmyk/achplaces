@@ -1,0 +1,43 @@
+name: Pubblica il sito (GitHub Pages)
+# 10/11/2026 sera: pubblicazione «via GitHub Actions» al posto di quella automatica dal ramo.
+# - pubblica solo i file del sito (niente sorgenti/, .github/, README): ~250 MB invece di ~300, e i sorgenti non sono piu' online;
+# - una pubblicazione non annulla quella in corso (concurrency senza cancel-in-progress: la nuova aspetta);
+# - attesa fino a 30 minuti invece di 10, e un secondo tentativo automatico se la prima scade;
+# - parte a ogni push su main che tocca il sito; i commit fatti dai flussi col GITHUB_TOKEN non fanno partire i push,
+#   per quelli c'e' il Guardiano (pages-guardiano.yml) che la avvia se l'ultimo commit non e' online.
+on:
+  push:
+    branches: [main]
+    paths-ignore: ['sorgenti/**', '.github/**', 'README.md']
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  pubblica:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    environment: { name: github-pages, url: "${{ steps.d1.outputs.page_url || steps.d2.outputs.page_url }}" }
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 1 }
+      - name: Solo i file del sito
+        run: |
+          mkdir _site
+          for f in * .nojekyll; do case "$f" in sorgenti|README.md|_site) ;; *) cp -r "$f" _site/ ;; esac; done
+          echo "file: $(find _site -type f | wc -l)  peso: $(du -sh _site | cut -f1)"
+          echo "${{ github.sha }}" > _site/versione.txt
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: _site }
+      - id: d1
+        uses: actions/deploy-pages@v4
+        continue-on-error: true
+        with: { timeout: 1800000 }
+      - id: d2
+        if: steps.d1.outcome == 'failure'
+        uses: actions/deploy-pages@v4
+        with: { timeout: 1800000 }

@@ -1,0 +1,21 @@
+# Indizi da Wikidata per Ronco Briantino (10/11/2026): elenco di luoghi che esistono nel comune. NON sono fonti: servono a sapere cosa cercare.
+# Per ogni voce cerca una fonte ufficiale (sito del gestore indicato, Comune, parrocchia/Diocesi, Regione, ente turistico, MiC/ICCD) che la descriva.
+# Wikipedia serve solo a trovare link a fonti ufficiali (note, collegamenti esterni), mai come fonte da citare.
+- Cascina Amore | cascina, complesso di edifici | tutela: bene culturale italiano
+- Cascina Annoni | cascina, complesso di edifici | tutela: bene culturale italiano
+- Cascina Cazzaniga | cascina, complesso di edifici | tutela: bene culturale italiano
+- Cascina Garghentini | cascina, complesso di edifici | tutela: bene culturale italiano
+- Cascina Misericordia | cascina, complesso di edifici | tutela: bene culturale italiano
+- Cascina con scuderia presso Villa Perego | cascina | tutela: bene culturale italiano
+- Casello ferroviario Strada comunale per Merate | casello | tutela: bene culturale italiano
+- Cotonificio De Ponti (ex) | sito di archeologia industriale | tutela: bene culturale italiano
+- Officina meccanica Perego | complesso di edifici, filanda | tutela: bene culturale italiano
+- Stabilimento industriale (ex) presso Villa Garantini | capannone | tutela: bene culturale italiano
+- Villa Brioschi | palazzo comunale, villa | tutela: bene culturale italiano
+- Villa Gargantini | villa | tutela: bene culturale italiano
+- Villa Garghentini, Nobili | villa | tutela: bene culturale italiano
+- Villa Perego | complesso di edifici, villa | tutela: bene culturale italiano
+- chiesa dei Morti alla Brughiera | cappella | tutela: bene culturale italiano
+- chiesa di Sant'Ambrogio ad Nemus | chiesa | tutela: bene culturale italiano
+- chiesa sconsacrata di S. Ambrogio ad Nemus | chiesa | tutela: bene culturale italiano
+- Museo Agricolo | museo, museo etnografico

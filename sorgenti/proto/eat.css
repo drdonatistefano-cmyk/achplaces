@@ -1,0 +1,23 @@
+.eatbtn{gap:6px}
+#eat{border:0;border-radius:20px;padding:0;width:min(440px,calc(100vw - 24px));max-height:calc(100dvh - 32px);background:var(--paper);color:var(--ink);box-shadow:0 20px 60px rgba(0,0,0,.3)}
+#eat::backdrop{background:rgba(20,14,8,.45)}
+.eathead{display:flex;justify-content:space-between;align-items:center;padding:16px 18px 6px;margin:0}
+.eathead h2{font:700 20px var(--serif);margin:0}
+.eathead .fx{border:0;background:var(--bg);color:var(--ink);width:36px;height:36px;border-radius:50%;font-size:22px;cursor:pointer}
+.eatbody{padding:4px 18px 4px}
+.eatsec{display:flex;flex-direction:column;gap:8px;padding:12px 0;border-bottom:1px solid var(--line);font:14px var(--sans)}
+.eatsec label{display:flex;justify-content:space-between;align-items:baseline}
+.eatv{font:800 15px var(--sans);color:var(--terra-ink)}
+.eatgeo{height:44px;border-radius:12px;border:1px solid var(--terra);background:var(--terra-soft);color:var(--terra-ink);font:700 15px var(--sans);cursor:pointer}
+#eat-txt{height:44px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:0 12px;font:16px var(--sans)}
+.eatst{color:var(--mute)} .eatst.ok{color:var(--ok)} .eatst.bad{color:var(--bad)}
+#eat input[type=range]{width:100%;accent-color:var(--terra);height:28px}
+.eatchips{display:flex;gap:6px;flex-wrap:wrap}
+.eatchips button{border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:6px 11px;font:600 13px var(--sans);cursor:pointer}
+.eatchips button.on{background:var(--terra);border-color:var(--terra);color:var(--on)}
+.eatres{font:14px var(--sans);margin:12px 0 4px;color:var(--ink)}
+.eatfoot{display:flex;flex-direction:column;gap:8px;padding:10px 18px 18px}
+.eatgo{display:flex;justify-content:center;align-items:center;height:46px;border-radius:12px;background:var(--terra);color:var(--on);font:700 15px var(--sans);text-decoration:none}
+.eatgo.alt{background:var(--paper);color:var(--terra-ink);border:1px solid var(--terra)}
+.eatgo[aria-disabled="true"]{opacity:.45;pointer-events:none}
+.eatfoot small{color:var(--mute);font:12.5px var(--sans);line-height:1.4}

@@ -1,0 +1,9 @@
+# Indizi da Wikidata per Maierà (10/11/2026): elenco di luoghi che esistono nel comune. NON sono fonti: servono a sapere cosa cercare.
+# Per ogni voce cerca una fonte ufficiale (sito del gestore indicato, Comune, parrocchia/Diocesi, Regione, ente turistico, MiC/ICCD) che la descriva.
+# Wikipedia serve solo a trovare link a fonti ufficiali (note, collegamenti esterni), mai come fonte da citare.
+- Museo del peperoncino | museo privato, museo specializzato, museo storico | sito: http://www.peperoncino.org | tutela: bene culturale italiano
+- chiesa Madonna del Carmine | chiesa
+- chiesa Santa Maria del Casale | chiesa
+- chiesa di San Pietro | chiesa
+- chiesa di Santa Maria del Piano | chiesa
+- palazzo comunale | palazzo comunale

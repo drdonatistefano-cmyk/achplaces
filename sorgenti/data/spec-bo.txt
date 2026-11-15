@@ -1,0 +1,238 @@
+@ Imola | 037032 | BO | imola |
+lede: Città della Rocca sforzesca e dell'Autodromo, con un centro storico ricco di palazzi e musei civici.
+src: Bologna Welcome^https://www.bolognawelcome.com/
+src: Turismo Imolese, Città metropolitana^https://turismoimolese.cittametropolitana.bo.it/
+notice: la Rocca sforzesca è chiusa per lavori di restauro da marzo 2024 e la data di riapertura non è ancora confermata.
+- Piazza Matteotti e centro storico | storia/Piazze e centro storico | short | | free | La piazza su cui si affacciano il Palazzo comunale e Palazzo Sersanti, nodo di un centro dall'impianto romano. | Punto di partenza per tutti i musei. | Piazza Matteotti, Imola
+- Rocca sforzesca | storia/Castelli e fortezze | short | c | Musei civici dal 2026: €5 intero, €4 ridotto | Fortezza medievale rinforzata dagli Sforza e da Caterina Sforza, con raccolta di armi e ceramiche. | Uno dei castelli meglio conservati della regione. | Piazzale Giovanni dalle Bande Nere, Imola | note=Chiusa per lavori di restauro da marzo 2024; riapertura non ancora confermata (alcuni siti indicano ancora date già superate) ; src=Ministero della Cultura, visita al cantiere della Rocca (2025)^https://cultura.gov.it/evento/visita-guidata-alla-rocca-sforzesca-dietro-le-quinte-del-cantiere-di-restauro^uff ; src=Bologna Welcome, Rocca sforzesca^https://www.bolognawelcome.com/it/luoghi/torri-edifici-storici/rocca-sforzesca-di-imola^uff ; src=il Resto del Carlino, prezzi musei 2026^https://www.ilrestodelcarlino.it/imola/economia/musei-piu-cari-a-partire-dal-2026-san-domenico-e-palazzo-tozzoni-aumenti-in-vista-per-i-biglietti-i58ophvn^sec ; rev=2027-02
+- Palazzo Tozzoni | musei/Case museo | mid | i | €5 intero, €4 ridotto (dal 2026); 2 musei €8, 3 musei €10 | Casa museo di una famiglia nobile, con arredi, quadri e cucine settecentesche intatte. | Si entra in una dimora vissuta, non in una galleria. | Via Garibaldi 18, Imola | off=https://www.imolamusei.it/ ; hours=Sabato e domenica 10-13 e 15-19 (fonte 2024, da ricontrollare) ; src=il Resto del Carlino, prezzi musei 2026^https://www.ilrestodelcarlino.it/imola/economia/musei-piu-cari-a-partire-dal-2026-san-domenico-e-palazzo-tozzoni-aumenti-in-vista-per-i-biglietti-i58ophvn^sec ; src=Visitare Imola, calendario 2024 (PDF)^https://visitareimola.it/wp-content/uploads/2024/03/Eventi-Imola-2024-definitivo.pdf^sec
+- Autodromo Enzo e Dino Ferrari | locale/Motori | mid | | Visite guidate a pagamento: tariffe su Bologna Welcome | Il circuito della Formula 1 e del Mondiale Superbike, visitabile con guida in circa un'ora e mezza; all'ingresso il Museo Checco Costa. | Il paddock e la curva del Tamburello raccontati da chi ci lavora. | Piazza Ayrton Senna da Silva 2, Imola | book=Necessaria ; src=Bologna Welcome, visite all'Autodromo^https://www.bolognawelcome.com/it/esperienze/224201/Visite-all-Autodromo-Enzo-e-Dino-Ferrari^uff
+- Parco delle Acque Minerali | natura/Parchi urbani | mid | | free | Il grande parco collinare accanto all'autodromo, con sentieri e laghetto. | Ombra e passeggiata in città. | Imola | src=Bologna Welcome, la città di Imola^https://www.bolognawelcome.com/it/blog/la-citta-di-imola^uff
+- Museo di San Domenico | musei/Arte antica | short | w | Musei civici: €5 intero, €4 ridotto | Pinacoteca e collezioni naturalistiche nell'ex convento domenicano. | Il museo d'arte della città. | Via Sacchi 4, Imola | note=Bologna Welcome lo indica come attualmente non visitabile ; src=Bologna Welcome^https://www.bolognawelcome.com/^uff ; rev=2027-02 ; off=https://imolamusei.it/visita/
+
+@ Dozza | 037025 | BO | dozza | borghi arancione
+lede: Il borgo dei muri dipinti, con la Rocca e l'Enoteca regionale nelle sue cantine.
+- Borgo dei muri dipinti | storia/Borghi | short | | free | Dal 1960 la Biennale del Muro Dipinto lascia sulle facciate del borgo opere di artisti italiani e stranieri. | Una galleria d'arte a cielo aperto, sempre aperta. | Centro storico, Dozza | src=Bologna Welcome, Dozza^https://www.bolognawelcome.com/it/blog/dozza^uff
+- Rocca di Dozza | storia/Castelli e fortezze | mid | iv | Da verificare sul sito ufficiale (fonti secondarie indicano circa €7,50) | La rocca dei Malvezzi-Campeggi, con appartamenti nobiliari arredati e vista sulle colline. | Rocca, museo e panorama in una sola visita. | Piazza Rocca 6/a, Dozza | hours=Lunedì-sabato 10-13 e 14-18, domenica 10-19.30 ; src=Italia.it, Museo della Rocca di Dozza^https://www.italia.it/it/emilia-romagna/dozza/musei/museo-della-rocca-di-dozza^uff
+- Enoteca regionale Emilia-Romagna | locale/Enogastronomia | short | i | Ingresso libero; degustazioni a pagamento | Dal 1970 nelle cantine della Rocca: una vetrina dei vini di tutta la regione. | Assaggiare la regione in una sala. | Piazza Rocca, Dozza
+
+@ Castel San Pietro Terme | 037020 | BO | castel-san-pietro-terme |
+- Il Cassero | storia/Torri | short | | free | Porta fortificata del 1199, simbolo del paese, oggi teatro comunale. | Il punto di partenza per il centro. | Via Matteotti 1, Castel San Pietro Terme | src=Turismo Imolese, Il Cassero^https://turismoimolese.cittametropolitana.bo.it/en/places/towers-historic-buildings/il-cassero-en^uff
+- Santuario del Santissimo Crocifisso | sacro/Santuari | short | i | free | Santuario cittadino con un campanile che ospita 55 campane. | Il concerto di campane è una rarità. | Castel San Pietro Terme | src=Bologna Welcome, Castel San Pietro Terme^https://www.bolognawelcome.com/it/luoghi/borghi/castel-san-pietro-terme^uff
+- Terme di Castel San Pietro | locale/Terme | long | i | A pagamento: tariffe sul sito delle terme | Stabilimento termale nel parco lungo il Sillaro. | Benessere a mezz'ora da Bologna. | Viale Terme 1113, Castel San Pietro Terme
+- Parco lungo Sillaro | natura/Parchi urbani | mid | | free | Percorso verde lungo il torrente, collegato alle terme. | Passeggiata pianeggiante per tutti. | Castel San Pietro Terme
+
+@ Castel del Rio | 037014 | BO | castel-del-rio |
+- Ponte degli Alidosi | storia/Monumenti e memoriali | short | v | free | Ponte a schiena d'asino del 1499 sul Santerno, con un'unica arcata alta. | Tra i ponti storici più scenografici dell'Appennino. | Castel del Rio | src=Italia.it, Castel del Rio^https://www.italia.it/it/emilia-romagna/bologna/castel-del-rio^uff
+- Palazzo Alidosi e musei | musei/Storia della città | mid | i | Da verificare | Palazzo del 1542 con il Museo della Guerra e della Linea Gotica e il Museo del Castagno. | Storia di guerra e di montagna nello stesso palazzo. | Castel del Rio | hours=Domenica e festivi 14-18, altri giorni su prenotazione ; src=Bologna Welcome, Palazzo Alidosi^https://www.bolognawelcome.com/it/luoghi/torri-edifici-storici/palazzo-alidosi-di-castel-del-rio^uff
+
+@ Borgo Tossignano | 037007 | BO | borgo-tossignano | unesco
+- Museo geologico della Vena del Gesso | musei/Scienza e università | short | i | Da verificare | Nel Palazzo Baronale di Tossignano, introduzione alla geologia del gesso. | Prepara alle escursioni nel parco. | Tossignano, Borgo Tossignano
+- Casa del Fiume, centro visite del parco | natura/Parchi e riserve naturali | short | | free | Centro visite del Parco della Vena del Gesso, lungo il Santerno. | Informazioni e sentieri. | Via Rineggio, Borgo Tossignano
+- Riva di San Biagio e resti del castello | natura/Grotte e geositi | mid | uv | free | Il costone di gesso visto dai ruderi del castello di Tossignano, parte del sito UNESCO sul carsismo. | Panorama sulla valle del Santerno. | Tossignano, Borgo Tossignano
+
+@ Fontanelice | 037026 | BO | fontanelice |
+notice: la Ciclovia del Santerno (Mordano-Castel del Rio) è chiusa per danni da alluvione.
+- Piazza Roma e la fontana | storia/Piazze e centro storico | short | | free | La piazza del borgo con la sua fontana storica. | Una sosta lungo la valle del Santerno. | Piazza Roma, Fontanelice
+- Riva dei Cavalli | natura/Grotte e geositi | mid | v | free | Geosito lungo il Santerno, con pareti rocciose a strapiombo sul fiume. | Uno scorcio selvaggio a pochi passi dal paese. | Fontanelice
+
+@ Casalfiumanese | 037012 | BO | casalfiumanese |
+- Parco di Villa Manusardi | natura/Parchi urbani | short | | free | Parco della villa ottocentesca nel centro del paese. | Verde e ombra. | Casalfiumanese
+- Sentiero Luca Ghini | natura/Colline e sentieri | long | v | free | Sentiero panoramico dedicato al botanico nato nel territorio. | Vista sulla valle del Santerno. | Casalfiumanese
+
+@ Mordano | 037045 | BO | mordano |
+- Torrione sforzesco di Bubano | storia/Torri | short | i | Da verificare | Torre del XV secolo con un piccolo museo di storia e cultura del territorio. | Un castello di pianura. | Bubano, Mordano
+- Le torri gemelle | storia/Torri | short | | free | Due torri di fine Ottocento all'ingresso del nucleo antico. | La porta scenografica del paese. | Mordano
+
+@ Castel Guelfo di Bologna | 037016 | BO | castel-guelfo-di-bologna |
+- Piazza del Borgo e Cassero | storia/Piazze e centro storico | short | | free | Piazza settecentesca a forma triangolare e porta-torre del Cassero. | Un impianto urbano curioso. | Castel Guelfo di Bologna
+- Palazzo Malvezzi-Hercolani | storia/Palazzi e ville | short | | free | Sede municipale con cortile a due ordini di portici. | Si vede in pochi minuti. | Castel Guelfo di Bologna
+
+@ Medicina | 037037 | BO | medicina |
+- Chiesa del Carmine | sacro/Chiese e pievi | short | i | free | Chiesa barocca del centro. | Barocco bolognese di pianura. | Medicina
+- Museo civico | musei/Tematici | short | i | Da verificare | Tra le raccolte, il laboratorio del liutaio Ansaldo Poggi. | Una bottega di violini ricostruita. | Medicina
+- Oasi del Quadrone | natura/Parchi e riserve naturali | mid | | free | Zona umida di circa 270 ettari, recuperata dal 1985. | Birdwatching in pianura. | Medicina
+- Radiotelescopi di Medicina, centro visite Marcello Ceccarelli | musei/Scienza e università | mid | | Da verificare sul sito ufficiale | Il centro visite delle grandi antenne dell'Istituto Nazionale di Astrofisica. | La Croce del Nord è uno dei più grandi radiotelescopi del mondo. | Medicina | book=Necessaria
+
+@ Budrio | 037008 | BO | budrio |
+- Museo dell'Ocarina | musei/Tematici | short | i | Da verificare | L'ocarina nacque a Budrio: il museo ne raccoglie una collezione unica al mondo. | Un museo che si ascolta. | Budrio
+- Pinacoteca Domenico Inzaghi | musei/Arte antica | short | i | Da verificare | Dipinti di scuola bolognese. | Piccola e curata. | Budrio
+- Torri dell'acqua | locale/Angoli nascosti | short | | Da verificare | Ex acquedotto trasformato in spazio culturale. | Archeologia industriale riusata. | Budrio
+- Villa Rusconi a Mezzolara | storia/Palazzi e ville | short | | Da verificare | Villa del XVIII secolo con merlatura neogotica. | Solo esterno se chiusa. | Mezzolara, Budrio
+
+@ Bentivoglio | 037005 | BO | bentivoglio |
+- Castello di Bentivoglio | storia/Castelli e fortezze | mid | i | Da verificare | La Domus Jocundatis di Giovanni II Bentivoglio, che ingloba una rocca del 1390. | Visitabile con visite guidate mensili e durante eventi. | Bentivoglio | book=Visite guidate a calendario
+- Museo della Civiltà Contadina, Villa Smeraldi | musei/Tematici | mid | i | Da verificare | Il museo della vita nei campi nella villa di San Marino di Bentivoglio. | Il mondo rurale della pianura bolognese. | San Marino di Bentivoglio
+- Oasi La Rizza | natura/Parchi e riserve naturali | mid | | free | Ex risaia diventata oasi, con nidi di cicogna bianca. | Le cicogne in pianura. | Bentivoglio
+
+@ Pieve di Cento | 037048 | BO | pieve-di-cento | arancione
+lede: La "piccola Bologna" dei portici, con la Collegiata piena di capolavori, il Teatro Zeppilli e il museo MAGI '900.
+- Collegiata di Santa Maria Maggiore | sacro/Chiese e pievi | short | i | free | Opere di Guercino, Guido Reni, Lavinia Fontana e Scarsellino, e un Crocifisso del Trecento. | Una pinacoteca dentro una chiesa di paese. | Pieve di Cento
+- MAGI '900 | musei/Arte moderna | mid | i | Da verificare | Museo d'arte del Novecento in un silo granario del 1933. | Un museo inatteso in un edificio industriale. | Pieve di Cento
+- Teatro Zeppilli e Museo della Musica | storia/Teatri storici | short | i | Da verificare | Il teatro cittadino con un museo dedicato al soprano Alice Zeppilli. | Musica e liuteria, tradizione locale. | Pieve di Cento
+- Portici e centro storico | storia/Piazze e centro storico | short | | free | Il centro porticato che ha dato a Pieve il soprannome di piccola Bologna. | Passeggiata al coperto. | Pieve di Cento
+
+@ San Giovanni in Persiceto | 037053 | BO | san-giovanni-in-persiceto |
+- Borgo Rotondo e Collegiata | storia/Piazze e centro storico | short | | free | Centro dall'impianto concentrico; nella Collegiata di San Giovanni Battista, opere di Guercino, Albani e Gandolfi. | Si gira tutto in un'ora. | Piazza del Popolo, San Giovanni in Persiceto
+- Piazzetta Betlemme, la piazza degli inganni | locale/Angoli nascosti | short | | free | Le facciate dipinte in trompe-l'oeil dallo scenografo Gino Pellegrini. | Gioca con la prospettiva: da fotografare. | San Giovanni in Persiceto
+- Museo del Cielo e della Terra | musei/Scienza e università | mid | i | Da verificare | Planetario, osservatorio e Fisica Experience. | Adatto alle famiglie. | San Giovanni in Persiceto
+
+@ Sant'Agata Bolognese | 037056 | BO | sant-agata-bolognese |
+- MUDETEC, Museo Lamborghini | locale/Motori | mid | i | A pagamento: tariffe sul sito ufficiale | Il museo della casa automobilistica, con Miura, Countach e i modelli più recenti. | Per gli appassionati è una meta da sola. | Sant'Agata Bolognese | book=Consigliata
+- Bosco di Santa Lucia | natura/Parchi e riserve naturali | mid | | free | Bosco di pianura di circa 30 ettari. | Passeggiata facile. | Sant'Agata Bolognese
+
+@ San Pietro in Casale | 037055 | BO | san-pietro-in-casale |
+- Chiesa dei Santi Pietro e Paolo | sacro/Chiese e pievi | short | i | free | Chiesa con campanile romanico. | Il centro del paese. | San Pietro in Casale
+- Palazzo Calderini a Rubizzano | storia/Palazzi e ville | short | | Da verificare | Affreschi di scuola carraccesca. | Visite da verificare. | Rubizzano, San Pietro in Casale
+
+@ Sasso Marconi | 037057 | BO | sasso-marconi |
+- Villa Griffone e Museo Marconi | musei/Scienza e università | mid | i | Da verificare sul sito della Fondazione Marconi | Nella villa dove Guglielmo Marconi fece i primi esperimenti, un museo su tre piani con apparati funzionanti; accanto il Mausoleo del 1941. | Qui nacque la radio. | Via Celestini 1, Pontecchio Marconi | book=Visite guidate
+- Borgo di Colle Ameno | storia/Borghi | short | | free | Borgo settecentesco restaurato, con la villa e la chiesa. | Un piccolo borgo di delizia. | Colle Ameno, Sasso Marconi
+- Oasi di San Gherardo | natura/Parchi e riserve naturali | mid | | free | Area naturale sulle colline di Sasso Marconi. | Sentieri brevi. | Sasso Marconi
+
+@ Grizzana Morandi | 037031 | BO | grizzana-morandi |
+- Rocchetta Mattei | storia/Castelli e fortezze | mid | iv | Da €12 percorso singolo, €20 tour completo con l'ala araba riaperta nel 2026 (fonte giornalistica); la Città metropolitana indica ancora €10 | Il castello eclettico ottocentesco del conte Cesare Mattei, padre dell'elettromeopatia, tra stili moreschi e medievali; nel 2026 ha riaperto l'ala araba, chiusa da trent'anni. | Uno dei luoghi più fotografati dell'Appennino. | Via Rocchetta 46a, Riola, Grizzana Morandi | off=https://www.rocchetta-mattei.com/ ; hours=In genere nei fine settimana, con turni a calendario sul sito ufficiale ; book=Obbligatoria: solo visite guidate a piccoli gruppi ; src=Città metropolitana, Appennino bolognese^https://appenninobolognese.cittametropolitana.bo.it/it/luoghi/torri-edifici-%20storici/rocchetta-mattei-3^uff ; src=Bologna Welcome, Rocchetta Mattei^https://www.bolognawelcome.com/it/luoghi/piazze-vie-monumenti/rocchetta-mattei^uff ; src=SiViaggia, riapre l'ala araba (2026)^https://siviaggia.it/notizie/rocchetta-mattei-grizzana-morandi-riapre-ala-araba/607388/amp/^sec
+- Casa Morandi e Fienili del Campiaro | musei/Case museo | short | i | Da verificare | La casa estiva di Giorgio Morandi e i paesaggi che dipinse. | Riconosci i luoghi dei suoi quadri. | Grizzana Morandi | book=Su prenotazione, aperta nei weekend
+- Borgo La Scola | storia/Borghi | short | | free | Borgo medievale tra i meglio conservati dell'Appennino bolognese. | Pietra e silenzio. | Vimignano, Grizzana Morandi
+- Chiesa di Riola di Alvar Aalto | sacro/Chiese e pievi | short | i | free | L'unica opera in Italia del grande architetto finlandese. | Architettura del Novecento in montagna. | Riola, Grizzana Morandi
+
+@ Marzabotto | 037036 | BO | marzabotto |
+- Kainua, città etrusca, e Museo nazionale etrusco Pompeo Aria | storia/Archeologia | mid | | Biglietto unico museo + area archeologica: tariffa attuale sul sito del Ministero (nel 2022 €3, gratis fino a 18 anni); gratis la prima domenica del mese | Il Ministero della Cultura definisce Marzabotto un caso unico tra le città etrusche: dalla fine del VI alla metà del IV secolo a.C. Kainua occupava il Pian di Misano e l'altura di Misanello, con strade, isolati, acropoli e necropoli ancora leggibili nel parco. Il museo accanto conserva i reperti degli scavi iniziati nell'Ottocento, tra cui il kouros in bronzo e i bronzetti votivi. | Una delle poche città etrusche di cui si cammina la pianta. | Via Porrettana Sud 13, Marzabotto | off=https://cultura.gov.it/luogo/museo-nazionale-etrusco-pompeo-aria ; hours=Orario invernale: giovedì e venerdì 9.15-16.30, martedì e mercoledì solo gruppi su prenotazione, lunedì chiuso; fine settimana e orario estivo sul sito del Ministero ; book=Facoltativa: 349 283 4073, mn-bo.prenotazionikainua@cultura.gov.it ; src=Ministero della Cultura, Museo nazionale etrusco Pompeo Aria e Parco archeologico di Kainua^https://cultura.gov.it/luogo/museo-nazionale-etrusco-pompeo-aria^uff ; src=Ministero della Cultura, Domenica al museo^https://cultura.gov.it/evento/domenica-al-museo-3-agosto-museo-nazionale-etrusco-pompeo-aria-e-area-archeologica-di-kainua^uff ; src=Ministero della Cultura, tariffe 2022 (da aggiornare)^https://cultura.gov.it/evento/gep-2022-al-museo-nazionale-etrusco-di-marzabotto^sec ; note=Accesso alla Necropoli Nord solo durante visite tematiche straordinarie.
+- Parco storico di Monte Sole | natura/Parchi e riserve naturali | long | v | free | Oltre 6.000 ettari tra Marzabotto, Monzuno e Grizzana, luoghi dell'eccidio del 1944, con il percorso della memoria. | Natura e memoria insieme. | Centro visite Il Poggiolo, Marzabotto
+- Sacrario dei caduti | storia/Monumenti e memoriali | short | i | free | Il sacrario nel centro del paese, dedicato alle vittime. | Tappa di memoria. | Marzabotto
+
+@ Alto Reno Terme | 037062 | BO | alto-reno-terme |
+- Terme di Porretta | locale/Terme | long | i | A pagamento: tariffe sul sito delle terme | Acque sulfuree e salsobromoiodiche note dai Romani; si visitano anche le sorgenti sotterranee. | Una delle terme storiche d'Italia. | Porretta Terme, Alto Reno Terme
+- Castello Manservisi e Museo Laborantes | musei/Tematici | mid | i | Da verificare | Castello di fine Ottocento a Castelluccio con un museo etnografico di oltre 20 sale. | La vita di montagna raccontata dagli oggetti. | Castelluccio, Alto Reno Terme
+- Parco del castagno di Granaglione | natura/Montagna | mid | | free | Parco didattico di circa 9 ettari con il caniccio, l'essiccatoio delle castagne. | Ottimo in autunno. | Granaglione, Alto Reno Terme
+
+@ Lizzano in Belvedere | 037033 | BO | lizzano-in-belvedere |
+- Corno alle Scale e Lago Scaffaiolo | natura/Montagna | long | v | free | Il parco regionale con la vetta di 1945 metri, la stazione sciistica e il lago di crinale. | La montagna più alta della provincia. | Corno alle Scale, Lizzano in Belvedere
+- Cascate del Dardagna | natura/Laghi e fiumi | long | v | free | Una serie di salti d'acqua raggiungibili a piedi dal Santuario della Madonna dell'Acero. | L'escursione più amata del parco. | Lizzano in Belvedere
+- Delùbro | storia/Archeologia | short | | free | Piccolo edificio circolare d'età longobarda. | Una rarità dell'alto Medioevo. | Lizzano in Belvedere
+
+@ Camugnano | 037010 | BO | camugnano |
+- Lago di Suviana | natura/Laghi e fiumi | long | v | free | Bacino artificiale nel Parco regionale dei Laghi di Suviana e Brasimone, con canoe, pedalò e sentieri. | Il lago della montagna bolognese. | Suviana, Camugnano
+- Torretta di Bargi, Museo della Terra e del Sole | musei/Tematici | short | i | Da verificare | Torretta del Seicento con un piccolo museo. | Una sosta lungo la strada per il lago. | Bargi, Camugnano
+
+@ Castiglione dei Pepoli | 037022 | BO | castiglione-dei-pepoli |
+- Palazzo Pepoli e Torre dell'orologio | storia/Palazzi e ville | short | | free | Palazzo di fine Quattrocento, oggi municipio, con la lapide della prima Festa degli Alberi in Italia (1899) e la torre del 1724. | Il centro del paese. | Castiglione dei Pepoli
+- Lago Brasimone e Foresta del Poranceto | natura/Laghi e fiumi | long | v | free | Lago del 1911 e foresta con il centro visite del parco, a 5 km dal paese. | Acqua e bosco insieme. | Brasimone, Castiglione dei Pepoli
+
+@ Castel d'Aiano | 037013 | BO | castel-d-aiano |
+- Grotte di Labante | natura/Grotte e geositi | mid | | free | Tra le più grandi grotte di travertino d'Italia, con una cascata. | Un fenomeno geologico raro. | Labante, Castel d'Aiano
+- Rocca di Roffeno | storia/Borghi | short | | free | Borgo di case-torri e, vicino, l'abbazia di Santa Lucia di Roffeno. | Medioevo di crinale. | Roffeno, Castel d'Aiano
+
+@ Gaggio Montano | 037027 | BO | gaggio-montano |
+- Faro del Sasso di Rocca | storia/Monumenti e memoriali | short | v | free | Monumento ai caduti con terrazza panoramica. | Panorama sull'Appennino. | Gaggio Montano
+- Santuario di Sassane | sacro/Santuari | short | | free | Santuario di montagna nel territorio comunale. | Tappa di pellegrinaggio. | Gaggio Montano
+
+@ Castel di Casio | 037015 | BO | castel-di-casio |
+- Borgo medievale con la torre | storia/Borghi | short | v | free | Sede dei Capitani della Montagna fino al Cinquecento. | Vista sulla valle del Reno. | Castel di Casio
+- Oratorio di Moscacchia | sacro/Chiese e pievi | short | i | Da verificare | Piccolo oratorio con affreschi del Cinquecento. | Una sorpresa nei boschi. | Moscacchia, Castel di Casio
+
+@ Vergato | 037059 | BO | vergato |
+- Palazzo dei Capitani della Montagna | storia/Palazzi e ville | short | i | free | Palazzo del Quattrocento, oggi municipio, con le vetrate di Luigi Ontani del 1998. | Arte contemporanea in un palazzo antico. | Vergato
+- Tolè, il paese dell'arte | locale/Angoli nascosti | mid | | free | Un borgo con oltre cento opere d'arte all'aperto. | Si gira come una galleria. | Tolè, Vergato
+
+@ San Benedetto Val di Sambro | 037051 | BO | san-benedetto-val-di-sambro |
+- Lago di Castel dell'Alpi | natura/Laghi e fiumi | mid | | free | Secondo Emilia Romagna Turismo è l'unico lago naturale della provincia. | Riva comoda per una sosta. | Castel dell'Alpi, San Benedetto Val di Sambro
+- Borghi di Qualto e Zaccanesca | storia/Borghi | short | | free | Borghi in pietra dei Maestri Comacini. | Architettura rurale di pregio. | San Benedetto Val di Sambro
+- Monte Bastione e la strada romana | storia/Archeologia | long | v | free | Resti della Flaminia militare sul crinale. | Camminare su una strada di duemila anni. | San Benedetto Val di Sambro
+
+@ Monghidoro | 037040 | BO | monghidoro |
+- Chiostro degli Olivetani | sacro/Abbazie e monasteri | short | | free | Chiostro del Cinquecento nel centro del paese. | Una sosta tranquilla. | Monghidoro
+- Parco La Martina | natura/Montagna | long | | free | Bosco e sentieri verso Monte Oggioli. | Fresco d'estate. | Monghidoro
+
+@ Loiano | 037034 | BO | loiano |
+- Bologna Montana Art Trail a Loiano | locale/Angoli nascosti | long | v | free | Quattro opere di land art lungo i sentieri. | Arte e paesaggio insieme. | Loiano
+- Chiesa dei Santi Giacomo e Margherita | sacro/Chiese e pievi | short | i | free | Chiesa di origine trecentesca con opere di Calvart. | Lungo la strada della Futa. | Loiano
+
+@ Monzuno | 037044 | BO | monzuno |
+- Monte Venere | natura/Colline e sentieri | long | v | free | Sentieri sulla vetta e accesso al Parco storico di Monte Sole da Vado. | Una salita panoramica. | Monzuno
+- Castello di Elle e Torre di Montorio | storia/Castelli e fortezze | short | | Da verificare | Edifici fortificati nella zona di Rioveggio. | Medioevo lungo il Setta. | Rioveggio, Monzuno
+
+@ San Lazzaro di Savena | 037054 | BO | san-lazzaro-di-savena | unesco
+- Parco dei Gessi Bolognesi e Calanchi dell'Abbadessa | natura/Parchi e riserve naturali | long | uv | free | Circa 5.000 ettari di gessi e calanchi alle porte di Bologna, parte del sito UNESCO sul carsismo nelle evaporiti. | Doline e grotte a mezz'ora dal centro di Bologna. | San Lazzaro di Savena | src=Emilia Romagna Turismo, UNESCO in Emilia-Romagna^https://emiliaromagnaturismo.it/en/art-culture/unesco^uff
+- Grotta del Farneto | natura/Grotte e geositi | mid | u | Visite guidate a pagamento: tariffa con la prenotazione | Grotta nel gesso scoperta da Francesco Orsoni nell'Ottocento e riaperta nel 2008, con un importante insediamento protostorico; Luigi Fantini vi trovò una necropoli dell'età del Rame. | Un'esperienza speleologica facile, adatta anche ai bambini dai 4 anni. | Centro visite Casa Fantini, Via Jussi 171, Farneto, San Lazzaro di Savena | off=https://enteparchi.bo.it/parco.gessi.bolognesi/eventi-iniziative.php ; hours=Solo nelle date a calendario dell'Ente Parchi ; book=Obbligatoria entro il venerdì precedente: 051 6254821, info.parcogessi@enteparchi.bo.it ; access=Servono scarponcini o stivali con suola scolpita; il caschetto è fornito ; src=Ministero della Cultura, GEP 2026 alla Grotta del Farneto^https://cultura.gov.it/evento/gep-2026-la-grotta-del-farneto^uff ; src=Bologna Welcome, visita speleologica^https://www.bolognawelcome.com/home/vivi/eventi/calendario-completo/visita-guidata-speleologica-alla-grotta-del-farneto-18-11^uff ; src=Città metropolitana, la riapertura del 2008^https://appenninobolognese.cittametropolitana.bo.it/en/places/parks-and-gardens/farneto-cave^uff
+- Abbazia di Santa Cecilia della Croara | sacro/Abbazie e monasteri | short |  | free | Chiesa nel parco con una pala attribuita ad Annibale Carracci; riconosciuta dall'UNESCO "monumento messaggero di cultura di pace". | Sosta lungo i sentieri dei Gessi. | Croara, San Lazzaro di Savena | src=Emilia Romagna Turismo, UNESCO in Emilia-Romagna^https://emiliaromagnaturismo.it/en/art-culture/unesco^uff
+- Museo Donini | musei/Archeologici | short | i | Da verificare | Preistoria e archeologia del territorio. | Utile prima delle grotte. | San Lazzaro di Savena
+
+@ Ozzano dell'Emilia | 037046 | BO | ozzano-dell-emilia |
+- Città romana di Claterna e museo | storia/Archeologia | mid | | Da verificare | I resti della città romana sulla via Emilia e il museo nel Palazzo della Cultura. | Una città romana scomparsa, riscoperta. | Ozzano dell'Emilia
+- Casa Galvani | storia/Palazzi e ville | short | | Da verificare | Dove Luigi Galvani fece i suoi esperimenti nel 1787-88. | Una casa nella storia della scienza. | Ozzano dell'Emilia
+
+@ Pianoro | 037047 | BO | pianoro |
+- Livergnano | storia/Borghi | short | v | free | Borgo a 500 metri con le case incastrate nella roccia. | Uno scorcio che sembra un presepe. | Livergnano, Pianoro
+- Museo dei Botroidi | musei/Tematici | short | i | Da verificare | Piccolo museo delle concrezioni di Luigi Fantini, a Tazzola. | Una curiosità geologica. | Tazzola, Pianoro
+
+@ Monterenzio | 037041 | BO | monterenzio |
+- Monte Bibele | storia/Archeologia | long | v | free | Area di insediamento etrusco-celtico con sentieri e installazioni del Bologna Montana Art Trail. | Storia e land art su un colle. | Monterenzio
+
+@ Casalecchio di Reno | 037011 | BO | casalecchio-di-reno |
+- Chiusa di Casalecchio | storia/Monumenti e memoriali | short |  | free | La più antica opera idraulica d'Europa ancora in funzione, riconosciuta dall'UNESCO "monumento messaggero di cultura di pace". | Da qui l'acqua del Reno arrivava a Bologna. | Casalecchio di Reno | src=Emilia Romagna Turismo, UNESCO in Emilia-Romagna^https://emiliaromagnaturismo.it/en/art-culture/unesco^uff
+- Parco della Chiusa (Parco Talon) | natura/Parchi urbani | long | | free | Grande parco collinare lungo il Reno, collegato a San Luca dal sentiero dei Bregoli. | A piedi fino al santuario di San Luca. | Casalecchio di Reno
+- Casa Museo Nena | musei/Case museo | mid | i | Da verificare sul sito ufficiale | Il palazzo Boschi-Rivani-Garagnani a Ceretolo, documentato dalla fine del Seicento e aperto come casa museo dal 2020: tre piani di arredi, quadri, ceramiche e memorie familiari, con cucine, logge, giardini e cappella. | Una dimora vissuta, non un museo freddo. | Via del Lavoro 46/A, Ceretolo, Casalecchio di Reno | off=https://www.museonena.it/ ; src=Bologna Welcome, Casa Museo Nena^https://www.bolognawelcome.com/it/luoghi/musei-e-collezioni-private/casa-museo-nena^uff ; src=Città metropolitana di Bologna, Nena House Museum^https://appenninobolognese.cittametropolitana.bo.it/en/places/museums-and-art-galleries/nena-house-museum^uff
+
+@ Zola Predosa | 037060 | BO | zola-predosa | unesco
+- Gessi di Monte Rocca, Monte Capra e Tizzano | natura/Grotte e geositi | long | uv | free | Affioramenti di gesso inclusi nel sito UNESCO sul carsismo nelle evaporiti. | Il lembo UNESCO più occidentale vicino a Bologna. | Zola Predosa | src=Emilia Romagna Turismo, UNESCO in Emilia-Romagna^https://emiliaromagnaturismo.it/en/art-culture/unesco^uff
+- Villa Edvige Garagnani | storia/Palazzi e ville | short | | Da verificare | Villa della seconda metà del Settecento, con parco. | Sede di eventi e mostre. | Zola Predosa
+- Ca' La Ghironda | musei/Arte moderna | mid | | Da verificare | Museo e parco di sculture. | Arte all'aperto. | Zola Predosa
+
+@ Valsamoggia | 037061 | BO | valsamoggia |
+- Borgo e Abbazia di Monteveglio | sacro/Abbazie e monasteri | mid | v | free | Borgo fortificato con l'abbazia di Santa Maria Assunta del 1092 e cripta del X secolo, nel parco regionale. | Uno dei borghi più belli della provincia. | Monteveglio, Valsamoggia
+- Parco regionale dell'Abbazia di Monteveglio | natura/Parchi e riserve naturali | long | v | free | Calanchi, boschi e vigneti attorno all'abbazia. | Sentieri facili e panoramici. | Monteveglio, Valsamoggia
+
+@ Monte San Pietro | 037042 | BO | monte-san-pietro |
+- Chiesa di Amola e Ca' dei Ghedini | sacro/Chiese e pievi | short | | free | Chiesa citata dal 1300 e casa del Quattrocento nella valle del Lavino. | Tappa di campagna. | Amola, Monte San Pietro
+
+@ Crevalcore | 037024 | BO | crevalcore |
+- Museo dei Burattini Leo Preti | musei/Tematici | short | i | Da verificare | Burattini e scenari della tradizione emiliana. | Adatto ai bambini. | Crevalcore
+- Murales Quadricromie | locale/Angoli nascosti | short | | free | Oltre venti murales nel centro storico. | Arte urbana in pianura. | Crevalcore
+
+@ Sala Bolognese | 037050 | BO | sala-bolognese |
+- Pieve di Santa Maria Annunziata e San Biagio | sacro/Chiese e pievi | short | i | free | Pieve romanica del 1096. | Romanico di pianura. | Sala Bolognese
+- Ecomuseo dell'Acqua | musei/Tematici | mid | | Da verificare | A Padulle, con la cassa del Dosolo e l'impianto del Bagnetto della Bonifica Renana. | La storia delle acque di pianura. | Padulle, Sala Bolognese
+
+@ Calderara di Reno | 037009 | BO | calderara-di-reno |
+- Golena San Vitale | natura/Parchi e riserve naturali | mid | | free | Boschi alluvionali lungo il Reno, sulla Ciclovia del Reno. | In bici da Bologna. | Calderara di Reno
+
+@ Anzola dell'Emilia | 037001 | BO | anzola-dell-emilia |
+- Terramara e Museo archeologico ambientale | storia/Archeologia | short | | Da verificare | Un villaggio dell'età del Bronzo di circa 3.300 anni fa e il museo che lo racconta. | Preistoria della pianura. | Anzola dell'Emilia
+- Carpigiani Gelato Museum | locale/Enogastronomia | mid | i | A pagamento: tariffe sul sito ufficiale | Storia e tecnica del gelato. | Con degustazione. | Anzola dell'Emilia | book=Necessaria
+
+@ Argelato | 037002 | BO | argelato |
+- Borgo di Malacappa e Ciclovia del Reno | storia/Borghi | short | | free | Antico borgo lungo il Reno, tappa della ciclovia. | In bici tra le ville. | Malacappa, Argelato
+
+@ Castello d'Argile | 037017 | BO | castello-d-argile |
+- Ciclovia del Reno | natura/Laghi e fiumi | long | | free | Il tratto argilese della ciclovia lungo l'argine. | Pedalata facile. | Castello d'Argile
+
+@ Castel Maggiore | 037019 | BO | castel-maggiore |
+- Trebbo di Reno e Golena San Vitale | natura/Laghi e fiumi | mid | | free | Area fluviale lungo il Reno. | In bici sulla ciclovia. | Castel Maggiore
+
+@ Malalbergo | 037035 | BO | malalbergo |
+- Porto fluviale sul Navile | storia/Monumenti e memoriali | short | | free | Antico porto con Palazzo Marescalchi e il Casermone della dogana. | Il canale che portava a Bologna. | Malalbergo
+- Ciclabile del Navile verso Altedo | natura/Laghi e fiumi | long | | free | Quattordici km di pista lungo il canale fino ad Altedo, terra dell'asparago verde IGP. | Pedalata pianeggiante. | Malalbergo
+
+@ Minerbio | 037038 | BO | minerbio |
+- Rocca Isolani | storia/Castelli e fortezze | mid | | Da verificare | Rocca del Cinquecento con affreschi di Amico Aspertini e la colombaia attribuita a Vignola. | Rinascimento in pianura. | Minerbio
+- Castello di San Martino in Soverzano | storia/Castelli e fortezze | short | | free | Castello neogotico restaurato da Alfonso Rubbiani; privato, si vede solo dall'esterno. | Il castello da cartolina della pianura. | San Martino in Soverzano, Minerbio
+
+@ Galliera | 037028 | BO | galliera |
+- Bosco della Panfilia e golena della Bisana | natura/Parchi e riserve naturali | mid | | free | Bosco golenale lungo il Reno con percorso di visita e uscite estive per le lucciole. | Le lucciole in giugno. | Galliera
+
+@ San Giorgio di Piano | 037052 | BO | san-giorgio-di-piano |
+- Torresotto e Porta Ferrara | storia/Torri | short | | free | Torre del 1321, oggi biblioteca, e la porta del castello del 1403. | Il centro storico a piedi. | San Giorgio di Piano
+
+@ Baricella | 037003 | BO | baricella |
+- Cappella Zucchini | sacro/Cimiteri monumentali | short | | Da verificare | Arte funeraria in stile Aemilia Ars. | Liberty bolognese. | Baricella
+
+@ Granarolo dell'Emilia | 037030 | BO | granarolo-dell-emilia |
+- Chiesa di San Vitale | sacro/Chiese e pievi | short | i | free | Conserva un San Girolamo attribuito a Guercino. | Un Guercino in campagna. | Granarolo dell'Emilia
+
+@ Castenaso | 037021 | BO | castenaso |
+- MUV, Museo della Civiltà Villanoviana | musei/Archeologici | short | i | Da verificare | A Villanova, il museo della civiltà che prese il nome da questo luogo. | Le origini di Bologna. | Villanova, Castenaso
+
+@ Molinella | 037039 | BO | molinella |
+- Street art di Molinella | locale/Angoli nascosti | short | | free | I murales del festival ArtU, a partire dalla stazione. | Arte urbana nelle valli. | Molinella
+- Selva Malvezzi | storia/Palazzi e ville | short | | Da verificare | Complesso feudale del Quattrocento. | Visite da verificare. | Selva Malvezzi, Molinella
