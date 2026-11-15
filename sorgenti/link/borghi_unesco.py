@@ -23,29 +23,41 @@ def get(u, tries=4):
             print("  errore", u, e, flush=True); time.sleep(3 + 5 * i)
     return None, {}
 
+def norm(t):
+    import unicodedata
+    t = unicodedata.normalize("NFD", html.unescape(t or "")).encode("ascii", "ignore").decode().lower()
+    return re.sub(r"[^a-z0-9]+", " ", t).strip()
+
 def borghi():
-    B = "https://borghipiubelliditalia.it/wp-json/wp/v2/"
-    righe = []
-    for tipo in ("pages", "posts"):
-        pag = 1
-        while True:
-            t, h = get(f"{B}{tipo}?per_page=100&page={pag}&_fields=id,link,title,slug,parent,content")
-            if not t: break
-            try: lst = json.loads(t)
-            except Exception: break
-            if not isinstance(lst, list) or not lst: break
-            for x in lst:
-                testo = re.sub(r"<[^>]+>", " ", (x.get("content") or {}).get("rendered", ""))
-                testo = html.unescape(re.sub(r"\s+", " ", testo))[:600]
-                m = re.search(r"(?:COMUNE DI|Comune di|MUNICIPALITY OF)\s+([A-ZÀ-Ý][^\n(]{1,60}?)\s*\(", testo)
-                righe.append({"tipo": tipo, "id": x["id"], "link": x["link"], "titolo": html.unescape(x["title"]["rendered"]),
-                              "slug": x.get("slug"), "comune": m.group(1).strip() if m else None, "inizio": testo[:160]})
-            tot = int(h.get("X-WP-TotalPages", h.get("x-wp-totalpages", "1")) or 1)
-            print(f"borghi {tipo} pagina {pag}/{tot}: {len(lst)}", flush=True)
-            if pag >= tot: break
-            pag += 1; time.sleep(1)
-    json.dump(righe, open(os.path.join(OUT, "borghi.json"), "w"), ensure_ascii=False, indent=0)
-    print("borghi: righe", len(righe), "schede con comune", sum(1 for r in righe if r["comune"]))
+    """Per ogni comune-borgo della guida (borghi_comuni.json): ricerca sul sito ufficiale (wp-json/wp/v2/search),
+    poi apertura della pagina candidata e conferma col testo «COMUNE DI <nome>» (o il nome del borgo nel titolo)."""
+    QUI = os.path.dirname(os.path.abspath(__file__))
+    L = json.load(open(os.path.join(QUI, "borghi_comuni.json")))
+    B = "https://borghipiubelliditalia.it/wp-json/wp/v2/search?per_page=20&search="
+    out = {}
+    tipi, _ = get("https://borghipiubelliditalia.it/wp-json/wp/v2/types")
+    for c in L:
+        t, _ = get(B + urllib.parse.quote(c["nome"]))
+        try: res = json.loads(t) if t else []
+        except Exception: res = []
+        nn = norm(c["nome"]); cand = []
+        for r in res if isinstance(res, list) else []:
+            tit = norm(r.get("title", "")); u = r.get("url", "")
+            if not u.startswith("https://borghipiubelliditalia.it/") or "/en/" in u: continue
+            if tit == nn or tit.startswith(nn + " ") or tit.endswith(" " + nn): cand.append((0 if tit == nn else 1, r.get("subtype"), u, r.get("title")))
+        cand.sort()
+        scelto = None
+        for _, st, u, tit in cand[:4]:
+            pg, _ = get(u)
+            if not pg: continue
+            testo = norm(re.sub(r"<[^>]+>", " ", pg))
+            if ("comune di " + nn) in testo or ("frazione" in testo and nn in testo[:20000]):
+                scelto = {"url": u, "titolo": html.unescape(tit or ""), "tipo": st}; break
+        out[c["slug"]] = scelto
+        print(f"{c['nome']}: {scelto['url'] if scelto else '-'}  ({len(cand)} candidati)", flush=True)
+        time.sleep(0.6)
+    json.dump({"tipi": json.loads(tipi) if tipi else None, "borghi": out}, open(os.path.join(OUT, "borghi.json"), "w"), ensure_ascii=False, indent=0)
+    print("borghi: trovati", sum(1 for v in out.values() if v), "su", len(out))
 
 def unesco():
     q = """SELECT ?item ?itemLabel ?whc ?coord ?com ?istat WHERE {

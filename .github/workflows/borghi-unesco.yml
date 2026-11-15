@@ -16,6 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with: { sparse-checkout: "sorgenti/link", fetch-depth: 1 }
+      - run: echo ok
       - run: python3 sorgenti/link/borghi_unesco.py out
       - name: Salva nel ramo collegamenti
         run: |
