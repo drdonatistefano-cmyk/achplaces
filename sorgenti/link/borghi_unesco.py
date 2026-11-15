@@ -29,34 +29,40 @@ def norm(t):
     return re.sub(r"[^a-z0-9]+", " ", t).strip()
 
 def borghi():
-    """Per ogni comune-borgo della guida (borghi_comuni.json): ricerca sul sito ufficiale (wp-json/wp/v2/search),
-    poi apertura della pagina candidata e conferma col testo «COMUNE DI <nome>» (o il nome del borgo nel titolo)."""
+    """Elenco completo delle schede dei borghi (tipo dt_portfolio, indirizzi /borgo/<nome>/) dall'interfaccia
+    pubblica wp-json del sito ufficiale; dal testo di ogni scheda si legge «COMUNE DI <nome>». Un comune della
+    guida (borghi_comuni.json) prende il link della scheda il cui comune (o titolo) coincide con il suo nome.
+    Solo schede dei borghi: niente eventi o articoli."""
     QUI = os.path.dirname(os.path.abspath(__file__))
     L = json.load(open(os.path.join(QUI, "borghi_comuni.json")))
-    B = "https://borghipiubelliditalia.it/wp-json/wp/v2/search?per_page=20&search="
-    out = {}
-    tipi, _ = get("https://borghipiubelliditalia.it/wp-json/wp/v2/types")
-    for c in L:
-        t, _ = get(B + urllib.parse.quote(c["nome"]))
+    schede = []
+    for pg in range(1, 30):
+        t, h = get(f"https://borghipiubelliditalia.it/wp-json/wp/v2/dt_portfolio?per_page=100&page={pg}&_fields=link,title,content")
         try: res = json.loads(t) if t else []
         except Exception: res = []
-        nn = norm(c["nome"]); cand = []
-        for r in res if isinstance(res, list) else []:
-            tit = norm(r.get("title", "")); u = r.get("url", "")
+        if not isinstance(res, list) or not res: break
+        for r in res:
+            u = r.get("link", ""); tit = html.unescape((r.get("title") or {}).get("rendered", ""))
             if not u.startswith("https://borghipiubelliditalia.it/") or "/en/" in u: continue
-            if tit == nn or tit.startswith(nn + " ") or tit.endswith(" " + nn): cand.append((0 if tit == nn else 1, r.get("subtype"), u, r.get("title")))
-        cand.sort()
-        scelto = None
-        for _, st, u, tit in cand[:4]:
-            pg, _ = get(u)
-            if not pg: continue
-            testo = norm(re.sub(r"<[^>]+>", " ", pg))
-            if ("comune di " + nn) in testo or ("frazione" in testo and nn in testo[:20000]):
-                scelto = {"url": u, "titolo": html.unescape(tit or ""), "tipo": st}; break
-        out[c["slug"]] = scelto
-        print(f"{c['nome']}: {scelto['url'] if scelto else '-'}  ({len(cand)} candidati)", flush=True)
-        time.sleep(0.6)
-    json.dump({"tipi": json.loads(tipi) if tipi else None, "borghi": out}, open(os.path.join(OUT, "borghi.json"), "w"), ensure_ascii=False, indent=0)
+            testo = html.unescape(re.sub(r"<[^>]+>", " ", (r.get("content") or {}).get("rendered", "")))
+            m = re.search(r"COMUNE\s+DI\s+([A-ZÀ-Ýa-zà-ý' .\-]+?)(?:\s{2,}|\(|\n|,|PROVINCIA|$)", testo)
+            schede.append({"url": u, "titolo": tit, "comune": m.group(1).strip() if m else ""})
+        print("pagina", pg, len(res), flush=True)
+        if len(res) < 100: break
+        time.sleep(0.5)
+    print("schede borghi:", len(schede), flush=True)
+    perc = {}; pert = {}
+    for x in schede:
+        if x["comune"]: perc.setdefault(norm(x["comune"]), []).append(x)
+        pert.setdefault(norm(x["titolo"]), []).append(x)
+    out = {}
+    for c in L:
+        nn = norm(c["nome"])
+        k = pert.get(nn) or perc.get(nn) or []
+        # preferisci la scheda col titolo uguale al comune, poi quella del capoluogo
+        out[c["slug"]] = {"url": k[0]["url"], "titolo": k[0]["titolo"], "comune": k[0]["comune"]} if k else None
+        print(f"{c['nome']}: {out[c['slug']]['url'] if k else '-'}", flush=True)
+    json.dump({"schede": schede, "borghi": out}, open(os.path.join(OUT, "borghi.json"), "w"), ensure_ascii=False, indent=0)
     print("borghi: trovati", sum(1 for v in out.values() if v), "su", len(out))
 
 def unesco():
@@ -88,5 +94,5 @@ def unesco():
     print("unesco: componenti", len(righe), "beni italiani nell'elenco ufficiale", len(nomi))
 
 if __name__ == "__main__":
-    unesco()
+    if "solo-borghi" not in sys.argv: unesco()
     borghi()
