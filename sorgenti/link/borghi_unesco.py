@@ -106,6 +106,21 @@ def unesco():
                 m = re.match(r"Point\(([-\d.]+) ([-\d.]+)\)", c)
                 if m: lng, lat = float(m.group(1)), float(m.group(2))
             righe.append({"q": g("item").rsplit("/", 1)[-1], "nome": g("itemLabel"), "whc": g("whc"), "lat": lat, "lng": lng, "istat": g("istat"), "comune": g("comLabel")})
+    # 2) luoghi e comuni «parte di» (P361) un bene UNESCO: monumenti dentro un bene seriale, comuni della Costiera
+    #    Amalfitana, delle Eolie, del Val di Noto... Il codice e' quello del bene di cui fanno parte.
+    q2 = """SELECT ?item ?itemLabel ?whc ?com ?comLabel ?istat ?istatx WHERE {
+      ?site wdt:P757 ?whc . ?site wdt:P17 wd:Q38 . ?item wdt:P361 ?site .
+      OPTIONAL { ?item wdt:P635 ?istatx }
+      OPTIONAL { ?item wdt:P131 ?com . OPTIONAL { ?com wdt:P635 ?istat } }
+      SERVICE wikibase:label { bd:serviceParam wikibase:language "it,en". } }"""
+    t, _ = get("https://query.wikidata.org/sparql?format=json&query=" + urllib.parse.quote(q2))
+    n2 = 0
+    if t:
+        for b in json.loads(t)["results"]["bindings"]:
+            g = lambda k: b.get(k, {}).get("value")
+            ist = g("istatx") or g("istat"); com = g("itemLabel") if g("istatx") else g("comLabel")
+            righe.append({"q": g("item").rsplit("/", 1)[-1], "nome": g("itemLabel"), "whc": g("whc"), "lat": None, "lng": None, "istat": ist, "comune": com, "via": "parte di"}); n2 += 1
+    print("unesco: luoghi e comuni «parte di» un bene", n2, flush=True)
     # nomi ufficiali dall'elenco UNESCO
     nomi = {}
     t, _ = get("https://whc.unesco.org/en/list/xml/")
