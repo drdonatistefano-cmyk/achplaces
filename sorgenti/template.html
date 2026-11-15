@@ -761,6 +761,7 @@ document.addEventListener("DOMContentLoaded",function(){const t=document.createE
   document.addEventListener("pointerout",e=>{if(cur&&!(e.relatedTarget&&cur.contains(e.relatedTarget)))hide();});
   addEventListener("scroll",hide,{passive:true});document.addEventListener("click",hide,true);});
 </script>
+<link rel="manifest" href="/app.webmanifest"><link rel="apple-touch-icon" href="/icona-180.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Places">
 </head>
 <body>
 <div class="wrap">
@@ -1802,5 +1803,6 @@ await PAUSA();
 route(true);
 </script>
 <button class="giu via" id="giu" type="button" hidden data-goatcounter-click="filtri/azzera-places" data-goatcounter-title="Azzera i filtri (in fondo)">✕ Azzera i filtri <span class="n">0</span></button>
+<script src="/installa.js" data-colore="#2f7a5b" data-icona="/icona-192.png" data-sw="" defer></script>
 </body>
 </html>
