@@ -71,14 +71,17 @@ def borghi():
         if not pg: continue
         testo = html.unescape(re.sub(r"<[^>]+>", " ", re.sub(r"(?s)<(script|style)[^>]*>.*?</\1>", " ", pg)))
         testo = re.sub(r"\s+", " ", testo)
-        m = re.search(r"(?i)\bcomune\s+di\s+([A-ZÀ-Ý][\w'’À-ÿ]*(?:\s+(?:[A-ZÀ-Ý][\w'’À-ÿ]*|di|del|della|dei|de|d’|d'|in|sul|sull’|al|e|con)){0,5})", testo)
+        m = re.search(r"(?i)\bcomune\s+di\s+([A-ZÀ-Ý][\w'’À-ÿ]*(?:\s+(?:[A-ZÀ-Ý][\w'’À-ÿ]*|di|del|della|dei|de|d’|d'|in|sul|sull’|al|e|con)){0,8})", testo)
         x["comune"] = m.group(1).strip() if m else ""
+        n2 = re.search(r"(?i)\bnel\s+comune\s+di\s+(.+)", x["comune"])   # «Comune di Civita nel Comune di Bagnoregio»
+        if n2: x["comune"] = n2.group(1).strip()
         i = testo.lower().find("comune di"); x["brano"] = testo[max(0, i - 60): i + 120] if i >= 0 else ""
         print("  ", x["titolo"], "->", x["comune"] or "?", flush=True)
         for k in nomi(x["comune"]) if x["comune"] else []: perc.setdefault(k, []).append(x)
         time.sleep(0.4)
+    ALIAS = {"San Giovanni di Fassa": "Sèn Jan di Fassa"}   # nome ladino ufficiale del comune
     for c in resto:
-        nn = nk(c["nome"]); k = perc.get(nn)
+        nn = nk(c["nome"]); k = perc.get(nn) or pert.get(nk(ALIAS.get(c["nome"], "")))
         if not k:   # «Comune di Borgo Valbelluna (BL)» o nomi composti: il nome del comune all'inizio del testo letto
             k = [x for x in schede if x.get("comune") and nk(x["comune"]).startswith(nn)]
         if k: out[c["slug"]] = {"url": k[0]["url"], "titolo": k[0]["titolo"], "via": "comune: " + k[0]["comune"]}
