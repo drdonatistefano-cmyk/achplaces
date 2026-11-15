@@ -868,7 +868,7 @@
 {
 "url": "https://borghipiubelliditalia.it/borgo/civita-di-bagnoregio/",
 "titolo": "Civita di Bagnoregio",
-"comune": "civita nel Comune di Bagnoregio",
+"comune": "Bagnoregio",
 "brano": "i La Guida Il Magazine Newsletter Civita La città che muore Comune di civita nel Comune di Bagnoregio (Provincia di Viterbo) Altitudine m. 485 s.l.m. Abitanti 3860 (8 nel borgo) Pa"
 },
 {
@@ -1052,7 +1052,7 @@
 {
 "url": "https://borghipiubelliditalia.it/borgo/albori/",
 "titolo": "Albori",
-"comune": "albori nel Comune di Vietri sul",
+"comune": "Vietri sul Mare",
 "brano": " Magazine Newsletter Albori Un bianco avamposto di paradiso Comune di albori nel Comune di Vietri sul Mare (Provincia di Salerno) Altitudine m. 300 s.l.m. Abitanti 8475 (350 nel bo"
 },
 {
@@ -2330,7 +2330,11 @@
 "titolo": "Orvinio",
 "via": "titolo"
 },
-"bagnoregio-vt": null,
+"bagnoregio-vt": {
+"url": "https://borghipiubelliditalia.it/borgo/civita-di-bagnoregio/",
+"titolo": "Civita di Bagnoregio",
+"via": "comune: Bagnoregio"
+},
 "caprarola-vt": null,
 "vitorchiano-vt": {
 "url": "https://borghipiubelliditalia.it/borgo/vitorchiano/",
@@ -2377,7 +2381,11 @@
 "titolo": "Conca dei Marini",
 "via": "titolo"
 },
-"vietri-sul-mare-sa": null,
+"vietri-sul-mare-sa": {
+"url": "https://borghipiubelliditalia.it/borgo/albori/",
+"titolo": "Albori",
+"via": "comune: Vietri sul Mare"
+},
 "summonte-av": {
 "url": "https://borghipiubelliditalia.it/borgo/summonte/",
 "titolo": "Summonte",
@@ -2879,7 +2887,11 @@
 "titolo": "Ossana",
 "via": "titolo"
 },
-"san-giovanni-di-fassa-tn": null,
+"san-giovanni-di-fassa-tn": {
+"url": "https://borghipiubelliditalia.it/borgo/sen-jan-di-fassa/",
+"titolo": "Sèn Jan di Fassa",
+"via": "comune: Sèn Jan di Fassa"
+},
 "san-lorenzo-dorsino-tn": {
 "url": "https://borghipiubelliditalia.it/borgo/san-lorenzo-in-banale/",
 "titolo": "San Lorenzo in Banale",
