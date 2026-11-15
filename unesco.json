@@ -1,6 +1,1606 @@
 {
 "componenti": [
 {
+"q": "Q2031664",
+"nome": "Villa Badoer",
+"whc": "712-017",
+"lat": 45.030352777,
+"lng": 11.639861111,
+"istat": "029024"
+},
+{
+"q": "Q2031943",
+"nome": "Palazzo della Cancelleria",
+"whc": "91-005",
+"lat": 41.896687,
+"lng": 12.471521,
+"istat": "058091"
+},
+{
+"q": "Q2052044",
+"nome": "parco archeologico della Neapolis",
+"whc": "1200",
+"lat": 37.075,
+"lng": 15.27777778,
+"istat": "089017"
+},
+{
+"q": "Q2052044",
+"nome": "parco archeologico della Neapolis",
+"whc": "1200",
+"lat": 37.07529,
+"lng": 15.277494,
+"istat": "089017"
+},
+{
+"q": "Q2066497",
+"nome": "chiesa di San Cataldo",
+"whc": "1487-004",
+"lat": 38.114722222,
+"lng": 13.3625,
+"istat": "082053"
+},
+{
+"q": "Q2084394",
+"nome": "Villa Godi",
+"whc": "712-009",
+"lat": 45.746141,
+"lng": 11.534439,
+"istat": "024053"
+},
+{
+"q": "Q2094778",
+"nome": "Villa medicea di Castello",
+"whc": "175-005",
+"lat": 43.819444,
+"lng": 11.228167,
+"istat": "048017"
+},
+{
+"q": "Q2115058",
+"nome": "Villa Thiene",
+"whc": "712-013",
+"lat": 45.5729814,
+"lng": 11.6249847,
+"istat": "024083"
+},
+{
+"q": "Q2211082",
+"nome": "sacro monte di Varallo",
+"whc": "1068-001",
+"lat": 45.81861111,
+"lng": 8.25472222,
+"istat": "002156"
+},
+{
+"q": "Q2271780",
+"nome": "Villa Gazzotti",
+"whc": "712-003",
+"lat": 45.55916667,
+"lng": 11.60055556,
+"istat": "024116"
+},
+{
+"q": "Q2271810",
+"nome": "Villa Zeno",
+"whc": "712-020",
+"lat": 45.70027778,
+"lng": 12.64305556,
+"istat": "026015"
+},
+{
+"q": "Q2299393",
+"nome": "villa Serego",
+"whc": "712-024",
+"lat": 45.499444444,
+"lng": 10.925555555,
+"istat": "023076"
+},
+{
+"q": "Q2299483",
+"nome": "Villa Angarano",
+"whc": "712-005",
+"lat": 45.78055556,
+"lng": 11.72361111,
+"istat": "024012"
+},
+{
+"q": "Q2506967",
+"nome": "Villa Piovene",
+"whc": "712-025",
+"lat": 45.747751,
+"lng": 11.533216,
+"istat": "024053"
+},
+{
+"q": "Q2546376",
+"nome": "Barchesse di Villa Trissino",
+"whc": "712-014",
+"lat": 45.4322,
+"lng": 11.4131,
+"istat": "024098"
+},
+{
+"q": "Q2546376",
+"nome": "Barchesse di Villa Trissino",
+"whc": "712-014",
+"lat": 45.4322,
+"lng": 11.4131,
+"istat": null
+},
+{
+"q": "Q2564175",
+"nome": "necropoli dei Monterozzi",
+"whc": "1158-002",
+"lat": 42.250444444,
+"lng": 11.769861111,
+"istat": "056050"
+},
+{
+"q": "Q2564175",
+"nome": "necropoli dei Monterozzi",
+"whc": "1158-002",
+"lat": 42.25008,
+"lng": 11.767854,
+"istat": "056050"
+},
+{
+"q": "Q2598094",
+"nome": "Villa Forni Cerato",
+"whc": "712-008",
+"lat": 45.65638889,
+"lng": 11.56222222,
+"istat": "024062"
+},
+{
+"q": "Q2688899",
+"nome": "Villa Pojana",
+"whc": "712-011",
+"lat": 45.2853392,
+"lng": 11.4980618,
+"istat": "024079"
+},
+{
+"q": "Q2698156",
+"nome": "Villa Cornaro",
+"whc": "712-023",
+"lat": 45.60708,
+"lng": 11.99939,
+"istat": "028064"
+},
+{
+"q": "Q2705507",
+"nome": "Villa Pisani",
+"whc": "712-022",
+"lat": 45.23053,
+"lng": 11.46965,
+"istat": "028056"
+},
+{
+"q": "Q2707802",
+"nome": "centro storico di Firenze",
+"whc": "174quater",
+"lat": 43.77306,
+"lng": 11.25611111,
+"istat": "048017"
+},
+{
+"q": "Q2721458",
+"nome": "Villa Valmarana",
+"whc": "712-015",
+"lat": 45.5798,
+"lng": 11.6103,
+"istat": null
+},
+{
+"q": "Q2722026",
+"nome": "Villa Chiericati",
+"whc": "712-007",
+"lat": 45.5031,
+"lng": 11.6439,
+"istat": null
+},
+{
+"q": "Q2722437",
+"nome": "Villa Trissino",
+"whc": "712-002",
+"lat": 45.56635,
+"lng": 11.54819,
+"istat": "024116"
+},
+{
+"q": "Q2722506",
+"nome": "Villa Valmarana",
+"whc": "712-016",
+"lat": 45.6074,
+"lng": 11.5844,
+"istat": null
+},
+{
+"q": "Q2945646",
+"nome": "Urbanistica di Pienza",
+"whc": "789",
+"lat": 43.0766,
+"lng": 11.679,
+"istat": "052021"
+},
+{
+"q": "Q2962401",
+"nome": "ferrovia Retica nei paesaggi dell'Albula e del Bernina",
+"whc": "1276",
+"lat": 46.4089,
+"lng": 10.0197,
+"istat": null
+},
+{
+"q": "Q2962401",
+"nome": "ferrovia Retica nei paesaggi dell'Albula e del Bernina",
+"whc": "1276",
+"lat": 46.4089,
+"lng": 10.0197,
+"istat": "014"
+},
+{
+"q": "Q3290373",
+"nome": "Marechiaro",
+"whc": "726-003",
+"lat": 40.7949,
+"lng": 14.1919,
+"istat": "063049"
+},
+{
+"q": "Q3485435",
+"nome": "Monte San Giorgio",
+"whc": "1090bis",
+"lat": 45.889252,
+"lng": 8.914621,
+"istat": null
+},
+{
+"q": "Q3485435",
+"nome": "Monte San Giorgio",
+"whc": "1090bis",
+"lat": 45.889252,
+"lng": 8.914621,
+"istat": "012"
+},
+{
+"q": "Q3485435",
+"nome": "Monte San Giorgio",
+"whc": "1090",
+"lat": 45.889252,
+"lng": 8.914621,
+"istat": null
+},
+{
+"q": "Q3485435",
+"nome": "Monte San Giorgio",
+"whc": "1090",
+"lat": 45.889252,
+"lng": 8.914621,
+"istat": "012"
+},
+{
+"q": "Q3575761",
+"nome": "area archeologica e basilica patriarcale di Aquileia",
+"whc": "825ter",
+"lat": 45.7683,
+"lng": 13.3675,
+"istat": "030004"
+},
+{
+"q": "Q3661719",
+"nome": "caserma di Cavalleria Borbonica",
+"whc": "736",
+"lat": 40.846168,
+"lng": 14.2769,
+"istat": "063049"
+},
+{
+"q": "Q3662629",
+"nome": "castello di Grinzane Cavour",
+"whc": "1390rev-002",
+"lat": 44.653152,
+"lng": 7.994892,
+"istat": "004100"
+},
+{
+"q": "Q3664901",
+"nome": "centro storico di Vicenza",
+"whc": "712-001",
+"lat": 45.55,
+"lng": 11.55,
+"istat": "024116"
+},
+{
+"q": "Q3678423",
+"nome": "centro storico di Verona",
+"whc": "797",
+"lat": 45.438611111,
+"lng": 10.993888888,
+"istat": "023091"
+},
+{
+"q": "Q3685237",
+"nome": "complesso monumentale di Santa Sofia",
+"whc": "1318-006",
+"lat": 41.13061389,
+"lng": 14.78129167,
+"istat": "062008"
+},
+{
+"q": "Q3825559",
+"nome": "Laghetto della Costa",
+"whc": "1363-109",
+"lat": 45.2695,
+"lng": 11.7435,
+"istat": "028005"
+},
+{
+"q": "Q3825847",
+"nome": "lago del Frassino",
+"whc": "1363-107",
+"lat": 45.436708333,
+"lng": 10.667125,
+"istat": "023059"
+},
+{
+"q": "Q3860567",
+"nome": "monastero di Torba",
+"whc": "1318-003",
+"lat": 45.729583,
+"lng": 8.863403,
+"istat": "012080"
+},
+{
+"q": "Q3860567",
+"nome": "monastero di Torba",
+"whc": "1318-003",
+"lat": 45.7294,
+"lng": 8.86334,
+"istat": "012080"
+},
+{
+"q": "Q3861452",
+"nome": "Monte Cimino",
+"whc": "1133ter-047",
+"lat": 42.4077999,
+"lng": 12.2012234,
+"istat": "12"
+},
+{
+"q": "Q3867341",
+"nome": "mura veneziane di Bergamo",
+"whc": "1533-001",
+"lat": 45.704145,
+"lng": 9.672122,
+"istat": "016024"
+},
+{
+"q": "Q3874164",
+"nome": "necropoli di Su Crucifissu Mannu",
+"whc": "1730-007",
+"lat": 40.81029722,
+"lng": 8.44417778,
+"istat": "112045"
+},
+{
+"q": "Q3895463",
+"nome": "parco archeologico di Castelseprio",
+"whc": "1318-003",
+"lat": 45.728727,
+"lng": 8.859508,
+"istat": "012044"
+},
+{
+"q": "Q3895463",
+"nome": "parco archeologico di Castelseprio",
+"whc": "1318-003",
+"lat": 45.72415,
+"lng": 8.857886,
+"istat": "012044"
+},
+{
+"q": "Q3895632",
+"nome": "parco naturale dei Lagoni di Mercurago",
+"whc": "1363-103",
+"lat": 45.735,
+"lng": 8.552,
+"istat": "003"
+},
+{
+"q": "Q3909051",
+"nome": "Portici di Bologna",
+"whc": "1650",
+"lat": 44.491388888,
+"lng": 11.332777777,
+"istat": "037006"
+},
+{
+"q": "Q3936580",
+"nome": "Riserva naturale Foresta Umbra",
+"whc": "1133ter-046",
+"lat": 41.820527777,
+"lng": 16.011944444,
+"istat": "071"
+},
+{
+"q": "Q3983167",
+"nome": "Tempietto del Clitunno",
+"whc": "1318-005",
+"lat": 42.84224,
+"lng": 12.756929,
+"istat": "054005"
+},
+{
+"q": "Q5197044",
+"nome": "Palazzo di San Callisto",
+"whc": "91-004a",
+"lat": 41.8893,
+"lng": 12.4702,
+"istat": "058091"
+},
+{
+"q": "Q7126276",
+"nome": "Palazzo del Sant'Uffizio",
+"whc": "91-012",
+"lat": 41.90102778,
+"lng": 12.45608333,
+"istat": "058091"
+},
+{
+"q": "Q9724840",
+"nome": "centro storico di San Gimignano",
+"whc": "550",
+"lat": 43.467057116,
+"lng": 11.042804439,
+"istat": "052028"
+},
+{
+"q": "Q10293286",
+"nome": "Strade Nuove e complesso dei Palazzi dei Rolli di Genova",
+"whc": "1211",
+"lat": 44.412222222,
+"lng": 8.931111111,
+"istat": "010025"
+},
+{
+"q": "Q10351991",
+"nome": "Porto Venere, Cinque Terre e le isole Palmaria, Tino e Tinetto",
+"whc": "826",
+"lat": 44.10694444,
+"lng": 9.72916667,
+"istat": "011"
+},
+{
+"q": "Q11352141",
+"nome": "Venezia e la sua laguna",
+"whc": "394",
+"lat": 45.43430556,
+"lng": 12.33894444,
+"istat": "227"
+},
+{
+"q": "Q11352141",
+"nome": "Venezia e la sua laguna",
+"whc": "394",
+"lat": 45.43430556,
+"lng": 12.33894444,
+"istat": "027"
+},
+{
+"q": "Q11352141",
+"nome": "Venezia e la sua laguna",
+"whc": "394",
+"lat": 45.43333333,
+"lng": 12.31666667,
+"istat": "227"
+},
+{
+"q": "Q11352141",
+"nome": "Venezia e la sua laguna",
+"whc": "394",
+"lat": 45.43333333,
+"lng": 12.31666667,
+"istat": "027"
+},
+{
+"q": "Q15221022",
+"nome": "Cattedrale, Torre Civica e Piazza Grande",
+"whc": "827",
+"lat": 44.64624,
+"lng": 10.92568,
+"istat": "036023"
+},
+{
+"q": "Q15602246",
+"nome": "necropoli etrusche di Cerveteri e Tarquinia",
+"whc": "1158",
+"lat": 42.00683333,
+"lng": 12.10188889,
+"istat": "056050"
+},
+{
+"q": "Q15602246",
+"nome": "necropoli etrusche di Cerveteri e Tarquinia",
+"whc": "1158",
+"lat": 42.00683333,
+"lng": 12.10188889,
+"istat": "058029"
+},
+{
+"q": "Q15604441",
+"nome": "Siracusa e la necropoli rocciosa di Pantalica",
+"whc": "1200",
+"lat": 37.05944,
+"lng": 15.29306,
+"istat": "089"
+},
+{
+"q": "Q15623665",
+"nome": "Mantua and Sabbioneta",
+"whc": "1287",
+"lat": 45.15944444,
+"lng": 10.79444444,
+"istat": "020030"
+},
+{
+"q": "Q15623665",
+"nome": "Mantua and Sabbioneta",
+"whc": "1287",
+"lat": 45.15944444,
+"lng": 10.79444444,
+"istat": "020054"
+},
+{
+"q": "Q16031521",
+"nome": "Lavagnone",
+"whc": "1363-092",
+"lat": 45.436415,
+"lng": 10.537411944,
+"istat": "017067"
+},
+{
+"q": "Q16574070",
+"nome": "Lucone di Polpenazze",
+"whc": "1363-095",
+"lat": 45.55076,
+"lng": 10.4877,
+"istat": "017145"
+},
+{
+"q": "Q16612568",
+"nome": "teatro romano di Ercolano",
+"whc": "829-005",
+"lat": 40.808333333,
+"lng": 14.347611111,
+"istat": "063064"
+},
+{
+"q": "Q16735627",
+"nome": "Ferrara, City of the Renaissance, and its Po Delta",
+"whc": "733bis",
+"lat": 44.83777778,
+"lng": 11.61944444,
+"istat": "038"
+},
+{
+"q": "Q16735627",
+"nome": "Ferrara, City of the Renaissance, and its Po Delta",
+"whc": "733",
+"lat": 44.83777778,
+"lng": 11.61944444,
+"istat": "038"
+},
+{
+"q": "Q16886821",
+"nome": "monumenti paleocristiani di Ravenna",
+"whc": "788",
+"lat": 44.42041667,
+"lng": 12.19625,
+"istat": "039014"
+},
+{
+"q": "Q16913064",
+"nome": "Trulli di Alberobello",
+"whc": "787",
+"lat": 40.7825,
+"lng": 17.23694,
+"istat": "072003"
+},
+{
+"q": "Q16913154",
+"nome": "Assisi, the Basilica of San Francesco and Other Franciscan Sites",
+"whc": "990",
+"lat": 43.06616667,
+"lng": 12.62244444,
+"istat": "054001"
+},
+{
+"q": "Q16920958",
+"nome": "aree archeologiche di Pompei, Ercolano e Torre Annunziata",
+"whc": "829",
+"lat": 40.75,
+"lng": 14.48333333,
+"istat": "063"
+},
+{
+"q": "Q16962666",
+"nome": "Palazzo Reale di Caserta con il parco, acquedotto di Vanvitelli e complesso di San Leucio",
+"whc": "549rev",
+"lat": 41.07333,
+"lng": 14.32639,
+"istat": "062"
+},
+{
+"q": "Q16962666",
+"nome": "Palazzo Reale di Caserta con il parco, acquedotto di Vanvitelli e complesso di San Leucio",
+"whc": "549rev",
+"lat": 41.07333,
+"lng": 14.32639,
+"istat": "061"
+},
+{
+"q": "Q17163308",
+"nome": "centro storico di Urbino",
+"whc": "828",
+"lat": 43.725,
+"lng": 12.63333,
+"istat": "041067"
+},
+{
+"q": "Q17163322",
+"nome": "centro storico di Siena",
+"whc": "717",
+"lat": 43.31861111,
+"lng": 11.33166667,
+"istat": "052032"
+},
+{
+"q": "Q17296768",
+"nome": "Paesaggio vitivinicolo del Piemonte: Langhe-Roero e Monferrato",
+"whc": "1390",
+"lat": 44.651944444,
+"lng": 7.994166666,
+"istat": "004"
+},
+{
+"q": "Q17296768",
+"nome": "Paesaggio vitivinicolo del Piemonte: Langhe-Roero e Monferrato",
+"whc": "1390",
+"lat": 44.651944444,
+"lng": 7.994166666,
+"istat": "006"
+},
+{
+"q": "Q17296768",
+"nome": "Paesaggio vitivinicolo del Piemonte: Langhe-Roero e Monferrato",
+"whc": "1390",
+"lat": 44.651944444,
+"lng": 7.994166666,
+"istat": "005"
+},
+{
+"q": "Q17633458",
+"nome": "isolino Virginia",
+"whc": "1363-099",
+"lat": 45.812013888,
+"lng": 8.718061111,
+"istat": "012014"
+},
+{
+"q": "Q18222399",
+"nome": "scavi archeologici di Pompei",
+"whc": "829bis-001",
+"lat": 40.7511,
+"lng": 14.49,
+"istat": "063058"
+},
+{
+"q": "Q18222399",
+"nome": "scavi archeologici di Pompei",
+"whc": "829-001",
+"lat": 40.7511,
+"lng": 14.49,
+"istat": "063058"
+},
+{
+"q": "Q18448486",
+"nome": "centro storico di Roma, le proprietà della Santa Sede in questa città che godono dell'extraterritorialità e San Paolo fuori le mura",
+"whc": "91",
+"lat": 41.8928,
+"lng": 12.4866,
+"istat": "058091"
+},
+{
+"q": "Q18649472",
+"nome": "città tardo barocche del Val di Noto",
+"whc": "1024rev",
+"lat": 37.502222222,
+"lng": 15.086944444,
+"istat": "287"
+},
+{
+"q": "Q18649472",
+"nome": "città tardo barocche del Val di Noto",
+"whc": "1024rev",
+"lat": 37.502222222,
+"lng": 15.086944444,
+"istat": "087"
+},
+{
+"q": "Q18649472",
+"nome": "città tardo barocche del Val di Noto",
+"whc": "1024rev",
+"lat": 37.502222222,
+"lng": 15.086944444,
+"istat": "089"
+},
+{
+"q": "Q18649472",
+"nome": "città tardo barocche del Val di Noto",
+"whc": "1024rev",
+"lat": 37.502222222,
+"lng": 15.086944444,
+"istat": "088"
+},
+{
+"q": "Q18649472",
+"nome": "città tardo barocche del Val di Noto",
+"whc": "1024rev",
+"lat": 36.893194444,
+"lng": 15.068916666,
+"istat": "287"
+},
+{
+"q": "Q18649472",
+"nome": "città tardo barocche del Val di Noto",
+"whc": "1024rev",
+"lat": 36.893194444,
+"lng": 15.068916666,
+"istat": "087"
+},
+{
+"q": "Q18649472",
+"nome": "città tardo barocche del Val di Noto",
+"whc": "1024rev",
+"lat": 36.893194444,
+"lng": 15.068916666,
+"istat": "089"
+},
+{
+"q": "Q18649472",
+"nome": "città tardo barocche del Val di Noto",
+"whc": "1024rev",
+"lat": 36.893194444,
+"lng": 15.068916666,
+"istat": "088"
+},
+{
+"q": "Q18649472",
+"nome": "città tardo barocche del Val di Noto",
+"whc": "1024rev",
+"lat": 37.275888888,
+"lng": 14.791722222,
+"istat": "287"
+},
+{
+"q": "Q18649472",
+"nome": "città tardo barocche del Val di Noto",
+"whc": "1024rev",
+"lat": 37.275888888,
+"lng": 14.791722222,
+"istat": "087"
+},
+{
+"q": "Q18649472",
+"nome": "città tardo barocche del Val di Noto",
+"whc": "1024rev",
+"lat": 37.275888888,
+"lng": 14.791722222,
+"istat": "089"
+},
+{
+"q": "Q28670361",
+"nome": "Lagazzi del Vho",
+"whc": "1363-096",
+"lat": 45.10765,
+"lng": 10.392975,
+"istat": "019116"
+},
+{
+"q": "Q29583920",
+"nome": "Il Sabbione o settentrionale",
+"whc": "1363-101",
+"lat": 45.7996,
+"lng": 8.6488,
+"istat": "012143"
+},
+{
+"q": "Q84090",
+"nome": "basilica di San Giovanni in Laterano",
+"whc": "91-002a",
+"lat": 41.885905555,
+"lng": 12.506155555,
+"istat": "058091"
+},
+{
+"q": "Q156011",
+"nome": "Antiche faggete primordiali dei Carpazi e di altre regioni d'Europa",
+"whc": "1133ter",
+"lat": 49.0,
+"lng": 15.0,
+"istat": null
+},
+{
+"q": "Q156011",
+"nome": "Antiche faggete primordiali dei Carpazi e di altre regioni d'Europa",
+"whc": "1133quater",
+"lat": 49.0,
+"lng": 15.0,
+"istat": null
+},
+{
+"q": "Q156011",
+"nome": "Antiche faggete primordiali dei Carpazi e di altre regioni d'Europa",
+"whc": "1133bis",
+"lat": 49.0,
+"lng": 15.0,
+"istat": null
+},
+{
+"q": "Q156011",
+"nome": "Antiche faggete primordiali dei Carpazi e di altre regioni d'Europa",
+"whc": "1133",
+"lat": 49.0,
+"lng": 15.0,
+"istat": null
+},
+{
+"q": "Q178813",
+"nome": "scavi archeologici di Ercolano",
+"whc": "829-003",
+"lat": 40.806111,
+"lng": 14.3475,
+"istat": "063064"
+},
+{
+"q": "Q179883",
+"nome": "isole Eolie",
+"whc": "908",
+"lat": 38.496666666,
+"lng": 14.935833333,
+"istat": "083"
+},
+{
+"q": "Q186282",
+"nome": "basilica di Santa Maria Maggiore",
+"whc": "91-003",
+"lat": 41.8975,
+"lng": 12.498611111,
+"istat": "058091"
+},
+{
+"q": "Q187599",
+"nome": "Palazzo mediceo di Seravezza",
+"whc": "175-010",
+"lat": 43.993818,
+"lng": 10.231994,
+"istat": "046028"
+},
+{
+"q": "Q189417",
+"nome": "via Appia",
+"whc": "1708",
+"lat": 41.841389,
+"lng": 12.5325,
+"istat": "058091"
+},
+{
+"q": "Q189417",
+"nome": "via Appia",
+"whc": "1708",
+"lat": 41.841389,
+"lng": 12.5325,
+"istat": "074001"
+},
+{
+"q": "Q203241",
+"nome": "Marmolada",
+"whc": "1237rev-002",
+"lat": 46.424444444,
+"lng": 11.85,
+"istat": "025"
+},
+{
+"q": "Q206365",
+"nome": "Villa Medici",
+"whc": "175-004",
+"lat": 43.805717,
+"lng": 11.289117,
+"istat": "048015"
+},
+{
+"q": "Q212214",
+"nome": "Costiera amalfitana",
+"whc": "830",
+"lat": 40.633333333,
+"lng": 14.6,
+"istat": "15"
+},
+{
+"q": "Q215897",
+"nome": "Castel del Monte",
+"whc": "398",
+"lat": 41.0847535,
+"lng": 16.2709346,
+"istat": "110001"
+},
+{
+"q": "Q217449",
+"nome": "Val d'Orcia",
+"whc": "1026",
+"lat": 43.066666666,
+"lng": 11.55,
+"istat": "052"
+},
+{
+"q": "Q231699",
+"nome": "basilica di San Paolo fuori le mura",
+"whc": "91-013",
+"lat": 41.858611111,
+"lng": 12.477222222,
+"istat": "058091"
+},
+{
+"q": "Q244952",
+"nome": "chiesa di Santa Maria delle Grazie",
+"whc": "93",
+"lat": 45.465833333,
+"lng": 9.171111111,
+"istat": "015146"
+},
+{
+"q": "Q253241",
+"nome": "area archeologica di Su Nuraxi",
+"whc": "833",
+"lat": 39.7028565,
+"lng": 8.9998843,
+"istat": "117002"
+},
+{
+"q": "Q272777",
+"nome": "Villa Adriana",
+"whc": "907",
+"lat": 41.941944,
+"lng": 12.775278,
+"istat": "058104"
+},
+{
+"q": "Q289427",
+"nome": "mausoleo di Teodorico",
+"whc": "788-007",
+"lat": 44.4250456,
+"lng": 12.2091687,
+"istat": "039014"
+},
+{
+"q": "Q302975",
+"nome": "fortezza di Palmanova",
+"whc": "1533-003",
+"lat": 45.904971,
+"lng": 13.310256,
+"istat": "030070"
+},
+{
+"q": "Q329967",
+"nome": "Paestum",
+"whc": "842",
+"lat": 40.422631,
+"lng": 15.005569,
+"istat": null
+},
+{
+"q": "Q329967",
+"nome": "Paestum",
+"whc": "842",
+"lat": 40.42,
+"lng": 15.005555555,
+"istat": null
+},
+{
+"q": "Q368346",
+"nome": "Villa medicea di Careggi",
+"whc": "175-003",
+"lat": 43.807917,
+"lng": 11.250282,
+"istat": "048017"
+},
+{
+"q": "Q370956",
+"nome": "Città di Vicenza e le ville palladiane del Veneto",
+"whc": "712",
+"lat": 45.55,
+"lng": 11.55,
+"istat": "05"
+},
+{
+"q": "Q370956",
+"nome": "Città di Vicenza e le ville palladiane del Veneto",
+"whc": "712bis",
+"lat": 45.55,
+"lng": 11.55,
+"istat": "05"
+},
+{
+"q": "Q384966",
+"nome": "sacro monte di Oropa",
+"whc": "1068-005",
+"lat": 45.624614,
+"lng": 7.981322,
+"istat": "096004"
+},
+{
+"q": "Q387517",
+"nome": "Villa Saraceno",
+"whc": "712-012",
+"lat": 45.3125,
+"lng": 11.56638889,
+"istat": "024001"
+},
+{
+"q": "Q461272",
+"nome": "residenze sabaude in Piemonte",
+"whc": "823bis",
+"lat": 45.0725,
+"lng": 7.68583,
+"istat": "01"
+},
+{
+"q": "Q461272",
+"nome": "residenze sabaude in Piemonte",
+"whc": "823",
+"lat": 45.0725,
+"lng": 7.68583,
+"istat": "01"
+},
+{
+"q": "Q468405",
+"nome": "Laterano",
+"whc": "91-002",
+"lat": 41.88583333,
+"lng": 12.50583333,
+"istat": null
+},
+{
+"q": "Q478258",
+"nome": "Caltagirone",
+"whc": "1024-001",
+"lat": 37.233333333,
+"lng": 14.516666666,
+"istat": "287"
+},
+{
+"q": "Q478258",
+"nome": "Caltagirone",
+"whc": "1024-001",
+"lat": 37.233333333,
+"lng": 14.516666666,
+"istat": "087"
+},
+{
+"q": "Q478417",
+"nome": "Militello in Val di Catania",
+"whc": "1024-003",
+"lat": 37.274234,
+"lng": 14.793333,
+"istat": "287"
+},
+{
+"q": "Q478417",
+"nome": "Militello in Val di Catania",
+"whc": "1024-003",
+"lat": 37.274234,
+"lng": 14.793333,
+"istat": "087"
+},
+{
+"q": "Q499242",
+"nome": "parco dell'Etna",
+"whc": "1427",
+"lat": 37.76527778,
+"lng": 15.0,
+"istat": "19"
+},
+{
+"q": "Q499242",
+"nome": "parco dell'Etna",
+"whc": "1427",
+"lat": 37.76527778,
+"lng": 15.0,
+"istat": "087"
+},
+{
+"q": "Q499242",
+"nome": "parco dell'Etna",
+"whc": "1427",
+"lat": 37.76527778,
+"lng": 15.0,
+"istat": "287"
+},
+{
+"q": "Q505574",
+"nome": "Villa Almerico Capra (La Rotonda)",
+"whc": "712-004",
+"lat": 45.531524,
+"lng": 11.560268,
+"istat": "024116"
+},
+{
+"q": "Q505617",
+"nome": "Villa del Casale",
+"whc": "832",
+"lat": 37.364723,
+"lng": 14.334553,
+"istat": "086014"
+},
+{
+"q": "Q514069",
+"nome": "Villa Pisani",
+"whc": "712-010",
+"lat": 45.35736667,
+"lng": 11.37102222,
+"istat": "024052"
+},
+{
+"q": "Q523026",
+"nome": "centro storico di Roma",
+"whc": "91-001",
+"lat": 41.899,
+"lng": 12.47,
+"istat": "058091"
+},
+{
+"q": "Q542944",
+"nome": "Villa di Poppea",
+"whc": "829-003",
+"lat": 40.75722222,
+"lng": 14.4525,
+"istat": "063083"
+},
+{
+"q": "Q598892",
+"nome": "Orto botanico di Padova",
+"whc": "824",
+"lat": 45.39953,
+"lng": 11.880682,
+"istat": "028060"
+},
+{
+"q": "Q600062",
+"nome": "cappella Arcivescovile",
+"whc": "788-004",
+"lat": 44.415555555,
+"lng": 12.197777777,
+"istat": "039014"
+},
+{
+"q": "Q636774",
+"nome": "Valle dei Templi",
+"whc": "831",
+"lat": 37.28972222,
+"lng": 13.59,
+"istat": "084001"
+},
+{
+"q": "Q644288",
+"nome": "Mausoleo di Galla Placidia",
+"whc": "788-001",
+"lat": 44.421021,
+"lng": 12.197077,
+"istat": "039014"
+},
+{
+"q": "Q656334",
+"nome": "Rio delle Foglie",
+"whc": "1237rev-008",
+"lat": 46.357828,
+"lng": 11.434193,
+"istat": "021001"
+},
+{
+"q": "Q660758",
+"nome": "Isola del Tino",
+"whc": "826-003",
+"lat": 44.027222222,
+"lng": 9.850555555,
+"istat": "011022"
+},
+{
+"q": "Q721817",
+"nome": "basilica di San Vitale",
+"whc": "788-002",
+"lat": 44.420555555,
+"lng": 12.196388888,
+"istat": "039014"
+},
+{
+"q": "Q726842",
+"nome": "Crespi d'Adda",
+"whc": "730",
+"lat": 45.596666666,
+"lng": 9.536111111,
+"istat": "016051"
+},
+{
+"q": "Q733389",
+"nome": "Villa medicea di Poggio a Caiano",
+"whc": "175-006",
+"lat": 43.816448,
+"lng": 11.055525,
+"istat": "100004"
+},
+{
+"q": "Q738794",
+"nome": "Villa Caldogno",
+"whc": "712-006",
+"lat": 45.61445,
+"lng": 11.5069,
+"istat": "024018"
+},
+{
+"q": "Q744552",
+"nome": "basilica di Sant'Apollinare in Classe",
+"whc": "788-008",
+"lat": 44.380117,
+"lng": 12.232365,
+"istat": "039014"
+},
+{
+"q": "Q745359",
+"nome": "chiesa di San Giovanni degli Eremiti",
+"whc": "1487-002",
+"lat": 38.109722222,
+"lng": 13.354722222,
+"istat": "082053"
+},
+{
+"q": "Q746063",
+"nome": "Villa d'Este",
+"whc": "1025",
+"lat": 41.9625,
+"lng": 12.796111111,
+"istat": "058104"
+},
+{
+"q": "Q750245",
+"nome": "piazza dei Miracoli",
+"whc": "395",
+"lat": 43.723428,
+"lng": 10.394778,
+"istat": "050026"
+},
+{
+"q": "Q752505",
+"nome": "Tinetto",
+"whc": "826-004",
+"lat": 44.023508333,
+"lng": 9.851263888,
+"istat": "011022"
+},
+{
+"q": "Q753162",
+"nome": "Sacri Monti del Piemonte e della Lombardia",
+"whc": "1068",
+"lat": 45.974555555,
+"lng": 9.169555555,
+"istat": "03"
+},
+{
+"q": "Q753162",
+"nome": "Sacri Monti del Piemonte e della Lombardia",
+"whc": "1068",
+"lat": 45.974555555,
+"lng": 9.169555555,
+"istat": "01"
+},
+{
+"q": "Q757114",
+"nome": "Palmaria",
+"whc": "826-002",
+"lat": 44.042836111,
+"lng": 9.843866666,
+"istat": "011022"
+},
+{
+"q": "Q832278",
+"nome": "basilica di Sant'Apollinare Nuovo",
+"whc": "788-005",
+"lat": 44.416738,
+"lng": 12.2046,
+"istat": "039014"
+},
+{
+"q": "Q832957",
+"nome": "centro storico di Napoli",
+"whc": "726bis",
+"lat": 40.85139,
+"lng": 14.26278,
+"istat": "063049"
+},
+{
+"q": "Q832957",
+"nome": "centro storico di Napoli",
+"whc": "726",
+"lat": 40.85139,
+"lng": 14.26278,
+"istat": "063049"
+},
+{
+"q": "Q833267",
+"nome": "Villa medicea di Artimino",
+"whc": "175-013",
+"lat": 43.78185556,
+"lng": 11.04429167,
+"istat": "100002"
+},
+{
+"q": "Q858823",
+"nome": "Casa d'Amore",
+"whc": "787-001",
+"lat": 40.7845,
+"lng": 17.2383,
+"istat": "072003"
+},
+{
+"q": "Q859735",
+"nome": "necropoli della Banditaccia",
+"whc": "1158-001",
+"lat": 42.006,
+"lng": 12.099595,
+"istat": "058029"
+},
+{
+"q": "Q859735",
+"nome": "necropoli della Banditaccia",
+"whc": "1158-001",
+"lat": 41.999083,
+"lng": 12.096765,
+"istat": "058029"
+},
+{
+"q": "Q888825",
+"nome": "Giardino di Boboli",
+"whc": "175-008",
+"lat": 43.7618,
+"lng": 11.24661,
+"istat": "048017"
+},
+{
+"q": "Q909889",
+"nome": "Dolomiti di Brenta",
+"whc": "1237rev-009",
+"lat": 46.17412,
+"lng": 10.89844,
+"istat": "022"
+},
+{
+"q": "Q909889",
+"nome": "Dolomiti di Brenta",
+"whc": "1237rev-009",
+"lat": 46.15722222,
+"lng": 10.87111111,
+"istat": "022"
+},
+{
+"q": "Q931434",
+"nome": "Pantalica",
+"whc": "1200-001",
+"lat": 37.13333333,
+"lng": 14.98333333,
+"istat": "089"
+},
+{
+"q": "Q931434",
+"nome": "Pantalica",
+"whc": "1200-001",
+"lat": 37.13333333,
+"lng": 14.98333333,
+"istat": "089008"
+},
+{
+"q": "Q945514",
+"nome": "incisioni rupestri della Val Camonica",
+"whc": "94",
+"lat": 46.023888888,
+"lng": 10.35,
+"istat": "017"
+},
+{
+"q": "Q958758",
+"nome": "Villa La Petraia",
+"whc": "175-007",
+"lat": 43.818977,
+"lng": 11.235275,
+"istat": "048017"
+},
+{
+"q": "Q1000054",
+"nome": "La Zisa",
+"whc": "1487-006",
+"lat": 38.116774,
+"lng": 13.34106,
+"istat": "082053"
+},
+{
+"q": "Q1071495",
+"nome": "Villa Barbaro",
+"whc": "712-018",
+"lat": 45.811944,
+"lng": 11.976389,
+"istat": "026039"
+},
+{
+"q": "Q1110926",
+"nome": "Riserva naturale Sasso Fratino",
+"whc": "1133ter-049",
+"lat": 43.8493,
+"lng": 11.814,
+"istat": "040"
+},
+{
+"q": "Q1139609",
+"nome": "Villa Foscari",
+"whc": "712-021",
+"lat": 45.436667,
+"lng": 12.201667,
+"istat": null
+},
+{
+"q": "Q1164944",
+"nome": "Villa Medicea La Magia",
+"whc": "175-012",
+"lat": 43.85166667,
+"lng": 10.9725,
+"istat": "047017"
+},
+{
+"q": "Q1224490",
+"nome": "Sacro Monte di Varese",
+"whc": "1068-004",
+"lat": 45.854608,
+"lng": 8.794576,
+"istat": "012133"
+},
+{
+"q": "Q1233234",
+"nome": "isola di Ortigia",
+"whc": "1200-003",
+"lat": 37.061,
+"lng": 15.2945,
+"istat": "089017"
+},
+{
+"q": "Q1241298",
+"nome": "Villa dei Misteri",
+"whc": "829-002",
+"lat": 40.75369444,
+"lng": 14.47744444,
+"istat": "063058"
+},
+{
+"q": "Q1256487",
+"nome": "battistero Neoniano",
+"whc": "788-003",
+"lat": 44.41559,
+"lng": 12.19736,
+"istat": "039014"
+},
+{
+"q": "Q1258865",
+"nome": "Villa Emo",
+"whc": "712-019",
+"lat": 45.711722222,
+"lng": 11.991222222,
+"istat": "026089"
+},
+{
+"q": "Q1262976",
+"nome": "ponte dell'Ammiraglio",
+"whc": "1487-007",
+"lat": 38.105,
+"lng": 13.375,
+"istat": "082053"
+},
+{
+"q": "Q1279458",
+"nome": "Complesso museale di Santa Maria della Scala",
+"whc": "91bis-002 a",
+"lat": 43.316937,
+"lng": 11.328891,
+"istat": "052032"
+},
+{
+"q": "Q1303856",
+"nome": "Duomo di Monreale",
+"whc": "1487-009",
+"lat": 38.081858333,
+"lng": 13.292066666,
+"istat": "082049"
+},
+{
+"q": "Q1324513",
+"nome": "Trullo sovrano",
+"whc": "787-004",
+"lat": 40.787357,
+"lng": 17.235407,
+"istat": "072003"
+},
+{
+"q": "Q1347586",
+"nome": "Villa dei Papiri",
+"whc": "829-004",
+"lat": 40.806666666,
+"lng": 14.345555555,
+"istat": "063064"
+},
+{
+"q": "Q1354756",
+"nome": "Duomo di Cefalù",
+"whc": "1487-008",
+"lat": 38.03984,
+"lng": 14.02341,
+"istat": "082027"
+},
+{
+"q": "Q1376633",
+"nome": "Villa Demidoff",
+"whc": "175-011",
+"lat": 43.86,
+"lng": 11.3025,
+"istat": "048046"
+},
+{
+"q": "Q1448870",
+"nome": "santuario di San Michele Arcangelo",
+"whc": "1318-007",
+"lat": 41.707722222,
+"lng": 15.954777777,
+"istat": "071033"
+},
+{
+"q": "Q1449217",
+"nome": "battistero degli Ariani",
+"whc": "788-006",
+"lat": 44.418717,
+"lng": 12.20239,
+"istat": "039014"
+},
+{
+"q": "Q1455908",
+"nome": "sacro monte di Ghiffa",
+"whc": "1068-007",
+"lat": 45.96361111,
+"lng": 8.615,
+"istat": "103033"
+},
+{
+"q": "Q1472544",
+"nome": "sacro monte della Beata Vergine del Soccorso",
+"whc": "1068-006",
+"lat": 45.973843,
+"lng": 9.178989,
+"istat": "013252"
+},
+{
+"q": "Q1473122",
+"nome": "palazzo di Propaganda Fide",
+"whc": "91-006",
+"lat": 41.904166666,
+"lng": 12.483305555,
+"istat": "058091"
+},
+{
 "q": "Q55739617",
 "nome": "Sassi e parco delle chiese rupestri di Matera",
 "whc": "670",
@@ -801,822 +2401,6 @@
 "istat": "088"
 },
 {
-"q": "Q39054",
-"nome": "Torre di Pisa",
-"whc": "№395вспискеобъектоввсемирногонаследия(en)",
-"lat": 43.72301,
-"lng": 10.396624,
-"istat": "050026"
-},
-{
-"q": "Q43014",
-"nome": "Sabbioneta",
-"whc": "1287-002",
-"lat": 44.999166666,
-"lng": 10.489722222,
-"istat": "020"
-},
-{
-"q": "Q84090",
-"nome": "basilica di San Giovanni in Laterano",
-"whc": "91-002a",
-"lat": 41.885905555,
-"lng": 12.506155555,
-"istat": "058091"
-},
-{
-"q": "Q156011",
-"nome": "Antiche faggete primordiali dei Carpazi e di altre regioni d'Europa",
-"whc": "1133",
-"lat": 49.0,
-"lng": 15.0,
-"istat": null
-},
-{
-"q": "Q156011",
-"nome": "Antiche faggete primordiali dei Carpazi e di altre regioni d'Europa",
-"whc": "1133ter",
-"lat": 49.0,
-"lng": 15.0,
-"istat": null
-},
-{
-"q": "Q156011",
-"nome": "Antiche faggete primordiali dei Carpazi e di altre regioni d'Europa",
-"whc": "1133quater",
-"lat": 49.0,
-"lng": 15.0,
-"istat": null
-},
-{
-"q": "Q156011",
-"nome": "Antiche faggete primordiali dei Carpazi e di altre regioni d'Europa",
-"whc": "1133bis",
-"lat": 49.0,
-"lng": 15.0,
-"istat": null
-},
-{
-"q": "Q178813",
-"nome": "scavi archeologici di Ercolano",
-"whc": "829-003",
-"lat": 40.806111,
-"lng": 14.3475,
-"istat": "063064"
-},
-{
-"q": "Q179883",
-"nome": "isole Eolie",
-"whc": "908",
-"lat": 38.496666666,
-"lng": 14.935833333,
-"istat": "083"
-},
-{
-"q": "Q186282",
-"nome": "basilica di Santa Maria Maggiore",
-"whc": "91-003",
-"lat": 41.8975,
-"lng": 12.498611111,
-"istat": "058091"
-},
-{
-"q": "Q187599",
-"nome": "Palazzo mediceo di Seravezza",
-"whc": "175-010",
-"lat": 43.993818,
-"lng": 10.231994,
-"istat": "046028"
-},
-{
-"q": "Q189417",
-"nome": "via Appia",
-"whc": "1708",
-"lat": 41.841389,
-"lng": 12.5325,
-"istat": "058091"
-},
-{
-"q": "Q189417",
-"nome": "via Appia",
-"whc": "1708",
-"lat": 41.841389,
-"lng": 12.5325,
-"istat": "074001"
-},
-{
-"q": "Q203241",
-"nome": "Marmolada",
-"whc": "1237rev-002",
-"lat": 46.424444444,
-"lng": 11.85,
-"istat": "025"
-},
-{
-"q": "Q206365",
-"nome": "Villa Medici",
-"whc": "175-004",
-"lat": 43.805717,
-"lng": 11.289117,
-"istat": "048015"
-},
-{
-"q": "Q212214",
-"nome": "Costiera amalfitana",
-"whc": "830",
-"lat": 40.633333333,
-"lng": 14.6,
-"istat": "15"
-},
-{
-"q": "Q215897",
-"nome": "Castel del Monte",
-"whc": "398",
-"lat": 41.0847535,
-"lng": 16.2709346,
-"istat": "110001"
-},
-{
-"q": "Q217449",
-"nome": "Val d'Orcia",
-"whc": "1026",
-"lat": 43.066666666,
-"lng": 11.55,
-"istat": "052"
-},
-{
-"q": "Q231699",
-"nome": "basilica di San Paolo fuori le mura",
-"whc": "91-013",
-"lat": 41.858611111,
-"lng": 12.477222222,
-"istat": "058091"
-},
-{
-"q": "Q244952",
-"nome": "chiesa di Santa Maria delle Grazie",
-"whc": "93",
-"lat": 45.465833333,
-"lng": 9.171111111,
-"istat": "015146"
-},
-{
-"q": "Q253241",
-"nome": "area archeologica di Su Nuraxi",
-"whc": "833",
-"lat": 39.7028565,
-"lng": 8.9998843,
-"istat": "117002"
-},
-{
-"q": "Q272777",
-"nome": "Villa Adriana",
-"whc": "907",
-"lat": 41.941944,
-"lng": 12.775278,
-"istat": "058104"
-},
-{
-"q": "Q289427",
-"nome": "mausoleo di Teodorico",
-"whc": "788-007",
-"lat": 44.4250456,
-"lng": 12.2091687,
-"istat": "039014"
-},
-{
-"q": "Q302975",
-"nome": "fortezza di Palmanova",
-"whc": "1533-003",
-"lat": 45.904971,
-"lng": 13.310256,
-"istat": "030070"
-},
-{
-"q": "Q329967",
-"nome": "Paestum",
-"whc": "842",
-"lat": 40.422631,
-"lng": 15.005569,
-"istat": null
-},
-{
-"q": "Q329967",
-"nome": "Paestum",
-"whc": "842",
-"lat": 40.42,
-"lng": 15.005555555,
-"istat": null
-},
-{
-"q": "Q368346",
-"nome": "Villa medicea di Careggi",
-"whc": "175-003",
-"lat": 43.807917,
-"lng": 11.250282,
-"istat": "048017"
-},
-{
-"q": "Q370956",
-"nome": "Città di Vicenza e le ville palladiane del Veneto",
-"whc": "712",
-"lat": 45.55,
-"lng": 11.55,
-"istat": "05"
-},
-{
-"q": "Q370956",
-"nome": "Città di Vicenza e le ville palladiane del Veneto",
-"whc": "712bis",
-"lat": 45.55,
-"lng": 11.55,
-"istat": "05"
-},
-{
-"q": "Q384966",
-"nome": "sacro monte di Oropa",
-"whc": "1068-005",
-"lat": 45.624614,
-"lng": 7.981322,
-"istat": "096004"
-},
-{
-"q": "Q387517",
-"nome": "Villa Saraceno",
-"whc": "712-012",
-"lat": 45.3125,
-"lng": 11.56638889,
-"istat": "024001"
-},
-{
-"q": "Q461272",
-"nome": "residenze sabaude in Piemonte",
-"whc": "823",
-"lat": 45.0725,
-"lng": 7.68583,
-"istat": "01"
-},
-{
-"q": "Q461272",
-"nome": "residenze sabaude in Piemonte",
-"whc": "823bis",
-"lat": 45.0725,
-"lng": 7.68583,
-"istat": "01"
-},
-{
-"q": "Q468405",
-"nome": "Laterano",
-"whc": "91-002",
-"lat": 41.88583333,
-"lng": 12.50583333,
-"istat": null
-},
-{
-"q": "Q478258",
-"nome": "Caltagirone",
-"whc": "1024-001",
-"lat": 37.233333333,
-"lng": 14.516666666,
-"istat": "287"
-},
-{
-"q": "Q478258",
-"nome": "Caltagirone",
-"whc": "1024-001",
-"lat": 37.233333333,
-"lng": 14.516666666,
-"istat": "087"
-},
-{
-"q": "Q478417",
-"nome": "Militello in Val di Catania",
-"whc": "1024-003",
-"lat": 37.274234,
-"lng": 14.793333,
-"istat": "287"
-},
-{
-"q": "Q478417",
-"nome": "Militello in Val di Catania",
-"whc": "1024-003",
-"lat": 37.274234,
-"lng": 14.793333,
-"istat": "087"
-},
-{
-"q": "Q499242",
-"nome": "parco dell'Etna",
-"whc": "1427",
-"lat": 37.76527778,
-"lng": 15.0,
-"istat": "19"
-},
-{
-"q": "Q499242",
-"nome": "parco dell'Etna",
-"whc": "1427",
-"lat": 37.76527778,
-"lng": 15.0,
-"istat": "087"
-},
-{
-"q": "Q499242",
-"nome": "parco dell'Etna",
-"whc": "1427",
-"lat": 37.76527778,
-"lng": 15.0,
-"istat": "287"
-},
-{
-"q": "Q505574",
-"nome": "Villa Almerico Capra (La Rotonda)",
-"whc": "712-004",
-"lat": 45.531524,
-"lng": 11.560268,
-"istat": "024116"
-},
-{
-"q": "Q505617",
-"nome": "Villa del Casale",
-"whc": "832",
-"lat": 37.364723,
-"lng": 14.334553,
-"istat": "086014"
-},
-{
-"q": "Q514069",
-"nome": "Villa Pisani",
-"whc": "712-010",
-"lat": 45.35736667,
-"lng": 11.37102222,
-"istat": "024052"
-},
-{
-"q": "Q523026",
-"nome": "centro storico di Roma",
-"whc": "91-001",
-"lat": 41.899,
-"lng": 12.47,
-"istat": "058091"
-},
-{
-"q": "Q542944",
-"nome": "Villa di Poppea",
-"whc": "829-003",
-"lat": 40.75722222,
-"lng": 14.4525,
-"istat": "063083"
-},
-{
-"q": "Q598892",
-"nome": "Orto botanico di Padova",
-"whc": "824",
-"lat": 45.39953,
-"lng": 11.880682,
-"istat": "028060"
-},
-{
-"q": "Q600062",
-"nome": "cappella Arcivescovile",
-"whc": "788-004",
-"lat": 44.415555555,
-"lng": 12.197777777,
-"istat": "039014"
-},
-{
-"q": "Q636774",
-"nome": "Valle dei Templi",
-"whc": "831",
-"lat": 37.28972222,
-"lng": 13.59,
-"istat": "084001"
-},
-{
-"q": "Q644288",
-"nome": "Mausoleo di Galla Placidia",
-"whc": "788-001",
-"lat": 44.421021,
-"lng": 12.197077,
-"istat": "039014"
-},
-{
-"q": "Q656334",
-"nome": "Rio delle Foglie",
-"whc": "1237rev-008",
-"lat": 46.357828,
-"lng": 11.434193,
-"istat": "021001"
-},
-{
-"q": "Q660758",
-"nome": "Isola del Tino",
-"whc": "826-003",
-"lat": 44.027222222,
-"lng": 9.850555555,
-"istat": "011022"
-},
-{
-"q": "Q721817",
-"nome": "basilica di San Vitale",
-"whc": "788-002",
-"lat": 44.420555555,
-"lng": 12.196388888,
-"istat": "039014"
-},
-{
-"q": "Q726842",
-"nome": "Crespi d'Adda",
-"whc": "730",
-"lat": 45.596666666,
-"lng": 9.536111111,
-"istat": "016051"
-},
-{
-"q": "Q733389",
-"nome": "Villa medicea di Poggio a Caiano",
-"whc": "175-006",
-"lat": 43.816448,
-"lng": 11.055525,
-"istat": "100004"
-},
-{
-"q": "Q738794",
-"nome": "Villa Caldogno",
-"whc": "712-006",
-"lat": 45.61445,
-"lng": 11.5069,
-"istat": "024018"
-},
-{
-"q": "Q744552",
-"nome": "basilica di Sant'Apollinare in Classe",
-"whc": "788-008",
-"lat": 44.380117,
-"lng": 12.232365,
-"istat": "039014"
-},
-{
-"q": "Q745359",
-"nome": "chiesa di San Giovanni degli Eremiti",
-"whc": "1487-002",
-"lat": 38.109722222,
-"lng": 13.354722222,
-"istat": "082053"
-},
-{
-"q": "Q746063",
-"nome": "Villa d'Este",
-"whc": "1025",
-"lat": 41.9625,
-"lng": 12.796111111,
-"istat": "058104"
-},
-{
-"q": "Q750245",
-"nome": "piazza dei Miracoli",
-"whc": "395",
-"lat": 43.723428,
-"lng": 10.394778,
-"istat": "050026"
-},
-{
-"q": "Q752505",
-"nome": "Tinetto",
-"whc": "826-004",
-"lat": 44.023508333,
-"lng": 9.851263888,
-"istat": "011022"
-},
-{
-"q": "Q753162",
-"nome": "Sacri Monti del Piemonte e della Lombardia",
-"whc": "1068",
-"lat": 45.974555555,
-"lng": 9.169555555,
-"istat": "03"
-},
-{
-"q": "Q753162",
-"nome": "Sacri Monti del Piemonte e della Lombardia",
-"whc": "1068",
-"lat": 45.974555555,
-"lng": 9.169555555,
-"istat": "01"
-},
-{
-"q": "Q757114",
-"nome": "Palmaria",
-"whc": "826-002",
-"lat": 44.042836111,
-"lng": 9.843866666,
-"istat": "011022"
-},
-{
-"q": "Q832278",
-"nome": "basilica di Sant'Apollinare Nuovo",
-"whc": "788-005",
-"lat": 44.416738,
-"lng": 12.2046,
-"istat": "039014"
-},
-{
-"q": "Q832957",
-"nome": "centro storico di Napoli",
-"whc": "726bis",
-"lat": 40.85139,
-"lng": 14.26278,
-"istat": "063049"
-},
-{
-"q": "Q832957",
-"nome": "centro storico di Napoli",
-"whc": "726",
-"lat": 40.85139,
-"lng": 14.26278,
-"istat": "063049"
-},
-{
-"q": "Q833267",
-"nome": "Villa medicea di Artimino",
-"whc": "175-013",
-"lat": 43.78185556,
-"lng": 11.04429167,
-"istat": "100002"
-},
-{
-"q": "Q858823",
-"nome": "Casa d'Amore",
-"whc": "787-001",
-"lat": 40.7845,
-"lng": 17.2383,
-"istat": "072003"
-},
-{
-"q": "Q859735",
-"nome": "necropoli della Banditaccia",
-"whc": "1158-001",
-"lat": 42.006,
-"lng": 12.099595,
-"istat": "058029"
-},
-{
-"q": "Q859735",
-"nome": "necropoli della Banditaccia",
-"whc": "1158-001",
-"lat": 41.999083,
-"lng": 12.096765,
-"istat": "058029"
-},
-{
-"q": "Q888825",
-"nome": "Giardino di Boboli",
-"whc": "175-008",
-"lat": 43.7618,
-"lng": 11.24661,
-"istat": "048017"
-},
-{
-"q": "Q909889",
-"nome": "Dolomiti di Brenta",
-"whc": "1237rev-009",
-"lat": 46.17412,
-"lng": 10.89844,
-"istat": "022"
-},
-{
-"q": "Q909889",
-"nome": "Dolomiti di Brenta",
-"whc": "1237rev-009",
-"lat": 46.15722222,
-"lng": 10.87111111,
-"istat": "022"
-},
-{
-"q": "Q931434",
-"nome": "Pantalica",
-"whc": "1200-001",
-"lat": 37.13333333,
-"lng": 14.98333333,
-"istat": "089"
-},
-{
-"q": "Q931434",
-"nome": "Pantalica",
-"whc": "1200-001",
-"lat": 37.13333333,
-"lng": 14.98333333,
-"istat": "089008"
-},
-{
-"q": "Q945514",
-"nome": "incisioni rupestri della Val Camonica",
-"whc": "94",
-"lat": 46.023888888,
-"lng": 10.35,
-"istat": "017"
-},
-{
-"q": "Q958758",
-"nome": "Villa La Petraia",
-"whc": "175-007",
-"lat": 43.818977,
-"lng": 11.235275,
-"istat": "048017"
-},
-{
-"q": "Q1000054",
-"nome": "La Zisa",
-"whc": "1487-006",
-"lat": 38.116774,
-"lng": 13.34106,
-"istat": "082053"
-},
-{
-"q": "Q1071495",
-"nome": "Villa Barbaro",
-"whc": "712-018",
-"lat": 45.811944,
-"lng": 11.976389,
-"istat": "026039"
-},
-{
-"q": "Q1110926",
-"nome": "Riserva naturale Sasso Fratino",
-"whc": "1133ter-049",
-"lat": 43.8493,
-"lng": 11.814,
-"istat": "040"
-},
-{
-"q": "Q1139609",
-"nome": "Villa Foscari",
-"whc": "712-021",
-"lat": 45.436667,
-"lng": 12.201667,
-"istat": null
-},
-{
-"q": "Q1164944",
-"nome": "Villa Medicea La Magia",
-"whc": "175-012",
-"lat": 43.85166667,
-"lng": 10.9725,
-"istat": "047017"
-},
-{
-"q": "Q1224490",
-"nome": "Sacro Monte di Varese",
-"whc": "1068-004",
-"lat": 45.854608,
-"lng": 8.794576,
-"istat": "012133"
-},
-{
-"q": "Q1233234",
-"nome": "isola di Ortigia",
-"whc": "1200-003",
-"lat": 37.061,
-"lng": 15.2945,
-"istat": "089017"
-},
-{
-"q": "Q1241298",
-"nome": "Villa dei Misteri",
-"whc": "829-002",
-"lat": 40.75369444,
-"lng": 14.47744444,
-"istat": "063058"
-},
-{
-"q": "Q1256487",
-"nome": "battistero Neoniano",
-"whc": "788-003",
-"lat": 44.41559,
-"lng": 12.19736,
-"istat": "039014"
-},
-{
-"q": "Q1258865",
-"nome": "Villa Emo",
-"whc": "712-019",
-"lat": 45.711722222,
-"lng": 11.991222222,
-"istat": "026089"
-},
-{
-"q": "Q1262976",
-"nome": "ponte dell'Ammiraglio",
-"whc": "1487-007",
-"lat": 38.105,
-"lng": 13.375,
-"istat": "082053"
-},
-{
-"q": "Q1279458",
-"nome": "Complesso museale di Santa Maria della Scala",
-"whc": "91bis-002 a",
-"lat": 43.316937,
-"lng": 11.328891,
-"istat": "052032"
-},
-{
-"q": "Q1303856",
-"nome": "Duomo di Monreale",
-"whc": "1487-009",
-"lat": 38.081858333,
-"lng": 13.292066666,
-"istat": "082049"
-},
-{
-"q": "Q1324513",
-"nome": "Trullo sovrano",
-"whc": "787-004",
-"lat": 40.787357,
-"lng": 17.235407,
-"istat": "072003"
-},
-{
-"q": "Q1347586",
-"nome": "Villa dei Papiri",
-"whc": "829-004",
-"lat": 40.806666666,
-"lng": 14.345555555,
-"istat": "063064"
-},
-{
-"q": "Q1354756",
-"nome": "Duomo di Cefalù",
-"whc": "1487-008",
-"lat": 38.03984,
-"lng": 14.02341,
-"istat": "082027"
-},
-{
-"q": "Q1376633",
-"nome": "Villa Demidoff",
-"whc": "175-011",
-"lat": 43.86,
-"lng": 11.3025,
-"istat": "048046"
-},
-{
-"q": "Q1448870",
-"nome": "santuario di San Michele Arcangelo",
-"whc": "1318-007",
-"lat": 41.707722222,
-"lng": 15.954777777,
-"istat": "071033"
-},
-{
-"q": "Q1449217",
-"nome": "battistero degli Ariani",
-"whc": "788-006",
-"lat": 44.418717,
-"lng": 12.20239,
-"istat": "039014"
-},
-{
-"q": "Q1455908",
-"nome": "sacro monte di Ghiffa",
-"whc": "1068-007",
-"lat": 45.96361111,
-"lng": 8.615,
-"istat": "103033"
-},
-{
-"q": "Q1472544",
-"nome": "sacro monte della Beata Vergine del Soccorso",
-"whc": "1068-006",
-"lat": 45.973843,
-"lng": 9.178989,
-"istat": "013252"
-},
-{
-"q": "Q1473122",
-"nome": "palazzo di Propaganda Fide",
-"whc": "91-006",
-"lat": 41.904166666,
-"lng": 12.483305555,
-"istat": "058091"
-},
-{
-"q": "Q1868633",
-"nome": "ex chiesa di San Salvatore",
-"whc": "1318-004",
-"lat": 42.7419,
-"lng": 12.7434,
-"istat": "054051"
-},
-{
-"q": "Q1945735",
-"nome": "complesso archeologico di Monte Baranta",
-"whc": "1730-004",
-"lat": 40.631933,
-"lng": 8.396644,
-"istat": "090048"
-},
-{
 "q": "Q29583972",
 "nome": "Sito palafitticolo del lago di Viverone",
 "whc": "1363-102",
@@ -1713,132 +2497,20 @@
 "istat": "063083"
 },
 {
-"q": "Q1478407",
-"nome": "Cattedrale di Palermo",
-"whc": "1487-005",
-"lat": 38.114444,
-"lng": 13.356111,
-"istat": "082053"
+"q": "Q1868633",
+"nome": "ex chiesa di San Salvatore",
+"whc": "1318-004",
+"lat": 42.7419,
+"lng": 12.7434,
+"istat": "054051"
 },
 {
-"q": "Q1581507",
-"nome": "Villa Medicea del Poggio Imperiale",
-"whc": "175-014",
-"lat": 43.748988,
-"lng": 11.247767,
-"istat": "048017"
-},
-{
-"q": "Q1585931",
-"nome": "Villa medicea di Cerreto Guidi",
-"whc": "175-009",
-"lat": 43.75899,
-"lng": 10.878987,
-"istat": "048011"
-},
-{
-"q": "Q1585931",
-"nome": "Villa medicea di Cerreto Guidi",
-"whc": "175-009",
-"lat": 43.75861111,
-"lng": 10.87916667,
-"istat": "048011"
-},
-{
-"q": "Q1585931",
-"nome": "Villa medicea di Cerreto Guidi",
-"whc": "175-009",
-"lat": 43.759098,
-"lng": 10.878967,
-"istat": "048011"
-},
-{
-"q": "Q1644597",
-"nome": "chiesa della Martorana",
-"whc": "1487-003",
-"lat": 38.114781,
-"lng": 13.362866,
-"istat": "082053"
-},
-{
-"q": "Q1768461",
-"nome": "Scala Santa",
-"whc": "91-002b",
-"lat": 41.88722,
-"lng": 12.50694,
-"istat": "058091"
-},
-{
-"q": "Q1787344",
-"nome": "sacro monte Calvario di Domodossola",
-"whc": "1068-008",
-"lat": 46.10555556,
-"lng": 8.28694444,
-"istat": "103028"
-},
-{
-"q": "Q1787362",
-"nome": "Sacro Monte di Crea",
-"whc": "1068-002",
-"lat": 45.09472222,
-"lng": 8.26972222,
-"istat": "006159"
-},
-{
-"q": "Q1787397",
-"nome": "sacro monte di Belmonte",
-"whc": "1068-009",
-"lat": 45.36666667,
-"lng": 7.63138889,
-"istat": "001287"
-},
-{
-"q": "Q1787480",
-"nome": "Sacro Monte di Orta",
-"whc": "1068-003",
-"lat": 45.797432,
-"lng": 8.412237,
-"istat": "003112"
-},
-{
-"q": "Q1808591",
-"nome": "Villa medicea di Cafaggiolo",
-"whc": "175-001",
-"lat": 43.964717,
-"lng": 11.295168,
-"istat": "048002"
-},
-{
-"q": "Q1862652",
-"nome": "Villa medicea del Trebbio",
-"whc": "175-002",
-"lat": 43.95305556,
-"lng": 11.28666667,
-"istat": "048053"
-},
-{
-"q": "Q487174",
-"nome": "Noto",
-"whc": "1024-005",
-"lat": 36.883333333,
-"lng": 15.083333333,
-"istat": "089"
-},
-{
-"q": "Q489260",
-"nome": "Palazzolo Acreide",
-"whc": "1024-006",
-"lat": 37.061666666,
-"lng": 14.902777777,
-"istat": "089"
-},
-{
-"q": "Q499242",
-"nome": "parco dell'Etna",
-"whc": "1427",
-"lat": 37.76527778,
-"lng": 15.0,
-"istat": "087"
+"q": "Q1945735",
+"nome": "complesso archeologico di Monte Baranta",
+"whc": "1730-004",
+"lat": 40.631933,
+"lng": 8.396644,
+"istat": "090048"
 },
 {
 "q": "Q18649472",
@@ -2145,20 +2817,148 @@
 "istat": "017102"
 },
 {
-"q": "Q28670361",
-"nome": "Lagazzi del Vho",
-"whc": "1363-096",
-"lat": 45.10765,
-"lng": 10.392975,
-"istat": "019116"
+"q": "Q1478407",
+"nome": "Cattedrale di Palermo",
+"whc": "1487-005",
+"lat": 38.114444,
+"lng": 13.356111,
+"istat": "082053"
 },
 {
-"q": "Q29583920",
-"nome": "Il Sabbione o settentrionale",
-"whc": "1363-101",
-"lat": 45.7996,
-"lng": 8.6488,
-"istat": "012143"
+"q": "Q1581507",
+"nome": "Villa Medicea del Poggio Imperiale",
+"whc": "175-014",
+"lat": 43.748988,
+"lng": 11.247767,
+"istat": "048017"
+},
+{
+"q": "Q1585931",
+"nome": "Villa medicea di Cerreto Guidi",
+"whc": "175-009",
+"lat": 43.75899,
+"lng": 10.878987,
+"istat": "048011"
+},
+{
+"q": "Q1585931",
+"nome": "Villa medicea di Cerreto Guidi",
+"whc": "175-009",
+"lat": 43.75861111,
+"lng": 10.87916667,
+"istat": "048011"
+},
+{
+"q": "Q1585931",
+"nome": "Villa medicea di Cerreto Guidi",
+"whc": "175-009",
+"lat": 43.759098,
+"lng": 10.878967,
+"istat": "048011"
+},
+{
+"q": "Q1644597",
+"nome": "chiesa della Martorana",
+"whc": "1487-003",
+"lat": 38.114781,
+"lng": 13.362866,
+"istat": "082053"
+},
+{
+"q": "Q1768461",
+"nome": "Scala Santa",
+"whc": "91-002b",
+"lat": 41.88722,
+"lng": 12.50694,
+"istat": "058091"
+},
+{
+"q": "Q1787344",
+"nome": "sacro monte Calvario di Domodossola",
+"whc": "1068-008",
+"lat": 46.10555556,
+"lng": 8.28694444,
+"istat": "103028"
+},
+{
+"q": "Q1787362",
+"nome": "Sacro Monte di Crea",
+"whc": "1068-002",
+"lat": 45.09472222,
+"lng": 8.26972222,
+"istat": "006159"
+},
+{
+"q": "Q1787397",
+"nome": "sacro monte di Belmonte",
+"whc": "1068-009",
+"lat": 45.36666667,
+"lng": 7.63138889,
+"istat": "001287"
+},
+{
+"q": "Q1787480",
+"nome": "Sacro Monte di Orta",
+"whc": "1068-003",
+"lat": 45.797432,
+"lng": 8.412237,
+"istat": "003112"
+},
+{
+"q": "Q1808591",
+"nome": "Villa medicea di Cafaggiolo",
+"whc": "175-001",
+"lat": 43.964717,
+"lng": 11.295168,
+"istat": "048002"
+},
+{
+"q": "Q1862652",
+"nome": "Villa medicea del Trebbio",
+"whc": "175-002",
+"lat": 43.95305556,
+"lng": 11.28666667,
+"istat": "048053"
+},
+{
+"q": "Q487174",
+"nome": "Noto",
+"whc": "1024-005",
+"lat": 36.883333333,
+"lng": 15.083333333,
+"istat": "089"
+},
+{
+"q": "Q489260",
+"nome": "Palazzolo Acreide",
+"whc": "1024-006",
+"lat": 37.061666666,
+"lng": 14.902777777,
+"istat": "089"
+},
+{
+"q": "Q499242",
+"nome": "parco dell'Etna",
+"whc": "1427",
+"lat": 37.76527778,
+"lng": 15.0,
+"istat": "087"
+},
+{
+"q": "Q39054",
+"nome": "Torre di Pisa",
+"whc": "№395вспискеобъектоввсемирногонаследия(en)",
+"lat": 43.72301,
+"lng": 10.396624,
+"istat": "050026"
+},
+{
+"q": "Q43014",
+"nome": "Sabbioneta",
+"whc": "1287-002",
+"lat": 44.999166666,
+"lng": 10.489722222,
+"istat": "020"
 },
 {
 "q": "Q574879",
@@ -2255,806 +3055,6 @@
 "lat": 47.674596574,
 "lng": 9.120991545,
 "istat": null
-},
-{
-"q": "Q2031664",
-"nome": "Villa Badoer",
-"whc": "712-017",
-"lat": 45.030352777,
-"lng": 11.639861111,
-"istat": "029024"
-},
-{
-"q": "Q2031943",
-"nome": "Palazzo della Cancelleria",
-"whc": "91-005",
-"lat": 41.896687,
-"lng": 12.471521,
-"istat": "058091"
-},
-{
-"q": "Q2052044",
-"nome": "parco archeologico della Neapolis",
-"whc": "1200",
-"lat": 37.075,
-"lng": 15.27777778,
-"istat": "089017"
-},
-{
-"q": "Q2052044",
-"nome": "parco archeologico della Neapolis",
-"whc": "1200",
-"lat": 37.07529,
-"lng": 15.277494,
-"istat": "089017"
-},
-{
-"q": "Q2066497",
-"nome": "chiesa di San Cataldo",
-"whc": "1487-004",
-"lat": 38.114722222,
-"lng": 13.3625,
-"istat": "082053"
-},
-{
-"q": "Q2084394",
-"nome": "Villa Godi",
-"whc": "712-009",
-"lat": 45.746141,
-"lng": 11.534439,
-"istat": "024053"
-},
-{
-"q": "Q2094778",
-"nome": "Villa medicea di Castello",
-"whc": "175-005",
-"lat": 43.819444,
-"lng": 11.228167,
-"istat": "048017"
-},
-{
-"q": "Q2115058",
-"nome": "Villa Thiene",
-"whc": "712-013",
-"lat": 45.5729814,
-"lng": 11.6249847,
-"istat": "024083"
-},
-{
-"q": "Q2211082",
-"nome": "sacro monte di Varallo",
-"whc": "1068-001",
-"lat": 45.81861111,
-"lng": 8.25472222,
-"istat": "002156"
-},
-{
-"q": "Q2271780",
-"nome": "Villa Gazzotti",
-"whc": "712-003",
-"lat": 45.55916667,
-"lng": 11.60055556,
-"istat": "024116"
-},
-{
-"q": "Q2271810",
-"nome": "Villa Zeno",
-"whc": "712-020",
-"lat": 45.70027778,
-"lng": 12.64305556,
-"istat": "026015"
-},
-{
-"q": "Q2299393",
-"nome": "villa Serego",
-"whc": "712-024",
-"lat": 45.499444444,
-"lng": 10.925555555,
-"istat": "023076"
-},
-{
-"q": "Q2299483",
-"nome": "Villa Angarano",
-"whc": "712-005",
-"lat": 45.78055556,
-"lng": 11.72361111,
-"istat": "024012"
-},
-{
-"q": "Q2506967",
-"nome": "Villa Piovene",
-"whc": "712-025",
-"lat": 45.747751,
-"lng": 11.533216,
-"istat": "024053"
-},
-{
-"q": "Q2546376",
-"nome": "Barchesse di Villa Trissino",
-"whc": "712-014",
-"lat": 45.4322,
-"lng": 11.4131,
-"istat": "024098"
-},
-{
-"q": "Q2546376",
-"nome": "Barchesse di Villa Trissino",
-"whc": "712-014",
-"lat": 45.4322,
-"lng": 11.4131,
-"istat": null
-},
-{
-"q": "Q2564175",
-"nome": "necropoli dei Monterozzi",
-"whc": "1158-002",
-"lat": 42.250444444,
-"lng": 11.769861111,
-"istat": "056050"
-},
-{
-"q": "Q2564175",
-"nome": "necropoli dei Monterozzi",
-"whc": "1158-002",
-"lat": 42.25008,
-"lng": 11.767854,
-"istat": "056050"
-},
-{
-"q": "Q2598094",
-"nome": "Villa Forni Cerato",
-"whc": "712-008",
-"lat": 45.65638889,
-"lng": 11.56222222,
-"istat": "024062"
-},
-{
-"q": "Q2688899",
-"nome": "Villa Pojana",
-"whc": "712-011",
-"lat": 45.2853392,
-"lng": 11.4980618,
-"istat": "024079"
-},
-{
-"q": "Q2698156",
-"nome": "Villa Cornaro",
-"whc": "712-023",
-"lat": 45.60708,
-"lng": 11.99939,
-"istat": "028064"
-},
-{
-"q": "Q2705507",
-"nome": "Villa Pisani",
-"whc": "712-022",
-"lat": 45.23053,
-"lng": 11.46965,
-"istat": "028056"
-},
-{
-"q": "Q2707802",
-"nome": "centro storico di Firenze",
-"whc": "174quater",
-"lat": 43.77306,
-"lng": 11.25611111,
-"istat": "048017"
-},
-{
-"q": "Q2721458",
-"nome": "Villa Valmarana",
-"whc": "712-015",
-"lat": 45.5798,
-"lng": 11.6103,
-"istat": null
-},
-{
-"q": "Q2722026",
-"nome": "Villa Chiericati",
-"whc": "712-007",
-"lat": 45.5031,
-"lng": 11.6439,
-"istat": null
-},
-{
-"q": "Q2722437",
-"nome": "Villa Trissino",
-"whc": "712-002",
-"lat": 45.56635,
-"lng": 11.54819,
-"istat": "024116"
-},
-{
-"q": "Q2722506",
-"nome": "Villa Valmarana",
-"whc": "712-016",
-"lat": 45.6074,
-"lng": 11.5844,
-"istat": null
-},
-{
-"q": "Q2945646",
-"nome": "Urbanistica di Pienza",
-"whc": "789",
-"lat": 43.0766,
-"lng": 11.679,
-"istat": "052021"
-},
-{
-"q": "Q2962401",
-"nome": "ferrovia Retica nei paesaggi dell'Albula e del Bernina",
-"whc": "1276",
-"lat": 46.4089,
-"lng": 10.0197,
-"istat": null
-},
-{
-"q": "Q2962401",
-"nome": "ferrovia Retica nei paesaggi dell'Albula e del Bernina",
-"whc": "1276",
-"lat": 46.4089,
-"lng": 10.0197,
-"istat": "014"
-},
-{
-"q": "Q3290373",
-"nome": "Marechiaro",
-"whc": "726-003",
-"lat": 40.7949,
-"lng": 14.1919,
-"istat": "063049"
-},
-{
-"q": "Q3485435",
-"nome": "Monte San Giorgio",
-"whc": "1090bis",
-"lat": 45.889252,
-"lng": 8.914621,
-"istat": null
-},
-{
-"q": "Q3485435",
-"nome": "Monte San Giorgio",
-"whc": "1090bis",
-"lat": 45.889252,
-"lng": 8.914621,
-"istat": "012"
-},
-{
-"q": "Q3485435",
-"nome": "Monte San Giorgio",
-"whc": "1090",
-"lat": 45.889252,
-"lng": 8.914621,
-"istat": null
-},
-{
-"q": "Q3485435",
-"nome": "Monte San Giorgio",
-"whc": "1090",
-"lat": 45.889252,
-"lng": 8.914621,
-"istat": "012"
-},
-{
-"q": "Q3575761",
-"nome": "area archeologica e basilica patriarcale di Aquileia",
-"whc": "825ter",
-"lat": 45.7683,
-"lng": 13.3675,
-"istat": "030004"
-},
-{
-"q": "Q3661719",
-"nome": "caserma di Cavalleria Borbonica",
-"whc": "736",
-"lat": 40.846168,
-"lng": 14.2769,
-"istat": "063049"
-},
-{
-"q": "Q3662629",
-"nome": "castello di Grinzane Cavour",
-"whc": "1390rev-002",
-"lat": 44.653152,
-"lng": 7.994892,
-"istat": "004100"
-},
-{
-"q": "Q3664901",
-"nome": "centro storico di Vicenza",
-"whc": "712-001",
-"lat": 45.55,
-"lng": 11.55,
-"istat": "024116"
-},
-{
-"q": "Q3678423",
-"nome": "centro storico di Verona",
-"whc": "797",
-"lat": 45.438611111,
-"lng": 10.993888888,
-"istat": "023091"
-},
-{
-"q": "Q3685237",
-"nome": "complesso monumentale di Santa Sofia",
-"whc": "1318-006",
-"lat": 41.13061389,
-"lng": 14.78129167,
-"istat": "062008"
-},
-{
-"q": "Q3825559",
-"nome": "Laghetto della Costa",
-"whc": "1363-109",
-"lat": 45.2695,
-"lng": 11.7435,
-"istat": "028005"
-},
-{
-"q": "Q3825847",
-"nome": "lago del Frassino",
-"whc": "1363-107",
-"lat": 45.436708333,
-"lng": 10.667125,
-"istat": "023059"
-},
-{
-"q": "Q3860567",
-"nome": "monastero di Torba",
-"whc": "1318-003",
-"lat": 45.729583,
-"lng": 8.863403,
-"istat": "012080"
-},
-{
-"q": "Q3860567",
-"nome": "monastero di Torba",
-"whc": "1318-003",
-"lat": 45.7294,
-"lng": 8.86334,
-"istat": "012080"
-},
-{
-"q": "Q3861452",
-"nome": "Monte Cimino",
-"whc": "1133ter-047",
-"lat": 42.4077999,
-"lng": 12.2012234,
-"istat": "12"
-},
-{
-"q": "Q3867341",
-"nome": "mura veneziane di Bergamo",
-"whc": "1533-001",
-"lat": 45.704145,
-"lng": 9.672122,
-"istat": "016024"
-},
-{
-"q": "Q3874164",
-"nome": "necropoli di Su Crucifissu Mannu",
-"whc": "1730-007",
-"lat": 40.81029722,
-"lng": 8.44417778,
-"istat": "112045"
-},
-{
-"q": "Q3895463",
-"nome": "parco archeologico di Castelseprio",
-"whc": "1318-003",
-"lat": 45.728727,
-"lng": 8.859508,
-"istat": "012044"
-},
-{
-"q": "Q3895463",
-"nome": "parco archeologico di Castelseprio",
-"whc": "1318-003",
-"lat": 45.72415,
-"lng": 8.857886,
-"istat": "012044"
-},
-{
-"q": "Q3895632",
-"nome": "parco naturale dei Lagoni di Mercurago",
-"whc": "1363-103",
-"lat": 45.735,
-"lng": 8.552,
-"istat": "003"
-},
-{
-"q": "Q3909051",
-"nome": "Portici di Bologna",
-"whc": "1650",
-"lat": 44.491388888,
-"lng": 11.332777777,
-"istat": "037006"
-},
-{
-"q": "Q3936580",
-"nome": "Riserva naturale Foresta Umbra",
-"whc": "1133ter-046",
-"lat": 41.820527777,
-"lng": 16.011944444,
-"istat": "071"
-},
-{
-"q": "Q3983167",
-"nome": "Tempietto del Clitunno",
-"whc": "1318-005",
-"lat": 42.84224,
-"lng": 12.756929,
-"istat": "054005"
-},
-{
-"q": "Q5197044",
-"nome": "Palazzo di San Callisto",
-"whc": "91-004a",
-"lat": 41.8893,
-"lng": 12.4702,
-"istat": "058091"
-},
-{
-"q": "Q7126276",
-"nome": "Palazzo del Sant'Uffizio",
-"whc": "91-012",
-"lat": 41.90102778,
-"lng": 12.45608333,
-"istat": "058091"
-},
-{
-"q": "Q9724840",
-"nome": "centro storico di San Gimignano",
-"whc": "550",
-"lat": 43.467057116,
-"lng": 11.042804439,
-"istat": "052028"
-},
-{
-"q": "Q10293286",
-"nome": "Strade Nuove e complesso dei Palazzi dei Rolli di Genova",
-"whc": "1211",
-"lat": 44.412222222,
-"lng": 8.931111111,
-"istat": "010025"
-},
-{
-"q": "Q10351991",
-"nome": "Porto Venere, Cinque Terre e le isole Palmaria, Tino e Tinetto",
-"whc": "826",
-"lat": 44.10694444,
-"lng": 9.72916667,
-"istat": "011"
-},
-{
-"q": "Q11352141",
-"nome": "Venezia e la sua laguna",
-"whc": "394",
-"lat": 45.43430556,
-"lng": 12.33894444,
-"istat": "227"
-},
-{
-"q": "Q11352141",
-"nome": "Venezia e la sua laguna",
-"whc": "394",
-"lat": 45.43430556,
-"lng": 12.33894444,
-"istat": "027"
-},
-{
-"q": "Q11352141",
-"nome": "Venezia e la sua laguna",
-"whc": "394",
-"lat": 45.43333333,
-"lng": 12.31666667,
-"istat": "227"
-},
-{
-"q": "Q11352141",
-"nome": "Venezia e la sua laguna",
-"whc": "394",
-"lat": 45.43333333,
-"lng": 12.31666667,
-"istat": "027"
-},
-{
-"q": "Q15221022",
-"nome": "Cattedrale, Torre Civica e Piazza Grande",
-"whc": "827",
-"lat": 44.64624,
-"lng": 10.92568,
-"istat": "036023"
-},
-{
-"q": "Q15602246",
-"nome": "necropoli etrusche di Cerveteri e Tarquinia",
-"whc": "1158",
-"lat": 42.00683333,
-"lng": 12.10188889,
-"istat": "056050"
-},
-{
-"q": "Q15602246",
-"nome": "necropoli etrusche di Cerveteri e Tarquinia",
-"whc": "1158",
-"lat": 42.00683333,
-"lng": 12.10188889,
-"istat": "058029"
-},
-{
-"q": "Q15604441",
-"nome": "Siracusa e la necropoli rocciosa di Pantalica",
-"whc": "1200",
-"lat": 37.05944,
-"lng": 15.29306,
-"istat": "089"
-},
-{
-"q": "Q15623665",
-"nome": "Mantua and Sabbioneta",
-"whc": "1287",
-"lat": 45.15944444,
-"lng": 10.79444444,
-"istat": "020030"
-},
-{
-"q": "Q15623665",
-"nome": "Mantua and Sabbioneta",
-"whc": "1287",
-"lat": 45.15944444,
-"lng": 10.79444444,
-"istat": "020054"
-},
-{
-"q": "Q16031521",
-"nome": "Lavagnone",
-"whc": "1363-092",
-"lat": 45.436415,
-"lng": 10.537411944,
-"istat": "017067"
-},
-{
-"q": "Q16574070",
-"nome": "Lucone di Polpenazze",
-"whc": "1363-095",
-"lat": 45.55076,
-"lng": 10.4877,
-"istat": "017145"
-},
-{
-"q": "Q16612568",
-"nome": "teatro romano di Ercolano",
-"whc": "829-005",
-"lat": 40.808333333,
-"lng": 14.347611111,
-"istat": "063064"
-},
-{
-"q": "Q16735627",
-"nome": "Ferrara, City of the Renaissance, and its Po Delta",
-"whc": "733",
-"lat": 44.83777778,
-"lng": 11.61944444,
-"istat": "038"
-},
-{
-"q": "Q16735627",
-"nome": "Ferrara, City of the Renaissance, and its Po Delta",
-"whc": "733bis",
-"lat": 44.83777778,
-"lng": 11.61944444,
-"istat": "038"
-},
-{
-"q": "Q16886821",
-"nome": "monumenti paleocristiani di Ravenna",
-"whc": "788",
-"lat": 44.42041667,
-"lng": 12.19625,
-"istat": "039014"
-},
-{
-"q": "Q16913064",
-"nome": "Trulli di Alberobello",
-"whc": "787",
-"lat": 40.7825,
-"lng": 17.23694,
-"istat": "072003"
-},
-{
-"q": "Q16913154",
-"nome": "Assisi, the Basilica of San Francesco and Other Franciscan Sites",
-"whc": "990",
-"lat": 43.06616667,
-"lng": 12.62244444,
-"istat": "054001"
-},
-{
-"q": "Q16920958",
-"nome": "aree archeologiche di Pompei, Ercolano e Torre Annunziata",
-"whc": "829",
-"lat": 40.75,
-"lng": 14.48333333,
-"istat": "063"
-},
-{
-"q": "Q16962666",
-"nome": "Palazzo Reale di Caserta con il parco, acquedotto di Vanvitelli e complesso di San Leucio",
-"whc": "549rev",
-"lat": 41.07333,
-"lng": 14.32639,
-"istat": "062"
-},
-{
-"q": "Q16962666",
-"nome": "Palazzo Reale di Caserta con il parco, acquedotto di Vanvitelli e complesso di San Leucio",
-"whc": "549rev",
-"lat": 41.07333,
-"lng": 14.32639,
-"istat": "061"
-},
-{
-"q": "Q17163308",
-"nome": "centro storico di Urbino",
-"whc": "828",
-"lat": 43.725,
-"lng": 12.63333,
-"istat": "041067"
-},
-{
-"q": "Q17163322",
-"nome": "centro storico di Siena",
-"whc": "717",
-"lat": 43.31861111,
-"lng": 11.33166667,
-"istat": "052032"
-},
-{
-"q": "Q17296768",
-"nome": "Paesaggio vitivinicolo del Piemonte: Langhe-Roero e Monferrato",
-"whc": "1390",
-"lat": 44.651944444,
-"lng": 7.994166666,
-"istat": "004"
-},
-{
-"q": "Q17296768",
-"nome": "Paesaggio vitivinicolo del Piemonte: Langhe-Roero e Monferrato",
-"whc": "1390",
-"lat": 44.651944444,
-"lng": 7.994166666,
-"istat": "006"
-},
-{
-"q": "Q17296768",
-"nome": "Paesaggio vitivinicolo del Piemonte: Langhe-Roero e Monferrato",
-"whc": "1390",
-"lat": 44.651944444,
-"lng": 7.994166666,
-"istat": "005"
-},
-{
-"q": "Q17633458",
-"nome": "isolino Virginia",
-"whc": "1363-099",
-"lat": 45.812013888,
-"lng": 8.718061111,
-"istat": "012014"
-},
-{
-"q": "Q18222399",
-"nome": "scavi archeologici di Pompei",
-"whc": "829bis-001",
-"lat": 40.7511,
-"lng": 14.49,
-"istat": "063058"
-},
-{
-"q": "Q18222399",
-"nome": "scavi archeologici di Pompei",
-"whc": "829-001",
-"lat": 40.7511,
-"lng": 14.49,
-"istat": "063058"
-},
-{
-"q": "Q18448486",
-"nome": "centro storico di Roma, le proprietà della Santa Sede in questa città che godono dell'extraterritorialità e San Paolo fuori le mura",
-"whc": "91",
-"lat": 41.8928,
-"lng": 12.4866,
-"istat": "058091"
-},
-{
-"q": "Q18649472",
-"nome": "città tardo barocche del Val di Noto",
-"whc": "1024rev",
-"lat": 37.502222222,
-"lng": 15.086944444,
-"istat": "287"
-},
-{
-"q": "Q18649472",
-"nome": "città tardo barocche del Val di Noto",
-"whc": "1024rev",
-"lat": 37.502222222,
-"lng": 15.086944444,
-"istat": "087"
-},
-{
-"q": "Q18649472",
-"nome": "città tardo barocche del Val di Noto",
-"whc": "1024rev",
-"lat": 37.502222222,
-"lng": 15.086944444,
-"istat": "089"
-},
-{
-"q": "Q18649472",
-"nome": "città tardo barocche del Val di Noto",
-"whc": "1024rev",
-"lat": 37.502222222,
-"lng": 15.086944444,
-"istat": "088"
-},
-{
-"q": "Q18649472",
-"nome": "città tardo barocche del Val di Noto",
-"whc": "1024rev",
-"lat": 36.893194444,
-"lng": 15.068916666,
-"istat": "287"
-},
-{
-"q": "Q18649472",
-"nome": "città tardo barocche del Val di Noto",
-"whc": "1024rev",
-"lat": 36.893194444,
-"lng": 15.068916666,
-"istat": "087"
-},
-{
-"q": "Q18649472",
-"nome": "città tardo barocche del Val di Noto",
-"whc": "1024rev",
-"lat": 36.893194444,
-"lng": 15.068916666,
-"istat": "089"
-},
-{
-"q": "Q18649472",
-"nome": "città tardo barocche del Val di Noto",
-"whc": "1024rev",
-"lat": 36.893194444,
-"lng": 15.068916666,
-"istat": "088"
-},
-{
-"q": "Q18649472",
-"nome": "città tardo barocche del Val di Noto",
-"whc": "1024rev",
-"lat": 37.275888888,
-"lng": 14.791722222,
-"istat": "287"
-},
-{
-"q": "Q18649472",
-"nome": "città tardo barocche del Val di Noto",
-"whc": "1024rev",
-"lat": 37.275888888,
-"lng": 14.791722222,
-"istat": "087"
-},
-{
-"q": "Q18649472",
-"nome": "città tardo barocche del Val di Noto",
-"whc": "1024rev",
-"lat": 37.275888888,
-"lng": 14.791722222,
-"istat": "089"
 }
 ],
 "nomi_ufficiali": {
