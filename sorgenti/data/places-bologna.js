@@ -148,7 +148,7 @@ const PLACES = [
  why:"Complemento intimo alla visita del Museo Morandi.",
  address:"Via Fondazza 36, 40125 Bologna",price:"Gratuito (consigliato prenotare il biglietto gratuito online)",free:true,card:false,unesco:false,view:false,indoor:true,status:"ok",
  hours:"Solo weekend. Inverno: sab 14-17, dom 10-13 e 14-17",booking:"Consigliata",duration:"30 min",access:"Verificare con il museo",
- official:"http://www.mambo-bologna.org/museomorandi/",
+ official:"https://cultura.gov.it/luogo/casa-morandi",
  sources:[["Bologna Welcome, scheda Casa Morandi","https://www.bolognawelcome.com/it/luoghi/casa-museo/casa-morandi","uff"]]},
 
 {id:"pepoli",name:"Museo della Storia di Bologna (Palazzo Pepoli)",cat:"musei",sub:"Storia della città",lat:44.49243,lng:11.34649,
