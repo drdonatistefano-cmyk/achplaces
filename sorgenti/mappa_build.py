@@ -104,8 +104,10 @@ for x in P: assert '\n' not in x[0]
 core = dict(R=[r['d'] for r in GEO['reg']], V=[p['d'] for p in GEO['pro']], C=C, T=TAGS, VER=VER,
             pc=[x[1] for x in P], pg=''.join(str(x[2]) for x in P), pt=[x[3] for x in P], pf=[x[4] for x in P])
 assert all('\n' not in u for u in U)
-nomi = dict(N='\n'.join(x[0] for x in P), S={str(i): x[5] for i, x in enumerate(P) if x[5]}, K=[x[6] for x in P],
-            U='\n'.join(U), X=json.dumps(X, ensure_ascii=False, separators=(',', ':')))
+# 15/11/2026: i nomi (etichette, elenco, ricerca) restano in mappan; i link dei biglietti e i dettagli delle schede (U, X)
+# vanno in un terzo file, mappax, scaricato dopo i nomi: su rete lenta le etichette arrivano prima (-134 KB compressi)
+nomi = dict(N='\n'.join(x[0] for x in P), S={str(i): x[5] for i, x in enumerate(P) if x[5]}, K=[x[6] for x in P])
+extra = dict(U='\n'.join(U), X=json.dumps(X, ensure_ascii=False, separators=(',', ':')))
 def scrivi(pref, obj):
     t = json.dumps(obj, ensure_ascii=False, separators=(',', ':'))
     n = pref + '.' + hashlib.sha256(t.encode()).hexdigest()[:10] + '.json'
@@ -115,8 +117,9 @@ def scrivi(pref, obj):
     return n, t
 nome, t = scrivi('mappa', core)
 nomen, tn = scrivi('mappan', nomi)
-M['mappa'] = nome; M['mappan'] = nomen
+nomex, tx = scrivi('mappax', extra)
+M['mappa'] = nome; M['mappan'] = nomen; M['mappax'] = nomex
 json.dump(M, open(os.path.join(HERE, 'manifest.json'), 'w'), ensure_ascii=False, separators=(',', ':'))
 tpl = open(os.path.join(HERE, 'mappa_tpl.html')).read()
-open(os.path.join(HERE, 'filtri.html'), 'w').write(tpl.replace('/*MAPPA*/', json.dumps(nome)).replace('/*MAPPAN*/', json.dumps(nomen)).replace('__MAPPA_NOME__', nome).replace('__MAPPAN_NOME__', nomen))
+open(os.path.join(HERE, 'filtri.html'), 'w').write(tpl.replace('/*MAPPA*/', json.dumps(nome)).replace('/*MAPPAN*/', json.dumps(nomen)).replace('/*MAPPAX*/', json.dumps(nomex)).replace('__MAPPA_NOME__', nome).replace('__MAPPAN_NOME__', nomen))
 print('mappa:', nome, len(t) // 1024, 'KB +', nomen, len(tn) // 1024, 'KB,', len(C), 'comuni,', len(P), 'luoghi,', len(U), 'link')

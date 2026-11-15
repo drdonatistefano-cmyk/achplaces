@@ -36,6 +36,12 @@ def _jl(n):
     except Exception: return {}
 BIG_GH = _jl("biglietti.json"); BIG_AG = _jl("biglietti_agenti.json")
 _LC = _jl("link_correzioni.json"); LINK_RID = _LC.get("rid", {}); LINK_ROTTI = set(_LC.get("rotti", {}))
+# 15/11/2026: fonti sparite (404, sito chiuso, certificato non valido) che hanno una copia nell'Internet Archive
+# (archive.org/wayback/available, sorgenti/link/diagnosi.py): la fonte resta, il link porta alla copia d'archivio.
+# Solo per le FONTI: sito ufficiale, orari e biglietti non vanno mai su una copia d'archivio.
+LINK_ARCH = _LC.get("archivio", {})
+def _arch(srcs):
+    return [[_s[0] + " (copia d'archivio)", LINK_ARCH[_s[1]]] + list(_s[2:]) if _s[1] in LINK_ROTTI and _s[1] in LINK_ARCH else _s for _s in srcs]
 # 10/11/2026 sera: titolo esatto della voce di it.wikipedia (data/wiki.json da Wikidata, piu' wiki-<gruppo>.json dal lavoro su GitHub)
 WIKI = {}
 for _wf in [os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "wiki.json")]:   # gia' filtrato da wiki_unisci.py
@@ -340,6 +346,7 @@ for _c in comuni:
 print("prezzo stimato: probabilmente gratis", _nst[0], "| stima in euro", _nst[1])
 for _cc in comuni:   # 11/11: fonti dei comuni, stessa correzione dei link
     _fs = [[_s[0], LINK_RID.get(_s[1], _s[1])] + list(_s[2:]) for _s in _cc["sources"]]
+    _fs = _arch(_fs)
     _cc["sources"] = [_s for _s in _fs if _s[1] not in LINK_ROTTI] or _fs
 # 15/11/2026 link diretti: pagina ufficiale UNESCO del bene (whc.unesco.org/en/list/<n>/) nella scheda dei luoghi
 # UNESCO, e scheda ufficiale del borgo (borghipiubelliditalia.it/borgo/...) per i comuni del club. Dati raccolti da
@@ -453,12 +460,14 @@ for _c in _leggeri:
         for _k in ("official", "ticketUrl", "hoursUrl", "tf"):
             if _p.get(_k): _p[_k] = LINK_RID.get(_p[_k], _p[_k])
         _p["sources"] = [[_s[0], LINK_RID.get(_s[1], _s[1])] + list(_s[2:]) for _s in _p["sources"]]
+        _p["sources"] = _arch(_p["sources"])
         _vive = [_s for _s in _p["sources"] if _s[1] not in LINK_ROTTI]
         if _vive: _p["sources"] = _vive
         for _k in ("ticketUrl", "hoursUrl", "tf"):
             if _p.get(_k) in LINK_ROTTI: _p.pop(_k)
         if _p.get("official") in LINK_ROTTI:
-            _alt = [_s[1] for _s in _vive if len(_s) < 3 or _s[2] == "uff"] or [_s[1] for _s in _vive] or [LINK_RID.get(_s[1], _s[1]) for _s in _cc.get("sources", []) if _s[1] not in LINK_ROTTI and LINK_RID.get(_s[1], _s[1]) not in LINK_ROTTI]   # 15/11: le fonti di QUESTO comune (prima «c» era l'ultimo comune del giro precedente: Serra San Bruno)
+            _vive_v = [_s for _s in _vive if "web.archive.org" not in _s[1]]   # mai una copia d'archivio come sito ufficiale
+            _alt = [_s[1] for _s in _vive_v if len(_s) < 3 or _s[2] == "uff"] or [_s[1] for _s in _vive_v] or [LINK_RID.get(_s[1], _s[1]) for _s in _cc.get("sources", []) if _s[1] not in LINK_ROTTI and LINK_RID.get(_s[1], _s[1]) not in LINK_ROTTI and "web.archive.org" not in _s[1]]   # 15/11: le fonti di QUESTO comune (prima «c» era l'ultimo comune del giro precedente: Serra San Bruno)
             if _alt: _p["official"] = _alt[0]; _p["ownSite"] = False
         # 10/11 21:48: il tasto Biglietti delle card non apre mai la scheda e basta: senza biglietteria ne' partner porta alla
         # pagina delle tariffe del gestore (o del portale ufficiale), come il bottone della scheda.

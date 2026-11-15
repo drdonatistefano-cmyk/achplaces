@@ -8,7 +8,7 @@ U=$(cat $L/.ultimo_sync 2>/dev/null); if [ -n "$U" ]; then for f in $(git diff -
 # 15/11: si tolgono solo i vecchi file di dati con l'impronta nel nome (dati.<h>.json, det.xx.<h>.json, en.<h>.js...): i file degli altri
 # (installa.js, app.webmanifest, icone, statistiche.html...) non si toccano mai
 for f in $(ls -p | grep -v / | grep -E '\.[0-9a-f]{10}\.(json|js)$'); do [ -e $L/$f ] || git rm -q $f; done
-cd $L; cp index.html filtri.html manifest.json $(ls | grep -E '^(cerca|cr\.[a-z]{2}|dati|det\.[a-z]{2}|fonti|foto|fotom\.[a-z]{2}|fotom|meta|testi|mappa|mappan)\.[0-9a-f]{10}\.json$|^luoghi\.[0-9a-f]{10}\.js$|^en\.([a-z]{2}\.|ui\.)?[0-9a-f]{10}\.json$|^en\.[0-9a-f]{10}\.js$') $R/
+cd $L; cp index.html filtri.html manifest.json $(ls | grep -E '^(cerca|cr\.[a-z]{2}|dati|det\.[a-z]{2}|fonti|foto|fotom\.[a-z]{2}|fotom|meta|testi|mappa|mappan|mappax)\.[0-9a-f]{10}\.json$|^luoghi\.[0-9a-f]{10}\.js$|^en\.([a-z]{2}\.|ui\.)?[0-9a-f]{10}\.json$|^en\.[0-9a-f]{10}\.js$') $R/
 cd $R; cp -r $L/f/. f/; comm -23 <(ls f|sort) <(ls $L/f|sort) | sed 's#^#f/#' | xargs -r git rm -q
 cp $L/build.py $L/template.html $L/foto_build.py $L/biglietti_agenti.py $L/biglietti_unisci.py $L/sync_repo.sh $L/fvtipi.py $L/mappa_build.py $L/mappa_tpl.html sorgenti/; cp $L/data/italia_geo.json sorgenti/data/; mkdir -p sorgenti/data/collegamenti; cp $L/data/collegamenti/*.json sorgenti/data/collegamenti/
 cp $L/sw.js $R/sw.js; mkdir -p $R/font && cp $L/font/* $R/font/; mkdir -p sorgenti/traduci; cp $L/traduci/estrai.py $L/traduci/traduci.py $L/traduci/en_build.py $L/traduci/en_motore.js $L/traduci/en_diz.json $L/traduci/ui_it.json sorgenti/traduci/ 2>/dev/null; cmp -s $L/traduci/testi_it.jsonl sorgenti/traduci/testi_it.jsonl || cp $L/traduci/testi_it.jsonl sorgenti/traduci/

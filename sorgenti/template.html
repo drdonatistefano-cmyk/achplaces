@@ -762,6 +762,14 @@ document.addEventListener("DOMContentLoaded",function(){const t=document.createE
   addEventListener("scroll",hide,{passive:true});document.addEventListener("click",hide,true);});
 </script>
 <link rel="manifest" href="/app.webmanifest"><link rel="apple-touch-icon" href="/icona-180.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Places">
+<script id="premappa">/* 15/11/2026: la Mappa parte subito. Quando la Guida e' pronta e ferma (3 s dopo il caricamento), o appena il dito
+tocca il tasto Mappa, si scaricano in sottofondo la pagina della mappa e i suoi due file di dati: al tocco sono gia' nel telefono.
+Niente con «risparmio dati» attivo o rete 2G. Una volta sola per visita. */
+(function(){var fatto=0;function va(){if(fatto)return;fatto=1;try{var c=navigator.connection;if(c&&(c.saveData||/2g/.test(c.effectiveType||"")))return;}catch(e){}
+fetch("manifest.json").then(function(r){return r.json()}).then(function(m){["filtri.html",m.mappa,m.mappan,m.mappax].forEach(function(u){if(u)fetch(u,{priority:"low"}).catch(function(){})})}).catch(function(){});}
+addEventListener("load",function(){setTimeout(function(){(window.requestIdleCallback||function(f){setTimeout(f,0)})(va)},3000)});
+addEventListener("pointerdown",function(e){if(e.target.closest&&e.target.closest("#nav-luoghi"))va()},{capture:true,passive:true});})();
+</script>
 </head>
 <body>
 <div class="wrap">
