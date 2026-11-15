@@ -5,7 +5,9 @@ L=/home/claude/achs-places-guide; R=/home/claude/achplaces
 cd $R; git pull -q --rebase
 # 13/11: se un'altra sessione ha cambiato le sorgenti che copio (mappa_tpl.html, template.html, build.py...) dopo l'ultima mia pubblicazione, mi fermo: prima vanno riprese in locale
 U=$(cat $L/.ultimo_sync 2>/dev/null); if [ -n "$U" ]; then for f in $(git diff --name-only $U HEAD -- sorgenti/ | sed 's#^sorgenti/##'); do [ -e "$L/$f" ] && ! cmp -s "sorgenti/$f" "$L/$f" && { echo "FERMO: sorgenti/$f cambiato da altri dopo $U: riprenderlo in locale e unire le modifiche"; exit 1; }; done; fi
-for f in $(ls -p | grep -v / | grep -vE '^(CNAME|README.md|pagine.css|robots.txt|sitemap.*xml|statistiche.html)$'); do [ -e $L/$f ] || git rm -q $f; done
+# 15/11: si tolgono solo i vecchi file di dati con l'impronta nel nome (dati.<h>.json, det.xx.<h>.json, en.<h>.js...): i file degli altri
+# (installa.js, app.webmanifest, icone, statistiche.html...) non si toccano mai
+for f in $(ls -p | grep -v / | grep -E '\.[0-9a-f]{10}\.(json|js)$'); do [ -e $L/$f ] || git rm -q $f; done
 cd $L; cp index.html filtri.html manifest.json $(ls | grep -E '^(cerca|cr\.[a-z]{2}|dati|det\.[a-z]{2}|fonti|foto|fotom\.[a-z]{2}|fotom|meta|testi|mappa|mappan)\.[0-9a-f]{10}\.json$|^luoghi\.[0-9a-f]{10}\.js$|^en\.([a-z]{2}\.|ui\.)?[0-9a-f]{10}\.json$|^en\.[0-9a-f]{10}\.js$') $R/
 cd $R; cp -r $L/f/. f/; comm -23 <(ls f|sort) <(ls $L/f|sort) | sed 's#^#f/#' | xargs -r git rm -q
 cp $L/build.py $L/template.html $L/foto_build.py $L/biglietti_agenti.py $L/biglietti_unisci.py $L/sync_repo.sh $L/fvtipi.py $L/mappa_build.py $L/mappa_tpl.html sorgenti/; cp $L/data/italia_geo.json sorgenti/data/; mkdir -p sorgenti/data/collegamenti; cp $L/data/collegamenti/*.json sorgenti/data/collegamenti/

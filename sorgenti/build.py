@@ -458,7 +458,7 @@ for _c in _leggeri:
         for _k in ("ticketUrl", "hoursUrl", "tf"):
             if _p.get(_k) in LINK_ROTTI: _p.pop(_k)
         if _p.get("official") in LINK_ROTTI:
-            _alt = [_s[1] for _s in _vive if len(_s) < 3 or _s[2] == "uff"] or [_s[1] for _s in _vive] or [_s[1] for _s in c["sources"] if _s[1] not in LINK_ROTTI]
+            _alt = [_s[1] for _s in _vive if len(_s) < 3 or _s[2] == "uff"] or [_s[1] for _s in _vive] or [LINK_RID.get(_s[1], _s[1]) for _s in _cc.get("sources", []) if _s[1] not in LINK_ROTTI and LINK_RID.get(_s[1], _s[1]) not in LINK_ROTTI]   # 15/11: le fonti di QUESTO comune (prima «c» era l'ultimo comune del giro precedente: Serra San Bruno)
             if _alt: _p["official"] = _alt[0]; _p["ownSite"] = False
         # 10/11 21:48: il tasto Biglietti delle card non apre mai la scheda e basta: senza biglietteria ne' partner porta alla
         # pagina delle tariffe del gestore (o del portale ufficiale), come il bottone della scheda.
@@ -691,7 +691,7 @@ try{const u=localStorage.getItem("ultProv");if(u)anticipa([u]);}catch(e){}
 """
 t = open(os.path.join(HERE, "template.html"), encoding="utf-8").read()
 t = t.replace("/*CAPI*/", ",".join(json.dumps(x, ensure_ascii=False) for x in sorted(set(sum(check.CAPOLUOGHI.values(), [])))))
-_i = t.index("/*PLACES*/"); _j = t.rindex("</script>")
+_i = t.index("/*PLACES*/"); _j = t.index("</script>", _i)   # 15/11: la fine dello script principale (dopo c'e' installa.js)
 t = t[:_i] + bologna_places + "\n" + LOADER + t[_i + len("/*PLACES*/"):_j] + "\n}\n" + t[_j:]
 # 9/11/2026 il file dei dati parte subito, in testa alla pagina, mentre il resto della pagina arriva (fetch lo riprende dalla memoria)
 # (solo se nel telefono non c'è già: alla seconda visita i dati si leggono da IndexedDB)
