@@ -2334,5 +2334,28 @@ route(true);
 </script>
 <button class="giu via" id="giu" type="button" hidden data-goatcounter-click="filtri/azzera-places" data-goatcounter-title="Azzera i filtri (in fondo)">✕ Azzera i filtri <span class="n">0</span></button>
 <script src="/installa.js" data-colore="#2f7a5b" data-icona="/icona-192.png" data-sw="" defer></script>
+<!-- 16/11/2026 (Stefano): su telefono, scorrendo la lista, un piccolo riquadro dei filtri segue lo schermo e apre il pannello Filtri -->
+<style>
+#nAm{position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom));z-index:900;transform:translate(-50%,160%);transition:transform .25s cubic-bezier(.2,.8,.2,1);display:inline-flex;align-items:center;gap:8px;max-width:calc(100vw - 32px);min-height:50px;padding:0 7px 0 16px;border:0;border-radius:999px;background:#231d18;color:#fff;font:600 14.5px var(--sans,system-ui,sans-serif);box-shadow:0 8px 24px rgba(0,0,0,.28);cursor:pointer}
+#nAm.vis{transform:translate(-50%,0)}
+#nAm .mt{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#nAm .mb{min-width:22px;height:22px;padding:0 6px;border-radius:999px;background:var(--terra,#3a6a48);font-size:12px;display:inline-grid;place-items:center;flex:none}
+#nAm .mn{flex:none;padding:0 12px;height:36px;border-radius:999px;background:#fff;color:#231d18;display:inline-grid;place-items:center;font-size:13.5px;font-weight:700}
+@media(min-width:900px){#nAm{display:none}}
+</style>
+<script>
+(function(){
+ if(document.getElementById("nAm"))return;
+ const m=document.createElement("button");m.type="button";m.id="nAm";m.setAttribute("aria-label","Apri i filtri");document.body.appendChild(m);
+ const E=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+ function testo(){const pills=[...document.querySelectorAll("#active .apill")].map(b=>b.textContent.replace(/[×✕]\s*$/,"").trim()).filter(Boolean);
+  const n=(window.__lista||[]).length;
+  m.innerHTML='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg><span class="mt">'+E(pills.length?pills.join(" · "):"Filtri")+'</span>'+(pills.length?'<span class="mb">'+pills.length+'</span>':'')+(n?'<span class="mn">'+n.toLocaleString("it-IT")+'</span>':'')}
+ function vedi(){const b=document.getElementById("bar");if(!b)return;const r=b.getBoundingClientRect();const v=r.bottom<0&&!document.body.classList.contains("fopen");if(v&&!m.classList.contains("vis"))testo();m.classList.toggle("vis",v)}
+ let t=0;window.addEventListener("scroll",()=>{if(!t)t=requestAnimationFrame(()=>{t=0;vedi()})},{passive:true});
+ new MutationObserver(()=>{if(m.classList.contains("vis"))testo();vedi()}).observe(document.body,{attributes:true,attributeFilter:["class"]});
+ m.addEventListener("click",()=>{const f=document.getElementById("ftog");if(f)f.click();m.classList.remove("vis")});
+})();
+</script>
 </body>
 </html>
