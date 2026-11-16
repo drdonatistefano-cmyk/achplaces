@@ -648,10 +648,10 @@ let PMAP=null;function riempiDesc(){if(!PMAP){PMAP=new Map();for(const c of COMU
 /* 9/11/2026 ricerca con indice delle parole (cerca.<impronta>.json), scaricato in sottofondo; stesso risultato della ricerca sul testo */
 const CERCA={ok:false,fail:false,pr:null,V:null,P:null,ids:null,dec:new Map(),memo:new Map()};
 function caricaCerca(){if(CERCA.pr)return CERCA.pr;return CERCA.pr=(async()=>{try{const n=MAN&&MAN.cerca;if(!n)throw 0;let t=await MEMO.leggi(n);
-  if(!t){const r=await fetch(n);if(!r.ok)throw 0;t=await leggiAPezzi(r);MEMO.scrivi(n,t);}const j=JSON.parse(t);await PAUSA();
+  if(!t){const r=await fetch(n);if(!r.ok)throw 0;t=await leggiAPezzi(r);await PAUSA();const tt=t;setTimeout(()=>MEMO.scrivi(n,tt),1500);}await PAUSA();const j=JSON.parse(t);await PAUSA();
   const ids=PLACES.map(p=>p.id);for(const c of COMUNI_EXTRA)for(const p of c.places)ids.push(p.id);
   if(j.n!==ids.length||(ids.length&&(j.ids[0]!==ids[0]||j.ids[1]!==ids[ids.length-1])))throw 0;
-  CERCA.V=j.v;CERCA.P=j.p;CERCA.ids=ids;CERCA.ok=true;}catch(e){CERCA.fail=true;}})();}
+  CERCA.V=j.v;CERCA.P=j.p;CERCA.ids=ids;CERCA.ok=true;await PAUSA();await scaldaCerca();}catch(e){CERCA.fail=true;}})();}
 function cercaPost(i){let a=CERCA.dec.get(i);if(a)return a;a=[];const s=CERCA.P[i];let n=0,pr=-1;
   for(let k=0;k<s.length;k++){const c=s.charCodeAt(k);let v;if(c>=65&&c<=90){v=c-65;}else{const T="!#$%&*".indexOf(s[k]);if(T>=0)v=26+T;else{n=n*32+(c<=57?c-48:c-87);continue;}}
     n=n*32+v;pr=pr+n+1;a.push(pr);n=0;}CERCA.dec.set(i,a);return a;}
@@ -659,10 +659,10 @@ function cercaParola(w){let r=CERCA.memo.get(w);if(r)return r;const ids=new Set(
   for(let i=0;i<V.length;i++)if(V[i].includes(w))for(const x of cercaPost(i))ids.add(CERCA.ids[x]);
   r={ids,f:new Map()};CERCA.memo.set(w,r);return r;}
 const CERCAF=new Map();const cf=s=>{let r=CERCAF.get(s);if(r===undefined){r=fold(s);CERCAF.set(s,r);}return r;};
-let QOK_Q=null,QOK_W=null;
+let QOK_Q=null,QOK_W=null;/* 16/11/2026: sottocategoria, comune e categoria in un solo testo per luogo (stesso risultato, un solo confronto) */const qf=p=>p._f||(p._f=cf(p.sub||"")+"\u0001"+cf(p.com||"")+"\u0001"+cf(CATS[p.cat].long));
 function QOK(p){if(!CERCA.ok){if(!p._t)p._t=fold(p.name+" "+p.desc+" "+p.sub+" "+p.address+" "+p.com+" "+CATS[p.cat].long);return fold(S.q).split(/\s+/).every(w=>p._t.includes(w));}
   if(QOK_Q!==S.q){QOK_Q=S.q;QOK_W=fold(S.q).split(/\s+/).map(w=>[w,cercaParola(w)]);}
-  return QOK_W.every(([w,r])=>r.ids.has(p.id)||cf(p.sub).includes(w)||cf(p.com).includes(w)||cf(CATS[p.cat].long).includes(w));}
+  return QOK_W.every(([w,r])=>r.ids.has(p.id)||qf(p).includes(w));}
 const precarica=prs=>{const f=()=>prs.forEach(pr=>caricaDet(pr));("requestIdleCallback" in window)?requestIdleCallback(f,{timeout:2500}):setTimeout(f,400);};
 /* 10/11/2026: l'anticipo delle descrizioni di provincia non parte piu' da solo
    all'avvio. Chi apre la guida e legge non scarica 290 KB che non ha chiesto;
@@ -689,7 +689,9 @@ document.addEventListener("pointerdown",e=>{try{const t=e.target.closest(".card[
 {const _sc=setComune;setComune=function(){const r=_sc.apply(this,arguments);try{if(!C.all&&!C.isProv&&!C.provs&&C.prov&&!DETOK[C.prov]){const el=$("lede"),cc=C;el.style.visibility="hidden";
   caricaDet(C.prov).then(()=>{if(C===cc)el.textContent=ledeTxt(cc);el.style.visibility="";});}}catch(e){}return r;};}
 /* ricerca: se l'indice non è ancora arrivato, lo si aspetta (di solito è già in memoria) */
-{const _u2=update;update=function(){if(S.q&&!CERCA.ok&&!CERCA.fail){const n=$("count");if(n)n.textContent="Ricerca in corso…";caricaCerca().then(()=>update());return;}return _u2.apply(this,arguments);};}
+{const _u2=update;update=function(){if(S.q&&!CERCA.ok&&!CERCA.fail){const n=$("count");if(n)n.textContent="Ricerca in corso…";caricaCerca().then(scaldaCerca).then(()=>update());return;}return _u2.apply(this,arguments);};}
+/* 16/11/2026: appena arriva l'indice, i testi brevi dei luoghi (sottocategoria, comune) si preparano a pezzi, così la prima ricerca non blocca il telefono */
+let SCALDA=null;function scaldaCerca(){if(SCALDA)return SCALDA;return SCALDA=(async()=>{if(!CERCA.ok)return;const tutti=CUR.length?CUR:PLACES;let i=0,t=performance.now();for(const p of tutti){qf(p);if(++i%400===0&&performance.now()-t>30){await new Promise(r=>setTimeout(r,0));t=performance.now();}}})();}
 document.getElementById("q").addEventListener("focus",()=>caricaCerca(),{once:true});
 /* 10/11/2026: l'indice della ricerca (circa 1 MB) non si scarica piu' da solo:
    parte quando si tocca il campo di ricerca (riga sopra) o alla prima parola

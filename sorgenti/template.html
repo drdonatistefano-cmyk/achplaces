@@ -762,6 +762,112 @@ document.addEventListener("DOMContentLoaded",function(){const t=document.createE
   addEventListener("scroll",hide,{passive:true});document.addEventListener("click",hide,true);});
 </script>
 <link rel="manifest" href="/app.webmanifest"><link rel="apple-touch-icon" href="/icona-180.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Places">
+<style id="carta">
+/* 15/11/2026 stile «Carta» (scelto da Stefano fra 5 proposte): sobrio come Dinners. Accento verde al posto del blu,
+   schede bianche con bordo sottile e ombra leggera, titoli serif, etichette in testo semplice, bottoni a pillola. */
+:root{--terra:#3a6a48;--terra-soft:#e8efe6;--terra-ink:#2e5a3b;--acc-on:#fff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--terra:#93c09a;--terra-soft:#24302a;--terra-ink:#bcd9c0;--acc-on:#0f1f14}}
+:root[data-theme="dark"]{--terra:#93c09a;--terra-soft:#24302a;--terra-ink:#bcd9c0;--acc-on:#0f1f14}
+.card{background:var(--paper)!important;border:1px solid var(--line)!important;border-radius:16px!important;box-shadow:0 1px 2px rgba(0,0,0,.05),0 4px 14px rgba(0,0,0,.05)!important}
+.card::before,.card .cdot{display:none!important}
+.card:hover{border-color:color-mix(in srgb,var(--terra) 35%,var(--line))!important}
+.card .title{font-family:var(--serif)!important;font-weight:600!important;font-size:19px!important;letter-spacing:0!important;line-height:1.2!important}
+.card .csub{color:var(--mute);font-size:13px}
+.card .cnum{flex-direction:row!important;align-items:baseline!important;gap:2px!important;width:auto!important;min-width:0!important;padding-top:4px!important;color:var(--faint)}
+.card .cnum small,.card .cnum b{font-family:var(--sans)!important;font-size:12px!important;font-weight:600!important;color:var(--faint)!important;line-height:1.2!important}
+.card .cph{border-radius:12px}
+.card .cmeta .mst{background:none!important;border:0!important;padding:0!important;height:auto!important;font-size:12px!important;font-weight:400!important;color:var(--mute)!important;letter-spacing:.2px}
+.card .cmeta .mst .em{display:none}
+.card .cmeta .mst+.mst::before{content:"\00b7";margin:0 6px 0 1px}
+.card .cbtn{height:40px;border-radius:999px;font-size:14px;font-weight:600;background:var(--paper);border:1px solid var(--line);color:var(--ink)}
+.card .cbtn.tk:not(.fr){background:var(--paper)!important;border-color:var(--line)!important;color:var(--ink)!important}
+.card .cbtn.tk:not(.fr) svg{color:var(--terra)}
+.card .cbtn.ph svg,.card .cbtn.fav svg{color:var(--mute)}
+.card .cbtn.pri{background:var(--terra)!important;border-color:transparent!important;color:var(--acc-on)!important}
+.card .cbtn.pri svg{color:var(--acc-on)}
+/* 16/11: sul telefono (scelta di Stefano) descrizione in grassetto e sottile cornice verde attorno a ogni scheda dell'elenco */
+@media (max-width:699px){
+.card .desc{font-weight:600!important;color:var(--ink)!important}
+.card{border:1px solid color-mix(in srgb,var(--terra) 55%,var(--line))!important}
+}
+</style>
+<style id="rinnovo">#grid .card .cfoot{gap:6px;min-width:0}#grid .card .cfoot .cbtn{white-space:nowrap;overflow:hidden}#grid .card .cfoot .cbtn.tk{flex:0 1 104px;min-width:0}#grid .card .cfoot .cbtn.ph{flex:0 1 auto;min-width:0;padding:0 11px}#grid .card .cfoot .cbtn.fav{flex:0 0 36px;width:36px;padding:0}#grid .card .cfoot .cbtn.pri{flex:none;margin-left:auto;padding:0 12px}.topnav .sostm{display:none!important}@media (max-width:759px){.ach-mlink[data-nav="sost"]{display:none!important}.topnav .sostm{display:inline-flex!important;align-items:center;margin-left:auto;font:600 14px var(--sans,system-ui);color:var(--terra-ink);text-decoration:underline;text-underline-offset:3px;text-decoration-color:color-mix(in srgb,var(--terra) 40%,transparent)}}.sheet .srcd{margin-top:14px;border-top:1px solid var(--line);padding-top:4px}.sheet .srcd>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;padding:10px 0;font-weight:600;font-size:14px;color:var(--ink)}.sheet .srcd>summary::-webkit-details-marker{display:none}.sheet .srcd>summary span{font-weight:400;color:var(--mute)}.sheet .srcd>summary::after{content:"";margin-left:auto;width:8px;height:8px;border-right:2px solid var(--mute);border-bottom:2px solid var(--mute);transform:rotate(45deg);transition:transform .15s}.sheet .srcd[open]>summary::after{transform:rotate(-135deg)}.sheet .srcd ul{margin:0 0 6px}.sheet .scorr{font-size:13.5px;color:var(--mute);margin:6px 0 10px}.sheet .scorr a{color:var(--terra-ink);font-weight:600}@media(max-width:759px){body.fopen #grid{content-visibility:hidden;contain-intrinsic-size:auto 3000px}}
+/* 16/11/2026 prototipo «rinnovo» (Stefano): Carta + filtri C (barra compatta, pannello dal basso) + scheda C (griglia di pulsanti) */
+/* --- scheda --- */
+.sheet .shead{display:flex;gap:14px;align-items:center;padding-right:48px;margin-top:6px}
+.sheet .sph{width:76px;height:76px;border-radius:12px;object-fit:cover;flex:none}
+.sheet .shtx{display:flex;flex-direction:column;gap:3px;min-width:0}
+.sheet .skick{font-size:12px;color:var(--mute)}
+.sheet .title{font-family:var(--serif)!important;font-weight:600!important;font-size:24px!important;line-height:1.15!important;letter-spacing:0!important;margin:0!important}
+.sheet .scom{font-size:14px;font-weight:600;color:var(--terra-ink)}
+.sheet .smeta{padding-top:10px}
+.sheet .smeta .mst{background:none!important;border:0!important;padding:0!important;height:auto!important;font-size:13px!important;font-weight:400!important;color:var(--mute)!important}
+.sheet .smeta .mst .em{display:none}
+.sheet .smeta .mst+.mst::before{content:"\00b7";margin:0 6px 0 1px}
+.sheet .lead{font-size:16px;line-height:1.5}
+.sheet .why{background:none!important;border:0!important;padding:0!important;font-size:15px}
+.sheet .why b{font-family:var(--serif)}
+.sgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:14px 0 4px}
+.sgb{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-height:66px;padding:8px 4px;border-radius:12px;border:1px solid var(--line);background:var(--paper);color:var(--ink);font:600 12.5px/1.2 var(--sans);text-align:center;text-decoration:none;cursor:pointer;box-sizing:border-box}
+.sgb .ic{width:19px;height:19px;color:var(--terra)}
+.sgb small{display:block;font-size:10.5px;font-weight:400;color:var(--mute);margin-top:1px;overflow-wrap:anywhere;max-width:100%}
+.sgb span{max-width:100%;overflow-wrap:anywhere}
+.sheet .src ul{list-style:none;padding:0;margin:6px 0 0}
+.sheet .src li{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-top:1px solid var(--line);font-size:14px}
+.sheet .src li a{color:var(--ink);text-decoration:none}
+.sheet .src .rel{background:none!important;padding:0!important;font-weight:400!important;white-space:nowrap}
+.sgb.pri{background:var(--terra);border-color:transparent;color:var(--acc-on)}
+.sgb.pri .ic,.sgb.pri small{color:var(--acc-on)}
+.sgb.pri small{opacity:.85}
+.sgb:hover{border-color:var(--terra)}
+.sgb.copied{border-color:var(--terra);color:var(--terra-ink)}
+.sheet .tixn{font-size:12px;color:var(--mute);margin:6px 0 0}
+.srows{margin-top:12px}
+.srow{display:grid;grid-template-columns:104px 1fr;gap:10px;padding:10px 0;border-top:1px solid var(--line);font-size:15px}
+.srow>span{color:var(--mute)}
+.sheet .src{margin-top:14px}
+.sheet .src .rel{font-size:12px;color:var(--terra-ink)}
+.sheet .fcred{display:block;margin-top:10px;font-size:12px;color:var(--mute)}
+/* --- testa e filtri sul telefono --- */
+@media (max-width:759px){
+ .hero .stats{display:flex;flex-wrap:wrap;gap:2px 14px;margin:8px 0 2px}
+ .hero .stat{background:none!important;border:0!important;box-shadow:none!important;padding:0!important;min-height:0!important;height:auto!important;display:inline-flex!important;flex-direction:row!important;align-items:baseline!important;gap:4px!important;color:var(--mute)!important;font-size:13px!important;width:auto!important}
+ .hero .stat .si,.hero .stat .of{display:none!important}
+ .hero .stat b{font:600 13px var(--sans)!important;color:var(--ink)!important}
+ .hero .stat span{font-size:13px!important;color:var(--mute)!important}
+ .hero .stat.on b,.hero .stat.on span{color:var(--terra-ink)!important;text-decoration:underline}
+ .ach-guide__ico{display:none}
+ .ach-guide__btn{border-color:var(--line)!important;background:var(--paper)!important}
+ .ach-mlink{font-size:0!important}
+ .topnav .em,.aggr .em,#g-cat .em,.fbtn .em,#qbar h4 .em{display:none!important}
+ #morebtn,#facets .fbtn,#fdone,#qbar .fhead .fx{display:none!important}
+ #ftog{height:46px;border-radius:12px}
+ #qbar .fbody{display:flex;flex-direction:column;gap:14px}
+ #qbar .fsec{display:block!important}
+ #qbar .cats,#qbar .rinv-pick,#qbar .rinv-aggr{display:block!important}
+ #qbar #subwrap:not([hidden]){display:block!important}
+ #qbar .pick{display:grid!important;grid-template-columns:1fr;gap:8px}
+ #qbar .aggr{display:flex!important;flex-wrap:wrap;gap:6px}
+ #qbar h4,#qbar .qlab,#qbar .rinv-h{font:600 12px var(--sans)!important;letter-spacing:0!important;text-transform:none!important;color:var(--mute)!important;margin:0 0 6px!important}
+ #qbar .qc,#qbar .qchips button,#qbar .agg{background:var(--paper)!important;border:1px solid var(--line)!important;box-shadow:none!important;color:var(--ink)!important}
+ #qbar .qc.on,#qbar .qchips button.on,#qbar .qchips button[aria-pressed="true"],#qbar .qc[aria-pressed="true"],#qbar .agg.on{background:var(--terra)!important;border-color:transparent!important;color:var(--acc-on)!important}
+ #qbar .qc.on small,#qbar .qc[aria-pressed="true"] small{color:var(--acc-on)!important}
+ #qbar .ffoot .fs{background:var(--terra)!important;color:var(--acc-on)!important;border-radius:999px!important}
+ #active .chip,#active button{background:var(--terra-soft)!important;color:var(--terra-ink)!important;border:0!important}
+ #qbar .fbody>*{flex:none!important}
+ #qbar .fsec{border:0!important;padding:0!important;max-height:none!important;overflow:visible!important;background:none!important}
+ #qbar .qc .em{display:none!important}
+ #qbar #g-cat{display:flex!important;flex-wrap:wrap!important;overflow:visible!important;gap:8px!important;-webkit-mask-image:none!important;mask-image:none!important}
+ #qbar #g-cat .qc{flex:none!important;height:40px!important;border-radius:999px!important}
+ #qbar .agg{height:38px!important;padding:0 14px!important;border-radius:999px!important;font-size:14px!important;font-weight:600!important}
+ #qbar .mlab{text-transform:none!important;letter-spacing:0!important;font-weight:400!important}
+ #qbar .pick{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+ .ach-mlink{font-size:0!important;width:auto!important;padding:0 12px!important}
+ .ach-mlink .lg,.ach-mlink .sm{font-size:13px!important}
+ .ach-mlink[data-nav="metodo"] .lg{display:inline!important}
+ .ach-mlink[data-nav="fonti"] .sm{display:inline!important}
+}
+</style>
 <script id="premappa">/* 15/11/2026: la Mappa parte subito. Quando la Guida e' pronta e ferma (3 s dopo il caricamento), o appena il dito
 tocca il tasto Mappa, si scaricano in sottofondo la pagina della mappa e i suoi due file di dati: al tocco sono gia' nel telefono.
 Niente con «risparmio dati» attivo o rete 2G. Una volta sola per visita. */
@@ -780,7 +886,7 @@ addEventListener("pointerdown",function(e){if(e.target.closest&&e.target.closest
 <nav class="ach-guide" aria-label="Le guide di Ach">
   <a class="ach-guide__btn" href="https://achevents.com/" data-goatcounter-click="guide/vai-events" data-goatcounter-title="Vai a Ach's Events Guide"><span class="ach-guide__ico" aria-hidden="true">🎭</span><span class="ach-guide__txt"><b>Events</b><small>spettacoli, mostre, cinema</small></span><span class="ach-guide__arr" aria-hidden="true">→</span></a>
   <a class="ach-guide__btn" href="https://achdinners.com/" data-goatcounter-click="guide/vai-dinners" data-goatcounter-title="Vai a Ach's Dinners Guide"><span class="ach-guide__ico" aria-hidden="true">🍝</span><span class="ach-guide__txt"><b>Dinners</b><small>dove mangiare</small></span><span class="ach-guide__arr" aria-hidden="true">→</span></a>
-  <span class="ach-meta"><a href="#metodo" class="ach-mlink" data-nav="metodo" aria-label="Metodo">📐 <span class="lg">Metodo</span></a><a href="#fonti" class="ach-mlink" data-nav="fonti" aria-label="Archivio fonti">📚 <span class="lg">Archivio fonti</span><span class="sm">Fonti</span></a></span>
+  <span class="ach-meta"><a href="#metodo" class="ach-mlink" data-nav="metodo" aria-label="Metodo">📐 <span class="lg">Metodo</span></a><a href="#fonti" class="ach-mlink" data-nav="fonti" aria-label="Archivio fonti">📚 <span class="lg">Archivio fonti</span><span class="sm">Fonti</span></a><a href="sostenitori/" class="ach-mlink" data-nav="sost" aria-label="Sostenitori">🤝 <span class="lg">Sostenitori</span></a></span>
 </nav>
 <style>
 .ach-guide{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 4px;align-items:center}
@@ -886,7 +992,7 @@ addEventListener("pointerdown",function(e){if(e.target.closest&&e.target.closest
     <div class="awards" id="awards"></div>
     <p class="lede" id="lede"></p>
   </header>
-  <nav class="topnav" aria-label="Sezioni"><a href="#" id="nav-guida">🧭 Guida</a><a class="luoghibtn" href="filtri.html" id="nav-luoghi" aria-label="Mappa: i luoghi sulla mappa d'Italia, per regione, provincia e comune">🗺️ Mappa</a><span class="aggr" role="group" aria-label="Raggruppa i luoghi"><button type="button" class="agg on" data-grp="p" aria-pressed="true">📍 Luoghi</button><button type="button" class="agg" data-grp="c" aria-pressed="false">🏘️ Comuni</button><button type="button" class="agg" data-grp="v" aria-pressed="false">🗺️ Province</button><button type="button" class="agg" data-grp="r" aria-pressed="false">🧭 Regioni</button><button type="button" class="agg" data-grp="a" aria-pressed="false">🇮🇹 Nord-Sud</button></span><a href="#metodo" id="nav-metodo">📐 Metodo</a><a href="#fonti" id="nav-fonti">📚 <span class="lg">Archivio fonti</span><span class="sm">Fonti</span></a></nav>
+  <nav class="topnav" aria-label="Sezioni"><a href="#" id="nav-guida"><i class="em">🧭</i> Guida</a><a class="luoghibtn" href="filtri.html" id="nav-luoghi" aria-label="Mappa: i luoghi sulla mappa d'Italia, per regione, provincia e comune"><i class="em">🗺️</i> Mappa</a><span class="aggr" role="group" aria-label="Raggruppa i luoghi"><button type="button" class="agg on" data-grp="p" aria-pressed="true"><i class="em">📍</i> Luoghi</button><button type="button" class="agg" data-grp="c" aria-pressed="false"><i class="em">🏘️</i> Comuni</button><button type="button" class="agg" data-grp="v" aria-pressed="false"><i class="em">🗺️</i> Province</button><button type="button" class="agg" data-grp="r" aria-pressed="false"><i class="em">🧭</i> Regioni</button><button type="button" class="agg" data-grp="a" aria-pressed="false"><i class="em">🇮🇹</i> Nord-Sud</button></span><a href="#metodo" id="nav-metodo">📐 Metodo</a><a href="#fonti" id="nav-fonti">📚 <span class="lg">Archivio fonti</span><span class="sm">Fonti</span></a><a href="sostenitori/" class="sostm">Sostenitori</a></nav>
 </div>
 
 <div class="bar" id="bar">
@@ -922,9 +1028,9 @@ addEventListener("pointerdown",function(e){if(e.target.closest&&e.target.closest
     <div class="fpanel" id="qbar" role="dialog" aria-label="Filtri">
       <div class="fhead"><b>Filtri</b><button class="fx" id="fclose" type="button" aria-label="Chiudi filtri">×</button></div>
       <div class="fbody">
-        <section class="fsec" data-f="price"><h4>🎟️ Ingresso</h4><div class="qchips" id="g-price"></div></section>
-        <section class="fsec" data-f="ideal"><h4>✨ Ideale per</h4><div class="qchips" id="g-ideal"></div></section>
-        <section class="fsec" data-f="time"><h4>⏱️ Tempo</h4><div class="qchips" id="g-time"></div></section>
+        <section class="fsec" data-f="price"><h4><i class="em">🎟️</i> Ingresso</h4><div class="qchips" id="g-price"></div></section>
+        <section class="fsec" data-f="ideal"><h4><i class="em">✨</i> Ideale per</h4><div class="qchips" id="g-ideal"></div></section>
+        <section class="fsec" data-f="time"><h4><i class="em">⏱️</i> Tempo</h4><div class="qchips" id="g-time"></div></section>
         <div class="fdone"><button type="button" id="fdone">Fatto</button></div>
       </div>
       <div class="ffoot"><button class="fr" type="button" id="freset">Azzera</button><button class="fs" type="button" id="fshow">Mostra i luoghi</button></div>
@@ -942,7 +1048,7 @@ addEventListener("pointerdown",function(e){if(e.target.closest&&e.target.closest
 <section class="wrap view" id="view-metodo" hidden aria-labelledby="m-title">
   <h2 id="m-title">Metodo e regole</h2>
   <p>Come Ach's Places Guide sceglie, verifica e pubblica i luoghi. Le stesse regole valgono per ogni comune d'Italia, così la guida può crescere provincia per provincia senza cambiare forma.</p>
-  <p class="legale-m"><a href="chi-siamo/">Chi siamo</a> · <a href="privacy/">Privacy</a></p>
+  <p class="legale-m"><a href="chi-siamo/">Chi siamo</a> · <a href="privacy/">Privacy</a> · <a href="sostenitori/">Sostenitori</a></p>
   <h3>1. Tassonomia</h3>
   <p>Cinque famiglie, valide per tutta Italia: 🏛️ Storia e monumenti, ⛪ Luoghi sacri, 🖼️ Musei, 🌳 Natura, 🧀 Vita locale. Ogni famiglia ha sottocategorie (borghi, castelli, pievi, case museo, mare, grotte, terme, motori…). I filtri mostrano solo le sottocategorie presenti nel luogo scelto.</p>
   <h3>2. La scheda di ogni luogo</h3>
@@ -1018,7 +1124,7 @@ addEventListener("pointerdown",function(e){if(e.target.closest&&e.target.closest
 <div class="wrap">
   <footer class="mini">
     <p>Testi originali · "Come arrivare" e "Foto" sono semplici link a Google · Coordinate © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a> · <a href="#metodo">Metodo</a> · <a href="#fonti">Archivio fonti</a></p>
-    <p class="legale"><a href="chi-siamo/">Chi siamo</a> · <a href="privacy/">Privacy</a></p>
+    <p class="legale"><a href="chi-siamo/">Chi siamo</a> · <a href="privacy/">Privacy</a> · <a href="sostenitori/">Sostenitori</a></p>
     <p id="aff-nota" hidden>Alcuni link sono affiliati: se compri un biglietto la guida riceve una piccola commissione, senza costi per te.</p>
   </footer>
 </div>
@@ -1107,7 +1213,7 @@ const AWARDS={unesco:["🌍","Patrimonio UNESCO nel comune","https://www.unesco.
 const idealOk=(p,x)=>x==="rain"?p.indoor:x==="view"?p.view:x==="unesco"?p.unesco:(p.aw||[]).includes(x);
 const TIME=[["short","⚡","Fino a 45 min","Breve"],["mid","⏱️","1-1,5 ore","Medio"],["long","🥾","2 ore e oltre","Lungo"]];
 
-const IC={cam:'<path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3z"/><circle cx="12" cy="13" r="3.5"/>',
+const IC={clock:'<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/>',globe:'<circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.8 2.5 14.2 0 17M12 3.5c-2.5 2.8-2.5 14.2 0 17"/>',compass:'<circle cx="12" cy="12" r="8.5"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/>',cam:'<path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3z"/><circle cx="12" cy="13" r="3.5"/>',
 heart:'<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/>',
 ticket:'<path d="M2 9V7a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v2a3 3 0 0 0 0 6v2a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-2a3 3 0 0 0 0-6z"/><path d="M14 5v2M14 11v2M14 17v2"/>',
 chev:'<path d="m9 18 6-6-6-6"/>',back:'<path d="m15 18-6-6 6-6"/>',nav:'<path d="M3 11 22 2l-9 19-2-8-8-2z"/>',
@@ -1306,7 +1412,7 @@ function statusTag(p){return p.status==="closed"?`<span class="mst closed">⛔ C
 function nearTag(p){if(!S.near)return "";const d=distOf(p,S.near);if(!isFinite(d))return "";const q=ptOf(p);return `<span class="mst near">📍 ${q[2]?"":"≈ "}${fmtKm(d)} km · ~${fmtMin(Math.max(5,Math.round(d/KM_PER_MIN/5)*5))}</span>`;}
 /* 9/11: etichette della card in ordine fisso e con testi brevi uguali per tutti (la durata esatta resta nella scheda) */
 const TCARD={short:"≤ 45 min",mid:"1-1,5 h",long:"2 h e più"};
-function ctags(p){const tm=TIME.find(x=>x[0]===p.t);return nearTag(p)+statusTag(p)+(p.unesco?`<span class="mst">🌍 UNESCO</span>`:"")+(tm?`<span class="mst">${tm[1]} ${TCARD[tm[0]]}</span>`:"")+(p.indoor?`<span class="mst">☔ Coperto</span>`:"")+(p.view?`<span class="mst">🌅 Panorama</span>`:"");}
+function ctags(p){const tm=TIME.find(x=>x[0]===p.t);return nearTag(p)+statusTag(p)+(p.unesco?`<span class="mst"><i class="em">🌍</i> UNESCO</span>`:"")+(tm?`<span class="mst"><i class="em">${tm[1]}</i> ${TCARD[tm[0]]}</span>`:"")+(p.indoor?`<span class="mst"><i class="em">☔</i> Coperto</span>`:"")+(p.view?`<span class="mst"><i class="em">🌅</i> Panorama</span>`:"");}
 function tags(p){return nearTag(p)+statusTag(p)+priceTag(p)+(p.card?`<span class="mst">💳 Card</span>`:"")+(p.indoor?`<span class="mst">☔ Al coperto</span>`:"")+(p.view?`<span class="mst">🌅 Panorama</span>`:"")+(p.unesco?`<span class="mst">🌍 UNESCO</span>`:"")+`<span class="mst">⏱️ ${esc(p.duration)}</span>`;}
 
 function renderGrid(list){
@@ -1462,35 +1568,44 @@ function openSheet(id,from){
   const gm=`https://www.google.com/maps/dir/?api=1&destination=${(p.lat!=null&&p.lng!=null)?p.lat+"%2C"+p.lng:encodeURIComponent(p.name.split(/[:(]/)[0].trim()+", "+(p.address.includes(p.com)?p.address:p.address+", "+p.com))}`;
   const ver=(COMUNI.find(c=>c.slug===p.comSlug)||C).verified;
   const sh=$("sheet");sh.style.setProperty("--g",gcol(p.cat));
-  sh.innerHTML=`<div class="grab" aria-hidden="true"></div>
+  sh.innerHTML=(()=>{
+    /* 16/11/2026 prototipo «Scheda C» (scelta di Stefano): testa con la miniatura gia' scaricata, testo, poi tutti i link
+       in una griglia di pulsanti piccoli, informazioni in righe, fonti. Nessuna immagine nuova, nessun file in piu'. */
+    const t=tkUrl(p),cel=(h,icn,lab,cls="",extra="")=>`<a class="sgb${cls}" href="${esc(h)}" target="_blank" rel="noopener${cls.includes("par")?" sponsored":""}"${extra}>${ic(icn)}<span>${lab}</span></a>`;
+    let tk;
+    if(p.free===true)tk=p.ticketUrl?cel(p.ticketUrl,"check","Gratis · prenota"," pri"):`<div class="sgb pri" role="note">${ic("check")}<span>Ingresso gratuito</span></div>`;
+    else if(t&&t[1])tk=cel(t[0],"ticket",`Biglietti<small>${esc(t[1])} · partner</small>`," pri par",` data-goatcounter-click="biglietti/${t[1]==="Tiqets"?"tiqets":"getyourguide"}-places"`);
+    else if(t)tk=cel(t[0],"ticket",`Biglietti<small>${esc(dom(t[0]))}</small>`," pri",` data-goatcounter-click="biglietti/ufficiali-places"`);
+    else tk=cel(p.official,"ticket",`Tariffe<small>${esc(dom(p.official))}</small>`," pri");
+    const vg=p.gy&&!(t&&t[0]===p.gy)?cel(p.gy,"compass","Visite guidate<small>GetYourGuide · partner</small>"," par",` data-goatcounter-click="visite/getyourguide-places"`):"";
+    const ho=p.hoursUrl?cel(p.hoursUrl,"clock","Orari"):p.free===true&&!p.indoor?"":cel(p.official,"clock","Orari");
+    const un=p.wh?cel(`https://whc.unesco.org/en/list/${encodeURIComponent(p.wh)}/`,"globe","UNESCO<small>pagina ufficiale</small>",""," data-goatcounter-click=\"unesco-whc\""):"";
+    const pn=(t&&t[1])||vg;
+    const tg=tags(p).replace(/(<span class="mst[^"]*">)([^<A-Za-zÀ-ÿ0-9«(€]+)/gu,'$1<i class="em">$2</i>');
+    const ph=FOTOM[p.id]?`<img class="sph" src="${fotoSrc(p.id)}" alt="" width="76" height="76" style="background:${fotoCol(p.id)||"var(--line)"}">`:"";
+    return `<div class="grab" aria-hidden="true"></div>
     <button class="sclose" id="sclose" type="button" aria-label="Chiudi">×</button>
-    <div class="top"><span class="gtag">${CATS[p.cat].em} ${esc(CATS[p.cat].long)}</span><span>${CATS[p.cat].subs[p.sub]} ${esc(nm(p.sub))}</span></div>
-    <h2 class="title" id="s-title">${esc(p.name)}</h2>
-    <div class="ctag" style="margin-top:4px">📍 ${esc(p.com)} (${esc(p.comSlug.split("-").pop().toUpperCase())})</div>
-    <div class="meta" style="padding-top:8px">${tags(p)}</div>
-    ${p.wh?`<a class="unbox" href="https://whc.unesco.org/en/list/${encodeURIComponent(p.wh)}/" target="_blank" rel="noopener" data-goatcounter-click="unesco-whc"><span class="ue" aria-hidden="true">🌍</span><span class="ut"><small>Patrimonio mondiale UNESCO · pagina ufficiale ↗</small><b>${esc(p.whn||"")}</b></span></a>`:""}
-    ${p.statusNote?`<div class="cnote" style="margin-top:12px"><span class="em" aria-hidden="true">⚠️</span><div>${esc(p.statusNote)}</div></div>`:""}
-    <p class="lead">${esc(p.desc)}</p><span id="fcredw" data-pid="${esc(p.id)}">${credHtml(p.id)}</span>
+    <div class="shead">${ph}<div class="shtx"><div class="skick">${esc(CATS[p.cat].long)} · ${esc(nm(p.sub))}</div><h2 class="title" id="s-title">${esc(p.name)}</h2><div class="scom">${esc(p.com)} (${esc(p.comSlug.split("-").pop().toUpperCase())})</div></div></div>
+    <div class="meta smeta">${tg}</div>
+    ${p.statusNote?`<div class="cnote"><span class="em" aria-hidden="true">⚠️</span><div>${esc(p.statusNote)}</div></div>`:""}
+    <p class="lead">${esc(p.desc)}</p>
     ${p.why?`<div class="why"><b>Perché andarci.</b> ${esc(p.why)}</div>`:""}${p.tip?`<div class="cnote"><span class="em" aria-hidden="true">💡</span><div>${esc(p.tip)}</div></div>`:""}
-    ${tixHtml(p)}
-    <div class="facts">
-      <div class="fact"><span class="ic" aria-hidden="true">🕘</span><small>Orari</small><div>${p.hoursUrl?`<a class="flink" href="${esc(p.hoursUrl)}" target="_blank" rel="noopener">Orari ufficiali ↗</a>`:p.free===true&&!p.indoor?"Spazio aperto: verifica eventuali limitazioni":`<a class="flink soft" href="${esc(p.official)}" target="_blank" rel="noopener">${p.ownSite===false?"Info sul portale turistico ↗":"Cerca gli orari sul sito ↗"}</a>`}</div></div>
-      <div class="fact"><span class="ic" aria-hidden="true">⏱️</span><small>Tempo consigliato</small><div>${esc(p.duration)}</div></div>
-      <div class="fact"><span class="ic" aria-hidden="true">♿</span><small>Accessibilità</small><div>${esc(p.access)}</div></div>
-      <div class="fact"><span class="ic" aria-hidden="true">📍</span><small>Indirizzo</small><div>${esc(p.address)}</div></div>
+    <div class="sgrid">${tk}${vg}${ho}<a class="sgb" href="${gm}" target="_blank" rel="noopener">${ic("nav")}<span>Come arrivare</span></a>${cel(p.official,"ext",p.ownSite===false?"Portale turistico":"Sito ufficiale")}${un}<a class="sgb" href="${wikiUrl(p)}" target="_blank" rel="noopener" data-goatcounter-click="wikipedia-places" aria-label="${p.wk?"Voce di Wikipedia: "+esc(p.wk):"Cerca "+esc(p.name)+" su Wikipedia"}">${ic("book")}<span>Wikipedia</span></a><button class="sgb" type="button" id="copyaddr">${ic("copy")}<span>Copia indirizzo</span></button><button class="sgb" type="button" id="favsheet">${ic("heart",FAV.has(p.id))}<span>${FAV.has(p.id)?"Salvato":"Salva"}</span></button></div>
+    ${pn?`<p class="tixn">Partner: la guida riceve una piccola commissione, il prezzo per te non cambia.${p.ticketUrl&&!(t&&t[0]===p.ticketUrl)?` <a class="flink" href="${esc(p.ticketUrl)}" target="_blank" rel="noopener">Biglietteria ufficiale ↗</a>`:""}</p>`:""}
+    <div class="srows">
+      <div class="srow"><span>Orari</span><div>${p.hoursUrl?`<a class="flink" href="${esc(p.hoursUrl)}" target="_blank" rel="noopener">Orari ufficiali ↗</a>`:p.free===true&&!p.indoor?"Spazio aperto: verifica eventuali limitazioni":`<a class="flink soft" href="${esc(p.official)}" target="_blank" rel="noopener">${p.ownSite===false?"Info sul portale turistico ↗":"Cerca gli orari sul sito ↗"}</a>`}</div></div>
+      <div class="srow"><span>Tempo</span><div>${esc(p.duration)}</div></div>
+      <div class="srow"><span>Accessibilità</span><div>${esc(p.access)}</div></div>
+      <div class="srow"><span>Indirizzo</span><div>${esc(p.address)}</div></div>
+      ${p.wh?`<div class="srow"><span>UNESCO</span><div><a class="flink" href="https://whc.unesco.org/en/list/${encodeURIComponent(p.wh)}/" target="_blank" rel="noopener">${esc(p.whn||"Patrimonio mondiale")} ↗</a></div></div>`:""}
     </div>
-    <div class="acts">
-      <a class="act pri" href="${gm}" target="_blank" rel="noopener">${ic("nav")}Come arrivare</a>
-      <a class="act" href="${esc(p.official)}" target="_blank" rel="noopener">${ic("ext")}${p.ownSite===false?"Scheda sul portale turistico":"Sito ufficiale"}</a>
-      <a class="act" href="${wikiUrl(p)}" target="_blank" rel="noopener" data-goatcounter-click="wikipedia-places" aria-label="${p.wk?"Voce di Wikipedia: "+esc(p.wk):"Cerca "+esc(p.name)+" su Wikipedia"}"><span class="wk" aria-hidden="true">W</span>${p.wk?"Wikipedia":"Cerca su Wikipedia"}</a>
-      <button class="act" type="button" id="copyaddr">${ic("copy")}Copia indirizzo</button>
-      <button class="act" type="button" id="favsheet">${ic("heart",FAV.has(p.id))}${FAV.has(p.id)?"Salvato nei miei luoghi":"Salva nei miei luoghi"}</button>
-    </div>
-    <div class="src"><b>Fonti verificate il ${esc(ver)}</b><ul>${p.sources.map(s=>`<li><a href="${esc(s[1])}" target="_blank" rel="noopener">${esc(s[0])}</a><span class="rel ${s[2]}">${s[2]==="uff"?"🟢 ufficiale":"🟠 da ricontrollare"}</span></li>`).join("")}</ul></div>`;
+    <details class="src srcd"><summary>Fonti <span>· ${p.sources.length} · verificate il ${esc(ver)}</span></summary><ul>${p.sources.map(s=>`<li><a href="${esc(s[1])}" target="_blank" rel="noopener">${esc(s[0])}</a><span class="rel ${s[2]}">${s[2]==="uff"?"ufficiale":"da ricontrollare"}</span></li>`).join("")}</ul></details>
+    <p class="scorr">Gestite questo luogo o qualcosa è cambiato? <a href="https://servizi.achplaces.com/correggi/?luogo=${encodeURIComponent(p.id)}&amp;nome=${encodeURIComponent(p.name)}" target="_blank" rel="noopener">Segnala una correzione ↗</a></p>
+    <span id="fcredw" data-pid="${esc(p.id)}">${credHtml(p.id)}</span>`;})();
   caricaCred(fotoProv(p.id));riempiCred();$("scrim").classList.add("open");sh.classList.add("open");document.body.style.overflow="hidden";
   $("sclose").onclick=closeSheet;$("sclose").focus();
-  $("favsheet").onclick=e=>{favToggle(p.id);e.currentTarget.innerHTML=ic("heart",FAV.has(p.id))+(FAV.has(p.id)?"Salvato nei miei luoghi":"Salva nei miei luoghi");renderXtra();const f=document.querySelector(`.card .cbtn.fav[data-id="${CSS.escape(p.id)}"]`);};
-  $("copyaddr").onclick=async e=>{const b=e.currentTarget;try{await navigator.clipboard.writeText(p.address);b.innerHTML=ic("check")+"Copiato";b.classList.add("copied");}catch(err){b.textContent="Copia non riuscita";}};
+  $("favsheet").onclick=e=>{favToggle(p.id);e.currentTarget.innerHTML=ic("heart",FAV.has(p.id))+`<span>${FAV.has(p.id)?"Salvato":"Salva"}</span>`;renderXtra();};
+  $("copyaddr").onclick=async e=>{const b=e.currentTarget;try{await navigator.clipboard.writeText(p.address);b.innerHTML=ic("check")+"<span>Copiato</span>";b.classList.add("copied");}catch(err){b.innerHTML="<span>Copia non riuscita</span>";}};
 }
 function closeSheet(){$("scrim").classList.remove("open");$("sheet").classList.remove("open");document.body.style.overflow="";if(lastFocus)lastFocus.focus();}
 $("scrim").onclick=closeSheet;
@@ -1532,6 +1647,23 @@ $("freset").onclick=()=>resetAll();
 document.addEventListener("keydown",e=>{if(e.key==="Escape"&&$("qbar").classList.contains("open")){isPhone()?openSheetF(false):openFacet(null);}});
 matchMedia("(max-width:759px)").addEventListener("change",()=>{const p=$("qbar");p.classList.remove("open");delete p.dataset.open;$("fscrim").classList.remove("open");document.body.style.overflow="";});
 
+/* 16/11/2026 prototipo filtri C sul telefono: zone, raggruppamento, categorie, tipi e filtri vanno tutti nel pannello dal basso
+   (lo stesso di «Ingresso / Ideale per / Tempo», con «Azzera» e «Mostra N luoghi»); in pagina restano ricerca, posizione e «Filtri».
+   Si spostano gli elementi veri (con i loro comandi), non copie. Passando da telefono a tablet si ricarica la pagina. */
+(function(){if(!matchMedia("(max-width:759px)").matches)return;
+  const body=document.querySelector("#qbar .fbody");if(!body)return;
+  const box=(t,el)=>{if(!el)return;const s=document.createElement("section");s.className="fsec rinv";const h=document.createElement("h4");h.className="rinv-h";h.textContent=t;s.appendChild(h);s.appendChild(el);return s;};
+  const pick=document.querySelector(".hero .pick"),aggr=document.querySelector(".topnav .aggr"),cats=document.querySelector("#bar .cats"),sub=$("subwrap");
+  const prima=body.firstChild;
+  [box("Dove",pick),box("Mostra per",aggr)].forEach(s=>s&&body.insertBefore(s,prima));
+  if(cats)body.insertBefore(cats,prima);if(sub)body.insertBefore(sub,prima);
+  const fh=document.querySelector("#qbar .fhead b");if(fh)fh.textContent="Filtri";
+  $("ftog").onclick=()=>{openSheetF(true);document.body.classList.add("fopen");};
+  const chiudi=()=>document.body.classList.remove("fopen");
+  ["fclose","fscrim","fshow"].forEach(i=>{const e=$(i);if(e)e.addEventListener("click",chiudi);});addEventListener("hashchange",()=>{if(document.body.classList.contains("fopen")){try{openSheetF(false)}catch(e){}chiudi();}});
+  matchMedia("(max-width:759px)").addEventListener("change",()=>location.reload());
+})();
+
 const CAPI=new Set([/*CAPI*/]);
 const rank=p=>(p.unesco?0:2)+(CAPI.has(p.com)?0:1)+(p.status==="closed"?4:0);
 let PRIMA=true,UPV=0,ULTIMA=null;
@@ -1542,17 +1674,20 @@ function update(){
   {const bm=S.ideal.has("borghi");if(bm!==BORGHI_ON){BORGHI_ON=bm;if(bm){GRP_PRIMA=S.grp;S.grp="c";}else S.grp=GRP_PRIMA&&GRP_PRIMA!=="c"?GRP_PRIMA:"p";S.drill=[];
     document.querySelectorAll(".topnav .aggr .agg").forEach(x=>{const on=x.dataset.grp===S.grp;x.classList.toggle("on",on);x.setAttribute("aria-pressed",on);});}}
   const order={storia:0,sacro:1,musei:2,natura:3,locale:4};
-  const list=CUR.filter(p=>pass(p));if(S.near||!ordRk(list))list.sort(S.near?(a,b)=>distOf(a,S.near)-distOf(b,S.near):(a,b)=>(a.rk||1e9)-(b.rk||1e9)||rank(a)-rank(b)||order[a.cat]-order[b.cat]||(C.isProv?a.com.localeCompare(b.com,"it"):0));
+  const _t0=performance.now();const list=CUR.filter(p=>pass(p));if(S.near||!ordRk(list))list.sort(S.near?(a,b)=>distOf(a,S.near)-distOf(b,S.near):(a,b)=>(a.rk||1e9)-(b.rk||1e9)||rank(a)-rank(b)||order[a.cat]-order[b.cat]||(C.isProv?a.com.localeCompare(b.com,"it"):0));
   $("nearn").hidden=!S.near;
+  /* 16/11 (prototipo): se filtrare ha già preso tempo, le card si disegnano nel compito successivo (nessun compito oltre i 200 ms) */const _lento=performance.now()-_t0>45;
   const resto=()=>{renderFilters();renderActive();renderStats();renderAwards();renderXtra();$("fshow").textContent=list.length===1?"Mostra 1 luogo":`Mostra ${list.length} luoghi`;};
   /* 10/11/2026: alla prima apertura si disegnano subito le card; conteggi, filtri e statistiche arrivano appena il telefono è libero */
   if(PRIMA){PRIMA=false;renderGrid(list);const v=++UPV,dopo=f=>("requestIdleCallback" in window)?requestIdleCallback(f,{timeout:700}):setTimeout(f,60);
     dopo(()=>{if(v!==UPV)return;renderStats();renderAwards();renderActive();$("fshow").textContent=list.length===1?"Mostra 1 luogo":`Mostra ${list.length} luoghi`;
       dopo(()=>{if(v!==UPV)return;renderFilters();renderXtra();dopo(()=>{if(v===UPV)renderPicker();});});});return;}
   /* 14/11: subito i bottoni e le card; numeri in alto, riconoscimenti e conteggi extra al giro dopo (un compito lungo diviso in due) */
-  const v2=++UPV;renderFilters();renderActive();renderGrid(list);
+  const v2=++UPV;/* 16/11 (prototipo): a pannello filtri chiuso sul telefono i suoi conteggi si aggiornano al giro dopo; a pannello aperto le card (coperte) si ridisegnano al giro dopo */const _tel=matchMedia("(max-width:759px)").matches,_fo=document.body.classList.contains("fopen"),fdopo=_tel&&!_fo,gdopo=_lento||(_tel&&_fo);
+  const coda=()=>requestAnimationFrame(()=>setTimeout(()=>{if(v2!==UPV)return;if(fdopo)renderFilters();renderStats(list.length);renderAwards();renderXtra();},0));
   $("fshow").textContent=list.length===1?"Mostra 1 luogo":`Mostra ${list.length} luoghi`;
-  requestAnimationFrame(()=>setTimeout(()=>{if(v2!==UPV)return;renderStats(list.length);renderAwards();renderXtra();},0));
+  if(!fdopo)renderFilters();renderActive();
+  if(gdopo)setTimeout(()=>{if(v2!==UPV)return;renderGrid(list);coda();},0);else{renderGrid(list);coda();}
 }
 function fillSelect(sel,opts,val){sel.innerHTML=opts.map(([v,l,dis])=>`<option value="${esc(v)}"${dis?" disabled":""}${v===val?" selected":""}>${esc(l)}</option>`).join("");}
 function provReg(p){return (COMUNI.find(c=>c.prov===p)||{}).regione;}
