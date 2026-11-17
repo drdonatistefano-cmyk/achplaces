@@ -4,7 +4,11 @@ Un tragitto usa il traghetto (terzo campo 1, in guida l'icona ⛴️) quando sen
 o non entra tra i 6 più vicini. Risultato: {slug: [[slug, km, 0|1], ...]} con i 6 più vicini."""
 import json
 F = json.load(open("sorgenti/data/geo/vicini_traghetto.json"))
-R = json.load(open("sorgenti/data/geo/vicini_strada.json"))
+import glob
+R = {}
+for f in sorted(glob.glob("sorgenti/data/geo/vicini_strada_*.json")):   # le 4 parti senza traghetti
+    R.update(json.load(open(f)))
+print(len(R), "comuni calcolati senza traghetti su", len(F))
 OUT = {}
 for slug in set(F) | set(R):
     r = {k: d for k, d in R.get(slug, [])}
