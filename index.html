@@ -2195,7 +2195,7 @@ function renderXtra(){
     }
     if(C.lat!=null){
       const vic=vicini(C);
-      if(vic.length)h+=`<div class="xbox"><div class="xh"><b>📍 Comuni vicini nella guida</b><span class="xvn">${VIC?"km su strada · ⛴️ con il traghetto":"km in linea d'aria"}</span></div><div class="xchips">${vic.map(([d,c,f])=>`<a class="xc" href="#${esc(c.slug)}">${esc(c.name)} <small>${f?'<span title="Con il traghetto" aria-label="con il traghetto">⛴️</span> ':""}${fmtKm(d)} km · ${c.places.length} luoghi</small></a>`).join("")}</div></div>`;
+      if(vic.length)h+=`<div class="xbox"><div class="xh"><b>📍 Comuni vicini nella guida</b><span class="xvn">${VIC?"km su strada"+(vic.some(x=>x[2])?" · ⛴️ con il traghetto":""):"km in linea d'aria"}</span></div><div class="xchips">${vic.map(([d,c,f])=>`<a class="xc" href="#${esc(c.slug)}">${esc(c.name)} <small>${f?'<span title="Con il traghetto" aria-label="con il traghetto">⛴️</span> ':""}${fmtKm(d)} km · ${c.places.length} luoghi</small></a>`).join("")}</div></div>`;
     }
   }
   if(FAV.size){
