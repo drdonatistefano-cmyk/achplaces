@@ -896,6 +896,16 @@ addEventListener("pointerdown",function(e){if(e.target.closest&&e.target.closest
 .search input{border-color:#958a7d}
 @media (max-width:759px){.cbtn{height:44px!important;min-height:44px}}
 </style>
+<style>/* 17/11 (approvato da Stefano): sul computer statistiche e scelta del luogo sulla stessa riga, senza l'etichetta «Cosa vuoi vedere» */
+@media (min-width:1024px){
+ .hero{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"kick kick" "h1 h1" "nav nav" "lede lede" "aw aw" "stats pick";column-gap:20px;align-items:end}
+ .hero .kick{grid-area:kick}.hero h1{grid-area:h1}.hero .ach-guide{grid-area:nav}.hero .lede{grid-area:lede}.hero .awards{grid-area:aw}
+ .hero .stats{grid-area:stats;margin-top:12px}
+ .hero .pick{grid-area:pick;margin-top:12px;max-width:none}
+ .cats .qh{display:none!important}
+ .bar .cats{margin-top:8px}
+}
+</style>
 </head>
 <body>
 <div class="wrap">
