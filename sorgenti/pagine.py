@@ -190,6 +190,10 @@ GC = '<script data-goatcounter="https://achplaces.goatcounter.com/count" async s
 
 def pagina(titolo, descr, url, corpo, jsonld=None, prof=0):
     su = "../" * prof
+    # 17/11/2026: Google taglia i titoli oltre ~65 caratteri; se il titolo è lungo si toglie il marchio in coda
+    # (resta in og:site_name). Le pagine inglesi accettano il titolo con o senza marchio.
+    if titolo.endswith(" | Ach's Places Guide") and len(titolo) > 65:
+        titolo = titolo[: -len(" | Ach's Places Guide")]
     ld = f'<script type="application/ld+json">{json.dumps(jsonld, ensure_ascii=False, separators=(",", ":"))}</script>' if jsonld else ""
     return ("<!doctype html><html lang=\"it\"><head><meta charset=\"utf-8\">"
             "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
@@ -198,6 +202,8 @@ def pagina(titolo, descr, url, corpo, jsonld=None, prof=0):
             f"<meta property=\"og:title\" content=\"{e(titolo)}\"><meta property=\"og:description\" content=\"{e(descr)}\">"
             f"<meta property=\"og:type\" content=\"article\"><meta property=\"og:url\" content=\"{e(url)}\">"
             "<meta property=\"og:site_name\" content=\"Ach's Places Guide\"><meta property=\"og:locale\" content=\"it_IT\">"
+            f"<meta property=\"og:image\" content=\"{SITO}/anteprima.png\"><meta property=\"og:image:width\" content=\"1200\">"
+            "<meta property=\"og:image:height\" content=\"630\"><meta name=\"twitter:card\" content=\"summary_large_image\">"
             f"<link rel=\"stylesheet\" href=\"{su}pagine.css\">{ld}{GC}</head><body>"
             + NAV + "<main class=\"w\">" + corpo + "</main>" + PIE + "</body></html>")
 
@@ -340,7 +346,8 @@ for c in sorted(comuni, key=lambda c: (c["regione"], c["prov"], c["name"])):
     if ap["luoghi"]:
         for p in pl:
             if not ricco(p): continue
-            t2 = f"{p['name']}, {c['name']} ({c['prov']}): cosa sapere prima di andarci"
+            t2 = f"{p['name']}, {c['name']} ({c['prov']})"  # 17/11: titolo corto per Google
+            t2 += ": cosa sapere prima di andarci" if len(t2) <= 35 else ": cosa sapere" if len(t2) <= 52 else ""
             d2 = taglia(p.get("desc"))
             b = [f'<p class="briciole"><a href="/">Italia</a> › <a href="/regione/{e(c["regione"])}/">{e(reg)}</a> › '
                  f'<a href="/comune/{e(c["slug"])}/">{e(c["name"])}</a></p>',

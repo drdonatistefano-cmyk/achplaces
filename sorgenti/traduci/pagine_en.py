@@ -72,6 +72,8 @@ SCHEMI = [
      lambda m: f"{m[1]} places to visit in {m[2]} Italian towns, region by region."),
     (r"^I (\d+) luoghi della guida, comune per comune e regione per regione\.$",
      lambda m: f"The guide's {m[1]} places, town by town and region by region."),
+    (r"^(.+), (.+) \((\w\w)\): cosa sapere( \| Ach's Places Guide)?$",
+     lambda m: f"{m[1]}, {R(m[2])} ({m[3]}): what to know{m[4] or ''}"),
     (r"^(.+), (.+) \((\w\w)\): cosa sapere prima di andarci( \| Ach's Places Guide)?$",
      lambda m: f"{m[1]}, {R(m[2])} ({m[3]}): what to know before you go{m[4] or ''}"),
     (r"^Aggiornato il ([\d-]+)$", lambda m: f"Updated on {m[1]}"),
