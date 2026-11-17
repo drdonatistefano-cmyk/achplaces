@@ -5,11 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#161311">
 <title>Ach's Places Guide – cosa vedere in Italia, comune per comune</title>
-<meta name="description" content="Ach&#x27;s Places Guide: 17.033 luoghi da visitare in 2.804 comuni italiani. Musei, chiese, castelli, aree archeologiche, parchi. Gratuita e senza pubblicità.">
+<link rel="icon" href="/icona-192.png">
+<style>/* 17/11: prima del primo disegno l'elenco tiene il suo spazio, così la pagina non salta */#grid:empty{min-height:150vh}</style>
+<meta name="description" content="Ach&#x27;s Places Guide: 17.060 luoghi da visitare in 2.805 comuni italiani. Musei, chiese, castelli, aree archeologiche, parchi. Gratuita e senza pubblicità.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://achplaces.com/">
 <meta property="og:title" content="Ach&#x27;s Places Guide">
-<meta property="og:description" content="Ach&#x27;s Places Guide: 17.033 luoghi da visitare in 2.804 comuni italiani. Musei, chiese, castelli, aree archeologiche, parchi. Gratuita e senza pubblicità.">
+<meta property="og:description" content="Ach&#x27;s Places Guide: 17.060 luoghi da visitare in 2.805 comuni italiani. Musei, chiese, castelli, aree archeologiche, parchi. Gratuita e senza pubblicità.">
 <meta property="og:locale" content="it_IT">
 <meta property="og:image" content="https://achplaces.com/anteprima.png">
 <meta property="og:image:width" content="1200">
@@ -859,7 +861,7 @@ document.addEventListener("DOMContentLoaded",function(){const t=document.createE
  #qbar #subwrap:not([hidden]){display:block!important}
  #qbar .pick{display:grid!important;grid-template-columns:1fr;gap:8px}
  #qbar .aggr{display:flex!important;flex-wrap:wrap;gap:6px}
- #qbar h4,#qbar .qlab,#qbar .rinv-h{font:600 12px var(--sans)!important;letter-spacing:0!important;text-transform:none!important;color:var(--mute)!important;margin:0 0 6px!important}
+ #qbar h4,#qbar .qlab,#qbar .rinv-h,#qbar h3.rinv-h{font:600 12px var(--sans)!important;letter-spacing:0!important;text-transform:none!important;color:var(--mute)!important;margin:0 0 6px!important}
  #qbar .qc,#qbar .qchips button,#qbar .agg{background:var(--paper)!important;border:1px solid var(--line)!important;box-shadow:none!important;color:var(--ink)!important}
  #qbar .qc.on,#qbar .qchips button.on,#qbar .qchips button[aria-pressed="true"],#qbar .qc[aria-pressed="true"],#qbar .agg.on{background:var(--terra)!important;border-color:transparent!important;color:var(--acc-on)!important}
  #qbar .qc.on small,#qbar .qc[aria-pressed="true"] small{color:var(--acc-on)!important}
@@ -887,12 +889,19 @@ fetch("manifest.json").then(function(r){return r.json()}).then(function(m){["fil
 addEventListener("load",function(){setTimeout(function(){(window.requestIdleCallback||function(f){setTimeout(f,0)})(va)},3000)});
 addEventListener("pointerdown",function(e){if(e.target.closest&&e.target.closest("#nav-luoghi"))va()},{capture:true,passive:true});})();
 </script>
+<style>/* 17/11 (approvato da Stefano): grigi dei testi piccoli alla soglia di leggibilità, bordo della ricerca visibile, pulsanti delle schede alti 44 px sul telefono */
+:root:not([data-theme="dark"]){--mute:#756a5f;--faint:#7a6f63;--ok:#3a7046}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--mute:#ab9f92;--faint:#7d7268;--ok:#6fb07d}}
+:root[data-theme="dark"]{--mute:#ab9f92;--faint:#7d7268;--ok:#6fb07d}
+.search input{border-color:#958a7d}
+@media (max-width:759px){.cbtn{height:44px!important;min-height:44px}}
+</style>
 </head>
 <body>
 <div class="wrap">
   <header class="hero" id="hero">
     <div class="kick"><svg class="italy" viewBox="0 0 40 47" width="22" height="26" aria-hidden="true"><path fill="currentColor" d="M4 6 10 3 17 2 22 4 26 3 27 7 23 9 22 12 23 16 26 19 30 23 33 26 32 28 36 30 39 33 38 35 34 32 32 34 33 37 31 41 29 42 29 38 28 34 25 31 21 28 17 25 14 21 12 16 10 14 6 15 3 13 2 9Z"/><path fill="currentColor" opacity=".75" d="M22 42 30 41 28 46 24 45Z M9 26 13 25 13 33 9 34Z"/></svg><span id="kicktxt">Ach's Places Guide</span></div>
-    <h1 id="h1"></h1>
+    <h1 id="h1">Tutti i luoghi, <em>da vedere</em> e da scoprire.</h1>
     <!-- menu comune «Le guide di Ach» (coordinamento/MENU-GUIDE.md) -->
 <nav class="ach-guide" aria-label="Le guide di Ach">
   <a class="ach-guide__btn" href="https://achevents.com/" data-goatcounter-click="guide/vai-events" data-goatcounter-title="Vai a Ach's Events Guide"><span class="ach-guide__ico" aria-hidden="true">🎭</span><span class="ach-guide__txt"><b>Events</b><small>spettacoli, mostre, cinema</small></span><span class="ach-guide__arr" aria-hidden="true">→</span></a>
@@ -977,7 +986,7 @@ addEventListener("pointerdown",function(e){if(e.target.closest&&e.target.closest
 .abanner a{font-weight:700;color:#9a4f12;white-space:nowrap}
 </style>
     <div class="stats" id="stats"></div>
-    <div class="pick" aria-label="Scegli il luogo">
+    <div class="pick" role="group" aria-label="Scegli il luogo">
       <div class="msel"><span class="mlab">Regioni</span><button class="mbtn" id="reg-btn" type="button" aria-haspopup="true" aria-expanded="false"><span class="mv" id="reg-val"></span><span class="cv" aria-hidden="true">▼</span></button></div>
       <div class="msel"><span class="mlab">Province</span><button class="mbtn" id="prov-btn" type="button" aria-haspopup="true" aria-expanded="false"><span class="mv" id="prov-val"></span><span class="cv" aria-hidden="true">▼</span></button></div>
       <div class="msel"><span class="mlab">Comuni</span><button class="mbtn" id="com-btn" type="button" aria-haspopup="true" aria-expanded="false"><span class="mv" id="com-val"></span><span class="cv" aria-hidden="true">▼</span></button></div>
@@ -1015,7 +1024,7 @@ addEventListener("pointerdown",function(e){if(e.target.closest&&e.target.closest
         <button class="x" id="qx" type="button" aria-label="Cancella ricerca">×</button>
       </label>
       <button class="iconbtn reset" id="resetbtn" type="button" hidden><span aria-hidden="true">↺</span><span class="rl">Azzera</span><span class="badge" id="resetn">0</span></button>
-      <button class="iconbtn eatbtn" id="eatbtn" type="button" aria-haspopup="dialog" aria-controls="eat"><span aria-hidden="true">📍</span><span class="rl">Vicino a te</span><span class="badge" id="nearn" hidden>●</span></button>
+      <button class="iconbtn eatbtn" id="eatbtn" type="button" aria-label="Vicino a te" aria-haspopup="dialog" aria-controls="eat"><span aria-hidden="true">📍</span><span class="rl">Vicino a te</span><span class="badge" id="nearn" hidden>●</span></button>
       <button class="iconbtn" id="ftog" type="button" aria-expanded="false" aria-controls="bar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg><span>Filtri</span><span class="badge" id="ftogn" hidden>0</span></button>
       <button class="iconbtn" id="morebtn" type="button" aria-expanded="false" aria-controls="qbar">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
@@ -1323,8 +1332,8 @@ function chip(em,t,n,on,g,onclick,lab){
   const b=document.createElement("button");b.type="button";b.className="qc"+(on?" on":"");
   if(g)b.style.setProperty("--g",g);
   b.setAttribute("aria-pressed",on?"true":"false");
-  b.innerHTML=`<span class="em" aria-hidden="true">${em}</span><span class="t lg">${esc(nm(t))}</span><span class="t sm">${esc(SHORT[nm(t)]||nm(t))}</span><small>${n}</small>`;
-  if(lab)b.setAttribute("aria-label",`${lab}: ${t}, ${n} luoghi`);
+  b.innerHTML=`<span class="em" aria-hidden="true">${em}</span><span class="t lg">${esc(nm(t))}</span><span class="t sm">${esc(SHORT[nm(t)]||nm(t))}</span><small>${NUM(n)}</small>`;
+  if(lab)b.setAttribute("aria-label",`${t}, ${NUM(n)} luoghi`);
   b.disabled=!on&&n===0;b.onclick=onclick;return b;
 }
 const gcol=c=>`var(--c-${c})`;
@@ -1430,7 +1439,7 @@ function renderGrid(list){
   ULTIMA=list;
   window.__lista=list.map(p=>p.id);window.__n=(window.__n||0)+1;
   const g=$("grid");g.innerHTML="";
-  $("count").textContent=list.length===CUR.length?`Tutti i ${list.length} luoghi`:`${list.length} ${list.length===1?"luogo":"luoghi"} su ${CUR.length}`;
+  $("count").textContent=list.length===CUR.length?`Tutti i ${NUM(list.length)} luoghi`:`${NUM(list.length)} ${list.length===1?"luogo":"luoghi"} su ${NUM(CUR.length)}`;
   if(!list.length){g.innerHTML=`<div class="empty">Nessun luogo con questi filtri.<br><button class="freset" type="button" id="er">✕ Azzera i filtri</button></div>`;$("er").onclick=resetAll;return;}
   const CH=24;let shown=0;const selN=list.length!==CUR.length||!!S.near;list.forEach((p,i)=>p._sel=selN?i+1:0);
   const more=()=>{const frag=document.createDocumentFragment();for(const p of list.slice(shown,shown+CH))frag.appendChild(cardEl(p));shown+=CH;
@@ -1520,7 +1529,7 @@ function cardEl(p){
     const n=p._sel||p.rk,sub=C.isProv?`${esc(CATS[p.cat].label)} · ${esc(p.com)}`:`${esc(CATS[p.cat].label)} · ${esc(p.sub)}`;
     c.innerHTML=`<button class="cmain" type="button"><div class="crow${FOTOM[p.id]?" hasph":""}">${n?`<div class="cnum${String(n).length>=4?" c4":""}" title="${p._sel?"Posizione nella selezione attuale":"Posizione nella classifica di tutta la guida"}"><small>N°</small><b>${n}</b></div>`:`<div class="cnum"></div>`}<div class="cbody">
       <h3 class="title">${esc(p.name)}</h3><div class="csub">${sub}${p._sel&&p.rk?` <span class="cgl">· n. ${p.rk} in Italia</span>`:""}</div><p class="desc">${esc(p.desc)}</p></div>${(FOTOM[p.id]||!FOTO_OK)?`<span class="cphw${fotoCom(p.id)?" pcom":""}"><img class="cph" src="${fotoSrc(p.id)}" data-fid="${esc(p.id)}" onerror="fotoNo(this)" width="84" height="84" loading="lazy" decoding="async" alt="${fotoCom(p.id)?"Foto del comune, non del luogo":""}" style="background:${fotoCol(p.id)||"var(--line)"}"><span class="cdot" title="${esc(CATS[p.cat].label)}" role="img" aria-label="${esc(CATS[p.cat].label)}"></span></span>`:`<span class="cdot" title="${esc(CATS[p.cat].label)}" role="img" aria-label="${esc(CATS[p.cat].label)}"></span>`}</div><div class="meta cmeta">${ctags(p)}</div></button>
-      <div class="cfoot">${p.free===true?`<button class="cbtn tk fr" type="button" aria-label="Ingresso gratuito: vedi la scheda di ${esc(p.name)}">${ic("check")}Gratis</button>`:tkUrl(p)?`<a class="cbtn tk" href="${esc(tkUrl(p)[0])}" target="_blank" rel="noopener${tkUrl(p)[1]?" sponsored":""}" aria-label="Biglietti${tkUrl(p)[1]?" su "+tkUrl(p)[1]:" ufficiali"}: ${esc(p.name)}">${ic("ticket")}Biglietti</a>`:p.tf?`<a class="cbtn tk" href="${esc(p.tf)}" target="_blank" rel="noopener" aria-label="Tariffe sul sito ufficiale: ${esc(p.name)}">${ic("ticket")}Biglietti</a>`:`<button class="cbtn tk" type="button" aria-label="Biglietto: vedi la scheda di ${esc(p.name)}">${ic("ticket")}Biglietti</button>`}<a class="cbtn ph" href="${photoUrl(p)}" target="_blank" rel="noopener" aria-label="Foto di ${esc(p.name)} su Google Immagini">${ic("cam")}Foto</a><button class="cbtn fav${FAV.has(p.id)?" on":""}" type="button" aria-pressed="${FAV.has(p.id)}" aria-label="Salva tra i miei luoghi">${ic("heart",FAV.has(p.id))}</button><button class="cbtn pri" type="button">Apri${ic("chev")}</button></div>`;
+      <div class="cfoot">${p.free===true?`<button class="cbtn tk fr" type="button" aria-label="Gratis, ingresso gratuito: vedi la scheda di ${esc(p.name)}">${ic("check")}Gratis</button>`:tkUrl(p)?`<a class="cbtn tk" href="${esc(tkUrl(p)[0])}" target="_blank" rel="noopener${tkUrl(p)[1]?" sponsored":""}" aria-label="Biglietti${tkUrl(p)[1]?" su "+tkUrl(p)[1]:" ufficiali"}: ${esc(p.name)}">${ic("ticket")}Biglietti</a>`:p.tf?`<a class="cbtn tk" href="${esc(p.tf)}" target="_blank" rel="noopener" aria-label="Biglietti, tariffe sul sito ufficiale: ${esc(p.name)}">${ic("ticket")}Biglietti</a>`:`<button class="cbtn tk" type="button" aria-label="Biglietti, vedi la scheda di ${esc(p.name)}">${ic("ticket")}Biglietti</button>`}<a class="cbtn ph" href="${photoUrl(p)}" target="_blank" rel="noopener" aria-label="Foto di ${esc(p.name)} su Google Immagini">${ic("cam")}Foto</a><button class="cbtn fav${FAV.has(p.id)?" on":""}" type="button" aria-pressed="${FAV.has(p.id)}" aria-label="Salva tra i miei luoghi">${ic("heart",FAV.has(p.id))}</button><button class="cbtn pri" type="button">Apri${ic("chev")}</button></div>`;
     const open=()=>openSheet(p.id,c.querySelector(".cmain"));
     c.querySelector(".cmain").onclick=open; c.querySelector(".cbtn.pri").onclick=open;
     {const tb=c.querySelector("button.cbtn.tk");if(tb)tb.onclick=open;}
@@ -1538,10 +1547,11 @@ $("awards").addEventListener("click",e=>{const b=e.target.closest(".awq");if(!b)
 /* 14/11: i numeri che dipendono solo dal comune o dalla zona si contano una volta sola per zona */
 const FISSI=new WeakMap();
 function fissi(){let f=FISSI.get(CUR);if(!f){f={free:0,card:0,alerts:0,indoor:0,unesco:0,borghi:0,arancione:0};for(const p of CUR){if(p.free===true)f.free++;if(p.card)f.card++;if(p.status!=="ok")f.alerts++;if(p.indoor)f.indoor++;if(p.unesco)f.unesco++;const a=p.aw||[];if(a.includes("borghi"))f.borghi++;if(a.includes("arancione"))f.arancione++;}FISSI.set(CUR,f);}return f;}
+const NUM=x=>typeof x==="number"?String(x).replace(/\B(?=(\d{3})+(?!\d))/g,"."):x;/* 17/11: 17.060 con il punto delle migliaia */
 function renderStats(nvis){
   const vis=typeof nvis==="number"?nvis:CUR.filter(p=>pass(p)).length, filt=nActive()>0;
   const {free,card,alerts,indoor}=fissi();
-  const tile=(sc,ic,n,l,act,on,of)=>`<${act?"button type=\"button\" data-act=\""+act+"\"":"div"} class="stat${on?" on":""}" style="--sc:${sc}"${act?` aria-pressed="${!!on}"`:""}>${of?`<span class="of">${of}</span>`:`<span class="si" aria-hidden="true">${ic}</span>`}<b>${n}</b><span>${l}</span></${act?"button":"div"}>`;
+  const tile=(sc,ic,n,l,act,on,of)=>`<${act?"button type=\"button\" data-act=\""+act+"\"":"div"} class="stat${on?" on":""}" style="--sc:${sc}"${act?` aria-pressed="${!!on}"`:""}>${of?`<span class="of">${of}</span>`:`<span class="si" aria-hidden="true">${ic}</span>`}<b>${NUM(n)}</b><span>${l}</span></${act?"button":"div"}>`;
   const third=C.isProv?tile("var(--c-sacro)","📍",C.n,"comuni","comuni"):card?tile("var(--c-sacro)","💳",card,"con Card","card",S.price.has("card")):tile("var(--c-sacro)","☔",indoor,"al coperto","rain",S.ideal.has("rain"));
   $("stats").innerHTML=tile("var(--terra)","🏛️",vis<CUR.length?(String(vis).length+String(CUR.length).length<=6?`${vis}<small class="ofn">/${CUR.length}</small>`:`${vis}`):CUR.length,vis<CUR.length?"visibili":"luoghi",filt?"reset":null,false,"")+tile("var(--ok)","🆓",free,"gratuiti","free",S.price.has("free"))+third+tile("var(--warn)","⚠️",alerts,"con avvisi","alerts",S.alerts);
 }
@@ -1666,7 +1676,7 @@ matchMedia("(max-width:759px)").addEventListener("change",()=>{const p=$("qbar")
    Si spostano gli elementi veri (con i loro comandi), non copie. Passando da telefono a tablet si ricarica la pagina. */
 (function(){if(!matchMedia("(max-width:759px)").matches)return;
   const body=document.querySelector("#qbar .fbody");if(!body)return;
-  const box=(t,el)=>{if(!el)return;const s=document.createElement("section");s.className="fsec rinv";const h=document.createElement("h4");h.className="rinv-h";h.textContent=t;s.appendChild(h);s.appendChild(el);return s;};
+  const box=(t,el)=>{if(!el)return;const s=document.createElement("section");s.className="fsec rinv";const h=document.createElement("h3");h.className="rinv-h";h.textContent=t;s.appendChild(h);s.appendChild(el);return s;};
   const pick=document.querySelector(".hero .pick"),aggr=document.querySelector(".topnav .aggr"),cats=document.querySelector("#bar .cats"),sub=$("subwrap");
   const prima=body.firstChild;
   [box("Dove",pick),box("Mostra per",aggr)].forEach(s=>s&&body.insertBefore(s,prima));
@@ -1775,13 +1785,14 @@ document.addEventListener("click",e=>{if(!e.composedPath().some(n=>n.classList&&
 document.addEventListener("keydown",e=>{if(e.key==="Escape")popToggle(null);});
 let keepFilters=false;
 function ledeTxt(c){return c.lede||`Monumenti, chiese, musei, natura e angoli nascosti del comune di ${c.name} (${c.provKind==="Città metropolitana"?"Città metropolitana di ":"provincia di "}${c.provName}), con biglietti, orari e come arrivare. Ogni scheda cita le sue fonti.`;}
+const TITOLO0=document.title;/* 17/11: la pagina iniziale tiene il titolo per Google */
 function setComune(slug,fromHash){
   showView("guida");
   const c=parseView(slug); C=c; CUR=c.places;
   if(!keepFilters)clearFilters();
-  document.title=`${c.name} · Ach's Places Guide`;
+  document.title=c.all?TITOLO0:`${c.name} · Ach's Places Guide`;
   $("kicktxt").textContent=`Ach's Places Guide · ${c.name}`;
-  $("h1").innerHTML=`Tutti i luoghi, <em>da vedere</em> e da scoprire.`;
+  {const H="Tutti i luoghi, <em>da vedere</em> e da scoprire.";if($("h1").innerHTML!==H)$("h1").innerHTML=H;}
   if(!PRIMA)renderAwards();
   $("lede").textContent=ledeTxt(c);
   $("lede").hidden=!!(c.all||c.isProv);

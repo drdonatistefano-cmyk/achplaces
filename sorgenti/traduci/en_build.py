@@ -94,7 +94,7 @@ window.ACH_LANG=L;
 if(L==="en"){d.lang="en";d.classList.add("en-wait");setTimeout(function(){d.classList.remove("en-wait");},1200);
 window.ACH_EN_MAN=__MAN__;var s=document.createElement("script");s.src="__JS__";s.async=true;document.head.appendChild(s);}
 function bottone(){if(document.getElementById("langbtn"))return;var b=document.createElement("button");b.id="langbtn";b.type="button";b.setAttribute("data-noen","");
-b.setAttribute("aria-label",L==="en"?"Versione italiana":"English version");b.title=L==="en"?"Italiano":"English";
+b.setAttribute("aria-label",L==="en"?"IT, versione italiana":"EN, English version");b.title=L==="en"?"Italiano":"English";
 b.innerHTML=L==="en"?"<span>IT</span>":"<span>EN</span>";
 b.onclick=function(){var n=L==="en"?"it":"en";try{localStorage.setItem("lang",n);}catch(e){}var u=location.href.replace(/([?&])lang=(it|en)&?/,"$1").replace(/[?&]$/,"");location.href=u;if(u===location.href)location.reload();};
 var g=document.querySelector(".ach-guide")||document.getElementById("gbtn");
