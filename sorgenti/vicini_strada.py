@@ -12,8 +12,7 @@ def hav(a, b, c, d):
     r = math.pi / 180; x = math.sin((c - a) * r / 2) ** 2 + math.cos(a * r) * math.cos(c * r) * math.sin((d - b) * r / 2) ** 2
     return 2 * 6371 * math.asin(math.sqrt(x))
 out_f = "sorgenti/data/geo/vicini_strada.json"
-try: OUT = json.load(open(out_f))
-except Exception: OUT = {}
+OUT = {}  # 17/11: ricalcolo completo senza traghetti (exclude=ferry): con i traghetti Verbania-Laveno risultava 9 km
 solo = sys.argv[1:]  # facoltativo: solo alcuni comuni
 fatti = 0
 for slug, (la, lo) in C.items():
@@ -21,7 +20,7 @@ for slug, (la, lo) in C.items():
     if slug in OUT and not solo: continue
     cand = sorted(((hav(la, lo, *C[k]), k) for k in C if k != slug))[:15]
     pts = [(lo, la)] + [(C[k][1], C[k][0]) for _, k in cand]
-    url = "https://router.project-osrm.org/table/v1/driving/" + ";".join(f"{x:.5f},{y:.5f}" for x, y in pts) + "?sources=0&annotations=distance"
+    url = "https://router.project-osrm.org/table/v1/driving/" + ";".join(f"{x:.5f},{y:.5f}" for x, y in pts) + "?sources=0&annotations=distance&exclude=ferry"
     for t in range(4):
         try:
             r = json.load(urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "AchPlacesGuide/1.0 (+https://achplaces.com)"}), timeout=30))
