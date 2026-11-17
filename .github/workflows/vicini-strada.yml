@@ -3,7 +3,6 @@ name: Comuni vicini su strada (OSRM)
 # 4 parti in parallelo; ogni parte salva e fa push ogni 150 comuni e riprende da dove era arrivata.
 on: { workflow_dispatch: }
 permissions: { contents: write }
-concurrency: { group: vicini-${{ github.ref }}, cancel-in-progress: false }
 jobs:
   vicini:
     runs-on: ubuntu-latest
