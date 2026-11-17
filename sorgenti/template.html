@@ -646,7 +646,7 @@ body{font-size:16px;line-height:1.5}
 .xtra[hidden]{display:none}
 .xbox{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:12px 14px;box-shadow:var(--shadow)}
 .xh{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:space-between;margin-bottom:8px}
-.xh b{font-family:var(--serif);font-size:1.08rem;font-weight:700}
+.xh b{font-family:var(--serif);font-size:1.08rem;font-weight:700}.xh .xvn{font-size:.8rem;opacity:.7}
 .xh span{display:flex;gap:6px;flex-wrap:wrap}
 .xt{height:32px;padding:0 12px;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:700 13px var(--sans);cursor:pointer}
 .xt.on{background:var(--terra);border-color:var(--terra);color:var(--on)}
@@ -1791,6 +1791,10 @@ let XT=null;
 const ORE={short:.5,mid:1.25,long:2.5};
 function giro(ps,budget){const out=[];let h=0;for(const p of ps){const d=ORE[p.t]||1;if(h+d<=budget+.01){out.push(p);h+=d;}if(h>=budget-.2)break;}return [out,h];}
 const fmtH=h=>h<1?Math.round(h*60)+" min":(Math.round(h*2)/2).toLocaleString("it-IT")+(h<1.75?" ora":" ore");
+let VIC=null;/* 17/11/2026: km su strada (OSRM, sorgenti/vicini_strada.py), segnalazione del Comune di Verbania */
+fetch("/vicini.json").then(r=>r.ok?r.json():null).then(j=>{if(j){VIC=j;try{renderXtra();}catch(e){}}}).catch(()=>{});
+function vicini(C){if(VIC&&VIC[C.slug]){const by=new Map(COMUNI.map(c=>[c.slug,c]));const v=VIC[C.slug].map(([s,d])=>[d,by.get(s)]).filter(x=>x[1]&&x[1].places.length);if(v.length)return v.slice(0,6);}
+  return COMUNI.filter(c=>c.slug!==C.slug&&c.lat!=null&&c.places.length).map(c=>[hav(C.lat,C.lng,c.lat,c.lng),c]).sort((a,b)=>a[0]-b[0]).slice(0,6);}
 function renderXtra(){
   const el=$("xtra");if(!el)return;let h="";
   const single=!C.all&&!C.isProv;
@@ -1805,8 +1809,8 @@ function renderXtra(){
       <p class="xnote">Proposta automatica: i luoghi più rilevanti di ${esc(C.name)} che stanno in circa ${fmtH(ore)} di visita, spostamenti esclusi.</p></div>`;
     }
     if(C.lat!=null){
-      const vic=COMUNI.filter(c=>c.slug!==C.slug&&c.lat!=null&&c.places.length).map(c=>[hav(C.lat,C.lng,c.lat,c.lng),c]).sort((a,b)=>a[0]-b[0]).slice(0,6);
-      if(vic.length)h+=`<div class="xbox"><div class="xh"><b>📍 Comuni vicini nella guida</b></div><div class="xchips">${vic.map(([d,c])=>`<a class="xc" href="#${esc(c.slug)}">${esc(c.name)} <small>${fmtKm(d)} km · ${c.places.length} luoghi</small></a>`).join("")}</div></div>`;
+      const vic=vicini(C);
+      if(vic.length)h+=`<div class="xbox"><div class="xh"><b>📍 Comuni vicini nella guida</b><span class="xvn">${VIC?"km su strada":"km in linea d'aria"}</span></div><div class="xchips">${vic.map(([d,c])=>`<a class="xc" href="#${esc(c.slug)}">${esc(c.name)} <small>${fmtKm(d)} km · ${c.places.length} luoghi</small></a>`).join("")}</div></div>`;
     }
   }
   if(FAV.size){
