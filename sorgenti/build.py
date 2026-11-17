@@ -585,7 +585,7 @@ json.dump(AUTO, open("/tmp/link_auto.json", "w"), ensure_ascii=False); print("li
 json.dump(dict(v=2, dati=NOME_DATI, meta=NOME_META, fonti=NOME_FONTI, det=DET, cerca=NOME_CERCA), open(os.path.join(HERE, "manifest.json"), "w"))
 LOADER = r"""
 /* 9/11/2026 Tiqets (Awin, publisher 3146807 come Events): mid a 0 = link diretto alla pagina del prodotto; con l'ID inserzionista il clic passa da Awin */
-var AFF={awin:"3146807",mid:{"tiqets.com":12427},par:{"getyourguide":"partner_id=Y9VWGXI&utm_medium=online_publisher"},ord:["tq","gy"],nome:{tq:"Tiqets",gy:"GetYourGuide"}};
+var AFF={awin:"3146807",mid:{"tiqets.com":12427,"ticketone.it":9567,"vivaticket.com":0,"vivaticket.it":0},par:{"getyourguide":"partner_id=Y9VWGXI&utm_medium=online_publisher"},ord:["tq","gy"],nome:{tq:"Tiqets",gy:"GetYourGuide"}};
 /* tasto Biglietti: prima il venditore affiliato che paga di più (AFF.ord), poi la biglietteria ufficiale */
 function tkUrl(p){for(const k of AFF.ord)if(p[k]&&(k!=="gy"||/biglietto|ingresso|salta|ticket/.test(p[k])))return [p[k],AFF.nome[k]];return p.ticketUrl?[p.ticketUrl,""]:null}
 function affUrl(u){try{const h=new URL(u).hostname.replace(/^www\./,"");for(const d in AFF.mid){if(AFF.awin&&AFF.mid[d]&&(h===d||h.endsWith("."+d)))return "https://www.awin1.com/cread.php?awinmid="+AFF.mid[d]+"&awinaffid="+AFF.awin+"&ued="+encodeURIComponent(u)}for(const d in AFF.par){if(h.split(".").includes(d)&&!/[?&]partner_id=/.test(u))return u+(u.includes("?")?"&":"?")+AFF.par[d]}}catch(_){}return u}
