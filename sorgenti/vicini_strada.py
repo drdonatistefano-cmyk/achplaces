@@ -3,7 +3,7 @@ le distanze in linea d'aria sui laghi ingannano, es. Verbania-Laveno 5 km in lin
 Per ogni comune prende i 15 più vicini in linea d'aria e chiede a OSRM (dati OpenStreetMap) i km su strada;
 tiene i 6 più vicini su strada. Scrive sorgenti/data/geo/vicini_strada.json = {slug: [[slug, km], ...]}.
 Gira su GitHub Actions (OSRM non è raggiungibile dalla sessione), una richiesta al secondo."""
-import glob, json, math, re, sys, time, urllib.request
+import glob, json, math, os, re, subprocess, sys, time, urllib.request
 s = open(glob.glob("luoghi.*.js")[0], encoding="utf-8").read()
 pat = re.compile(r'\["([^"]+)","([^"]+)","[a-z-]+","[^"]*","[^"]*","([a-z0-9-]+)",([\d.\-]+),([\d.\-]+)\]')
 C = {m.group(3): (float(m.group(4)), float(m.group(5))) for m in pat.finditer(s)}
@@ -11,11 +11,19 @@ print(len(C), "comuni con coordinate")
 def hav(a, b, c, d):
     r = math.pi / 180; x = math.sin((c - a) * r / 2) ** 2 + math.cos(a * r) * math.cos(c * r) * math.sin((d - b) * r / 2) ** 2
     return 2 * 6371 * math.asin(math.sqrt(x))
-out_f = "sorgenti/data/geo/vicini_strada.json"
-OUT = {}  # 17/11: ricalcolo completo senza traghetti (exclude=ferry): con i traghetti Verbania-Laveno risultava 9 km
+PARTE, PARTI = int(os.environ.get("PARTE", "0")), int(os.environ.get("PARTI", "1"))
+out_f = "sorgenti/data/geo/vicini_strada.json" if PARTI == 1 else f"sorgenti/data/geo/vicini_strada_{PARTE}.json"
+# 17/11: senza traghetti (exclude=ferry); si riprende da dove si era arrivati, a parti in parallelo
+try: OUT = json.load(open(out_f))
+except Exception: OUT = {}
+def salva():
+    json.dump(OUT, open(out_f, "w"), separators=(",", ":"))
+    if os.environ.get("SALVA_GIT"):
+        subprocess.run(f'git add {out_f} && git commit -qm "Comuni vicini su strada: parte {PARTE} ({len(OUT)})" && (git pull -q --rebase && git push -q || (sleep 7; git pull -q --rebase && git push -q))', shell=True)
 solo = sys.argv[1:]  # facoltativo: solo alcuni comuni
 fatti = 0
-for slug, (la, lo) in C.items():
+for i, (slug, (la, lo)) in enumerate(sorted(C.items())):
+    if i % PARTI != PARTE: continue
     if solo and slug not in solo: continue
     if slug in OUT and not solo: continue
     cand = sorted(((hav(la, lo, *C[k]), k) for k in C if k != slug))[:15]
@@ -32,8 +40,8 @@ for slug, (la, lo) in C.items():
     v = sorted((round(d / 1000, 1), k) for d, (_, k) in zip(dist, cand) if d is not None)
     OUT[slug] = [[k, d] for d, k in v[:6]]
     fatti += 1
-    if fatti % 200 == 0:
-        json.dump(OUT, open(out_f, "w"), separators=(",", ":")); print(fatti, "fatti")
+    if fatti % 150 == 0:
+        salva(); print(fatti, "fatti")
     time.sleep(1.1)
-json.dump(OUT, open(out_f, "w"), separators=(",", ":"))
+salva()
 print("fatti", fatti, "totale", len(OUT))

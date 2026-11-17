@@ -1,20 +1,18 @@
 name: Comuni vicini su strada (OSRM)
-# 17/11/2026: distanze su strada per il riquadro «Comuni vicini» (segnalazione del Comune di Verbania). A mano.
+# 17/11/2026: distanze su strada senza traghetti per «Comuni vicini» (segnalazione del Comune di Verbania). A mano.
+# 4 parti in parallelo; ogni parte salva e fa push ogni 150 comuni e riprende da dove era arrivata.
 on: { workflow_dispatch: }
 permissions: { contents: write }
+concurrency: { group: vicini-${{ github.ref }}, cancel-in-progress: false }
 jobs:
   vicini:
     runs-on: ubuntu-latest
     timeout-minutes: 180
+    strategy: { fail-fast: false, matrix: { parte: [0, 1, 2, 3] } }
     steps:
       - uses: actions/checkout@v4
         with: { fetch-depth: 1 }
-      - run: python3 sorgenti/vicini_strada.py
-      - name: Salva
-        if: always()
-        run: |
+      - run: |
           git config user.name "achplaces-bot"; git config user.email "actions@users.noreply.github.com"
-          git add sorgenti/data/geo/vicini_strada.json
-          git diff --cached --quiet && exit 0
-          git commit -qm "Comuni vicini su strada (OSRM)"
-          for i in 1 2 3 4 5; do git pull -q --rebase && git push -q && exit 0; sleep 7; done
+          python3 sorgenti/vicini_strada.py
+        env: { PARTE: '${{ matrix.parte }}', PARTI: '4', SALVA_GIT: '1' }
