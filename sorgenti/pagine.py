@@ -81,6 +81,39 @@ for i in range(len(K["n"])):
     c["places"] = pl
     if c.get("slug"): comuni.append(c)
 
+def bologna_dal_modello():
+    """17/11/2026: Bologna non sta nei file dati (i suoi 27 luoghi sono in data/places-bologna.js e la scheda del
+    comune in template.html): senza questo passo la pagina di Bologna non esisteva. Li legge con node, come build.py."""
+    import subprocess
+    tpl = open(os.path.join(RADICE, "sorgenti", "template.html"), encoding="utf-8").read()
+    i = tpl.find('{slug:"bologna-bo"')
+    j = tpl.find("places:PLACES}", i)
+    if i < 0 or j < 0:
+        return None
+    js = (open(os.path.join(RADICE, "sorgenti", "data", "places-bologna.js"), encoding="utf-8").read()
+          + "\nconst B=" + tpl[i:j + len("places:PLACES}")] + ";\nprocess.stdout.write(JSON.stringify(B));")
+    c = json.loads(subprocess.run(["node", "-e", js], capture_output=True, text=True, check=True).stdout)
+    pl = []
+    for x in c.pop("places"):
+        y = dict(x)
+        y.update({"id": "bologna-bo--" + x["id"], "gratis": bool(x.get("free")), "pagamento": not x.get("free"),
+                  "unesco": bool(x.get("unesco")), "vista": bool(x.get("view")), "coperto": bool(x.get("indoor")),
+                  "stato": x.get("status") or "ok", "tempo": x.get("duration", ""),
+                  "ps": "", "tq": "", "gy": "", "ticketUrl": x.get("ticketUrl", "")})
+        pl.append(y)
+    c["places"] = pl
+    c["lat"], c["lng"] = D.get("g", [None, None])[:2]
+    return c
+
+
+if not any(c["slug"] == "bologna-bo" for c in comuni):
+    try:
+        _bo = bologna_dal_modello()
+        if _bo:
+            comuni.append(_bo)
+    except Exception as ex:
+        print("  Bologna non letta:", ex)
+
 DET = {}
 for pr, nome in M["det"].items():
     try:
