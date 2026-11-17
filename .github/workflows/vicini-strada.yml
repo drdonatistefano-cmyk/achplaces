@@ -6,12 +6,12 @@ permissions: { contents: write }
 jobs:
   vicini:
     runs-on: ubuntu-latest
-    timeout-minutes: 180
+    timeout-minutes: 120
     strategy: { fail-fast: false, matrix: { parte: [0, 1, 2, 3] } }
     steps:
       - uses: actions/checkout@v4
         with: { fetch-depth: 1 }
       - run: |
           git config user.name "achplaces-bot"; git config user.email "actions@users.noreply.github.com"
-          python3 sorgenti/vicini_strada.py
+          python3 sorgenti/vicini_traghetto_flag.py
         env: { PARTE: '${{ matrix.parte }}', PARTI: '4', SALVA_GIT: '1' }
