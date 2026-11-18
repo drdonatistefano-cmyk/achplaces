@@ -34,4 +34,4 @@ jobs:
         run: |
           git add -A
           git commit -qm "Catalogo TicketOne: $(date +%F)" || exit 0
-          for i in 1 2 3 4 5; do git pull --rebase -q origin partner 2>/dev/null; git push -q origin HEAD:partner && exit 0; sleep $((RANDOM % 15 + 5)); done; exit 1
+          for i in 1 2 3 4 5; do git pull --rebase -q origin partner 2>/dev/null || true; git push -q origin HEAD:partner && exit 0; sleep $((RANDOM % 15 + 5)); done; exit 1
