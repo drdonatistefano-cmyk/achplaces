@@ -35,6 +35,9 @@ AGGIUNTE = {   # (comune, nome del luogo nella guida): parte dell'indirizzo del 
     ('Montefiascone', 'Rocca dei Papi e giardino'): 'montefiascone-rocca-dei-papi-skip-the-line-entry-tickets',
     ('Pompei', 'Area archeologica di Pompei'): 'pompei-biglietto-d-ingresso-non-serve-prenotare',
     ("Sant'Agata Bolognese", 'MUDETEC, Museo Lamborghini'): 'museo-automobili-lamborghini-biglietto-d-ingresso',
+    ('Assisi', 'Rocca Maggiore'): 'pinacoteca-roman-forum-rocca-maggiore',          # biglietto unico Pinacoteca, Foro romano e Rocca
+    ('Giardini-Naxos', 'Area archeologica di Naxos'): 'museo-e-parco-archeologico-di-naxos',
+    ('Venezia', 'Museo Fortuny'): 'palazzo-fortuny-biglietto-d-ingresso',
     ('Venezia', 'Basilica di San Marco'): 'basilica-di-san-marco-biglietto-d-ingresso',
 }
 def s40(s): return re.sub(r'[^a-z0-9]+', '-', ''.join(ch for ch in unicodedata.normalize('NFD', s) if not unicodedata.combining(ch)).lower()).strip('-')[:40].rstrip('-')
