@@ -435,6 +435,49 @@ def _collegamenti():
     print("collegamenti UNESCO per regola:", dict(how))
     print(f"collegamenti: {nb} borghi con la scheda ufficiale, {nu} luoghi con la pagina UNESCO del bene")
 _collegamenti()
+# 18/11/2026: il nome della fonte si ricava dall'indirizzo quando l'etichetta generica non corrisponde
+# («Visit Piemonte» su italia.it, su un Comune o su un'ATL; «Touring Club - Emilia-Romagna Turismo» su emiliaromagnaturismo.it).
+# Prima lo faceva sorgenti/etichette_fonti.py dopo ogni costruzione (17/11): ora è nella costruzione, stesse regole.
+from urllib.parse import urlparse as _urlp
+_ORGF = {'italia.it':'italia.it','turismotorino.org':'Turismo Torino e Provincia','visitcuneese.it':'Visit Cuneese (ATL del Cuneese)',
+ 'visitlmr.it':'Ente Turismo Langhe Monferrato Roero','langheroero.it':'Ente Turismo Langhe Monferrato Roero','visitvalsesiavercelli.it':'ATL Valsesia Vercelli',
+ 'touringclub.it':'Touring Club Italiano','alexala.it':'Alexala (ATL della provincia di Alessandria)','turismonovara.it':'ATL della Provincia di Novara',
+ 'pngp.it':'Parco Nazionale Gran Paradiso','borghipiubelliditalia.it':"I Borghi più belli d'Italia",'atl.biella.it':'ATL Biella Valsesia Vercelli',
+ 'distrettolaghi.it':'Distretto Turistico dei Laghi','fondoambiente.it':"FAI – Fondo per l'Ambiente Italiano",'cultura.gov.it':'Ministero della Cultura',
+ 'lavenaria.it':'Reggia di Venaria','vallemaira.org':'Valle Maira','areeprotetteappenninopiemontese.it':"Aree protette dell'Appennino piemontese",
+ 'ecomuseo.it':'Ecomusei del Piemonte','lang.fondazionevaldese.org':'Fondazione Centro Culturale Valdese','munlabtorino.it':"MuNLab Ecomuseo dell'Argilla",
+ 'ecomuseodellerocche.it':'Ecomuseo delle Rocche del Roero','provincia.biella.it':'Provincia di Biella','vallesusa-tesori.it':'Valle di Susa. Tesori di Arte e Cultura Alpina',
+ 'emiliaromagnaturismo.it':'Emilia-Romagna Turismo'}
+def _normf(x): return re.sub(r'[^a-z]', '', unicodedata.normalize('NFKD', x.lower()).encode('ascii', 'ignore').decode())
+def _nome_dom(u, cn):
+    if 'web.archive.org' in u:
+        m = re.search(r'web\.archive\.org/web/\d+[a-z_]*/(https?://.*)', u)
+        return _nome_dom(m.group(1), cn) if m else None
+    dom = _urlp(u).netloc.lower().replace('www.', '')
+    if dom in _ORGF: return _ORGF[dom]
+    for d, n in _ORGF.items():
+        if dom.endswith('.' + d): return n
+    m = re.match(r'comune\.([a-z0-9-]+)\.([a-z]{2})\.it$', dom) or re.match(r'comune\.([a-z0-9-]+)\.it$', dom)
+    if m:
+        if cn and (_normf(cn) == _normf(m.group(1)) or _normf(cn).startswith(_normf(m.group(1)))): return 'Comune di ' + cn
+        return 'Comune di ' + m.group(1).replace('-', ' ').title()
+    return dom
+def _etichetta(s_, cn):
+    lab, u = s_[0], s_[1]
+    for pre in ('Visit Piemonte', 'Touring Club - Emilia-Romagna Turismo'):
+        if lab.startswith(pre):
+            dom = _urlp(u).netloc
+            if pre == 'Visit Piemonte' and ('visitpiemonte' in dom or 'piemonteitalia' in dom): return 0
+            if pre.startswith('Touring') and 'touringclub' in dom: return 0
+            nn = _nome_dom(u, cn)
+            if nn: s_[0] = nn + lab[len(pre):]; return 1
+    return 0
+_ETF = 0
+for _c in comuni:
+    for _s in _c.get("sources", []) or []: _ETF += _etichetta(_s, _c["name"])
+    for _p in _c["places"]:
+        for _s in _p.get("sources", []) or []: _ETF += _etichetta(_s, _c["name"])
+print("etichette delle fonti dal dominio:", _ETF)
 _leggeri = copy.deepcopy(comuni); _det = {}
 # 12/11/2026: tipi della pagina Luoghi (Archeologia per civiltà, Castelli, Pievi...) calcolati qui sulla descrizione completa,
 # perché nell'indice della Guida le descrizioni non ci sono. Una combinazione per luogo, nello stesso ordine dei luoghi.
@@ -707,5 +750,8 @@ t = t[:_i] + bologna_places + "\n" + LOADER + t[_i + len("/*PLACES*/"):_j] + "\n
 # 9/11/2026 il file dei dati parte subito, in testa alla pagina, mentre il resto della pagina arriva (fetch lo riprende dalla memoria)
 # (solo se nel telefono non c'è già: alla seconda visita i dati si leggono da IndexedDB)
 t = t.replace('<meta charset="utf-8">', '<meta charset="utf-8">\n<script>try{if(localStorage.getItem("datiNome")!==' + json.dumps(NOME_DATI) + '){var l=document.createElement("link");l.rel="preload";l.as="fetch";l.crossOrigin="anonymous";l.href=' + json.dumps(NOME_DATI) + ';document.head.appendChild(l);}}catch(e){}</script>', 1)
+# 18/11/2026: i numeri della descrizione (motori di ricerca e condivisioni) vengono dai dati, non scritti a mano
+_pt = lambda n: f"{n:,}".replace(",", ".")
+t = re.sub(r"\d{1,3}(?:\.\d{3})* luoghi da visitare in \d{1,3}(?:\.\d{3})* comuni", f"{_pt(len(_RK['rk']))} luoghi da visitare in {_pt(len(comuni) + 1)} comuni", t)
 open(os.path.join(HERE, "index.html"), "w", encoding="utf-8").write(t)
 print(len(comuni), "comuni extra,", sum(len(c["places"]) for c in comuni), "luoghi extra,", len(sources), "fonti; index", os.path.getsize(os.path.join(HERE, "index.html")), "byte; dati", os.path.getsize(os.path.join(HERE, NOME_DATI)), "byte")
