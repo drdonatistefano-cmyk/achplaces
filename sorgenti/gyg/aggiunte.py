@@ -14,6 +14,14 @@ AGGIUNTE = {   # (comune, nome del luogo nella guida): parte dell'indirizzo del 
     ('Stresa', 'Villa Pallavicino'): 'stresa-parco-pallavicino-entry-ticket',
     ('Vicenza', 'Palladio Museum'): 'vicenza-entry-ticket-to-palladio-museum',
     ('Urbino', 'Palazzo Ducale e Galleria Nazionale delle Marche'): 'urbino-galleria-nazionale-delle-marche-ticket',
+    # 18/11/2026 22:20, terzo giro
+    ('Modena', 'Collezione Maserati Umberto Panini'): 'modena-umberto-panini-maserati-collection-entrance-ticket',
+    ('Rapolano Terme', 'Terme Antica Querciolaia e Terme San Giovanni'): 'rapolano-admission-ticket-to-the-san-giovanni-thermal-baths',
+    ('Pisa', 'Battistero di San Giovanni'): 'pisa-entry-ticket-to-the-baptistery-of-san-giovanni',
+    ('Pisa', "Museo dell'Opera del Duomo"): 'pisa-opera-del-duomo-museum-cathedral-ticket',
+    ('Sorrento', 'Museo Correale di Terranova'): 'sorrento-admission-ticket-to-the-splendid-correale-museum',
+    ('Bari', 'Castello Normanno-Svevo'): 'bari-norman-swabian-castle-entry-ticket',
+    ('Mamoiada', 'Museo delle maschere mediterranee'): 'mamoiada-museum-of-mediterranean-masks-ticket',
 }
 def s40(s): return re.sub(r'[^a-z0-9]+', '-', ''.join(ch for ch in unicodedata.normalize('NFD', s) if not unicodedata.combining(ch)).lower()).strip('-')[:40].rstrip('-')
 P = json.load(open(os.path.join(H, 'gyg', 'prodotti.json')))

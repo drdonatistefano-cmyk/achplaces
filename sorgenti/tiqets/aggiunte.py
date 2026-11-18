@@ -39,6 +39,17 @@ AGGIUNTE = {   # (comune, nome del luogo nella guida): parte dell'indirizzo del 
     ('Giardini-Naxos', 'Area archeologica di Naxos'): 'museo-e-parco-archeologico-di-naxos',
     ('Venezia', 'Museo Fortuny'): 'palazzo-fortuny-biglietto-d-ingresso',
     ('Venezia', 'Basilica di San Marco'): 'basilica-di-san-marco-biglietto-d-ingresso',
+    # 18/11/2026 22:20, terzo giro (tutti i luoghi a pagamento senza partner)
+    ('Rimini', 'Fellini Museum: Castel Sismondo e Palazzo del Fulgor'): 'museo-fellini-biglietto-d-ingresso',
+    ('Firenze', 'Palazzo Strozzi'): 'palazzo-strozzi-broken-mostra',      # mostra in corso: sparisce da sola quando finisce
+    ('Siena', 'Libreria Piccolomini'): 'cattedrale-di-siena-e-biblioteca-piccolomini-biglietto-d-ingresso',
+    ('Montalcino', "Museo Civico e Diocesano d'Arte Sacra"): 'museo-civico-e-diocesano-di-montalcino',
+    ('Roma', 'Fori Imperiali e Mercati di Traiano'): 'mercato-di-traiano-biglietto-salta-coda',
+    ('Roma', 'Area archeologica dello Stadio di Domiziano'): 'sotterranei-di-piazza-navona-lo-stadio-di-domiziano',
+    ('Roma', 'Domus Romane di Palazzo Valentini'): 'roma-palazzo-valentini-domus-romana',
+    ('Milano', 'Biblioteca e Pinacoteca Ambrosiana'): 'pinacoteca-ambrosiana-cripta-di-san-sepolcro',
+    ('Venezia', "Ca' Pesaro – Galleria Internazionale d'Arte Moderna e Museo d'Arte Orientale"): 'museo-ca-pesaro-biglietto-fast-track',
+    ('Somma Lombardo', 'Volandia, Parco e Museo del Volo'): 'volandia-park-and-flight-museum',
 }
 def s40(s): return re.sub(r'[^a-z0-9]+', '-', ''.join(ch for ch in unicodedata.normalize('NFD', s) if not unicodedata.combining(ch)).lower()).strip('-')[:40].rstrip('-')
 P = json.load(open(os.path.join(H, 'tiqets', 'prodotti.json')))
