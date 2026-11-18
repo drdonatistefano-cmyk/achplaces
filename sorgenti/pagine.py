@@ -8,7 +8,7 @@ Uso: python3 sorgenti/pagine.py [--luoghi 0|1] [--out .]
 Scrive: comune/<slug>/index.html, luogo/<id>/index.html, regione/<slug>/index.html,
         comuni/index.html, sitemap.xml, sitemap-N.xml, robots.txt, pagine.css
 """
-import html, json, os, re, sys, unicodedata, datetime
+import glob, html, json, os, re, sys, unicodedata, datetime
 
 SITO = "https://achplaces.com"
 OGGI = datetime.date.today().isoformat()
@@ -414,6 +414,19 @@ scrivi("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n'
            f"<sitemap><loc>{SITO}/sitemap-{i}.xml</loc><lastmod>{OGGI}</lastmod></sitemap>\n"
            for i in range(1, len(parti) + 1)) + "</sitemapindex>\n")
 scrivi("robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {SITO}/sitemap.xml\n")
+
+# 18/11/2026: le pagine di luoghi e comuni che questa costruzione non scrive piu' (luogo tolto o senza contenuto
+# per una pagina propria) si tolgono, come gia' fa pagine_en.py per l'inglese: restavano online con il testo vecchio
+# e fuori dalla mappa del sito. Paracadute: se sparirebbero piu' di 100 pagine, non si toglie nulla e si avvisa.
+import shutil
+_vive = {u[len(SITO) + 1:].rstrip("/") for u, _ in urls}
+_vecchie = [d for k in ("luogo", "comune") for d in glob.glob(os.path.join(OUT, k, "*"))
+            if os.path.isdir(d) and os.path.relpath(d, OUT).replace(os.sep, "/") not in _vive]
+if len(_vecchie) > 100:
+    print(f"ATTENZIONE: {len(_vecchie)} pagine non piu' generate, non tolte (troppe: controllare i dati)")
+else:
+    for d in _vecchie: shutil.rmtree(d)
+    if _vecchie: print("pagine tolte:", ", ".join(os.path.relpath(d, OUT) for d in _vecchie))
 
 print(f"Scritte {len(urls)} pagine: {len([u for u, _ in urls if '/comune/' in u])} comuni, "
       f"{nluo} luoghi, {len(REGIONI)} regioni; {len(parti)} file di mappa del sito")
