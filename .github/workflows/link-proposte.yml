@@ -1,0 +1,42 @@
+name: Proposte di correzione dei link
+# 18/11/2026 (Stefano: «proposta, poi il mio sì»): dopo il controllo settimanale dei link prepara le correzioni nuove
+# (sorgenti/link/proposte.py) e le mette in una segnalazione su GitHub con una casella per gruppo. Quando Stefano spunta
+# una casella, «Applica le correzioni dei link» le scrive in sorgenti/data/link_correzioni.json. Gratuito.
+on:
+  workflow_run:
+    workflows: ["Controllo di tutti i link (5 lavori)"]
+    types: [completed]
+  workflow_dispatch:
+permissions:
+  contents: write
+  issues: write
+concurrency: { group: link-proposte, cancel-in-progress: false }
+jobs:
+  proposte:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with: { sparse-checkout: "sorgenti/link\nsorgenti/data/link_correzioni.json\n.github", sparse-checkout-cone-mode: false, fetch-depth: 1 }
+      - name: Ramo foto (risultati del controllo)
+        run: |
+          git fetch -q origin foto
+          git worktree add -B foto out origin/foto
+          cd out && git sparse-checkout disable || true
+          git config user.name "achplaces-bot"; git config user.email "actions@users.noreply.github.com"
+      - run: python3 sorgenti/link/proposte.py out --archivio
+      - name: Salva le proposte sul ramo foto
+        run: |
+          cd out
+          git add proposte-link.json proposte-link.md
+          git commit -q -m "Proposte di correzione dei link" || exit 0
+          for i in 1 2 3 4 5; do git pull --rebase -q origin foto && git push -q origin HEAD:foto && exit 0; sleep 9; done; exit 1
+      - name: Segnalazione con le caselle
+        env: { GH_TOKEN: '${{ github.token }}' }
+        run: |
+          gh label create link --color FBCA04 --description "Proposte di correzione dei link" 2>/dev/null || true
+          # una sola segnalazione aperta: quella vecchia si chiude (le sue proposte rientrano in quella nuova)
+          for n in $(gh issue list --label link --state open --json number -q '.[].number'); do gh issue close $n -c "Sostituita dalle proposte della settimana nuova."; done
+          if grep -q -- "- \[ \]" out/proposte-link.md; then
+            gh issue create --label link --assignee drdonatistefano-cmyk --title "Link da correggere – $(date +%d/%m/%Y)" --body-file out/proposte-link.md
+          else echo "nessuna proposta nuova"; fi
