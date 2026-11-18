@@ -11,6 +11,7 @@ on:
     paths: ['sorgenti/ticketone/avvia.txt', 'sorgenti/ticketone/scarica_awin.py']
 permissions:
   contents: write
+  actions: write
 concurrency: { group: partner, cancel-in-progress: false }
 jobs:
   ticketone:
@@ -29,6 +30,15 @@ jobs:
       - name: Scarica
         env: { AWIN_FEED_KEY: "${{ secrets.AWIN_FEED_KEY }}" }
         run: python3 sorgenti/ticketone/scarica_awin.py out
+      - name: Abbina ai luoghi della guida e pubblica i link
+        # scrive sorgenti/data/ticketone.json e /biglietti-partner.json, che la pagina legge all'avvio:
+        # i bottoni Biglietti si aggiornano subito, senza ricostruire la guida
+        env: { GH_TOKEN: "${{ github.token }}", R: "${{ github.repository }}" }
+        run: |
+          python3 sorgenti/ticketone/abbina.py out/ticketone.json
+          git add sorgenti/data/ticketone.json biglietti-partner.json
+          git commit -qm "TicketOne: biglietti aggiornati $(date +%F)" || exit 0
+          for i in 1 2 3 4 5; do git pull --rebase -q origin main && git push -q origin HEAD:main && { gh api -X POST repos/$R/actions/workflows/pubblica.yml/dispatches -f ref=main || true; exit 0; }; sleep $((RANDOM % 15 + 5)); done; exit 1
       - name: Salva
         working-directory: out
         run: |

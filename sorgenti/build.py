@@ -628,7 +628,7 @@ json.dump(AUTO, open("/tmp/link_auto.json", "w"), ensure_ascii=False); print("li
 json.dump(dict(v=2, dati=NOME_DATI, meta=NOME_META, fonti=NOME_FONTI, det=DET, cerca=NOME_CERCA), open(os.path.join(HERE, "manifest.json"), "w"))
 LOADER = r"""
 /* 9/11/2026 Tiqets (Awin, publisher 3146807 come Events): mid a 0 = link diretto alla pagina del prodotto; con l'ID inserzionista il clic passa da Awin */
-var AFF={awin:"3146807",mid:{"tiqets.com":12427,"ticketone.it":9567,"vivaticket.com":0,"vivaticket.it":0},par:{"getyourguide":"partner_id=Y9VWGXI&utm_medium=online_publisher"},ord:["tq","gy"],nome:{tq:"Tiqets",gy:"GetYourGuide"}};
+var AFF={awin:"3146807",mid:{"tiqets.com":12427,"ticketone.it":9567,"vivaticket.com":0,"vivaticket.it":0},par:{"getyourguide":"partner_id=Y9VWGXI&utm_medium=online_publisher"},ord:["tq","t1","gy"],nome:{tq:"Tiqets",t1:"TicketOne",gy:"GetYourGuide"}};
 /* tasto Biglietti: prima il venditore affiliato che paga di più (AFF.ord), poi la biglietteria ufficiale */
 function tkUrl(p){for(const k of AFF.ord)if(p[k]&&(k!=="gy"||/biglietto|ingresso|salta|ticket/.test(p[k])))return [p[k],AFF.nome[k]];return p.ticketUrl?[p.ticketUrl,""]:null}
 function affUrl(u){try{const h=new URL(u).hostname.replace(/^www\./,"");for(const d in AFF.mid){if(AFF.awin&&AFF.mid[d]&&(h===d||h.endsWith("."+d)))return "https://www.awin1.com/cread.php?awinmid="+AFF.mid[d]+"&awinaffid="+AFF.awin+"&ued="+encodeURIComponent(u)}for(const d in AFF.par){if(h.split(".").includes(d)&&!/[?&]partner_id=/.test(u))return u+(u.includes("?")?"&":"?")+AFF.par[d]}}catch(_){}return u}
@@ -677,6 +677,7 @@ const caricaMeta=(()=>{let pr=null;return()=>pr||(pr=(async()=>{const n=MAN&&MAN
 ("requestIdleCallback" in window)?requestIdleCallback(()=>caricaMeta(),{timeout:4000}):setTimeout(()=>caricaMeta(),1500);
 for(const p of PLACES){const l=LINKS_BO[p.id];if(l){p.hoursUrl=l.orari||"";p.ticketUrl=l.biglietti||"";if(l.off)p.official=l.off;}}
 if(D.tb)for(const p of PLACES)if(D.tb[p.id])p.tq=D.tb[p.id];if(D.gb)for(const p of PLACES)if(D.gb[p.id])p.gy=D.gb[p.id];
+/* 18/11/2026: biglietti dei partner letti all'avvio da /biglietti-partner.json (oggi TicketOne): il flusso mensile li aggiorna senza ricostruire la guida */try{const r=await Promise.race([fetch("/biglietti-partner.json",{cache:"no-cache"}),new Promise(z=>setTimeout(z,1500))]);if(r&&r.ok){const B=await r.json(),T=B.t1||{};for(const c of COMUNI_EXTRA)for(const p of c.places)if(T[p.id])p.t1=T[p.id];for(const p of PLACES)if(T[p.id])p.t1=T[p.id];}}catch(e){}
 {const n=document.getElementById("aff-nota");if(n&&(AFF.awin&&Object.values(AFF.mid).some(Boolean)||Object.keys(AFF.par).length))n.hidden=false;}
 /* dettagli della scheda (perché andarci, fonti, link) per provincia: scaricati in sottofondo o al tocco */
 const DETOK={},DETP={},IDPROV={};
