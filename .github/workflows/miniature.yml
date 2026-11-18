@@ -25,6 +25,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: miniature-places
@@ -58,7 +59,11 @@ jobs:
           python3 sorgenti/istantanea.py
 
       - name: Salva
+        # 18/11/2026 (Stefano): un salvataggio fatto da un flusso non avvia «Pubblica il sito» e la pagina restava
+        # indietro fino al guardiano (che GitHub fa partire anche solo una volta l'ora). Dopo il push si avvia subito.
+        env: { GH_TOKEN: "${{ github.token }}", R: "${{ github.repository }}" }
         run: |
+          pubblica() { [ "$GITHUB_REF" = "refs/heads/main" ] && { gh api -X POST repos/$R/actions/workflows/pubblica.yml/dispatches -f ref=main && echo "avviato «Pubblica il sito»" || echo "::warning::avvio di «Pubblica il sito» non riuscito: ci pensa il guardiano"; }; return 0; }
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A f index.html filtri.html manifest.json
@@ -69,5 +74,5 @@ jobs:
           fi
           git commit -q -m "Places: rimesse a posto miniature, crediti e pagina veloce"
           # se dopo cinque tentativi non si e' salvato, il flusso deve fallire e vedersi
-          for i in 1 2 3 4 5; do git pull --rebase -q --no-edit && git push -q && exit 0; sleep $((RANDOM % 10 + 5)); done
+          for i in 1 2 3 4 5; do git pull --rebase -q --no-edit && git push -q && { pubblica; exit 0; }; sleep $((RANDOM % 10 + 5)); done
           echo "::error::non salvato dopo 5 tentativi"; exit 1
