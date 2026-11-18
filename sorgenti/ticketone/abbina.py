@@ -26,5 +26,8 @@ for pid, nome in MAPPA.items():
     out[pid] = x['aw_deep_link']
     print(f"{pid}: {len(xs)} date, ultima {x.get('Tickets:event_date','')[:10]}, da {x.get('search_price')} €")
 json.dump(out, open(os.path.join(H, 'data', 'ticketone.json'), 'w'), ensure_ascii=False, indent=0)
-json.dump({'t1': out}, open(os.path.join(os.path.dirname(H), 'biglietti-partner.json'), 'w'), ensure_ascii=False, separators=(',', ':'))
+_f = os.path.join(os.path.dirname(H), 'biglietti-partner.json')
+_B = json.load(open(_f)) if os.path.exists(_f) else {}
+_B['t1'] = out   # le altre voci (es. «tq», Tiqets abbinati a mano) restano
+json.dump(_B, open(_f, 'w'), ensure_ascii=False, separators=(',', ':'))
 print('TicketOne: luoghi abbinati', len(out))

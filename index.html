@@ -1576,7 +1576,7 @@ const caricaMeta=(()=>{let pr=null;return()=>pr||(pr=(async()=>{const n=MAN&&MAN
 ("requestIdleCallback" in window)?requestIdleCallback(()=>caricaMeta(),{timeout:4000}):setTimeout(()=>caricaMeta(),1500);
 for(const p of PLACES){const l=LINKS_BO[p.id];if(l){p.hoursUrl=l.orari||"";p.ticketUrl=l.biglietti||"";if(l.off)p.official=l.off;}}
 if(D.tb)for(const p of PLACES)if(D.tb[p.id])p.tq=D.tb[p.id];if(D.gb)for(const p of PLACES)if(D.gb[p.id])p.gy=D.gb[p.id];
-/* 18/11/2026: biglietti dei partner letti all'avvio da /biglietti-partner.json (oggi TicketOne): il flusso mensile li aggiorna senza ricostruire la guida */try{const r=await Promise.race([fetch("/biglietti-partner.json",{cache:"no-cache"}),new Promise(z=>setTimeout(z,1500))]);if(r&&r.ok){const B=await r.json(),T=B.t1||{};for(const c of COMUNI_EXTRA)for(const p of c.places)if(T[p.id])p.t1=T[p.id];for(const p of PLACES)if(T[p.id])p.t1=T[p.id];}}catch(e){}
+/* 18/11/2026: biglietti dei partner letti all'avvio da /biglietti-partner.json (TicketOne e i Tiqets abbinati a mano): il flusso mensile li aggiorna senza ricostruire la guida */try{const r=await Promise.race([fetch("/biglietti-partner.json",{cache:"no-cache"}),new Promise(z=>setTimeout(z,1500))]);if(r&&r.ok){const B=await r.json();for(const k of ["t1","tq"]){const T=B[k]||{};for(const c of COMUNI_EXTRA)for(const p of c.places)if(T[p.id])p[k]=T[p.id];for(const p of PLACES)if(T[p.id])p[k]=T[p.id];}}}catch(e){}
 {const n=document.getElementById("aff-nota");if(n&&(AFF.awin&&Object.values(AFF.mid).some(Boolean)||Object.keys(AFF.par).length))n.hidden=false;}
 /* dettagli della scheda (perché andarci, fonti, link) per provincia: scaricati in sottofondo o al tocco */
 const DETOK={},DETP={},IDPROV={};
