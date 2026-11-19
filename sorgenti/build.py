@@ -582,7 +582,13 @@ for _c in _leggeri:
         _g += 1
 import sys as _sys; _sys.path.insert(0, HERE); from leggi_dati import righe as _righe
 assert _righe(json.loads(json.dumps(dict(k=_K))))["c"] == json.loads(json.dumps(_leggeri)), "colonne: la decodifica Python non restituisce i dati"
-COLONNE = r"""function COLONNE(D){if(!D.k)return D;const K=D.k,C=[],ks=Object.keys(K.ck);let g=0;
+COLONNE = r"""/* 19/11/2026 velocità (blocco giallo): stesse funzioni, ma si fermano ogni 8 ms per lasciare libero il telefono */
+async function DECODIFICA_P(D){const C=D.c;let t=performance.now();for(let i=0;i<C.length;i+=25){DECODIFICA({dz:D.dz,c:C.slice(i,i+25)});if(performance.now()-t>8){await PAUSA();t=performance.now();}}return D;}
+async function COLONNE_P(D){if(!D.k)return D;const K=D.k,C=[],ks=Object.keys(K.ck);let g=0,t=performance.now();
+  for(let i=0;i<K.n.length;i++){if(performance.now()-t>8){await PAUSA();t=performance.now();}const c={};for(const k of ks){const m=K.cm[k];if(m&&m.includes(i))continue;c[k]=K.ck[k][i];}
+    const pl=new Array(K.n[i]);for(let j=0;j<K.n[i];j++,g++){const a=[K.p[0][g],K.p[1][g],K.p[2][g],K.p[3][g],K.p[4][g],K.p[5][g],K.p[6][g],K.p[7][g],K.p[8][g]];const x=K.x[g];if(x)a.push(x);pl[j]=a;}
+    c.places=pl;C.push(c);}D.c=C;D.k=undefined;return D;}
+function COLONNE(D){if(!D.k)return D;const K=D.k,C=[],ks=Object.keys(K.ck);let g=0;
   for(let i=0;i<K.n.length;i++){const c={};for(const k of ks){const m=K.cm[k];if(m&&m.includes(i))continue;c[k]=K.ck[k][i];}
     const pl=new Array(K.n[i]);for(let j=0;j<K.n[i];j++,g++){const a=[K.p[0][g],K.p[1][g],K.p[2][g],K.p[3][g],K.p[4][g],K.p[5][g],K.p[6][g],K.p[7][g],K.p[8][g]];const x=K.x[g];if(x)a.push(x);pl[j]=a;}
     c.places=pl;C.push(c);}D.c=C;D.k=undefined;return D;}"""
@@ -663,12 +669,12 @@ function salvaIst(nome){setTimeout(()=>{if(IST_TOCCO||location.hash.slice(1))ret
   if(t&&pPrimo&&nome===ATTESO)MEMO.scrivi(nome,t);
   if(!t){const r=await fetch(nome);if(!r.ok){if(cnt)cnt.textContent="Dati non disponibili ("+r.status+")";return;}t=await leggiAPezzi(r);MEMO.scrivi(nome,t);}
   try{localStorage.setItem("datiNome",nome);}catch(e){}
-  const J=JSON.parse(t);await PAUSA();COLONNE(J);await PAUSA();const D=DECODIFICA(J);await PAUSA();
+  const J=JSON.parse(t);await PAUSA();await COLONNE_P(J);await PAUSA();const D=await DECODIFICA_P(J);await PAUSA();
   if(IST_ORIG)IST_ID.forEach((id,i)=>{if(!IST_SUBITO.includes(id))return;const e=document.getElementById(id);e.innerHTML=IST_ORIG[i][0];e.hidden=IST_ORIG[i][1];});
   await AVVIO(D);salvaIst(nome);})();
 """+DECODE+"\n"+COLONNE+r"""
 async function AVVIO(D){
-{const CK=["storia","musei","sacro","natura","locale"];for(const c of D.c)c.places=c.places.map(a=>{const f=a[5],o={id:c.slug+"--"+a[0],name:a[1],cat:CK[a[2]],sub:a[3],desc:a[4],free:f.includes("F")?true:f.includes("P")?false:null,card:f.includes("c"),unesco:f.includes("u"),view:f.includes("v"),indoor:f.includes("i"),status:a[6]||"ok",t:a[7],r:a[8],address:"",price:"",duration:"",sources:[]};if(a[9])Object.assign(o,a[9]);return o;});
+{const CK=["storia","musei","sacro","natura","locale"];let _t=performance.now();for(const c of D.c){if(performance.now()-_t>8){await PAUSA();_t=performance.now();}c.places=c.places.map(a=>{const f=a[5],o={id:c.slug+"--"+a[0],name:a[1],cat:CK[a[2]],sub:a[3],desc:a[4],free:f.includes("F")?true:f.includes("P")?false:null,card:f.includes("c"),unesco:f.includes("u"),view:f.includes("v"),indoor:f.includes("i"),status:a[6]||"ok",t:a[7],r:a[8],address:"",price:"",duration:"",sources:[]};if(a[9])Object.assign(o,a[9]);return o;});}
  if(D.fv){let g=0;const Z=D.fv.z.map(z=>{const [a,b]=z.split("|");return [a,b.split(",")];});for(const c of D.c)for(const p of c.places)p._fv=Z[D.fv.v[g++]];}
  for(const c of D.c){if(c.lede==null)c.lede="";if(c.notice==null)c.notice="";if(!c.sources)c.sources=[];}}
 await PAUSA();
@@ -677,11 +683,11 @@ const caricaMeta=(()=>{let pr=null;return()=>pr||(pr=(async()=>{const n=MAN&&MAN
 ("requestIdleCallback" in window)?requestIdleCallback(()=>caricaMeta(),{timeout:4000}):setTimeout(()=>caricaMeta(),1500);
 for(const p of PLACES){const l=LINKS_BO[p.id];if(l){p.hoursUrl=l.orari||"";p.ticketUrl=l.biglietti||"";if(l.off)p.official=l.off;}}
 if(D.tb)for(const p of PLACES)if(D.tb[p.id])p.tq=D.tb[p.id];if(D.gb)for(const p of PLACES)if(D.gb[p.id])p.gy=D.gb[p.id];
-/* 18/11/2026: biglietti dei partner letti all'avvio da /biglietti-partner.json (TicketOne e i Tiqets abbinati a mano): il flusso mensile li aggiorna senza ricostruire la guida */try{const r=await Promise.race([fetch("/biglietti-partner.json",{cache:"no-cache"}),new Promise(z=>setTimeout(z,1500))]);if(r&&r.ok){const B=await r.json();for(const k of ["t1","tq","gy"]){const T=B[k]||{};for(const c of COMUNI_EXTRA)for(const p of c.places)if(T[p.id])p[k]=T[p.id];for(const p of PLACES)if(T[p.id])p[k]=T[p.id];}}}catch(e){}
+/* 18/11/2026: biglietti dei partner letti all'avvio da /biglietti-partner.json (TicketOne e i Tiqets abbinati a mano): il flusso mensile li aggiorna senza ricostruire la guida */try{const r=await Promise.race([fetch("/biglietti-partner.json",{cache:"no-cache"}),new Promise(z=>setTimeout(z,1500))]);if(r&&r.ok){const B=await r.json();/* 19/11/2026 velocità: si guardano solo i luoghi del file (qualche decina), non tutti i 17.000 tre volte */const PI=new Map();for(const c of COMUNI_EXTRA)for(const p of c.places)(PI.get(p.id)||PI.set(p.id,[]).get(p.id)).push(p);for(const p of PLACES)(PI.get(p.id)||PI.set(p.id,[]).get(p.id)).push(p);for(const k of ["t1","tq","gy"]){const T=B[k]||{};for(const id in T)if(T[id])for(const p of PI.get(id)||[])p[k]=T[id];}}}catch(e){}
 {const n=document.getElementById("aff-nota");if(n&&(AFF.awin&&Object.values(AFF.mid).some(Boolean)||Object.keys(AFF.par).length))n.hidden=false;}
 /* dettagli della scheda (perché andarci, fonti, link) per provincia: scaricati in sottofondo o al tocco */
 const DETOK={},DETP={},IDPROV={};
-for(const c of COMUNI_EXTRA)for(const p of c.places)(IDPROV[p.id]||(IDPROV[p.id]=new Set())).add(c.prov);
+await PAUSA();for(const c of COMUNI_EXTRA)for(const p of c.places)(IDPROV[p.id]||(IDPROV[p.id]=new Set())).add(c.prov);await PAUSA();
 function caricaDet(pr){if(!pr||DETOK[pr])return Promise.resolve();if(DETP[pr])return DETP[pr];
   const n=MAN&&MAN.det&&MAN.det[pr];if(!n){DETOK[pr]=1;return Promise.resolve();}
   return DETP[pr]=(async()=>{let t=await MEMO.leggi(n);if(!t){const r=await fetch(n);if(!r.ok)return;t=await leggiAPezzi(r);MEMO.scrivi(n,t);}
