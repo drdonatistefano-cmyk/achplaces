@@ -5,7 +5,7 @@ name: Foto da Wikipedia e coordinate (5 lavori per regione)
 # senza foto e non ancora provati. Gira il lunedì notte insieme alla ricerca settimanale, o a mano.
 on:
   schedule:
-    - cron: '41 3 * * 1'
+    - cron: '11 3 * * 1'   # 20/11/2026: era alle 3:41 come ticketone.yml (il primo del mese), segnalato da coerenza.py
   workflow_dispatch:
 permissions:
   contents: write
