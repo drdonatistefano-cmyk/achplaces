@@ -1,0 +1,41 @@
+name: Foto, ottava ricerca (Wikidata)
+# 20/11/2026: ottava ricerca foto per i luoghi con la sola foto del comune (sorgenti/foto/actions_foto8.py, coda8.json).
+# Gira SOLO sul ramo claude/foto-cerca8: al push del programma o a mano. Cinque lavori, uno per gruppo di regioni;
+# ognuno salva sul ramo ogni 15 minuti sorgenti/foto/r8/ (meta, provati, img). Nulla va su main né si pubblica:
+# le foto entrano nella guida con integra8.py, dopo il controllo e il «pubblica» di Stefano.
+# Con PROVA=n si lavorano solo i primi n luoghi di ogni gruppo.
+on:
+  push:
+    branches: [claude/foto-cerca8]
+    paths: ['sorgenti/foto/actions_foto8.py', '.github/workflows/foto8.yml']
+  workflow_dispatch:
+    inputs:
+      prova: { description: 'Solo i primi N luoghi per gruppo (vuoto = tutti)', required: false, default: '' }
+permissions:
+  contents: write
+jobs:
+  foto:
+    if: github.ref == 'refs/heads/claude/foto-cerca8'
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix: { gruppo: [0, 1, 2, 3, 4] }
+    concurrency: { group: "foto8-${{ matrix.gruppo }}", cancel-in-progress: false }
+    steps:
+      - uses: actions/checkout@v4
+        with: { sparse-checkout: "sorgenti\n.github", fetch-depth: 1 }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install requests pillow
+      - name: Prova del programma (senza rete)
+        run: python sorgenti/foto/prova_foto8.py
+      - name: Cerca, scarica e salva ogni 15 minuti
+        env:
+          MINUTI: '300'
+          PROVA: ${{ github.event.inputs.prova || '20' }}   # primo giro di prova: 20 luoghi per gruppo
+          RAMO: claude/foto-cerca8
+        run: |
+          git config user.name "achplaces-bot"; git config user.email "actions@users.noreply.github.com"
+          python sorgenti/foto/actions_foto8.py ${{ matrix.gruppo }}
