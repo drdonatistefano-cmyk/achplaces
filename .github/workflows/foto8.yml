@@ -34,7 +34,7 @@ jobs:
       - name: Cerca, scarica e salva ogni 15 minuti
         env:
           MINUTI: '300'
-          PROVA: ${{ github.event.inputs.prova || '20' }}   # primo giro di prova: 20 luoghi per gruppo
+          PROVA: ${{ github.event.inputs.prova }}
           RAMO: claude/foto-cerca8
         run: |
           git config user.name "achplaces-bot"; git config user.email "actions@users.noreply.github.com"
