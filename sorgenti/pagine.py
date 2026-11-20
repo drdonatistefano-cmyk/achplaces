@@ -210,17 +210,28 @@ def pagina(titolo, descr, url, corpo, jsonld=None, prof=0):
 
 def link_biglietti(p):
     """Tiqets passa dalla rete Awin; GetYourGuide ha il codice partner nell'indirizzo."""
+    # 20/11/2026: terzo valore = attributi GoatCounter dei partner (partner/<dominio di arrivo>/<luogo>), come nella guida
     out = []
     if p.get("tq"):
         import urllib.parse
         out.append((f"https://www.awin1.com/cread.php?awinmid={MID_TIQETS}&awinaffid={AWIN}&ued="
-                    + urllib.parse.quote(p["tq"], safe=""), "Biglietti su Tiqets"))
+                    + urllib.parse.quote(p["tq"], safe=""), "Biglietti su Tiqets", gc_partner(p["tq"], p, "Tiqets")))
     if p.get("gy"):
         u = p["gy"] + ("&" if "?" in p["gy"] else "?") + f"partner_id={GYG}&utm_medium=online_publisher"
-        out.append((u, "Visite guidate su GetYourGuide"))
+        out.append((u, "Visite guidate su GetYourGuide", gc_partner(p["gy"], p, "GetYourGuide")))
     if p.get("ticketUrl"):
-        out.append((p["ticketUrl"], "Biglietti sul sito ufficiale"))
+        out.append((p["ticketUrl"], "Biglietti sul sito ufficiale", ""))
     return out
+
+
+def gc_partner(u, p, nome):
+    """Clic sul partner per la pagina delle visite: data-goatcounter-click="partner/<dominio>/<id del luogo>"."""
+    import urllib.parse
+    h = urllib.parse.urlsplit(u).hostname or ""
+    if h.endswith("awin1.com"):
+        h = urllib.parse.urlsplit((urllib.parse.parse_qs(urllib.parse.urlsplit(u).query).get("ued") or [""])[0]).hostname or h
+    h = h[4:] if h.startswith("www.") else h
+    return f' data-goatcounter-click="partner/{e(h)}/{e(p["id"])}" data-goatcounter-title="Partner: {e(nome)}"'
 
 
 def ricco(p):
@@ -247,8 +258,8 @@ def fatti(p, breve):
         q = "Scheda sul portale turistico" if p.get("ownSite") is False else "Sito ufficiale"
         f.append(f'<li><b>{q}</b> <a href="{e(p["official"])}" rel="nofollow noopener">{e(p["official"].split("/")[2])}</a></li>')
     if not breve and p.get("hoursUrl"): f.append(f'<li><b>Orari</b> <a href="{e(p["hoursUrl"])}" rel="nofollow noopener">pagina ufficiale</a></li>')
-    for u, q in link_biglietti(p):
-        f.append(f'<li><b>Biglietti</b> <a href="{e(u)}" rel="sponsored nofollow noopener">{e(q)}</a></li>')
+    for u, q, gc in link_biglietti(p):
+        f.append(f'<li><b>Biglietti</b> <a href="{e(u)}" rel="sponsored nofollow noopener"{gc}>{e(q)}</a></li>')
     return ('<ul class="fatti">' + "".join(f) + "</ul>") if f else ""
 
 
