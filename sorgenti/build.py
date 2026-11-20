@@ -447,7 +447,8 @@ _ORGF = {'italia.it':'italia.it','turismotorino.org':'Turismo Torino e Provincia
  'lavenaria.it':'Reggia di Venaria','vallemaira.org':'Valle Maira','areeprotetteappenninopiemontese.it':"Aree protette dell'Appennino piemontese",
  'ecomuseo.it':'Ecomusei del Piemonte','lang.fondazionevaldese.org':'Fondazione Centro Culturale Valdese','munlabtorino.it':"MuNLab Ecomuseo dell'Argilla",
  'ecomuseodellerocche.it':'Ecomuseo delle Rocche del Roero','provincia.biella.it':'Provincia di Biella','vallesusa-tesori.it':'Valle di Susa. Tesori di Arte e Cultura Alpina',
- 'emiliaromagnaturismo.it':'Emilia-Romagna Turismo'}
+ 'emiliaromagnaturismo.it':'Emilia-Romagna Turismo',
+ 'turismomassamarittima.it':'Turismo Massa Marittima (Comune)'}  # 20/11/2026: portale del Comune di Massa Marittima
 def _normf(x): return re.sub(r'[^a-z]', '', unicodedata.normalize('NFKD', x.lower()).encode('ascii', 'ignore').decode())
 def _nome_dom(u, cn):
     if 'web.archive.org' in u:
@@ -464,11 +465,12 @@ def _nome_dom(u, cn):
     return dom
 def _etichetta(s_, cn):
     lab, u = s_[0], s_[1]
-    for pre in ('Visit Piemonte', 'Touring Club - Emilia-Romagna Turismo'):
+    for pre in ('Visit Piemonte', 'Touring Club - Emilia-Romagna Turismo', 'Visit Tuscany'):
         if lab.startswith(pre):
             dom = _urlp(u).netloc
             if pre == 'Visit Piemonte' and ('visitpiemonte' in dom or 'piemonteitalia' in dom): return 0
             if pre.startswith('Touring') and 'touringclub' in dom: return 0
+            if pre == 'Visit Tuscany' and 'visittuscany' in dom: return 0  # 20/11/2026: per i comuni toscani con il portale del Comune
             nn = _nome_dom(u, cn)
             if nn: s_[0] = nn + lab[len(pre):]; return 1
     return 0

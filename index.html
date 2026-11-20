@@ -2221,7 +2221,7 @@ function giro(ps,budget){const out=[];let h=0;for(const p of ps){const d=ORE[p.t
 const fmtH=h=>h<1?Math.round(h*60)+" min":(Math.round(h*2)/2).toLocaleString("it-IT")+(h<1.75?" ora":" ore");
 let VIC=null;/* 17/11/2026: km su strada (OSRM, sorgenti/vicini_strada.py), segnalazione del Comune di Verbania */
 fetch("/vicini.json").then(r=>r.ok?r.json():null).then(j=>{if(j){VIC=j;try{renderXtra();}catch(e){}}}).catch(()=>{});
-function vicini(C){if(VIC&&VIC[C.slug]){const by=new Map(COMUNI.map(c=>[c.slug,c]));const v=VIC[C.slug].map(([s,d,f])=>[d,by.get(s),f]).filter(x=>x[1]&&x[1].places.length);if(v.length)return v.slice(0,6);}
+function vicini(C){if(VIC&&VIC[C.slug]){const by=new Map(COMUNI.map(c=>[c.slug,c]));const v=VIC[C.slug].map(([s,d,f,l])=>[d,by.get(s),f,l]).filter(x=>x[1]&&x[1].places.length);if(v.length)return v.slice(0,6);}
   return COMUNI.filter(c=>c.slug!==C.slug&&c.lat!=null&&c.places.length).map(c=>[hav(C.lat,C.lng,c.lat,c.lng),c]).sort((a,b)=>a[0]-b[0]).slice(0,6);}
 function renderXtra(){
   const el=$("xtra");if(!el)return;let h="";
@@ -2238,7 +2238,7 @@ function renderXtra(){
     }
     if(C.lat!=null){
       const vic=vicini(C);
-      if(vic.length)h+=`<div class="xbox"><div class="xh"><b>📍 Comuni vicini nella guida</b><span class="xvn">${VIC?"km su strada"+(vic.some(x=>x[2])?" · ⛴️ con il traghetto":""):"km in linea d'aria"}</span></div><div class="xchips">${vic.map(([d,c,f])=>`<a class="xc" href="#${esc(c.slug)}">${esc(c.name)} <small>${f?'<span title="Con il traghetto" aria-label="con il traghetto">⛴️</span> ':""}${fmtKm(d)} km · ${c.places.length} luoghi</small></a>`).join("")}</div></div>`;
+      if(vic.length)h+=`<div class="xbox"><div class="xh"><b>📍 Comuni vicini nella guida</b><span class="xvn">${VIC?"km su strada"+(vic.some(x=>x[2])?" · ⛴️ con il traghetto":""):"km in linea d'aria"}</span></div><div class="xchips">${vic.map(([d,c,f,l])=>`<a class="xc" href="#${esc(c.slug)}">${esc(l||c.name)} <small>${f?'<span title="Con il traghetto" aria-label="con il traghetto">⛴️</span> ':""}${fmtKm(d)} km · ${c.places.length} luoghi</small></a>`).join("")}</div></div>`;
     }
   }
   if(FAV.size){
