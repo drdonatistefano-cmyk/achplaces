@@ -47,6 +47,22 @@ for nome, s in (("index.html", idx), ("template.html", tpl)):
     if "visite/getyourguide-places" in s or 'biglietti/${t[1]==="Tiqets"' in s:
         errori.append(f"1. {nome}: resta un pulsante partner con il vecchio nome del clic")
 
+# 1 bis. pagina «Luoghi» con la mappa (filtri.html, da mappa_tpl.html): stessa forma, id del luogo in d.id
+fil = open(os.path.join(SITO, "filtri.html"), encoding="utf-8").read()
+mtp = open(os.path.join(SITO, "sorgenti", "mappa_tpl.html"), encoding="utf-8").read()
+m2 = re.search(r"function gcPar\(.*?\n", fil)
+if not m2 or m2[0] not in mtp or "id:c.sl+'--'+(p.sx||sl40(p.n))" not in fil:
+    errori.append("1 bis. filtri.html: gcPar o l'id del luogo mancano, o sono diversi da mappa_tpl.html")
+else:
+    esc2 = re.search(r"const esc=[^\n]*", fil)
+    js = esc2[0] + "\n" + m2[0] + "\nconst s=gcPar('https://www.awin1.com/cread.php?awinmid=12427&ued=https%3A%2F%2Fwww.tiqets.com%2Fx'," \
+        "{id:'firenze-fi--galleria-degli-uffizi'},'Tiqets');" \
+        "if(!s.includes('data-goatcounter-click=\"partner/tiqets.com/firenze-fi--galleria-degli-uffizi\"'))console.log('NO',s)"
+    r = subprocess.run(["node", "-e", js], capture_output=True, text=True)
+    if r.returncode or r.stdout.strip(): errori.append("1 bis. filtri.html gcPar: " + (r.stdout + r.stderr).strip()[:300])
+    elif fil.count("gcPar(") < 3: errori.append("1 bis. filtri.html: pulsanti partner senza gcPar")
+    else: print("1 bis. pagina Luoghi: gcPar giusta, usata sui due pulsanti partner — ok")
+
 # 2. pagine per Google
 pagine = glob.glob(os.path.join(SITO, "luogo", "*", "index.html")) + glob.glob(os.path.join(SITO, "comune", "*", "index.html")) \
     + glob.glob(os.path.join(SITO, "en", "luogo", "*", "index.html")) + glob.glob(os.path.join(SITO, "en", "comune", "*", "index.html"))

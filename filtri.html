@@ -603,18 +603,20 @@ async function dettagli(pi){if(!DATA.U)await PXP;const p=P[pi],c=C[p.ci],x=XG()[
   det=det||{};const u=k=>k!=null&&k>=0?DATA.U[k]:'';
   return {desc:det.desc||x.ds||'',why:det.why,tip:det.tip,sn:det.statusNote,st:p.fl.includes('w')?'warn':p.fl.includes('x')?'closed':'ok',ac:det.access,du:det.duration,ad:det.address,pc:det.price,
     fr:p.fl.includes('g')?true:p.fl.includes('P')?false:null,cd:p.fl.includes('c'),in:p.fl.includes('i'),vw:p.fl.includes('v'),un:p.fl.includes('u'),ps:x.ps,hu:det.hoursUrl,tu:u(x.tu),tf:u(x.tf),tq:u(x.tq),gy:u(x.gy),
-    of:det.official,os:det.ownSite,wh:det.wh,whn:det.whn,wk:det.wk,src:det.sources,cs:c.sl,vf:DATA.VER[c.v],lk:'index.html#'+c.sl,la:x.ll?x.ll[0]:null,lo:x.ll?x.ll[1]:null};}
+    of:det.official,os:det.ownSite,wh:det.wh,whn:det.whn,wk:det.wk,src:det.sources,cs:c.sl,id:c.sl+'--'+(p.sx||sl40(p.n)),vf:DATA.VER[c.v],lk:'index.html#'+c.sl,la:x.ll?x.ll[0]:null,lo:x.ll?x.ll[1]:null};}
 const dom=u=>{try{return new URL(u).hostname.replace(/^www\./,'')}catch(e){return ''}};
 function tkUrl(d){if(d.tq)return [d.tq,'Tiqets'];if(d.gy&&/biglietto|ingresso|salta|ticket/.test(d.gy))return [d.gy,'GetYourGuide'];return d.tu?[d.tu,'']:null;}
+/* 20/11/2026: clic sui partner per la pagina delle visite (stessa forma della guida: partner/<dominio di arrivo>/<luogo>) */
+function gcPar(u,d,n){let h='';try{const x=new URL(u);h=x.hostname.replace(/^www\./,'');if(/(^|\.)awin1\.com$/.test(h)){const q=x.searchParams.get('ued');if(q)h=new URL(q).hostname.replace(/^www\./,'')}}catch(e){}return ` data-goatcounter-click="partner/${h}/${esc(d.id)}" data-goatcounter-title="Partner: ${esc(n)}"`}
 function tixHtml(d){
   if(d.fr===true)return `<section class="tix" aria-label="Biglietti"><h3>🎟️ Biglietti</h3><div class="tixfree">${ic('check')}<div><b>Ingresso gratuito</b><small>${d.tu?`<a class="flink" href="${esc(d.tu)}" target="_blank" rel="noopener">Prenotazioni e info ufficiali ↗</a>`:'Verifica eventuali aperture limitate negli orari'}</small></div></div></section>`;
   const t=tkUrl(d);let u,tit,sub,rel='noopener',soft='';
   if(t&&t[1]){u=t[0];tit='Biglietti';sub=`su ${t[1]} · partner`;rel='noopener sponsored';}
   else if(t){u=t[0];tit='Biglietteria ufficiale';sub=dom(u);}
   else{u=d.of;tit=d.os===false?'Tariffe sul portale turistico':'Tariffe sul sito ufficiale';sub=dom(u);soft=' soft';}
-  const vg=d.gy&&!(t&&t[0]===d.gy)?`<a class="tixb par" href="${esc(d.gy)}" target="_blank" rel="noopener sponsored"><span class="tixic" aria-hidden="true">🧭</span><span><b>Visite guidate</b><small>su GetYourGuide · partner</small></span><i aria-hidden="true">↗</i></a>`:'';
+  const vg=d.gy&&!(t&&t[0]===d.gy)?`<a class="tixb par" href="${esc(d.gy)}" target="_blank" rel="noopener sponsored"${gcPar(d.gy,d,'GetYourGuide')}><span class="tixic" aria-hidden="true">🧭</span><span><b>Visite guidate</b><small>su GetYourGuide · partner</small></span><i aria-hidden="true">↗</i></a>`:'';
   const pn=(t&&t[1])||vg;
-  return `<section class="tix" aria-label="Biglietti"><h3>🎟️ Biglietti</h3><a class="tixb uff${soft}" href="${esc(u)}" target="_blank" rel="${rel}">${ic('ticket')}<span><b>${tit}</b><small>${esc(sub)}</small></span><i aria-hidden="true">↗</i></a>${vg}${pn?`<p class="tixn">Partner: la guida riceve una piccola commissione, il prezzo per te non cambia.${d.tu?` <a class="flink" href="${esc(d.tu)}" target="_blank" rel="noopener">Biglietteria ufficiale ↗</a>`:''}</p>`:''}</section>`;}
+  return `<section class="tix" aria-label="Biglietti"><h3>🎟️ Biglietti</h3><a class="tixb uff${soft}" href="${esc(u)}" target="_blank" rel="${rel}"${t&&t[1]?gcPar(u,d,t[1]):''}>${ic('ticket')}<span><b>${tit}</b><small>${esc(sub)}</small></span><i aria-hidden="true">↗</i></a>${vg}${pn?`<p class="tixn">Partner: la guida riceve una piccola commissione, il prezzo per te non cambia.${d.tu?` <a class="flink" href="${esc(d.tu)}" target="_blank" rel="noopener">Biglietteria ufficiale ↗</a>`:''}</p>`:''}</section>`;}
 function tags(d){const pt=d.fr===null||d.fr===undefined?(d.ps===0?'<span class="mst unk">🆓 Probabilmente gratis</span>':d.ps?`<span class="mst unk">🎟️ Circa ${d.ps} € (stima)</span>`:'<span class="mst unk">🎟️ Ingresso: vedi sito</span>'):d.fr?'<span class="mst free">🆓 Gratis</span>':'<span class="mst paid">🎟️ A pagamento</span>';
   const st=d.st==='closed'?'<span class="mst closed">⛔ Chiuso ora</span>':d.st==='warn'?'<span class="mst warn">⚠️ Avviso</span>':'';
   return st+pt+(d.cd?'<span class="mst">💳 Card</span>':'')+(d.in?'<span class="mst">☔ Al coperto</span>':'')+(d.vw?'<span class="mst">🌅 Panorama</span>':'')+(d.un?'<span class="mst">🌍 UNESCO</span>':'')+(d.du?`<span class="mst">⏱️ ${esc(d.du)}</span>`:'');}
