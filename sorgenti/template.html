@@ -1834,7 +1834,7 @@ function renderXtra(){
     const ps=C.places.filter(p=>p.status!=="closed").sort((a,b)=>(a.rk||1e9)-(b.rk||1e9));
     const vm=Math.max(2,C.visita||0),G=[["2h",`⚡ ${vm} ore`,vm],["mezza","🌤️ Mezza giornata",Math.max(4,vm+1)],["giorno","☀️ Una giornata",7]].filter(g=>ps.length>2||g[0]==="2h");
     if(!XT||!G.some(g=>g[0]===XT))XT=G[0][0];
-    const g=G.find(x=>x[0]===XT),[sel,ore]=giro(ps,g[2]);
+    const g=G.find(x=>x[0]===XT),[sel,ore]=giro(g[0]==="2h"?ps.filter(p=>!p.fuori):ps,g[2]);/* 20/11/2026: nella visita breve niente luoghi fuori città (fuori=1 nei dati; Massa Marittima, Ufficio Turistico) */
     if(sel.length>1){
       h+=`<div class="xbox"><div class="xh"><b>⏳ Se hai poco tempo</b><span>${G.map(x=>`<button type="button" class="xt${x[0]===XT?" on":""}" data-xt="${x[0]}">${x[1]}</button>`).join("")}</span></div>
       <ol class="xlist">${sel.map(p=>`<li><button type="button" data-xp="${esc(p.id)}"><span class="xe">${CATS[p.cat].em}</span><span class="xn">${esc(p.name)}</span><small>${(TIME.find(x=>x[0]===p.t)||["","","",""])[2]}</small></button></li>`).join("")}</ol>
