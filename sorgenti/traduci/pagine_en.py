@@ -171,6 +171,11 @@ def alt_it(h, url_it, url_en):
 
 def main():
     urls = []; n = 0
+    # 20/11/2026 (peso del repository): la data di una pagina inglese nella mappa del sito resta quella dell'ultimo
+    # cambiamento vero (prima era sempre oggi): oggi se la pagina e' stata riscritta, se no la data che aveva.
+    prima = {}
+    for f in glob.glob(os.path.join(RAD, "sitemap-en-*.xml")):
+        prima.update(re.findall(r"<loc>([^<]+)</loc><lastmod>([^<]+)</lastmod>", open(f).read()))
     pag = sorted(glob.glob(os.path.join(RAD, "comune", "*", "index.html")) + glob.glob(os.path.join(RAD, "luogo", "*", "index.html"))
                  + glob.glob(os.path.join(RAD, "regione", "*", "index.html")) + [os.path.join(RAD, "comuni", "index.html")])
     vivi = set()
@@ -186,10 +191,12 @@ def main():
         vivi.add(os.path.normpath(dest))
         old = open(dest, encoding="utf-8").read() if os.path.exists(dest) else None
         if old != en: open(dest, "w", encoding="utf-8").write(en)
+        m = re.search(r"Aggiornato il (\d{4}-\d{2}-\d{2})", h)
+        data = OGGI if old != en else prima.get(url_en) or (m[1] if m else OGGI)
         hi = alt_it(h, url_it, url_en)
         if hi != h: open(f, "w", encoding="utf-8").write(hi)
         pr = "0.8" if rel.startswith("comune/") else "0.6" if rel.startswith("luogo/") else "0.9"
-        urls.append((url_en, pr)); n += 1
+        urls.append((url_en, pr, data)); n += 1
     # pagine inglesi di luoghi o comuni che non esistono piu'
     for f in glob.glob(os.path.join(RAD, "en", "*", "*", "index.html")):
         if os.path.normpath(f) not in vivi: os.remove(f);
@@ -198,12 +205,12 @@ def main():
     parti = [urls[i:i + 40000] for i in range(0, len(urls), 40000)]
     for i, p in enumerate(parti, 1):
         open(os.path.join(RAD, f"sitemap-en-{i}.xml"), "w").write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-            + "".join(f"<url><loc>{u}</loc><lastmod>{OGGI}</lastmod><priority>{pr}</priority></url>\n" for u, pr in p) + "</urlset>\n")
+            + "".join(f"<url><loc>{u}</loc><lastmod>{d}</lastmod><priority>{pr}</priority></url>\n" for u, pr, d in p) + "</urlset>\n")
     si = os.path.join(RAD, "sitemap.xml")
     if os.path.exists(si):
         s = open(si).read()
         s = re.sub(r"<sitemap><loc>[^<]*sitemap-en-\d+\.xml</loc>.*?</sitemap>\n?", "", s)
-        s = s.replace("</sitemapindex>", "".join(f"<sitemap><loc>{SITO}/sitemap-en-{i}.xml</loc><lastmod>{OGGI}</lastmod></sitemap>\n" for i in range(1, len(parti) + 1)) + "</sitemapindex>")
+        s = s.replace("</sitemapindex>", "".join(f"<sitemap><loc>{SITO}/sitemap-en-{i}.xml</loc><lastmod>{max(x[2] for x in p)}</lastmod></sitemap>\n" for i, p in enumerate(parti, 1)) + "</sitemapindex>")
         open(si, "w").write(s)
     print(f"pagine_en: {n} pagine inglesi in en/, {len(parti)} file di mappa del sito")
 

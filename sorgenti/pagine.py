@@ -298,11 +298,25 @@ def ld_luogo(p, c):
     return d
 
 
-def scrivi(percorso, testo):
+# 20/11/2026 (peso del repository): ogni giro riscriveva tutte le ~35.000 pagine (italiano e inglese) solo perche'
+# cambiava la data «Aggiornato il …» e la data delle mappe del sito: circa 40 MB in piu' nella storia a ogni giro.
+# Ora una pagina che non cambia nel contenuto resta com'e', con la sua data; la mappa del sito usa la data della pagina.
+_DATA = re.compile(r"Aggiornato il (\d{4}-\d{2}-\d{2})")
+_ALT = re.compile(r'<link rel="alternate" hreflang="[^"]+" href="[^"]*">')  # li aggiunge pagine_en.py
+DATE = {}  # url -> data dell'ultimo cambiamento vero della pagina
+
+
+def scrivi(percorso, testo, url=None):
     f = os.path.join(OUT, percorso)
     os.makedirs(os.path.dirname(f), exist_ok=True)
     vecchio = open(f, encoding="utf-8").read() if os.path.exists(f) else None
+    data = OGGI
+    if vecchio is not None:
+        m = _DATA.search(vecchio)
+        if m and _DATA.sub("Aggiornato il " + OGGI, _ALT.sub("", vecchio)) == testo:
+            data, testo = m[1], vecchio  # stesso contenuto: il file resta com'e'
     if vecchio != testo: open(f, "w", encoding="utf-8").write(testo)
+    if url: DATE[url] = data
 
 
 # ---------------------------------------------------------------- generazione
@@ -340,7 +354,7 @@ for c in sorted(comuni, key=lambda c: (c["regione"], c["prov"], c["name"])):
           "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": p["name"],
                                "url": url_luogo(p) if (ap["luoghi"] and ricco(p)) else url_comune(c) + "#" + slug(p["id"], 80)}
                               for i, p in enumerate(pl[:60])]}
-    scrivi(f"comune/{c['slug']}/index.html", pagina(titolo + " | Ach's Places Guide", descr, url_comune(c), "".join(corpo), ld, 2))
+    scrivi(f"comune/{c['slug']}/index.html", pagina(titolo + " | Ach's Places Guide", descr, url_comune(c), "".join(corpo), ld, 2), url_comune(c))
     urls.append((url_comune(c), "0.8"))
 
     if ap["luoghi"]:
@@ -361,7 +375,7 @@ for c in sorted(comuni, key=lambda c: (c["regione"], c["prov"], c["name"])):
                      else f'<li><a href="/comune/{e(c["slug"])}/#{e(slug(x["id"], 80))}">{e(x["name"])}</a></li>')
                     for x in altri)
                     + f'</ul><p><a href="/comune/{e(c["slug"])}/">Tutti i {len(pl)} luoghi di {e(c["name"])}</a></p>')
-            scrivi(f"luogo/{p['id']}/index.html", pagina(t2 + " | Ach's Places Guide", d2, url_luogo(p), "".join(b), ld_luogo(p, c), 2))
+            scrivi(f"luogo/{p['id']}/index.html", pagina(t2 + " | Ach's Places Guide", d2, url_luogo(p), "".join(b), ld_luogo(p, c), 2), url_luogo(p))
             urls.append((url_luogo(p), "0.6"))
             nluo += 1
 
@@ -382,7 +396,7 @@ for r, cs in REGIONI.items():
             for x in xs) + "</ul>")
     scrivi(f"regione/{r}/index.html", pagina(titolo + " | Ach's Places Guide",
            taglia(f"I luoghi da visitare in {NOMEREG[r]}, comune per comune, con fonti ufficiali, orari e ingressi."),
-           url_reg(r), "".join(corpo), None, 2))
+           url_reg(r), "".join(corpo), None, 2), url_reg(r))
     urls.append((url_reg(r), "0.9"))
 
 tot = sum(len(c["places"]) for c in comuni)
@@ -396,9 +410,10 @@ for r in sorted(REGIONI, key=lambda r: NOMEREG[r]):
                      f'<p class="meta">{len(cs)} comuni · {sum(len(x["places"]) for x in cs)} luoghi</p>')
 scrivi("comuni/index.html", pagina("Tutti i comuni | Ach's Places Guide",
        f"I {tot} luoghi della guida, comune per comune e regione per regione.",
-       f"{SITO}/comuni/", "".join(corpo), None, 1))
+       f"{SITO}/comuni/", "".join(corpo), None, 1), f"{SITO}/comuni/")
 urls.append((f"{SITO}/comuni/", "0.9"))
 urls.append((f"{SITO}/", "1.0"))
+DATE[f"{SITO}/"] = max(DATE.values(), default=OGGI)
 
 scrivi("pagine.css", CSS)
 
@@ -407,12 +422,12 @@ parti = [urls[i:i + PER] for i in range(0, len(urls), PER)]
 for i, parte in enumerate(parti, 1):
     scrivi(f"sitemap-{i}.xml", '<?xml version="1.0" encoding="UTF-8"?>\n'
            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(
-               f"<url><loc>{e(u)}</loc><lastmod>{OGGI}</lastmod><priority>{p}</priority></url>\n" for u, p in parte)
+               f"<url><loc>{e(u)}</loc><lastmod>{DATE.get(u, OGGI)}</lastmod><priority>{p}</priority></url>\n" for u, p in parte)
            + "</urlset>\n")
 scrivi("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n'
        '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(
-           f"<sitemap><loc>{SITO}/sitemap-{i}.xml</loc><lastmod>{OGGI}</lastmod></sitemap>\n"
-           for i in range(1, len(parti) + 1)) + "</sitemapindex>\n")
+           f"<sitemap><loc>{SITO}/sitemap-{i}.xml</loc><lastmod>{max(DATE.get(u, OGGI) for u, _ in parte)}</lastmod></sitemap>\n"
+           for i, parte in enumerate(parti, 1)) + "</sitemapindex>\n")
 scrivi("robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {SITO}/sitemap.xml\n")
 
 # 18/11/2026: le pagine di luoghi e comuni che questa costruzione non scrive piu' (luogo tolto o senza contenuto
