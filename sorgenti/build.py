@@ -126,6 +126,7 @@ def parse(path):
         if line.startswith("minimo:"):
             _n, _m = (line[7:].split("|", 1) + [""])[:2]; c["minimo"] = (int(_n.strip()), _m.strip()); continue
         if line.startswith("card:"): c["cardName"] = line[5:].strip(); continue
+        if line.startswith("visita:"): c["visita"] = int(line[7:].strip()); continue   # 20/11/2026: ore minime di visita indicate dal Comune (Massa Marittima: 3)
         if line.startswith("src:"):
             n, u = line[4:].strip().split("^"); c["sources"].append([n, u]); continue
         if line.startswith("- "):
@@ -156,7 +157,7 @@ def parse(path):
                      card="k" in flags, unesco="u" in flags, view="v" in flags, indoor="i" in flags, status=status,
                      statusNote=extra.get("note", "") if status != "ok" else "", rev=extra.get("rev", ""), tip=notip(extra.get("tip") or (extra.get("note", "") if status == "ok" else "")),
                      hours=extra.get("hours", "Verifica sul sito ufficiale prima di partire" if free is not True else "Spazio aperto o accesso libero; verifica eventuali limitazioni"),
-                     booking=extra.get("book", "Non indicata dalle fonti"), duration=DUR[t], t=t,
+                     booking=extra.get("book", "Non indicata dalle fonti"), duration=extra.get("durata", DUR[t]), t=t,
                      access=extra.get("access", "Da verificare con il gestore"), official=off, ownSite=("off" in extra or extra.get("book","").startswith("http")), sources=srcs)
             lk = LINKS["spec"].get(c["name"] + "|" + name, {})
             p["hoursUrl"] = extra.get("orari") or lk.get("orari", "")
@@ -184,6 +185,7 @@ def parse(path):
             for k in ("hoursUrl", "ticketUrl"):
                 if p[k] and not any(x[1] == p[k] for x in p["sources"]): p["sources"].append([("Orari ufficiali" if k == "hoursUrl" else "Biglietti ufficiali") + " (pagina del gestore)", p[k], "uff"])
             if extra.get("mic"): p["mic"] = extra["mic"].split()
+            if extra.get("fuori"): p["fuori"] = 1   # 20/11/2026: luogo fuori dal centro abitato, escluso dalla visita breve
             if WIKI.get(pid): p["wk"] = WIKI[pid]
             c["places"].append(p)
     for c in comuni:
@@ -447,7 +449,8 @@ _ORGF = {'italia.it':'italia.it','turismotorino.org':'Turismo Torino e Provincia
  'lavenaria.it':'Reggia di Venaria','vallemaira.org':'Valle Maira','areeprotetteappenninopiemontese.it':"Aree protette dell'Appennino piemontese",
  'ecomuseo.it':'Ecomusei del Piemonte','lang.fondazionevaldese.org':'Fondazione Centro Culturale Valdese','munlabtorino.it':"MuNLab Ecomuseo dell'Argilla",
  'ecomuseodellerocche.it':'Ecomuseo delle Rocche del Roero','provincia.biella.it':'Provincia di Biella','vallesusa-tesori.it':'Valle di Susa. Tesori di Arte e Cultura Alpina',
- 'emiliaromagnaturismo.it':'Emilia-Romagna Turismo'}
+ 'emiliaromagnaturismo.it':'Emilia-Romagna Turismo',
+ 'turismomassamarittima.it':'Turismo Massa Marittima (Comune)'}  # 20/11/2026: portale del Comune di Massa Marittima
 def _normf(x): return re.sub(r'[^a-z]', '', unicodedata.normalize('NFKD', x.lower()).encode('ascii', 'ignore').decode())
 def _nome_dom(u, cn):
     if 'web.archive.org' in u:
@@ -464,11 +467,12 @@ def _nome_dom(u, cn):
     return dom
 def _etichetta(s_, cn):
     lab, u = s_[0], s_[1]
-    for pre in ('Visit Piemonte', 'Touring Club - Emilia-Romagna Turismo'):
+    for pre in ('Visit Piemonte', 'Touring Club - Emilia-Romagna Turismo', 'Visit Tuscany'):
         if lab.startswith(pre):
             dom = _urlp(u).netloc
             if pre == 'Visit Piemonte' and ('visitpiemonte' in dom or 'piemonteitalia' in dom): return 0
             if pre.startswith('Touring') and 'touringclub' in dom: return 0
+            if pre == 'Visit Tuscany' and 'visittuscany' in dom: return 0  # 20/11/2026: per i comuni toscani con il portale del Comune
             nn = _nome_dom(u, cn)
             if nn: s_[0] = nn + lab[len(pre):]; return 1
     return 0

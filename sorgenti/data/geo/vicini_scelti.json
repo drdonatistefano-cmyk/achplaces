@@ -1,0 +1,11 @@
+{
+ "_nota": "20/11/2026: comuni vicini scelti dall'ente del comune, al posto di quelli calcolati (vicini_unisci.py). Ogni voce: [slug, km su strada, traghetto 0|1, etichetta facoltativa al posto del nome del comune]. Massa Marittima: Ufficio Turistico del Comune, email del 20/11/2026.",
+ "massa-marittima-gr": [
+  ["follonica-gr", 19.2, 0],
+  ["scarlino-gr", 20.8, 0],
+  ["montieri-gr", 21.6, 0],
+  ["monterotondo-marittimo-gr", 23, 0, "Monterotondo Marittimo e Parco delle Biancane"],
+  ["chiusdino-si", 29.8, 0, "Abbazia di San Galgano"],
+  ["castiglione-della-pescaia-gr", 41.7, 0]
+ ]
+}

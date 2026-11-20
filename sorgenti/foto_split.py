@@ -67,6 +67,10 @@ def main():
                 v[3] if len(v) > 3 else ""]
         if len(v) > 6 and v[6]:
             riga.append(v[6])
+        # 20/11/2026: foto date dall'ente stesso (prima: Massa Marittima, polo Subterraneo), senza autore, licenza né
+        # pagina: nessuna riga di crediti, così sulla scheda non compare nessuna dicitura (decisione di Stefano)
+        if not any(riga[:3]):
+            continue
         crediti.setdefault(prov, {})[k] = riga
 
     # via i file vecchi, cosi' non restano impronte morte
