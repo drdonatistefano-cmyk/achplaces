@@ -126,6 +126,7 @@ def parse(path):
         if line.startswith("minimo:"):
             _n, _m = (line[7:].split("|", 1) + [""])[:2]; c["minimo"] = (int(_n.strip()), _m.strip()); continue
         if line.startswith("card:"): c["cardName"] = line[5:].strip(); continue
+        if line.startswith("visita:"): c["visita"] = int(line[7:].strip()); continue   # 20/11/2026: ore minime di visita indicate dal Comune (Massa Marittima: 3)
         if line.startswith("src:"):
             n, u = line[4:].strip().split("^"); c["sources"].append([n, u]); continue
         if line.startswith("- "):
@@ -156,7 +157,7 @@ def parse(path):
                      card="k" in flags, unesco="u" in flags, view="v" in flags, indoor="i" in flags, status=status,
                      statusNote=extra.get("note", "") if status != "ok" else "", rev=extra.get("rev", ""), tip=notip(extra.get("tip") or (extra.get("note", "") if status == "ok" else "")),
                      hours=extra.get("hours", "Verifica sul sito ufficiale prima di partire" if free is not True else "Spazio aperto o accesso libero; verifica eventuali limitazioni"),
-                     booking=extra.get("book", "Non indicata dalle fonti"), duration=DUR[t], t=t,
+                     booking=extra.get("book", "Non indicata dalle fonti"), duration=extra.get("durata", DUR[t]), t=t,
                      access=extra.get("access", "Da verificare con il gestore"), official=off, ownSite=("off" in extra or extra.get("book","").startswith("http")), sources=srcs)
             lk = LINKS["spec"].get(c["name"] + "|" + name, {})
             p["hoursUrl"] = extra.get("orari") or lk.get("orari", "")

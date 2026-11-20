@@ -1832,7 +1832,7 @@ function renderXtra(){
   const single=!C.all&&!C.isProv;
   if(single){
     const ps=C.places.filter(p=>p.status!=="closed").sort((a,b)=>(a.rk||1e9)-(b.rk||1e9));
-    const G=[["2h","⚡ 2 ore",2],["mezza","🌤️ Mezza giornata",4],["giorno","☀️ Una giornata",7]].filter(g=>ps.length>2||g[0]==="2h");
+    const vm=Math.max(2,C.visita||0),G=[["2h",`⚡ ${vm} ore`,vm],["mezza","🌤️ Mezza giornata",Math.max(4,vm+1)],["giorno","☀️ Una giornata",7]].filter(g=>ps.length>2||g[0]==="2h");
     if(!XT||!G.some(g=>g[0]===XT))XT=G[0][0];
     const g=G.find(x=>x[0]===XT),[sel,ore]=giro(ps,g[2]);
     if(sel.length>1){
@@ -1842,7 +1842,7 @@ function renderXtra(){
     }
     if(C.lat!=null){
       const vic=vicini(C);
-      if(vic.length)h+=`<div class="xbox"><div class="xh"><b>📍 Comuni vicini nella guida</b><span class="xvn">${VIC?"km su strada"+(vic.some(x=>x[2])?" · ⛴️ con il traghetto":""):"km in linea d'aria"}</span></div><div class="xchips">${vic.map(([d,c,f,l])=>`<a class="xc" href="#${esc(c.slug)}">${esc(l||c.name)} <small>${f?'<span title="Con il traghetto" aria-label="con il traghetto">⛴️</span> ':""}${fmtKm(d)} km · ${c.places.length} luoghi</small></a>`).join("")}</div></div>`;
+      if(vic.length)h+=`<div class="xbox"><div class="xh"><b>📍 Comuni vicini nella guida</b><span class="xvn">${VIC?"km su strada"+(vic.some(x=>x[2])?" · ⛴️ con il traghetto":""):"km in linea d'aria"}</span></div><div class="xchips">${vic.map(([d,c,f,l])=>`<a class="xc" href="#${esc(c.slug)}">${esc(l||c.name)} <small>${f?'<span title="Con il traghetto" aria-label="con il traghetto">⛴️</span> ':""}${fmtKm(d)} km · ${c.places.length} ${c.places.length===1?"luogo":"luoghi"}</small></a>`).join("")}</div></div>`;
     }
   }
   if(FAV.size){
