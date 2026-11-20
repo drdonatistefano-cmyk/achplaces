@@ -34,5 +34,6 @@ jobs:
           git config user.name "achplaces-bot"; git config user.email "actions@users.noreply.github.com"
           git add sorgenti/data/link_correzioni.json
           git commit -q -m "Link: correzioni approvate da Stefano (${{ steps.g.outputs.gruppi }}), segnalazione #${{ github.event.issue.number }}" || { echo "niente di nuovo"; exit 0; }
-          for i in 1 2 3 4 5; do git pull --rebase -q origin main && git push -q origin HEAD:main && break; sleep 7; done
+          ok=0; for i in 1 2 3 4 5; do git pull --rebase -q origin main && git push -q origin HEAD:main && { ok=1; break; }; sleep 7; done
+          [ $ok = 1 ] || { echo "salvataggio non riuscito"; exit 1; }   # 20/11: un ciclo che finisce senza salvare non deve risultare verde (REGOLE 7)
           gh issue comment ${{ github.event.issue.number }} -b "Fatto: $(cat /tmp/esito.txt). Si vede sul sito alla prossima costruzione di Places, dopo il «pubblica»."
