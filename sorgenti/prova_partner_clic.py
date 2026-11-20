@@ -34,7 +34,8 @@ else:
         ("https://www.tiqets.com/it/y/", {"id": "torre-degli-asinelli", "comSlug": "bologna-bo"},
          "Tiqets", "partner/tiqets.com/bologna-bo--torre-degli-asinelli", "Partner: Tiqets"),
     ]
-    js = (esc[0] if esc else "") + "\n" + m[0] + "\nconst C=" + json.dumps(casi) + ";\n" \
+    # 20/11/2026: senza esc: nella guida gcPar sta in uno script dove esc non si vede (errore «esc is not defined» in produzione)
+    js = m[0] + "\nconst C=" + json.dumps(casi) + ";\n" \
         "for(const [u,p,n,a,t] of C){const s=gcPar(u,p,n);" \
         "if(!s.includes(`data-goatcounter-click=\"${a}\"`)||!s.includes(`data-goatcounter-title=\"${t}\"`))console.log('NO',u,s)}"
     r = subprocess.run(["node", "-e", js], capture_output=True, text=True)
