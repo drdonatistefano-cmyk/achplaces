@@ -1,0 +1,23 @@
+name: Controllo dei luoghi chiusi (parole nelle fonti)
+# 21/11/2026: gira solo sul ramo claude/verifica-schede, al push del programma o a mano. Legge le pagine delle fonti dei
+# luoghi segnati chiusi e salva solo codici e conteggi di parole (sorgenti/link/chiusi_esito.json). Un paio di minuti, gratuito.
+on:
+  push:
+    branches: [claude/verifica-schede]
+    paths: ['sorgenti/link/chiusi_controllo.py', 'sorgenti/link/chiusi_input.json', '.github/workflows/chiusi-controllo.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  chiusi:
+    if: github.ref == 'refs/heads/claude/verifica-schede'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with: { sparse-checkout: "sorgenti/link\n.github", fetch-depth: 1 }
+      - run: pip install requests
+      - run: python sorgenti/link/chiusi_controllo.py
+      - run: |
+          git config user.name "achplaces-bot"; git config user.email "actions@users.noreply.github.com"
+          git add sorgenti/link/chiusi_esito.json && git commit -q -m "Controllo dei luoghi chiusi: esito" && git push -q origin HEAD:claude/verifica-schede
