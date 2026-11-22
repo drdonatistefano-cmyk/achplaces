@@ -6,7 +6,7 @@ on:
   push:
     branches: [main]
   schedule:
-    - cron: "17 3 * * *"
+    - cron: "29 3 * * *"   # 22/11: non alle 3:17 come tiqets.yml (si pestavano sul push, avviso di coerenza)
   workflow_dispatch:
     inputs:
       togli:
