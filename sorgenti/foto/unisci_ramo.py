@@ -2,7 +2,7 @@
 import json, os, shutil, subprocess
 F = '/home/claude/foto/'; R = '/home/claude/foto-ramo/'
 if os.path.isdir(R + '.git'): subprocess.run(['git', '-C', R, 'fetch', '-q', '--depth', '1', 'origin', 'foto'], check=True); subprocess.run(['git', '-C', R, 'reset', '-q', '--hard', 'FETCH_HEAD'], check=True)
-else: subprocess.run(['git', 'clone', '-q', '--depth', '1', '-b', 'foto', 'https://github.com/drdonatistefano-cmyk/achplaces', R], check=True)
+else: subprocess.run(['git', 'clone', '-q', '--depth', '1', '-b', 'foto', (subprocess.run(['git', 'remote', 'get-url', 'origin'], capture_output=True, text=True).stdout.strip() or 'https://github.com/' + os.environ.get('GITHUB_REPOSITORY', '')), R], check=True)
 meta = json.load(open(R + 'meta.json')); c = json.load(open(F + 'foto2.json')); n = 0
 # 10/11/2026: anche i file dei lavori paralleli (meta-<gruppo>.json, sesta ricerca: Wikipedia e coordinate)
 for _f in sorted(os.listdir(R)):

@@ -38,5 +38,5 @@ jobs:
           # una sola segnalazione aperta: quella vecchia si chiude (le sue proposte rientrano in quella nuova)
           for n in $(gh issue list --label link --state open --json number -q '.[].number'); do gh issue close $n -c "Sostituita dalle proposte della settimana nuova."; done
           if grep -q -- "- \[ \]" out/proposte-link.md; then
-            gh issue create --label link --assignee drdonatistefano-cmyk --title "Link da correggere – $(date +%d/%m/%Y)" --body-file out/proposte-link.md
+            gh issue create --label link --assignee "${{ github.repository_owner }}" --title "Link da correggere – $(date +%d/%m/%Y)" --body-file out/proposte-link.md
           else echo "nessuna proposta nuova"; fi
