@@ -1,0 +1,47 @@
+name: Catalogo TicketOne da Awin
+# 18/11/2026 (Stefano): il catalogo ufficiale di TicketOne IT dal suo account Awin (affiliazione attiva dal 17/11),
+# per abbinare in modo preciso luoghi ed eventi ai bottoni Biglietti. La chiave sta nel segreto AWIN_FEED_KEY.
+# Il catalogo va nel ramo «partner» (non su main: cambia ogni mese e non serve al sito).
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '41 3 1 * *'   # il primo di ogni mese
+  push:
+    branches: [main]
+    paths: ['sorgenti/ticketone/avvia.txt', 'sorgenti/ticketone/scarica_awin.py']
+permissions:
+  contents: write
+  actions: write
+concurrency: { group: partner, cancel-in-progress: false }
+jobs:
+  ticketone:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 1 }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install -q requests
+      - name: Ramo partner
+        run: |
+          git config user.name "achplaces-bot"; git config user.email "actions@users.noreply.github.com"
+          if git fetch -q origin partner; then git worktree add -B partner out origin/partner; else git worktree add --orphan -b partner out; fi
+      - name: Scarica
+        env: { AWIN_FEED_KEY: "${{ secrets.AWIN_FEED_KEY }}" }
+        run: python3 sorgenti/ticketone/scarica_awin.py out
+      - name: Abbina ai luoghi della guida e pubblica i link
+        # scrive sorgenti/data/ticketone.json e /biglietti-partner.json, che la pagina legge all'avvio:
+        # i bottoni Biglietti si aggiornano subito, senza ricostruire la guida
+        env: { GH_TOKEN: "${{ github.token }}", R: "${{ github.repository }}" }
+        run: |
+          python3 sorgenti/ticketone/abbina.py out/ticketone.json
+          git add sorgenti/data/ticketone.json biglietti-partner.json
+          git commit -qm "TicketOne: biglietti aggiornati $(date +%F)" || exit 0
+          for i in 1 2 3 4 5; do git pull --rebase -q origin main && git push -q origin HEAD:main && { gh api -X POST repos/$R/actions/workflows/pubblica.yml/dispatches -f ref=main || true; exit 0; }; sleep $((RANDOM % 15 + 5)); done; exit 1
+      - name: Salva
+        working-directory: out
+        run: |
+          git add -A
+          git commit -qm "Catalogo TicketOne: $(date +%F)" || exit 0
+          for i in 1 2 3 4 5; do git pull --rebase -q origin partner 2>/dev/null || true; git push -q origin HEAD:partner && exit 0; sleep $((RANDOM % 15 + 5)); done; exit 1

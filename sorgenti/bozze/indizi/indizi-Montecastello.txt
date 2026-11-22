@@ -1,0 +1,7 @@
+# Indizi da Wikidata per Montecastello (10/11/2026): elenco di luoghi che esistono nel comune. NON sono fonti: servono a sapere cosa cercare.
+# Per ogni voce cerca una fonte ufficiale (sito del gestore indicato, Comune, parrocchia/Diocesi, Regione, ente turistico, MiC/ICCD) che la descriva.
+# Wikipedia serve solo a trovare link a fonti ufficiali (note, collegamenti esterni), mai come fonte da citare.
+- castello di Montecastello | castello | sito: http://www.comune.montecastello.al.it | tutela: bene culturale italiano | wiki: https://it.wikipedia.org/wiki/Castello_di_Montecastello
+- chiesa di Santa Maria di Ponzano | chiesa | wiki: https://it.wikipedia.org/wiki/Chiesa_di_Santa_Maria_di_Ponzano
+- chiesa di Sant'Antonio | chiesa
+- palazzo comunale | palazzo comunale

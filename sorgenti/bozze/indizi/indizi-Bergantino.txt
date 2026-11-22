@@ -1,0 +1,11 @@
+# Indizi da Wikidata per Bergantino (10/11/2026): elenco di luoghi che esistono nel comune. NON sono fonti: servono a sapere cosa cercare.
+# Per ogni voce cerca una fonte ufficiale (sito del gestore indicato, Comune, parrocchia/Diocesi, Regione, ente turistico, MiC/ICCD) che la descriva.
+# Wikipedia serve solo a trovare link a fonti ufficiali (note, collegamenti esterni), mai come fonte da citare.
+- Museo della giostra e dello spettacolo popolare | museo di un ente pubblico, museo etnografico | sito: http://www.museodellagiostra.it | tutela: bene culturale italiano | wiki: https://it.wikipedia.org/wiki/Museo_della_giostra_e_dello_spettacolo_popolare
+- chiesa di San Giorgio Martire | chiesa | tutela: bene culturale italiano | wiki: https://it.wikipedia.org/wiki/Chiesa_di_San_Giorgio_Martire_(Bergantino)
+- Castello di Rodolfo | castello | tutela: bene culturale italiano
+- Oratorio della Beata Vergine del Carmine | oratorio
+- Oratorio della Madonna di Fatima | oratorio
+- Oratorio di Maria Vergine Ausiliatrice | oratorio
+- Oratorio di Sant'Antonio di Padova | oratorio
+- municipio di Bergantino | palazzo comunale

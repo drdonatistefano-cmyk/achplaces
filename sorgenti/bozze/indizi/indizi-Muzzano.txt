@@ -1,0 +1,11 @@
+# Indizi da Wikidata per Muzzano (10/11/2026): elenco di luoghi che esistono nel comune. NON sono fonti: servono a sapere cosa cercare.
+# Per ogni voce cerca una fonte ufficiale (sito del gestore indicato, Comune, parrocchia/Diocesi, Regione, ente turistico, MiC/ICCD) che la descriva.
+# Wikipedia serve solo a trovare link a fonti ufficiali (note, collegamenti esterni), mai come fonte da citare.
+- Cellula di Bagneri - La civiltà montanara | museo etnografico, museo privato | sito: http://www.ecomuseo.it | tutela: bene culturale italiano
+- Ecomuseo di Bagneri | ecomuseo
+- Trappa - Bagneri | area naturale protetta
+- chiesa dei santi Giuseppe e Bernardo | chiesa
+- chiesa di Sant'Eusebio | chiesa
+- oratorio della Purificazione della Madonna | chiesa
+- oratorio di Santa Croce e del Santo Rosario | chiesa
+- palazzo comunale | palazzo comunale

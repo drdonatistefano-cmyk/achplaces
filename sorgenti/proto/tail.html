@@ -1,0 +1,52 @@
+const M=[
+ {k:'arch',l:'Archeologia',e:'🏺',c:'--c-arch',d:'Siti e aree archeologiche divisi per civiltà.',s:{'Preistoria':'🦴','Nuragici':'🗿','Etruschi':'⚱️','Greci':'🏛️','Fenici':'⛵','Italici':'🛡️','Romani':'🏟️','Tardoantichi':'✝️','Medievali':'🏰','Altro':'❔'}},
+ {k:'mon',l:'Monumenti',e:'🏰',c:'--c-mon',d:'Castelli, palazzi, piazze e borghi.',s:{'Castelli':'🏰','Fortezze':'🛡️','Mura':'🧱','Torri':'🗼','Palazzi':'🏛️','Ville':'🏡','Piazze':'⛲','Centri':'🏙️','Borghi':'🏘️','Abbandonati':'🏚️','Portici':'🏛️','Teatri':'🎭','Ponti':'🌉','Fontane':'⛲','Monumenti':'🗽','Memoriali':'🕯️'}},
+ {k:'sacro',l:'Sacro',e:'⛪',c:'--c-sacro',d:'Chiese, abbazie e santuari.',s:{'Chiese':'⛪','Pievi':'⛪','Basiliche':'⛪','Duomi':'⛪','Abbazie':'📿','Conventi':'📿','Santuari':'🙏','Oratori':'🕍','Battisteri':'💧','Sinagoghe':'🕎','Monti sacri':'⛰️','Complessi':'🔔','Cimiteri':'🕯️'}},
+ {k:'musei',l:'Musei',e:'🖼️',c:'--c-musei',d:'Raccolte d\'arte, storia e scienza.',s:{'Pinacoteche':'🖼️','Moderna':'🎨','Archeologici':'🏺','Scienza':'🔭','Storia':'📜','Dimore':'🏠','Diocesani':'✝️','Etnografici':'🧺','Tecnica':'⚙️','Militari':'🎖️','Tematici':'🗂️'}},
+ {k:'nat',l:'Natura',e:'🌿',c:'--c-nat',d:'Parchi, acqua, montagna e panorami.',s:{'Parchi':'🌲','Riserve':'🦅','Giardini':'🌷','Orti':'🌱','Laghi':'🏞️','Fiumi':'🌊','Cascate':'💦','Spiagge':'🏖️','Montagna':'⛰️','Vulcani':'🌋','Grotte':'🕳️','Geositi':'🪨','Sentieri':'🥾','Panorami':'🌄'}},
+ {k:'trad',l:'Tradizioni',e:'🧺',c:'--c-trad',d:'Mercati, terme, sapori e curiosità.',s:{'Mercati':'🧺','Terme':'♨️','Sapori':'🍷','Botteghe':'🧵','Motori':'🏎️','Curiosità':'✨'}}];
+const TX=[['u','UNESCO','🌍','Patrimonio mondiale'],['g','Gratis','🆓','Ingresso libero'],['i','Coperti','☔','Al chiuso, se piove'],['v','Panorama','👀','Punti panoramici'],['b','Più belli','🏘️','Borghi più belli d\'Italia'],['a','Arancioni','🟠','Bandiere Arancioni Touring']];
+const RN={'abruzzo':'Abruzzo','campania':'Campania','emilia-romagna':'Emilia-Romagna','lazio':'Lazio','liguria':'Liguria','lombardia':'Lombardia','marche':'Marche','piemonte':'Piemonte','puglia':'Puglia','sardegna':'Sardegna','sicilia':'Sicilia','toscana':'Toscana','trentino-alto-adige':'Trentino-Alto Adige','umbria':'Umbria','valle-d-aosta':"Valle d'Aosta",'veneto':'Veneto'};
+const st={reg:'',q:'',open:'arch',sel:{},tx:new Set(),show:false,lim:40};
+const $=i=>document.getElementById(i);
+const regs=[...new Set(P.map(p=>p[2]))].sort();
+$('reg').innerHTML='<option value="">Tutta Italia (regioni presenti)</option>'+regs.map(r=>`<option value="${r}">${RN[r]||r}</option>`).join('');
+const norm=s=>s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+function base(){const q=norm(st.q);return P.filter(p=>(!st.reg||p[2]===st.reg)&&(!q||norm(p[0]+' '+p[1]).includes(q))&&[...st.tx].every(f=>p[5].includes(f)))}
+function selCount(k){return (st.sel[k]||new Set()).size}
+function match(p){const ks=Object.keys(st.sel).filter(k=>st.sel[k].size);if(!ks.length)return true;return ks.some(k=>p[3]===k&&p[4].some(s=>st.sel[k].has(s)))}
+function render(){
+ const B=base();const R=B.filter(match);
+ $('tot').textContent=B.length+' luoghi';
+ $('macros').innerHTML=M.map(m=>{const n=B.filter(p=>p[3]===m.k).length,c=selCount(m.k);
+  return `<button class="macro ${st.open===m.k?'on':''}" style="--mc:var(${m.c})" data-m="${m.k}"><span class="dot ${c?'show':''}">${c}</span><span class="e">${m.e}</span><b>${m.l}</b><span>${n}</span></button>`}).join('');
+ const m=M.find(x=>x.k===st.open);
+ if(m){const sel=st.sel[m.k]||new Set();const BM=B.filter(p=>p[3]===m.k);
+  $('panel').innerHTML=`<div class="panel" style="--mc:var(${m.c})"><h3>${m.e} ${m.l}</h3><p>${m.d} Puoi sceglierne più di una.</p><div class="chips">`+
+  Object.entries(m.s).map(([s,e])=>{const n=BM.filter(p=>p[4].includes(s)).length;return `<button class="chip ${sel.has(s)?'on':''} ${n?'':'zero'}" data-s="${s}">${e} ${s} <i>${n}</i></button>`}).join('')+`</div></div>`}
+ $('tx').innerHTML=TX.map(([k,l,e,h])=>`<button class="tog ${st.tx.has(k)?'on':''}" data-t="${k}"><span class="e">${e}</span><span><b>${l}</b><small>${h}</small></span></button>`).join('');
+ const pills=[];for(const k in st.sel)for(const s of st.sel[k])pills.push(`<button class="pill" data-rm="${k}|${s}">${s} ✕</button>`);
+ for(const t of st.tx)pills.push(`<button class="pill" data-rt="${t}">${TX.find(x=>x[0]===t)[1]} ✕</button>`);
+ $('active').innerHTML=pills.join('');
+ $('cta').textContent=`Mostra ${R.length} ${R.length===1?'luogo':'luoghi'}`;
+ if(st.show){const mm=Object.fromEntries(M.map(x=>[x.k,x]));
+  $('res').innerHTML=`<div class="sec">Risultati <small>${R.length}</small></div>`+R.slice(0,st.lim).map(p=>{const x=mm[p[3]];
+   const b=(p[5].includes('u')?'🌍':'')+(p[5].includes('g')?'🆓':'')+(p[5].includes('i')?'☔':'');
+   return `<div class="card" style="--mc:var(${x.c})"><div class="k">${x.e} ${p[4].join(' · ')}</div><h4>${p[0]}<span class="badges">${b}</span></h4><div class="w">${p[1]} · ${RN[p[2]]||p[2]}</div><p>${p[6]}${p[6].length>=130?'…':''}</p></div>`}).join('')+
+   (R.length>st.lim?`<button class="btn more" id="more">Altri ${Math.min(40,R.length-st.lim)}</button>`:'')}
+ else $('res').innerHTML='';
+}
+document.addEventListener('click',e=>{const t=e.target.closest('button');if(!t)return;
+ if(t.dataset.m){st.open=st.open===t.dataset.m?null:t.dataset.m}
+ else if(t.dataset.s){const k=st.open;st.sel[k]=st.sel[k]||new Set();st.sel[k].has(t.dataset.s)?st.sel[k].delete(t.dataset.s):st.sel[k].add(t.dataset.s);st.lim=40}
+ else if(t.dataset.t){st.tx.has(t.dataset.t)?st.tx.delete(t.dataset.t):st.tx.add(t.dataset.t);st.lim=40}
+ else if(t.dataset.rm){const[k,s]=t.dataset.rm.split('|');st.sel[k].delete(s)}
+ else if(t.dataset.rt){st.tx.delete(t.dataset.rt)}
+ else if(t.id==='cta'){st.show=true;st.lim=40;render();$('res').scrollIntoView({behavior:'smooth'});return}
+ else if(t.id==='more'){st.lim+=40}
+ else if(t.id==='reset'){st.sel={};st.tx.clear();st.q='';$('q').value='';st.show=false}
+ else return;render()});
+$('reg').onchange=e=>{st.reg=e.target.value;render()};
+$('q').oninput=e=>{st.q=e.target.value;render()};
+render();
+</script></body></html>

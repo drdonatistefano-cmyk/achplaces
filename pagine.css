@@ -1,0 +1,59 @@
+/* 22/11/2026: grafica istituzionale dal logo di Places (coccarda verde). Solo questo file: le pagine non cambiano. */
+@font-face{font-family:"Space Grotesk";font-weight:600;font-display:swap;src:url(/font/space-grotesk-600.woff2) format("woff2")}
+@font-face{font-family:"Space Grotesk";font-weight:700;font-display:swap;src:url(/font/space-grotesk-700.woff2) format("woff2")}
+:root{--ink:#231d18;--soft:#6f655a;--line:#e6dccb;--paper:#fffdf9;--bg:#f6efe4;--acc:#2f7a5c;--acc-ink:#225c45;--acc-soft:#e7f1eb;
+--head:"Space Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif}
+@media(prefers-color-scheme:dark){:root{--ink:#f2ebe1;--soft:#b0a597;--line:#302a25;--paper:#1d1a17;--bg:#141210;--acc:#7cc3a1;--acc-ink:#a6dbc0;--acc-soft:#1b2a23}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.65 var(--sans);-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased}
+main.w{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:28px 32px 34px;box-shadow:0 1px 2px rgba(35,29,24,.04),0 10px 30px -18px rgba(35,29,24,.18)}
+@media(max-width:560px){main.w{border-radius:0;border-left:0;border-right:0;padding:22px 18px 28px}}
+.w{max-width:780px;margin:0 auto;padding:0 20px}
+header.top{background:var(--paper);border-bottom:1px solid var(--line);padding:12px 0;margin-bottom:28px}
+@media(min-width:561px){header.top{position:sticky;top:0;z-index:5}}
+header.top .w{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center}
+.marchio{display:inline-flex;align-items:center;gap:10px;font:700 17px/1 var(--head);letter-spacing:-.01em;text-decoration:none;color:var(--ink)}
+.marchio::before{content:"";width:34px;height:34px;flex:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%232f7a5c'/%3E%3Ccircle cx='50' cy='50' r='42' fill='none' stroke='%23f6efe4' stroke-width='2.4'/%3E%3Cg transform='translate(17 15) scale(.66)' stroke='%23f6efe4' stroke-width='7' stroke-linecap='round' stroke-linejoin='round' fill='none'%3E%3Cpath d='M50 86C50 86 24 58 24 40a26 26 0 0 1 52 0C76 58 50 86 50 86Z'/%3E%3Ccircle cx='50' cy='40' r='5' fill='%23f6efe4'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat}
+nav.guide{margin-left:auto;display:flex;gap:6px;font-size:14px}
+nav.guide a{color:var(--ink);text-decoration:none;padding:7px 12px;border:1px solid var(--line);border-radius:999px;font-weight:600;background:var(--paper)}
+nav.guide a:hover{border-color:var(--acc);background:var(--acc-soft);color:var(--acc-ink)}
+@media(max-width:560px){nav.guide{margin-left:0;width:100%}nav.guide a{flex:1;text-align:center;padding:7px 6px}}
+.briciole{font-size:13.5px;color:var(--soft);margin:0 0 12px}
+.briciole a{color:var(--soft);text-decoration-color:var(--line)}
+h1,h2,h3{font-family:var(--head);letter-spacing:-.02em;color:var(--ink)}
+h1{font-size:34px;line-height:1.12;margin:0 0 12px;font-weight:700}
+h2{font-size:23px;line-height:1.2;margin:34px 0 6px;scroll-margin-top:76px;font-weight:700}
+h3{font-size:18.5px;line-height:1.25;margin:26px 0 4px;font-weight:600;scroll-margin-top:76px}
+h3 a,h2 a{color:var(--ink);text-decoration:none}
+h3 a:hover,h2 a:hover{color:var(--acc-ink);text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--acc) 40%,transparent);text-underline-offset:3px}
+:target{scroll-margin-top:76px}@media(max-width:560px){:target,h2,h3{scroll-margin-top:12px}}h3:target{color:var(--acc-ink)}
+article.luogo:has(h3:target){background:var(--acc-soft);border-radius:12px;padding:14px 16px 6px;margin-left:-16px;margin-right:-16px;border-top-color:transparent}
+.lede{font-size:18px;color:color-mix(in srgb,var(--ink) 82%,var(--paper));margin:0 0 18px}
+.avviso{background:#fbf3e2;border:1px solid #ecdcb8;border-radius:12px;padding:12px 14px;margin:18px 0;font-size:15px;color:#4a3a1c}
+@media(prefers-color-scheme:dark){.avviso{background:#2c2416;border-color:#4a3c22;color:#ecdcb8}}
+.apri{display:inline-flex;align-items:center;gap:8px;margin:6px 0 22px;padding:11px 18px;border:0;border-radius:999px;background:var(--acc);
+color:#fff;text-decoration:none;font:600 15px var(--sans);box-shadow:0 6px 16px -8px color-mix(in srgb,var(--acc) 70%,transparent)}
+.apri::after{content:"\2192"}
+.apri:hover{background:var(--acc-ink)}
+article.luogo{border-top:1px solid var(--line);padding-top:18px;margin-top:26px}
+.meta{font-size:13.5px;color:var(--acc-ink);font-weight:600;margin:2px 0 8px}
+.tag{display:inline-block;margin-right:8px}
+ul.fatti{list-style:none;padding:0;margin:12px 0;font-size:15px;border-left:3px solid var(--acc-soft);padding-left:14px}
+ul.fatti li{margin:4px 0}
+ul.fatti b{font-weight:600;color:var(--soft)}
+.fonti{font-size:13.5px;color:var(--soft)}
+.fonti a{color:var(--soft)}
+ul.elenco{columns:2;column-gap:28px;padding-left:18px}
+ul.elenco li::marker{color:var(--acc)}
+@media(max-width:560px){ul.elenco{columns:1}h1{font-size:27px}}
+a{color:var(--acc-ink);text-underline-offset:2px}
+footer{margin-top:28px;padding:20px 0 40px;font-size:13.5px;color:var(--soft)}
+/* 22/11 sera: come «🧭 Guida» di AchRecipes, sul telefono «Mappa e filtri» diventa un pulsante che galleggia in fondo */
+@media(max-width:560px){
+nav.guide a[href="/"]{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(16px + env(safe-area-inset-bottom));z-index:20;flex:none;width:auto;
+display:inline-flex;align-items:center;gap:8px;height:50px;padding:0 24px;border:0;border-radius:999px;color:#fff;font:700 16px var(--sans);
+background:#2f7a5c linear-gradient(135deg,#2f7a5c,#3b9270);box-shadow:0 12px 28px -10px rgba(29,74,56,.85)}
+nav.guide a[href="/"]::before{content:"\1F9ED";font-size:18px}
+nav.guide a[href="/"]:hover{background:linear-gradient(135deg,#225c45,#2f7a5c);color:#fff}
+body{padding-bottom:84px}
+}
+footer a{color:var(--soft)}

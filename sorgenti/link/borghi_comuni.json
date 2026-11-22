@@ -1,0 +1,1612 @@
+[
+{
+"slug": "dozza-bo",
+"nome": "Dozza",
+"prov": "BO"
+},
+{
+"slug": "brisighella-ra",
+"nome": "Brisighella",
+"prov": "RA"
+},
+{
+"slug": "bagnara-di-romagna-ra",
+"nome": "Bagnara di Romagna",
+"prov": "RA"
+},
+{
+"slug": "bertinoro-fc",
+"nome": "Bertinoro",
+"prov": "FC"
+},
+{
+"slug": "bagno-di-romagna-fc",
+"nome": "Bagno di Romagna",
+"prov": "FC"
+},
+{
+"slug": "verucchio-rn",
+"nome": "Verucchio",
+"prov": "RN"
+},
+{
+"slug": "san-leo-rn",
+"nome": "San Leo",
+"prov": "RN"
+},
+{
+"slug": "montefiore-conca-rn",
+"nome": "Montefiore Conca",
+"prov": "RN"
+},
+{
+"slug": "montegridolfo-rn",
+"nome": "Montegridolfo",
+"prov": "RN"
+},
+{
+"slug": "san-giovanni-in-marignano-rn",
+"nome": "San Giovanni in Marignano",
+"prov": "RN"
+},
+{
+"slug": "fiumalbo-mo",
+"nome": "Fiumalbo",
+"prov": "MO"
+},
+{
+"slug": "gualtieri-re",
+"nome": "Gualtieri",
+"prov": "RE"
+},
+{
+"slug": "compiano-pr",
+"nome": "Compiano",
+"prov": "PR"
+},
+{
+"slug": "montechiarugolo-pr",
+"nome": "Montechiarugolo",
+"prov": "PR"
+},
+{
+"slug": "bobbio-pc",
+"nome": "Bobbio",
+"prov": "PC"
+},
+{
+"slug": "castell-arquato-pc",
+"nome": "Castell'Arquato",
+"prov": "PC"
+},
+{
+"slug": "vernasca-pc",
+"nome": "Vernasca",
+"prov": "PC"
+},
+{
+"slug": "barberino-tavarnelle-fi",
+"nome": "Barberino Tavarnelle",
+"prov": "FI"
+},
+{
+"slug": "greve-in-chianti-fi",
+"nome": "Greve in Chianti",
+"prov": "FI"
+},
+{
+"slug": "montaione-fi",
+"nome": "Montaione",
+"prov": "FI"
+},
+{
+"slug": "scarperia-e-san-piero-fi",
+"nome": "Scarperia e San Piero",
+"prov": "FI"
+},
+{
+"slug": "palazzuolo-sul-senio-fi",
+"nome": "Palazzuolo sul Senio",
+"prov": "FI"
+},
+{
+"slug": "cetona-si",
+"nome": "Cetona",
+"prov": "SI"
+},
+{
+"slug": "san-casciano-dei-bagni-si",
+"nome": "San Casciano dei Bagni",
+"prov": "SI"
+},
+{
+"slug": "buonconvento-si",
+"nome": "Buonconvento",
+"prov": "SI"
+},
+{
+"slug": "anghiari-ar",
+"nome": "Anghiari",
+"prov": "AR"
+},
+{
+"slug": "lucignano-ar",
+"nome": "Lucignano",
+"prov": "AR"
+},
+{
+"slug": "loro-ciuffenna-ar",
+"nome": "Loro Ciuffenna",
+"prov": "AR"
+},
+{
+"slug": "ortignano-raggiolo-ar",
+"nome": "Ortignano Raggiolo",
+"prov": "AR"
+},
+{
+"slug": "castelfranco-piandisco-ar",
+"nome": "Castelfranco Piandiscò",
+"prov": "AR"
+},
+{
+"slug": "poppi-ar",
+"nome": "Poppi",
+"prov": "AR"
+},
+{
+"slug": "barga-lu",
+"nome": "Barga",
+"prov": "LU"
+},
+{
+"slug": "castiglione-di-garfagnana-lu",
+"nome": "Castiglione di Garfagnana",
+"prov": "LU"
+},
+{
+"slug": "coreglia-antelminelli-lu",
+"nome": "Coreglia Antelminelli",
+"prov": "LU"
+},
+{
+"slug": "pitigliano-gr",
+"nome": "Pitigliano",
+"prov": "GR"
+},
+{
+"slug": "sorano-gr",
+"nome": "Sorano",
+"prov": "GR"
+},
+{
+"slug": "capalbio-gr",
+"nome": "Capalbio",
+"prov": "GR"
+},
+{
+"slug": "isola-del-giglio-gr",
+"nome": "Isola del Giglio",
+"prov": "GR"
+},
+{
+"slug": "manciano-gr",
+"nome": "Manciano",
+"prov": "GR"
+},
+{
+"slug": "monte-argentario-gr",
+"nome": "Monte Argentario",
+"prov": "GR"
+},
+{
+"slug": "santa-fiora-gr",
+"nome": "Santa Fiora",
+"prov": "GR"
+},
+{
+"slug": "casale-marittimo-pi",
+"nome": "Casale Marittimo",
+"prov": "PI"
+},
+{
+"slug": "montescudaio-pi",
+"nome": "Montescudaio",
+"prov": "PI"
+},
+{
+"slug": "suvereto-li",
+"nome": "Suvereto",
+"prov": "LI"
+},
+{
+"slug": "piombino-li",
+"nome": "Piombino",
+"prov": "LI"
+},
+{
+"slug": "mulazzo-ms",
+"nome": "Mulazzo",
+"prov": "MS"
+},
+{
+"slug": "subiaco-rm",
+"nome": "Subiaco",
+"prov": "RM"
+},
+{
+"slug": "capranica-prenestina-rm",
+"nome": "Capranica Prenestina",
+"prov": "RM"
+},
+{
+"slug": "nemi-rm",
+"nome": "Nemi",
+"prov": "RM"
+},
+{
+"slug": "castel-gandolfo-rm",
+"nome": "Castel Gandolfo",
+"prov": "RM"
+},
+{
+"slug": "castel-san-pietro-romano-rm",
+"nome": "Castel San Pietro Romano",
+"prov": "RM"
+},
+{
+"slug": "castelnuovo-di-porto-rm",
+"nome": "Castelnuovo di Porto",
+"prov": "RM"
+},
+{
+"slug": "percile-rm",
+"nome": "Percile",
+"prov": "RM"
+},
+{
+"slug": "sperlonga-lt",
+"nome": "Sperlonga",
+"prov": "LT"
+},
+{
+"slug": "campodimele-lt",
+"nome": "Campodimele",
+"prov": "LT"
+},
+{
+"slug": "atina-fr",
+"nome": "Atina",
+"prov": "FR"
+},
+{
+"slug": "castro-dei-volsci-fr",
+"nome": "Castro dei Volsci",
+"prov": "FR"
+},
+{
+"slug": "boville-ernica-fr",
+"nome": "Boville Ernica",
+"prov": "FR"
+},
+{
+"slug": "monte-san-giovanni-campano-fr",
+"nome": "Monte San Giovanni Campano",
+"prov": "FR"
+},
+{
+"slug": "pico-fr",
+"nome": "Pico",
+"prov": "FR"
+},
+{
+"slug": "magliano-sabina-ri",
+"nome": "Magliano Sabina",
+"prov": "RI"
+},
+{
+"slug": "castel-di-tora-ri",
+"nome": "Castel di Tora",
+"prov": "RI"
+},
+{
+"slug": "collalto-sabino-ri",
+"nome": "Collalto Sabino",
+"prov": "RI"
+},
+{
+"slug": "greccio-ri",
+"nome": "Greccio",
+"prov": "RI"
+},
+{
+"slug": "orvinio-ri",
+"nome": "Orvinio",
+"prov": "RI"
+},
+{
+"slug": "bagnoregio-vt",
+"nome": "Bagnoregio",
+"prov": "VT"
+},
+{
+"slug": "caprarola-vt",
+"nome": "Caprarola",
+"prov": "VT"
+},
+{
+"slug": "vitorchiano-vt",
+"nome": "Vitorchiano",
+"prov": "VT"
+},
+{
+"slug": "sutri-vt",
+"nome": "Sutri",
+"prov": "VT"
+},
+{
+"slug": "acquapendente-vt",
+"nome": "Acquapendente",
+"prov": "VT"
+},
+{
+"slug": "ronciglione-vt",
+"nome": "Ronciglione",
+"prov": "VT"
+},
+{
+"slug": "bassano-in-teverina-vt",
+"nome": "Bassano in Teverina",
+"prov": "VT"
+},
+{
+"slug": "castellabate-sa",
+"nome": "Castellabate",
+"prov": "SA"
+},
+{
+"slug": "furore-sa",
+"nome": "Furore",
+"prov": "SA"
+},
+{
+"slug": "atrani-sa",
+"nome": "Atrani",
+"prov": "SA"
+},
+{
+"slug": "conca-dei-marini-sa",
+"nome": "Conca dei Marini",
+"prov": "SA"
+},
+{
+"slug": "vietri-sul-mare-sa",
+"nome": "Vietri sul Mare",
+"prov": "SA"
+},
+{
+"slug": "summonte-av",
+"nome": "Summonte",
+"prov": "AV"
+},
+{
+"slug": "nusco-av",
+"nome": "Nusco",
+"prov": "AV"
+},
+{
+"slug": "frigento-av",
+"nome": "Frigento",
+"prov": "AV"
+},
+{
+"slug": "gesualdo-av",
+"nome": "Gesualdo",
+"prov": "AV"
+},
+{
+"slug": "monteverde-av",
+"nome": "Monteverde",
+"prov": "AV"
+},
+{
+"slug": "savignano-irpino-av",
+"nome": "Savignano Irpino",
+"prov": "AV"
+},
+{
+"slug": "zungoli-av",
+"nome": "Zungoli",
+"prov": "AV"
+},
+{
+"slug": "montesarchio-bn",
+"nome": "Montesarchio",
+"prov": "BN"
+},
+{
+"slug": "cusano-mutri-bn",
+"nome": "Cusano Mutri",
+"prov": "BN"
+},
+{
+"slug": "sant-agata-de-goti-bn",
+"nome": "Sant'Agata de' Goti",
+"prov": "BN"
+},
+{
+"slug": "locorotondo-ba",
+"nome": "Locorotondo",
+"prov": "BA"
+},
+{
+"slug": "sammichele-di-bari-ba",
+"nome": "Sammichele di Bari",
+"prov": "BA"
+},
+{
+"slug": "cisternino-br",
+"nome": "Cisternino",
+"prov": "BR"
+},
+{
+"slug": "monte-sant-angelo-fg",
+"nome": "Monte Sant'Angelo",
+"prov": "FG"
+},
+{
+"slug": "bovino-fg",
+"nome": "Bovino",
+"prov": "FG"
+},
+{
+"slug": "alberona-fg",
+"nome": "Alberona",
+"prov": "FG"
+},
+{
+"slug": "vico-del-gargano-fg",
+"nome": "Vico del Gargano",
+"prov": "FG"
+},
+{
+"slug": "pietramontecorvino-fg",
+"nome": "Pietramontecorvino",
+"prov": "FG"
+},
+{
+"slug": "roseto-valfortore-fg",
+"nome": "Roseto Valfortore",
+"prov": "FG"
+},
+{
+"slug": "otranto-le",
+"nome": "Otranto",
+"prov": "LE"
+},
+{
+"slug": "specchia-le",
+"nome": "Specchia",
+"prov": "LE"
+},
+{
+"slug": "presicce-acquarica-le",
+"nome": "Presicce-Acquarica",
+"prov": "LE"
+},
+{
+"slug": "maruggio-ta",
+"nome": "Maruggio",
+"prov": "TA"
+},
+{
+"slug": "cefalu-pa",
+"nome": "Cefalù",
+"prov": "PA"
+},
+{
+"slug": "geraci-siculo-pa",
+"nome": "Geraci Siculo",
+"prov": "PA"
+},
+{
+"slug": "gangi-pa",
+"nome": "Gangi",
+"prov": "PA"
+},
+{
+"slug": "petralia-soprana-pa",
+"nome": "Petralia Soprana",
+"prov": "PA"
+},
+{
+"slug": "militello-in-val-di-catania-ct",
+"nome": "Militello in Val di Catania",
+"prov": "CT"
+},
+{
+"slug": "castiglione-di-sicilia-ct",
+"nome": "Castiglione di Sicilia",
+"prov": "CT"
+},
+{
+"slug": "castroreale-me",
+"nome": "Castroreale",
+"prov": "ME"
+},
+{
+"slug": "novara-di-sicilia-me",
+"nome": "Novara di Sicilia",
+"prov": "ME"
+},
+{
+"slug": "san-marco-d-alunzio-me",
+"nome": "San Marco d'Alunzio",
+"prov": "ME"
+},
+{
+"slug": "savoca-me",
+"nome": "Savoca",
+"prov": "ME"
+},
+{
+"slug": "castelmola-me",
+"nome": "Castelmola",
+"prov": "ME"
+},
+{
+"slug": "forza-d-agro-me",
+"nome": "Forza d'Agrò",
+"prov": "ME"
+},
+{
+"slug": "montalbano-elicona-me",
+"nome": "Montalbano Elicona",
+"prov": "ME"
+},
+{
+"slug": "sambuca-di-sicilia-ag",
+"nome": "Sambuca di Sicilia",
+"prov": "AG"
+},
+{
+"slug": "sutera-cl",
+"nome": "Sutera",
+"prov": "CL"
+},
+{
+"slug": "sperlinga-en",
+"nome": "Sperlinga",
+"prov": "EN"
+},
+{
+"slug": "calascibetta-en",
+"nome": "Calascibetta",
+"prov": "EN"
+},
+{
+"slug": "troina-en",
+"nome": "Troina",
+"prov": "EN"
+},
+{
+"slug": "monterosso-almo-rg",
+"nome": "Monterosso Almo",
+"prov": "RG"
+},
+{
+"slug": "palazzolo-acreide-sr",
+"nome": "Palazzolo Acreide",
+"prov": "SR"
+},
+{
+"slug": "buccheri-sr",
+"nome": "Buccheri",
+"prov": "SR"
+},
+{
+"slug": "ferla-sr",
+"nome": "Ferla",
+"prov": "SR"
+},
+{
+"slug": "erice-tp",
+"nome": "Erice",
+"prov": "TP"
+},
+{
+"slug": "salemi-tp",
+"nome": "Salemi",
+"prov": "TP"
+},
+{
+"slug": "la-maddalena-ss",
+"nome": "La Maddalena",
+"prov": "SS"
+},
+{
+"slug": "tempio-pausania-ss",
+"nome": "Tempio Pausania",
+"prov": "SS"
+},
+{
+"slug": "castelsardo-ss",
+"nome": "Castelsardo",
+"prov": "SS"
+},
+{
+"slug": "atzara-nu",
+"nome": "Atzara",
+"prov": "NU"
+},
+{
+"slug": "bosa-or",
+"nome": "Bosa",
+"prov": "OR"
+},
+{
+"slug": "carloforte-su",
+"nome": "Carloforte",
+"prov": "SU"
+},
+{
+"slug": "sadali-su",
+"nome": "Sadali",
+"prov": "SU"
+},
+{
+"slug": "morimondo-mi",
+"nome": "Morimondo",
+"prov": "MI"
+},
+{
+"slug": "cassinetta-di-lugagnano-mi",
+"nome": "Cassinetta di Lugagnano",
+"prov": "MI"
+},
+{
+"slug": "lovere-bg",
+"nome": "Lovere",
+"prov": "BG"
+},
+{
+"slug": "clusone-bg",
+"nome": "Clusone",
+"prov": "BG"
+},
+{
+"slug": "camerata-cornello-bg",
+"nome": "Camerata Cornello",
+"prov": "BG"
+},
+{
+"slug": "gromo-bg",
+"nome": "Gromo",
+"prov": "BG"
+},
+{
+"slug": "bienno-bs",
+"nome": "Bienno",
+"prov": "BS"
+},
+{
+"slug": "gardone-riviera-bs",
+"nome": "Gardone Riviera",
+"prov": "BS"
+},
+{
+"slug": "bagolino-bs",
+"nome": "Bagolino",
+"prov": "BS"
+},
+{
+"slug": "limone-sul-garda-bs",
+"nome": "Limone sul Garda",
+"prov": "BS"
+},
+{
+"slug": "monte-isola-bs",
+"nome": "Monte Isola",
+"prov": "BS"
+},
+{
+"slug": "tremosine-sul-garda-bs",
+"nome": "Tremosine sul Garda",
+"prov": "BS"
+},
+{
+"slug": "tremezzina-co",
+"nome": "Tremezzina",
+"prov": "CO"
+},
+{
+"slug": "soncino-cr",
+"nome": "Soncino",
+"prov": "CR"
+},
+{
+"slug": "pandino-cr",
+"nome": "Pandino",
+"prov": "CR"
+},
+{
+"slug": "scandolara-ravara-cr",
+"nome": "Scandolara Ravara",
+"prov": "CR"
+},
+{
+"slug": "bellano-lc",
+"nome": "Bellano",
+"prov": "LC"
+},
+{
+"slug": "dervio-lc",
+"nome": "Dervio",
+"prov": "LC"
+},
+{
+"slug": "sabbioneta-mn",
+"nome": "Sabbioneta",
+"prov": "MN"
+},
+{
+"slug": "san-benedetto-po-mn",
+"nome": "San Benedetto Po",
+"prov": "MN"
+},
+{
+"slug": "curtatone-mn",
+"nome": "Curtatone",
+"prov": "MN"
+},
+{
+"slug": "monzambano-mn",
+"nome": "Monzambano",
+"prov": "MN"
+},
+{
+"slug": "pomponesco-mn",
+"nome": "Pomponesco",
+"prov": "MN"
+},
+{
+"slug": "zavattarello-pv",
+"nome": "Zavattarello",
+"prov": "PV"
+},
+{
+"slug": "fortunago-pv",
+"nome": "Fortunago",
+"prov": "PV"
+},
+{
+"slug": "golferenzo-pv",
+"nome": "Golferenzo",
+"prov": "PV"
+},
+{
+"slug": "varzi-pv",
+"nome": "Varzi",
+"prov": "PV"
+},
+{
+"slug": "maccagno-con-pino-e-veddasca-va",
+"nome": "Maccagno con Pino e Veddasca",
+"prov": "VA"
+},
+{
+"slug": "malcesine-vr",
+"nome": "Malcesine",
+"prov": "VR"
+},
+{
+"slug": "sant-ambrogio-di-valpolicella-vr",
+"nome": "Sant'Ambrogio di Valpolicella",
+"prov": "VR"
+},
+{
+"slug": "valeggio-sul-mincio-vr",
+"nome": "Valeggio sul Mincio",
+"prov": "VR"
+},
+{
+"slug": "arqua-petrarca-pd",
+"nome": "Arquà Petrarca",
+"prov": "PD"
+},
+{
+"slug": "montagnana-pd",
+"nome": "Montagnana",
+"prov": "PD"
+},
+{
+"slug": "asolo-tv",
+"nome": "Asolo",
+"prov": "TV"
+},
+{
+"slug": "cison-di-valmarino-tv",
+"nome": "Cison di Valmarino",
+"prov": "TV"
+},
+{
+"slug": "follina-tv",
+"nome": "Follina",
+"prov": "TV"
+},
+{
+"slug": "portobuffole-tv",
+"nome": "Portobuffolè",
+"prov": "TV"
+},
+{
+"slug": "borgo-valbelluna-bl",
+"nome": "Borgo Valbelluna",
+"prov": "BL"
+},
+{
+"slug": "rocca-pietore-bl",
+"nome": "Rocca Pietore",
+"prov": "BL"
+},
+{
+"slug": "luserna-tn",
+"nome": "Luserna",
+"prov": "TN"
+},
+{
+"slug": "borgo-valsugana-tn",
+"nome": "Borgo Valsugana",
+"prov": "TN"
+},
+{
+"slug": "pieve-tesino-tn",
+"nome": "Pieve Tesino",
+"prov": "TN"
+},
+{
+"slug": "tenno-tn",
+"nome": "Tenno",
+"prov": "TN"
+},
+{
+"slug": "bleggio-superiore-tn",
+"nome": "Bleggio Superiore",
+"prov": "TN"
+},
+{
+"slug": "bondone-tn",
+"nome": "Bondone",
+"prov": "TN"
+},
+{
+"slug": "mezzano-tn",
+"nome": "Mezzano",
+"prov": "TN"
+},
+{
+"slug": "ossana-tn",
+"nome": "Ossana",
+"prov": "TN"
+},
+{
+"slug": "san-giovanni-di-fassa-tn",
+"nome": "San Giovanni di Fassa",
+"prov": "TN"
+},
+{
+"slug": "san-lorenzo-dorsino-tn",
+"nome": "San Lorenzo Dorsino",
+"prov": "TN"
+},
+{
+"slug": "chiusa-bz",
+"nome": "Chiusa",
+"prov": "BZ"
+},
+{
+"slug": "egna-bz",
+"nome": "Egna",
+"prov": "BZ"
+},
+{
+"slug": "vipiteno-bz",
+"nome": "Vipiteno",
+"prov": "BZ"
+},
+{
+"slug": "castelrotto-bz",
+"nome": "Castelrotto",
+"prov": "BZ"
+},
+{
+"slug": "glorenza-bz",
+"nome": "Glorenza",
+"prov": "BZ"
+},
+{
+"slug": "spello-pg",
+"nome": "Spello",
+"prov": "PG"
+},
+{
+"slug": "bevagna-pg",
+"nome": "Bevagna",
+"prov": "PG"
+},
+{
+"slug": "montefalco-pg",
+"nome": "Montefalco",
+"prov": "PG"
+},
+{
+"slug": "trevi-pg",
+"nome": "Trevi",
+"prov": "PG"
+},
+{
+"slug": "norcia-pg",
+"nome": "Norcia",
+"prov": "PG"
+},
+{
+"slug": "castiglione-del-lago-pg",
+"nome": "Castiglione del Lago",
+"prov": "PG"
+},
+{
+"slug": "deruta-pg",
+"nome": "Deruta",
+"prov": "PG"
+},
+{
+"slug": "torgiano-pg",
+"nome": "Torgiano",
+"prov": "PG"
+},
+{
+"slug": "corciano-pg",
+"nome": "Corciano",
+"prov": "PG"
+},
+{
+"slug": "panicale-pg",
+"nome": "Panicale",
+"prov": "PG"
+},
+{
+"slug": "bettona-pg",
+"nome": "Bettona",
+"prov": "PG"
+},
+{
+"slug": "monte-castello-di-vibio-pg",
+"nome": "Monte Castello di Vibio",
+"prov": "PG"
+},
+{
+"slug": "massa-martana-pg",
+"nome": "Massa Martana",
+"prov": "PG"
+},
+{
+"slug": "citerna-pg",
+"nome": "Citerna",
+"prov": "PG"
+},
+{
+"slug": "montone-pg",
+"nome": "Montone",
+"prov": "PG"
+},
+{
+"slug": "paciano-pg",
+"nome": "Paciano",
+"prov": "PG"
+},
+{
+"slug": "vallo-di-nera-pg",
+"nome": "Vallo di Nera",
+"prov": "PG"
+},
+{
+"slug": "allerona-tr",
+"nome": "Allerona",
+"prov": "TR"
+},
+{
+"slug": "san-gemini-tr",
+"nome": "San Gemini",
+"prov": "TR"
+},
+{
+"slug": "lugnano-in-teverina-tr",
+"nome": "Lugnano in Teverina",
+"prov": "TR"
+},
+{
+"slug": "acquasparta-tr",
+"nome": "Acquasparta",
+"prov": "TR"
+},
+{
+"slug": "arrone-tr",
+"nome": "Arrone",
+"prov": "TR"
+},
+{
+"slug": "sassoferrato-an",
+"nome": "Sassoferrato",
+"prov": "AN"
+},
+{
+"slug": "offagna-an",
+"nome": "Offagna",
+"prov": "AN"
+},
+{
+"slug": "corinaldo-an",
+"nome": "Corinaldo",
+"prov": "AN"
+},
+{
+"slug": "morro-d-alba-an",
+"nome": "Morro d'Alba",
+"prov": "AN"
+},
+{
+"slug": "macerata-feltria-pu",
+"nome": "Macerata Feltria",
+"prov": "PU"
+},
+{
+"slug": "frontino-pu",
+"nome": "Frontino",
+"prov": "PU"
+},
+{
+"slug": "mercatello-sul-metauro-pu",
+"nome": "Mercatello sul Metauro",
+"prov": "PU"
+},
+{
+"slug": "mondavio-pu",
+"nome": "Mondavio",
+"prov": "PU"
+},
+{
+"slug": "gradara-pu",
+"nome": "Gradara",
+"prov": "PU"
+},
+{
+"slug": "mondolfo-pu",
+"nome": "Mondolfo",
+"prov": "PU"
+},
+{
+"slug": "monte-grimano-terme-pu",
+"nome": "Monte Grimano Terme",
+"prov": "PU"
+},
+{
+"slug": "vallefoglia-pu",
+"nome": "Vallefoglia",
+"prov": "PU"
+},
+{
+"slug": "cingoli-mc",
+"nome": "Cingoli",
+"prov": "MC"
+},
+{
+"slug": "montecassiano-mc",
+"nome": "Montecassiano",
+"prov": "MC"
+},
+{
+"slug": "treia-mc",
+"nome": "Treia",
+"prov": "MC"
+},
+{
+"slug": "montelupone-mc",
+"nome": "Montelupone",
+"prov": "MC"
+},
+{
+"slug": "montecosaro-mc",
+"nome": "Montecosaro",
+"prov": "MC"
+},
+{
+"slug": "san-ginesio-mc",
+"nome": "San Ginesio",
+"prov": "MC"
+},
+{
+"slug": "sarnano-mc",
+"nome": "Sarnano",
+"prov": "MC"
+},
+{
+"slug": "visso-mc",
+"nome": "Visso",
+"prov": "MC"
+},
+{
+"slug": "ripatransone-ap",
+"nome": "Ripatransone",
+"prov": "AP"
+},
+{
+"slug": "grottammare-ap",
+"nome": "Grottammare",
+"prov": "AP"
+},
+{
+"slug": "montefiore-dell-aso-ap",
+"nome": "Montefiore dell'Aso",
+"prov": "AP"
+},
+{
+"slug": "offida-ap",
+"nome": "Offida",
+"prov": "AP"
+},
+{
+"slug": "moresco-fm",
+"nome": "Moresco",
+"prov": "FM"
+},
+{
+"slug": "scanno-aq",
+"nome": "Scanno",
+"prov": "AQ"
+},
+{
+"slug": "pescocostanzo-aq",
+"nome": "Pescocostanzo",
+"prov": "AQ"
+},
+{
+"slug": "tagliacozzo-aq",
+"nome": "Tagliacozzo",
+"prov": "AQ"
+},
+{
+"slug": "castel-del-monte-aq",
+"nome": "Castel del Monte",
+"prov": "AQ"
+},
+{
+"slug": "opi-aq",
+"nome": "Opi",
+"prov": "AQ"
+},
+{
+"slug": "villalago-aq",
+"nome": "Villalago",
+"prov": "AQ"
+},
+{
+"slug": "anversa-degli-abruzzi-aq",
+"nome": "Anversa degli Abruzzi",
+"prov": "AQ"
+},
+{
+"slug": "bugnara-aq",
+"nome": "Bugnara",
+"prov": "AQ"
+},
+{
+"slug": "introdacqua-aq",
+"nome": "Introdacqua",
+"prov": "AQ"
+},
+{
+"slug": "navelli-aq",
+"nome": "Navelli",
+"prov": "AQ"
+},
+{
+"slug": "pacentro-aq",
+"nome": "Pacentro",
+"prov": "AQ"
+},
+{
+"slug": "pettorano-sul-gizio-aq",
+"nome": "Pettorano sul Gizio",
+"prov": "AQ"
+},
+{
+"slug": "santo-stefano-di-sessanio-aq",
+"nome": "Santo Stefano di Sessanio",
+"prov": "AQ"
+},
+{
+"slug": "castelli-te",
+"nome": "Castelli",
+"prov": "TE"
+},
+{
+"slug": "civitella-del-tronto-te",
+"nome": "Civitella del Tronto",
+"prov": "TE"
+},
+{
+"slug": "pietracamela-te",
+"nome": "Pietracamela",
+"prov": "TE"
+},
+{
+"slug": "penne-pe",
+"nome": "Penne",
+"prov": "PE"
+},
+{
+"slug": "citta-sant-angelo-pe",
+"nome": "Città Sant'Angelo",
+"prov": "PE"
+},
+{
+"slug": "caramanico-terme-pe",
+"nome": "Caramanico Terme",
+"prov": "PE"
+},
+{
+"slug": "abbateggio-pe",
+"nome": "Abbateggio",
+"prov": "PE"
+},
+{
+"slug": "guardiagrele-ch",
+"nome": "Guardiagrele",
+"prov": "CH"
+},
+{
+"slug": "palena-ch",
+"nome": "Palena",
+"prov": "CH"
+},
+{
+"slug": "pretoro-ch",
+"nome": "Pretoro",
+"prov": "CH"
+},
+{
+"slug": "rocca-san-giovanni-ch",
+"nome": "Rocca San Giovanni",
+"prov": "CH"
+},
+{
+"slug": "usseaux-to",
+"nome": "Usseaux",
+"prov": "TO"
+},
+{
+"slug": "cella-monte-al",
+"nome": "Cella Monte",
+"prov": "AL"
+},
+{
+"slug": "volpedo-al",
+"nome": "Volpedo",
+"prov": "AL"
+},
+{
+"slug": "garbagna-al",
+"nome": "Garbagna",
+"prov": "AL"
+},
+{
+"slug": "cocconato-at",
+"nome": "Cocconato",
+"prov": "AT"
+},
+{
+"slug": "mombaldone-at",
+"nome": "Mombaldone",
+"prov": "AT"
+},
+{
+"slug": "candelo-bi",
+"nome": "Candelo",
+"prov": "BI"
+},
+{
+"slug": "rosazza-bi",
+"nome": "Rosazza",
+"prov": "BI"
+},
+{
+"slug": "garessio-cn",
+"nome": "Garessio",
+"prov": "CN"
+},
+{
+"slug": "neive-cn",
+"nome": "Neive",
+"prov": "CN"
+},
+{
+"slug": "monforte-d-alba-cn",
+"nome": "Monforte d'Alba",
+"prov": "CN"
+},
+{
+"slug": "pontechianale-cn",
+"nome": "Pontechianale",
+"prov": "CN"
+},
+{
+"slug": "ostana-cn",
+"nome": "Ostana",
+"prov": "CN"
+},
+{
+"slug": "orta-san-giulio-no",
+"nome": "Orta San Giulio",
+"prov": "NO"
+},
+{
+"slug": "vogogna-vb",
+"nome": "Vogogna",
+"prov": "VB"
+},
+{
+"slug": "bard-ao",
+"nome": "Bard",
+"prov": "AO"
+},
+{
+"slug": "etroubles-ao",
+"nome": "Etroubles",
+"prov": "AO"
+},
+{
+"slug": "campo-ligure-ge",
+"nome": "Campo Ligure",
+"prov": "GE"
+},
+{
+"slug": "moneglia-ge",
+"nome": "Moneglia",
+"prov": "GE"
+},
+{
+"slug": "perinaldo-im",
+"nome": "Perinaldo",
+"prov": "IM"
+},
+{
+"slug": "seborga-im",
+"nome": "Seborga",
+"prov": "IM"
+},
+{
+"slug": "triora-im",
+"nome": "Triora",
+"prov": "IM"
+},
+{
+"slug": "apricale-im",
+"nome": "Apricale",
+"prov": "IM"
+},
+{
+"slug": "cervo-im",
+"nome": "Cervo",
+"prov": "IM"
+},
+{
+"slug": "ceriana-im",
+"nome": "Ceriana",
+"prov": "IM"
+},
+{
+"slug": "diano-castello-im",
+"nome": "Diano Castello",
+"prov": "IM"
+},
+{
+"slug": "cipressa-im",
+"nome": "Cipressa",
+"prov": "IM"
+},
+{
+"slug": "pieve-di-teco-im",
+"nome": "Pieve di Teco",
+"prov": "IM"
+},
+{
+"slug": "taggia-im",
+"nome": "Taggia",
+"prov": "IM"
+},
+{
+"slug": "vernazza-sp",
+"nome": "Vernazza",
+"prov": "SP"
+},
+{
+"slug": "brugnato-sp",
+"nome": "Brugnato",
+"prov": "SP"
+},
+{
+"slug": "varese-ligure-sp",
+"nome": "Varese Ligure",
+"prov": "SP"
+},
+{
+"slug": "deiva-marina-sp",
+"nome": "Deiva Marina",
+"prov": "SP"
+},
+{
+"slug": "framura-sp",
+"nome": "Framura",
+"prov": "SP"
+},
+{
+"slug": "ameglia-sp",
+"nome": "Ameglia",
+"prov": "SP"
+},
+{
+"slug": "lerici-sp",
+"nome": "Lerici",
+"prov": "SP"
+},
+{
+"slug": "castelvecchio-di-rocca-barbena-sv",
+"nome": "Castelvecchio di Rocca Barbena",
+"prov": "SV"
+},
+{
+"slug": "noli-sv",
+"nome": "Noli",
+"prov": "SV"
+},
+{
+"slug": "finale-ligure-sv",
+"nome": "Finale Ligure",
+"prov": "SV"
+},
+{
+"slug": "zuccarello-sv",
+"nome": "Zuccarello",
+"prov": "SV"
+},
+{
+"slug": "borgio-verezzi-sv",
+"nome": "Borgio Verezzi",
+"prov": "SV"
+},
+{
+"slug": "castelbianco-sv",
+"nome": "Castelbianco",
+"prov": "SV"
+},
+{
+"slug": "laigueglia-sv",
+"nome": "Laigueglia",
+"prov": "SV"
+},
+{
+"slug": "millesimo-sv",
+"nome": "Millesimo",
+"prov": "SV"
+},
+{
+"slug": "palmanova-ud",
+"nome": "Palmanova",
+"prov": "UD"
+},
+{
+"slug": "venzone-ud",
+"nome": "Venzone",
+"prov": "UD"
+},
+{
+"slug": "gradisca-d-isonzo-go",
+"nome": "Gradisca d'Isonzo",
+"prov": "GO"
+},
+{
+"slug": "oriolo-cs",
+"nome": "Oriolo",
+"prov": "CS"
+},
+{
+"slug": "frosolone-is",
+"nome": "Frosolone",
+"prov": "IS"
+},
+{
+"slug": "irsina-mt",
+"nome": "Irsina",
+"prov": "MT"
+},
+{
+"slug": "posada-nu",
+"nome": "Posada",
+"prov": "NU"
+},
+{
+"slug": "monteleone-di-spoleto-pg",
+"nome": "Monteleone di Spoleto",
+"prov": "PG"
+},
+{
+"slug": "passignano-sul-trasimeno-pg",
+"nome": "Passignano sul Trasimeno",
+"prov": "PG"
+},
+{
+"slug": "frisanco-pn",
+"nome": "Frisanco",
+"prov": "PN"
+},
+{
+"slug": "polcenigo-pn",
+"nome": "Polcenigo",
+"prov": "PN"
+},
+{
+"slug": "sesto-al-reghena-pn",
+"nome": "Sesto al Reghena",
+"prov": "PN"
+},
+{
+"slug": "maratea-pz",
+"nome": "Maratea",
+"prov": "PZ"
+},
+{
+"slug": "bova-rc",
+"nome": "Bova",
+"prov": "RC"
+},
+{
+"slug": "caldes-tn",
+"nome": "Caldes",
+"prov": "TN"
+},
+{
+"slug": "monteleone-d-orvieto-tr",
+"nome": "Monteleone d'Orvieto",
+"prov": "TR"
+},
+{
+"slug": "altomonte-cs",
+"nome": "Altomonte",
+"prov": "CS"
+},
+{
+"slug": "civita-cs",
+"nome": "Civita",
+"prov": "CS"
+},
+{
+"slug": "morano-calabro-cs",
+"nome": "Morano Calabro",
+"prov": "CS"
+},
+{
+"slug": "santa-severina-kr",
+"nome": "Santa Severina",
+"prov": "KR"
+},
+{
+"slug": "gerace-rc",
+"nome": "Gerace",
+"prov": "RC"
+},
+{
+"slug": "stilo-rc",
+"nome": "Stilo",
+"prov": "RC"
+}
+]

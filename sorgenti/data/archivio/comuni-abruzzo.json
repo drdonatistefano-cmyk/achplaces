@@ -1,0 +1,4216 @@
+{
+"regione": "abruzzo",
+"fonti": {
+"elenco": "ISTAT, elenco comuni al 21 febbraio 2026 (CC BY 4.0), copia Codewriter90x/Italian_Cities su GitHub",
+"siti": "Indice PA (AgID), copia opendatasicilia/comuni-italiani su GitHub, ottobre 2025",
+"mic": "Ministero della Cultura, banca dati Luoghi della cultura (DBUnico, dati.beniculturali.it), copia chimpactonit/proj_webp su GitHub"
+},
+"comuni": [
+{
+"istat": "066001",
+"nome": "Acciano",
+"prov": "AQ",
+"sito": "http://comune.acciano.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Acciano"
+},
+{
+"istat": "066002",
+"nome": "Aielli",
+"prov": "AQ",
+"sito": "http://comunediaielli.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Aielli"
+},
+{
+"istat": "066003",
+"nome": "Alfedena",
+"prov": "AQ",
+"sito": "http://comune.alfedena.a.q.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo civico aufidenate \"Antonio De Nino\"",
+"DBUnico.100000"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Alfedena"
+},
+{
+"istat": "066004",
+"nome": "Anversa degli Abruzzi",
+"prov": "AQ",
+"sito": "http://comune.anversa.aq.it/",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [
+"borghi"
+],
+"wiki": "https://it.wikipedia.org/wiki/Anversa_degli_Abruzzi"
+},
+{
+"istat": "066005",
+"nome": "Ateleta",
+"prov": "AQ",
+"sito": "http://comune.ateleta.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Ateleta"
+},
+{
+"istat": "066006",
+"nome": "Avezzano",
+"prov": "AQ",
+"sito": "http://comune.avezzano.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Pinacoteca d'arte moderna",
+"DBUnico.103848"
+],
+[
+"L’aia dei musei - Le parole della pietra (Museo lapidario marsicano)",
+"DBUnico.105656"
+],
+[
+"Archivio di Stato dell'Aquila. Sezione di Avezzano",
+"DBUnico.136272"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Avezzano"
+},
+{
+"istat": "066007",
+"nome": "Balsorano",
+"prov": "AQ",
+"sito": "http://comune.balsorano.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Balsorano"
+},
+{
+"istat": "066008",
+"nome": "Barete",
+"prov": "AQ",
+"sito": "http://comune.barete.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Barete"
+},
+{
+"istat": "066009",
+"nome": "Barisciano",
+"prov": "AQ",
+"sito": "http://comunebarisciano.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Barisciano"
+},
+{
+"istat": "066010",
+"nome": "Barrea",
+"prov": "AQ",
+"sito": "http://comune.barrea.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Barrea"
+},
+{
+"istat": "066011",
+"nome": "Bisegna",
+"prov": "AQ",
+"sito": "http://comune.bisegna.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo del capriolo",
+"DBUnico.105422"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Bisegna"
+},
+{
+"istat": "066012",
+"nome": "Bugnara",
+"prov": "AQ",
+"sito": "http://comune.bugnara.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [
+"borghi"
+],
+"wiki": "https://it.wikipedia.org/wiki/Bugnara"
+},
+{
+"istat": "066013",
+"nome": "Cagnano Amiterno",
+"prov": "AQ",
+"sito": "http://comune.buriasco.to.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Cagnano_Amiterno"
+},
+{
+"istat": "066014",
+"nome": "Calascio",
+"prov": "AQ",
+"sito": "http://comune.bustoarsizio.va.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Rocca di Calascio e Chiesa di Santa Maria Della Pietà",
+"DBUnico.108161"
+],
+[
+"Chiesa di Santa Maria delle Grazie di Calascio",
+"DBUnico.110784"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Calascio"
+},
+{
+"istat": "066015",
+"nome": "Campo di Giove",
+"prov": "AQ",
+"sito": "http://comunecampodigiove.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Campo_di_Giove"
+},
+{
+"istat": "066016",
+"nome": "Campotosto",
+"prov": "AQ",
+"sito": "http://comune.campotosto.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Campotosto"
+},
+{
+"istat": "066017",
+"nome": "Canistro",
+"prov": "AQ",
+"sito": "http://comunecanistro.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Canistro"
+},
+{
+"istat": "066018",
+"nome": "Cansano",
+"prov": "AQ",
+"sito": "http://comune.cansano.aq.it/hh/index.php",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Centro di documentazione Ocriticum",
+"DBUnico.110920"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Cansano"
+},
+{
+"istat": "066019",
+"nome": "Capestrano",
+"prov": "AQ",
+"sito": "http://comunedicapestrano.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Convento di San Francesco",
+"DBUnico.110793"
+],
+[
+"Chiesa di San Pietro ad Oratorium",
+"DBUnico.20472"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Capestrano"
+},
+{
+"istat": "066020",
+"nome": "Capistrello",
+"prov": "AQ",
+"sito": "http://comune.capistrello.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Capistrello"
+},
+{
+"istat": "066021",
+"nome": "Capitignano",
+"prov": "AQ",
+"sito": "http://comune.capitignano.aq.it/",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Capitignano"
+},
+{
+"istat": "066022",
+"nome": "Caporciano",
+"prov": "AQ",
+"sito": "http://comunecaporciano.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Oratorio di San Pellegrino a Bominaco",
+"DBUnico.110794"
+],
+[
+"Chiesa di Santa Maria Assunta a Bominaco",
+"DBUnico.110795"
+],
+[
+"Chiesa di Santa Maria in Centurelli",
+"DBUnico.110796"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Caporciano"
+},
+{
+"istat": "066023",
+"nome": "Cappadocia",
+"prov": "AQ",
+"sito": "http://comune.cappadocia.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Cappadocia"
+},
+{
+"istat": "066024",
+"nome": "Carapelle Calvisio",
+"prov": "AQ",
+"sito": "http://comune.carapellecalvisio.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Carapelle_Calvisio"
+},
+{
+"istat": "066025",
+"nome": "Carsoli",
+"prov": "AQ",
+"sito": "http://comune.carsoli.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Carsoli"
+},
+{
+"istat": "066026",
+"nome": "Castel del Monte",
+"prov": "AQ",
+"sito": "http://comune.casteldelmonte.aq.it/",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo civico etnografico di Castel del Monte",
+"DBUnico.100003"
+]
+],
+"premi": [
+"borghi"
+],
+"wiki": "https://it.wikipedia.org/wiki/Castel_del_Monte"
+},
+{
+"istat": "066027",
+"nome": "Castel di Ieri",
+"prov": "AQ",
+"sito": "http://comune.casteldiieri.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Castel_di_Ieri"
+},
+{
+"istat": "066028",
+"nome": "Castel di Sangro",
+"prov": "AQ",
+"sito": "http://comune.casteldisangro.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo civico aufidenate",
+"DBUnico.100005"
+],
+[
+"Pinacoteca Patiniana",
+"DBUnico.110798"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Castel_di_Sangro"
+},
+{
+"istat": "066029",
+"nome": "Castellafiume",
+"prov": "AQ",
+"sito": "http://comune.castellafiume.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Castellafiume"
+},
+{
+"istat": "066030",
+"nome": "Castelvecchio Calvisio",
+"prov": "AQ",
+"sito": "http://castelvecchio-calvisio.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Castelvecchio_Calvisio"
+},
+{
+"istat": "066031",
+"nome": "Castelvecchio Subequo",
+"prov": "AQ",
+"sito": "http://castelvecchio-subequo.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Chiesa e Convento di San Francesco di Castelvecchio Subequo",
+"DBUnico.110800"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Castelvecchio_Subequo"
+},
+{
+"istat": "066032",
+"nome": "Celano",
+"prov": "AQ",
+"sito": "http://comune.celano.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Castello Piccolomini - Collezione Torlonia e Museo d'arte sacra della Marsica",
+"DBUnico.20268"
+],
+[
+"MUSE' - Nuovo museo Paludi di Celano - Centro di restauro",
+"DBUnico.20322"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Celano"
+},
+{
+"istat": "066033",
+"nome": "Cerchio",
+"prov": "AQ",
+"sito": "http://comunedicerchio.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo civico di Cerchio",
+"DBUnico.100007"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Cerchio"
+},
+{
+"istat": "066034",
+"nome": "Civita d'Antino",
+"prov": "AQ",
+"sito": "http://comune.civitadantino.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Civita_d'Antino"
+},
+{
+"istat": "066035",
+"nome": "Civitella Alfedena",
+"prov": "AQ",
+"sito": "http://comune.civitellaalfedena.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo del lupo appenninico",
+"DBUnico.100008"
+]
+],
+"premi": [
+"arancione"
+],
+"wiki": "https://it.wikipedia.org/wiki/Civitella_Alfedena"
+},
+{
+"istat": "066036",
+"nome": "Civitella Roveto",
+"prov": "AQ",
+"sito": "http://comune.civitella-roveto.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo pinacoteca Enrico Mattei",
+"DBUnico.105090"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Civitella_Roveto"
+},
+{
+"istat": "066037",
+"nome": "Cocullo",
+"prov": "AQ",
+"sito": "http://comune.cocullo.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo civico etnografico delle tradizioni popolari \"Alfonso Maria di Nola\"",
+"DBUnico.100009"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Cocullo"
+},
+{
+"istat": "066038",
+"nome": "Collarmele",
+"prov": "AQ",
+"sito": "http://comunedicollarmele.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Collarmele"
+},
+{
+"istat": "066039",
+"nome": "Collelongo",
+"prov": "AQ",
+"sito": "http://comune.collelongo.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo della civiltà contadina e del lavoro",
+"DBUnico.110921"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Collelongo"
+},
+{
+"istat": "066040",
+"nome": "Collepietro",
+"prov": "AQ",
+"sito": "http://comune.collepietro.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Collepietro"
+},
+{
+"istat": "066041",
+"nome": "Corfinio",
+"prov": "AQ",
+"sito": "http://comune.corfinio.gov.it/",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo civico archeologico \"Antonio de Nino\"",
+"DBUnico.100010"
+],
+[
+"Basilica valvense di San Pelino",
+"DBUnico.20497"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Corfinio"
+},
+{
+"istat": "066042",
+"nome": "Fagnano Alto",
+"prov": "AQ",
+"sito": "http://comunefagnanoalto.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Fagnano_Alto"
+},
+{
+"istat": "066043",
+"nome": "Fontecchio",
+"prov": "AQ",
+"sito": "http://comune.fontecchio.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo della cultura della memoria di Fontecchio",
+"DBUnico.110922"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Fontecchio"
+},
+{
+"istat": "066044",
+"nome": "Fossa",
+"prov": "AQ",
+"sito": "http://comunedifossa.it/",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Fossa"
+},
+{
+"istat": "066045",
+"nome": "Gagliano Aterno",
+"prov": "AQ",
+"sito": "http://comune.gaglianoaterno.gov.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Gagliano_Aterno"
+},
+{
+"istat": "066046",
+"nome": "Gioia dei Marsi",
+"prov": "AQ",
+"sito": "http://comune.gioiadeimarsi.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Gioia_dei_Marsi"
+},
+{
+"istat": "066047",
+"nome": "Goriano Sicoli",
+"prov": "AQ",
+"sito": "http://comune.gorianosicoli.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Goriano_Sicoli"
+},
+{
+"istat": "066048",
+"nome": "Introdacqua",
+"prov": "AQ",
+"sito": "http://introdacqua.gov.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [
+"borghi"
+],
+"wiki": "https://it.wikipedia.org/wiki/Introdacqua"
+},
+{
+"istat": "066049",
+"nome": "L'Aquila",
+"prov": "AQ",
+"sito": "http://comune.laquila.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo sperimentale d’arte contemporanea \"Mu.Sp.Ac.\"",
+"DBUnico.104021"
+],
+[
+"San Michele Arcangelo - Catacombe",
+"DBUnico.110891"
+],
+[
+"San Michele Arcangelo",
+"DBUnico.110892"
+],
+[
+"Area archeologica della medievale Civitas S. Maximi",
+"DBUnico.110894"
+],
+[
+"Sito archeologico Civitas Sancti Maximi",
+"DBUnico.110910"
+],
+[
+"Chiesa di San Bernardino",
+"DBUnico.122614"
+],
+[
+"Archivio di Stato dell'Aquila",
+"DBUnico.126356"
+],
+[
+"Museo nazionale d'Abruzzo dell'Aquila",
+"DBUnico.20257"
+],
+[
+"Basilica di Santa Maria di Collemaggio",
+"DBUnico.20563"
+],
+[
+"MAXXI - Museo nazionale delle arti del XXI secolo, sede L'Aquila",
+"MiBAC.7139"
+],
+[
+"Parco archeologico di Amiternum",
+"MiBAC.7190"
+],
+[
+"Forte Spagnolo",
+"MiBAC.7203"
+],
+[
+"Area archeologica di Forcona",
+"MiBAC.7231"
+],
+[
+"Museo Nazionale d'Abruzzo - Dormitio Virginis",
+"MiBAC.7331"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/L'Aquila"
+},
+{
+"istat": "066050",
+"nome": "Lecce nei Marsi",
+"prov": "AQ",
+"sito": "http://comunelecceneimarsi.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Lecce_nei_Marsi"
+},
+{
+"istat": "066051",
+"nome": "Luco dei Marsi",
+"prov": "AQ",
+"sito": "http://comune.lucodeimarsi.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Luco_dei_Marsi"
+},
+{
+"istat": "066052",
+"nome": "Lucoli",
+"prov": "AQ",
+"sito": "http://comune.lucoli.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Lucoli"
+},
+{
+"istat": "066053",
+"nome": "Magliano de' Marsi",
+"prov": "AQ",
+"sito": "http://comune.maglianodemarsi.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Santa Maria in Valle Porclaneta",
+"DBUnico.110824"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Magliano_de'_Marsi"
+},
+{
+"istat": "066054",
+"nome": "Massa d'Albe",
+"prov": "AQ",
+"sito": "http://comune.massadalbe.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Chiesa di San Pietro ad Alba Fucens",
+"DBUnico.134390"
+],
+[
+"Area archeologica di  Alba Fucens",
+"MiBAC.7227"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Massa_d'Albe"
+},
+{
+"istat": "066055",
+"nome": "Molina Aterno",
+"prov": "AQ",
+"sito": "http://comune.molinaaterno.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Molina_Aterno"
+},
+{
+"istat": "066056",
+"nome": "Montereale",
+"prov": "AQ",
+"sito": "http://comune.montereale.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Montereale"
+},
+{
+"istat": "066057",
+"nome": "Morino",
+"prov": "AQ",
+"sito": "http://comune.morino.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Ecomuseo della riserva naturale Zompo Lo Schioppo",
+"DBUnico.105745"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Morino"
+},
+{
+"istat": "066058",
+"nome": "Navelli",
+"prov": "AQ",
+"sito": "http://comunenavelli.gov.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [
+"borghi"
+],
+"wiki": "https://it.wikipedia.org/wiki/Navelli"
+},
+{
+"istat": "066059",
+"nome": "Ocre",
+"prov": "AQ",
+"sito": "http://comunediocre.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo civico di Ocre",
+"DBUnico.106063"
+],
+[
+"Convento di Sant'Angelo d’Ocre",
+"DBUnico.110832"
+],
+[
+"Monastero di Santo Spirito d’Ocre",
+"DBUnico.110833"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Ocre"
+},
+{
+"istat": "066060",
+"nome": "Ofena",
+"prov": "AQ",
+"sito": "http://comune.ofena.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Ofena"
+},
+{
+"istat": "066061",
+"nome": "Opi",
+"prov": "AQ",
+"sito": "http://comune.opi.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo del camoscio",
+"DBUnico.100016"
+]
+],
+"premi": [
+"borghi",
+"arancione"
+],
+"wiki": "https://it.wikipedia.org/wiki/Opi"
+},
+{
+"istat": "066062",
+"nome": "Oricola",
+"prov": "AQ",
+"sito": "http://comune.oricola.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Oricola"
+},
+{
+"istat": "066063",
+"nome": "Ortona dei Marsi",
+"prov": "AQ",
+"sito": "http://comune.ortona.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Ortona_dei_Marsi"
+},
+{
+"istat": "066064",
+"nome": "Ortucchio",
+"prov": "AQ",
+"sito": "http://comunediortucchio.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Ortucchio"
+},
+{
+"istat": "066065",
+"nome": "Ovindoli",
+"prov": "AQ",
+"sito": "http://comunediovindoli.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Ovindoli"
+},
+{
+"istat": "066066",
+"nome": "Pacentro",
+"prov": "AQ",
+"sito": "http://comunepacentro.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [
+"borghi"
+],
+"wiki": "https://it.wikipedia.org/wiki/Pacentro"
+},
+{
+"istat": "066067",
+"nome": "Pereto",
+"prov": "AQ",
+"sito": "http://comune.pereto.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Pereto"
+},
+{
+"istat": "066068",
+"nome": "Pescasseroli",
+"prov": "AQ",
+"sito": "http://comune.pescasseroli.aq.it/",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Raccolte del Centro Studi Ecologici Appenninici",
+"DBUnico.105746"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Pescasseroli"
+},
+{
+"istat": "066069",
+"nome": "Pescina",
+"prov": "AQ",
+"sito": "http://comune.pescina.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Casa museo G. Mazzarino",
+"DBUnico.100017"
+],
+[
+"Centro studi \"Ignazio Silone\"",
+"DBUnico.110906"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Pescina"
+},
+{
+"istat": "066070",
+"nome": "Pescocostanzo",
+"prov": "AQ",
+"sito": "http://comune.pescocostanzo.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo del merletto a tombolo",
+"DBUnico.100018"
+],
+[
+"Collegiata Santa Maria del Colle",
+"DBUnico.104967"
+]
+],
+"premi": [
+"borghi"
+],
+"wiki": "https://it.wikipedia.org/wiki/Pescocostanzo"
+},
+{
+"istat": "066071",
+"nome": "Pettorano sul Gizio",
+"prov": "AQ",
+"sito": "http://comune.pettorano.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [
+"borghi"
+],
+"wiki": "https://it.wikipedia.org/wiki/Pettorano_sul_Gizio"
+},
+{
+"istat": "066072",
+"nome": "Pizzoli",
+"prov": "AQ",
+"sito": "http://comune.pizzoli.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Pizzoli"
+},
+{
+"istat": "066073",
+"nome": "Poggio Picenze",
+"prov": "AQ",
+"sito": "http://comune.poggiopicenze.aq.it/",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Poggio_Picenze"
+},
+{
+"istat": "066074",
+"nome": "Prata d'Ansidonia",
+"prov": "AQ",
+"sito": "http://comune.pratadansidonia.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Prata_d'Ansidonia"
+},
+{
+"istat": "066075",
+"nome": "Pratola Peligna",
+"prov": "AQ",
+"sito": "http://comune.pratolapeligna.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo civico della civiltà contadina di Pratola Peligna",
+"DBUnico.110923"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Pratola_Peligna"
+},
+{
+"istat": "066076",
+"nome": "Prezza",
+"prov": "AQ",
+"sito": "http://comune.prezza.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Prezza"
+},
+{
+"istat": "066077",
+"nome": "Raiano",
+"prov": "AQ",
+"sito": "http://comune.raiano.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Raiano"
+},
+{
+"istat": "066078",
+"nome": "Rivisondoli",
+"prov": "AQ",
+"sito": "http://comune.rivisondoli.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo civico parrocchiale dell'arte presepiale",
+"DBUnico.100019"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Rivisondoli"
+},
+{
+"istat": "066079",
+"nome": "Roccacasale",
+"prov": "AQ",
+"sito": "http://roccacasale.gov.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Roccacasale"
+},
+{
+"istat": "066080",
+"nome": "Rocca di Botte",
+"prov": "AQ",
+"sito": "http://comune.roccadibotte.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Rocca_di_Botte"
+},
+{
+"istat": "066081",
+"nome": "Rocca di Cambio",
+"prov": "AQ",
+"sito": "http://comune.roccadicambio.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Rocca_di_Cambio"
+},
+{
+"istat": "066082",
+"nome": "Rocca di Mezzo",
+"prov": "AQ",
+"sito": "http://comune.roccadimezzo.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Rocca_di_Mezzo"
+},
+{
+"istat": "066083",
+"nome": "Rocca Pia",
+"prov": "AQ",
+"sito": "http://comune.roccapia.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo civico di documentazione storico-ambientale di Rocca Pia",
+"DBUnico.100020"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Rocca_Pia"
+},
+{
+"istat": "066084",
+"nome": "Roccaraso",
+"prov": "AQ",
+"sito": "http://comunediroccaraso.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Roccaraso"
+},
+{
+"istat": "066085",
+"nome": "San Benedetto dei Marsi",
+"prov": "AQ",
+"sito": "http://comune.sanbenedettodeimarsi.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/San_Benedetto_dei_Marsi"
+},
+{
+"istat": "066086",
+"nome": "San Benedetto in Perillis",
+"prov": "AQ",
+"sito": "http://comune.sanbenedettoinperillis.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo cultura materiale di San Benedetto in Perillis",
+"DBUnico.100021"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/San_Benedetto_in_Perillis"
+},
+{
+"istat": "066087",
+"nome": "San Demetrio ne' Vestini",
+"prov": "AQ",
+"sito": "http://sandemetrionv.com",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo di speleologia V. Rivera e Grotte di Stiffe",
+"DBUnico.100022"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/San_Demetrio_ne'_Vestini"
+},
+{
+"istat": "066088",
+"nome": "San Pio delle Camere",
+"prov": "AQ",
+"sito": "http://comunesanpiodellecamere.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/San_Pio_delle_Camere"
+},
+{
+"istat": "066089",
+"nome": "Sante Marie",
+"prov": "AQ",
+"sito": "http://comune.santemarie.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Sante_Marie"
+},
+{
+"istat": "066090",
+"nome": "Sant'Eusanio Forconese",
+"prov": "AQ",
+"sito": "http://comune.santeusanio.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Sant'Eusanio_Forconese"
+},
+{
+"istat": "066091",
+"nome": "Santo Stefano di Sessanio",
+"prov": "AQ",
+"sito": "http://comunesantostefanodisessanio.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [
+"borghi"
+],
+"wiki": "https://it.wikipedia.org/wiki/Santo_Stefano_di_Sessanio"
+},
+{
+"istat": "066092",
+"nome": "San Vincenzo Valle Roveto",
+"prov": "AQ",
+"sito": "http://comune.sanvincenzovalleroveto.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/San_Vincenzo_Valle_Roveto"
+},
+{
+"istat": "066093",
+"nome": "Scanno",
+"prov": "AQ",
+"sito": "http://comune.scanno.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo della lana",
+"DBUnico.100023"
+],
+[
+"Chiesa di San Giovanni Battista",
+"DBUnico.104347"
+],
+[
+"Auditorium delle anime sante",
+"DBUnico.104348"
+],
+[
+"Chiesa di Sant'Antonio da Padova",
+"DBUnico.110848"
+],
+[
+"Chiesa di Santa Maria della Valle",
+"DBUnico.110849"
+],
+[
+"Chiesa della Madonna del Lago",
+"DBUnico.110878"
+]
+],
+"premi": [
+"borghi",
+"arancione"
+],
+"wiki": "https://it.wikipedia.org/wiki/Scanno"
+},
+{
+"istat": "066094",
+"nome": "Scontrone",
+"prov": "AQ",
+"sito": "http://comune.scontrone.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Scontrone"
+},
+{
+"istat": "066095",
+"nome": "Scoppito",
+"prov": "AQ",
+"sito": "http://comune.scoppito.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Scoppito"
+},
+{
+"istat": "066096",
+"nome": "Scurcola Marsicana",
+"prov": "AQ",
+"sito": "http://comune.scurcolamarsicana.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Scurcola_Marsicana"
+},
+{
+"istat": "066097",
+"nome": "Secinaro",
+"prov": "AQ",
+"sito": "http://secinaro.comnet-ra.it/",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Secinaro"
+},
+{
+"istat": "066098",
+"nome": "Sulmona",
+"prov": "AQ",
+"sito": "http://comune.sulmona.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo civico Santissima Annunziata",
+"DBUnico.100026"
+],
+[
+"Museo civico del costume popolare abruzzese molisano e della transumanza",
+"DBUnico.100027"
+],
+[
+"Museo dell'arte e della tecnologia confettiera",
+"DBUnico.100028"
+],
+[
+"Museo delle tecniche fotografiche",
+"DBUnico.100029"
+],
+[
+"Museo ambientale di storia naturale",
+"DBUnico.100030"
+],
+[
+"Museo 'in situ' Sala arianna del Museo archeologico",
+"DBUnico.100031"
+],
+[
+"Polo museale civico diocesano - Monastero di Santa Chiara",
+"DBUnico.100032"
+],
+[
+"Abbazia di Santo Spirito al Morrone",
+"DBUnico.108211"
+],
+[
+"Cattedrale di San Panfilo",
+"DBUnico.110851"
+],
+[
+"Chiesa di Santa Maria della Tomba",
+"DBUnico.110853"
+],
+[
+"San Francesco della Scarpa",
+"DBUnico.110854"
+],
+[
+"Chiesa della Santissima Annunziata",
+"DBUnico.110880"
+],
+[
+"Eremo di Sant'Onofrio al Morrone o di Celestino V",
+"DBUnico.110882"
+],
+[
+"Archivio di Stato dell'Aquila. Sezione di Sulmona",
+"DBUnico.136273"
+],
+[
+"Sito archeologico Ercole Curino",
+"DBUnico.20124"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Sulmona"
+},
+{
+"istat": "066099",
+"nome": "Tagliacozzo",
+"prov": "AQ",
+"sito": "http://comune.tagliacozzo.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo orientale e santuario di Santa Maria dell'Oriente",
+"DBUnico.100033"
+],
+[
+"Chiesa e Convento di San Francesco di Tagliacozzo",
+"DBUnico.110855"
+]
+],
+"premi": [
+"borghi"
+],
+"wiki": "https://it.wikipedia.org/wiki/Tagliacozzo"
+},
+{
+"istat": "066100",
+"nome": "Tione degli Abruzzi",
+"prov": "AQ",
+"sito": "http://comune.tionedegliabruzzi.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Tione_degli_Abruzzi"
+},
+{
+"istat": "066101",
+"nome": "Tornimparte",
+"prov": "AQ",
+"sito": "http://comune.tornimparte.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Tornimparte"
+},
+{
+"istat": "066102",
+"nome": "Trasacco",
+"prov": "AQ",
+"sito": "http://comune.trasacco.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Basilica dei Santi Cesidio e Rufino",
+"DBUnico.110866"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Trasacco"
+},
+{
+"istat": "066103",
+"nome": "Villalago",
+"prov": "AQ",
+"sito": "http://comune.villalago.aq.it/",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo delle tradizioni del lavoro",
+"DBUnico.100034"
+]
+],
+"premi": [
+"borghi"
+],
+"wiki": "https://it.wikipedia.org/wiki/Villalago"
+},
+{
+"istat": "066104",
+"nome": "Villa Santa Lucia degli Abruzzi",
+"prov": "AQ",
+"sito": "http://comunevillasantaluciadegliabruzzi.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Villa_Santa_Lucia_degli_Abruzzi"
+},
+{
+"istat": "066105",
+"nome": "Villa Sant'Angelo",
+"prov": "AQ",
+"sito": "http://comune.villasantangelo.aq.it/",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Villa_Sant'Angelo"
+},
+{
+"istat": "066106",
+"nome": "Villavallelonga",
+"prov": "AQ",
+"sito": "http://comune.villavallelonga.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Centro Orso",
+"DBUnico.100035"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Villavallelonga"
+},
+{
+"istat": "066107",
+"nome": "Villetta Barrea",
+"prov": "AQ",
+"sito": "http://comune.villettabarrea.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Mostra permanente \"Futuro remoto\"",
+"DBUnico.100036"
+],
+[
+"Museo della transumanza",
+"DBUnico.100037"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Villetta_Barrea"
+},
+{
+"istat": "066108",
+"nome": "Vittorito",
+"prov": "AQ",
+"sito": "http://comune.vittorito.aq.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Vittorito"
+},
+{
+"istat": "067001",
+"nome": "Alba Adriatica",
+"prov": "TE",
+"sito": "http://comune.alba-adriatica.te.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Alba_Adriatica"
+},
+{
+"istat": "067002",
+"nome": "Ancarano",
+"prov": "TE",
+"sito": "http://comune.ancarano.te.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Ancarano"
+},
+{
+"istat": "067003",
+"nome": "Arsita",
+"prov": "TE",
+"sito": "http://comune.arsita.te.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Arsita"
+},
+{
+"istat": "067004",
+"nome": "Atri",
+"prov": "TE",
+"sito": "http://comune.atri.te.gov.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo archeologico civico \"De Albentiis - Tascini - De Galitis\"",
+"DBUnico.100086"
+],
+[
+"Museo capitolare",
+"DBUnico.100087"
+],
+[
+"Museo civico etnografico di Atri",
+"DBUnico.100088"
+],
+[
+"Museo didattico degli strumenti musicali, medievali e rinascimentali",
+"DBUnico.100089"
+],
+[
+"Palazzo ducale dei Duchi d'Acquaviva",
+"DBUnico.100090"
+],
+[
+"ConCattedrale di Santa Maria Assunta",
+"DBUnico.110781"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Atri"
+},
+{
+"istat": "067005",
+"nome": "Basciano",
+"prov": "TE",
+"sito": "http://comune.basciano.te.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Basciano"
+},
+{
+"istat": "067006",
+"nome": "Bellante",
+"prov": "TE",
+"sito": "http://comune.bellante.te.it/",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Bellante"
+},
+{
+"istat": "067007",
+"nome": "Bisenti",
+"prov": "TE",
+"sito": "http://comune.bisenti.te.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Bisenti"
+},
+{
+"istat": "067008",
+"nome": "Campli",
+"prov": "TE",
+"sito": "http://campli.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Santuario della Scala Santa",
+"DBUnico.110871"
+],
+[
+"Collegiata di Santa Maria in Platea",
+"DBUnico.110887"
+],
+[
+"Museo archeologico nazionale di Campli",
+"DBUnico.20109"
+],
+[
+"Convento di Sant'Onofrio",
+"DBUnico.20441"
+],
+[
+"Area archeologica di Campovalano",
+"MiBAC.7177"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Campli"
+},
+{
+"istat": "067009",
+"nome": "Canzano",
+"prov": "TE",
+"sito": "http://comune.canzano.te.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Canzano"
+},
+{
+"istat": "067010",
+"nome": "Castel Castagna",
+"prov": "TE",
+"sito": "http://comune.castelcastagna.te.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Chiesa di Santa Maria di Ronzano",
+"DBUnico.110797"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Castel_Castagna"
+},
+{
+"istat": "067011",
+"nome": "Castellalto",
+"prov": "TE",
+"sito": "http://comune.castellalto.te.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Castellalto"
+},
+{
+"istat": "067012",
+"nome": "Castelli",
+"prov": "TE",
+"sito": "http://comune.castelli.te.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo delle ceramiche di Castelli",
+"DBUnico.100091"
+],
+[
+"Raccolta internazionale d'arte ceramica contemporanea",
+"DBUnico.100092"
+],
+[
+"Chiesa di San Donato",
+"DBUnico.110787"
+],
+[
+"Chiesa di San Rocco",
+"DBUnico.110788"
+],
+[
+"Chiesa di San Giovanni Battista",
+"DBUnico.110789"
+]
+],
+"premi": [
+"borghi"
+],
+"wiki": "https://it.wikipedia.org/wiki/Castelli"
+},
+{
+"istat": "067013",
+"nome": "Castiglione Messer Raimondo",
+"prov": "TE",
+"sito": "http://comune.castiglione.te.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Castiglione_Messer_Raimondo"
+},
+{
+"istat": "067014",
+"nome": "Castilenti",
+"prov": "TE",
+"sito": "http://comune.castilenti.te.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Castilenti"
+},
+{
+"istat": "067015",
+"nome": "Cellino Attanasio",
+"prov": "TE",
+"sito": "http://comunecellinoattanasio.te.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Cellino_Attanasio"
+},
+{
+"istat": "067016",
+"nome": "Cermignano",
+"prov": "TE",
+"sito": "http://comune.cermignano.te.gov.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Cermignano"
+},
+{
+"istat": "067017",
+"nome": "Civitella del Tronto",
+"prov": "TE",
+"sito": "http://comunecivitelladeltronto.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo delle armi e delle mappe antiche della fortezza di Civitella del Tronto",
+"DBUnico.100093"
+]
+],
+"premi": [
+"borghi"
+],
+"wiki": "https://it.wikipedia.org/wiki/Civitella_del_Tronto"
+},
+{
+"istat": "067018",
+"nome": "Colledara",
+"prov": "TE",
+"sito": "http://comune.colledara.te.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Chiesa di San Michele Arcangelo",
+"DBUnico.110803"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Colledara"
+},
+{
+"istat": "067019",
+"nome": "Colonnella",
+"prov": "TE",
+"sito": "http://comune.colonnella.te.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Colonnella"
+},
+{
+"istat": "067020",
+"nome": "Controguerra",
+"prov": "TE",
+"sito": "http://comune.controguerra.te.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo della civiltà contadina in Val Vibrata",
+"DBUnico.100094"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Controguerra"
+},
+{
+"istat": "067021",
+"nome": "Corropoli",
+"prov": "TE",
+"sito": "http://comune.corropoli.te.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Corropoli"
+},
+{
+"istat": "067022",
+"nome": "Cortino",
+"prov": "TE",
+"sito": "http://comunedicortino.gov.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Cortino"
+},
+{
+"istat": "067023",
+"nome": "Crognaleto",
+"prov": "TE",
+"sito": "http://comune.crognaleto.te.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Crognaleto"
+},
+{
+"istat": "067024",
+"nome": "Fano Adriano",
+"prov": "TE",
+"sito": "http://comune.fanoadriano.te.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Fano_Adriano"
+},
+{
+"istat": "067025",
+"nome": "Giulianova",
+"prov": "TE",
+"sito": "http://comune.giulianova.te.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Casa Gaetano Braga - Sistema museale Musei civici Giulianova",
+"DBUnico.100096"
+],
+[
+"Fondazione Museo d'arte dello splendore",
+"DBUnico.100097"
+],
+[
+"Gipsoteca civica \"Raffaello Pagliaccetti\"",
+"DBUnico.100098"
+],
+[
+"Museo archeologico Il bianco - Sistema museale Musei civici Giulianova",
+"DBUnico.100099"
+],
+[
+"Museo Cappella de' Bartolomei",
+"DBUnico.100100"
+],
+[
+"Casa museo \"Vincenzo Cermignani\"",
+"DBUnico.105427"
+],
+[
+"Pinacoteca civica 'V. Bindi' - Sistema museale Musei civici Giulianova",
+"DBUnico.105428"
+],
+[
+"Chiesa di Santa Maria a Mare",
+"DBUnico.110807"
+],
+[
+"Duomo di San Flaviano",
+"DBUnico.110808"
+],
+[
+"Santuario Maria Santissima dello Splendore",
+"DBUnico.110811"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Giulianova"
+},
+{
+"istat": "067026",
+"nome": "Isola del Gran Sasso d'Italia",
+"prov": "TE",
+"sito": "http://isoladelgransasso.gov.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo Stauros di arte sacra contemporanea",
+"DBUnico.100101"
+],
+[
+"Santuario di San Gabriele dell’Addolorata",
+"DBUnico.110814"
+],
+[
+"Chiesa San Giovanni ad Insulam",
+"DBUnico.110816"
+],
+[
+"Chiesa di San Massimo",
+"DBUnico.110817"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Isola_del_Gran_Sasso_d'Italia"
+},
+{
+"istat": "067027",
+"nome": "Montefino",
+"prov": "TE",
+"sito": "http://comune.montefino.te.gov.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Montefino"
+},
+{
+"istat": "067028",
+"nome": "Montorio al Vomano",
+"prov": "TE",
+"sito": "http://comune.montorio.te.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Chiesa di San Rocco",
+"DBUnico.110827"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Montorio_al_Vomano"
+},
+{
+"istat": "067029",
+"nome": "Morro d'Oro",
+"prov": "TE",
+"sito": "http://comune.morrodoro.te.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo delle arti e civiltà contadine",
+"DBUnico.100102"
+],
+[
+"Abbazia di Santa Maria di Propezzano",
+"DBUnico.110829"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Morro_d'Oro"
+},
+{
+"istat": "067030",
+"nome": "Mosciano Sant'Angelo",
+"prov": "TE",
+"sito": "http://comune.mosciano.te.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo di scienze naturali di Mosciano Sant'Angelo",
+"DBUnico.100103"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Mosciano_Sant'Angelo"
+},
+{
+"istat": "067031",
+"nome": "Nereto",
+"prov": "TE",
+"sito": "http://comune.nereto.te.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo delle tradizioni venatorie",
+"DBUnico.110930"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Nereto"
+},
+{
+"istat": "067032",
+"nome": "Notaresco",
+"prov": "TE",
+"sito": "http://comune.notaresco.te.it/",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo archeologico di Notaresco",
+"DBUnico.100104"
+],
+[
+"Abbazia di San Clemente al Vomano",
+"DBUnico.110830"
+],
+[
+"Museo territoriale dell’alto Abruzzo - Antiquarium",
+"DBUnico.110932"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Notaresco"
+},
+{
+"istat": "067033",
+"nome": "Penna Sant'Andrea",
+"prov": "TE",
+"sito": "http://comune.pennasantandrea.te.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Penna_Sant'Andrea"
+},
+{
+"istat": "067034",
+"nome": "Pietracamela",
+"prov": "TE",
+"sito": "http://comune.pietracamela.te.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [
+"borghi"
+],
+"wiki": "https://it.wikipedia.org/wiki/Pietracamela"
+},
+{
+"istat": "067035",
+"nome": "Pineto",
+"prov": "TE",
+"sito": "http://comune.pineto.te.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Torre del Cerrano",
+"DBUnico.110879"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Pineto"
+},
+{
+"istat": "067036",
+"nome": "Rocca Santa Maria",
+"prov": "TE",
+"sito": "http://COMUNE.ROCCASANTAMARIA.TE.IT",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Rocca_Santa_Maria"
+},
+{
+"istat": "067037",
+"nome": "Roseto degli Abruzzi",
+"prov": "TE",
+"sito": "http://comune.roseto.te.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Civica raccolta d'arte di Roseto degli Abruzzi",
+"DBUnico.100105"
+],
+[
+"Museo civico della cultura materiale",
+"DBUnico.100106"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Roseto_degli_Abruzzi"
+},
+{
+"istat": "067038",
+"nome": "Sant'Egidio alla Vibrata",
+"prov": "TE",
+"sito": "http://comune.santegidioallavibrata.te.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Sant'Egidio_alla_Vibrata"
+},
+{
+"istat": "067039",
+"nome": "Sant'Omero",
+"prov": "TE",
+"sito": "http://comune.santomero.te.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Chiesa di Santa Maria a Vico",
+"DBUnico.110847"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Sant'Omero"
+},
+{
+"istat": "067040",
+"nome": "Silvi",
+"prov": "TE",
+"sito": "http://comune.silvi.te.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Silvi"
+},
+{
+"istat": "067041",
+"nome": "Teramo",
+"prov": "TE",
+"sito": "http://comune.teramo.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo civico archeologico \"Francesco Savini\"",
+"DBUnico.100107"
+],
+[
+"Pinacoteca civica di Teramo",
+"DBUnico.100109"
+],
+[
+"Domus Savini",
+"DBUnico.104361"
+],
+[
+"Domus \"Largo Madonna delle Grazie\"",
+"DBUnico.104362"
+],
+[
+"Santuario della Madonna delle Grazie",
+"DBUnico.110895"
+],
+[
+"Chiesa di Sant'Anna dei Pompetti",
+"DBUnico.110907"
+],
+[
+"Museo di Collurania",
+"DBUnico.110931"
+],
+[
+"Basilica Cattedrale di Teramo",
+"DBUnico.20498"
+],
+[
+"Archivio di Stato di Teramo",
+"DBUnico.20771"
+],
+[
+"Archivio di Stato di Teramo - Fondo Delfico",
+"MiBAC.7329"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Teramo"
+},
+{
+"istat": "067042",
+"nome": "Torano Nuovo",
+"prov": "TE",
+"sito": "http://torano.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Torano_Nuovo"
+},
+{
+"istat": "067043",
+"nome": "Torricella Sicura",
+"prov": "TE",
+"sito": "http://comume.torricellasicura.te.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo e presepe etnografico delle Genti della Laga",
+"DBUnico.100111"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Torricella_Sicura"
+},
+{
+"istat": "067044",
+"nome": "Tortoreto",
+"prov": "TE",
+"sito": "http://comune.tortoreto.te.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo della cultura marinara",
+"DBUnico.100112"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Tortoreto"
+},
+{
+"istat": "067045",
+"nome": "Tossicia",
+"prov": "TE",
+"sito": "http://comune.tossicia.te.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo delle tradizioni artigiane",
+"DBUnico.100113"
+],
+[
+"Chiesa di Sant’Antonio Abate",
+"DBUnico.110863"
+],
+[
+"Palazzo Marchesale",
+"DBUnico.110865"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Tossicia"
+},
+{
+"istat": "067046",
+"nome": "Valle Castellana",
+"prov": "TE",
+"sito": "http://comune.vallecastellana.te.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Valle_Castellana"
+},
+{
+"istat": "067047",
+"nome": "Martinsicuro",
+"prov": "TE",
+"sito": "http://comune.martinsicuro.te.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo delle armi antiche - Centro ricerche storiografiche",
+"DBUnico.100114"
+],
+[
+"Antiquarium di Castrum Truentinum - Martinsicuro",
+"DBUnico.110929"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Martinsicuro"
+},
+{
+"istat": "068001",
+"nome": "Abbateggio",
+"prov": "PE",
+"sito": "http://comune.abbateggio.pe.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [
+"borghi"
+],
+"wiki": "https://it.wikipedia.org/wiki/Abbateggio"
+},
+{
+"istat": "068002",
+"nome": "Alanno",
+"prov": "PE",
+"sito": "http://comune.alanno.pe.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Alanno"
+},
+{
+"istat": "068003",
+"nome": "Bolognano",
+"prov": "PE",
+"sito": "http://comunebolognano.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Bolognano"
+},
+{
+"istat": "068004",
+"nome": "Brittoli",
+"prov": "PE",
+"sito": "http://comune.brittoli.pe.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Brittoli"
+},
+{
+"istat": "068005",
+"nome": "Bussi sul Tirino",
+"prov": "PE",
+"sito": "http://comune.bussisultirino.pe.it/",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Chiesa di Santa Maria di Cartignano",
+"DBUnico.20469"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Bussi_sul_Tirino"
+},
+{
+"istat": "068006",
+"nome": "Cappelle sul Tavo",
+"prov": "PE",
+"sito": "http://cappellesultavo.gov.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Cappelle_sul_Tavo"
+},
+{
+"istat": "068007",
+"nome": "Caramanico Terme",
+"prov": "PE",
+"sito": "http://comunecaramanicoterme.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo naturalistico archeologico \"Paolo Barrasso\"",
+"DBUnico.106065"
+]
+],
+"premi": [
+"borghi"
+],
+"wiki": "https://it.wikipedia.org/wiki/Caramanico_Terme"
+},
+{
+"istat": "068008",
+"nome": "Carpineto della Nora",
+"prov": "PE",
+"sito": "http://comune.carpinetodellanora.pe.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Chiesa di San Bartolomeo",
+"DBUnico.20478"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Carpineto_della_Nora"
+},
+{
+"istat": "068009",
+"nome": "Castiglione a Casauria",
+"prov": "PE",
+"sito": "http://comune.castiglioneacasauria.pe.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Abbazia di San Clemente a Casauria",
+"DBUnico.20764"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Castiglione_a_Casauria"
+},
+{
+"istat": "068010",
+"nome": "Catignano",
+"prov": "PE",
+"sito": "http://comune.catignano.pe.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Catignano"
+},
+{
+"istat": "068011",
+"nome": "Cepagatti",
+"prov": "PE",
+"sito": "http://comune.cepagatti.pe.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Cepagatti"
+},
+{
+"istat": "068012",
+"nome": "Città Sant'Angelo",
+"prov": "PE",
+"sito": "http://comune.cittasantangelo.pe.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo civico l. Chiavetta",
+"DBUnico.100070"
+],
+[
+"Museo laboratorio d'arte contemporanea - Ex manifattura tabacchi",
+"DBUnico.100071"
+],
+[
+"Collegiata di San Michele Arcangelo",
+"DBUnico.110801"
+]
+],
+"premi": [
+"borghi"
+],
+"wiki": "https://it.wikipedia.org/wiki/Città_Sant'Angelo"
+},
+{
+"istat": "068013",
+"nome": "Civitaquana",
+"prov": "PE",
+"sito": "http://comune.civitaquana.pe.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Civitaquana"
+},
+{
+"istat": "068014",
+"nome": "Civitella Casanova",
+"prov": "PE",
+"sito": "http://comune.civitellacasanova.pe.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Civitella_Casanova"
+},
+{
+"istat": "068015",
+"nome": "Collecorvino",
+"prov": "PE",
+"sito": "http://comune.collecorvino.pe.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Collecorvino"
+},
+{
+"istat": "068016",
+"nome": "Corvara",
+"prov": "PE",
+"sito": "http://comune.corvara.pe.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Corvara"
+},
+{
+"istat": "068017",
+"nome": "Cugnoli",
+"prov": "PE",
+"sito": "http://comune.cugnoli.pe.it/",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Cugnoli"
+},
+{
+"istat": "068018",
+"nome": "Elice",
+"prov": "PE",
+"sito": "http://comunedielice.gov.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Elice"
+},
+{
+"istat": "068019",
+"nome": "Farindola",
+"prov": "PE",
+"sito": "http://comune.farindola.pe.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Farindola"
+},
+{
+"istat": "068020",
+"nome": "Lettomanoppello",
+"prov": "PE",
+"sito": "http://lecto.it/",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Lettomanoppello"
+},
+{
+"istat": "068021",
+"nome": "Loreto Aprutino",
+"prov": "PE",
+"sito": "http://comune.loretoaprutino.pe.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Galleria delle ceramiche Acerbo",
+"DBUnico.104355"
+],
+[
+"Chiesa di Santa Maria in Piano",
+"DBUnico.110823"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Loreto_Aprutino"
+},
+{
+"istat": "068022",
+"nome": "Manoppello",
+"prov": "PE",
+"sito": "http://comune.manoppello.pe.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Abbazia di Santa Maria Arabona",
+"DBUnico.110825"
+],
+[
+"Santuario del Volto Santo",
+"DBUnico.110826"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Manoppello"
+},
+{
+"istat": "068023",
+"nome": "Montebello di Bertona",
+"prov": "PE",
+"sito": "http://comune.montebellodibertona.pe.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Montebello_di_Bertona"
+},
+{
+"istat": "068024",
+"nome": "Montesilvano",
+"prov": "PE",
+"sito": "",
+"sito_fonte": "",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Montesilvano"
+},
+{
+"istat": "068025",
+"nome": "Moscufo",
+"prov": "PE",
+"sito": "http://comunedimoscufo.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Chiesa di Santa Maria del Lago",
+"DBUnico.110893"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Moscufo"
+},
+{
+"istat": "068026",
+"nome": "Nocciano",
+"prov": "PE",
+"sito": "http://comune.nocciano.pe.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo e archivio degli artisti abruzzesi contemporanei - Castello di nocciano",
+"DBUnico.100073"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Nocciano"
+},
+{
+"istat": "068027",
+"nome": "Penne",
+"prov": "PE",
+"sito": "http://comune.penne.pe.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo archeologico civico-diocesano \"G. B. Leopardi\"",
+"DBUnico.100074"
+],
+[
+"Museo naturalistico \"Nicola De Leone\"",
+"DBUnico.105753"
+],
+[
+"Duomo di San Massimo",
+"DBUnico.110840"
+],
+[
+"Chiesa di Sant'Agostino di Penne (Tarn)",
+"DBUnico.110841"
+]
+],
+"premi": [
+"borghi"
+],
+"wiki": "https://it.wikipedia.org/wiki/Penne"
+},
+{
+"istat": "068028",
+"nome": "Pescara",
+"prov": "PE",
+"sito": "http://comune.pescara.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo civico Basilio Cascella",
+"DBUnico.100075"
+],
+[
+"Museo d'arte moderna Vittoria Colonna",
+"DBUnico.100076"
+],
+[
+"Museo delle genti d'Abruzzo",
+"DBUnico.100077"
+],
+[
+"Museo Villa Urania - Antiche maioliche di Castelli",
+"DBUnico.100078"
+],
+[
+"Museo meraviglie marine Ex Museo Ittico",
+"DBUnico.105426"
+],
+[
+"Aurum",
+"DBUnico.136498"
+],
+[
+"Museo casa natale di Gabriele d'Annunzio",
+"DBUnico.20293"
+],
+[
+"Archivio di Stato di Pescara",
+"DBUnico.20685"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Pescara"
+},
+{
+"istat": "068029",
+"nome": "Pescosansonesco",
+"prov": "PE",
+"sito": "http://pescosansonesco.pe.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Pescosansonesco"
+},
+{
+"istat": "068030",
+"nome": "Pianella",
+"prov": "PE",
+"sito": "http://comune.pianella.pe.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Pianella"
+},
+{
+"istat": "068031",
+"nome": "Picciano",
+"prov": "PE",
+"sito": "http://comunepicciano.pe.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo delle tradizioni ed arti contadine",
+"DBUnico.100079"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Picciano"
+},
+{
+"istat": "068032",
+"nome": "Pietranico",
+"prov": "PE",
+"sito": "http://comune.pietranico.pe.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Pietranico"
+},
+{
+"istat": "068033",
+"nome": "Popoli Terme",
+"prov": "PE",
+"sito": "",
+"sito_fonte": "",
+"mic": [],
+"premi": [],
+"wiki": ""
+},
+{
+"istat": "068034",
+"nome": "Roccamorice",
+"prov": "PE",
+"sito": "http://comune.roccamorice.pe.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Eremi celestiniani Parco Maiella",
+"DBUnico.100081"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Roccamorice"
+},
+{
+"istat": "068035",
+"nome": "Rosciano",
+"prov": "PE",
+"sito": "http://comunedirosciano.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Collezione di icone",
+"DBUnico.100082"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Rosciano"
+},
+{
+"istat": "068036",
+"nome": "Salle",
+"prov": "PE",
+"sito": "http://comune.salle.pe.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Salle"
+},
+{
+"istat": "068037",
+"nome": "Sant'Eufemia a Maiella",
+"prov": "PE",
+"sito": "http://comune.santeufemiaamaiella.pe.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Sant'Eufemia_a_Maiella"
+},
+{
+"istat": "068038",
+"nome": "San Valentino in Abruzzo Citeriore",
+"prov": "PE",
+"sito": "http://comune.sanvalentino.gov.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/San_Valentino_in_Abruzzo_Citeriore"
+},
+{
+"istat": "068039",
+"nome": "Scafa",
+"prov": "PE",
+"sito": "http://comune.scafa.pe.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Scafa"
+},
+{
+"istat": "068040",
+"nome": "Serramonacesca",
+"prov": "PE",
+"sito": "http://comune.serramonacesca.pe.it/",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Abbazia di San Liberatore a Majella",
+"DBUnico.110850"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Serramonacesca"
+},
+{
+"istat": "068041",
+"nome": "Spoltore",
+"prov": "PE",
+"sito": "http://comune.spoltore.pe.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Spoltore"
+},
+{
+"istat": "068042",
+"nome": "Tocco da Casauria",
+"prov": "PE",
+"sito": "http://comune.toccodacasauria.pe.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Tocco_da_Casauria"
+},
+{
+"istat": "068043",
+"nome": "Torre de' Passeri",
+"prov": "PE",
+"sito": "http://comune.torredepasseri.pe.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Pinacoteca dantesca \"F. Bellonzi\"",
+"DBUnico.100085"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Torre_de'_Passeri"
+},
+{
+"istat": "068044",
+"nome": "Turrivalignani",
+"prov": "PE",
+"sito": "http://comune.turrivalignani.pe.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Turrivalignani"
+},
+{
+"istat": "068045",
+"nome": "Vicoli",
+"prov": "PE",
+"sito": "http://comune.vicoli.pe.it/",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Vicoli"
+},
+{
+"istat": "068046",
+"nome": "Villa Celiera",
+"prov": "PE",
+"sito": "http://comune.villaceliera.pe.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Villa_Celiera"
+},
+{
+"istat": "069001",
+"nome": "Altino",
+"prov": "CH",
+"sito": "http://comune.altino.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Altino"
+},
+{
+"istat": "069002",
+"nome": "Archi",
+"prov": "CH",
+"sito": "http://comunediarchi.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Archi"
+},
+{
+"istat": "069003",
+"nome": "Ari",
+"prov": "CH",
+"sito": "http://comune.ari.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Ari"
+},
+{
+"istat": "069004",
+"nome": "Arielli",
+"prov": "CH",
+"sito": "http://comune.arielli.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Arielli"
+},
+{
+"istat": "069005",
+"nome": "Atessa",
+"prov": "CH",
+"sito": "http://comunediatessa.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Atessa"
+},
+{
+"istat": "069006",
+"nome": "Bomba",
+"prov": "CH",
+"sito": "http://comunedibomba.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo etnografico - Associazione Amuset",
+"DBUnico.100038"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Bomba"
+},
+{
+"istat": "069007",
+"nome": "Borrello",
+"prov": "CH",
+"sito": "http://comune.borrello.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo civico Memorie d’arte contadina",
+"DBUnico.110924"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Borrello"
+},
+{
+"istat": "069008",
+"nome": "Bucchianico",
+"prov": "CH",
+"sito": "http://comune.bucchianico.ch.it/",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Casa natale di S. Camillo de Lellis",
+"DBUnico.100039"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Bucchianico"
+},
+{
+"istat": "069009",
+"nome": "Montebello sul Sangro",
+"prov": "CH",
+"sito": "http://comune.montebellosulsangro.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Montebello_sul_Sangro"
+},
+{
+"istat": "069010",
+"nome": "Canosa Sannita",
+"prov": "CH",
+"sito": "http://comunecanosasannita.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo della guerra per la pace",
+"DBUnico.100040"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Canosa_Sannita"
+},
+{
+"istat": "069011",
+"nome": "Carpineto Sinello",
+"prov": "CH",
+"sito": "http://comune.carpinetosinello.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Carpineto_Sinello"
+},
+{
+"istat": "069012",
+"nome": "Carunchio",
+"prov": "CH",
+"sito": "http://comune.carunchio.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Carunchio"
+},
+{
+"istat": "069013",
+"nome": "Casacanditella",
+"prov": "CH",
+"sito": "http://comune.casacanditella.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Casacanditella"
+},
+{
+"istat": "069014",
+"nome": "Casalanguida",
+"prov": "CH",
+"sito": "http://comune.casalanguida.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Casalanguida"
+},
+{
+"istat": "069015",
+"nome": "Casalbordino",
+"prov": "CH",
+"sito": "http://casalbordino.gov.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Casalbordino"
+},
+{
+"istat": "069016",
+"nome": "Casalincontrada",
+"prov": "CH",
+"sito": "http://comune.casalincontrada.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Centro di documentazione permanente sulle case di terra cruda",
+"DBUnico.100041"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Casalincontrada"
+},
+{
+"istat": "069017",
+"nome": "Casoli",
+"prov": "CH",
+"sito": "http://comune.casoli.ch.it/",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Casoli"
+},
+{
+"istat": "069018",
+"nome": "Castel Frentano",
+"prov": "CH",
+"sito": "http://comunedicastelfrentano.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Castel_Frentano"
+},
+{
+"istat": "069019",
+"nome": "Castelguidone",
+"prov": "CH",
+"sito": "http://comunecastelguidone.it/hh/index.php",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Castelguidone"
+},
+{
+"istat": "069020",
+"nome": "Castiglione Messer Marino",
+"prov": "CH",
+"sito": "http://comunecastiglionemessermarino.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo delle tradizioni familiari",
+"DBUnico.100043"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Castiglione_Messer_Marino"
+},
+{
+"istat": "069021",
+"nome": "Celenza sul Trigno",
+"prov": "CH",
+"sito": "http://comune.celenzasultrigno.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Celenza_sul_Trigno"
+},
+{
+"istat": "069022",
+"nome": "Chieti",
+"prov": "CH",
+"sito": "http://comune.chieti.gov.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo d'arte Costantino Barbella",
+"DBUnico.100044"
+],
+[
+"Museo universitario d'Abruzzo - Museo di storia delle scienze biomediche",
+"DBUnico.100045"
+],
+[
+"Archivio di Stato di Chieti",
+"DBUnico.116657"
+],
+[
+"Monumenti e Aree archeologiche dell'antica Teate - Teatro romano di Chieti",
+"DBUnico.20100"
+],
+[
+"Museo archeologico nazionale d'Abruzzo - Villa Frigerj",
+"DBUnico.20320"
+],
+[
+"Chiesa della Madonna del Tricalle",
+"DBUnico.20479"
+],
+[
+"Terme romane di Chieti",
+"DBUnico.20761"
+],
+[
+"Chiesa di San Domenico al Corso",
+"DBUnico.20762"
+],
+[
+"Tempietti romani di Chieti",
+"MiBAC.7179"
+],
+[
+"Museo archeologico nazionale La Civitella di Chieti",
+"MiBAC.7181"
+],
+[
+"Monumenti e Aree archeologiche dell'antica Teate",
+"MiBAC.7229"
+],
+[
+"Museo archeologico nazionale La Civitella di Chieti - La dea di Rapino",
+"MiBAC.7282"
+],
+[
+"Museo archeologico nazionale La Civitella di Chieti - Tomba di Lusius Storax",
+"MiBAC.7284"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Chieti"
+},
+{
+"istat": "069023",
+"nome": "Civitaluparella",
+"prov": "CH",
+"sito": "http://comune.civitaluparella.chieti.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Civitaluparella"
+},
+{
+"istat": "069024",
+"nome": "Civitella Messer Raimondo",
+"prov": "CH",
+"sito": "http://civitellamesserraimondo.net",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Civitella_Messer_Raimondo"
+},
+{
+"istat": "069025",
+"nome": "Colledimacine",
+"prov": "CH",
+"sito": "http://comune.colledimacine.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Colledimacine"
+},
+{
+"istat": "069026",
+"nome": "Colledimezzo",
+"prov": "CH",
+"sito": "http://comunecolledimezzo.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Colledimezzo"
+},
+{
+"istat": "069027",
+"nome": "Crecchio",
+"prov": "CH",
+"sito": "http://comune.crecchio.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo dell'Abruzzo bizantino ed alto medioevo",
+"DBUnico.100046"
+],
+[
+"Raccolta comunale di beni culturali di Crecchio",
+"DBUnico.100047"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Crecchio"
+},
+{
+"istat": "069028",
+"nome": "Cupello",
+"prov": "CH",
+"sito": "http://comunedicupello.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Cupello"
+},
+{
+"istat": "069029",
+"nome": "Dogliola",
+"prov": "CH",
+"sito": "http://dogliola.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Dogliola"
+},
+{
+"istat": "069030",
+"nome": "Fara Filiorum Petri",
+"prov": "CH",
+"sito": "http://comunefarafiliorumpetri.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Fara_Filiorum_Petri"
+},
+{
+"istat": "069031",
+"nome": "Fara San Martino",
+"prov": "CH",
+"sito": "http://comune.farasanmartino.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo naturalistico archeologico di Fara San Martino",
+"DBUnico.100048"
+]
+],
+"premi": [
+"arancione"
+],
+"wiki": "https://it.wikipedia.org/wiki/Fara_San_Martino"
+},
+{
+"istat": "069032",
+"nome": "Filetto",
+"prov": "CH",
+"sito": "http://comune.filetto.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Filetto"
+},
+{
+"istat": "069033",
+"nome": "Fossacesia",
+"prov": "CH",
+"sito": "http://fossacesia.org",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Abbazia di San Giovanni in Venere",
+"DBUnico.110806"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Fossacesia"
+},
+{
+"istat": "069034",
+"nome": "Fraine",
+"prov": "CH",
+"sito": "http://comune.fraine.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Fraine"
+},
+{
+"istat": "069035",
+"nome": "Francavilla al Mare",
+"prov": "CH",
+"sito": "http://comune.francavilla.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Fondazione Michetti \"Mu.Mi.\"",
+"DBUnico.100049"
+],
+[
+"Museo Michetti",
+"DBUnico.110911"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Francavilla_al_Mare"
+},
+{
+"istat": "069036",
+"nome": "Fresagrandinaria",
+"prov": "CH",
+"sito": "http://comunefresagrandinaria.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Fresagrandinaria"
+},
+{
+"istat": "069037",
+"nome": "Frisa",
+"prov": "CH",
+"sito": "http://comune.frisa.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Frisa"
+},
+{
+"istat": "069038",
+"nome": "Furci",
+"prov": "CH",
+"sito": "http://comune.furci.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Furci"
+},
+{
+"istat": "069039",
+"nome": "Gamberale",
+"prov": "CH",
+"sito": "http://comune.gamberale.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Gamberale"
+},
+{
+"istat": "069040",
+"nome": "Gessopalena",
+"prov": "CH",
+"sito": "http://comune.gessopalena.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Gessopalena"
+},
+{
+"istat": "069041",
+"nome": "Gissi",
+"prov": "CH",
+"sito": "http://comune.gissi.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Gissi"
+},
+{
+"istat": "069042",
+"nome": "Giuliano Teatino",
+"prov": "CH",
+"sito": "http://comune.giulianoteatino.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Giuliano_Teatino"
+},
+{
+"istat": "069043",
+"nome": "Guardiagrele",
+"prov": "CH",
+"sito": "http://comune.guardiagrele.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo del Duomo di Guardiagrele",
+"DBUnico.100051"
+],
+[
+"Musei del Parco Nazionale della Maiella",
+"DBUnico.105747"
+],
+[
+"Duomo di Santa Maria Maggiore",
+"DBUnico.110813"
+],
+[
+"Museo archeologico di Guardiagrele",
+"DBUnico.110896"
+],
+[
+"Museo archeologico \"Filippo Ferrari\"",
+"DBUnico.110925"
+],
+[
+"Museo del costume e delle tradizioni della nostra gente",
+"DBUnico.110927"
+]
+],
+"premi": [
+"borghi"
+],
+"wiki": "https://it.wikipedia.org/wiki/Guardiagrele"
+},
+{
+"istat": "069044",
+"nome": "Guilmi",
+"prov": "CH",
+"sito": "http://comune.guilmi.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Guilmi"
+},
+{
+"istat": "069045",
+"nome": "Lama dei Peligni",
+"prov": "CH",
+"sito": "http://.comunelamadeipeligni.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo naturalistico archeologico \"Maurizio Locati\"",
+"DBUnico.100052"
+]
+],
+"premi": [
+"arancione"
+],
+"wiki": "https://it.wikipedia.org/wiki/Lama_dei_Peligni"
+},
+{
+"istat": "069046",
+"nome": "Lanciano",
+"prov": "CH",
+"sito": "http://lanciano.eu",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Centro documentazione museale S. Nicola",
+"DBUnico.100053"
+],
+[
+"Museo diocesano di Lanciano e sezione di Ortona",
+"DBUnico.100054"
+],
+[
+"Polo museale Santo Spirito - Civico museo archeologico",
+"DBUnico.100055"
+],
+[
+"Basilica di Santa Maria Maggiore",
+"DBUnico.110818"
+],
+[
+"Chiesa e Convento di San Francesco (Miracolo Eucaristico)",
+"DBUnico.110819"
+],
+[
+"Cattedrale di Santa Maria del Ponte",
+"DBUnico.110820"
+],
+[
+"Polo Museale Santo Spirito - Museo Archeologico",
+"DBUnico.110821"
+],
+[
+"Ponte di Diocleziano",
+"DBUnico.110828"
+],
+[
+"Archivio di Stato di Chieti. Sezione di Lanciano",
+"DBUnico.116658"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Lanciano"
+},
+{
+"istat": "069047",
+"nome": "Lentella",
+"prov": "CH",
+"sito": "http://htpp://comunedilentella.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Lentella"
+},
+{
+"istat": "069048",
+"nome": "Lettopalena",
+"prov": "CH",
+"sito": "http://comunelettopalena.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Lettopalena"
+},
+{
+"istat": "069049",
+"nome": "Liscia",
+"prov": "CH",
+"sito": "http://comune.liscia.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Liscia"
+},
+{
+"istat": "069050",
+"nome": "Miglianico",
+"prov": "CH",
+"sito": "http://miglianico.gov.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Miglianico"
+},
+{
+"istat": "069051",
+"nome": "Montazzoli",
+"prov": "CH",
+"sito": "http://comune.montazzoli.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Montazzoli"
+},
+{
+"istat": "069052",
+"nome": "Monteferrante",
+"prov": "CH",
+"sito": "http://comune.monteferrante.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Monteferrante"
+},
+{
+"istat": "069053",
+"nome": "Montelapiano",
+"prov": "CH",
+"sito": "http://comune.montelapiano.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Montelapiano"
+},
+{
+"istat": "069054",
+"nome": "Montenerodomo",
+"prov": "CH",
+"sito": "http://montenerodomo.gov.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Parco archeologico di Iuvanum",
+"DBUnico.20167"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Montenerodomo"
+},
+{
+"istat": "069055",
+"nome": "Monteodorisio",
+"prov": "CH",
+"sito": "http://comune.monteodorisio.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo per l'economia tra antichità e rinascimento",
+"DBUnico.100056"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Monteodorisio"
+},
+{
+"istat": "069056",
+"nome": "Mozzagrogna",
+"prov": "CH",
+"sito": "http://comunemozzagrogna.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Mozzagrogna"
+},
+{
+"istat": "069057",
+"nome": "Orsogna",
+"prov": "CH",
+"sito": "http://comune.orsogna.chieti.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Orsogna"
+},
+{
+"istat": "069058",
+"nome": "Ortona",
+"prov": "CH",
+"sito": "http://comuneortona.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo della battaglia di Ortona",
+"DBUnico.100057"
+],
+[
+"Museo diocesano di Ortona",
+"DBUnico.100058"
+],
+[
+"Museo musicale d'Abruzzo archivio F. P. Tosti - Palazzo Corvo",
+"DBUnico.100059"
+],
+[
+"Castello Aragonese",
+"DBUnico.108160"
+],
+[
+"Cattedrale di San Tommaso Apostolo",
+"DBUnico.110834"
+],
+[
+"Chiesa di Santa Caterina",
+"DBUnico.110835"
+],
+[
+"Chiesa di Santa Maria delle Grazie di Ortona",
+"DBUnico.110836"
+],
+[
+"Chiesa della Santissima Trinità",
+"DBUnico.110837"
+],
+[
+"Palazzo Farnese - Museo civico d’arte contemporanea",
+"DBUnico.110905"
+],
+[
+"Museo civico d’arte contemporanea - Pinacoteca Cascella",
+"DBUnico.110928"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Ortona"
+},
+{
+"istat": "069059",
+"nome": "Paglieta",
+"prov": "CH",
+"sito": "http://comune.paglieta.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Paglieta"
+},
+{
+"istat": "069060",
+"nome": "Palena",
+"prov": "CH",
+"sito": "http://comune.palena.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo dell'orso marsicano \"MOM\"",
+"DBUnico.100060"
+],
+[
+"Museo geopaleontologico Alto Aventino",
+"DBUnico.100061"
+]
+],
+"premi": [
+"arancione"
+],
+"wiki": "https://it.wikipedia.org/wiki/Palena"
+},
+{
+"istat": "069061",
+"nome": "Palmoli",
+"prov": "CH",
+"sito": "http://comunepalmoli.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo dell'arte contadina - Museo dei castelli abbandonati",
+"DBUnico.100062"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Palmoli"
+},
+{
+"istat": "069062",
+"nome": "Palombaro",
+"prov": "CH",
+"sito": "http://comune.palombaro.gov.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Palombaro"
+},
+{
+"istat": "069063",
+"nome": "Pennadomo",
+"prov": "CH",
+"sito": "http://comunepennadomo.com",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Pennadomo"
+},
+{
+"istat": "069064",
+"nome": "Pennapiedimonte",
+"prov": "CH",
+"sito": "http://comune.pennapiedimonte.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Pennapiedimonte"
+},
+{
+"istat": "069065",
+"nome": "Perano",
+"prov": "CH",
+"sito": "http://comune.perano.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Perano"
+},
+{
+"istat": "069066",
+"nome": "Pizzoferrato",
+"prov": "CH",
+"sito": "http://comunepizzoferrato.it/",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Pizzoferrato"
+},
+{
+"istat": "069067",
+"nome": "Poggiofiorito",
+"prov": "CH",
+"sito": "http://comune.poggiofiorito.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Poggiofiorito"
+},
+{
+"istat": "069068",
+"nome": "Pollutri",
+"prov": "CH",
+"sito": "http://comunedipollutri.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Pollutri"
+},
+{
+"istat": "069069",
+"nome": "Pretoro",
+"prov": "CH",
+"sito": "http://comune.pretoro.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [
+"borghi"
+],
+"wiki": "https://it.wikipedia.org/wiki/Pretoro"
+},
+{
+"istat": "069070",
+"nome": "Quadri",
+"prov": "CH",
+"sito": "http://comune.quadri.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Quadri"
+},
+{
+"istat": "069071",
+"nome": "Rapino",
+"prov": "CH",
+"sito": "http://rapino.net",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Pinacoteca e centro documentale della ceramica",
+"DBUnico.100063"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Rapino"
+},
+{
+"istat": "069072",
+"nome": "Ripa Teatina",
+"prov": "CH",
+"sito": "http://comuneripateatina.gov.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Ripa_Teatina"
+},
+{
+"istat": "069073",
+"nome": "Roccamontepiano",
+"prov": "CH",
+"sito": "http://comune.roccamontepiano.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Roccamontepiano"
+},
+{
+"istat": "069074",
+"nome": "Rocca San Giovanni",
+"prov": "CH",
+"sito": "http://comuneroccasangiovanni.gov.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [
+"borghi"
+],
+"wiki": "https://it.wikipedia.org/wiki/Rocca_San_Giovanni"
+},
+{
+"istat": "069075",
+"nome": "Roccascalegna",
+"prov": "CH",
+"sito": "http://comuneroccascalegna.gov.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [
+"arancione"
+],
+"wiki": "https://it.wikipedia.org/wiki/Roccascalegna"
+},
+{
+"istat": "069076",
+"nome": "Roccaspinalveti",
+"prov": "CH",
+"sito": "http://comuneroccaspinalveti.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Roccaspinalveti"
+},
+{
+"istat": "069077",
+"nome": "Roio del Sangro",
+"prov": "CH",
+"sito": "http://comune.roiodelsangro.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Roio_del_Sangro"
+},
+{
+"istat": "069078",
+"nome": "Rosello",
+"prov": "CH",
+"sito": "http://comunerosello.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Rosello"
+},
+{
+"istat": "069079",
+"nome": "San Buono",
+"prov": "CH",
+"sito": "http://comune.sanbuono.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/San_Buono"
+},
+{
+"istat": "069080",
+"nome": "San Giovanni Lipioni",
+"prov": "CH",
+"sito": "http://comunesangiovannilipioni.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/San_Giovanni_Lipioni"
+},
+{
+"istat": "069081",
+"nome": "San Giovanni Teatino",
+"prov": "CH",
+"sito": "http://comunesgt.gov.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo scienze Naturali",
+"DBUnico.105425"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/San_Giovanni_Teatino"
+},
+{
+"istat": "069082",
+"nome": "San Martino sulla Marrucina",
+"prov": "CH",
+"sito": "http://sanmartinosm.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/San_Martino_sulla_Marrucina"
+},
+{
+"istat": "069083",
+"nome": "San Salvo",
+"prov": "CH",
+"sito": "http://comunesansalvo.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo civico Porta della terra e Parco archeologico del Quadrilatero",
+"DBUnico.100065"
+],
+[
+"Isola archeologica del chiostro",
+"DBUnico.104351"
+],
+[
+"Isola archeologica del mosaico romano",
+"DBUnico.104352"
+],
+[
+"Acquedotto Romano Ipogeo",
+"DBUnico.104353"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/San_Salvo"
+},
+{
+"istat": "069084",
+"nome": "Santa Maria Imbaro",
+"prov": "CH",
+"sito": "http://comune.santamariaimbaro.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Santa_Maria_Imbaro"
+},
+{
+"istat": "069085",
+"nome": "Sant'Eusanio del Sangro",
+"prov": "CH",
+"sito": "http://comune.santeusaniodelsangro.chieti.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Museo Palazzo de Titta",
+"DBUnico.100066"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Sant'Eusanio_del_Sangro"
+},
+{
+"istat": "069086",
+"nome": "San Vito Chietino",
+"prov": "CH",
+"sito": "http://comunesanvitochietino.gov.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/San_Vito_Chietino"
+},
+{
+"istat": "069087",
+"nome": "Scerni",
+"prov": "CH",
+"sito": "http://comunediscerni.com",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Scerni"
+},
+{
+"istat": "069088",
+"nome": "Schiavi di Abruzzo",
+"prov": "CH",
+"sito": "http://comune.schiavidiabruzzo.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Schiavi_di_Abruzzo"
+},
+{
+"istat": "069089",
+"nome": "Taranta Peligna",
+"prov": "CH",
+"sito": "http://comune.tarantapeligna.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Taranta_Peligna"
+},
+{
+"istat": "069090",
+"nome": "Tollo",
+"prov": "CH",
+"sito": "http://comune.tollo.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Tollo"
+},
+{
+"istat": "069091",
+"nome": "Torino di Sangro",
+"prov": "CH",
+"sito": "http://comune.torinodisangro.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Torino_di_Sangro"
+},
+{
+"istat": "069092",
+"nome": "Tornareccio",
+"prov": "CH",
+"sito": "http://comune.tornareccio.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Area archeologica di Monte Pallano",
+"MiBAC.7191"
+],
+[
+"Mura Megalitiche (Paladine) di Palladium - Monte Pallano",
+"MiBAC.7225"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Tornareccio"
+},
+{
+"istat": "069093",
+"nome": "Torrebruna",
+"prov": "CH",
+"sito": "http://comune.torrebruna.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Torrebruna"
+},
+{
+"istat": "069094",
+"nome": "Torrevecchia Teatina",
+"prov": "CH",
+"sito": "http://comunetorrevecchiateatina.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Torrevecchia_Teatina"
+},
+{
+"istat": "069095",
+"nome": "Torricella Peligna",
+"prov": "CH",
+"sito": "http://comune.torricellapeligna.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Torricella_Peligna"
+},
+{
+"istat": "069096",
+"nome": "Treglio",
+"prov": "CH",
+"sito": "http://comune.treglio.chieti.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Treglio"
+},
+{
+"istat": "069097",
+"nome": "Tufillo",
+"prov": "CH",
+"sito": "http://tufillo.gov.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Tufillo"
+},
+{
+"istat": "069098",
+"nome": "Vacri",
+"prov": "CH",
+"sito": "http://comune.vacri.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Vacri"
+},
+{
+"istat": "069099",
+"nome": "Vasto",
+"prov": "CH",
+"sito": "http://comune.vasto.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [
+[
+"Palazzo d'Avalos - Musei civici",
+"DBUnico.100068"
+],
+[
+"Terme romane",
+"DBUnico.104354"
+],
+[
+"Chiesa di Santa Maria Maggiore di Vasto",
+"DBUnico.110883"
+],
+[
+"Cattedrale di San Giuseppe",
+"DBUnico.110884"
+]
+],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Vasto"
+},
+{
+"istat": "069100",
+"nome": "Villalfonsina",
+"prov": "CH",
+"sito": "http://comune.villalfonsina.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Villalfonsina"
+},
+{
+"istat": "069101",
+"nome": "Villamagna",
+"prov": "CH",
+"sito": "http://comunedivillamagna.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Villamagna"
+},
+{
+"istat": "069102",
+"nome": "Villa Santa Maria",
+"prov": "CH",
+"sito": "http://villasantamaria.eu/hh/index.php",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Villa_Santa_Maria"
+},
+{
+"istat": "069103",
+"nome": "Pietraferrazzana",
+"prov": "CH",
+"sito": "http://comune.pietraferrazzana.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Pietraferrazzana"
+},
+{
+"istat": "069104",
+"nome": "Fallo",
+"prov": "CH",
+"sito": "http://comune.fallo.ch.it",
+"sito_fonte": "IPA (copia opendatasicilia, ott. 2025)",
+"mic": [],
+"premi": [],
+"wiki": "https://it.wikipedia.org/wiki/Fallo"
+}
+]
+}

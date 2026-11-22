@@ -1,0 +1,88 @@
+const M=[
+ {k:'arch',l:'Archeologia',e:'🏺',d:'Siti e aree archeologiche per civiltà',s:{'Preistoria':'🦴','Nuragici':'🗿','Etruschi':'⚱️','Greci':'🏛️','Fenici':'⛵','Italici':'🛡️','Romani':'🏟️','Tardoantichi':'✝️','Medievali':'🏰','Altro':'❔'}},
+ {k:'mon',l:'Monumenti',e:'🏰',d:'Castelli, palazzi, piazze e borghi',s:{'Castelli':'🏰','Fortezze':'🛡️','Mura':'🧱','Torri':'🗼','Palazzi':'🏛️','Ville':'🏡','Piazze':'⛲','Centri':'🏙️','Borghi':'🏘️','Abbandonati':'🏚️','Portici':'🏛️','Teatri':'🎭','Ponti':'🌉','Fontane':'⛲','Monumenti':'🗽','Memoriali':'🕯️'}},
+ {k:'sacro',l:'Sacro',e:'⛪',d:'Chiese, abbazie e santuari',s:{'Chiese':'⛪','Pievi':'⛪','Basiliche':'⛪','Duomi':'⛪','Abbazie':'📿','Conventi':'📿','Santuari':'🙏','Oratori':'🕍','Battisteri':'💧','Sinagoghe':'🕎','Monti sacri':'⛰️','Complessi':'🔔','Cimiteri':'🕯️'}},
+ {k:'musei',l:'Musei',e:'🖼️',d:'Arte, storia, scienza e collezioni',s:{'Pittura':'🖼️','Moderna':'🎨','Ceramica':'🏺','Archeologici':'⚱️','Scienza':'🔭','Storia':'📜','Dimore':'🏠','Diocesani':'✝️','Etnografici':'🧺','Tecnica':'⚙️','Militari':'🎖️','Tematici':'🗂️'}},
+ {k:'nat',l:'Natura',e:'🌿',d:'Parchi, acqua, montagna e panorami',s:{'Parchi':'🌲','Riserve':'🦅','Giardini':'🌷','Orti':'🌱','Laghi':'🏞️','Fiumi':'🌊','Cascate':'💦','Spiagge':'🏖️','Montagna':'⛰️','Vulcani':'🌋','Grotte':'🕳️','Geositi':'🪨','Sentieri':'🥾','Panorami':'🌄'}},
+ {k:'trad',l:'Tradizioni',e:'🧺',d:'Mercati, terme, sapori e botteghe',s:{'Mercati':'🧺','Terme':'♨️','Sapori':'🍷','Ceramica':'🏺','Botteghe':'🧵','Motori':'🏎️','Curiosità':'✨'}}];
+const MM=Object.fromEntries(M.map(m=>[m.k,m]));
+const TX=[['u','UNESCO','🌍','Patrimonio mondiale'],['g','Gratis','🆓','Ingresso libero'],['i','Coperti','☔','Al chiuso, se piove'],['v','Panorama','👀','Punti panoramici'],['b','Più belli','🏘️',"Borghi più belli d'Italia"],['a','Arancioni','🟠','Bandiere Arancioni']];
+const RN={'abruzzo':'Abruzzo','campania':'Campania','emilia-romagna':'Emilia-Romagna','lazio':'Lazio','liguria':'Liguria','lombardia':'Lombardia','marche':'Marche','piemonte':'Piemonte','puglia':'Puglia','sardegna':'Sardegna','sicilia':'Sicilia','toscana':'Toscana','trentino-alto-adige':'Trentino-Alto Adige','umbria':'Umbria','valle-d-aosta':"Valle d'Aosta",'veneto':'Veneto'};
+const AWL={u:'UNESCO',b:'Borghi più belli',a:'Bandiera Arancione',c:'Città creativa'};
+const st={reg:'',q:'',open:'arch',sel:{},tx:new Set(),sort:'n',lim:30,com:null};
+const $=i=>document.getElementById(i);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const norm=s=>s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+const cv=k=>`--mc:var(--c-${k});--ms:var(--s-${k});--cc:var(--c-${k});--cs:var(--s-${k})`;
+const regs=[...new Set(C.map(c=>c[2]))].sort();
+$('reg').innerHTML='<option value="">Tutte le regioni</option>'+regs.map(r=>`<option value="${r}">${RN[r]||r}</option>`).join('');
+function base(){const q=norm(st.q);return P.filter(p=>{const c=C[p[1]];return(!st.reg||c[2]===st.reg)&&(!q||norm(p[0]+' '+c[0]).includes(q))&&[...st.tx].every(f=>p[4].includes(f))})}
+const anySel=()=>Object.values(st.sel).some(s=>s.size);
+function match(p){if(!anySel())return true;const s=st.sel[p[2]];return s&&s.size&&p[3].some(x=>s.has(x))}
+function renderF(){
+ const B=base(),R=B.filter(match);
+ $('tot').textContent=B.length.toLocaleString('it')+' luoghi';
+ $('macros').innerHTML=M.map(m=>{const n=B.filter(p=>p[2]===m.k).length,c=(st.sel[m.k]||new Set()).size;
+  return `<button class="macro ${st.open===m.k?'on':''}" style="${cv(m.k)}" data-m="${m.k}"><span class="dot ${c?'show':''}">${c}</span><span class="ic">${m.e}</span><b>${m.l}</b><span class="n">${n}</span></button>`}).join('');
+ const m=MM[st.open];
+ if(m){const sel=st.sel[m.k]||new Set(),BM=B.filter(p=>p[2]===m.k);
+  $('panel').innerHTML=`<div class="panel" style="${cv(m.k)}"><div class="ph"><h3>${m.e} ${m.l}</h3><small>${m.d}</small>${sel.size?`<button data-clr="${m.k}">Togli</button>`:''}</div><div class="chips">`+
+  Object.entries(m.s).map(([s,e])=>{const n=BM.filter(p=>p[3].includes(s)).length;return `<button class="chip ${sel.has(s)?'on':''} ${n?'':'zero'}" data-s="${esc(s)}">${e} ${s} <i>${n}</i></button>`}).join('')+`</div></div>`}
+ else $('panel').innerHTML='';
+ $('tx').innerHTML=TX.map(([k,l,e,h])=>`<button class="tog ${st.tx.has(k)?'on':''}" data-t="${k}"><span class="e">${e}</span><span><b>${l}</b><small>${h}</small></span></button>`).join('');
+ const pills=[];for(const k in st.sel)for(const s of st.sel[k])pills.push(`<button class="pill" data-rm="${k}|${esc(s)}">${MM[k].s[s]||''} ${s} ✕</button>`);
+ for(const t of st.tx)pills.push(`<button class="pill" data-rt="${t}">${TX.find(x=>x[0]===t)[1]} ✕</button>`);
+ $('active').innerHTML=pills.join('');
+ // comuni
+ const SS=anySel();const by=new Map();for(const p of R){let o=by.get(p[1]);if(!o){o={c:p[1],n:0,k:{},s:{}};by.set(p[1],o)}o.n++;o.k[p[2]]=(o.k[p[2]]||0)+1;if(SS)for(const s of p[3])if(st.sel[p[2]]&&st.sel[p[2]].has(s)){const kk=p[2]+'|'+s;o.s[kk]=(o.s[kk]||0)+1}}
+ let L=[...by.values()];
+ L.sort(st.sort==='n'?(a,b)=>b.n-a.n||C[a.c][0].localeCompare(C[b.c][0]):(a,b)=>C[a.c][0].localeCompare(C[b.c][0]));
+ $('comN').textContent=`${L.length} · ${R.length} luoghi`;$('sortb').innerHTML=`<button class="${st.sort==='n'?'on':''}" data-sort="n">Più luoghi</button><button class="${st.sort==='a'?'on':''}" data-sort="a">A-Z</button>`;
+ $('coms').innerHTML=L.length?L.slice(0,st.lim).map(o=>{const c=C[o.c];
+  const aw=[...c[3]].filter(x=>AWL[x]).map(x=>`<span>${x==='u'?'UNESCO':x==='b'?'Borghi':x==='a'?'Arancione':'Creativa'}</span>`).join('');
+  return `<button class="com" data-c="${o.c}"><div class="bd"><h4>${esc(c[0])}${aw?`<span class="aw">${aw}</span>`:''}</h4><div class="where">${esc(c[1])===(RN[c[2]]||c[2])?esc(c[1]):esc(c[1])+' · '+(RN[c[2]]||c[2])}</div><div class="cats">`+
+  (SS?Object.entries(o.s).map(([kk,n])=>{const[k,s]=kk.split('|');return `<span class="cat" style="${cv(k)}"><em>${MM[k].s[s]}</em>${n} ${s}</span>`}).join(''):M.filter(m=>o.k[m.k]).map(m=>`<span class="cat" style="${cv(m.k)}"><em>${m.e}</em>${o.k[m.k]}</span>`).join(''))+
+  `</div></div><div class="tot"><b>${o.n}</b><small>${o.n===1?'luogo':'luoghi'}</small></div><span class="chev">›</span></button>`}).join('')+(L.length>st.lim?`<button class="more" id="more">Mostra altri ${Math.min(30,L.length-st.lim)} comuni</button>`:'')
+  :`<div class="empty">Nessun comune con questi filtri.<br>Prova a toglierne qualcuno.</div>`;
+ $('cta').textContent=`Vedi ${L.length} ${L.length===1?'comune':'comuni'} · ${R.length} luoghi`;
+}
+function renderL(){
+ const ci=st.com,c=C[ci];const all=P.filter(p=>p[1]===ci);
+ const R=all.filter(p=>match(p)&&[...st.tx].every(f=>p[4].includes(f)));
+ const filtered=R.length<all.length;
+ const show=filtered?R:all;
+ const g=M.map(m=>[m,show.filter(p=>p[2]===m.k)]).filter(x=>x[1].length);
+ const aw=[...c[3]].filter(x=>AWL[x]).map(x=>AWL[x]).join(' · ');
+ $('vL').innerHTML=`<button class="back" id="back">‹ Filtri</button>
+ <div class="hero"><div class="where">${esc(c[1])===(RN[c[2]]||c[2])?esc(c[1]):esc(c[1])+' · '+(RN[c[2]]||c[2])}${aw?' · '+aw:''}</div><h1>${esc(c[0])}</h1>${c[4]?`<p>${esc(c[4])}</p>`:''}</div>
+ <div class="stats">${g.map(([m,a])=>`<button class="st" style="${cv(m.k)}" data-jump="${m.k}"><em>${m.e}</em><span><b>${a.length}</b><small>${m.l}</small></span></button>`).join('')}</div>
+ ${filtered?`<p class="filt">Stai vedendo ${R.length} luoghi su ${all.length} secondo i filtri. <button class="ghost" id="allp" style="padding:4px 10px;font-size:12.5px;border-radius:99px">Mostra tutti</button></p>`:''}
+ ${g.map(([m,a])=>`<div class="grp" id="g-${m.k}" style="${cv(m.k)}"><div class="gh"><span class="ic">${m.e}</span><h3>${m.l}</h3><small>${a.length}</small></div>`+a.map(p=>{
+   const tg=p[3].map(s=>`<span class="tag">${(m.s[s]||'')} ${s}</span>`).join('');
+   const mt=[];if(p[4].includes('g'))mt.push('<span class="mt free">Gratis</span>');else if(p[7]&&p[7]!=='Da verificare')mt.push(`<span class="mt">💶 ${esc(p[7])}</span>`);else mt.push('<span class="mt">💶 Prezzo da verificare</span>');
+   if(p[8])mt.push(`<span class="mt">⏱ ${esc(p[8])}</span>`);if(p[4].includes('i'))mt.push('<span class="mt">☔ Al chiuso</span>');if(p[4].includes('v'))mt.push('<span class="mt">👀 Panorama</span>');if(p[4].includes('u'))mt.push('<span class="mt">🌍 UNESCO</span>');
+   const qq=encodeURIComponent(p[0]+', '+c[0]);
+   return `<article class="pl"><div class="bar"></div><div class="in"><div class="tags">${tg}</div><h4>${esc(p[0])}</h4><p>${esc(p[5])}</p><div class="meta">${mt.join('')}</div><div class="foot"><span class="addr">📍 ${esc(p[6]||c[0])}</span><a class="go" href="https://www.google.com/maps/search/?api=1&query=${qq}" target="_blank" rel="noopener">Come arrivare ›</a></div></div></article>`}).join('')+`</div>`).join('')}`;
+}
+function show(v){$('vF').classList.toggle('on',v==='F');$('vL').classList.toggle('on',v==='L');$('bbar').style.display=v==='F'?'flex':'none';window.scrollTo(0,0)}
+document.addEventListener('click',e=>{const t=e.target.closest('button');if(!t)return;const D=t.dataset;
+ if(D.m)st.open=st.open===D.m?null:D.m;
+ else if(D.s){const k=st.open;(st.sel[k]=st.sel[k]||new Set());st.sel[k].has(D.s)?st.sel[k].delete(D.s):st.sel[k].add(D.s);st.lim=30}
+ else if(D.clr)st.sel[D.clr]=new Set();
+ else if(D.t){st.tx.has(D.t)?st.tx.delete(D.t):st.tx.add(D.t);st.lim=30}
+ else if(D.rm){const[k,s]=D.rm.split('|');st.sel[k].delete(s)}
+ else if(D.rt)st.tx.delete(D.rt);
+ else if(D.sort)st.sort=D.sort;
+ else if(D.c){st.com=+D.c;renderL();show('L');history.pushState({l:1},'');return}
+ else if(D.jump){document.getElementById('g-'+D.jump).scrollIntoView({behavior:'smooth'});return}
+ else if(t.id==='allp'){const k=st.sel,x=st.tx;st.sel={};st.tx=new Set();renderL();st.sel=k;st.tx=x;return}
+ else if(t.id==='back'){history.back();return}
+ else if(t.id==='cta'){$('comHead').scrollIntoView({behavior:'smooth'});return}
+ else if(t.id==='more')st.lim+=30;
+ else if(t.id==='reset'){st.sel={};st.tx.clear();st.q='';$('q').value='';st.reg='';$('reg').value=''}
+ else return;renderF()});
+window.addEventListener('popstate',()=>{show('F')});
+$('reg').onchange=e=>{st.reg=e.target.value;st.lim=30;renderF()};
+$('q').oninput=e=>{st.q=e.target.value;st.lim=30;renderF()};
+renderF();
+</script></body></html>

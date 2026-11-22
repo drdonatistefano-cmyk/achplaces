@@ -1,0 +1,39 @@
+name: Applica le correzioni dei link
+# 18/11/2026: quando Stefano spunta una casella nella segnalazione «Link da correggere», scrive quei gruppi di
+# correzioni in sorgenti/data/link_correzioni.json (sorgenti/link/applica.py). Solo le caselle spuntate dal
+# proprietario del repository. Il sito cambia alla prossima costruzione di Places, dopo il «pubblica».
+on:
+  issues:
+    types: [edited]
+permissions:
+  contents: write
+  issues: write
+concurrency: { group: link-applica, cancel-in-progress: false }
+jobs:
+  applica:
+    if: contains(github.event.issue.labels.*.name, 'link') && github.event.sender.login == github.repository_owner && github.event.issue.state == 'open'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with: { sparse-checkout: "sorgenti/link\nsorgenti/data/link_correzioni.json", sparse-checkout-cone-mode: false, fetch-depth: 1 }
+      - name: Gruppi spuntati
+        id: g
+        env: { CORPO: '${{ github.event.issue.body }}' }
+        run: |
+          gruppi=$(printf '%s\n' "$CORPO" | grep -E '^- \[[xX]\] ' | grep -o 'gruppo:[a-z_]*' | cut -d: -f2 | tr '\n' ' ')
+          echo "gruppi=$gruppi" >> "$GITHUB_OUTPUT"; echo "spuntati: $gruppi"
+      - name: Proposte della settimana
+        if: steps.g.outputs.gruppi != ''
+        run: git fetch -q --depth 1 origin foto && git show origin/foto:proposte-link.json > /tmp/proposte.json
+      - name: Applica e salva
+        if: steps.g.outputs.gruppi != ''
+        env: { GH_TOKEN: '${{ github.token }}' }
+        run: |
+          python3 sorgenti/link/applica.py /tmp/proposte.json ${{ steps.g.outputs.gruppi }} | tee /tmp/esito.txt
+          git config user.name "achplaces-bot"; git config user.email "actions@users.noreply.github.com"
+          git add sorgenti/data/link_correzioni.json
+          git commit -q -m "Link: correzioni approvate da Stefano (${{ steps.g.outputs.gruppi }}), segnalazione #${{ github.event.issue.number }}" || { echo "niente di nuovo"; exit 0; }
+          ok=0; for i in 1 2 3 4 5; do git pull --rebase -q origin main && git push -q origin HEAD:main && { ok=1; break; }; sleep 7; done
+          [ $ok = 1 ] || { echo "salvataggio non riuscito"; exit 1; }   # 20/11: un ciclo che finisce senza salvare non deve risultare verde (REGOLE 7)
+          gh issue comment ${{ github.event.issue.number }} -b "Fatto: $(cat /tmp/esito.txt). Si vede sul sito alla prossima costruzione di Places, dopo il «pubblica»."

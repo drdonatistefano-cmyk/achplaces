@@ -1,0 +1,32 @@
+name: Diagnosi dei link irraggiungibili
+# 15/11/2026: diagnosi dei siti irraggiungibili (DNS, porte, certificato) e copie d'archivio delle pagine sparite. A mano o al push. Gratuito.
+on:
+  workflow_dispatch:
+  push:
+    paths: ['sorgenti/link/diagnosi.py', 'sorgenti/link/diagnosi_input.json']
+permissions:
+  contents: write
+jobs:
+  diagnosi:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with: { sparse-checkout: "sorgenti/link\n.github", fetch-depth: 1 }
+      - name: Ramo foto
+        run: |
+          git fetch origin foto
+          git worktree add -B foto out origin/foto
+          cd out && git sparse-checkout disable || true
+          git config user.name "achplaces-bot"; git config user.email "actions@users.noreply.github.com"
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install requests
+      - run: python sorgenti/link/diagnosi.py
+      - name: Salva
+        run: |
+          cd out
+          git add diagnosi.json
+          git commit -q -m "Diagnosi dei link irraggiungibili" || exit 0
+          for i in 1 2 3 4 5 6; do git pull --rebase -q origin foto && git push -q origin HEAD:foto && exit 0; sleep 9; done
+          exit 1

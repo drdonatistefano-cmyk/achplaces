@@ -1,0 +1,10 @@
+# Indizi da Wikidata per Montauro (10/11/2026): elenco di luoghi che esistono nel comune. NON sono fonti: servono a sapere cosa cercare.
+# Per ogni voce cerca una fonte ufficiale (sito del gestore indicato, Comune, parrocchia/Diocesi, Regione, ente turistico, MiC/ICCD) che la descriva.
+# Wikipedia serve solo a trovare link a fonti ufficiali (note, collegamenti esterni), mai come fonte da citare.
+- Grangia di Sant'Anna | grangia | tutela: bene culturale italiano
+- Museo parrocchiale di San Pantaleone | museo, museo religioso | tutela: bene culturale italiano
+- Cappellina di San Pantaleone | cappella
+- chiesa della Madonna della Conella | chiesa
+- chiesa di San Pantaleone | chiesa
+- chiesa di San Sebastiano | chiesa
+- palazzo comunale | palazzo comunale

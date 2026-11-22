@@ -1,0 +1,52 @@
+"""Scrive la coda per GitHub Actions: luoghi senza foto, non già provati."""
+import json, os
+src = open('/home/claude/foto/foto.py').read()
+exec(src.split("m=json.load(open(G+'manifest.json'))")[0])
+m = json.load(open(G + 'manifest.json')); D = json.load(open(G + m['dati']))
+import sys as _s9; _s9.path.insert(0,'/home/claude/achs-places-guide'); from leggi_dati import righe as _righe9; D = _righe9(D)   # 9/11: dati per colonne
+R = '/home/claude/foto-ramo/'
+meta = json.load(open(R + 'meta.json')); prov = set(json.load(open(R + 'provati.json')) if os.path.exists(R+'provati.json') else [])
+c = json.load(open(F + 'foto2.json'))
+prov2 = set(json.load(open(R + 'provati2.json'))) if os.path.exists(R + 'provati2.json') else set()
+pid_of = lambda cc, a: (cc['slug'] + '--' + (a[0] if a[0] else slug40(a[1]))) if cc['slug'] else a[0]
+coda = []
+PROV4 = set(json.load(open(R + 'provati4.json'))) if os.path.exists(R + 'provati4.json') else set()
+# 9/11: terza ricerca (r3) per i luoghi ancora senza foto dopo la seconda e per quelli con foto scartata dal controllo
+SC = json.load(open(F + 'controllo.json'))['scarti'] if os.path.exists(F + 'controllo.json') else {}
+FIN = set(json.load(open(F + 'foto-finale.json'))) if os.path.exists(F + 'foto-finale.json') else set()
+prov3 = set(json.load(open(R + 'provati3.json'))) if os.path.exists(R + 'provati3.json') else set()
+for cc in D['c']:
+    for a in cc['places']:
+        p = pid_of(cc, a)
+        r = c.get(p, {})
+        if p not in FIN and str(SC.get(p, '')).startswith('stessa foto') and p + '|b' not in prov2:
+            coda.append({'p': p, 'com': cc['name'], 'n': a[1], 'r2b': 1, 'no': r.get('file', '')}); continue   # 9/11: doppione (stessa foto di un altro luogo): cerca la foto del luogo specifico
+        if p not in FIN and p not in prov3 and (p in SC or (p in prov and p in prov2)):
+            coda.append({'p': p, 'com': cc['name'], 'n': a[1], 'istat': cc.get('istat', ''), 'r3': 1, 'no': r.get('file', '')}); continue
+        prov4 = PROV4
+        if p not in FIN and p not in prov4 and (p in prov3 or (p in prov and p in prov2 and p not in SC)) and not str(SC.get(p, '')).startswith('stessa foto'):
+            coda.append({'p': p, 'com': cc['name'], 'n': a[1], 'istat': cc.get('istat', ''), 'r4': 1, 'no': r.get('file', '')}); continue   # 9/11: quarta ricerca (albero categorie del comune, Openverse)
+        if p in meta and r.get('img'): continue
+        if p in prov and not (r.get('file') and r.get('file') != (meta.get(p) or [None]*6)[5]):
+            if p in prov2: continue
+            coda.append({'p': p, 'com': cc['name'], 'n': a[1], 'r2': 1}); continue   # 9/11: seconda ricerca (categorie e varianti del nome)
+        if r.get('img') and r.get('l'): continue
+        e = {'p': p, 'com': cc['name']}
+        if r.get('file'): e['file'] = r['file']
+        else:
+            if r.get('cat'): e['cat'] = r['cat']
+            e['q'] = a[1] + ' ' + cc['name']
+        coda.append(e)
+# 9/11: quinta ricerca (locale, quinta.py) e foto scelte a mano (manuali.json): file già scelto, Actions scarica licenza e foto
+_gia = {x['p'] for x in coda}
+_Q5 = json.load(open(F + 'quinta-trovate.json')) if os.path.exists(F + 'quinta-trovate.json') else []
+_MAN = json.load(open(F + 'manuali.json')) if os.path.exists(F + 'manuali.json') else {}
+coda = [x for x in coda if x['p'] not in _MAN and x['p'] not in {y['p'] for y in _Q5}]
+for x in _Q5:
+    if x['p'] not in FIN: coda.append(x)
+for k, v in _MAN.items():
+    if ((meta.get(k) or [])+[None]*7)[5] != v['file']:
+        cc_ = next((cc for cc in D['c'] if k.startswith(cc['slug'] + '--')), None)
+        coda.append({'p': k, 'com': cc_['name'] if cc_ else '', 'file': v['file'], 'via': 'manuale', 'lab': v.get('nota', ''), 'r5': 1})
+json.dump(coda, open('/home/claude/achplaces/sorgenti/foto/coda.json', 'w'), ensure_ascii=False, indent=0)
+print('coda', len(coda))

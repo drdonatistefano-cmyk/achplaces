@@ -1,0 +1,484 @@
+"""Pagine statiche indicizzabili da Google per Ach's Places Guide.
+
+La guida interattiva (index.html) è una sola pagina: Google non può indicizzare i singoli luoghi.
+Questo programma genera, dai file di dati già pubblicati, una pagina per ogni comune e per ogni
+luogo con contenuto sufficiente, più gli indici per regione, la mappa del sito e robots.txt.
+
+Uso: python3 sorgenti/pagine.py [--luoghi 0|1] [--out .]
+Scrive: comune/<slug>/index.html, luogo/<id>/index.html, regione/<slug>/index.html,
+        comuni/index.html, sitemap.xml, sitemap-N.xml, robots.txt, pagine.css
+"""
+import glob, html, json, os, re, sys, unicodedata, datetime
+
+SITO = "https://achplaces.com"
+OGGI = datetime.date.today().isoformat()
+RADICE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+CAT = ["storia", "musei", "sacro", "natura", "locale"]
+CATN = {"storia": "Storia e architettura", "musei": "Musei", "sacro": "Luoghi di culto",
+        "natura": "Natura e paesaggio", "locale": "Vita e tradizioni locali"}
+AWIN, GYG = "3146807", "Y9VWGXI"
+MID_TIQETS = 12427
+
+ap = {"luoghi": 1, "out": RADICE}
+for i, a in enumerate(sys.argv[1:]):
+    if a == "--luoghi": ap["luoghi"] = int(sys.argv[i + 2])
+    if a == "--out": ap["out"] = sys.argv[i + 2]
+OUT = ap["out"]
+
+
+def e(s):
+    return html.escape(str(s or ""), quote=True)
+
+
+def slug(s, n=60):
+    s = unicodedata.normalize("NFD", str(s).lower())
+    s = "".join(c for c in s if not unicodedata.combining(c))
+    return re.sub(r"[^a-z0-9]+", "-", s).strip("-")[:n].strip("-")
+
+
+def taglia(s, n=155):
+    s = re.sub(r"\s+", " ", str(s or "")).strip()
+    return s if len(s) <= n else s[:n - 1].rsplit(" ", 1)[0] + "…"
+
+
+# ---------------------------------------------------------------- lettura dei dati pubblicati
+M = json.load(open(os.path.join(RADICE, "manifest.json"), encoding="utf-8"))
+leggi = lambda n: json.load(open(os.path.join(RADICE, n), encoding="utf-8"))
+D = leggi(M["dati"])
+TESTI = []
+with open(os.path.join(RADICE, M["testi"]), encoding="utf-8") as f:
+    for riga in f:
+        riga = riga.strip()
+        if riga: TESTI += json.loads(riga)
+FOTO = leggi(M["foto"])
+Z = D["dz"]
+K = D["k"]
+COL = list(K["ck"].keys())
+
+comuni, g = [], 0
+for i in range(len(K["n"])):
+    c = {}
+    for k in COL:
+        m = K["cm"].get(k)
+        if m and i in m: continue
+        c[k] = K["ck"][k][i]
+    for k in ("regione", "provName", "provKind", "verified"):
+        if isinstance(c.get(k), int): c[k] = Z[k][c[k]]
+    pl = []
+    for _ in range(K["n"][i]):
+        a = [K["p"][j][g] for j in range(9)]
+        x = K["x"].get(str(g)) or {}
+        nome = a[1]
+        pid = (c["slug"] + "--" + (a[0] if a[0] else slug(nome, 40))) if c["slug"] else a[0]
+        f = a[5] or ""
+        pl.append({"id": pid, "name": nome, "cat": CAT[a[2]], "sub": Z["sub"][a[3]],
+                   "desc": a[4] or "", "gratis": "F" in f, "pagamento": "P" in f,
+                   "unesco": "u" in f, "vista": "v" in f, "coperto": "i" in f,
+                   "stato": a[6] or "ok", "tempo": Z["t"][a[7]] if a[7] is not None else "",
+                   "ps": x.get("ps", ""),  # 13/11: stima del prezzo (numero), non un indice dei testi
+                   "tq": x.get("tq", ""), "gy": x.get("gy", ""), "ticketUrl": x.get("ticketUrl", "")})
+        g += 1
+    c["places"] = pl
+    if c.get("slug"): comuni.append(c)
+
+def bologna_dal_modello():
+    """17/11/2026: Bologna non sta nei file dati (i suoi 27 luoghi sono in data/places-bologna.js e la scheda del
+    comune in template.html): senza questo passo la pagina di Bologna non esisteva. Li legge con node, come build.py."""
+    import subprocess
+    tpl = open(os.path.join(RADICE, "sorgenti", "template.html"), encoding="utf-8").read()
+    i = tpl.find('{slug:"bologna-bo"')
+    j = tpl.find("places:PLACES}", i)
+    if i < 0 or j < 0:
+        return None
+    js = (open(os.path.join(RADICE, "sorgenti", "data", "places-bologna.js"), encoding="utf-8").read()
+          + "\nconst B=" + tpl[i:j + len("places:PLACES}")] + ";\nprocess.stdout.write(JSON.stringify(B));")
+    c = json.loads(subprocess.run(["node", "-e", js], capture_output=True, text=True, check=True).stdout)
+    pl = []
+    for x in c.pop("places"):
+        y = dict(x)
+        y.update({"id": "bologna-bo--" + x["id"], "gratis": bool(x.get("free")), "pagamento": not x.get("free"),
+                  "unesco": bool(x.get("unesco")), "vista": bool(x.get("view")), "coperto": bool(x.get("indoor")),
+                  "stato": x.get("status") or "ok", "tempo": x.get("duration", ""),
+                  "ps": "", "tq": "", "gy": "", "ticketUrl": x.get("ticketUrl", "")})
+        pl.append(y)
+    c["places"] = pl
+    c["lat"], c["lng"] = D.get("g", [None, None])[:2]
+    return c
+
+
+if not any(c["slug"] == "bologna-bo" for c in comuni):
+    try:
+        _bo = bologna_dal_modello()
+        if _bo:
+            comuni.append(_bo)
+    except Exception as ex:
+        print("  Bologna non letta:", ex)
+
+DET = {}
+for pr, nome in M["det"].items():
+    try:
+        for cs, v in leggi(nome).items(): DET[cs] = v
+    except Exception as ex:
+        print("  dettagli non letti", pr, ex)
+
+for c in comuni:
+    d = DET.get(c["slug"]) or {}
+    c.update(d.get("_c") or {})
+    for p in c["places"]:
+        dd = d.get(p["id"])
+        if dd: p.update({k: v for k, v in dd.items() if v not in (None, "")})
+
+print(f"Letti {len(comuni)} comuni e {sum(len(c['places']) for c in comuni)} luoghi; {len(FOTO)} foto")
+
+REGIONI = {}
+for c in comuni: REGIONI.setdefault(c["regione"], []).append(c)
+nomereg = lambda r: " ".join(w if w in ("d'", "e") else w.capitalize() for w in r.replace("-", " ").split())
+NOMEREG = {r: {"emilia-romagna": "Emilia-Romagna", "friuli-venezia-giulia": "Friuli-Venezia Giulia",
+               "trentino-alto-adige": "Trentino-Alto Adige", "valle-d-aosta": "Valle d'Aosta"}.get(r, nomereg(r))
+           for r in REGIONI}
+
+# ---------------------------------------------------------------- pezzi comuni di ogni pagina
+CSS = """/* 22/11/2026: grafica istituzionale dal logo di Places (coccarda verde). Solo questo file: le pagine non cambiano. */
+@font-face{font-family:"Space Grotesk";font-weight:600;font-display:swap;src:url(/font/space-grotesk-600.woff2) format("woff2")}
+@font-face{font-family:"Space Grotesk";font-weight:700;font-display:swap;src:url(/font/space-grotesk-700.woff2) format("woff2")}
+:root{--ink:#231d18;--soft:#6f655a;--line:#e6dccb;--paper:#fffdf9;--bg:#f6efe4;--acc:#2f7a5c;--acc-ink:#225c45;--acc-soft:#e7f1eb;
+--head:"Space Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif}
+@media(prefers-color-scheme:dark){:root{--ink:#f2ebe1;--soft:#b0a597;--line:#302a25;--paper:#1d1a17;--bg:#141210;--acc:#7cc3a1;--acc-ink:#a6dbc0;--acc-soft:#1b2a23}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.65 var(--sans);-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased}
+main.w{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:28px 32px 34px;box-shadow:0 1px 2px rgba(35,29,24,.04),0 10px 30px -18px rgba(35,29,24,.18)}
+@media(max-width:560px){main.w{border-radius:0;border-left:0;border-right:0;padding:22px 18px 28px}}
+.w{max-width:780px;margin:0 auto;padding:0 20px}
+header.top{background:var(--paper);border-bottom:1px solid var(--line);padding:12px 0;margin-bottom:28px}
+@media(min-width:561px){header.top{position:sticky;top:0;z-index:5}}
+header.top .w{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center}
+.marchio{display:inline-flex;align-items:center;gap:10px;font:700 17px/1 var(--head);letter-spacing:-.01em;text-decoration:none;color:var(--ink)}
+.marchio::before{content:"";width:34px;height:34px;flex:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%232f7a5c'/%3E%3Ccircle cx='50' cy='50' r='42' fill='none' stroke='%23f6efe4' stroke-width='2.4'/%3E%3Cg transform='translate(17 15) scale(.66)' stroke='%23f6efe4' stroke-width='7' stroke-linecap='round' stroke-linejoin='round' fill='none'%3E%3Cpath d='M50 86C50 86 24 58 24 40a26 26 0 0 1 52 0C76 58 50 86 50 86Z'/%3E%3Ccircle cx='50' cy='40' r='5' fill='%23f6efe4'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat}
+nav.guide{margin-left:auto;display:flex;gap:6px;font-size:14px}
+nav.guide a{color:var(--ink);text-decoration:none;padding:7px 12px;border:1px solid var(--line);border-radius:999px;font-weight:600;background:var(--paper)}
+nav.guide a:hover{border-color:var(--acc);background:var(--acc-soft);color:var(--acc-ink)}
+@media(max-width:560px){nav.guide{margin-left:0;width:100%}nav.guide a{flex:1;text-align:center;padding:7px 6px}}
+.briciole{font-size:13.5px;color:var(--soft);margin:0 0 12px}
+.briciole a{color:var(--soft);text-decoration-color:var(--line)}
+h1,h2,h3{font-family:var(--head);letter-spacing:-.02em;color:var(--ink)}
+h1{font-size:34px;line-height:1.12;margin:0 0 12px;font-weight:700}
+h2{font-size:23px;line-height:1.2;margin:34px 0 6px;scroll-margin-top:76px;font-weight:700}
+h3{font-size:18.5px;line-height:1.25;margin:26px 0 4px;font-weight:600;scroll-margin-top:76px}
+h3 a,h2 a{color:var(--ink);text-decoration:none}
+h3 a:hover,h2 a:hover{color:var(--acc-ink);text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--acc) 40%,transparent);text-underline-offset:3px}
+:target{scroll-margin-top:76px}@media(max-width:560px){:target,h2,h3{scroll-margin-top:12px}}h3:target{color:var(--acc-ink)}
+article.luogo:has(h3:target){background:var(--acc-soft);border-radius:12px;padding:14px 16px 6px;margin-left:-16px;margin-right:-16px;border-top-color:transparent}
+.lede{font-size:18px;color:color-mix(in srgb,var(--ink) 82%,var(--paper));margin:0 0 18px}
+.avviso{background:#fbf3e2;border:1px solid #ecdcb8;border-radius:12px;padding:12px 14px;margin:18px 0;font-size:15px;color:#4a3a1c}
+@media(prefers-color-scheme:dark){.avviso{background:#2c2416;border-color:#4a3c22;color:#ecdcb8}}
+.apri{display:inline-flex;align-items:center;gap:8px;margin:6px 0 22px;padding:11px 18px;border:0;border-radius:999px;background:var(--acc);
+color:#fff;text-decoration:none;font:600 15px var(--sans);box-shadow:0 6px 16px -8px color-mix(in srgb,var(--acc) 70%,transparent)}
+.apri::after{content:"\\2192"}
+.apri:hover{background:var(--acc-ink)}
+article.luogo{border-top:1px solid var(--line);padding-top:18px;margin-top:26px}
+.meta{font-size:13.5px;color:var(--acc-ink);font-weight:600;margin:2px 0 8px}
+.tag{display:inline-block;margin-right:8px}
+ul.fatti{list-style:none;padding:0;margin:12px 0;font-size:15px;border-left:3px solid var(--acc-soft);padding-left:14px}
+ul.fatti li{margin:4px 0}
+ul.fatti b{font-weight:600;color:var(--soft)}
+.fonti{font-size:13.5px;color:var(--soft)}
+.fonti a{color:var(--soft)}
+ul.elenco{columns:2;column-gap:28px;padding-left:18px}
+ul.elenco li::marker{color:var(--acc)}
+@media(max-width:560px){ul.elenco{columns:1}h1{font-size:27px}}
+a{color:var(--acc-ink);text-underline-offset:2px}
+footer{margin-top:28px;padding:20px 0 40px;font-size:13.5px;color:var(--soft)}
+/* 22/11 sera: come «🧭 Guida» di AchRecipes, sul telefono «Mappa e filtri» diventa un pulsante che galleggia in fondo */
+@media(max-width:560px){
+nav.guide a[href="/"]{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(16px + env(safe-area-inset-bottom));z-index:20;flex:none;width:auto;
+display:inline-flex;align-items:center;gap:8px;height:50px;padding:0 24px;border:0;border-radius:999px;color:#fff;font:700 16px var(--sans);
+background:#2f7a5c linear-gradient(135deg,#2f7a5c,#3b9270);box-shadow:0 12px 28px -10px rgba(29,74,56,.85)}
+nav.guide a[href="/"]::before{content:"\\1F9ED";font-size:18px}
+nav.guide a[href="/"]:hover{background:linear-gradient(135deg,#225c45,#2f7a5c);color:#fff}
+body{padding-bottom:84px}
+}
+footer a{color:var(--soft)}
+"""
+
+NAV = ('<header class="top"><div class="w"><a class="marchio" href="/">Ach\'s Places Guide</a>'
+       '<nav class="guide" aria-label="Le guide di Ach">'
+       '<a href="https://achevents.com">Eventi</a>'
+       '<a href="https://achdinners.com">Osterie</a>'
+       '<a href="/">Mappa e filtri</a></nav></div></header>')
+
+PIE = ('<footer><div class="w"><p>Testi originali di Ach\'s Places Guide; le informazioni pratiche sono '
+       'riassunte dalle fonti ufficiali citate in ogni scheda. Alcuni link a biglietti e visite guidate sono '
+       'affiliati: se acquisti, la guida riceve una commissione senza costi in più per te.</p>'
+       f'<p>Aggiornato il {OGGI} · <a href="/">Guida completa, mappa e filtri</a> · '
+       '<a href="/comuni/">Tutti i comuni</a> · <a href="/#metodo">Metodo e fonti</a></p></div></footer>')
+
+GC = '<script data-goatcounter="https://achplaces.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>'
+
+
+def pagina(titolo, descr, url, corpo, jsonld=None, prof=0):
+    su = "../" * prof
+    # 17/11/2026: Google taglia i titoli oltre ~65 caratteri; se il titolo è lungo si toglie il marchio in coda
+    # (resta in og:site_name). Le pagine inglesi accettano il titolo con o senza marchio.
+    if titolo.endswith(" | Ach's Places Guide") and len(titolo) > 65:
+        titolo = titolo[: -len(" | Ach's Places Guide")]
+    ld = f'<script type="application/ld+json">{json.dumps(jsonld, ensure_ascii=False, separators=(",", ":"))}</script>' if jsonld else ""
+    return ("<!doctype html><html lang=\"it\"><head><meta charset=\"utf-8\">"
+            "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
+            f"<title>{e(titolo)}</title><meta name=\"description\" content=\"{e(descr)}\">"
+            f"<link rel=\"canonical\" href=\"{e(url)}\">"
+            f"<meta property=\"og:title\" content=\"{e(titolo)}\"><meta property=\"og:description\" content=\"{e(descr)}\">"
+            f"<meta property=\"og:type\" content=\"article\"><meta property=\"og:url\" content=\"{e(url)}\">"
+            "<meta property=\"og:site_name\" content=\"Ach's Places Guide\"><meta property=\"og:locale\" content=\"it_IT\">"
+            f"<meta property=\"og:image\" content=\"{SITO}/anteprima.png\"><meta property=\"og:image:width\" content=\"1200\">"
+            "<meta property=\"og:image:height\" content=\"630\"><meta name=\"twitter:card\" content=\"summary_large_image\">"
+            f"<link rel=\"stylesheet\" href=\"{su}pagine.css\">{ld}{GC}</head><body>"
+            + NAV + "<main class=\"w\">" + corpo + "</main>" + PIE + "</body></html>")
+
+
+def link_biglietti(p):
+    """Tiqets passa dalla rete Awin; GetYourGuide ha il codice partner nell'indirizzo."""
+    # 20/11/2026: terzo valore = attributi GoatCounter dei partner (partner/<dominio di arrivo>/<luogo>), come nella guida
+    out = []
+    if p.get("tq"):
+        import urllib.parse
+        out.append((f"https://www.awin1.com/cread.php?awinmid={MID_TIQETS}&awinaffid={AWIN}&ued="
+                    + urllib.parse.quote(p["tq"], safe=""), "Biglietti su Tiqets", gc_partner(p["tq"], p, "Tiqets")))
+    if p.get("gy"):
+        u = p["gy"] + ("&" if "?" in p["gy"] else "?") + f"partner_id={GYG}&utm_medium=online_publisher"
+        out.append((u, "Visite guidate su GetYourGuide", gc_partner(p["gy"], p, "GetYourGuide")))
+    if p.get("ticketUrl"):
+        out.append((p["ticketUrl"], "Biglietti sul sito ufficiale", ""))
+    return out
+
+
+def gc_partner(u, p, nome):
+    """Clic sul partner per la pagina delle visite: data-goatcounter-click="partner/<dominio>/<id del luogo>"."""
+    import urllib.parse
+    h = urllib.parse.urlsplit(u).hostname or ""
+    if h.endswith("awin1.com"):
+        h = urllib.parse.urlsplit((urllib.parse.parse_qs(urllib.parse.urlsplit(u).query).get("ued") or [""])[0]).hostname or h
+    h = h[4:] if h.startswith("www.") else h
+    return f' data-goatcounter-click="partner/{e(h)}/{e(p["id"])}" data-goatcounter-title="Partner: {e(nome)}"'
+
+
+def ricco(p):
+    """Ha una pagina propria solo il luogo con abbastanza contenuto da reggerla da solo."""
+    return p.get("ps") not in ("", None) or p.get("pagamento") or p.get("unesco")
+
+
+def etichette(p):
+    t = [CATN[p["cat"]], p.get("sub")]
+    if p.get("unesco"): t.append("Patrimonio UNESCO")
+    if p.get("gratis"): t.append("Ingresso gratuito")
+    elif p.get("pagamento"): t.append("Ingresso a pagamento")
+    if p.get("vista"): t.append("Punto panoramico")
+    return '<p class="meta">' + " · ".join(e(x) for x in t if x) + "</p>"
+
+
+def fatti(p, breve):
+    f = []
+    if p.get("address"): f.append(f"<li><b>Dove</b> {e(p['address'])}</li>")
+    if p.get("price"): f.append(f"<li><b>Ingresso</b> {e(p['price'])}</li>")
+    if p.get("duration") or p.get("tempo"): f.append(f"<li><b>Tempo consigliato</b> {e(p.get('duration') or p['tempo'])}</li>")
+    if not breve and p.get("access"): f.append(f"<li><b>Accessibilità</b> {e(p['access'])}</li>")
+    if p.get("official"):
+        q = "Scheda sul portale turistico" if p.get("ownSite") is False else "Sito ufficiale"
+        f.append(f'<li><b>{q}</b> <a href="{e(p["official"])}" rel="nofollow noopener">{e(p["official"].split("/")[2])}</a></li>')
+    if not breve and p.get("hoursUrl"): f.append(f'<li><b>Orari</b> <a href="{e(p["hoursUrl"])}" rel="nofollow noopener">pagina ufficiale</a></li>')
+    for u, q, gc in link_biglietti(p):
+        f.append(f'<li><b>Biglietti</b> <a href="{e(u)}" rel="sponsored nofollow noopener"{gc}>{e(q)}</a></li>')
+    return ('<ul class="fatti">' + "".join(f) + "</ul>") if f else ""
+
+
+def blocco_breve(p, c):
+    """Scheda corta nella pagina del comune: il testo lungo sta solo nella pagina del luogo."""
+    nome = (f'<a href="/luogo/{e(p["id"])}/">{e(p["name"])}</a>') if (ap["luoghi"] and ricco(p)) else e(p["name"])
+    t = [f'<h3 id="{e(slug(p["id"], 80))}">{nome}</h3>', etichette(p)]
+    if p.get("desc"): t.append(f"<p>{e(p['desc'])}</p>")
+    if p.get("statusNote"): t.append(f'<p class="avviso">{e(p["statusNote"])}</p>')
+    elif p.get("stato") == "closed": t.append('<p class="avviso">Luogo attualmente chiuso: verifica prima di partire.</p>')
+    t.append(fatti(p, True))
+    src = [s for s in (p.get("sources") or []) if len(s) > 1]
+    if src:
+        viste, dom = set(), []
+        for s in src:
+            d = s[1].split("/")[2].replace("www.", "")
+            if d not in viste: viste.add(d); dom.append(f'<a href="{e(s[1])}" rel="nofollow noopener">{e(d)}</a>')
+        t.append('<p class="fonti">Fonti: ' + " · ".join(dom) + "</p>")
+    return "".join(t)
+
+
+def blocco_pieno(p, c):
+    """Scheda completa nella pagina del luogo."""
+    t = [etichette(p)]
+    if p.get("desc"): t.append(f"<p>{e(p['desc'])}</p>")
+    if p.get("why"): t.append(f"<p><b>Perché andarci.</b> {e(p['why'])}</p>")
+    if p.get("statusNote"): t.append(f'<p class="avviso">{e(p["statusNote"])}</p>')
+    elif p.get("stato") == "closed": t.append('<p class="avviso">Luogo attualmente chiuso: verifica prima di partire.</p>')
+    t.append(fatti(p, False))
+    src = [s for s in (p.get("sources") or []) if len(s) > 1]
+    if src:
+        t.append('<h2>Fonti</h2><p class="fonti">' + " · ".join(
+            f'<a href="{e(s[1])}" rel="nofollow noopener">{e(s[0])}</a>' for s in src) + "</p>")
+    return "".join(t)
+
+
+def ld_luogo(p, c):
+    d = {"@context": "https://schema.org", "@type": "TouristAttraction", "name": p["name"],
+         "description": taglia(p.get("desc") or p["name"], 300),
+         "address": {"@type": "PostalAddress", "addressLocality": c["name"],
+                     "addressRegion": c.get("prov", ""), "addressCountry": "IT"}}
+    if p.get("address"): d["address"]["streetAddress"] = p["address"]
+    if c.get("lat") and c.get("lng"):
+        d["geo"] = {"@type": "GeoCoordinates", "latitude": c["lat"], "longitude": c["lng"]}
+    if p.get("official"): d["sameAs"] = p["official"]
+    if p.get("gratis"): d["isAccessibleForFree"] = True
+    return d
+
+
+# 20/11/2026 (peso del repository): ogni giro riscriveva tutte le ~35.000 pagine (italiano e inglese) solo perche'
+# cambiava la data «Aggiornato il …» e la data delle mappe del sito: circa 40 MB in piu' nella storia a ogni giro.
+# Ora una pagina che non cambia nel contenuto resta com'e', con la sua data; la mappa del sito usa la data della pagina.
+_DATA = re.compile(r"Aggiornato il (\d{4}-\d{2}-\d{2})")
+_ALT = re.compile(r'<link rel="alternate" hreflang="[^"]+" href="[^"]*">')  # li aggiunge pagine_en.py
+DATE = {}  # url -> data dell'ultimo cambiamento vero della pagina
+
+
+def scrivi(percorso, testo, url=None):
+    f = os.path.join(OUT, percorso)
+    os.makedirs(os.path.dirname(f), exist_ok=True)
+    vecchio = open(f, encoding="utf-8").read() if os.path.exists(f) else None
+    data = OGGI
+    if vecchio is not None:
+        m = _DATA.search(vecchio)
+        if m and _DATA.sub("Aggiornato il " + OGGI, _ALT.sub("", vecchio)) == testo:
+            data, testo = m[1], vecchio  # stesso contenuto: il file resta com'e'
+    if vecchio != testo: open(f, "w", encoding="utf-8").write(testo)
+    if url: DATE[url] = data
+
+
+# ---------------------------------------------------------------- generazione
+url_comune = lambda c: f"{SITO}/comune/{c['slug']}/"
+url_luogo = lambda p: f"{SITO}/luogo/{p['id']}/"
+url_reg = lambda r: f"{SITO}/regione/{r}/"
+urls = []
+nluo = 0
+
+for c in sorted(comuni, key=lambda c: (c["regione"], c["prov"], c["name"])):
+    pl = c["places"]
+    if not pl: continue
+    reg, prov = NOMEREG[c["regione"]], c.get("provName") or c["prov"]
+    titolo = f"Cosa vedere a {c['name']} ({c['prov']}): {len(pl)} luoghi da visitare"
+    descr = taglia(c.get("lede") or f"I luoghi da visitare a {c['name']}, in provincia di {prov}: "
+                   + ", ".join(p["name"] for p in pl[:4]) + ".")
+    corpo = [f'<p class="briciole"><a href="/">Italia</a> › <a href="/regione/{e(c["regione"])}/">{e(reg)}</a> › {e(prov)}</p>',
+             f"<h1>Cosa vedere a {e(c['name'])}</h1>"]
+    if c.get("lede"): corpo.append(f'<p class="lede">{e(c["lede"])}</p>')
+    corpo.append(f'<p>{len(pl)} luogh{"i" if len(pl) > 1 else "o"} da visitare a {e(c["name"])}, '
+                 f'in provincia di {e(prov)} ({e(reg)}). Ogni scheda è verificata su fonti ufficiali.</p>')
+    if c.get("notice"): corpo.append(f'<p class="avviso"><b>Avviso:</b> {e(c["notice"])}</p>')
+    corpo.append(f'<a class="apri" href="/#{e(c["slug"])}">Apri {e(c["name"])} nella guida con mappa e filtri</a>')
+    for p in pl:
+        corpo.append('<article class="luogo">' + blocco_breve(p, c) + "</article>")
+    vicini = [x for x in REGIONI[c["regione"]] if x["prov"] == c["prov"] and x["slug"] != c["slug"] and x["places"]][:12]
+    if vicini:
+        corpo.append(f"<h2>Altri comuni in provincia di {e(prov)}</h2><ul class=\"elenco\">" + "".join(
+            f'<li><a href="/comune/{e(x["slug"])}/">{e(x["name"])}</a></li>' for x in vicini) + "</ul>")
+    if c.get("sources"):
+        corpo.append('<h2>Fonti per questo comune</h2><p class="fonti">' + " · ".join(
+            f'<a href="{e(s[1])}" rel="nofollow noopener">{e(s[0])}</a>' for s in c["sources"] if len(s) > 1) + "</p>")
+    ld = {"@context": "https://schema.org", "@type": "ItemList", "name": titolo,
+          "numberOfItems": len(pl),
+          "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": p["name"],
+                               "url": url_luogo(p) if (ap["luoghi"] and ricco(p)) else url_comune(c) + "#" + slug(p["id"], 80)}
+                              for i, p in enumerate(pl[:60])]}
+    scrivi(f"comune/{c['slug']}/index.html", pagina(titolo + " | Ach's Places Guide", descr, url_comune(c), "".join(corpo), ld, 2), url_comune(c))
+    urls.append((url_comune(c), "0.8"))
+
+    if ap["luoghi"]:
+        for p in pl:
+            if not ricco(p): continue
+            t2 = f"{p['name']}, {c['name']} ({c['prov']})"  # 17/11: titolo corto per Google
+            t2 += ": cosa sapere prima di andarci" if len(t2) <= 35 else ": cosa sapere" if len(t2) <= 52 else ""
+            d2 = taglia(p.get("desc"))
+            b = [f'<p class="briciole"><a href="/">Italia</a> › <a href="/regione/{e(c["regione"])}/">{e(reg)}</a> › '
+                 f'<a href="/comune/{e(c["slug"])}/">{e(c["name"])}</a></p>',
+                 "<h1>" + e(p["name"]) + "</h1>",
+                 blocco_pieno(p, c),
+                 f'<a class="apri" href="/#{e(c["slug"])}">Vedi {e(c["name"])} sulla mappa della guida</a>']
+            altri = [x for x in pl if x["id"] != p["id"]][:10]
+            if altri:
+                b.append(f'<h2>Altri luoghi a {e(c["name"])}</h2><ul class="elenco">' + "".join(
+                    (f'<li><a href="/luogo/{e(x["id"])}/">{e(x["name"])}</a></li>' if ricco(x)
+                     else f'<li><a href="/comune/{e(c["slug"])}/#{e(slug(x["id"], 80))}">{e(x["name"])}</a></li>')
+                    for x in altri)
+                    + f'</ul><p><a href="/comune/{e(c["slug"])}/">Tutti i {len(pl)} luoghi di {e(c["name"])}</a></p>')
+            scrivi(f"luogo/{p['id']}/index.html", pagina(t2 + " | Ach's Places Guide", d2, url_luogo(p), "".join(b), ld_luogo(p, c), 2), url_luogo(p))
+            urls.append((url_luogo(p), "0.6"))
+            nluo += 1
+
+for r, cs in REGIONI.items():
+    cs = sorted([x for x in cs if x["places"]], key=lambda x: (x["prov"], x["name"]))
+    if not cs: continue
+    nl = sum(len(x["places"]) for x in cs)
+    titolo = f"Cosa vedere in {NOMEREG[r]}: {nl} luoghi in {len(cs)} comuni"
+    prov = {}
+    for x in cs: prov.setdefault(x.get("provName") or x["prov"], []).append(x)
+    corpo = [f'<p class="briciole"><a href="/">Italia</a></p><h1>Cosa vedere in {e(NOMEREG[r])}</h1>',
+             f'<p class="lede">{nl} luoghi da visitare in {len(cs)} comuni della {e(NOMEREG[r])}, '
+             "scelti e verificati su fonti ufficiali.</p>",
+             f'<a class="apri" href="/#{e(cs[0]["slug"])}">Apri la {e(NOMEREG[r])} nella guida con mappa e filtri</a>']
+    for pn, xs in sorted(prov.items()):
+        corpo.append(f"<h2>Provincia di {e(pn)}</h2><ul class=\"elenco\">" + "".join(
+            f'<li><a href="/comune/{e(x["slug"])}/">{e(x["name"])}</a> <span class="meta">({len(x["places"])})</span></li>'
+            for x in xs) + "</ul>")
+    scrivi(f"regione/{r}/index.html", pagina(titolo + " | Ach's Places Guide",
+           taglia(f"I luoghi da visitare in {NOMEREG[r]}, comune per comune, con fonti ufficiali, orari e ingressi."),
+           url_reg(r), "".join(corpo), None, 2), url_reg(r))
+    urls.append((url_reg(r), "0.9"))
+
+tot = sum(len(c["places"]) for c in comuni)
+corpo = ['<h1>Tutti i comuni della guida</h1>',
+         f'<p class="lede">{tot} luoghi da visitare in {len([c for c in comuni if c["places"]])} comuni italiani, '
+         "regione per regione.</p>"]
+for r in sorted(REGIONI, key=lambda r: NOMEREG[r]):
+    cs = [x for x in REGIONI[r] if x["places"]]
+    if cs:
+        corpo.append(f'<h2><a href="/regione/{e(r)}/">{e(NOMEREG[r])}</a></h2>'
+                     f'<p class="meta">{len(cs)} comuni · {sum(len(x["places"]) for x in cs)} luoghi</p>')
+scrivi("comuni/index.html", pagina("Tutti i comuni | Ach's Places Guide",
+       f"I {tot} luoghi della guida, comune per comune e regione per regione.",
+       f"{SITO}/comuni/", "".join(corpo), None, 1), f"{SITO}/comuni/")
+urls.append((f"{SITO}/comuni/", "0.9"))
+urls.append((f"{SITO}/", "1.0"))
+DATE[f"{SITO}/"] = max(DATE.values(), default=OGGI)
+
+scrivi("pagine.css", CSS)
+
+PER = 20000
+parti = [urls[i:i + PER] for i in range(0, len(urls), PER)]
+for i, parte in enumerate(parti, 1):
+    scrivi(f"sitemap-{i}.xml", '<?xml version="1.0" encoding="UTF-8"?>\n'
+           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(
+               f"<url><loc>{e(u)}</loc><lastmod>{DATE.get(u, OGGI)}</lastmod><priority>{p}</priority></url>\n" for u, p in parte)
+           + "</urlset>\n")
+scrivi("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n'
+       '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(
+           f"<sitemap><loc>{SITO}/sitemap-{i}.xml</loc><lastmod>{max(DATE.get(u, OGGI) for u, _ in parte)}</lastmod></sitemap>\n"
+           for i, parte in enumerate(parti, 1)) + "</sitemapindex>\n")
+scrivi("robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {SITO}/sitemap.xml\n")
+
+# 18/11/2026: le pagine di luoghi e comuni che questa costruzione non scrive piu' (luogo tolto o senza contenuto
+# per una pagina propria) si tolgono, come gia' fa pagine_en.py per l'inglese: restavano online con il testo vecchio
+# e fuori dalla mappa del sito. Paracadute: se sparirebbero piu' di 100 pagine, non si toglie nulla e si avvisa.
+import shutil
+_vive = {u[len(SITO) + 1:].rstrip("/") for u, _ in urls}
+_vecchie = [d for k in ("luogo", "comune") for d in glob.glob(os.path.join(OUT, k, "*"))
+            if os.path.isdir(d) and os.path.relpath(d, OUT).replace(os.sep, "/") not in _vive]
+if len(_vecchie) > 100:
+    print(f"ATTENZIONE: {len(_vecchie)} pagine non piu' generate, non tolte (troppe: controllare i dati)")
+else:
+    for d in _vecchie: shutil.rmtree(d)
+    if _vecchie: print("pagine tolte:", ", ".join(os.path.relpath(d, OUT) for d in _vecchie))
+
+print(f"Scritte {len(urls)} pagine: {len([u for u, _ in urls if '/comune/' in u])} comuni, "
+      f"{nluo} luoghi, {len(REGIONI)} regioni; {len(parti)} file di mappa del sito")

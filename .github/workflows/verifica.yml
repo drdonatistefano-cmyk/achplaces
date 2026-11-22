@@ -1,0 +1,32 @@
+name: Verifica link biglietti da controllare
+# 11/11/2026: apre gli indirizzi «?» trovati dalle ricerche e salva out/verifica.json sul ramo «foto». A mano. Gratuito.
+on:
+  workflow_dispatch:
+  push:
+    paths: ['sorgenti/link/verifica.txt']
+permissions:
+  contents: write
+jobs:
+  verifica:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with: { sparse-checkout: "sorgenti/link\n.github", fetch-depth: 1 }
+      - name: Ramo foto
+        run: |
+          git fetch origin foto
+          git worktree add -B foto out origin/foto
+          cd out && git sparse-checkout disable || true
+          git config user.name "achplaces-bot"; git config user.email "actions@users.noreply.github.com"
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install requests
+      - run: python sorgenti/link/actions_verifica.py
+      - name: Salva
+        run: |
+          cd out
+          git add verifica.json
+          git commit -q -m "Verifica link biglietti" || exit 0
+          for i in 1 2 3 4 5; do git pull --rebase -q origin foto && git push -q origin HEAD:foto && exit 0; sleep 7; done
+          exit 1

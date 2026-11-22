@@ -1,0 +1,831 @@
+[
+{
+"id": "imola-bo--rocca-sforzesca",
+"u": [
+"https://emiliaromagnaturismo.it/en/towns/imola",
+"https://cultura.gov.it/evento/visita-guidata-alla-rocca-sforzesca-dietro-le-quinte-del-cantiere-di-restauro",
+"https://www.bolognawelcome.com/it/luoghi/torri-edifici-storici/rocca-sforzesca-di-imola",
+"https://www.ilrestodelcarlino.it/imola/economia/musei-piu-cari-a-partire-dal-2026-san-domenico-e-palazzo-tozzoni-aumenti-in-vista-per-i-biglietti-i58ophvn"
+]
+},
+{
+"id": "ferrara-fe--casa-romei",
+"u": [
+"https://emiliaromagnaturismo.it/en/towns/ferrara",
+"https://www.ferrarainfo.com/it/pianifica-il-viaggio/orari-tariffe-musei-monumenti-ferrara/orari-musei-it.pdf/@@download/file/orari%20musei%20IT.pdf",
+"https://emiliaromagnaturismo.it/en/itineraries/ladies-house-este"
+]
+},
+{
+"id": "argenta-fe--delizia-di-benvignante",
+"u": [
+"https://emiliaromagnaturismo.it/en/towns/argenta",
+"https://emiliaromagnaturismo.it/it/tci-itinerari/comacchio-e-le-sue-valli"
+]
+},
+{
+"id": "cento-fe--rocca-di-cento",
+"u": [
+"https://emiliaromagnaturismo.it/en/towns/cento",
+"https://emiliaromagnaturismo.it/en/itineraries/the-ferrara-of-the-grand-tour"
+]
+},
+{
+"id": "finale-emilia-mo--castello-delle-rocche-rocca-estense",
+"u": [
+"https://emiliaromagnaturismo.it/en/towns/finale-emilia",
+"https://www.visitmodena.it/it/scopri-modena/scopri-il-territorio/finale-emilia",
+"https://emiliaromagnaturismo.it/it/tci-itinerari/la-media-pianura-modenese-orientale"
+]
+},
+{
+"id": "mirandola-mo--chiesa-di-san-francesco",
+"u": [
+"https://emiliaromagnaturismo.it/en/towns/mirandola",
+"https://emiliaromagnaturismo.it/it/tci-itinerari/la-pianura-modenese-occidentale",
+"https://www.visitmodena.it/it/scopri-modena/scopri-il-territorio/mirandola"
+]
+},
+{
+"id": "san-felice-sul-panaro-mo--teatro-comunale",
+"u": [
+"https://www.visitmodena.it/en/discover-modena/whats-around-modena/san-felice-sul-panaro",
+"https://www.comune.sanfelice.mo.it/novita/comunicati/consegnati-i-lavori-del-teatro"
+]
+},
+{
+"id": "bagnolo-in-piano-re--museo-dei-burattini-fondazione-famiglia-",
+"u": [
+"https://www.visitemilia.com/en/towns/bagnolo-in-piano",
+"https://cultura.gov.it/luogo/museo-dei-burattini-fondazione-famiglia-sarzi"
+]
+},
+{
+"id": "reggiolo-re--rocca-di-reggiolo",
+"u": [
+"https://www.reggioemiliawelcome.it/en/discover-reggio-emilia/the-region-and-landscape/reggiolo",
+"https://emiliaromagnaturismo.it/it/tci-itinerari/la-pianura-reggiana-orientale",
+"https://emiliaromagnaturismo.it/en/itineraries/bassa-reggiana-gonzaga-treasures"
+]
+},
+{
+"id": "parma-pr--camera-di-san-paolo",
+"u": [
+"https://emiliaromagnaturismo.it/en/towns/parma",
+"https://cultura.comune.parma.it/luogo/it-IT/Camera-di-San-Paolo-1.aspx",
+"https://parmawelcome.it/scheda/camera-di-san-paolo-e-cella-di-santa-caterina-2/",
+"https://www.ticketlandia.com/m/event/camera-di-san-paolo"
+]
+},
+{
+"id": "parma-pr--orto-botanico",
+"u": [
+"https://emiliaromagnaturismo.it/en/towns/parma",
+"https://parmawelcome.it/wp-content/uploads/2025/11/Orari-IT.pdf"
+]
+},
+{
+"id": "noceto-pr--castello-della-musica-museo-della-liuter",
+"u": [
+"https://emiliaromagnaturismo.it/en/towns/noceto",
+"https://parmawelcome.it/scheda/castello-della-musica/"
+]
+},
+{
+"id": "barberino-di-mugello-fi--villa-medicea-di-cafaggiolo",
+"u": [
+"https://www.destinationflorence.com/it",
+"https://www.visittuscany.com/en/ideas/an-exploration-of-the-unesco-world-heritage-medici-villas/"
+]
+},
+{
+"id": "borgo-san-lorenzo-fi--museo-chini-villa-pecori-giraldi",
+"u": [
+"https://www.destinationflorence.com/it",
+"https://www.destinationflorence.com/en/points-interest/chini-museum"
+]
+},
+{
+"id": "sesto-fiorentino-fi--museo-ginori-della-manifattura-di-doccia",
+"u": [
+"https://museoginori.org",
+"https://www.destinationflorence.com/en/editorial-staff/sesto-fiorentino-town-porcelain-masterpieces",
+"https://www.destinationflorence.com/it"
+]
+},
+{
+"id": "bientina-pi--museo-della-storia-antica-del-territorio",
+"u": [
+"https://www.visittuscany.com/en/towns-and-villages/bientina",
+"https://www.terredipisa.it/en/attrazione/etruscan-museum/"
+]
+},
+{
+"id": "fivizzano-ms--museo-della-stampa-jacopo-da-fivizzano",
+"u": [
+"https://www.visittuscany.com/en/towns-and-villages/fivizzano/"
+]
+},
+{
+"id": "nemi-rm--museo-delle-navi-romane",
+"u": [
+"https://direzioneregionalemuseilazio.cultura.gov.it/en/luoghi/museo-delle-navi-romane/",
+"https://cultura.gov.it/luogo/museo-delle-navi-romane-di-nemi-e-santuario-di-diana-nemorense",
+"https://direzioneregionalemuseilazio.cultura.gov.it/en/luoghi/museo-delle-navi-romane/?accessible=true",
+"https://www.visitlazio.com/en/nemi/"
+]
+},
+{
+"id": "anzio-rm--villa-di-nerone-parco-archeologico",
+"u": [
+"https://www.visitlazio.com/en/anzio/",
+"https://www.comune.anzio.roma.it/luogo/villa-di-nerone-parco-archeologico"
+]
+},
+{
+"id": "anzio-rm--vallo-volsco",
+"u": [
+"https://www.visitlazio.com/en/anzio/",
+"https://comune.anzio.roma.it/luogo/vallo-volsco"
+]
+},
+{
+"id": "grottaglie-ta--museo-didattico-delle-maioliche",
+"u": [
+"https://www.italia.it/en/puglia/taranto/grottaglie",
+"https://cultura.gov.it/luogo/museo-didattico-delle-maioliche"
+]
+},
+{
+"id": "bisacquino-pa--santuario-della-madonna-del-balzo",
+"u": [
+"https://www.italia.it/en/sicily/bisacquino",
+"https://www.regione.sicilia.it/la-regione-informa/bisacquino-pubblicata-gara-mettere-sicurezza-santuario-madonna-balzo",
+"https://www.regione.sicilia.it/la-regione-informa/frane-bisacquino-sicurezza-monte-santuario-madonna-balzo"
+]
+},
+{
+"id": "pozzomaggiore-ss--museo-del-cavallo",
+"u": [
+"https://www.sardegnaturismo.it/it/esplora/pozzomaggiore",
+"https://www.sardegnacultura.it/articolo/pozzomaggiore-museo-del-cavallo"
+]
+},
+{
+"id": "thiesi-ss--collezione-permanente-aligi-sassu",
+"u": [
+"https://www.sardegnaturismo.it/it/esplora/thiesi",
+"https://www.sardegnacultura.it/en/articles/thiesi-collezione-permanente-aligi-sassu",
+"https://cultura.gov.it/luogo/collezione-permanente-aligi-sassu",
+"https://www.sardegnaturismo.it/it/esplora/museo-aligi-sassu"
+]
+},
+{
+"id": "villacidro-su--farmamuseo-sa-potecaria",
+"u": [
+"https://www.sardegnaturismo.it/it/esplora/villacidro",
+"https://www.sardegnacultura.it/en/articles/villacidro-farmamuseo-sa-potecaria",
+"https://idese.cultura.gov.it/place/farmamuseo-sa-potecaria/"
+]
+},
+{
+"id": "salo-bs--musa-museo-di-salo",
+"u": [
+"https://museodisalo.it/",
+"https://www.visitbrescia.it/en/activity/musa-salo-museum/",
+"https://www.italia.it/en/lombardy/salo",
+"https://museodisalo.it/orari"
+]
+},
+{
+"id": "salo-bs--museo-del-nastro-azzurro",
+"u": [
+"https://www.italia.it/en/lombardy/salo",
+"https://www.visitbrescia.it/en/activity/musa-salo-museum/",
+"https://museodisalo.it/",
+"https://www.in-lombardia.it/en/museo-storico-del-nastro-azzurro"
+]
+},
+{
+"id": "menaggio-co--orrido-della-val-sanagra",
+"u": [
+"https://www.italia.it/en/lombardy/menaggio",
+"https://menaggio.com/en/trails/the-val-sanagra-orrido-the-canyon-of-menaggio/"
+]
+},
+{
+"id": "soncino-cr--chiesa-di-santa-maria-delle-grazie",
+"u": [
+"https://borghipiubelliditalia.it/en/borgo/soncino/",
+"https://www.turismocremona.it/en/tourism-in-lombardy/soncino"
+]
+},
+{
+"id": "chiavenna-so--mulino-di-bottonera",
+"u": [
+"https://www.italia.it/en/lombardy/chiavenna",
+"https://www.valchiavenna.com/en/experience/bottonera-mill-in-chiavenna/"
+]
+},
+{
+"id": "saronno-va--mils-museo-delle-industrie-e-del-lavoro-",
+"u": [
+"https://www.italia.it/it/lombardia/saronno/chiese-luoghi-di-culto/santuario-della-beata-vergine-dei-miracoli",
+"https://abbonamentomusei.it/en/spazio_espositivo/museo-industrie-e-lavoro-del-saronnese/"
+]
+},
+{
+"id": "busto-arsizio-va--museo-del-tessile-e-della-tradizione-ind",
+"u": [
+"https://www.in-lombardia.it/busto-arsizio",
+"https://www.comune.bustoarsizio.va.it/it/vivere/museo-del-tessile",
+"https://www.in-lombardia.it/en/textile-museum"
+]
+},
+{
+"id": "conegliano-tv--brolo-di-san-francesco",
+"u": [
+"https://www.italia.it/en/veneto/treviso/conegliano",
+"https://www.visitconegliano.it/en/conegliano/place-to-visit/brolo/"
+]
+},
+{
+"id": "montone-pg--museo-etnografico-il-tamburo-parlante",
+"u": [
+"https://www.italia.it/en/umbria/montone",
+"https://www.umbriatourism.it/en/montone",
+"https://www.italia.it/it/umbria/cosa-fare/3-borghi-umbri-vedere-montone-citerna-san-giustino"
+]
+},
+{
+"id": "monte-grimano-terme-pu--stazione-idroterapica-di-monte-grimano",
+"u": [
+"https://www.italia.it/en/marche/monte-grimano-terme",
+"https://letsmarche.it/en/-/monte-grimano-terme-2",
+"https://eventi.turismo.marche.it/en-us/what-to-see/cities/Monte-Grimano-Terme/5566"
+]
+},
+{
+"id": "cingoli-mc--cattedrale-di-santa-maria-assunta",
+"u": [
+"https://borghipiubelliditalia.it/en/borgo/cingoli/"
+]
+},
+{
+"id": "serrapetrona-mc--pinacoteca-d-arte-sacra-contemporanea-ga",
+"u": [
+"https://turismo.comune.serrapetrona.mc.it/itinerari/percorrendo-il-centro-storico/",
+"https://turismo.comune.serrapetrona.mc.it/luogo/museo-pinacoteca-darte-sacra-contemporanea/"
+]
+},
+{
+"id": "serrapetrona-mc--museo-dell-uomo",
+"u": [
+"https://turismo.comune.serrapetrona.mc.it/luogo/museo-delluomo/"
+]
+},
+{
+"id": "caldarola-mc--castello-pallotta",
+"u": [
+"https://turismo.comune.caldarola.mc.it/",
+"https://turismo.comune.caldarola.mc.it/luogo/castello-pallotta/"
+]
+},
+{
+"id": "corridonia-mc--chiesa-dei-ss-pietro-paolo-e-donato",
+"u": [
+"https://letsmarche.it/en/-/corridonia-2",
+"https://letsmarche.it/-/chiesa-dei-ss.-pietro-paolo-e-donato-2"
+]
+},
+{
+"id": "mogliano-mc--palazzo-forti-e-museo-civico",
+"u": [
+"https://www.italia.it/en/marche/macerata/mogliano",
+"https://cultura.gov.it/luogo/museo-civico-palazzo-forti"
+]
+},
+{
+"id": "montemonaco-ap--museo-della-grotta-della-sibilla-villa-c",
+"u": [
+"https://www.sibillini.net/il_parco/comuni/montemonaco/montemonaco.php",
+"https://comune.montemonaco.ap.it/luoghi/2856837/museo-sibilla",
+"https://eventi.turismo.marche.it/en-us/what-to-see/tourist-attractions/Montemonaco-Sibilla-Museum-Visitor-Center/7663",
+"https://cultura.gov.it/luogo/museo-della-grotta-della-sibilla"
+]
+},
+{
+"id": "massa-fermana-fm--chiesa-dei-santi-lorenzo-silvestro-e-ruf",
+"u": [
+"https://letsmarche.it/en/-/massa-fermana-2",
+"https://letsmarche.it/en/-/la-spiritualit%C3%A0-dei-borghi-fermani-7"
+]
+},
+{
+"id": "ocre-aq--convento-di-sant-angelo-d-ocre",
+"u": [
+"https://comune.ocre.aq.it/vivere-il-comune",
+"https://comune.ocre.aq.it/luoghi/2895601/convento-sant-angelo",
+"https://cultura.gov.it/luogo/convento-di-sant-angelo-d-ocre"
+]
+},
+{
+"id": "celano-aq--muse-museo-paludi-di-celano-e-sito-palaf",
+"u": [
+"https://www.italia.it/en/abruzzo/l-aquila/celano",
+"https://cultura.gov.it/luogo/muse-nuovo-museo-paludi-di-celano-centro-di-restauro",
+"https://www.comune.celano.aq.it/vivere-il-comune/luoghi/museo-preistorico-di-celano/"
+]
+},
+{
+"id": "piscina-to--museo-etnografico-l-rubat",
+"u": [
+"https://turismotorino.org/it/visita/cosa-fare-e-vedere/musei-e-cultura/piscina-arte-aperta",
+"https://www.comune.piscina.to.it/it-it/vivere-il-comune/cosa-vedere/museo-etnogtrafico-l-rubat-4971-1-48ee6d58118e8635522e85273a9b74e2",
+"https://turismotorino.org/en/visit/things-to-do-and-things-to-see/museums-and-heritage/museo-etnografico-l-rubat"
+]
+},
+{
+"id": "finale-ligure-sv--castel-gavone",
+"u": [
+"https://www.italia.it/it/liguria/savona/finale-ligure",
+"https://www.italia.it/en/liguria/things-to-do/finale-ligure-tour-what-to-see-riviera-ponente"
+]
+},
+{
+"id": "ponzano-monferrato-al--castello-di-salabue",
+"u": [
+"https://comune.ponzanomonferrato.al.it/Luoghi",
+"https://www.comune.ponzanomonferrato.al.it/Luoghi?ID=3616"
+]
+},
+{
+"id": "san-demetrio-ne-vestini-aq--chiesa-di-san-demetrio",
+"u": [
+"https://www.italia.it/it/abruzzo/san-demetrio-ne-vestini",
+"https://www.visitsandemetrio.it/place/san-demetrio-ne-vestini/",
+"https://www.visitsandemetrio.it/clvbticket/prodotto/biglietto-ingresso/"
+]
+},
+{
+"id": "villavallelonga-aq--centro-visita-dell-orso",
+"u": [
+"https://www.parcoabruzzo.it/paesi.scheda.php?id=66106",
+"https://www.parcoabruzzo.it/cen_dettaglio.php?id=14",
+"https://cultura.gov.it/luogo/centro-orso"
+]
+},
+{
+"id": "castel-focognano-ar--centro-di-documentazione-sulla-cultura-r",
+"u": [
+"https://www.italia.it/it/toscana/arezzo/castel-focognano",
+"https://www.visittuscany.com/en/attractions/documentation-center-on-the-rural-culture-of-casentino/"
+]
+},
+{
+"id": "montella-av--museo-di-san-francesco-a-folloni",
+"u": [
+"https://sistemairpinia.provincia.avellino.it/en/comuni/montella",
+"https://cultura.gov.it/luogo/museo-di-san-francesco-a-folloni"
+]
+},
+{
+"id": "rocca-san-felice-av--museo-civico-don-nicola-gambino",
+"u": [
+"https://www.scabec.it/en/luoghi/museo-civico-don-nicola-gambino"
+]
+},
+{
+"id": "cortina-d-ampezzo-bl--museo-d-arte-moderna-mario-rimoldi",
+"u": [
+"https://musei.regole.it",
+"https://www.regole.it/IT/pagina114-i-musei-delle-regole",
+"https://musei.regole.it/Rimoldi/Ita/info.php",
+"https://www.italia.it/en/veneto/cortina-dampezzo"
+]
+},
+{
+"id": "feltre-bl--museo-civico-archeologico",
+"u": [
+"https://www.italia.it/en/veneto/belluno/feltre",
+"https://www.visitfeltre.info/wp-content/uploads/2020/07/Brochure-Feltre.pdf",
+"https://visitfeltre.info/servizi/totem-card/"
+]
+},
+{
+"id": "san-bartolomeo-in-galdo-bn--chiesa-dell-annunziata-e-orologio-alla-r",
+"u": [
+"https://www.comune.sanbartolomeoingaldo.bn.it/new/territorio/architetttura.html",
+"https://www.comune.sanbartolomeoingaldo.bn.it/new/images/turismo/cenni_storici.pdf"
+]
+},
+{
+"id": "gela-cl--museo-archeologico-regionale-di-gela",
+"u": [
+"https://parchiarcheologici.regione.sicilia.it/gela/en/",
+"https://parchiarcheologici.regione.sicilia.it/gela/en/orari/",
+"https://parchiarcheologici.regione.sicilia.it/gela/en/biglietti/museo-archeologico-regionale-gela/",
+"https://parchiarcheologici.regione.sicilia.it/gela/en/siti-archeologici/"
+]
+},
+{
+"id": "gela-cl--area-archeologica-bosco-littorio",
+"u": [
+"https://www.italia.it/en/sicily/caltanissetta/gela",
+"https://parchiarcheologici.regione.sicilia.it/gela/en/orari/",
+"https://parchiarcheologici.regione.sicilia.it/gela/en/siti-archeologici/"
+]
+},
+{
+"id": "castiglione-falletto-cn--castello-di-castiglione-falletto",
+"u": [
+"https://www.comune.castiglionefalletto.cn.it/Guidadettagli",
+"https://comune.castiglionefalletto.cn.it/Luoghi?ID=1611",
+"https://www.visitpiemonte.com/luoghi/casitelloitditcasitglitoneitfalleito"
+]
+},
+{
+"id": "piasco-cn--museo-dell-arpa-victor-salvi",
+"u": [
+"https://www.visitcuneese.it/dettaglio-punto-di-interesse/-/d/museo-dell-arpa-piasco"
+]
+},
+{
+"id": "vinadio-cn--terme-di-vinadio",
+"u": [
+"https://www.visitcuneese.it/dettaglio-localita/-/d/vinadio-e-il-forte-albertino",
+"https://www.comune.vinadio.cn.it/Luoghi?ID=3329"
+]
+},
+{
+"id": "erba-co--museo-civico-archeologico",
+"u": [
+"https://www.in-lombardia.it/en/tourism-in-lombardy/tourism-como/erba",
+"https://www.comune.erba.co.it/it/page/museo-civico-archeologico"
+]
+},
+{
+"id": "falerone-fm--chiesa-di-san-fortunato-san-francesco",
+"u": [
+"https://letsmarche.it/en/-/falerone-2"
+]
+},
+{
+"id": "monte-rinaldo-fm--museo-civico-archeologico-la-cuma",
+"u": [
+"https://www.italia.it/en/marche/fermo/monterinaldo",
+"https://www.comune.monterinaldo.fm.it/it/vivere/museo-civico-archeologico",
+"https://letsmarche.it/-/museo-archeologico-del-santuario-ellenistico-di-cuma-2"
+]
+},
+{
+"id": "macchia-d-isernia-is--castello-baronale",
+"u": [
+"https://www.visitmolise.eu/scheda-localita/-/d/dms/1490133/macchia-d-isernia",
+"https://www.visitmolise.eu/attrazione/-/d/dms/1490133/castello-baronale",
+"https://www.comune.macchiadisernia.is.it/vivere-il-comune/luoghi/il-castello-baronale/"
+]
+},
+{
+"id": "alezio-le--museo-civico-messapico-palazzo-tafuri",
+"u": [
+"https://interregaismart.regione.puglia.it/en/-/alezio-citt%C3%A0-dell-olio-e-del-vino-1",
+"https://www.comune.alezio.le.it/Amministrazione/Uffici/Biblioteca-Museo-civico-Messapico-e-Parco-Archeologico"
+]
+},
+{
+"id": "castelsantangelo-sul-nera-mc--centro-visita-ed-ecomuseo-del-cervo-area",
+"u": [
+"https://eventi.turismo.marche.it/en-us/what-to-see/cities/Castelsantangelo-sul-Nera/5657",
+"https://www.sibillini.net/chiedi_sibilla/areeFaunistiche/cervo/cuore.php",
+"https://www.sibillini.net/il_parco/comuni/castelsantangelo/castelsantangelo.php"
+]
+},
+{
+"id": "pollenza-mc--abbazia-di-santa-maria-di-rambona",
+"u": [
+"https://letsmarche.it/en/-/pollenza-2",
+"https://letsmarche.it/-/abbazia-di-santa-maria-di-rambona-2",
+"https://turismo.comune.pollenza.mc.it/luoghi/"
+]
+},
+{
+"id": "pollenza-mc--museo-civico-di-palazzo-cento",
+"u": [
+"https://letsmarche.it/en/-/pollenza-2",
+"https://letsmarche.it/en/-/museo-civico-di-palazzo-cento-2",
+"https://turismo.comune.pollenza.mc.it/luoghi/"
+]
+},
+{
+"id": "ussita-mc--museo-del-cardinal-gasparri",
+"u": [
+"https://letsmarche.it/en/-/ussita-2",
+"https://www.sibillini.net/il_parco/comuni/ussita/ussita.php"
+]
+},
+{
+"id": "medolla-mo--chiesa-di-camurana",
+"u": [
+"https://emiliaromagnaturismo.it/en/towns/medolla",
+"https://www.visitmodena.it/it/scopri-modena/scopri-il-territorio/medolla"
+]
+},
+{
+"id": "novi-di-modena-mo--teatro-sociale",
+"u": [
+"https://www.visitmodena.it/it/scopri-modena/scopri-il-territorio/novi",
+"https://cultura.gov.it/luogo/teatro-sociale-di-novi-di-modena"
+]
+},
+{
+"id": "ravarino-mo--chiesa-della-beata-vergine-delle-grazie",
+"u": [
+"https://www.visitmodena.it/it/scopri-modena/scopri-il-territorio/ravarino",
+"https://emiliaromagnaturismo.it/en/towns/ravarino"
+]
+},
+{
+"id": "somma-vesuviana-na--villa-romana-detta-augustea",
+"u": [
+"https://www.parconazionaledelvesuvio.it/en/the-vesuvius-territory/the-municipalities-of-the-vesuvius-national-park/somma-vesuviana/",
+"https://sabapmetropolitanana.cultura.gov.it/luoghi_della_cultura/villa-augustea-somma-vesuviana/"
+]
+},
+{
+"id": "somma-vesuviana-na--sentiero-n-3-monte-somma",
+"u": [
+"https://www.parconazionaledelvesuvio.it/en/the-vesuvius-territory/the-municipalities-of-the-vesuvius-national-park/somma-vesuviana/",
+"https://www.parconazionaledelvesuvio.it/en/visit-the-park/the-paths/the-mt-somma/"
+]
+},
+{
+"id": "tertenia-nu--museo-albino-manca",
+"u": [
+"https://www.italia.it/en/sardinia/nuoro/tertenia",
+"https://www.sardegnacultura.it/en/articles/tertenia-museo-albino-manca",
+"https://www.sardegnaturismo.it/it/esplora/tertenia",
+"https://www.museoalbinomanca.it/biglietteria/"
+]
+},
+{
+"id": "villanova-sull-arda-pc--villa-verdi-a-sant-agata",
+"u": [
+"https://visitpiacenza.it/en/places/villanova-sullarda/",
+"https://www.comune.villanova.pc.it/vivere_il_comune/luoghi/luogo_13.html",
+"https://cultura.gov.it/luogo/villa-verdi",
+"https://visitpiacenza.it/en/art-and-culture/villa-verdi-2/"
+]
+},
+{
+"id": "preci-pg--abbazia-di-sant-eutizio",
+"u": [
+"https://www.italia.it/en/umbria/preci",
+"https://www.umbriatourism.it/en/w/the-abbey-of-sant-eutizio",
+"https://www.umbriatourism.it/en/w/preci-and-the-old-school-of-surgery",
+"https://www.umbriatourism.it/en/preci"
+]
+},
+{
+"id": "preci-pg--museo-dell-abbazia-di-sant-eutizio",
+"u": [
+"https://www.italia.it/en/umbria/preci",
+"https://cultura.gov.it/luogo/museo-dell-abbazia-di-sant-eutizio",
+"https://www.umbriatourism.it/en/w/preci-and-the-old-school-of-surgery"
+]
+},
+{
+"id": "cerreto-di-spoleto-pg--santuario-della-madonna-della-stella",
+"u": [
+"https://www.umbriatourism.it/en/cerreto-di-spoleto"
+]
+},
+{
+"id": "sant-anatolia-di-narco-pg--chiesa-di-sant-anatolia",
+"u": [
+"https://www.italia.it/en/umbria/sant-anatolia-di-narco",
+"https://www.umbriatourism.it/en/sant-anatolia-di-narco"
+]
+},
+{
+"id": "romagnese-pv--giardino-botanico-di-pietra-corva",
+"u": [
+"https://www.italia.it/en/lombardy/romagnese",
+"https://www.in-lombardia.it/en/tourism-in-lombardy/tourism-pavia/giardino-botanico-di-pietra-corva",
+"https://www.in-lombardia.it/en/romagnese"
+]
+},
+{
+"id": "scandiano-re--rocca-dei-boiardo",
+"u": [
+"https://www.italia.it/en/emilia-romagna/scandian",
+"https://www.comune.scandiano.re.it/it/vivere/747818",
+"https://www.visitemilia.com/en/towns/scandiano",
+"https://emiliaromagnaturismo.it/it/tci-itinerari/reggio-nell-emilia-i-dintorni"
+]
+},
+{
+"id": "amatrice-ri--museo-civico-cola-filotesio-ex-chiesa-di",
+"u": [
+"https://www.visitlazio.com/en/amatrice/",
+"https://www.gransassolagapark.it/paesi_dettaglio.php?id=57002",
+"https://www.visitlazio.com/inaugurato-il-nuovo-museo-civico-di-amatrice/"
+]
+},
+{
+"id": "palombara-sabina-rm--museo-naturalistico-territoriale",
+"u": [
+"https://www.italia.it/en/lazio/palombara-sabina/palombara-sabina",
+"https://cultura.gov.it/luogo/museo-naturalistico-territoriale"
+]
+},
+{
+"id": "riofreddo-rm--castello-colonna-del-drago-pelagallo",
+"u": [
+"https://www.visitlazio.com/riofreddo/"
+]
+},
+{
+"id": "san-polo-dei-cavalieri-rm--castello-orsini-cesi-borghese",
+"u": [
+"https://www.visitlazio.com/san-polo-dei-cavalieri/",
+"https://cultura.gov.it/luogo/castello-orsini-cesi-borghese",
+"https://www.parchilazio.it/montilucretili-schede-1020-san_polo_dei_cavalieri"
+]
+},
+{
+"id": "caggiano-sa--chiesa-di-santa-maria-dei-greci",
+"u": [
+"https://www.italia.it/en/campania/il-centro-storico-di-caggiano",
+"https://comune.caggiano.sa.it/vivere-il-comune/territorio/luoghi-dinteresse/"
+]
+},
+{
+"id": "minori-sa--villa-romana-e-antiquarium",
+"u": [
+"https://cultura.gov.it/luogo/villa-romana-antiquarium-di-minori",
+"https://museicampania.cultura.gov.it/villa-romana-e-antiquarium-di-minori-chiusura-temporanea-al-pubblico/",
+"https://www.italia.it/en/campania/salerno/minori"
+]
+},
+{
+"id": "solarino-sr--grotta-del-ventaglio",
+"u": [
+"https://www.visitsicily.info/luogo/solarino/",
+"https://comune.solarino.sr.it/vivere-il-comune/luoghi/grotta-del-ventaglio/"
+]
+},
+{
+"id": "san-teodoro-ss--museo-delle-civilta-del-mare",
+"u": [
+"https://www.italia.it/en/sardinia/san-teodoro",
+"https://www.sardegnacultura.it/en/articles/san-teodoro-museo-delle-civilta-del-mare",
+"https://www.comune.santeodoro.ss.it/it/page/museo-del-mare"
+]
+},
+{
+"id": "orroli-su--casa-del-nuraghe-arrubiu",
+"u": [
+"https://www.sardegnaturismo.it/it/esplora/orroli",
+"https://www.sardegnacultura.it/en/articles/orroli-sa-domu-de-su-nuraxi-arrubiu",
+"https://www.sardegnaturismo.it/it/esplora/nuraghe-arrubiu"
+]
+},
+{
+"id": "caldonazzo-tn--torre-e-giardino-dei-sicconi",
+"u": [
+"https://www.italia.it/en/trentino/caldonazzo",
+"https://www.cultura.trentino.it/Luoghi/Tutti-i-luoghi-della-cultura/Aree-archeologiche/Torre-e-Giardino-dei-Sicconi-Caldonazzo-Monte-Rive",
+"https://www.visitvalsugana.it/documenti/idee%20vacanza/03-caldonazzo-42x30cm-web.pdf"
+]
+},
+{
+"id": "san-germano-chisone-to--museum-skirochon",
+"u": [
+"https://www.comune.sangermanochisone.to.it/Guidaalpaese?IDDettaglio=44360",
+"https://www.comune.sangermanochisone.to.it/Guidaalpaese?IDDettaglio=44362",
+"https://cultura.gov.it/luogo/museum-sky-rochon"
+]
+},
+{
+"id": "pavone-canavese-to--museo-alfredo-d-andrade",
+"u": [
+"https://turismotorino.org/en/visit/territory/ivrea-and-canavese-area/pavone-canavese",
+"https://www.comune.pavone.to.it/it-it/vivere-il-comune/cosa-vedere/passeggiata-nella-terra-narrata-dalla-fede-e-dalla-cultura-53912-1-1a4f2a7a8988f48fc961fe6dc1c49563",
+"https://comune.pavone.to.it/it-it/vivere-il-comune/itinerari/percorsi-naturalistici-della-paraj-auta-58950-1-b68b1df8b716fdf42e71fec67bca0eae"
+]
+},
+{
+"id": "riva-presso-chieri-to--museo-civico-del-paesaggio-sonoro",
+"u": [
+"https://comune.rivapressochieri.to.it/vivere-il-comune/",
+"https://comune.rivapressochieri.to.it/vivere-il-comune/luoghi/museo-civico-del-paesaggio-sonoro/",
+"https://turismotorino.org/en/visit/things-to-do-and-things-to-see/culture/palazzo-grosso"
+]
+},
+{
+"id": "monteleone-d-orvieto-tr--teatro-dei-rustici",
+"u": [
+"https://www.umbriatourism.it/en/monteleone-di-orvieto",
+"https://www.umbriatourism.it/it/w/teatro-dei-rustici",
+"https://borghipiubelliditalia.it/en/borgo/monteleone-dorvieto/"
+]
+},
+{
+"id": "resiutta-ud--mostra-della-miniera-del-resartico",
+"u": [
+"https://www.parcoprealpigiulie.it/it/principale/attivita/strutture-del-parco",
+"https://www.parcoprealpigiulie.it/it/principale/attivita/strutture-del-parco/mostra-miniera-del-resartico",
+"https://www.parcoprealpigiulie.it/it/principale/attivita/gli-eventi/Riaprono-la-Mostra-della-Miniera-e-la-Ghiacciaia-di-Resiutta"
+]
+},
+{
+"id": "resiutta-ud--galleria-ghiacciaia-di-resiutta",
+"u": [
+"https://www.parcoprealpigiulie.it/it/principale/attivita/strutture-del-parco",
+"https://www.parcoprealpigiulie.it/it/principale/attivita/strutture-del-parco/galleria-ghiacciaia-di-resiutta",
+"https://www.parcoprealpigiulie.it/it/principale/attivita/gli-eventi/Riaprono-la-Mostra-della-Miniera-e-la-Ghiacciaia-di-Resiutta"
+]
+},
+{
+"id": "villa-santina-ud--basilica-paleocristiana-di-col-di-zuca",
+"u": [
+"https://www.italia.it/it/friuli-venezia-giulia/villa-santina",
+"https://cultura.gov.it/luogo/basilica-paleocristiana-ed-altomedievale"
+]
+},
+{
+"id": "pagnacco-ud--museo-di-storia-contadina-di-fontanabona",
+"u": [
+"https://www.comune.pagnacco.ud.it/it/page/museo-di-storia-contadina"
+]
+},
+{
+"id": "cittiglio-va--museo-alfredo-binda",
+"u": [
+"https://www.in-lombardia.it/visitare-la-lombardia/turismo-culturale-lombardia/valganna-e-valcuvia-tra-natura-e-storia",
+"https://www.in-lombardia.it/turismo-in-lombardia/varese-turismo/museo-alfredo-binda"
+]
+},
+{
+"id": "cittiglio-va--cascate-di-cittiglio",
+"u": [
+"https://www.in-lombardia.it/visitare-la-lombardia/turismo-culturale-lombardia/valganna-e-valcuvia-tra-natura-e-storia",
+"https://www.vareseturismo.it/blog/cascate"
+]
+},
+{
+"id": "marchirolo-va--gipsoteca-spazio-scultura-pellini-bozzol",
+"u": [
+"https://www.vareseturismo.it/blog/linea-cadorna",
+"https://comune.marchirolo.varese.it/Luoghi?ID=1227"
+]
+},
+{
+"id": "rivoli-veronese-vr--museo-napoleonico",
+"u": [
+"https://www.comune.rivoli.vr.it/vivere-il-comune/territorio/storia-del-comune/",
+"https://www.comune.rivoli.vr.it/luoghi/",
+"https://www.visitverona.it/it/esplora/napoleone-bonaparte"
+]
+},
+{
+"id": "tricarico-mt--palazzo-ducale-e-museo-archeologico",
+"u": [
+"https://www.italia.it/en/basilicata/matera/tricarico",
+"https://cultura.gov.it/luogo/palazzo-ducale-1",
+"https://www.comune.tricarico.mt.it/schedaluogo/23",
+"https://www.comune.tricarico.mt.it/richiestaAssistenza.aspx"
+]
+},
+{
+"id": "lamezia-terme-cz--castello-normanno-svevo",
+"u": [
+"https://cultura.gov.it/luogo/museo-archeologico-lametino",
+"https://fondoambiente.it/luoghi/castello-svevo-normanno"
+]
+},
+{
+"id": "bisignano-cs--museo-diocesano-di-arte-sacra",
+"u": [
+"https://www.italia.it/en/calabria/cosenza/bisignano",
+"https://cultura.gov.it/luogo/museo-diocesano-di-arte-sacra-di-bisignano"
+]
+},
+{
+"id": "spezzano-della-sila-cs--i-giganti-della-sila-e-casino-mollo",
+"u": [
+"https://www.italia.it/en/calabria/cosenza/camigliatello-silano",
+"https://fondoambiente.it/luoghi/i-giganti-della-sila",
+"https://fondoambiente.it/news/i-giganti-della-sila-chiudono-temporaneamente-ma-il-casino-mollo-resta-aperto",
+"https://ticket.fondoambiente.it/events/giganti-della-sila-e-casino-mollo"
+]
+},
+{
+"id": "mileto-vv--museo-nazionale-di-mileto",
+"u": [
+"https://www.italia.it/it/calabria/mileto",
+"https://cultura.gov.it/luogo/museo-nazionale-di-mileto"
+]
+}
+]

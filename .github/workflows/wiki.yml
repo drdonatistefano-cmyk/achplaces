@@ -1,0 +1,38 @@
+name: Voci di Wikipedia dei luoghi (5 lavori)
+# 10/11/2026 sera: titolo esatto della voce di it.wikipedia per i luoghi che Wikidata non ha abbinato.
+# Ognuno dei cinque lavori salva out/wiki-<gruppo>.json sul ramo «foto». Gira il lunedì o a mano. Gratuito.
+on:
+  schedule:
+    - cron: '17 5 * * 1'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  wiki:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      matrix: { gruppo: [0, 1, 2, 3, 4] }
+    steps:
+      - uses: actions/checkout@v4
+        with: { sparse-checkout: "sorgenti/foto\nsorgenti/wiki\n.github", fetch-depth: 1 }
+      - name: Ramo foto
+        run: |
+          git fetch origin foto
+          git worktree add -B foto out origin/foto
+          cd out && git sparse-checkout disable || true
+          git config user.name "achplaces-bot"; git config user.email "actions@users.noreply.github.com"
+          git remote set-url origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install requests pillow
+      - name: Cerca le voci
+        run: python sorgenti/wiki/actions_wiki.py ${{ matrix.gruppo }}
+      - name: Salva
+        run: |
+          cd out
+          git add wiki-${{ matrix.gruppo }}.json
+          git commit -q -m "Voci di Wikipedia, gruppo ${{ matrix.gruppo }}" || exit 0
+          for i in 1 2 3 4 5 6; do git pull --rebase -q origin foto && git push -q origin HEAD:foto && exit 0; sleep $((RANDOM % 15 + 5)); done
+          exit 1

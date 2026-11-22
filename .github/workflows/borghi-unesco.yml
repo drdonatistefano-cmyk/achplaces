@@ -1,0 +1,33 @@
+name: Link Borghi e UNESCO
+# 15/11/2026: raccoglie gli indirizzi delle pagine ufficiali dei Borghi più belli d'Italia e dei beni UNESCO
+# (sorgenti/link/borghi_unesco.py) e li salva nel ramo «collegamenti». A mano o ogni mese.
+on:
+  workflow_dispatch:
+  schedule: [{ cron: "17 4 3 * *" }]
+  push:
+    branches: [main]
+    paths: ['sorgenti/link/borghi_unesco.py', '.github/workflows/borghi-unesco.yml']
+permissions:
+  contents: write
+jobs:
+  link:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with: { sparse-checkout: "sorgenti/link", fetch-depth: 1 }
+      - run: echo ok
+      - run: python3 sorgenti/link/borghi_unesco.py out
+      - name: Salva nel ramo collegamenti
+        run: |
+          git config user.name "achplaces-bot"; git config user.email "actions@users.noreply.github.com"
+          mv out /tmp/out
+          git fetch -q origin collegamenti:refs/remotes/origin/collegamenti && git checkout -q -B collegamenti origin/collegamenti || git checkout -q --orphan collegamenti
+          # 20/11/2026 (peso del repository): con il checkout parziale «git rm -rf .» toglieva solo sorgenti/link e
+          # ogni giro salvava una copia intera del sito (34.970 file). Ora l'indice si svuota del tutto e nel ramo
+          # restano solo borghi.json e unesco.json.
+          git read-tree --empty
+          cp /tmp/out/*.json .
+          git add borghi.json unesco.json
+          git commit -q -m "Link Borghi e UNESCO $(date +%F)" || exit 0
+          git push -q origin HEAD:collegamenti

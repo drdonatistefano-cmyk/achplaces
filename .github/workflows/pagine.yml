@@ -1,0 +1,40 @@
+name: Pagine per Google (comuni, luoghi, mappa del sito)
+# Rigenera le pagine statiche indicizzabili quando cambiano i dati pubblicati.
+# La guida interattiva (index.html) non viene toccata.
+on:
+  push:
+    branches: [main]
+    paths: ["manifest.json", "sorgenti/pagine.py", "sorgenti/traduci/pagine_en.py", "sorgenti/traduci/en_diz.json", ".github/workflows/pagine.yml"]
+  schedule:
+    - cron: "41 4 * * 2"   # martedì notte, rete di sicurezza
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: write
+concurrency: { group: pagine, cancel-in-progress: false }
+jobs:
+  pagine:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 1 }
+      - name: Memoria delle traduzioni
+        run: git fetch -q --depth 1 origin traduzioni:refs/remotes/origin/traduzioni || true
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Genera le pagine
+        run: python3 sorgenti/pagine.py
+      - name: Pagine in inglese
+        # 13/11/2026: stesse pagine in inglese sotto en/, con hreflang e sitemap-en (sorgenti/traduci/pagine_en.py)
+        run: python3 sorgenti/traduci/pagine_en.py .
+      - name: Salva
+        # 18/11/2026 (Stefano): un salvataggio fatto da un flusso non avvia «Pubblica il sito» e la pagina restava
+        # indietro fino al guardiano (che GitHub fa partire anche solo una volta l'ora). Dopo il push si avvia subito.
+        env: { GH_TOKEN: "${{ github.token }}", R: "${{ github.repository }}" }
+        run: |
+          pubblica() { [ "$GITHUB_REF" = "refs/heads/main" ] && { gh api -X POST repos/$R/actions/workflows/pubblica.yml/dispatches -f ref=main && echo "avviato «Pubblica il sito»" || echo "::warning::avvio di «Pubblica il sito» non riuscito: ci pensa il guardiano"; }; return 0; }
+          git config user.name "achplaces-bot"; git config user.email "actions@users.noreply.github.com"
+          git add -A comune luogo regione comuni en sitemap.xml sitemap-*.xml robots.txt pagine.css
+          git commit -qm "Pagine per Google: $(date +%F)" || exit 0
+          for i in 1 2 3 4 5; do git pull --rebase -q --no-edit && git push -q && { pubblica; exit 0; }; sleep $((RANDOM % 15 + 5)); done; exit 1

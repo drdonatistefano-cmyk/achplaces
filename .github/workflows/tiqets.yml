@@ -1,0 +1,33 @@
+name: Prodotti Tiqets
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 3 1 * *'   # il primo di ogni mese: nuovi prodotti Tiqets
+  push:
+    branches: [main]
+    paths: ['sorgenti/tiqets/avvia.txt', 'sorgenti/tiqets/sitemap_tiqets.py']
+permissions:
+  contents: write
+  actions: write
+jobs:
+  tiqets:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install requests
+      - run: python sorgenti/tiqets/sitemap_tiqets.py
+      - name: Tiqets abbinati a mano
+        # 18/11/2026: controlla che i prodotti scelti a mano siano ancora in vendita e aggiorna /biglietti-partner.json
+        run: python3 sorgenti/tiqets/aggiunte.py
+      - name: Salva
+        env: { GH_TOKEN: "${{ github.token }}", R: "${{ github.repository }}" }
+        run: |
+          git config user.name "achplaces-bot"; git config user.email "actions@users.noreply.github.com"
+          git add sorgenti/tiqets/prodotti.json biglietti-partner.json
+          git commit -q -m "Tiqets: elenco prodotti" || exit 0
+          git pull -q --rebase origin main && git push -q origin HEAD:main
+          # il file dei biglietti cambia il sito: si pubblica subito (un salvataggio del flusso non lo fa da solo)
+          git diff --quiet HEAD~1 HEAD -- biglietti-partner.json || gh api -X POST repos/$R/actions/workflows/pubblica.yml/dispatches -f ref=main || true

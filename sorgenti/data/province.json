@@ -1,0 +1,1155 @@
+{
+ "AR": {
+  "name": "Arezzo",
+  "kind": "Provincia",
+  "region": "toscana",
+  "capo": [
+   "Arezzo"
+  ],
+  "src": [
+   "Visit Tuscany",
+   "https://www.visittuscany.com/en/towns-and-villages/{}/"
+  ]
+ },
+ "LU": {
+  "name": "Lucca",
+  "kind": "Provincia",
+  "region": "toscana",
+  "capo": [
+   "Lucca"
+  ],
+  "src": [
+   "Visit Tuscany",
+   "https://www.visittuscany.com/en/towns-and-villages/{}/"
+  ]
+ },
+ "GR": {
+  "name": "Grosseto",
+  "kind": "Provincia",
+  "region": "toscana",
+  "capo": [
+   "Grosseto"
+  ],
+  "src": [
+   "Visit Tuscany",
+   "https://www.visittuscany.com/en/towns-and-villages/{}/"
+  ]
+ },
+ "PI": {
+  "name": "Pisa",
+  "kind": "Provincia",
+  "region": "toscana",
+  "capo": [
+   "Pisa"
+  ],
+  "src": [
+   "Visit Tuscany",
+   "https://www.visittuscany.com/en/towns-and-villages/{}/"
+  ]
+ },
+ "LI": {
+  "name": "Livorno",
+  "kind": "Provincia",
+  "region": "toscana",
+  "capo": [
+   "Livorno"
+  ],
+  "src": [
+   "Visit Tuscany",
+   "https://www.visittuscany.com/en/towns-and-villages/{}/"
+  ]
+ },
+ "MS": {
+  "name": "Massa-Carrara",
+  "kind": "Provincia",
+  "region": "toscana",
+  "capo": [
+   "Massa"
+  ],
+  "src": [
+   "Visit Tuscany",
+   "https://www.visittuscany.com/en/towns-and-villages/{}/"
+  ]
+ },
+ "PT": {
+  "name": "Pistoia",
+  "kind": "Provincia",
+  "region": "toscana",
+  "capo": [
+   "Pistoia"
+  ],
+  "src": [
+   "Visit Tuscany",
+   "https://www.visittuscany.com/en/towns-and-villages/{}/"
+  ]
+ },
+ "PO": {
+  "name": "Prato",
+  "kind": "Provincia",
+  "region": "toscana",
+  "capo": [
+   "Prato"
+  ],
+  "src": [
+   "Visit Tuscany",
+   "https://www.visittuscany.com/en/towns-and-villages/{}/"
+  ]
+ },
+ "RM": {
+  "name": "Roma",
+  "kind": "Città metropolitana",
+  "region": "lazio",
+  "capo": [
+   "Roma"
+  ],
+  "src": [
+   "Visit Lazio",
+   "{}"
+  ]
+ },
+ "LT": {
+  "name": "Latina",
+  "kind": "Provincia",
+  "region": "lazio",
+  "capo": [
+   "Latina"
+  ],
+  "src": [
+   "Visit Lazio",
+   "{}"
+  ]
+ },
+ "FR": {
+  "name": "Frosinone",
+  "kind": "Provincia",
+  "region": "lazio",
+  "capo": [
+   "Frosinone"
+  ],
+  "src": [
+   "Visit Lazio",
+   "{}"
+  ]
+ },
+ "RI": {
+  "name": "Rieti",
+  "kind": "Provincia",
+  "region": "lazio",
+  "capo": [
+   "Rieti"
+  ],
+  "src": [
+   "Visit Lazio",
+   "{}"
+  ]
+ },
+ "VT": {
+  "name": "Viterbo",
+  "kind": "Provincia",
+  "region": "lazio",
+  "capo": [
+   "Viterbo"
+  ],
+  "src": [
+   "Visit Lazio",
+   "{}"
+  ]
+ },
+ "NA": {
+  "name": "Napoli",
+  "kind": "Città metropolitana",
+  "region": "campania",
+  "capo": [
+   "Napoli"
+  ],
+  "src": [
+   "Campania turismo",
+   "{}"
+  ]
+ },
+ "SA": {
+  "name": "Salerno",
+  "kind": "Provincia",
+  "region": "campania",
+  "capo": [
+   "Salerno"
+  ],
+  "src": [
+   "Campania turismo",
+   "{}"
+  ]
+ },
+ "AV": {
+  "name": "Avellino",
+  "kind": "Provincia",
+  "region": "campania",
+  "capo": [
+   "Avellino"
+  ],
+  "src": [
+   "Campania turismo",
+   "{}"
+  ]
+ },
+ "BN": {
+  "name": "Benevento",
+  "kind": "Provincia",
+  "region": "campania",
+  "capo": [
+   "Benevento"
+  ],
+  "src": [
+   "Campania turismo",
+   "{}"
+  ]
+ },
+ "CE": {
+  "name": "Caserta",
+  "kind": "Provincia",
+  "region": "campania",
+  "capo": [
+   "Caserta"
+  ],
+  "src": [
+   "Campania turismo",
+   "{}"
+  ]
+ },
+ "BA": {
+  "name": "Bari",
+  "kind": "Città metropolitana",
+  "region": "puglia",
+  "capo": [
+   "Bari"
+  ],
+  "src": [
+   "Viaggiare in Puglia",
+   "{}"
+  ]
+ },
+ "BT": {
+  "name": "Barletta-Andria-Trani",
+  "kind": "Provincia",
+  "region": "puglia",
+  "capo": [
+   "Barletta"
+  ],
+  "src": [
+   "Viaggiare in Puglia",
+   "{}"
+  ]
+ },
+ "BR": {
+  "name": "Brindisi",
+  "kind": "Provincia",
+  "region": "puglia",
+  "capo": [
+   "Brindisi"
+  ],
+  "src": [
+   "Viaggiare in Puglia",
+   "{}"
+  ]
+ },
+ "FG": {
+  "name": "Foggia",
+  "kind": "Provincia",
+  "region": "puglia",
+  "capo": [
+   "Foggia"
+  ],
+  "src": [
+   "Viaggiare in Puglia",
+   "{}"
+  ]
+ },
+ "LE": {
+  "name": "Lecce",
+  "kind": "Provincia",
+  "region": "puglia",
+  "capo": [
+   "Lecce"
+  ],
+  "src": [
+   "Viaggiare in Puglia",
+   "{}"
+  ]
+ },
+ "TA": {
+  "name": "Taranto",
+  "kind": "Provincia",
+  "region": "puglia",
+  "capo": [
+   "Taranto"
+  ],
+  "src": [
+   "Viaggiare in Puglia",
+   "{}"
+  ]
+ },
+ "PA": {
+  "name": "Palermo",
+  "kind": "Città metropolitana",
+  "region": "sicilia",
+  "capo": [
+   "Palermo"
+  ],
+  "src": [
+   "Visit Sicily",
+   "{}"
+  ]
+ },
+ "CT": {
+  "name": "Catania",
+  "kind": "Città metropolitana",
+  "region": "sicilia",
+  "capo": [
+   "Catania"
+  ],
+  "src": [
+   "Visit Sicily",
+   "{}"
+  ]
+ },
+ "ME": {
+  "name": "Messina",
+  "kind": "Città metropolitana",
+  "region": "sicilia",
+  "capo": [
+   "Messina"
+  ],
+  "src": [
+   "Visit Sicily",
+   "{}"
+  ]
+ },
+ "AG": {
+  "name": "Agrigento",
+  "kind": "Libero consorzio",
+  "region": "sicilia",
+  "capo": [
+   "Agrigento"
+  ],
+  "src": [
+   "Visit Sicily",
+   "{}"
+  ]
+ },
+ "CL": {
+  "name": "Caltanissetta",
+  "kind": "Libero consorzio",
+  "region": "sicilia",
+  "capo": [
+   "Caltanissetta"
+  ],
+  "src": [
+   "Visit Sicily",
+   "{}"
+  ]
+ },
+ "EN": {
+  "name": "Enna",
+  "kind": "Libero consorzio",
+  "region": "sicilia",
+  "capo": [
+   "Enna"
+  ],
+  "src": [
+   "Visit Sicily",
+   "{}"
+  ]
+ },
+ "RG": {
+  "name": "Ragusa",
+  "kind": "Libero consorzio",
+  "region": "sicilia",
+  "capo": [
+   "Ragusa"
+  ],
+  "src": [
+   "Visit Sicily",
+   "{}"
+  ]
+ },
+ "SR": {
+  "name": "Siracusa",
+  "kind": "Libero consorzio",
+  "region": "sicilia",
+  "capo": [
+   "Siracusa"
+  ],
+  "src": [
+   "Visit Sicily",
+   "{}"
+  ]
+ },
+ "TP": {
+  "name": "Trapani",
+  "kind": "Libero consorzio",
+  "region": "sicilia",
+  "capo": [
+   "Trapani"
+  ],
+  "src": [
+   "Visit Sicily",
+   "{}"
+  ]
+ },
+ "CA": {
+  "name": "Cagliari",
+  "kind": "Città metropolitana",
+  "region": "sardegna",
+  "capo": [
+   "Cagliari"
+  ],
+  "src": [
+   "Sardegna Turismo",
+   "{}"
+  ]
+ },
+ "SS": {
+  "name": "Sassari",
+  "kind": "Provincia",
+  "region": "sardegna",
+  "capo": [
+   "Sassari"
+  ],
+  "src": [
+   "Sardegna Turismo",
+   "{}"
+  ]
+ },
+ "NU": {
+  "name": "Nuoro",
+  "kind": "Provincia",
+  "region": "sardegna",
+  "capo": [
+   "Nuoro"
+  ],
+  "src": [
+   "Sardegna Turismo",
+   "{}"
+  ]
+ },
+ "OR": {
+  "name": "Oristano",
+  "kind": "Provincia",
+  "region": "sardegna",
+  "capo": [
+   "Oristano"
+  ],
+  "src": [
+   "Sardegna Turismo",
+   "{}"
+  ]
+ },
+ "SU": {
+  "name": "Sud Sardegna",
+  "kind": "Provincia",
+  "region": "sardegna",
+  "capo": [
+   "Carbonia"
+  ],
+  "src": [
+   "Sardegna Turismo",
+   "{}"
+  ]
+ },
+ "MI": {
+  "name": "Milano",
+  "kind": "Città metropolitana",
+  "region": "lombardia",
+  "capo": [
+   "Milano"
+  ],
+  "src": [
+   "In Lombardia",
+   "{}"
+  ]
+ },
+ "BG": {
+  "name": "Bergamo",
+  "kind": "Provincia",
+  "region": "lombardia",
+  "capo": [
+   "Bergamo"
+  ],
+  "src": [
+   "In Lombardia",
+   "{}"
+  ]
+ },
+ "BS": {
+  "name": "Brescia",
+  "kind": "Provincia",
+  "region": "lombardia",
+  "capo": [
+   "Brescia"
+  ],
+  "src": [
+   "In Lombardia",
+   "{}"
+  ]
+ },
+ "CO": {
+  "name": "Como",
+  "kind": "Provincia",
+  "region": "lombardia",
+  "capo": [
+   "Como"
+  ],
+  "src": [
+   "In Lombardia",
+   "{}"
+  ]
+ },
+ "CR": {
+  "name": "Cremona",
+  "kind": "Provincia",
+  "region": "lombardia",
+  "capo": [
+   "Cremona"
+  ],
+  "src": [
+   "In Lombardia",
+   "{}"
+  ]
+ },
+ "LC": {
+  "name": "Lecco",
+  "kind": "Provincia",
+  "region": "lombardia",
+  "capo": [
+   "Lecco"
+  ],
+  "src": [
+   "In Lombardia",
+   "{}"
+  ]
+ },
+ "LO": {
+  "name": "Lodi",
+  "kind": "Provincia",
+  "region": "lombardia",
+  "capo": [
+   "Lodi"
+  ],
+  "src": [
+   "In Lombardia",
+   "{}"
+  ]
+ },
+ "MN": {
+  "name": "Mantova",
+  "kind": "Provincia",
+  "region": "lombardia",
+  "capo": [
+   "Mantova"
+  ],
+  "src": [
+   "In Lombardia",
+   "{}"
+  ]
+ },
+ "MB": {
+  "name": "Monza e della Brianza",
+  "kind": "Provincia",
+  "region": "lombardia",
+  "capo": [
+   "Monza"
+  ],
+  "src": [
+   "In Lombardia",
+   "{}"
+  ]
+ },
+ "PV": {
+  "name": "Pavia",
+  "kind": "Provincia",
+  "region": "lombardia",
+  "capo": [
+   "Pavia"
+  ],
+  "src": [
+   "In Lombardia",
+   "{}"
+  ]
+ },
+ "SO": {
+  "name": "Sondrio",
+  "kind": "Provincia",
+  "region": "lombardia",
+  "capo": [
+   "Sondrio"
+  ],
+  "src": [
+   "In Lombardia",
+   "{}"
+  ]
+ },
+ "VA": {
+  "name": "Varese",
+  "kind": "Provincia",
+  "region": "lombardia",
+  "capo": [
+   "Varese"
+  ],
+  "src": [
+   "In Lombardia",
+   "{}"
+  ]
+ },
+ "VE": {
+  "name": "Venezia",
+  "kind": "Città metropolitana",
+  "region": "veneto",
+  "capo": [
+   "Venezia"
+  ],
+  "src": [
+   "Veneto Turismo",
+   "{}"
+  ]
+ },
+ "VR": {
+  "name": "Verona",
+  "kind": "Provincia",
+  "region": "veneto",
+  "capo": [
+   "Verona"
+  ],
+  "src": [
+   "Veneto Turismo",
+   "{}"
+  ]
+ },
+ "PD": {
+  "name": "Padova",
+  "kind": "Provincia",
+  "region": "veneto",
+  "capo": [
+   "Padova"
+  ],
+  "src": [
+   "Veneto Turismo",
+   "{}"
+  ]
+ },
+ "VI": {
+  "name": "Vicenza",
+  "kind": "Provincia",
+  "region": "veneto",
+  "capo": [
+   "Vicenza"
+  ],
+  "src": [
+   "Veneto Turismo",
+   "{}"
+  ]
+ },
+ "TV": {
+  "name": "Treviso",
+  "kind": "Provincia",
+  "region": "veneto",
+  "capo": [
+   "Treviso"
+  ],
+  "src": [
+   "Veneto Turismo",
+   "{}"
+  ]
+ },
+ "BL": {
+  "name": "Belluno",
+  "kind": "Provincia",
+  "region": "veneto",
+  "capo": [
+   "Belluno"
+  ],
+  "src": [
+   "Veneto Turismo",
+   "{}"
+  ]
+ },
+ "RO": {
+  "name": "Rovigo",
+  "kind": "Provincia",
+  "region": "veneto",
+  "capo": [
+   "Rovigo"
+  ],
+  "src": [
+   "Veneto Turismo",
+   "{}"
+  ]
+ },
+ "TN": {
+  "name": "Trento",
+  "kind": "Provincia autonoma",
+  "region": "trentino-alto-adige",
+  "capo": [
+   "Trento"
+  ],
+  "src": [
+   "Visit Trentino",
+   "{}"
+  ]
+ },
+ "BZ": {
+  "name": "Bolzano",
+  "kind": "Provincia autonoma",
+  "region": "trentino-alto-adige",
+  "capo": [
+   "Bolzano"
+  ],
+  "src": [
+   "Visit Trentino",
+   "{}"
+  ]
+ },
+ "PG": {
+  "name": "Perugia",
+  "kind": "Provincia",
+  "region": "umbria",
+  "capo": [
+   "Perugia"
+  ],
+  "src": [
+   "Umbria Tourism",
+   "https://www.umbriatourism.it/"
+  ]
+ },
+ "TR": {
+  "name": "Terni",
+  "kind": "Provincia",
+  "region": "umbria",
+  "capo": [
+   "Terni"
+  ],
+  "src": [
+   "Umbria Tourism",
+   "https://www.umbriatourism.it/"
+  ]
+ },
+ "AN": {
+  "name": "Ancona",
+  "kind": "Provincia",
+  "region": "marche",
+  "capo": [
+   "Ancona"
+  ],
+  "src": [
+   "Marche Tourism",
+   "https://www.turismo.marche.it/"
+  ]
+ },
+ "PU": {
+  "name": "Pesaro e Urbino",
+  "kind": "Provincia",
+  "region": "marche",
+  "capo": [
+   "Pesaro",
+   "Urbino"
+  ],
+  "src": [
+   "Marche Tourism",
+   "https://www.turismo.marche.it/"
+  ]
+ },
+ "MC": {
+  "name": "Macerata",
+  "kind": "Provincia",
+  "region": "marche",
+  "capo": [
+   "Macerata"
+  ],
+  "src": [
+   "Marche Tourism",
+   "https://www.turismo.marche.it/"
+  ]
+ },
+ "AP": {
+  "name": "Ascoli Piceno",
+  "kind": "Provincia",
+  "region": "marche",
+  "capo": [
+   "Ascoli Piceno"
+  ],
+  "src": [
+   "Marche Tourism",
+   "https://www.turismo.marche.it/"
+  ]
+ },
+ "FM": {
+  "name": "Fermo",
+  "kind": "Provincia",
+  "region": "marche",
+  "capo": [
+   "Fermo"
+  ],
+  "src": [
+   "Marche Tourism",
+   "https://www.turismo.marche.it/"
+  ]
+ },
+ "AQ": {
+  "name": "L'Aquila",
+  "kind": "Provincia",
+  "region": "abruzzo",
+  "capo": [
+   "L'Aquila"
+  ],
+  "src": [
+   "Abruzzo Turismo",
+   "https://abruzzoturismo.it/"
+  ]
+ },
+ "TE": {
+  "name": "Teramo",
+  "kind": "Provincia",
+  "region": "abruzzo",
+  "capo": [
+   "Teramo"
+  ],
+  "src": [
+   "Abruzzo Turismo",
+   "https://abruzzoturismo.it/"
+  ]
+ },
+ "PE": {
+  "name": "Pescara",
+  "kind": "Provincia",
+  "region": "abruzzo",
+  "capo": [
+   "Pescara"
+  ],
+  "src": [
+   "Abruzzo Turismo",
+   "https://abruzzoturismo.it/"
+  ]
+ },
+ "CH": {
+  "name": "Chieti",
+  "kind": "Provincia",
+  "region": "abruzzo",
+  "capo": [
+   "Chieti"
+  ],
+  "src": [
+   "Abruzzo Turismo",
+   "https://abruzzoturismo.it/"
+  ]
+ },
+ "TO": {
+  "name": "Torino",
+  "kind": "Città metropolitana",
+  "region": "piemonte",
+  "capo": [
+   "Torino"
+  ],
+  "src": [
+   "Visit Piemonte",
+   "https://www.visitpiemonte.com/"
+  ]
+ },
+ "AL": {
+  "name": "Alessandria",
+  "kind": "Provincia",
+  "region": "piemonte",
+  "capo": [
+   "Alessandria"
+  ],
+  "src": [
+   "Visit Piemonte",
+   "https://www.visitpiemonte.com/"
+  ]
+ },
+ "AT": {
+  "name": "Asti",
+  "kind": "Provincia",
+  "region": "piemonte",
+  "capo": [
+   "Asti"
+  ],
+  "src": [
+   "Visit Piemonte",
+   "https://www.visitpiemonte.com/"
+  ]
+ },
+ "BI": {
+  "name": "Biella",
+  "kind": "Provincia",
+  "region": "piemonte",
+  "capo": [
+   "Biella"
+  ],
+  "src": [
+   "Visit Piemonte",
+   "https://www.visitpiemonte.com/"
+  ]
+ },
+ "CN": {
+  "name": "Cuneo",
+  "kind": "Provincia",
+  "region": "piemonte",
+  "capo": [
+   "Cuneo"
+  ],
+  "src": [
+   "Visit Piemonte",
+   "https://www.visitpiemonte.com/"
+  ]
+ },
+ "NO": {
+  "name": "Novara",
+  "kind": "Provincia",
+  "region": "piemonte",
+  "capo": [
+   "Novara"
+  ],
+  "src": [
+   "Visit Piemonte",
+   "https://www.visitpiemonte.com/"
+  ]
+ },
+ "VB": {
+  "name": "Verbano-Cusio-Ossola",
+  "kind": "Provincia",
+  "region": "piemonte",
+  "capo": [
+   "Verbania"
+  ],
+  "src": [
+   "Visit Piemonte",
+   "https://www.visitpiemonte.com/"
+  ]
+ },
+ "VC": {
+  "name": "Vercelli",
+  "kind": "Provincia",
+  "region": "piemonte",
+  "capo": [
+   "Vercelli"
+  ],
+  "src": [
+   "Visit Piemonte",
+   "https://www.visitpiemonte.com/"
+  ]
+ },
+ "AO": {
+  "name": "Valle d'Aosta",
+  "kind": "Regione",
+  "region": "valle-d-aosta",
+  "capo": [
+   "Aosta"
+  ],
+  "src": [
+   "Valle d'Aosta Turismo",
+   "https://www.lovevda.it/"
+  ]
+ },
+ "GE": {
+  "name": "Genova",
+  "kind": "Città metropolitana",
+  "region": "liguria",
+  "capo": [
+   "Genova"
+  ],
+  "src": [
+   "La Mia Liguria",
+   "https://www.lamialiguria.it/"
+  ]
+ },
+ "IM": {
+  "name": "Imperia",
+  "kind": "Provincia",
+  "region": "liguria",
+  "capo": [
+   "Imperia"
+  ],
+  "src": [
+   "La Mia Liguria",
+   "https://www.lamialiguria.it/"
+  ]
+ },
+ "SP": {
+  "name": "La Spezia",
+  "kind": "Provincia",
+  "region": "liguria",
+  "capo": [
+   "La Spezia"
+  ],
+  "src": [
+   "La Mia Liguria",
+   "https://www.lamialiguria.it/"
+  ]
+ },
+ "SV": {
+  "name": "Savona",
+  "kind": "Provincia",
+  "region": "liguria",
+  "capo": [
+   "Savona"
+  ],
+  "src": [
+   "La Mia Liguria",
+   "https://www.lamialiguria.it/"
+  ]
+ },
+ "TS": {
+  "name": "Trieste",
+  "kind": "Ente di decentramento",
+  "region": "friuli-venezia-giulia",
+  "capo": [
+   "Trieste"
+  ],
+  "src": [
+   "PromoTurismoFVG",
+   "https://www.turismofvg.it/"
+  ]
+ },
+ "UD": {
+  "name": "Udine",
+  "kind": "Ente di decentramento",
+  "region": "friuli-venezia-giulia",
+  "capo": [
+   "Udine"
+  ],
+  "src": [
+   "PromoTurismoFVG",
+   "https://www.turismofvg.it/"
+  ]
+ },
+ "PN": {
+  "name": "Pordenone",
+  "kind": "Ente di decentramento",
+  "region": "friuli-venezia-giulia",
+  "capo": [
+   "Pordenone"
+  ],
+  "src": [
+   "PromoTurismoFVG",
+   "https://www.turismofvg.it/"
+  ]
+ },
+ "GO": {
+  "name": "Gorizia",
+  "kind": "Ente di decentramento",
+  "region": "friuli-venezia-giulia",
+  "capo": [
+   "Gorizia"
+  ],
+  "src": [
+   "PromoTurismoFVG",
+   "https://www.turismofvg.it/"
+  ]
+ },
+ "CB": {
+  "name": "Campobasso",
+  "kind": "Provincia",
+  "region": "molise",
+  "capo": [
+   "Campobasso"
+  ],
+  "src": [
+   "Regione Molise Turismo",
+   "https://www.visitmolise.eu/"
+  ]
+ },
+ "IS": {
+  "name": "Isernia",
+  "kind": "Provincia",
+  "region": "molise",
+  "capo": [
+   "Isernia"
+  ],
+  "src": [
+   "Regione Molise Turismo",
+   "https://www.visitmolise.eu/"
+  ]
+ },
+ "PZ": {
+  "name": "Potenza",
+  "kind": "Provincia",
+  "region": "basilicata",
+  "capo": [
+   "Potenza"
+  ],
+  "src": [
+   "Basilicata Turistica",
+   "https://www.basilicataturistica.it/"
+  ]
+ },
+ "MT": {
+  "name": "Matera",
+  "kind": "Provincia",
+  "region": "basilicata",
+  "capo": [
+   "Matera"
+  ],
+  "src": [
+   "Basilicata Turistica",
+   "https://www.basilicataturistica.it/"
+  ]
+ },
+ "CZ": {
+  "name": "Catanzaro",
+  "kind": "Provincia",
+  "region": "calabria",
+  "capo": [
+   "Catanzaro"
+  ],
+  "src": [
+   "Calabria Straordinaria",
+   "https://www.calabriastraordinaria.it/"
+  ]
+ },
+ "CS": {
+  "name": "Cosenza",
+  "kind": "Provincia",
+  "region": "calabria",
+  "capo": [
+   "Cosenza"
+  ],
+  "src": [
+   "Calabria Straordinaria",
+   "https://www.calabriastraordinaria.it/"
+  ]
+ },
+ "KR": {
+  "name": "Crotone",
+  "kind": "Provincia",
+  "region": "calabria",
+  "capo": [
+   "Crotone"
+  ],
+  "src": [
+   "Calabria Straordinaria",
+   "https://www.calabriastraordinaria.it/"
+  ]
+ },
+ "RC": {
+  "name": "Reggio Calabria",
+  "kind": "Città metropolitana",
+  "region": "calabria",
+  "capo": [
+   "Reggio Calabria"
+  ],
+  "src": [
+   "Calabria Straordinaria",
+   "https://www.calabriastraordinaria.it/"
+  ]
+ },
+ "VV": {
+  "name": "Vibo Valentia",
+  "kind": "Provincia",
+  "region": "calabria",
+  "capo": [
+   "Vibo Valentia"
+  ],
+  "src": [
+   "Calabria Straordinaria",
+   "https://www.calabriastraordinaria.it/"
+  ]
+ }
+}

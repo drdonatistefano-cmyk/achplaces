@@ -1,0 +1,32 @@
+name: Prodotti GetYourGuide
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '37 3 1 * *'   # il primo di ogni mese: nuove attività GetYourGuide
+  push:
+    branches: [main]
+    paths: ['sorgenti/gyg/avvia.txt', 'sorgenti/gyg/sitemap_gyg.py']
+permissions:
+  contents: write
+  actions: write
+jobs:
+  gyg:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install requests
+      - run: python sorgenti/gyg/sitemap_gyg.py
+      - name: GetYourGuide abbinati a mano
+        # 18/11/2026: controlla che i biglietti scelti a mano siano ancora in vendita e aggiorna /biglietti-partner.json
+        run: python3 sorgenti/gyg/aggiunte.py
+      - name: Salva
+        env: { GH_TOKEN: "${{ github.token }}", R: "${{ github.repository }}" }
+        run: |
+          git config user.name "achplaces-bot"; git config user.email "actions@users.noreply.github.com"
+          git add sorgenti/gyg/prodotti.json biglietti-partner.json
+          git commit -q -m "GetYourGuide: elenco attività" || exit 0
+          git pull -q --rebase origin main && git push -q origin HEAD:main
+          git diff --quiet HEAD~1 HEAD -- biglietti-partner.json || gh api -X POST repos/$R/actions/workflows/pubblica.yml/dispatches -f ref=main || true
