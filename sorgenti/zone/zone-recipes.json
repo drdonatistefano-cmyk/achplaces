@@ -1,0 +1,805 @@
+[
+{
+"id": "garfagnana",
+"nome": "Garfagnana",
+"tipo": "Storico-geografica",
+"prov": [
+"LU"
+],
+"comuni": [
+[
+"Castelnuovo di Garfagnana",
+"LU"
+],
+[
+"Camporgiano",
+"LU"
+],
+[
+"Castiglione di Garfagnana",
+"LU"
+],
+[
+"Piazza al Serchio",
+"LU"
+]
+]
+},
+{
+"id": "lunigiana",
+"nome": "Lunigiana",
+"tipo": "Storico-geografica",
+"prov": [
+"MS",
+"SP"
+],
+"comuni": [
+[
+"Pontremoli",
+"MS"
+],
+[
+"Aulla",
+"MS"
+],
+[
+"Fivizzano",
+"MS"
+],
+[
+"Podenzana",
+"MS"
+],
+[
+"Villafranca in Lunigiana",
+"MS"
+]
+]
+},
+{
+"id": "brianza",
+"nome": "Brianza",
+"tipo": "Storico-geografica",
+"prov": [
+"MB",
+"CO",
+"LC"
+],
+"comuni": [
+[
+"Monza",
+"MB"
+],
+[
+"Seregno",
+"MB"
+],
+[
+"Cantù",
+"CO"
+],
+[
+"Merate",
+"LC"
+]
+]
+},
+{
+"id": "langhe",
+"nome": "Langhe",
+"tipo": "Vinicola",
+"prov": [
+"CN",
+"AT"
+],
+"comuni": [
+[
+"Alba",
+"CN"
+],
+[
+"Barolo",
+"CN"
+],
+[
+"La Morra",
+"CN"
+],
+[
+"Dogliani",
+"CN"
+]
+]
+},
+{
+"id": "roero",
+"nome": "Roero",
+"tipo": "Vinicola",
+"prov": [
+"CN"
+],
+"comuni": [
+[
+"Canale",
+"CN"
+],
+[
+"Bra",
+"CN"
+]
+]
+},
+{
+"id": "monferrato",
+"nome": "Monferrato",
+"tipo": "Vinicola",
+"prov": [
+"AT",
+"AL"
+],
+"comuni": [
+[
+"Casale Monferrato",
+"AL"
+],
+[
+"Nizza Monferrato",
+"AT"
+]
+]
+},
+{
+"id": "valtellina",
+"nome": "Valtellina",
+"tipo": "Geografica",
+"prov": [
+"SO"
+],
+"comuni": [
+[
+"Sondrio",
+"SO"
+],
+[
+"Teglio",
+"SO"
+],
+[
+"Tirano",
+"SO"
+],
+[
+"Bormio",
+"SO"
+]
+]
+},
+{
+"id": "franciacorta",
+"nome": "Franciacorta",
+"tipo": "Vinicola",
+"prov": [
+"BS"
+],
+"comuni": [
+[
+"Erbusco",
+"BS"
+]
+]
+},
+{
+"id": "lomellina",
+"nome": "Lomellina",
+"tipo": "Storico-geografica",
+"prov": [
+"PV"
+],
+"comuni": [
+[
+"Mortara",
+"PV"
+]
+]
+},
+{
+"id": "valpolicella",
+"nome": "Valpolicella",
+"tipo": "Vinicola",
+"prov": [
+"VR"
+],
+"comuni": [
+[
+"Negrar di Valpolicella",
+"VR"
+]
+]
+},
+{
+"id": "carnia",
+"nome": "Carnia",
+"tipo": "Storico-geografica",
+"prov": [
+"UD"
+],
+"comuni": [
+[
+"Tolmezzo",
+"UD"
+],
+[
+"Paluzza",
+"UD"
+]
+]
+},
+{
+"id": "romagna",
+"nome": "Romagna",
+"tipo": "Storico-geografica",
+"prov": [
+"FC",
+"RA",
+"RN",
+"BO"
+],
+"comuni": [
+[
+"Rimini",
+"RN"
+],
+[
+"Cesena",
+"FC"
+],
+[
+"Imola",
+"BO"
+]
+]
+},
+{
+"id": "golfo-paradiso",
+"nome": "Golfo Paradiso",
+"tipo": "Geografica",
+"prov": [
+"GE"
+],
+"comuni": [
+[
+"Recco",
+"GE"
+],
+[
+"Camogli",
+"GE"
+]
+]
+},
+{
+"id": "mugello",
+"nome": "Mugello",
+"tipo": "Storico-geografica",
+"prov": [
+"FI"
+],
+"comuni": [
+[
+"Borgo San Lorenzo",
+"FI"
+],
+[
+"Scarperia e San Piero",
+"FI"
+]
+]
+},
+{
+"id": "chianti",
+"nome": "Chianti",
+"tipo": "Vinicola",
+"prov": [
+"FI",
+"SI"
+],
+"comuni": [
+[
+"Greve in Chianti",
+"FI"
+],
+[
+"Castellina in Chianti",
+"SI"
+]
+]
+},
+{
+"id": "valdichiana",
+"nome": "Val di Chiana",
+"tipo": "Geografica",
+"prov": [
+"SI",
+"AR"
+],
+"comuni": [
+[
+"Montepulciano",
+"SI"
+],
+[
+"Cortona",
+"AR"
+]
+]
+},
+{
+"id": "val-d-orcia",
+"nome": "Val d'Orcia",
+"tipo": "Geografica",
+"prov": [
+"SI"
+],
+"comuni": [
+[
+"Pienza",
+"SI"
+]
+]
+},
+{
+"id": "maremma",
+"nome": "Maremma",
+"tipo": "Storico-geografica",
+"prov": [
+"GR",
+"LI"
+],
+"comuni": [
+[
+"Grosseto",
+"GR"
+],
+[
+"Pitigliano",
+"GR"
+],
+[
+"Massa Marittima",
+"GR"
+]
+]
+},
+{
+"id": "valnerina",
+"nome": "Valnerina",
+"tipo": "Geografica",
+"prov": [
+"PG",
+"TR"
+],
+"comuni": [
+[
+"Norcia",
+"PG"
+],
+[
+"Cascia",
+"PG"
+]
+]
+},
+{
+"id": "castelli-romani",
+"nome": "Castelli Romani",
+"tipo": "Storico-geografica",
+"prov": [
+"RM"
+],
+"comuni": [
+[
+"Ariccia",
+"RM"
+],
+[
+"Frascati",
+"RM"
+]
+]
+},
+{
+"id": "ciociaria",
+"nome": "Ciociaria",
+"tipo": "Storico-geografica",
+"prov": [
+"FR"
+],
+"comuni": [
+[
+"Alatri",
+"FR"
+]
+]
+},
+{
+"id": "gran-sasso",
+"nome": "Gran Sasso",
+"tipo": "Geografica",
+"prov": [
+"AQ",
+"TE",
+"PE"
+],
+"comuni": [
+[
+"Villa Celiera",
+"PE"
+],
+[
+"Castel del Monte",
+"AQ"
+]
+]
+},
+{
+"id": "alto-molise",
+"nome": "Alto Molise",
+"tipo": "Geografica",
+"prov": [
+"IS"
+],
+"comuni": [
+[
+"Capracotta",
+"IS"
+],
+[
+"Agnone",
+"IS"
+]
+]
+},
+{
+"id": "penisola-sorrentina",
+"nome": "Penisola Sorrentina",
+"tipo": "Geografica",
+"prov": [
+"NA"
+],
+"comuni": [
+[
+"Sorrento",
+"NA"
+],
+[
+"Massa Lubrense",
+"NA"
+]
+]
+},
+{
+"id": "cilento",
+"nome": "Cilento",
+"tipo": "Storico-geografica",
+"prov": [
+"SA"
+],
+"comuni": [
+[
+"Felitto",
+"SA"
+],
+[
+"Pollica",
+"SA"
+],
+[
+"Agropoli",
+"SA"
+]
+]
+},
+{
+"id": "irpinia",
+"nome": "Irpinia",
+"tipo": "Storico-geografica",
+"prov": [
+"AV"
+],
+"comuni": [
+[
+"Avellino",
+"AV"
+]
+]
+},
+{
+"id": "murge",
+"nome": "Murge",
+"tipo": "Geografica",
+"prov": [
+"BA",
+"BT",
+"TA"
+],
+"comuni": [
+[
+"Altamura",
+"BA"
+],
+[
+"Gravina in Puglia",
+"BA"
+]
+]
+},
+{
+"id": "salento",
+"nome": "Salento",
+"tipo": "Storico-geografica",
+"prov": [
+"LE",
+"BR",
+"TA"
+],
+"comuni": [
+[
+"Lecce",
+"LE"
+],
+[
+"Gallipoli",
+"LE"
+],
+[
+"Otranto",
+"LE"
+]
+]
+},
+{
+"id": "pollino",
+"nome": "Pollino",
+"tipo": "Geografica",
+"prov": [
+"PZ",
+"CS"
+],
+"comuni": [
+[
+"Senise",
+"PZ"
+]
+]
+},
+{
+"id": "sila",
+"nome": "Sila",
+"tipo": "Geografica",
+"prov": [
+"CS",
+"CZ",
+"KR"
+],
+"comuni": [
+[
+"Camigliatello Silano",
+"CS"
+]
+]
+},
+{
+"id": "altopiano-del-poro",
+"nome": "Altopiano del Poro",
+"tipo": "Geografica",
+"prov": [
+"VV"
+],
+"comuni": [
+[
+"Spilinga",
+"VV"
+],
+[
+"Tropea",
+"VV"
+]
+]
+},
+{
+"id": "etna",
+"nome": "Etna",
+"tipo": "Geografica",
+"prov": [
+"CT"
+],
+"comuni": [
+[
+"Bronte",
+"CT"
+],
+[
+"Zafferana Etnea",
+"CT"
+]
+]
+},
+{
+"id": "barbagia",
+"nome": "Barbagia",
+"tipo": "Storico-geografica",
+"prov": [
+"NU"
+],
+"comuni": [
+[
+"Fonni",
+"NU"
+],
+[
+"Orgosolo",
+"NU"
+]
+]
+},
+{
+"id": "ogliastra",
+"nome": "Ogliastra",
+"tipo": "Storico-geografica",
+"prov": [
+"NU"
+],
+"comuni": [
+[
+"Lanusei",
+"NU"
+],
+[
+"Tortolì",
+"NU"
+]
+]
+},
+{
+"id": "campidano",
+"nome": "Campidano",
+"tipo": "Geografica",
+"prov": [
+"SU",
+"CA"
+],
+"comuni": [
+[
+"Sanluri",
+"SU"
+],
+[
+"Villacidro",
+"SU"
+]
+]
+},
+{
+"id": "lario",
+"nome": "Lario",
+"tipo": "Geografica",
+"prov": [
+"CO",
+"LC"
+],
+"comuni": [
+[
+"Como",
+"CO"
+],
+[
+"Bellagio",
+"CO"
+],
+[
+"Lecco",
+"LC"
+]
+]
+},
+{
+"id": "alto-garda",
+"nome": "Alto Garda",
+"tipo": "Geografica",
+"prov": [
+"TN"
+],
+"comuni": [
+[
+"Riva del Garda",
+"TN"
+],
+[
+"Arco",
+"TN"
+]
+]
+},
+{
+"id": "costiera-amalfitana",
+"nome": "Costiera Amalfitana",
+"tipo": "Geografica",
+"prov": [
+"SA"
+],
+"comuni": [
+[
+"Amalfi",
+"SA"
+],
+[
+"Positano",
+"SA"
+],
+[
+"Minori",
+"SA"
+]
+]
+},
+{
+"id": "valle-d-itria",
+"nome": "Valle d'Itria",
+"tipo": "Geografica",
+"prov": [
+"BR",
+"BA",
+"TA"
+],
+"comuni": [
+[
+"Cisternino",
+"BR"
+],
+[
+"Locorotondo",
+"BA"
+],
+[
+"Martina Franca",
+"TA"
+]
+]
+},
+{
+"id": "gallura",
+"nome": "Gallura",
+"tipo": "Storico-geografica",
+"prov": [
+"SS"
+],
+"comuni": [
+[
+"Tempio Pausania",
+"SS"
+],
+[
+"Olbia",
+"SS"
+]
+]
+},
+{
+"id": "valle-del-po-mantovana",
+"nome": "Bassa mantovana",
+"tipo": "Geografica",
+"prov": [
+"MN"
+],
+"comuni": [
+[
+"Castel d'Ario",
+"MN"
+],
+[
+"Mantova",
+"MN"
+]
+]
+}
+]
