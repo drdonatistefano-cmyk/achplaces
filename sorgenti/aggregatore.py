@@ -67,7 +67,7 @@ function etichette(){document.querySelectorAll(".pick .msel").forEach(function(m
 etichette();setTimeout(etichette,1500);setTimeout(etichette,4000);
 mq.addEventListener("change",posto);mqpc.addEventListener("change",posto);posto();
 w.hidden=false;disegna();})();'''
-# 23/11 sera: su iPhone e iPad, dopo il primo uso, quando l'aggregatore esce dallo schermo compaiono in basso un «−» a
+# 23/11 sera: su iPhone e iPad (dalle 20:34 anche senza averlo mai usato), quando l'aggregatore esce dallo schermo compaiono in basso un «−» a
 # sinistra e un «+» a destra (ai lati del tasto Filtri / Azzera); se toccherebbero qualcosa salgono sopra.
 CSS += ('.aggfl{position:fixed;bottom:calc(16px + env(safe-area-inset-bottom));z-index:38;width:52px;height:52px;border-radius:50%;'
         'border:1px solid var(--line2);background:var(--paper);color:var(--terra-ink);font:700 26px/1 var(--sans,system-ui);'
@@ -78,7 +78,7 @@ CSS += ('.aggfl{position:fixed;bottom:calc(16px + env(safe-area-inset-bottom));z
         'color:var(--paper);font:600 14px/1 var(--sans,system-ui);pointer-events:none;opacity:0;transition:opacity .2s;white-space:nowrap}'
         '.aggtoast.on{opacity:.92}')
 JS += r'''(function(){var w=document.getElementById("aggpm");if(!w)return;var mq=matchMedia("(max-width:1099px), (hover:none)");
-var en=(document.documentElement.lang||"").indexOf("en")===0,usato=false,fuori=false,tt;
+var en=(document.documentElement.lang||"").indexOf("en")===0,usato=true,fuori=false,tt;
 function mk(c,s,l){var b=document.createElement("button");b.type="button";b.className="aggfl via "+c;b.textContent=s;b.setAttribute("aria-label",l);document.body.appendChild(b);return b}
 var m=mk("meno","−",en?"Less detail":"Meno dettaglio"),p=mk("piu","+",en?"More detail":"Più dettaglio"),to=document.createElement("div");to.className="aggtoast";to.setAttribute("aria-live","polite");document.body.appendChild(to);
 function vis(e){if(!e||e.hidden)return null;var s=getComputedStyle(e);if(s.display==="none"||s.visibility==="hidden"||+s.opacity<.1)return null;var r=e.getBoundingClientRect();return r.width&&r.height&&r.bottom>0&&r.top<innerHeight?r:null}
