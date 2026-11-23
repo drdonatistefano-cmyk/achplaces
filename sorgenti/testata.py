@@ -2,8 +2,9 @@
 """Testata sul telefono in una riga sola (Stefano, 23/11/2026): i cerchi di Events e Dinners più grandi e senza
 scritte, Metodo, Fonti ed EN/IT piccoli sulla stessa riga
 (senza iconcine; il 🤝 Sostenitori qui si nasconde perché c'è già accanto a Guida/Mappa). Si guadagna una riga di spazio.
-Solo stile, solo sotto i 760 px; il computer non cambia. Scrive modello e pagina fra <!--TESTATA-TEL-->…<!--/TESTATA-TEL-->.
-Si rilancia quante volte si vuole:  python3 sorgenti/testata_telefono.py"""
+Stessa sera: tolta su tutti gli schermi la riga dei numeri (luoghi, gratuiti, comuni, con avvisi); resta il titolo
+«Tutti i N luoghi», un po' più grande. Solo stile. Scrive modello e pagina fra <!--TESTATA-TEL-->…<!--/TESTATA-TEL-->.
+Si rilancia quante volte si vuole:  python3 sorgenti/testata.py"""
 import os, re
 RAD = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CSS = ('@media (max-width:759px){'
@@ -18,7 +19,10 @@ CSS = ('@media (max-width:759px){'
  'html .ach-guide .ach-mlink,html .ach-guide #langbtn{height:34px!important;min-height:0!important;padding:0 11px!important;font:600 13px/1 var(--sans)!important;'
  'display:inline-flex!important;align-items:center!important;white-space:nowrap!important;width:auto!important}'
  'html .ach-guide .ach-mlink{font-size:0!important;gap:0!important}html .ach-guide .ach-mlink span{font-size:13px!important}'
- 'html .ach-guide .ach-mlink[data-nav="sost"]{display:none!important}}')
+ 'html .ach-guide .ach-mlink[data-nav="sost"]{display:none!important}}'
+ 'html #stats{display:none!important}'
+ 'html .status #count,html #count{font-size:21px!important;line-height:1.2!important}'
+ '@media (min-width:760px){html .status #count,html #count{font-size:24px!important}}')
 BLOCCO = f'<!--TESTATA-TEL--><style id="testata-tel">{CSS}</style><!--/TESTATA-TEL-->'
 for P in (os.path.join(RAD,'sorgenti','template.html'), os.path.join(RAD,'index.html')):
     t = open(P, encoding='utf-8').read()
