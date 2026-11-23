@@ -34,12 +34,11 @@ jobs:
           git add proposte-link.json proposte-link.md
           git commit -q -m "Proposte di correzione dei link" || exit 0
           for i in 1 2 3 4 5; do git pull --rebase -q origin foto && git push -q origin HEAD:foto && exit 0; sleep 9; done; exit 1
-      - name: Segnalazione con le caselle
+      - name: Niente segnalazioni su GitHub (23/11/2026)
         env: { GH_TOKEN: '${{ github.token }}' }
         run: |
-          gh label create link --color FBCA04 --description "Proposte di correzione dei link" 2>/dev/null || true
-          # una sola segnalazione aperta: quella vecchia si chiude (le sue proposte rientrano in quella nuova)
-          for n in $(gh issue list --label link --state open --json number -q '.[].number'); do gh issue close $n -c "Sostituita dalle proposte della settimana nuova."; done
-          if grep -q -- "- \[ \]" out/proposte-link.md; then
-            gh issue create --label link --assignee "${{ github.repository_owner }}" --title "Link da correggere – $(date +%d/%m/%Y)" --body-file out/proposte-link.md
-          else echo "nessuna proposta nuova"; fi
+          # 23/11/2026 (Stefano: «cos'è tutta sta roba che arriva sulla mia posta»): le proposte non diventano più una
+          # segnalazione su GitHub (ogni segnalazione = email). Restano in proposte-link.md sul ramo «foto»: le porta
+          # a Stefano la chat di coordinamento, e con il suo sì le applica (sorgenti/link/applica.py).
+          # Le segnalazioni ancora aperte si chiudono senza commento.
+          for n in $(gh issue list --label link --state open --json number -q '.[].number'); do gh issue close $n || true; done
