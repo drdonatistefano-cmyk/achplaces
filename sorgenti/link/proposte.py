@@ -18,6 +18,7 @@ Non cambia nulla: le correzioni le applica sorgenti/link/applica.py, solo per i 
 import glob
 import json
 import os
+import re
 import sys
 import time
 import urllib.parse
@@ -40,6 +41,23 @@ def chiave(u):
 
 def pagina_iniziale(u):
     return urllib.parse.urlsplit(u).path.strip("/") in ("", "home", "index.html", "index.php", "it", "en")
+
+
+def pagina_generica(u, fin):
+    """23/11/2026 (Stefano, segnalazione #3): il Touring Club rimanda le schede che non esistono più all'elenco della
+    città (…/ascea/vedere/99468-antiquaria… → …/ascea/vedere): non è una pagina spostata, è una pagina sparita.
+    Generica = l'indirizzo finale è una cartella «sopra» quello vecchio, oppure non contiene quasi nessuna delle parole
+    del nome della pagina vecchia (es. biglietti per l'anfiteatro di Sutri → attrazioni-italia)."""
+    pv = urllib.parse.unquote(urllib.parse.urlsplit(u).path).lower().strip("/")
+    pf = urllib.parse.unquote(urllib.parse.urlsplit(fin).path).lower().strip("/")
+    if pv.startswith(pf + "/") or pf == "":
+        return True
+    parole = [w for w in re.split(r"[^a-zàèéìòù0-9]+", pv.split("/")[-1]) if len(w) >= 4 and not w.isdigit()]
+    parole = [w for w in parole if not re.fullmatch(r"[a-z]?\d+", w)]
+    if not parole:
+        return False
+    dentro = sum(1 for w in parole if w in pf)
+    return dentro * 3 < len(parole)
 
 
 def copia_archivio(u):
@@ -75,6 +93,8 @@ def main():
                 nuove["sicure"][u] = fin
             elif pagina_iniziale(fin) and not pagina_iniziale(u):
                 nuove["sparite"][u] = None              # rimanda alla pagina iniziale: la pagina non c'è più
+            elif pagina_generica(u, fin):
+                nuove["sparite"][u] = None              # rimanda a un elenco generico: la pagina non c'è più (23/11)
             elif host(fin) == host(u):
                 nuove["spostate"][u] = fin
             else:

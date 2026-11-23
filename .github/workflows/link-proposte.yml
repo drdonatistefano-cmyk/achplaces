@@ -7,6 +7,9 @@ on:
     workflows: ["Controllo di tutti i link (5 lavori)"]
     types: [completed]
   workflow_dispatch:
+  push:   # 23/11/2026: se cambia il programma delle proposte, le proposte della settimana si rifanno da sole
+    branches: [main]
+    paths: [sorgenti/link/proposte.py]
 permissions:
   contents: write
   issues: write
