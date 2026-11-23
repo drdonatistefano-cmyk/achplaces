@@ -68,14 +68,14 @@ notice: la Ciclovia del Santerno (Mordano-Castel del Rio) è chiusa per danni da
 @ Pieve di Cento | 037048 | BO | pieve-di-cento | arancione
 lede: La "piccola Bologna" dei portici, con la Collegiata piena di capolavori, il Teatro Zeppilli e il museo MAGI '900.
 - Collegiata di Santa Maria Maggiore | sacro/Chiese e pievi | short | i | free | Opere di Guercino, Guido Reni, Lavinia Fontana e Scarsellino, e un Crocifisso del Trecento. | Una pinacoteca dentro una chiesa di paese. | Pieve di Cento
-- MAGI '900 | musei/Arte moderna | mid | i | Da verificare | Museo d'arte del Novecento in un silo granario del 1933. | Un museo inatteso in un edificio industriale. | Pieve di Cento
+- MAGI '900 | musei/Arte moderna | mid | i | Da verificare | Museo d'arte del Novecento in un silo granario del 1933. | Un museo inatteso in un edificio industriale. | Pieve di Cento | off=https://www.magi900.com/
 - Teatro Zeppilli e Museo della Musica | storia/Teatri storici | short | i | Da verificare | Il teatro cittadino con un museo dedicato al soprano Alice Zeppilli. | Musica e liuteria, tradizione locale. | Pieve di Cento
 - Portici e centro storico | storia/Piazze e centro storico | short | | free | Il centro porticato che ha dato a Pieve il soprannome di piccola Bologna. | Passeggiata al coperto. | Pieve di Cento
 
 @ San Giovanni in Persiceto | 037053 | BO | san-giovanni-in-persiceto |
 - Borgo Rotondo e Collegiata | storia/Piazze e centro storico | short | | free | Centro dall'impianto concentrico; nella Collegiata di San Giovanni Battista, opere di Guercino, Albani e Gandolfi. | Si gira tutto in un'ora. | Piazza del Popolo, San Giovanni in Persiceto
 - Piazzetta Betlemme, la piazza degli inganni | locale/Angoli nascosti | short | | free | Le facciate dipinte in trompe-l'oeil dallo scenografo Gino Pellegrini. | Gioca con la prospettiva: da fotografare. | San Giovanni in Persiceto
-- Museo del Cielo e della Terra | musei/Scienza e università | mid | i | Da verificare | Planetario, osservatorio e Fisica Experience. | Adatto alle famiglie. | San Giovanni in Persiceto
+- Museo del Cielo e della Terra | musei/Scienza e università | mid | i | Da verificare | Planetario, osservatorio e Fisica Experience. | Adatto alle famiglie. | San Giovanni in Persiceto | off=https://www.museocieloeterra.org
 
 @ Sant'Agata Bolognese | 037056 | BO | sant-agata-bolognese |
 - MUDETEC, Museo Lamborghini | locale/Motori | mid | i | A pagamento: tariffe sul sito ufficiale | Il museo della casa automobilistica, con Miura, Countach e i modelli più recenti. | Per gli appassionati è una meta da sola. | Sant'Agata Bolognese | book=Consigliata
@@ -88,7 +88,7 @@ lede: La "piccola Bologna" dei portici, con la Collegiata piena di capolavori, i
 @ Sasso Marconi | 037057 | BO | sasso-marconi |
 - Villa Griffone e Museo Marconi | musei/Scienza e università | mid | i | Da verificare sul sito della Fondazione Marconi | Nella villa dove Guglielmo Marconi fece i primi esperimenti, un museo su tre piani con apparati funzionanti; accanto il Mausoleo del 1941. | Qui nacque la radio. | Via Celestini 1, Pontecchio Marconi | book=Visite guidate
 - Borgo di Colle Ameno | storia/Borghi | short | | free | Borgo settecentesco restaurato, con la villa e la chiesa. | Un piccolo borgo di delizia. | Colle Ameno, Sasso Marconi
-- Oasi di San Gherardo | natura/Parchi e riserve naturali | mid | | free | Area naturale sulle colline di Sasso Marconi. | Sentieri brevi. | Sasso Marconi
+- Oasi di San Gherardo | natura/Parchi e riserve naturali | mid | | free | Area naturale sulle colline di Sasso Marconi. | Sentieri brevi. | Sasso Marconi | off=https://www.ecosistema.it/sangherardo/
 
 @ Grizzana Morandi | 037031 | BO | grizzana-morandi |
 - Rocchetta Mattei | storia/Castelli e fortezze | mid | iv | Da €12 percorso singolo, €20 tour completo con l'ala araba riaperta nel 2026 (fonte giornalistica); la Città metropolitana indica ancora €10 | Il castello eclettico ottocentesco del conte Cesare Mattei, padre dell'elettromeopatia, tra stili moreschi e medievali; nel 2026 ha riaperto l'ala araba, chiusa da trent'anni. | Uno dei luoghi più fotografati dell'Appennino. | Via Rocchetta 46a, Riola, Grizzana Morandi | off=https://www.rocchetta-mattei.com/ ; hours=In genere nei fine settimana, con turni a calendario sul sito ufficiale ; book=Obbligatoria: solo visite guidate a piccoli gruppi ; src=Città metropolitana, Appennino bolognese^https://appenninobolognese.cittametropolitana.bo.it/it/luoghi/torri-edifici-%20storici/rocchetta-mattei-3^uff ; src=Bologna Welcome, Rocchetta Mattei^https://www.bolognawelcome.com/it/luoghi/piazze-vie-monumenti/rocchetta-mattei^uff ; src=SiViaggia, riapre l'ala araba (2026)^https://siviaggia.it/notizie/rocchetta-mattei-grizzana-morandi-riapre-ala-araba/607388/amp/^sec

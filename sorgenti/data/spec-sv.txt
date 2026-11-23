@@ -32,7 +32,7 @@ src: I Borghi più belli d'Italia, Castelvecchio di Rocca Barbena^https://borghi
 @ Sassello | 009055 | SV | https://admin-istituzionale.touringclub.it/uploads/Guida_BA_2024_digital_light.pdf | arancione
 lede: Borgo dell'Appennino savonese, Bandiera Arancione, con il Museo Perrando, i sentieri del Parco del Beigua e gli amaretti.
 src: Touring Club Italiano, Bandiere Arancioni – Guida 2024^https://admin-istituzionale.touringclub.it/uploads/Guida_BA_2024_digital_light.pdf
-- Museo Perrando | musei/Storia della città | short | i | Da verificare | Reperti archeologici, ceramiche e dipinti. | Il museo del borgo. | Sassello | src=Touring Club Italiano, Bandiere Arancioni – Guida 2024^https://admin-istituzionale.touringclub.it/uploads/Guida_BA_2024_digital_light.pdf^uff ; mic=DBUnico.100465
+- Museo Perrando | musei/Storia della città | short | i | Da verificare | Reperti archeologici, ceramiche e dipinti. | Il museo del borgo. | Sassello | src=Touring Club Italiano, Bandiere Arancioni – Guida 2024^https://admin-istituzionale.touringclub.it/uploads/Guida_BA_2024_digital_light.pdf^uff ; mic=DBUnico.100465 ; off=https://museoperrando.it
 - Parco naturale regionale del Beigua | natura/Parchi e riserve naturali | long | v | free | I sentieri del parco attorno al borgo. | I sentieri del Beigua. | Sassello | src=Touring Club Italiano, Bandiere Arancioni – Guida 2024^https://admin-istituzionale.touringclub.it/uploads/Guida_BA_2024_digital_light.pdf^uff
 - Amaretti di Sassello | locale/Enogastronomia | short |  | Da verificare | Il dolce tipico del borgo. | Gli amaretti. | Sassello | src=Touring Club Italiano, Bandiere Arancioni – Guida 2024^https://admin-istituzionale.touringclub.it/uploads/Guida_BA_2024_digital_light.pdf^uff
 
