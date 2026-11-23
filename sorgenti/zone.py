@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Zone tradizionali in Places (Stefano, 23/11/2026: «introdurre il concetto di zona di Dinners e Recipes»). ANTEPRIMA.
-Le zone sono le 41 di AchRecipes (sorgenti/zone/zone-recipes.json, copia: id, nome, tipo, province, comuni); come nel
+Le zone sono le 41 di AchDishes, già AchRecipes (sorgenti/zone/zone-recipes.json, copia: id, nome, tipo, province, comuni); come nel
 prototipo di Dinners, Romagna = province FC, RA, RN e Salento = provincia LE, le altre per i comuni elencati.
 Mette nella guida il livello «Zone» (fra Province e Regioni, come Dinners) con una tabellina di pochi KB dentro la
 pagina: nessun file in più da scaricare. Un luogo di un comune che sta in più zone va nella prima.
@@ -46,7 +46,7 @@ MSEL_ZON = ('<div class="msel msel-zon"><span class="mlab">Zone</span><button cl
             'aria-expanded="false"><span class="mv" id="zon-val">Tutte</span><span class="cv" aria-hidden="true">▼</span></button></div>\n      ')
 POP_COM_FINE = '<button type="button" class="mpdone" data-close="com">Fatto</button></div>\n      </div>'
 POP_ZON = ('\n      <div class="mpop" id="zon-pop" hidden role="dialog" aria-label="Scegli le zone">\n'
-           '        <div class="mphead"><b>Zone</b><span>le zone tradizionali di AchRecipes</span></div>\n'
+           '        <div class="mphead"><b>Zone</b><span>le zone tradizionali di AchDishes</span></div>\n'
            '        <input class="mpq" id="zon-q" type="search" placeholder="Cerca una zona…" aria-label="Cerca una zona" autocomplete="off">\n'
            '        <div class="mlist" id="zon-list"></div>\n'
            '        <div class="mpfoot"><button type="button" class="mpall" id="zon-all">Tutte le zone</button><button type="button" class="mpdone" data-close="zon">Fatto</button></div>\n'
@@ -66,6 +66,7 @@ JSZ = ('let ZSEL=[],ZH="";function zonComuni(z){const Z=window.ZONE_ACH;if(!Z)re
  '$("zon-list").onclick=e=>{const b=e.target.closest(".mopt");if(!b)return;const z=b.dataset.z;ZSEL=ZSEL.includes(z)?ZSEL.filter(x=>x!==z):[...ZSEL,z];zonApplica();popToggle("zon",true);};'
  'addEventListener("hashchange",()=>setTimeout(zonVal,0));new MutationObserver(()=>zonVal()).observe($("com-val"),{childList:true,characterData:true,subtree:true});zonVal();\n')
 SOST += [
+ ('<span>le zone tradizionali di AchRecipes</span>', '<span>le zone tradizionali di AchDishes</span>'),   # 23/11 21:31: AchRecipes diventa AchDishes
  ('for(const w of ["reg","prov","com"])', 'for(const w of ["reg","prov","com","zon"])'),
  ('if(which==="com"&&!$("com-pop").hidden){renderComList();', 'if(which==="zon"&&!$("zon-pop").hidden){renderZon();if(!isPhone())$("zon-q").focus();}if(which==="com"&&!$("com-pop").hidden){renderComList();'),
  ('$("com-btn").onclick=()=>popToggle("com");\n', '$("com-btn").onclick=()=>popToggle("com");\n' + JSZ),
