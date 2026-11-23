@@ -53,6 +53,41 @@ function etichette(){document.querySelectorAll(".pick .msel").forEach(function(m
 etichette();setTimeout(etichette,1500);setTimeout(etichette,4000);
 mq.addEventListener("change",posto);mqpc.addEventListener("change",posto);posto();
 w.hidden=false;disegna();})();'''
+# 23/11 sera: su iPhone e iPad, dopo il primo uso, quando l'aggregatore esce dallo schermo compaiono in basso un «−» a
+# sinistra e un «+» a destra (ai lati del tasto Filtri / Azzera); se toccherebbero qualcosa salgono sopra.
+CSS += ('.aggfl{position:fixed;bottom:calc(16px + env(safe-area-inset-bottom));z-index:38;width:52px;height:52px;border-radius:50%;'
+        'border:1px solid var(--line2);background:var(--paper);color:var(--terra-ink);font:700 26px/1 var(--sans,system-ui);'
+        'display:grid;place-items:center;box-shadow:0 8px 22px -8px rgba(20,16,12,.45);cursor:pointer;transition:opacity .18s,transform .18s}'
+        '.aggfl.meno{left:12px}.aggfl.piu{right:12px}.aggfl[hidden]{display:none}.aggfl:disabled{opacity:.4}'
+        '.aggfl.via{opacity:0;transform:translateY(80px);pointer-events:none}'
+        '.aggtoast{position:fixed;left:50%;transform:translateX(-50%);z-index:38;padding:7px 14px;border-radius:999px;background:var(--ink);'
+        'color:var(--paper);font:600 14px/1 var(--sans,system-ui);pointer-events:none;opacity:0;transition:opacity .2s;white-space:nowrap}'
+        '.aggtoast.on{opacity:.92}')
+JS += r'''(function(){var w=document.getElementById("aggpm");if(!w)return;var mq=matchMedia("(max-width:1099px), (hover:none)");
+var en=(document.documentElement.lang||"").indexOf("en")===0,usato=false,fuori=false,tt;
+function mk(c,s,l){var b=document.createElement("button");b.type="button";b.className="aggfl via "+c;b.textContent=s;b.setAttribute("aria-label",l);document.body.appendChild(b);return b}
+var m=mk("meno","−",en?"Less detail":"Meno dettaglio"),p=mk("piu","+",en?"More detail":"Più dettaglio"),to=document.createElement("div");to.className="aggtoast";to.setAttribute("aria-live","polite");document.body.appendChild(to);
+function vis(e){if(!e||e.hidden)return null;var s=getComputedStyle(e);if(s.display==="none"||s.visibility==="hidden"||+s.opacity<.1)return null;var r=e.getBoundingClientRect();return r.width&&r.height&&r.bottom>0&&r.top<innerHeight?r:null}
+function sopra(a,b){return !(a.right<=b.left||a.left>=b.right||a.bottom<=b.top||a.top>=b.bottom)}
+function sistema(){var vista=!document.querySelector("main[hidden]")&&vis(document.getElementById("grid"));
+ var on=mq.matches&&usato&&fuori&&vista;[m,p].forEach(function(b){b.classList.toggle("via",!on);b.style.bottom=""});
+ m.disabled=w.querySelector(".meno").disabled;p.disabled=w.querySelector(".piu").disabled;
+ if(!on)return;var ost=["nAm","giu","nMap"].map(function(i){return vis(document.getElementById(i))}).filter(Boolean),alto=16;
+ [m,p].forEach(function(b){b.style.bottom="calc(16px + env(safe-area-inset-bottom))";var r=b.getBoundingClientRect();
+  ost.forEach(function(o){if(sopra(r,o))alto=Math.max(alto,innerHeight-o.top+10)})});
+ if(alto>16)[m,p].forEach(function(b){b.style.bottom=alto+"px"});
+ var rb=m.getBoundingClientRect();to.style.bottom=(innerHeight-rb.top+10)+"px";}
+function annuncia(){clearTimeout(tt);to.textContent=w.querySelector("b").textContent;to.classList.add("on");tt=setTimeout(function(){to.classList.remove("on")},1300)}
+m.onclick=function(){w.querySelector(".meno").click();setTimeout(function(){sistema();annuncia()},60)};
+p.onclick=function(){w.querySelector(".piu").click();setTimeout(function(){sistema();annuncia()},60)};
+w.addEventListener("click",function(){usato=true;setTimeout(sistema,60)});
+document.addEventListener("click",function(e){if(e.target.closest&&e.target.closest(".agg[data-grp]")){usato=true;setTimeout(sistema,60)}});
+new IntersectionObserver(function(es){fuori=!es[0].isIntersecting;sistema()}).observe(w);
+var q=0;addEventListener("scroll",function(){if(!q){q=1;requestAnimationFrame(function(){q=0;sistema()})}},{passive:true});
+addEventListener("resize",sistema);mq.addEventListener("change",sistema);
+var ro=window.ResizeObserver?new ResizeObserver(function(){sistema();setTimeout(sistema,250)}):null;
+function guarda(){["nAm","giu","nMap"].forEach(function(i){var e=document.getElementById(i);if(e&&!e._aggro&&ro){e._aggro=1;ro.observe(e);new MutationObserver(function(){setTimeout(sistema,30);setTimeout(sistema,300)}).observe(e,{attributes:true,childList:true,subtree:true,characterData:true})}})}
+guarda();setTimeout(guarda,2000);})();'''
 BLOCCO_FINE = f'<!--AGGREGATORE--><style id="aggpm-css">{CSS}</style><script id="aggpm-js">{JS}</script><!--/AGGREGATORE-->'
 for P in PAGINE:
     t = open(P, encoding='utf-8').read()
