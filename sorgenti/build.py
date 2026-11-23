@@ -36,6 +36,12 @@ def _jl(n):
     except Exception: return {}
 BIG_GH = _jl("biglietti.json"); BIG_AG = _jl("biglietti_agenti.json")
 _LC = _jl("link_correzioni.json"); LINK_RID = _LC.get("rid", {}); LINK_ROTTI = set(_LC.get("rotti", {}))
+# 23/11/2026 sera: catene di reindirizzamenti (A->B in una settimana, B->C in quella dopo): si va dritti all'ultimo
+# indirizzo, altrimenti la seconda correzione non arriva mai sul sito.
+def _fine(u, _n=0):
+    while u in LINK_RID and LINK_RID[u] != u and _n < 20: u = LINK_RID[u]; _n += 1
+    return u
+LINK_RID = {_k: _fine(_k) for _k in LINK_RID}
 # 15/11/2026: fonti sparite (404, sito chiuso, certificato non valido) che hanno una copia nell'Internet Archive
 # (archive.org/wayback/available, sorgenti/link/diagnosi.py): la fonte resta, il link porta alla copia d'archivio.
 # Solo per le FONTI: sito ufficiale, orari e biglietti non vanno mai su una copia d'archivio.
@@ -506,6 +512,10 @@ for _c in _leggeri:
         # pagine sparite (404/410 o rimandate alla home) -> tolte; il sito ufficiale rotto lascia il posto alla prima fonte ufficiale viva.
         for _k in ("official", "ticketUrl", "hoursUrl", "tf"):
             if _p.get(_k): _p[_k] = LINK_RID.get(_p[_k], _p[_k])
+        # 23/11/2026 sera: anche i biglietti dei partner (Tiqets, GetYourGuide) seguono le correzioni; se spariti si tolgono
+        for _k in ("tq", "gy"):
+            if _p.get(_k): _p[_k] = LINK_RID.get(_p[_k], _p[_k])
+            if _p.get(_k) in LINK_ROTTI: _p.pop(_k)
         _p["sources"] = [[_s[0], LINK_RID.get(_s[1], _s[1])] + list(_s[2:]) for _s in _p["sources"]]
         _p["sources"] = _arch(_p["sources"])
         _vive = [_s for _s in _p["sources"] if _s[1] not in LINK_ROTTI]
