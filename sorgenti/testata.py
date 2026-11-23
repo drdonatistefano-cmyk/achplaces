@@ -3,7 +3,8 @@
 scritte, Metodo, Fonti ed EN/IT piccoli sulla stessa riga
 (senza iconcine; il 🤝 Sostenitori qui si nasconde perché c'è già accanto a Guida/Mappa). Si guadagna una riga di spazio.
 Stessa sera: tolta su tutti gli schermi la riga dei numeri (luoghi, gratuiti, comuni, con avvisi); resta il titolo
-«Tutti i N luoghi», un po' più grande. Solo stile. Scrive modello e pagina fra <!--TESTATA-TEL-->…<!--/TESTATA-TEL-->.
+«Tutti i N luoghi», un po' più grande. iPad: Events, Dinners, Metodo, Fonti, Sostenitori ed EN in una riga;
+PC: Sostenitori qui si nasconde perché accanto a Guida e Mappa c'è «Collaborano con noi». Solo stile. Scrive modello e pagina fra <!--TESTATA-TEL-->…<!--/TESTATA-TEL-->.
 Si rilancia quante volte si vuole:  python3 sorgenti/testata.py"""
 import os, re
 RAD = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -22,6 +23,13 @@ CSS = ('@media (max-width:759px){'
  'html .ach-guide .ach-mlink[data-nav="sost"]{display:none!important}}'
  'html #stats{display:none!important}'
  'html .status #count,html #count{font-size:21px!important;line-height:1.2!important}'
+ '@media (min-width:760px) and (max-width:1099px){html .hero .ach-guide{display:flex!important;flex-wrap:nowrap!important;align-items:center!important;gap:8px!important}'
+ 'html .ach-guide .ach-guide__btn{flex:none!important;padding:5px 14px 5px 5px!important;min-height:0!important;gap:8px!important}'
+ 'html .ach-guide .ach-guide__ico svg{width:30px!important;height:30px!important}html .ach-guide .ach-guide__txt small,html .ach-guide .ach-guide__arr{display:none!important}'
+ 'html .ach-guide .ach-meta{margin-left:auto!important;display:flex!important;flex-wrap:nowrap!important;gap:6px!important}'
+ 'html .ach-guide .ach-mlink,html .ach-guide #langbtn{height:40px!important;padding:0 12px!important;font-size:13.5px!important;white-space:nowrap!important}'
+ 'html .ach-guide .ach-mlink[data-nav="fonti"] .lg{display:none!important}html .ach-guide .ach-mlink[data-nav="fonti"] .sm{display:inline!important}}'
+ '@media (min-width:1100px){html .ach-guide .ach-mlink[data-nav="sost"]{display:none!important}}'
  '@media (min-width:760px){html .status #count,html #count{font-size:24px!important}}')
 BLOCCO = f'<!--TESTATA-TEL--><style id="testata-tel">{CSS}</style><!--/TESTATA-TEL-->'
 for P in (os.path.join(RAD,'sorgenti','template.html'), os.path.join(RAD,'index.html')):

@@ -2,8 +2,9 @@
 """Aggregatore con − e + (Stefano, 23/11/2026: «pubblica Places con l'aggregatore»).
 Sul telefono, sotto la ricerca: «−» raggruppa di più, «+» scende nel dettaglio, al centro il livello
 (Nord-Sud · Regioni · Zone · Province · Comuni · Luoghi; Zone solo se c'è il tasto, vedi zone.py).
-Anteprima 23/11 sera: anche su iPad e PC, nella barra Guida/Mappa al posto delle linguette; sul PC (≥1100 px) accanto
-a Guida e Mappa anche i menu Regioni, Province, Comuni. Usa i tasti di raggruppamento che la guida ha già (.agg[data-grp]): li preme lui.
+Anteprima 23/11 sera: su iPad e PC sta a destra di «Tutti i N luoghi», riga che resta fissa scorrendo; sul PC (≥1100 px)
+accanto a Guida e Mappa i menu Regioni, Province, Comuni e «Collaborano con noi»; sull'iPad la ricerca (più corta),
+Azzera e Vicino a te accanto a Guida e Mappa. Usa i tasti di raggruppamento che la guida ha già (.agg[data-grp]): li preme lui.
 Mette il blocco in sorgenti/template.html e in index.html (i flussi lavorano sulla pagina) fra i segni
 <!--AGGREGATORE-->…<!--/AGGREGATORE-->; si può rilanciare quante volte si vuole:  python3 sorgenti/aggregatore.py
 I nomi dei livelli si leggono dai tasti che già esistono, così la versione inglese li ha tradotti."""
@@ -15,10 +16,16 @@ HTML = ('<!--AGGREGATORE--><div class="aggpm" id="aggpm" hidden>'
         '<div class="aggliv" aria-live="polite"><b></b><span class="aggdots"></span></div>'
         '<button type="button" class="pm piu" aria-label="Più dettaglio">+</button></div><!--/AGGREGATORE-->')
 CSS = ('.aggpm:not([hidden]){display:flex;align-items:center;gap:8px;margin:8px 0 2px}'
-       '@media (min-width:760px){html .topnav .aggr{display:none!important}.topnav .aggpm{margin:0 0 0 auto;width:300px;flex:none}'
-       '.topnav .aggpm .pm{width:40px;height:40px;font-size:21px;border-radius:12px}.topnav .aggpm .aggliv{height:40px;border-radius:12px;gap:3px}'
-       '.topnav .aggpm .aggliv b{font-size:14.5px}'
-       '.topnav .pick{display:flex!important;gap:8px!important;margin:0 0 0 14px!important;flex:1 1 auto;min-width:0}'
+       '@media (min-width:760px){html .topnav .aggr{display:none!important}'
+       '.conta .aggpm{margin:0 0 0 auto!important;width:280px;flex:none}'
+       '.conta .aggpm .pm{width:38px;height:38px;font-size:21px;border-radius:12px}.conta .aggpm .aggliv{height:38px;border-radius:12px;gap:3px}'
+       '.conta .aggpm .aggliv b{font-size:14.5px}'
+       '.topnav .collab{flex:none;margin-left:auto;height:40px;padding:0 16px;display:inline-flex!important;align-items:center;gap:7px;border-radius:999px;'
+       'border:1px solid var(--line);background:var(--paper);color:var(--ink);font:600 14.5px/1 var(--sans,system-ui);text-decoration:none;white-space:nowrap}'
+       '.topnav .collab:hover{border-color:var(--terra);background:var(--terra-soft)}'
+       '.topnav #searchwrap{flex:1 1 auto;min-width:0;max-width:340px;margin:0 0 0 12px}.topnav #eatbtn,.topnav #resetbtn{flex:none}'
+       'html .topnav #q{height:40px!important}'
+'.topnav .pick{display:flex!important;gap:8px!important;margin:0 0 0 14px!important;flex:1 1 auto;min-width:0}'
        '.topnav .pick .msel{flex:1 1 0;min-width:0;max-width:190px;position:relative}.topnav .pick .mlab{display:none!important}'
        '.topnav .pick .mbtn{height:40px!important;min-height:0!important;width:100%;display:flex!important;align-items:center;gap:6px}'
        '.topnav .pick .mbtn::before{content:attr(data-l);font:600 12px/1 var(--sans,system-ui);color:var(--mute);flex:none}'
@@ -46,9 +53,16 @@ function vai(d){var i=LV.indexOf(ora());if(i<0)i=LV.length-1;var j=i+d;if(j<0||j
 w.querySelector(".meno").onclick=function(){vai(-1)};w.querySelector(".piu").onclick=function(){vai(1)};
 document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest(".agg[data-grp]");if(a){CUR=a.dataset.grp;setTimeout(disegna,30)}});
 var mq=matchMedia("(min-width:760px)"),mqpc=matchMedia("(min-width:1100px)"),casa=w.parentNode,dopo=w.nextSibling,pk=document.querySelector(".pick"),pkCasa=pk&&pk.parentNode,pkDopo=pk&&pk.nextSibling;
-function posto(){var nav=document.querySelector("nav.topnav");if(!nav)return;
- if(mq.matches){var a=nav.querySelector(".aggr");nav.insertBefore(w,a?a.nextSibling:null);}else if(w.parentNode!==casa)casa.insertBefore(w,dopo);
- if(pk){if(mqpc.matches)nav.insertBefore(pk,w);else if(pk.parentNode!==pkCasa)pkCasa.insertBefore(pk,pkDopo);}}
+var SP=["searchwrap","resetbtn","eatbtn"].map(function(i){var e=document.getElementById(i);return e?[e,e.parentNode,e.nextSibling]:null}).filter(Boolean);
+var co=document.createElement("a");co.className="collab";co.href="sostenitori/";co.innerHTML='<span aria-hidden="true">🤝</span> '+(en?"Our partners":"Collaborano con noi");
+function posto(){var nav=document.querySelector("nav.topnav"),ct=document.getElementById("count");if(!nav)return;ct=ct&&ct.parentNode;
+ if(mq.matches&&ct)ct.appendChild(w);else if(w.parentNode!==casa)casa.insertBefore(w,dopo);
+ var a=nav.querySelector(".aggr");
+ if(pk){if(mqpc.matches)nav.insertBefore(pk,a?a.nextSibling:null);else if(pk.parentNode!==pkCasa)pkCasa.insertBefore(pk,pkDopo);}
+ if(mqpc.matches)nav.insertBefore(co,pk&&pk.parentNode===nav?pk.nextSibling:(a?a.nextSibling:null));else if(co.parentNode)co.remove();
+ var ipad=mq.matches&&!mqpc.matches;
+ if(ipad)SP.forEach(function(x,i){nav.insertBefore(x[0],i?SP[i-1][0].nextSibling:(a?a.nextSibling:null))});
+ else SP.slice().reverse().forEach(function(x){if(x[0].parentNode!==x[1])x[1].insertBefore(x[0],x[2]&&x[2].parentNode===x[1]?x[2]:null)});}
 function etichette(){document.querySelectorAll(".pick .msel").forEach(function(m){var l=m.querySelector(".mlab"),b=m.querySelector(".mbtn");if(l&&b)b.setAttribute("data-l",l.textContent.trim())})}
 etichette();setTimeout(etichette,1500);setTimeout(etichette,4000);
 mq.addEventListener("change",posto);mqpc.addEventListener("change",posto);posto();
