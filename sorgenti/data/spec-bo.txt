@@ -63,7 +63,7 @@ notice: la Ciclovia del Santerno (Mordano-Castel del Rio) è chiusa per danni da
 @ Bentivoglio | 037005 | BO | bentivoglio |
 - Castello di Bentivoglio | storia/Castelli e fortezze | mid | i | Da verificare | La Domus Jocundatis di Giovanni II Bentivoglio, che ingloba una rocca del 1390. | Visitabile con visite guidate mensili e durante eventi. | Bentivoglio | book=Visite guidate a calendario
 - Museo della Civiltà Contadina, Villa Smeraldi | musei/Tematici | mid | i | Da verificare | Il museo della vita nei campi nella villa di San Marino di Bentivoglio. | Il mondo rurale della pianura bolognese. | San Marino di Bentivoglio
-- Oasi La Rizza | natura/Parchi e riserve naturali | mid | | free | Ex risaia diventata oasi, con nidi di cicogna bianca. | Le cicogne in pianura. | Bentivoglio
+- Oasi La Rizza | natura/Parchi e riserve naturali | mid | | free | Ex risaia diventata oasi, con nidi di cicogna bianca. | Le cicogne in pianura. | Bentivoglio | off=https://oasilarizza.it
 
 @ Pieve di Cento | 037048 | BO | pieve-di-cento | arancione
 lede: La "piccola Bologna" dei portici, con la Collegiata piena di capolavori, il Teatro Zeppilli e il museo MAGI '900.
