@@ -32,8 +32,15 @@ CSS = ('@media (max-width:759px){'
  '@media (min-width:1100px){html .ach-guide .ach-mlink[data-nav="sost"]{display:none!important}}'
  '@media (min-width:760px){html .status #count,html #count{font-size:24px!important}}')
 BLOCCO = f'<!--TESTATA-TEL--><style id="testata-tel">{CSS}</style><!--/TESTATA-TEL-->'
+FRASE = '<li>I numeri in alto (luoghi, gratuiti, comuni o al coperto, con avvisi) sono anche scorciatoie: toccandoli si accende il filtro corrispondente.</li>'
+# la riga dei numeri non c'è più: in Metodo si toglie la frase che la spiegava (e la sua voce da tradurre)
+import json as _j
+UI = os.path.join(RAD, 'sorgenti', 'traduci', 'ui_it.json'); _u = _j.load(open(UI, encoding='utf-8'))
+_v = [x for x in _u if not str(x).startswith('I numeri in alto (luoghi, gratuiti')]
+if len(_v) != len(_u): open(UI, 'w', encoding='utf-8').write(_j.dumps(_v, ensure_ascii=False, indent=0) + '\n')
 for P in (os.path.join(RAD,'sorgenti','template.html'), os.path.join(RAD,'index.html')):
     t = open(P, encoding='utf-8').read()
+    t = t.replace(FRASE + '\n', '').replace(FRASE, '')
     t = re.sub(r'<!--TESTATA-TEL-->.*?<!--/TESTATA-TEL-->', '', t, flags=re.S)
     assert t.count('</body>') == 1, P
     t = t.replace('</body>', BLOCCO + '</body>')
