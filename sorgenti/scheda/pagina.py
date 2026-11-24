@@ -55,6 +55,11 @@ CSS = ('.asch{display:inline-flex;align-items:center;gap:5px;margin-top:8px;heig
        '.stl:hover{border-color:var(--terra)}.stl svg{width:34px;height:34px;flex:none}.stl span{min-width:0;line-height:1.25;font-size:14px}.stl b{font-weight:800}'
        '.stl small{display:block;color:var(--mute);font-size:12px}.stl .wk{width:34px;height:34px;flex:none;display:grid;place-items:center;border-radius:50%;border:1px solid var(--line2);font:700 17px/1 Georgia,serif}'
        '@media (max-width:380px){.stls{grid-template-columns:1fr}}'
+       '.swk{display:inline-flex;align-items:center;gap:8px;margin:2px 0 12px;padding:7px 12px 7px 8px;border-radius:999px;border:1px solid var(--line2);'
+       'background:var(--paper);color:var(--ink);font-weight:700;font-size:14px;text-decoration:none}.swk:hover{border-color:var(--terra)}'
+       '.swk span{width:24px;height:24px;display:grid;place-items:center;border-radius:50%;background:var(--bg);font:700 14px/1 Georgia,serif}.swk i{font-style:normal;color:var(--mute)}'
+       '.sdov{display:flex;flex-wrap:wrap;gap:6px}.sdov a{padding:6px 11px;border-radius:999px;background:var(--bg);border:1px solid var(--line);'
+       'color:var(--ink);text-decoration:none;font-weight:600;font-size:13.5px}.sdov a:hover{border-color:var(--terra)}.sdov b{color:var(--terra-ink)}'
        '.schc{display:flex;flex-wrap:wrap;gap:6px;margin-top:7px}.schc a{padding:5px 10px;border-radius:999px;border:1px solid var(--line2);'
        'color:var(--ink);text-decoration:none;font-size:13px;font-weight:600}.schc a:hover{border-color:var(--terra)}')
 JS = r'''(function(){var CAR=null,v=document.createElement("div");v.className="schv";v.hidden=true;v.setAttribute("role","dialog");v.setAttribute("aria-modal","true");v.setAttribute("aria-labelledby","schtit");
@@ -80,6 +85,7 @@ function apri(b,liv,k,n,ps,da){torna=da||null;var sub=(b.querySelector(".as")||{
      bo=new Set(ps.filter(function(p){return (p.aw||[]).indexOf("borghi")>=0}).map(function(p){return p.comSlug})).size,ar=new Set(ps.filter(function(p){return (p.aw||[]).indexOf("arancione")>=0}).map(function(p){return p.comSlug})).size,
      nc=new Set(ps.map(function(p){return p.comSlug})).size;
  var cats=[];try{var cc={};ps.forEach(function(p){var g=FVG(p)[0];cc[g]=(cc[g]||0)+1});cats=FVM.filter(function(m){return cc[m.k]}).map(function(m){return [m,cc[m.k]]}).sort(function(a,b){return b[1]-a[1]})}catch(x){}
+ var cm={};ps.forEach(function(p){var s=p.comSlug;cm[s]=cm[s]||[s,p.com,0];cm[s][2]++});var ncom=Object.values(cm).sort(function(a,b){return b[2]-a[2]}).slice(0,6);
  var top=ps.slice().sort(function(a,b){return (a.rk||1e9)-(b.rk||1e9)}).slice(0,3);
  var desc=liv==="r"?(D.rd||{})[k]:liv==="z"?(D.zd||{})[k]:"";
  var dove=liv==="c"?(sub||""):liv==="v"?(sub||""):liv==="z"?nf(nc)+(nc===1?" comune":" comuni"):(sub||"");
@@ -93,22 +99,28 @@ function apri(b,liv,k,n,ps,da){torna=da||null;var sub=(b.querySelector(".as")||{
  var tiles=(nr?tile(REC+"#"+FR,LR,nr,nr===1?"ricetta":"ricette","Ach's Dishes"):"")
   +(NP?tile(REC+"#"+FP,LR,NP,NP===1?"prodotto tipico":"prodotti tipici",usaPv?"della provincia":liv==="r"?"DOP, IGP, Presìdi":"della regione"):"")
   +cit.map(function(p){return tile(EV[p][1],LE,0,"Eventi a "+e(EV[p][0]),"su Events")}).join("")
-  +'<a class="stl" href="'+w+'" target="_blank" rel="noopener"><span class="wk" aria-hidden="true">W</span><span>Storia<small>su Wikipedia</small></span></a>';
+;
  var h='<div class="sx"><button type="button" aria-label="Chiudi">×</button></div>'
   +'<div class="sk">'+TIPO[liv]+(dove?' · <span>'+e(dove)+'</span>':'')+'</div><h3 id="schtit">'+e(n)+'</h3>'
-  +'<p class="sd">'+e(desc)+'</p>'
+  +'<p class="sd">'+e(desc)+'</p><a class="swk" href="'+w+'" target="_blank" rel="noopener"><span aria-hidden="true">W</span>Storia e curiosità su Wikipedia <i aria-hidden="true">↗</i></a>'
   +'<div class="sst"><div><b>'+nf(N)+'</b><small>'+(N===1?"luogo":"luoghi")+'</small></div><div><b>'+nf(gr)+'</b><small>gratis</small></div><div><b>'+nf(co)+'</b><small>se piove</small></div>'+(liv!=="c"?'<div><b>'+nf(nc)+'</b><small>'+(nc===1?"comune":"comuni")+'</small></div>':'')+'</div>'
   +((un||bo||ar)?'<div class="sbd">'+(un?'<span>🌍 Patrimonio UNESCO</span>':'')
    +(bo?'<span>🏘️ '+(liv==="c"?"Borgo più bello d'Italia":nf(bo)+(bo===1?" Borgo più bello":" Borghi più belli"))+'</span>':'')
    +(ar?'<span>🟠 '+(liv==="c"?"Bandiera arancione":nf(ar)+(ar===1?" Bandiera arancione":" Bandiere arancioni"))+'</span>':'')+'</div>':'')
   +(top.length?'<h4>Da non perdere</h4><ol class="stop">'+top.map(function(p){var g=(FVM.find(function(m){return m.k===FVG(p)[0]})||{});return '<li><button type="button" data-luogo="'+e(p.id)+'"><i aria-hidden="true">'+(g.e||"•")+'</i><span><b>'+e(p.name)+'</b><small>'+e((g.l||"")+(p.sub?" · "+p.sub:"")+(liv!=="c"?" · "+p.com:""))+'</small></span><em aria-hidden="true">›</em></button></li>'}).join("")+'</ol>':'')
   +(cats.length>1?'<h4>Cosa trovi</h4><div class="scat">'+cats.map(function(x){return '<span style="--g:'+x[0].c+'">'+x[0].e+' '+x[0].l+' <b>'+nf(x[1])+'</b></span>'}).join("")+'</div>':'')
+  +(liv!=="c"&&ncom.length>1?'<h4>Dove andare</h4><div class="sdov">'+ncom.map(function(x){return '<a href="#'+e(x[0])+'">'+e(x[1])+' <b>'+nf(x[2])+'</b></a>'}).join("")+'</div>':'')
+  +(liv==="c"?'<div id="svic"></div>':'')
   +'<a class="scta" href="#" data-vai="1">Vedi '+(N===1?"il luogo":"tutti i "+nf(N)+" luoghi")+' <i aria-hidden="true">›</i></a>'
   +'<h4>Da gustare e da fare</h4><div class="stls">'+tiles+'</div>';
  v.innerHTML='<div class="schb">'+h+'</div>';v.hidden=false;document.documentElement.style.overflow="hidden";
  v.querySelector("[data-vai]").onclick=function(x){x.preventDefault();torna=null;chiudi();b.click()};
  v.querySelectorAll("[data-luogo]").forEach(function(q){q.onclick=function(){var id=q.getAttribute("data-luogo");torna=null;chiudi();if(window.APRI_LUOGO)APRI_LUOGO(id,b);else b.click()}});
- v.querySelector(".sx button").focus();});}
+ v.querySelector(".sx button").focus();
+ if(liv==="c"){(window.VIC||(window.VIC=fetch("vicini.json").then(function(r){return r.json()}))).then(function(V){var l=(V[k]||[]).slice(0,6),box=v.querySelector("#svic");if(!box||!l.length)return;
+  box.innerHTML='<h4>Nei dintorni</h4><div class="sdov">'+l.map(function(x){var nm=window.NOME_COM?NOME_COM(x[0]):x[0];return '<a href="#'+e(x[0])+'">'+e(nm)+' <b>'+String(Math.round(x[1])).replace(".",",")+' km</b></a>'}).join("")+'</div>';
+  box.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){torna=null;chiudi()})})}).catch(function(){})}
+ v.querySelectorAll(".sdov a").forEach(function(a){a.addEventListener("click",function(){torna=null;chiudi()})});});}
 window.SCHEDA_AGG=function(b,liv,k,n,ps){if("cvrz".indexOf(liv)<0)return;var ab=b.querySelector(".ab");if(!ab||ab.querySelector(".asch"))return;
  /* tasto visivo dentro la scheda del gruppo (niente ruolo: non si annida un pulsante in un pulsante) */
  var s=document.createElement("span");s.className="asch";s.setAttribute("aria-hidden","true");s.textContent="📋 Scheda";
@@ -125,9 +137,11 @@ AGG_B = 'if(window.SCHEDA_AGG)SCHEDA_AGG(b,liv,k,n,ps);\n      '
 for nome in ('sorgenti/template.html', 'index.html'):
     P = os.path.join(RAD, nome); t = open(P, encoding='utf-8').read()
     t = re.sub(r'<!--SCHEDA-->.*?<!--/SCHEDA-->', '', t, flags=re.S)
+    if 'window.APRI_LUOGO=' in t and 'window.NOME_COM=s=>' not in t:
+        t = t.replace('window.APRI_LUOGO=(id,f)=>openSheet(id,f);/*scheda*/', 'window.APRI_LUOGO=(id,f)=>openSheet(id,f);window.NOME_COM=s=>{const c=COMUNI.find(x=>x.slug===s);return c?c.name:s};/*scheda*/')
     if 'window.APRI_LUOGO=' not in t:
         assert t.count('function closeSheet(){') == 1, nome
-        t = t.replace('function closeSheet(){', 'window.APRI_LUOGO=(id,f)=>openSheet(id,f);/*scheda*/\nfunction closeSheet(){')
+        t = t.replace('function closeSheet(){', 'window.APRI_LUOGO=(id,f)=>openSheet(id,f);window.NOME_COM=s=>{const c=COMUNI.find(x=>x.slug===s);return c?c.name:s};/*scheda*/\nfunction closeSheet(){')
     if AGG_B + AGG_A not in t:
         assert t.count(AGG_A) == 1, nome
         t = t.replace(AGG_A, AGG_B + AGG_A)
