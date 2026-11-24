@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Aggregatore con − e + (Stefano, 23/11/2026: «pubblica Places con l'aggregatore»).
-Sul telefono, sotto la ricerca: «−» raggruppa di più, «+» scende nel dettaglio, al centro il livello
+Sul telefono, sotto la ricerca: «+» aggrega (raggruppa di più), «−» disaggrega (scende nel dettaglio), al centro il livello
+(regola di Stefano 23/11 23:30 per tutte le guide, come Dinners e Dishes; corretto il verso il 24/11)
 (Nord-Sud · Regioni · Zone · Province · Comuni · Luoghi; Zone solo se c'è il tasto, vedi zone.py).
 Anteprima 23/11 sera: su iPad e PC sta a destra di «Tutti i N luoghi», riga che resta fissa scorrendo; sul PC (≥1100 px)
 accanto a Guida e Mappa i menu Regioni, Province, Comuni e «Collaborano con noi»; sull'iPad la ricerca (più corta),
@@ -12,9 +13,9 @@ import os, re
 RAD = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PAGINE = [os.path.join(RAD, 'sorgenti', 'template.html'), os.path.join(RAD, 'index.html')]
 HTML = ('<!--AGGREGATORE--><div class="aggpm" id="aggpm" hidden>'
-        '<button type="button" class="pm meno" aria-label="Meno dettaglio">−</button>'
+        '<button type="button" class="pm meno" aria-label="Disaggrega: più dettaglio">−</button>'
         '<div class="aggliv" aria-live="polite"><b></b><span class="aggdots"></span></div>'
-        '<button type="button" class="pm piu" aria-label="Più dettaglio">+</button></div><!--/AGGREGATORE-->')
+        '<button type="button" class="pm piu" aria-label="Aggrega: raggruppa di più">+</button></div><!--/AGGREGATORE-->')
 CSS = ('.aggpm:not([hidden]){display:flex;align-items:center;gap:8px;margin:8px 0 2px}'
        '@media (min-width:760px){html .topnav .aggr{display:none!important}'
        '.conta .aggpm{margin:0 0 0 auto!important;width:280px;flex:none}'
@@ -40,17 +41,17 @@ CSS = ('.aggpm:not([hidden]){display:flex;align-items:center;gap:8px;margin:8px 
        '.aggpm .aggdots i.on{background:#2f7a5c}')
 JS = r'''(function(){var LV=["a","r","z","v","c","p"].filter(function(g){return document.querySelector('.agg[data-grp="'+g+'"]')}),w=document.getElementById("aggpm");if(!w)return;
 var en=(document.documentElement.lang||"").indexOf("en")===0;
-w.querySelector(".meno").setAttribute("aria-label",en?"Less detail: group more":"Meno dettaglio: raggruppa di più");
-w.querySelector(".piu").setAttribute("aria-label",en?"More detail":"Più dettaglio");
+w.querySelector(".meno").setAttribute("aria-label",en?"Ungroup: more detail":"Disaggrega: più dettaglio");
+w.querySelector(".piu").setAttribute("aria-label",en?"Group more":"Aggrega: raggruppa di più");
 function nome(g){var b=document.querySelector('.agg[data-grp="'+g+'"]');return b?b.textContent.replace(/^[^\p{L}]+/u,"").trim():g;}
 var CUR=(function(){var o=document.querySelector(".agg.on[data-grp]");return o?o.dataset.grp:"p"})();function ora(){return CUR}
 function disegna(){var g=ora(),i=LV.indexOf(g);if(i<0)i=LV.length-1;w.querySelector("b").textContent=nome(LV[i]);
  w.querySelector(".aggdots").innerHTML=LV.map(function(x,k){return '<i class="'+(k===i?"on":"")+'"></i>'}).join("");
- w.querySelector(".meno").disabled=i<=0;w.querySelector(".piu").disabled=i>=LV.length-1;
+ w.querySelector(".piu").disabled=i<=0;w.querySelector(".meno").disabled=i>=LV.length-1;
  document.querySelectorAll(".agg").forEach(function(x){var on=x.dataset.grp===LV[i];x.classList.toggle("on",on);x.setAttribute("aria-pressed",on)});}
 function vai(d){var i=LV.indexOf(ora());if(i<0)i=LV.length-1;var j=i+d;if(j<0||j>=LV.length)return;
  var b=document.querySelector('.agg[data-grp="'+LV[j]+'"]');if(!b)return;b.click();CUR=LV[j];setTimeout(disegna,30);}
-w.querySelector(".meno").onclick=function(){vai(-1)};w.querySelector(".piu").onclick=function(){vai(1)};
+w.querySelector(".piu").onclick=function(){vai(-1)};w.querySelector(".meno").onclick=function(){vai(1)};
 document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest(".agg[data-grp]");if(a){CUR=a.dataset.grp;setTimeout(disegna,30)}});
 var mq=matchMedia("(min-width:760px)"),mqpc=matchMedia("(min-width:1100px)"),casa=w.parentNode,dopo=w.nextSibling,pk=document.querySelector(".pick"),pkCasa=pk&&pk.parentNode,pkDopo=pk&&pk.nextSibling;
 var SP=["searchwrap","resetbtn","eatbtn"].map(function(i){var e=document.getElementById(i);return e?[e,e.parentNode,e.nextSibling]:null}).filter(Boolean);
@@ -80,7 +81,7 @@ CSS += ('.aggfl{position:fixed;bottom:calc(16px + env(safe-area-inset-bottom));z
 JS += r'''(function(){var w=document.getElementById("aggpm");if(!w)return;var mq=matchMedia("(max-width:1099px), (hover:none)");
 var en=(document.documentElement.lang||"").indexOf("en")===0,usato=true,fuori=false,tt;
 function mk(c,s,l){var b=document.createElement("button");b.type="button";b.className="aggfl via "+c;b.textContent=s;b.setAttribute("aria-label",l);document.body.appendChild(b);return b}
-var m=mk("meno","−",en?"Less detail":"Meno dettaglio"),p=mk("piu","+",en?"More detail":"Più dettaglio"),to=document.createElement("div");to.className="aggtoast";to.setAttribute("aria-live","polite");document.body.appendChild(to);
+var m=mk("meno","−",en?"Ungroup: more detail":"Disaggrega: più dettaglio"),p=mk("piu","+",en?"Group more":"Aggrega: raggruppa di più"),to=document.createElement("div");to.className="aggtoast";to.setAttribute("aria-live","polite");document.body.appendChild(to);
 function vis(e){if(!e||e.hidden)return null;var s=getComputedStyle(e);if(s.display==="none"||s.visibility==="hidden"||+s.opacity<.1)return null;var r=e.getBoundingClientRect();return r.width&&r.height&&r.bottom>0&&r.top<innerHeight?r:null}
 function sopra(a,b){return !(a.right<=b.left||a.left>=b.right||a.bottom<=b.top||a.top>=b.bottom)}
 function sistema(){var vista=!document.querySelector("main[hidden]")&&vis(document.getElementById("grid"));
