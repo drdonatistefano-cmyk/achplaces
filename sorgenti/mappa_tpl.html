@@ -102,7 +102,7 @@ html[data-t=carta] .row{background:#fff;border-color:color-mix(in srgb,var(--g) 
 .it .tg{display:flex;flex-wrap:wrap;gap:6px;margin-top:7px}
 .it .tg span{font-size:11px;padding:2px 8px;border-radius:999px;border:1px solid var(--ln);color:var(--mut)}
 .empty{padding:30px 14px;color:var(--mut);font-size:14px;line-height:1.55}
-.grab,.grabz{display:none}/* 24/11/2026: accessibilità (WebAbility): link «salta all'elenco» per tastiera e lettori di schermo; maniglia visibile nel tema chiaro */.salta{position:absolute;left:8px;top:-80px;z-index:1000;background:#2F7A5C;color:#fff;padding:10px 14px;border-radius:10px;font:600 14px Inter,sans-serif;text-decoration:none}.salta:focus{top:8px}html[data-t=carta] .grab{background:#8A7E70}
+.grab,.grabz{display:none}/* 24/11/2026: accessibilità (WebAbility): link «salta all'elenco» per tastiera e lettori di schermo; maniglia visibile nel tema chiaro */.salta{position:absolute;left:8px;top:-80px;z-index:1000;background:#2F7A5C;color:#fff;padding:10px 14px;border-radius:10px;font:600 14px Inter,sans-serif;text-decoration:none}.salta:focus{top:8px}#list:focus{outline:none}html[data-t=carta] .grab{background:#8A7E70}
 .note{font-size:11px;line-height:1.5;color:var(--fa)}
 /* computer: filtri a sinistra, lista a destra */
 @media (min-width:1280px){
@@ -267,7 +267,7 @@ html[data-t=carta] .gl{box-shadow:0 10px 30px rgba(60,40,20,.12)}
 <!--ISTITUZIONALE--><style id="istituzionale">html[data-t=carta]{--bg:#efe7da;--bg1:#f6efe4;--ln:#e3d8c6}html[data-t=carta] .gl{box-shadow:0 1px 2px rgba(35,29,24,.05),0 10px 28px -10px rgba(35,29,24,.18)}html[data-t=carta] .row:hover{border-color:#2f7a5c}html[data-t=carta] #levels button.on{color:#225c45;box-shadow:0 1px 2px rgba(35,29,24,.1),0 0 0 1px #e3d8c6}html[data-t=carta] #nv,html[data-t=carta] #sheet h2{color:#231d18}</style><!--/ISTITUZIONALE-->
 </head>
 <body>
-<a class="salta" href="#items">Vai all'elenco dei luoghi</a>
+<a class="salta" href="#list">Vai all'elenco dei luoghi</a>
 <div id="app">
   <aside id="filt" class="gl off0" aria-label="Filtri">
     <div class="fh">
@@ -306,7 +306,7 @@ html[data-t=carta] .gl{box-shadow:0 10px 30px rgba(60,40,20,.12)}
     <div id="temi" class="gl" hidden role="group" aria-label="Colori"></div>
   </div>
 
-  <section id="list" class="gl" aria-label="Luoghi in vista">
+  <section id="list" class="gl" role="main" tabindex="-1" aria-label="Luoghi in vista">
     <button class="grabz" id="grab" aria-label="Allarga o riduci l'elenco"><span class="grab"></span></button>
     <div class="head"><div><div id="nv">—</div><div id="nvl">luoghi in vista</div></div><div id="nvr"></div></div>
     <div id="items"></div>
