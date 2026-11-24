@@ -33,11 +33,16 @@ jobs:
           echo "${{ github.sha }}" > _site/versione.txt
       - uses: actions/upload-pages-artifact@v3
         with: { path: _site }
+      # 24/11/2026: 4 pubblicazioni fallite in un'ora con «No artifacts named github-pages»: il sito era caricato, ma
+      # GitHub non lo vedeva ancora un secondo dopo. Una breve attesa prima, e una più lunga prima del secondo tentativo.
+      - run: sleep 20
       - id: d1
         uses: actions/deploy-pages@v4
         continue-on-error: true
         with: { timeout: 1800000 }
       - id: d2
         if: steps.d1.outcome == 'failure'
+        run: sleep 60
+      - if: steps.d1.outcome == 'failure'
         uses: actions/deploy-pages@v4
         with: { timeout: 1800000 }
