@@ -70,6 +70,8 @@ mq.addEventListener("change",posto);mqpc.addEventListener("change",posto);posto(
 w.hidden=false;disegna();})();'''
 # 23/11 sera: su iPhone e iPad (dalle 20:34 anche senza averlo mai usato), quando l'aggregatore esce dallo schermo compaiono in basso un «−» a
 # sinistra e un «+» a destra (ai lati del tasto Filtri / Azzera); se toccherebbero qualcosa salgono sopra.
+# 24/11 (velocità): niente più lavoro a ogni movimento dello scorrimento (forzava l'impaginazione e faceva scattare la pagina):
+# se l'aggregatore o l'elenco entrano o escono dallo schermo lo dicono due IntersectionObserver.
 CSS += ('.aggfl{position:fixed;bottom:calc(16px + env(safe-area-inset-bottom));z-index:38;width:52px;height:52px;border-radius:50%;'
         'border:1px solid var(--line2);background:var(--paper);color:var(--terra-ink);font:700 26px/1 var(--sans,system-ui);'
         'display:grid;place-items:center;box-shadow:0 8px 22px -8px rgba(20,16,12,.45);cursor:pointer;transition:opacity .18s,transform .18s}'
@@ -84,7 +86,7 @@ function mk(c,s,l){var b=document.createElement("button");b.type="button";b.clas
 var m=mk("meno","−",en?"Ungroup: more detail":"Disaggrega: più dettaglio"),p=mk("piu","+",en?"Group more":"Aggrega: raggruppa di più"),to=document.createElement("div");to.className="aggtoast";to.setAttribute("aria-live","polite");document.body.appendChild(to);
 function vis(e){if(!e||e.hidden)return null;var s=getComputedStyle(e);if(s.display==="none"||s.visibility==="hidden"||+s.opacity<.1)return null;var r=e.getBoundingClientRect();return r.width&&r.height&&r.bottom>0&&r.top<innerHeight?r:null}
 function sopra(a,b){return !(a.right<=b.left||a.left>=b.right||a.bottom<=b.top||a.top>=b.bottom)}
-function sistema(){var vista=!document.querySelector("main[hidden]")&&vis(document.getElementById("grid"));
+var gIn=true;function sistema(){var vista=!document.querySelector("main[hidden]")&&gIn;
  var on=mq.matches&&usato&&fuori&&vista;[m,p].forEach(function(b){b.classList.toggle("via",!on);b.style.bottom=""});
  m.disabled=w.querySelector(".meno").disabled;p.disabled=w.querySelector(".piu").disabled;
  if(!on)return;var ost=["nAm","giu","nMap"].map(function(i){return vis(document.getElementById(i))}).filter(Boolean),alto=16;
@@ -98,7 +100,7 @@ p.onclick=function(){w.querySelector(".piu").click();setTimeout(function(){siste
 w.addEventListener("click",function(){usato=true;setTimeout(sistema,60)});
 document.addEventListener("click",function(e){if(e.target.closest&&e.target.closest(".agg[data-grp]")){usato=true;setTimeout(sistema,60)}});
 new IntersectionObserver(function(es){fuori=!es[0].isIntersecting;sistema()}).observe(w);
-var q=0;addEventListener("scroll",function(){if(!q){q=1;requestAnimationFrame(function(){q=0;sistema()})}},{passive:true});
+(function(){var g=document.getElementById("grid");if(g)new IntersectionObserver(function(es){gIn=es[es.length-1].isIntersecting;sistema()}).observe(g)})();
 addEventListener("resize",sistema);mq.addEventListener("change",sistema);
 var ro=window.ResizeObserver?new ResizeObserver(function(){sistema();setTimeout(sistema,250)}):null;
 function guarda(){["nAm","giu","nMap"].forEach(function(i){var e=document.getElementById(i);if(e&&!e._aggro&&ro){e._aggro=1;ro.observe(e);new MutationObserver(function(){setTimeout(sistema,30);setTimeout(sistema,300)}).observe(e,{attributes:true,childList:true,subtree:true,characterData:true})}})}

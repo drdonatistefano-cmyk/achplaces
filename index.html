@@ -2242,12 +2242,16 @@ const ORE={short:.5,mid:1.25,long:2.5};
 function giro(ps,budget){const out=[];let h=0;for(const p of ps){const d=ORE[p.t]||1;if(h+d<=budget+.01){out.push(p);h+=d;}if(h>=budget-.2)break;}return [out,h];}
 const fmtH=h=>h<1?Math.round(h*60)+" min":(Math.round(h*2)/2).toLocaleString("it-IT")+(h<1.75?" ora":" ore");
 let VIC=null;/* 17/11/2026: km su strada (OSRM, sorgenti/vicini_strada.py), segnalazione del Comune di Verbania */
-fetch("/vicini.json").then(r=>r.ok?r.json():null).then(j=>{if(j){VIC=j;try{renderXtra();}catch(e){}}}).catch(()=>{});
+/* 24/11/2026 (velocità): vicini.json (114 KB) non si scarica più insieme ai dati della guida, che arrivano prima: parte quando si apre
+   un comune o, in sottofondo, qualche secondo dopo che la pagina è pronta */
+let _vicP=null;function caricaVicini(){if(!_vicP)_vicP=fetch("/vicini.json").then(r=>r.ok?r.json():null).then(j=>{if(j){VIC=j;try{renderXtra();}catch(e){}}}).catch(()=>{});return _vicP}
+addEventListener("load",()=>setTimeout(()=>(window.requestIdleCallback||setTimeout)(caricaVicini),6000));
 function vicini(C){if(VIC&&VIC[C.slug]){const by=new Map(COMUNI.map(c=>[c.slug,c]));const v=VIC[C.slug].map(([s,d,f,l])=>[d,by.get(s),f,l]).filter(x=>x[1]&&x[1].places.length);if(v.length)return v.slice(0,6);}
   return COMUNI.filter(c=>c.slug!==C.slug&&c.lat!=null&&c.places.length).map(c=>[hav(C.lat,C.lng,c.lat,c.lng),c]).sort((a,b)=>a[0]-b[0]).slice(0,6);}
 function renderXtra(){
   const el=$("xtra");if(!el)return;let h="";
   const single=!C.all&&!C.isProv;
+  if(single&&!VIC)caricaVicini();
   if(single){
     const ps=C.places.filter(p=>p.status!=="closed").sort((a,b)=>(a.rk||1e9)-(b.rk||1e9));
     const vm=Math.max(2,C.visita||0),G=[["2h",`⚡ ${vm} ore`,vm],["mezza","🌤️ Mezza giornata",Math.max(4,vm+1)],["giorno","☀️ Una giornata",7]].filter(g=>ps.length>2||g[0]==="2h");
@@ -2464,7 +2468,7 @@ function mk(c,s,l){var b=document.createElement("button");b.type="button";b.clas
 var m=mk("meno","−",en?"Ungroup: more detail":"Disaggrega: più dettaglio"),p=mk("piu","+",en?"Group more":"Aggrega: raggruppa di più"),to=document.createElement("div");to.className="aggtoast";to.setAttribute("aria-live","polite");document.body.appendChild(to);
 function vis(e){if(!e||e.hidden)return null;var s=getComputedStyle(e);if(s.display==="none"||s.visibility==="hidden"||+s.opacity<.1)return null;var r=e.getBoundingClientRect();return r.width&&r.height&&r.bottom>0&&r.top<innerHeight?r:null}
 function sopra(a,b){return !(a.right<=b.left||a.left>=b.right||a.bottom<=b.top||a.top>=b.bottom)}
-function sistema(){var vista=!document.querySelector("main[hidden]")&&vis(document.getElementById("grid"));
+var gIn=true;function sistema(){var vista=!document.querySelector("main[hidden]")&&gIn;
  var on=mq.matches&&usato&&fuori&&vista;[m,p].forEach(function(b){b.classList.toggle("via",!on);b.style.bottom=""});
  m.disabled=w.querySelector(".meno").disabled;p.disabled=w.querySelector(".piu").disabled;
  if(!on)return;var ost=["nAm","giu","nMap"].map(function(i){return vis(document.getElementById(i))}).filter(Boolean),alto=16;
@@ -2478,7 +2482,7 @@ p.onclick=function(){w.querySelector(".piu").click();setTimeout(function(){siste
 w.addEventListener("click",function(){usato=true;setTimeout(sistema,60)});
 document.addEventListener("click",function(e){if(e.target.closest&&e.target.closest(".agg[data-grp]")){usato=true;setTimeout(sistema,60)}});
 new IntersectionObserver(function(es){fuori=!es[0].isIntersecting;sistema()}).observe(w);
-var q=0;addEventListener("scroll",function(){if(!q){q=1;requestAnimationFrame(function(){q=0;sistema()})}},{passive:true});
+(function(){var g=document.getElementById("grid");if(g)new IntersectionObserver(function(es){gIn=es[es.length-1].isIntersecting;sistema()}).observe(g)})();
 addEventListener("resize",sistema);mq.addEventListener("change",sistema);
 var ro=window.ResizeObserver?new ResizeObserver(function(){sistema();setTimeout(sistema,250)}):null;
 function guarda(){["nAm","giu","nMap"].forEach(function(i){var e=document.getElementById(i);if(e&&!e._aggro&&ro){e._aggro=1;ro.observe(e);new MutationObserver(function(){setTimeout(sistema,30);setTimeout(sistema,300)}).observe(e,{attributes:true,childList:true,subtree:true,characterData:true})}})}
