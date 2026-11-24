@@ -191,7 +191,7 @@ footer{margin-top:28px;padding:20px 0 40px;font-size:13.5px;color:var(--soft)}
 @media(max-width:560px){
 nav.guide a[href="/"]{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(16px + env(safe-area-inset-bottom));z-index:20;flex:none;width:auto;
 display:inline-flex;align-items:center;gap:8px;height:50px;padding:0 24px;border:0;border-radius:999px;color:#fff;font:700 16px var(--sans);
-background:#2f7a5c linear-gradient(135deg,#2f7a5c,#328162);box-shadow:0 12px 28px -10px rgba(29,74,56,.85)}
+background:#2f7a5c;box-shadow:0 12px 28px -10px rgba(29,74,56,.85)}
 nav.guide a[href="/"]::before{content:"\\1F9ED";font-size:18px}
 nav.guide a[href="/"]:hover{background:linear-gradient(135deg,#225c45,#2f7a5c);color:#fff}
 body{padding-bottom:84px}
@@ -221,7 +221,7 @@ def pagina(titolo, descr, url, corpo, jsonld=None, prof=0):
     if titolo.endswith(" | Ach's Places Guide") and len(titolo) > 65:
         titolo = titolo[: -len(" | Ach's Places Guide")]
     ld = f'<script type="application/ld+json">{json.dumps(jsonld, ensure_ascii=False, separators=(",", ":"))}</script>' if jsonld else ""
-    return ("<!doctype html><html lang=\"it\"><head><meta charset=\"utf-8\">"
+    return ("<!doctype html><html lang=\"it\" style=\"scroll-padding-top:80px\"><head><meta charset=\"utf-8\">"
             "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
             f"<title>{e(titolo)}</title><meta name=\"description\" content=\"{e(descr)}\">"
             f"<link rel=\"canonical\" href=\"{e(url)}\">"
