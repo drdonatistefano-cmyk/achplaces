@@ -1,0 +1,2 @@
+# Luoghi tolti davvero dalla guida (la loro pagina luogo/<id>/ può sparire). Una riga: id | motivo e data.
+# Per cambiare il NOME di un luogo non si scrive qui: il nome in testa alla riga resta, e si aggiunge «nome=Nome nuovo» negli extra.

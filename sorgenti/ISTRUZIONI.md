@@ -68,3 +68,11 @@ Le pagine web di calabriastraordinaria.it non restituiscono testo: cerca invece 
 
 ## Nota per il Friuli-Venezia Giulia (9/11)
 turismofvg.it blocca la lettura automatica: usa invece le schede di italia.it, il catalogo regionale del patrimonio culturale (SIRPAC / ERPAC, regione.fvg.it), i siti dei parchi (Prealpi Giulie, Dolomiti Friulane), degli ecomusei riconosciuti dalla Regione, il Touring e le schede MiC. Prima di chiudere un comune sotto i 3 luoghi prova almeno queste fonti.
+
+## Cambiare il nome di un luogo senza cambiare il suo indirizzo (26/11/2026)
+L'indirizzo della pagina di un luogo (`luogo/<comune>--<nome>/`) nasce dal nome scritto in testa alla sua riga in
+`data/spec-*.txt`. **Quel nome non si cambia mai**: cambierebbe l'indirizzo e si romperebbero i link da Google, dalle lettere
+già mandate, dai biglietti e dalle foto. Per cambiare il nome che si vede si aggiunge negli extra (campo 9) `nome=Nome nuovo`
+(esempio: Collezione Maserati Umberto Panini → `nome=Collezione Maserati Umberto Panini APS`).
+`build.py` controlla da solo: se un luogo che ha già la pagina pubblicata non esce più dalla costruzione si ferma con
+«ERRORE INDIRIZZI» e dice che cosa fare. Un luogo tolto davvero si scrive in `data/indirizzi-tolti.txt` con il motivo.

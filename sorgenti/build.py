@@ -159,7 +159,9 @@ def parse(path):
                 srcs.append(base_src)
             if "off" in extra and not any(s[1] == extra["off"] for s in srcs):
                 srcs.insert(0, ["Sito ufficiale del luogo", extra["off"], "uff"])
-            p = dict(id=pid, name=name, cat=cat, sub=sub, desc=desc, why=why, address=addr, price=ptxt, free=free,
+            # 26/11/2026 (Collezione Panini chiede «APS» nel nome): l'indirizzo della pagina (id) nasce dal nome in testa alla
+            # riga, che quindi NON si cambia mai; il nome che si vede si cambia con l'extra «nome=…» e l'indirizzo resta.
+            p = dict(id=pid, name=extra.get("nome") or name, cat=cat, sub=sub, desc=desc, why=why, address=addr, price=ptxt, free=free,
                      card="k" in flags, unesco="u" in flags, view="v" in flags, indoor="i" in flags, status=status,
                      statusNote=extra.get("note", "") if status != "ok" else "", rev=extra.get("rev", ""), tip=notip(extra.get("tip") or (extra.get("note", "") if status == "ok" else "")),
                      hours=extra.get("hours", "Verifica sul sito ufficiale prima di partire" if free is not True else "Spazio aperto o accesso libero; verifica eventuali limitazioni"),
@@ -212,6 +214,28 @@ import glob
 ORDER = ["bo", "ra", "fe", "fc", "rn", "mo", "re", "pr", "pc", "fi", "si"] + [k.lower() for k in PJ]
 files = sorted(glob.glob(os.path.join(D, "spec-*.txt")), key=lambda f: (ORDER.index(f[-6:-4]) if f[-6:-4] in ORDER else 99, f))
 comuni = [c for f in files for c in parse(f)]
+
+# 26/11/2026 (Stefano: «fai in modo che non si verifichi più»): gli indirizzi delle pagine non devono sparire. Se un luogo che
+# ha già la sua pagina pubblicata (cartella luogo/<id>/ del sito) non esce più da questa costruzione, quasi sempre qualcuno
+# ha cambiato il nome in testa alla riga (e con lui l'indirizzo: link rotti da Google, dalle lettere, dai biglietti).
+# La costruzione si ferma. Nome diverso: extra «nome=…». Luogo tolto davvero: una riga in data/indirizzi-tolti.txt.
+def _indirizzi_stabili():
+    sito = os.environ.get("ACHPLACES") or (os.path.dirname(HERE) if os.path.isdir(os.path.join(os.path.dirname(HERE), "luogo")) else "/home/claude/achplaces")
+    cart = os.path.join(sito, "luogo")
+    if not os.path.isdir(cart):
+        print("indirizzi: sito non trovato, controllo saltato (ACHPLACES=cartella del sito)"); return
+    ft = os.path.join(_DATA, "indirizzi-tolti.txt")
+    tolti = {r.split("|")[0].strip() for r in open(ft, encoding="utf-8") if r.strip() and not r.startswith("#")} if os.path.exists(ft) else set()
+    vivi = {p["id"] for c in comuni for p in c["places"]}
+    spariti = sorted(d for d in os.listdir(cart) if d not in vivi and d not in tolti and not d.startswith("bologna-bo--"))
+    if spariti:
+        print(f"ERRORE INDIRIZZI: {len(spariti)} luoghi con la pagina pubblicata non escono più da questa costruzione:")
+        for d in spariti[:20]: print("   ", d)
+        print("  Se hai cambiato un nome: rimetti il nome di prima in testa alla riga e aggiungi «nome=Nome nuovo» negli extra.")
+        print("  Se il luogo è stato tolto davvero: aggiungi il suo id a data/indirizzi-tolti.txt con il motivo.")
+        raise SystemExit(1)
+    print("indirizzi: nessuna pagina pubblicata sparisce")
+if not os.environ.get("ACHPLACES_SENZA_INDIRIZZI"): _indirizzi_stabili()
 sources = json.load(open(os.path.join(D, "sources.json"), encoding="utf-8"))
 # 10/11/2026 Archivio fonti riorganizzato: tutte le fonti citate nelle schede, raggruppate per ente (dominio) e per regione.
 # Nazionali = enti citati in almeno 3 regioni; le altre stanno nella loro regione, divise per tipo. Il registro di lavoro
