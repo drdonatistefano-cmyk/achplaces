@@ -2529,7 +2529,7 @@ function apri(b,liv,k,n,ps,da){torna=da||null;var sub=(b.querySelector(".as")||{
  var cit=[];if(liv==="c"||liv==="v"){if(EV[pv])cit=[pv]}else if(liv==="z"){cit=((D.zp||{})[k]||[]).filter(function(p){return EV[p]})}else{cit=Object.keys(EV).filter(function(p){return (D.p2r||{})[p]===k})}
  var tile=function(href,logo,num,lab,sot){return '<a class="stl" href="'+href+'" target="_blank" rel="noopener">'+logo+'<span>'+(num?'<b>'+nf(num)+'</b> ':'')+lab+'<small>'+sot+'</small></span></a>'};
  var tiles=(nr?tile(REC+"#"+FR,LR,nr,nr===1?"ricetta":"ricette","Ach's Dishes"):"")
-  +(NP?tile(REC+"#"+FP,LR,NP,NP===1?"prodotto tipico":"prodotti tipici",usaPv?"della provincia":liv==="r"?"DOP, IGP, Presìdi":"della regione"):"")
+  /* 26/11 (Stefano: «perché a Cagliari compaiono i prodotti della regione?»): solo i prodotti del territorio esatto — comune e provincia: quelli della provincia; zona: quelli delle sue province; regione: quelli della regione */+(liv==="r"?(nrg?tile(REC+"#prodotti-"+k,LR,nrg,nrg===1?"prodotto tipico":"prodotti tipici","DOP, IGP, Presìdi"):""):(liv==="z"?((D.zp||{})[k]||[]):[pv]).filter(function(s){return (D.pv||{})[s]}).slice(0,3).map(function(s){var m=D.pv[s];return tile(REC+"#prodotti-"+s.toLowerCase(),LR,m,m===1?"prodotto tipico":"prodotti tipici",liv==="z"?"provincia di "+e((D.pn||{})[s]||s):"della provincia")}).join(""))
   +cit.map(function(p){return tile(EV[p][1],LE,0,"Eventi a "+e(EV[p][0]),"su Events")}).join("")
 ;
  var h='<div class="sx"><button type="button" aria-label="Chiudi">×</button></div>'

@@ -32,20 +32,20 @@ def leggi(pg, h, sel_js, prima):
     return ''
 CONTA = '(document.getElementById("count")||{}).textContent'
 PROD = '(document.querySelector(".prtot")||{}).textContent'
-OUT = {'rc': {'c': {}, 'v': {}, 'r': {}, 'z': {}}, 'pv': {}, 'pr': {}, 'p2r': {}, 'rn': {}, 'zd': {}, 'zp': {}, 'rd': RD}
+OUT = {'rc': {'c': {}, 'v': {}, 'r': {}, 'z': {}}, 'pv': {}, 'pr': {}, 'p2r': {}, 'rn': {}, 'zd': {}, 'zp': {}, 'pn': {}, 'rd': RD}
 with sync_playwright() as pw:
     b = pw.chromium.launch(); pg = b.new_page(viewport={'width': 390, 'height': 844})
     pg.goto(BASE); pg.wait_for_function('typeof COM!=="undefined"&&typeof PROV!=="undefined"&&document.getElementById("count")', timeout=60000)
     info = pg.evaluate('''()=>({com:Object.values(COM).map(c=>[c.id,c.nome,c.prov]),
-        prov:Object.values(PROV).map(p=>[p.sigla,p.reg]),reg:Object.entries(REG).map(([k,r])=>[k,r.nome]),
+        prov:Object.values(PROV).map(p=>[p.sigla,p.reg,p.nome||p.sigla]),reg:Object.entries(REG).map(([k,r])=>[k,r.nome]),
         zone:(Array.isArray(ZONE)?ZONE:Object.values(ZONE)).map(z=>[z.id,z.desc||z.descrizione||z.d||"",z.prov||[]])})''')
     if PROVA: info['com'] = info['com'][:15]; info['prov'] = info['prov'][:6]
-    OUT['p2r'] = {s: r for s, r in info['prov']}; OUT['rn'] = {k: n for k, n in info['reg']}
+    OUT['p2r'] = {s: r for s, r, _ in info['prov']}; OUT['pn'] = {s: n for s, _, n in info['prov']}; OUT['rn'] = {k: n for k, n in info['reg']}
     OUT['zd'] = {z: d for z, d, _ in info['zone'] if d}; OUT['zp'] = {z: p for z, _, p in info['zone']}
     def n_di(t):
         m = re.match(r'\s*([\d.]+)', t); return int(m.group(1).replace('.', '')) if m else 0
     prima = ''
-    lavori = ([('c', c, 'comune-' + c) for c, _, _ in info['com']] + [('v', s, 'provincia-' + s.lower()) for s, _ in info['prov']]
+    lavori = ([('c', c, 'comune-' + c) for c, _, _ in info['com']] + [('v', s, 'provincia-' + s.lower()) for s, _, _ in info['prov']]
               + [('z', z, 'zona-' + z) for z, _, _ in info['zone']] + [('r', r, 'regione-' + r) for r, _ in info['reg']])
     nomi = {c: (nome, pv) for c, nome, pv in info['com']}
     t0 = time.time()
@@ -56,7 +56,7 @@ with sync_playwright() as pw:
             nome, pv = nomi[k]; OUT['rc']['c'][slug(nome) + '-' + (pv or '').lower()] = [n, k]
         else: OUT['rc'][liv][k] = n
     prima = ''
-    for liv, k in [('pv', s) for s, _ in info['prov']] + [('pr', r) for r, _ in info['reg']]:
+    for liv, k in [('pv', s) for s, _, _ in info['prov']] + [('pr', r) for r, _ in info['reg']]:
         pg.evaluate('location.hash="#"'); pg.wait_for_timeout(30)
         txt = leggi(pg, 'prodotti-' + (k.lower() if liv == 'pv' else k), PROD, '')
         n = n_di(txt)
