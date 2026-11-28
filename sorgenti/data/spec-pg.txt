@@ -135,6 +135,7 @@ src: Italia.it, Parco del Monte Subasio^https://www.italia.it/it/umbria/cosa-far
 - Santuario di Rivotorto | sacro/Santuari | short | u | free | Piccolo complesso medievale conservato come reliquia e meta di pellegrinaggio francescano. | Una tappa del cammino francescano. | Rivotorto, Assisi | src=UNESCO/ICOMOS, valutazione Assisi^https://whc.unesco.org/document/154776^uff
 - Anfiteatro romano | storia/Archeologia | short | u | free | Resti dell'anfiteatro romano nella parte orientale della città, di cui l'antico municipio, che ebbe questo titolo nell'89 a.C., conserva anche il foro sotto la piazza e tratti delle mura. | La Assisi romana. | Assisi | src=UNESCO/ICOMOS, valutazione Assisi^https://whc.unesco.org/document/154776^uff
 - Parco del Monte Subasio | natura/Parchi e riserve naturali | long | vk | free | Riserva di 7.169 ettari istituita nel 1995 tra Assisi, Spello, Nocera Umbra e Valtopina: uliveti, prati e boschi di querce e lecci, sentieri per trekking, mountain bike ed equitazione e voli in parapendio; la pietra rosa del Subasio è quella dei monumenti di Assisi. | Prati e boschi sopra la città. | Assisi | src=Italia.it, Parco del Monte Subasio^https://www.italia.it/it/umbria/cosa-fare/parco-del-monte-subasio^uff
+- Bosco di San Francesco | natura/Parchi e riserve naturali | long | v | Da verificare | Sessantaquattro ettari di boschi, uliveti e radure recuperati dal FAI dal 2008, attorno al complesso benedettino di Santa Croce (fra Duecento e Trecento): chiesa romanica, mulino diventato osteria, torre trecentesca, resti di un ospedale e il «Terzo Paradiso» di Michelangelo Pistoletto, 121 ulivi disposti in tre cerchi. | Una passeggiata nella natura sotto Assisi, fra storia e arte contemporanea. | Complesso benedettino di Santa Croce, Assisi | src=FAI, Bosco di San Francesco^https://fondoambiente.it/luoghi/bosco-di-san-francesco^uff ; off=https://fondoambiente.it/luoghi/bosco-di-san-francesco ; fai=https://fondoambiente.it/luoghi/bosco-di-san-francesco ; mic=DBUnico.108135
 scarto: DBUnico.100671 | da rivalutare: informazioni di visita non ancora verificate su fonti ufficiali
 scarto: DBUnico.100672 | da rivalutare: informazioni di visita non ancora verificate su fonti ufficiali
 scarto: DBUnico.100673 | da rivalutare: informazioni di visita non ancora verificate su fonti ufficiali
@@ -145,7 +146,6 @@ scarto: DBUnico.100677 | da rivalutare: informazioni di visita non ancora verifi
 scarto: DBUnico.100680 Museo della Porziuncola | da rivalutare: informazioni di visita non ancora verificate su fonti ufficiali
 scarto: DBUnico.100681 MUMA | da rivalutare: informazioni di visita non ancora verificate su fonti ufficiali
 scarto: DBUnico.108055 | da rivalutare: informazioni di visita non ancora verificate su fonti ufficiali
-scarto: DBUnico.108135 Bosco di San Francesco | da rivalutare: pagina FAI non ancora letta
 scarto: DBUnico.108156 | da rivalutare: informazioni di visita non ancora verificate su fonti ufficiali
 scarto: DBUnico.135676 Archivio di Stato | archivio, non è un luogo di visita turistica
 scarto: mercati | nessun mercato storico verificato su fonti ufficiali

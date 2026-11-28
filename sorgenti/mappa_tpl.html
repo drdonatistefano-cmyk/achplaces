@@ -350,8 +350,8 @@ const G=[
  {k:'nat',l:'Natura',long:'Natura',em:'🌳',c:'#86DDA0',s:['Parchi','Riserve','Giardini','Orti','Laghi','Fiumi','Cascate','Spiagge','Montagna','Vulcani','Grotte','Geositi','Sentieri','Panorami']},
  {k:'trad',l:'Tradizioni',long:'Vita locale e curiosità',em:'🧀',c:'#74D9D0',s:['Mercati','Terme','Sapori','Ceramica','Botteghe','Motori','Curiosità']}];
 const RN={'abruzzo':'Abruzzo','basilicata':'Basilicata','calabria':'Calabria','campania':'Campania','emilia-romagna':'Emilia-Romagna','friuli-venezia-giulia':'Friuli-Venezia Giulia','lazio':'Lazio','liguria':'Liguria','lombardia':'Lombardia','marche':'Marche','molise':'Molise','piemonte':'Piemonte','puglia':'Puglia','sardegna':'Sardegna','sicilia':'Sicilia','toscana':'Toscana','trentino-alto-adige':'Trentino-Alto Adige','umbria':'Umbria','valle-d-aosta':"Valle d'Aosta",'veneto':'Veneto'};
-const QK=[['g','Gratis'],['u','UNESCO'],['i','Al coperto'],['v','Panorama'],['b','Borghi più belli'],['a','Bandiera Arancione']];
-const FLAG={g:'Gratis',u:'UNESCO',i:'Al coperto',v:'Panorama'};
+const QK=[['g','Gratis'],['u','UNESCO'],['f','Beni FAI'],['i','Al coperto'],['v','Panorama'],['b','Borghi più belli'],['a','Bandiera Arancione']];
+const FLAG={g:'Gratis',u:'UNESCO',f:'FAI',i:'Al coperto',v:'Panorama'};
 const $=id=>document.getElementById(id),nf=new Intl.NumberFormat('it-IT');
 const fold=s=>s.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
 const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -574,7 +574,7 @@ async function dettagli(pi){if(!DATA.U)await PXP;const p=P[pi],c=C[p.ci],x=XG()[
   if(!det){const m=await man(),n=m.det&&m.det[c.pv];if(n){if(!DETP[n])DETP[n]=fetch(n).then(r=>r.ok?r.json():{}).catch(()=>({}));const dd=await DETP[n];det=(dd[c.sl]||{})[c.sl+'--'+(p.sx||sl40(p.n))]||{};}}
   det=det||{};const u=k=>k!=null&&k>=0?DATA.U[k]:'';
   return {desc:det.desc||x.ds||'',why:det.why,tip:det.tip,sn:det.statusNote,st:p.fl.includes('w')?'warn':p.fl.includes('x')?'closed':'ok',ac:det.access,du:det.duration,ad:det.address,pc:det.price,
-    fr:p.fl.includes('g')?true:p.fl.includes('P')?false:null,cd:p.fl.includes('c'),in:p.fl.includes('i'),vw:p.fl.includes('v'),un:p.fl.includes('u'),ps:x.ps,hu:det.hoursUrl,tu:u(x.tu),tf:u(x.tf),tq:u(x.tq),gy:u(x.gy),
+    fr:p.fl.includes('g')?true:p.fl.includes('P')?false:null,cd:p.fl.includes('c'),in:p.fl.includes('i'),vw:p.fl.includes('v'),un:p.fl.includes('u'),fa:p.fl.includes('f'),ps:x.ps,hu:det.hoursUrl,tu:u(x.tu),tf:u(x.tf),tq:u(x.tq),gy:u(x.gy),
     of:det.official,os:det.ownSite,wh:det.wh,whn:det.whn,wk:det.wk,src:det.sources,cs:c.sl,id:c.sl+'--'+(p.sx||sl40(p.n)),vf:DATA.VER[c.v],lk:'index.html#'+c.sl,la:x.ll?x.ll[0]:null,lo:x.ll?x.ll[1]:null};}
 const dom=u=>{try{return new URL(u).hostname.replace(/^www\./,'')}catch(e){return ''}};
 function tkUrl(d){if(d.tq)return [d.tq,'Tiqets'];if(d.gy&&/biglietto|ingresso|salta|ticket/.test(d.gy))return [d.gy,'GetYourGuide'];return d.tu?[d.tu,'']:null;}
@@ -591,7 +591,7 @@ function tixHtml(d){
   return `<section class="tix" aria-label="Biglietti"><h3>🎟️ Biglietti</h3><a class="tixb uff${soft}" href="${esc(u)}" target="_blank" rel="${rel}"${t&&t[1]?gcPar(u,d,t[1]):''}>${ic('ticket')}<span><b>${tit}</b><small>${esc(sub)}</small></span><i aria-hidden="true">↗</i></a>${vg}${pn?`<p class="tixn">Partner: la guida riceve una piccola commissione, il prezzo per te non cambia.${d.tu?` <a class="flink" href="${esc(d.tu)}" target="_blank" rel="noopener">Biglietteria ufficiale ↗</a>`:''}</p>`:''}</section>`;}
 function tags(d){const pt=d.fr===null||d.fr===undefined?(d.ps===0?'<span class="mst unk">🆓 Probabilmente gratis</span>':d.ps?`<span class="mst unk">🎟️ Circa ${d.ps} € (stima)</span>`:'<span class="mst unk">🎟️ Ingresso: vedi sito</span>'):d.fr?'<span class="mst free">🆓 Gratis</span>':'<span class="mst paid">🎟️ A pagamento</span>';
   const st=d.st==='closed'?'<span class="mst closed">⛔ Chiuso ora</span>':d.st==='warn'?'<span class="mst warn">⚠️ Avviso</span>':'';
-  return st+pt+(d.cd?'<span class="mst">💳 Card</span>':'')+(d.in?'<span class="mst">☔ Al coperto</span>':'')+(d.vw?'<span class="mst">🌅 Panorama</span>':'')+(d.un?'<span class="mst">🌍 UNESCO</span>':'')+(d.du?`<span class="mst">⏱️ ${esc(d.du)}</span>`:'');}
+  return st+pt+(d.cd?'<span class="mst">💳 Card</span>':'')+(d.in?'<span class="mst">☔ Al coperto</span>':'')+(d.vw?'<span class="mst">🌅 Panorama</span>':'')+(d.un?'<span class="mst">🌍 UNESCO</span>':'')+(d.fa?'<span class="mst">🛡️ FAI</span>':'')+(d.du?`<span class="mst">⏱️ ${esc(d.du)}</span>`:'');}
 const wikiUrl=(d,p)=>d.wk?'https://it.wikipedia.org/wiki/'+encodeURIComponent(d.wk.replace(/ /g,'_')):'https://it.wikipedia.org/w/index.php?search='+encodeURIComponent(p.n.split(/[:(]/)[0].trim()+' '+C[p.ci].n)+'&ns0=1';
 let aperta=null,lastFocus=null;
 function testata(p){const c=C[p.ci],g=G[p.g];return `<div class="grab2" aria-hidden="true"></div><button class="sclose" id="sclose" type="button" aria-label="Chiudi">×</button>

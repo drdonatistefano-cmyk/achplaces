@@ -79,3 +79,9 @@ src: MiC, Museo civico di Montagnana^https://cultura.gov.it/luogo/museo-civico-d
 - Chiesa di San Francesco | sacro/Chiese e pievi | short | i | free | Chiesa trecentesca vicino a Porta XX Settembre, con elementi romanici in facciata e campanile in cotto iniziato nel 1429; all'interno affreschi del Trecento, un organo settecentesco e una Madonna con santi di Palma il Giovane. | Il campanile gotico all'ombra delle mura. | Porta XX Settembre, Montagnana | src=Bandiere Arancioni TCI, Che cosa vedere a Montagnana^https://www.bandierearancioni.it/approfondimento/che-cosa-vedere-montagnana^uff ; src=I Borghi più belli d'Italia, Montagnana^https://borghipiubelliditalia.it/en/borgo/montagnana/^uff
 copertura: completa
 minimo: 7 | MiC (1 luogo, inserito), italia.it, Bandiere Arancioni, Borghi più belli e sito del Comune eseguite; portale regionale veneto.eu non letto
+
+@ Torreglia | 028092 | PD | https://fondoambiente.it/luoghi/villa-dei-vescovi |
+lede: Comune dei Colli Euganei, con Villa dei Vescovi del FAI a Luvigliano.
+src: FAI, Villa dei Vescovi^https://fondoambiente.it/luoghi/villa-dei-vescovi
+- Villa dei Vescovi | storia/Palazzi e ville | mid | iv | Da verificare | Villa rinascimentale di inizio Cinquecento voluta dal Vescovo di Padova, progettata da Falconetto con Alvise Cornaro e con un intervento di Giulio Romano; gli affreschi interni sono di Lambert Sustris. Donata al FAI nel 2005, ha logge e terrazze sui Colli Euganei, brolo e vigneti. | Il Rinascimento veneto in una villa fra le colline. | Via dei Vescovi 4, Luvigliano, Torreglia | src=FAI, Villa dei Vescovi^https://fondoambiente.it/luoghi/villa-dei-vescovi^uff ; off=https://fondoambiente.it/luoghi/villa-dei-vescovi ; fai=https://fondoambiente.it/luoghi/villa-dei-vescovi
+copertura: parziale

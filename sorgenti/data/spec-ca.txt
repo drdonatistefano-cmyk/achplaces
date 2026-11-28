@@ -66,3 +66,9 @@ src: Sardegna Turismo, Nora (spiaggia)^https://www.sardegnaturismo.it/it/esplora
 scarto: Museo «Norace» (DBUnico.106334) | nessuna informazione di visita sulle fonti ufficiali raggiungibili; da rivalutare
 copertura: completa
 minimo: 4 | MiC (4: 3 inseriti, Norace scartato), portale regionale Sardegna Turismo eseguite; sito del Comune e scheda MiC bloccati (robots); italia.it senza pagina dedicata; Touring non letto
+
+@ Assemini | 118002 | CA | https://fondoambiente.it/luoghi/saline-conti-vecchi |
+lede: Comune alle porte di Cagliari, sullo stagno di Santa Gilla, con le Saline Conti Vecchi del FAI.
+src: FAI, Saline Conti Vecchi^https://fondoambiente.it/luoghi/saline-conti-vecchi
+- Saline Conti Vecchi | natura/Parchi e riserve naturali | long | vw | Da verificare | Saline ancora produttive nello stagno di Santa Gilla, create alla fine degli anni Venti dall'ingegnere Luigi Conti Vecchi e valorizzate dal FAI dal 2017: circa 2.700 ettari che si attraversano su un piccolo treno fra vasche, cumuli di sale, fenicotteri e altri uccelli acquatici, più un sito di archeologia industriale. | Un treno fra il sale rosa e i fenicotteri. | Stagno di Santa Gilla, Assemini | src=FAI, Saline Conti Vecchi^https://fondoambiente.it/luoghi/saline-conti-vecchi^uff ; off=https://fondoambiente.it/luoghi/saline-conti-vecchi ; fai=https://fondoambiente.it/luoghi/saline-conti-vecchi ; note=Spazi storici e ambienti narrativi chiusi per manutenzione straordinaria ; rev=2027-01
+copertura: parziale

@@ -142,3 +142,15 @@ scarto: Palazzo Piatti-Reghenzani | da rivalutare: nelle fonti ufficiali lette s
 scarto: Chiesa di San Martino | da rivalutare: solo «di origine medievale alla porta occidentale», descrizione insufficiente
 copertura: completa
 minimo: 2 | MiC (2 voci di Palazzo Besta, inserite nella stessa scheda), In Lombardia, Valtellina Turismo eseguite; pagina italia.it non raggiungibile (allowlist); sito del Comune non leggibile (robots)
+
+@ Talamona | 014063 | SO | https://fondoambiente.it/luoghi/alpe-pedroria-e-alpe-madrera |
+lede: Comune della bassa Valtellina, nel Parco delle Orobie, con l'Alpe Pedroria e l'Alpe Madrera del FAI.
+src: FAI, Alpe Pedroria e Alpe Madrera^https://fondoambiente.it/luoghi/alpe-pedroria-e-alpe-madrera
+- Alpe Pedroria e Alpe Madrera | natura/Montagna | long | v | Da verificare | Alpeggio di circa 200 ettari nel Parco delle Orobie, lasciato al FAI nel 2011 dall'architetto Stefano Tirinzoni: boschi di abete rosso, pascoli, baite e malghe in pietra a secco di una tradizione pastorale secolare, sentieri e vista sui monti Pisello, Culino e Lago; ci vive il fagiano di monte. | Un alpeggio vero, a piedi, nelle Orobie valtellinesi. | Alpe Pedroria, Talamona | src=FAI, Alpe Pedroria e Alpe Madrera^https://fondoambiente.it/luoghi/alpe-pedroria-e-alpe-madrera^uff ; off=https://fondoambiente.it/luoghi/alpe-pedroria-e-alpe-madrera ; fai=https://fondoambiente.it/luoghi/alpe-pedroria-e-alpe-madrera
+copertura: parziale
+
+@ Montagna in Valtellina | 014044 | SO | https://fondoambiente.it/luoghi/castel-grumello |
+lede: Comune fra i vigneti terrazzati della Valtellina, con il Castel Grumello del FAI.
+src: FAI, Castel Grumello^https://fondoambiente.it/luoghi/castel-grumello
+- Castel Grumello | storia/Castelli e fortezze | mid | v | Da verificare | Castello «gemino», raro in Lombardia, costruito fra la fine del Duecento e l'inizio del Trecento da Corrado de Piro e distrutto nel 1526 dalle Leghe Grigie: un corpo militare con la grande torre quadrata e un corpo residenziale con pietre lavorate e un camino, chiusi dalle mura, su uno sperone fra i vigneti. Restaurato dal FAI e aperto dal 2001. | Rovine medievali con vista sulle Alpi Retiche e sui terrazzamenti. | Via Sant'Antonio 645, Montagna in Valtellina | src=FAI, Castel Grumello^https://fondoambiente.it/luoghi/castel-grumello^uff ; off=https://fondoambiente.it/luoghi/castel-grumello ; fai=https://fondoambiente.it/luoghi/castel-grumello
+copertura: parziale

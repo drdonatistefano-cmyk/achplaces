@@ -193,6 +193,7 @@ def parse(path):
             for k in ("hoursUrl", "ticketUrl"):
                 if p[k] and not any(x[1] == p[k] for x in p["sources"]): p["sources"].append([("Orari ufficiali" if k == "hoursUrl" else "Biglietti ufficiali") + " (pagina del gestore)", p[k], "uff"])
             if extra.get("mic"): p["mic"] = extra["mic"].split()
+            if extra.get("fai"): p["fai"] = extra["fai"]   # 28/11/2026: Bene del FAI (pagina ufficiale), pulsante «Beni FAI» come UNESCO
             if extra.get("fuori"): p["fuori"] = 1   # 20/11/2026: luogo fuori dal centro abitato, escluso dalla visita breve
             if WIKI.get(pid): p["wk"] = WIKI[pid]
             c["places"].append(p)

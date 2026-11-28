@@ -166,3 +166,9 @@ scarto: Museo della Barbie | da rivalutare: solo «mostra permanente» nell'elen
 scarto: Villa Giustinian e Oratorio di Santa Teresa | da rivalutare: solo date di costruzione, modalità di visita non verificate su fonti ufficiali
 copertura: completa
 minimo: 8 | nessun luogo MiC; italia.it, veneto.eu, museo virtuale Borghi e sito del Comune eseguite; pagina borghipiubelliditalia.it del borgo e schede singole del Comune (eccetto Chiesa dei Servi) non lette
+
+@ Altivole | 026001 | TV | https://fondoambiente.it/luoghi/memoriale-brion |
+lede: Comune della pedemontana trevigiana, con il Memoriale Brion di Carlo Scarpa, Bene del FAI.
+src: FAI, Memoriale Brion^https://fondoambiente.it/luoghi/memoriale-brion
+- Memoriale Brion | storia/Monumenti e memoriali | mid |  | Da verificare | Giardino funerario di Carlo Scarpa a San Vito d'Altivole, voluto nel 1969 da Onorina Tomasin per il marito Giuseppe Brion, fondatore della Brionvega, costruito fra il 1970 e il 1978 e donato al FAI nel 2022: mura inclinate, i due cerchi intrecciati, l'arcosolio dorato, canali e vasche di ninfee, il padiglione sull'acqua, la cappella e la tomba dello stesso Scarpa. | L'ultima grande opera di Carlo Scarpa, fra acqua e cemento. | Via Brioni, San Vito, Altivole | src=FAI, Memoriale Brion^https://fondoambiente.it/luoghi/memoriale-brion^uff ; off=https://fondoambiente.it/luoghi/memoriale-brion ; fai=https://fondoambiente.it/luoghi/memoriale-brion
+copertura: parziale

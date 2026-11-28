@@ -28,6 +28,7 @@ D = {
     "clessidra": '<path d="M5 22h14M5 2h14M17 22v-4.2a2 2 0 0 0-.6-1.4L12 12l-4.4 4.4a2 2 0 0 0-.6 1.4V22M7 2v4.2a2 2 0 0 0 .6 1.4L12 12l4.4-4.4a2 2 0 0 0 .6-1.4V2"/>',
     "segnaposto": '<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>',
     "griglia": '<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>',
+    "scudo": '<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>',  # 28/11: Beni FAI
     "occhio": '<path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>',
 }
 
@@ -41,11 +42,11 @@ def uri(nome, colore="#000"):
 # pulsanti -> icona
 ETICHETTE = {  # inizio del nome del pulsante (aria-label)
     "Gratis,": "regalo", "A pagamento": "euro", "Da verificare": "domanda", "Gratis con Card": "carta",
-    "Se piove": "ombrello", "Panorama": "montagna", "UNESCO": "monumento", "Borghi": "borgo", "Bandiera": "bandiera",
+    "Se piove": "ombrello", "Panorama": "montagna", "UNESCO": "monumento", "Beni FAI": "scudo", "Borghi": "borgo", "Bandiera": "bandiera",
     "Fino a 45": "lampo", "1-1,5": "orologio", "2 ore": "clessidra",
 }
 FBTN = {"price": "biglietto", "ideal": "scintille", "time": "orologio"}
-AW = {"unesco": "monumento", "borghi": "borgo", "arancione": "bandiera"}
+AW = {"unesco": "monumento", "fai": "scudo", "borghi": "borgo", "arancione": "bandiera"}
 SEZIONI = {"g-price": "biglietto", "g-ideal": "scintille", "g-time": "orologio"}
 
 css = ["/* generato da sorgenti/grafica/icone.py: non correggere a mano */"]

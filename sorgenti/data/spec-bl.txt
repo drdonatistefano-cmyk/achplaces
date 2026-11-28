@@ -96,3 +96,9 @@ src: Comune di Rocca Pietore, Turismo^https://www.comune.roccapietore.bl.it/it/p
 - Botteghe del ferro battuto | locale/Artigianato | short | i | free | Lungo la strada tra Sottoguda e Palue gli artigiani lavorano ferro e legno: farfalle in ferro battuto dipinte a mano e gioielli in legno di faggio e cristallo. | L'artigianato del ferro ladino. | Sottoguda-Palue, Rocca Pietore | src=I Borghi più belli d'Italia, Sottoguda^https://borghipiubelliditalia.it/en/borgo/sottoguda/^uff ; src=Italia.it, Rocca Pietore^https://www.italia.it/en/veneto/belluno/rocca-pietore^uff
 copertura: completa
 minimo: 11 | nessun luogo MiC; italia.it, Borghi più belli, sito ufficiale dei Serrai e sito del Comune eseguite; Bandiere Arancioni (robots) e sito del Museo della Grande Guerra (robots) non letti; news del Comune sull'apertura dei Serrai non apribile
+
+@ Quero Vas | 025070 | BL | https://fondoambiente.it/luoghi/monte-fontana-secca-e-col-de-spadarot |
+lede: Comune sul Piave ai piedi del Grappa, con il Monte Fontana Secca del FAI.
+src: FAI, Monte Fontana Secca^https://fondoambiente.it/luoghi/monte-fontana-secca-e-col-de-spadarot
+- Monte Fontana Secca | natura/Montagna | long | v | Da verificare | Alpeggio di circa 150 ettari sul Massiccio del Monte Grappa, fra boschi e pascoli fino a 1600 metri sopra la valle del Piave, donato al FAI da Bruno e Liliana Collavo: malga a 1461 metri, casa del malgaro con uno spazio di racconto, casera, stalle e le trincee, gallerie e cippi dello scontro del 21-22 novembre 1917. | Pascoli e memoria della Grande Guerra sul Grappa. | Monte Fontana Secca, Quero Vas | src=FAI, Monte Fontana Secca^https://fondoambiente.it/luoghi/monte-fontana-secca-e-col-de-spadarot^uff ; off=https://fondoambiente.it/luoghi/monte-fontana-secca-e-col-de-spadarot ; fai=https://fondoambiente.it/luoghi/monte-fontana-secca-e-col-de-spadarot
+copertura: parziale

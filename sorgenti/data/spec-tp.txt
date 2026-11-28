@@ -182,3 +182,9 @@ scarto: Torre di Nubia, aglio rosso di Nubia | da rivalutare: solo citati da Vis
 scarto: Centro storico e chiese di Paceco | da rivalutare: nessuna descrizione nelle fonti ufficiali lette
 copertura: completa
 minimo: 2 | MiC (2 luoghi, tutti inseriti), italia.it, Visit Sicily, ORBS Regione Siciliana eseguiti; sito del Comune non letto
+
+@ Pantelleria | 081014 | TP | https://fondoambiente.it/luoghi/giardino-pantesco-donnafugata |
+lede: Isola vulcanica fra Sicilia e Africa, con il Giardino Pantesco Donnafugata del FAI.
+src: FAI, Giardino Pantesco Donnafugata^https://fondoambiente.it/luoghi/giardino-pantesco-donnafugata
+- Giardino Pantesco Donnafugata | natura/Giardini botanici | short | v | Da verificare | Recinto circolare in pietra lavica a secco, largo circa 11 metri e alto fino a 4, che protegge dal vento un solo arancio secolare di varietà «Portogallo»: una tradizione dell'isola fatta risalire fino al 3000 a.C. Donato al FAI nel 2008 dall'azienda Donnafugata e restaurato. | Il giardino più piccolo e più ingegnoso del Mediterraneo. | Contrada Khamma Fuori 6, Pantelleria | src=FAI, Giardino Pantesco Donnafugata^https://fondoambiente.it/luoghi/giardino-pantesco-donnafugata^uff ; off=https://fondoambiente.it/luoghi/giardino-pantesco-donnafugata ; fai=https://fondoambiente.it/luoghi/giardino-pantesco-donnafugata
+copertura: parziale

@@ -56,7 +56,7 @@ def tk(p):
 def aggiungi(ci, p, pid_suffix, full):
     """p: dict con i campi della Guida; full: dettagli completi (solo Bologna)"""
     g, ts = tipo(dict(name=p['name'], desc=p.get('desc', '') or '', sub=p['sub'], cat=p['cat']))
-    fl = ('g' if p.get('free') is True else 'P' if p.get('free') is False else '') + ('c' if p.get('card') else '') + ('u' if p.get('unesco') else '') + \
+    fl = ('g' if p.get('free') is True else 'P' if p.get('free') is False else '') + ('c' if p.get('card') else '') + ('u' if p.get('unesco') else '') + ('f' if p.get('fai') else '') + \
          ('i' if p.get('indoor') else '') + ('v' if p.get('view') else '') + ('w' if p.get('status') == 'warn' else 'x' if p.get('status') == 'closed' else '')
     i = len(P)
     t = tk(p)
